@@ -25,6 +25,8 @@ return {
     WindowTopbarAuthor = "Text",
     WindowTopbarIcon = "Icon",
     WindowTopbarButtonIcon = "Icon",
+    WindowTopbarButtonBackground = "Text",
+    WindowTopbarButtonBackgroundTransparency = 0.95,
     
     WindowSearchBarBackground = "Background",
     

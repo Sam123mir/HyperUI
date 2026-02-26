@@ -267,6 +267,8 @@ WindowTopbarTitle="Text",
 WindowTopbarAuthor="Text",
 WindowTopbarIcon="Icon",
 WindowTopbarButtonIcon="Icon",
+WindowTopbarButtonBackground="Text",
+WindowTopbarButtonBackgroundTransparency=0.95,
 
 WindowSearchBarBackground="Background",
 
@@ -2486,8 +2488,11 @@ local af=a.load'm'.New
 
 function aa.new(ag,ah,ai,aj)
 local ak=a.load'n'
-local al=ak.Init({UIElements={Main=ag.HyperUI.ScreenGui}},ag.HyperUI.ScreenGui)
+print"[ HyperUI ] KeySystem: Required Dialog module"
+local al=ak.Init({UIElements={Main=ag.HyperUI.ScreenGui}},ag.HyperUI.ScreenGui.KeySystem)
+print"[ HyperUI ] KeySystem: Initialized Dialog module"
 local am=al.Create(true)
+print"[ HyperUI ] KeySystem: Created Dialog instance"
 
 local an={}
 
@@ -2595,9 +2600,9 @@ FillDirection="Horizontal",
 local ay
 if ag.KeySystem.Thumbnail and ag.KeySystem.Thumbnail.Image then
 local az
-if ag.KeySystem.Thumbnail.Title then
+if ag.KeySystem.Thumbnail then
 az=ac("TextLabel",{
-Text=ag.KeySystem.Thumbnail.Title,
+Text=ag.KeySystem.Thumbnail.Title or"Thumbnail Title",
 ThemeTag={
 TextColor3="Text",
 },
@@ -5149,10 +5154,11 @@ ZIndex=aa.ZIndex.Topbar,
 AnchorPoint=Vector2.new(0.5,0.5),
 Position=UDim2.new(0.5,0,0.5,0),
 ImageColor3=ae.Topbar.ButtonsType~="Default"and(an or Color3.fromHex"#ff3030")or nil,
-ThemeTag=ae.Topbar.ButtonsType=="Default"and{
-ImageColor3="Text"
-}or nil,
-ImageTransparency=ae.Topbar.ButtonsType=="Default"and 1 or 0
+ThemeTag={
+ImageColor3=ae.Topbar.ButtonsType=="Default"and"WindowTopbarButtonBackground"or nil,
+ImageTransparency=ae.Topbar.ButtonsType=="Default"and"WindowTopbarButtonBackgroundTransparency"or nil,
+},
+ImageTransparency=ae.Topbar.ButtonsType=="Default"and 0.95 or 0
 },{
 aa.NewRoundFrame(ae.Topbar.ButtonsType=="Default"and ae.UICorner-(ae.UIPadding/2)or 999,"SquircleOutline",{
 Size=UDim2.new(1,0,1,0),
@@ -10538,7 +10544,12 @@ else
 local at=ao.IconShape or"Squircle"
 af.NewRoundFrame(at~="Circle"and(ao.UICorner+5-(2+(Window.UIPadding/4)))or 9999,at,{
 Size=UDim2.new(0,26,0,26),
-ImageColor3=ao.IconColor or Color3.fromRGB(100,100,100),
+ImageColor3=ao.IconColor or Color3.fromRGB(120,120,120),
+ThemeTag={
+ImageColor3=ao.IconColor==nil and"WindowTopbarButtonBackground"or nil,
+ImageTransparency=ao.IconColor==nil and"WindowTopbarButtonBackgroundTransparency"or nil,
+},
+ImageTransparency=ao.IconColor==nil and 0.9 or 0,
 Parent=ao.UIElements.Main.Frame
 },{
 ar,
@@ -12468,6 +12479,11 @@ TextColor3="Text"
 },
 TextTransparency=0.5,
 LayoutOrder=1,
+},{
+al("UIPadding",{
+PaddingLeft=UDim.new(0,4),
+PaddingRight=UDim.new(0,4)
+})
 })
 })
 
@@ -12795,9 +12811,9 @@ local C
 ak.Icon"minimize"
 ak.Icon"maximize"
 
-ax:CreateTopbarButton("Fullscreen",ax.Topbar.ButtonsType=="Mac"and"rbxassetid://127426072704909"or"solar:full-screen-square-linear",function()
-ax:ToggleFullscreen()
-end,(ax.Topbar.ButtonsType=="Default"and 998 or 999),true,Color3.fromHex"#60C762",ax.Topbar.ButtonsType=="Mac"and 9 or 26)
+ax:CreateTopbarButton("Fullscreen","maximize-2",function()
+ax:Fullscreen()
+end,(ax.Topbar.ButtonsType=="Default"and 997 or 998),true,Color3.fromHex"#60C762",ax.Topbar.ButtonsType=="Mac"and 9 or 26)
 
 function ax.ToggleFullscreen(F)
 local G=ax.IsFullscreen
@@ -12826,30 +12842,8 @@ end
 
 
 ax:CreateTopbarButton("Minimize","minus",function()
-ax:Close()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-end,(ax.Topbar.ButtonsType=="Default"and 997 or 998),nil,Color3.fromHex"#F4C948")
+ax:Minimize()
+end,(ax.Topbar.ButtonsType=="Default"and 996 or 997),nil,Color3.fromHex"#F4C948")
 
 ax:CreateTopbarButton("Close","x",function()
 if ax.IgnoreAlerts then
@@ -12858,24 +12852,24 @@ return
 end
 
 ax:Dialog{
-Title="Close Window",
-Content="Are you sure you want to close the window?",
+Title="Close Confirmation",
+Content="Are you sure you want to close this window? All unsaved progress will be lost.",
 Buttons={
-{
-Title="Cancel",
-Variant="Secondary",
-Callback=function()end
-},
 {
 Title="Close",
 Variant="Primary",
 Callback=function()
 ax:Destroy()
 end
+},
+{
+Title="Cancel",
+Variant="Secondary",
+Callback=function()end
 }
 }
 }
-end,(ax.Topbar.ButtonsType=="Default"and 996 or 997),nil,Color3.fromHex"#FF6060")
+end,(ax.Topbar.ButtonsType=="Default"and 998 or 999),nil,Color3.fromHex"#FF6060")
 
 function ax.OnOpen(F,G)
 ax.OnOpenCallback=G
@@ -13174,6 +13168,21 @@ ak.AddSignal(ae.InputBegan,function(F,G)
 if G then return end
 
 local H=ae:IsKeyDown(Enum.KeyCode.LeftControl)or ae:IsKeyDown(Enum.KeyCode.RightControl)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 if ax.ToggleKey then
 if F.KeyCode==ax.ToggleKey then

@@ -181,7 +181,12 @@ function TabModule.New(Config, UIScale)
             local Shape = Tab.IconShape or "Squircle"
             local _IconBG = Creator.NewRoundFrame(Shape ~= "Circle" and (Tab.UICorner + 5 - (2+(Window.UIPadding/4))) or 9999, Shape, {
                 Size = UDim2.new(0,26,0,26),
-                ImageColor3 = Tab.IconColor or Color3.fromRGB(100,100,100),
+                ImageColor3 = Tab.IconColor or Color3.fromRGB(120, 120, 120),
+                ThemeTag = {
+                    ImageColor3 = Tab.IconColor == nil and "WindowTopbarButtonBackground" or nil,
+                    ImageTransparency = Tab.IconColor == nil and "WindowTopbarButtonBackgroundTransparency" or nil,
+                },
+                ImageTransparency = Tab.IconColor == nil and 0.9 or 0,
                 Parent = Tab.UIElements.Main.Frame
             }, {
                 Icon,

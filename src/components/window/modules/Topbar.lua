@@ -62,10 +62,11 @@ function Topbar.Init(Window, Config)
             AnchorPoint = Vector2.new(0.5,0.5),
             Position = UDim2.new(0.5,0,0.5,0),
             ImageColor3 = Window.Topbar.ButtonsType ~= "Default" and (Color or Color3.fromHex("#ff3030")) or nil,
-            ThemeTag = Window.Topbar.ButtonsType == "Default" and {
-                ImageColor3 = "Text"
-            } or nil,
-            ImageTransparency = Window.Topbar.ButtonsType == "Default" and 1 or 0
+            ThemeTag = {
+                ImageColor3 = Window.Topbar.ButtonsType == "Default" and "WindowTopbarButtonBackground" or nil,
+                ImageTransparency = Window.Topbar.ButtonsType == "Default" and "WindowTopbarButtonBackgroundTransparency" or nil,
+            },
+            ImageTransparency = Window.Topbar.ButtonsType == "Default" and 0.95 or 0
         }, {
             Creator.NewRoundFrame(Window.Topbar.ButtonsType == "Default" and Window.UICorner-(Window.UIPadding/2) or 999, "SquircleOutline", {
                 Size = UDim2.new(1,0,1,0),

@@ -525,6 +525,11 @@ return function(Config)
             },
             TextTransparency = 0.5,
             LayoutOrder = 1,
+        }, {
+            New("UIPadding", {
+                PaddingLeft = UDim.new(0, 4),
+                PaddingRight = UDim.new(0, 4)
+            })
         })
     })
     
@@ -852,9 +857,9 @@ return function(Config)
     local iconCopy = Creator.Icon("minimize")
     local iconSquare = Creator.Icon("maximize")
     
-    local FullscreenButton = Window:CreateTopbarButton("Fullscreen", Window.Topbar.ButtonsType == "Mac" and "rbxassetid://127426072704909" or "solar:full-screen-square-linear", function() 
-        Window:ToggleFullscreen()
-    end, (Window.Topbar.ButtonsType == "Default" and 998 or 999), true, Color3.fromHex("#60C762"), Window.Topbar.ButtonsType == "Mac" and 9 or 26)
+    local FullscreenButton = Window:CreateTopbarButton("Fullscreen", "maximize-2", function()
+        Window:Fullscreen()
+    end, (Window.Topbar.ButtonsType == "Default" and 997 or 998), true, Color3.fromHex("#60C762"), Window.Topbar.ButtonsType == "Mac" and 9 or 26)
     
     function Window:ToggleFullscreen()
         local isFullscreen = Window.IsFullscreen
@@ -882,57 +887,35 @@ return function(Config)
     end
     
     
-    Window:CreateTopbarButton("Minimize", "minus", function() 
-        Window:Close()
-        -- task.spawn(function()
-        --     task.wait(.3)
-        --     if not Window.IsPC and Window.IsOpenButtonEnabled then
-        --         -- OpenButtonContainer.Visible = true
-        --         --Window.OpenButtonMain:Visible(true)
-        --     end
-        -- end)
-        
-        -- local NotifiedText = Window.IsPC and "Press " .. Window.ToggleKey.Name .. " to open the Window" or "Click the Button to open the Window"
-        
-        -- if not Window.IsOpenButtonEnabled then
-        --     Notified = true
-        -- end
-        -- if not Notified then
-        --     Notified = not Notified
-        --     Config.HyperUI:Notify({
-        --         Title = "Minimize",
-        --         Content = "You've closed the Window. " .. NotifiedText,
-        --         Icon = "eye-off",
-        --         Duration = 5,
-        --     })
-        -- end
-    end, (Window.Topbar.ButtonsType == "Default" and 997 or 998), nil, Color3.fromHex("#F4C948"))
+    Window:CreateTopbarButton("Minimize", "minus", function()
+        Window:Minimize()
+    end, (Window.Topbar.ButtonsType == "Default" and 996 or 997), nil, Color3.fromHex("#F4C948"))
     
-    Window:CreateTopbarButton("Close", "x", function() 
+    Window:CreateTopbarButton("Close", "x", function()
         if Window.IgnoreAlerts then
             Window:Destroy()
             return
         end
 
         Window:Dialog({
-            Title = "Close Window",
-            Content = "Are you sure you want to close the window?",
+            Title = "Close Confirmation",
+            Content = "Are you sure you want to close this window? All unsaved progress will be lost.",
             Buttons = {
-                {
-                    Title = "Cancel",
-                    Variant = "Secondary",
-                    Callback = function() end
-                },
                 {
                     Title = "Close",
                     Variant = "Primary",
                     Callback = function()
                         Window:Destroy()
                     end
+                },
+                {
+                    Title = "Cancel",
+                    Variant = "Secondary",
+                    Callback = function() end
                 }
             }
         })
-    end, (Window.Topbar.ButtonsType == "Default" and 996 or 997), nil, Color3.fromHex("#FF6060"))
+    end, (Window.Topbar.ButtonsType == "Default" and 998 or 999), nil, Color3.fromHex("#FF6060"))
     
     function Window:OnOpen(func)
         Window.OnOpenCallback = func
@@ -1231,6 +1214,21 @@ return function(Config)
         if isProcessed then return end
         
         local ControlDown = UserInputService:IsKeyDown(Enum.KeyCode.LeftControl) or UserInputService:IsKeyDown(Enum.KeyCode.RightControl)
+
+        local function loadKeysystem()
+            print("[ HyperUI ] Initializing Key System...")
+            if LoadingScreen then LoadingScreen:Finish() end
+            local success, err = pcall(function()
+                KeySystem.new(Config, Filename, function(c) 
+                    print("[ HyperUI ] Key System success:", c)
+                    CanLoadWindow = c 
+                end)
+            end)
+            if not success then
+                warn("[ HyperUI ] Key System failed to initialize: " .. tostring(err))
+                CanLoadWindow = true -- Fallback to allow opening if key system crashes
+            end
+        end
 
         if Window.ToggleKey then
             if input.KeyCode == Window.ToggleKey then

@@ -10,8 +10,11 @@ local CreateInput = require("./ui/Input").New
 
 function KeySystem.new(Config, Filename, func, keyValidator)
     local DialogModule = require("./window/Dialog")
-    local KeyDialogInit = DialogModule.Init({ UIElements = { Main = Config.HyperUI.ScreenGui } }, Config.HyperUI.ScreenGui)
+    print("[ HyperUI ] KeySystem: Required Dialog module")
+    local KeyDialogInit = DialogModule.Init({ UIElements = { Main = Config.HyperUI.ScreenGui } }, Config.HyperUI.ScreenGui.KeySystem)
+    print("[ HyperUI ] KeySystem: Initialized Dialog module")
     local KeyDialog = KeyDialogInit.Create(true)
+    print("[ HyperUI ] KeySystem: Created Dialog instance")
     
     local Services = {}
     
@@ -119,9 +122,9 @@ function KeySystem.new(Config, Filename, func, keyValidator)
     local ThumbnailFrame
     if Config.KeySystem.Thumbnail and Config.KeySystem.Thumbnail.Image then
         local ThumbnailTitle
-        if Config.KeySystem.Thumbnail.Title then
+        if Config.KeySystem.Thumbnail then
             ThumbnailTitle = New("TextLabel", {
-                Text = Config.KeySystem.Thumbnail.Title,
+                Text = Config.KeySystem.Thumbnail.Title or "Thumbnail Title",
                 ThemeTag = {
                     TextColor3 = "Text",
                 },
