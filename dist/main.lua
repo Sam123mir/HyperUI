@@ -4,7 +4,7 @@
     | |/ |/ / / _ \/ _  / /_/ // /  
     |__/|__/_/_//_/\_,_/\____/___/
     
-    v1.6.64  |  2026-02-26  |  Roblox UI Library for scripts
+    v1.6.65  |  2026-02-26  |  Roblox UI Library for scripts
     
     To view the source code, see the `src/` folder on the official GitHub repository.
     
@@ -2045,7 +2045,7 @@ New=a.load'i'.New
 return[[
 {
     "name": "hyperui",
-    "version": "1.6.64",
+    "version": "1.6.65",
     "main": "./dist/main.lua",
     "repository": "https://github.com/Sam123mir/HyperUI",
     "discord": "https://discord.gg/ftgs-development-hub-1300692552005189632",
