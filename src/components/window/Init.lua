@@ -860,7 +860,7 @@ return function(Config)
     
     local FullscreenButton = Window:CreateTopbarButton("Fullscreen", "maximize-2", function()
         Window:Fullscreen()
-    end, (Window.Topbar.ButtonsType == "Default" and 997 or 998), true, Color3.fromHex("#60C762"), Window.Topbar.ButtonsType == "Mac" and 9 or 26)
+    end, (Window.Topbar.ButtonsType == "Default" and 20 or 998), true, Color3.fromHex("#60C762"), Window.Topbar.ButtonsType == "Mac" and 9 or 26)
     
     function Window:ToggleFullscreen()
         local isFullscreen = Window.IsFullscreen
@@ -890,7 +890,7 @@ return function(Config)
     
     Window:CreateTopbarButton("Minimize", "minus", function()
         Window:Minimize()
-    end, (Window.Topbar.ButtonsType == "Default" and 996 or 997), nil, Color3.fromHex("#F4C948"))
+    end, (Window.Topbar.ButtonsType == "Default" and 10 or 997), nil, Color3.fromHex("#F4C948"))
     
     Window:CreateTopbarButton("Close", "x", function()
         if Window.IgnoreAlerts then
@@ -916,7 +916,7 @@ return function(Config)
                 }
             }
         })
-    end, (Window.Topbar.ButtonsType == "Default" and 998 or 999), nil, Color3.fromHex("#FF6060"))
+    end, (Window.Topbar.ButtonsType == "Default" and 30 or 999), nil, Color3.fromHex("#FF6060"))
     
     function Window:OnOpen(func)
         Window.OnOpenCallback = func

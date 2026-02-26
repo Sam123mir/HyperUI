@@ -3,7 +3,7 @@
 return [[
 {
     "name": "hyperui",
-    "version": "1.6.65",
+    "version": "1.6.70",
     "main": "./dist/main.lua",
     "repository": "https://github.com/Sam123mir/HyperUI",
     "discord": "https://discord.gg/ftgs-development-hub-1300692552005189632",

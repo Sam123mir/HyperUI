@@ -10,7 +10,6 @@ local CreateInput = require("./ui/Input").New
 
 function KeySystem.new(Config, Filename, func, keyValidator)
     local DialogModule = require("./window/Dialog")
-    print("[ HyperUI ] KeySystem: Required Dialog module")
     print("[ HyperUI ] KeySystem: Initializing Dialog module")
     local KeyDialogInit = DialogModule.Init({ UIElements = { Main = Config.HyperUI.ScreenGui } }, Config.HyperUI.ScreenGui.KeySystem)
     print("[ HyperUI ] KeySystem: Creating Dialog instance")
@@ -142,7 +141,7 @@ function KeySystem.new(Config, Filename, func, keyValidator)
             BackgroundTransparency = 1,
             Size = UDim2.new(0,ThumbnailSize,1,-12),
             Position = UDim2.new(0,6,0,6),
-            Parent = KeyDialog.UIElements.Main,
+            Parent = KeyDialog.UIElements.MainContainer,
             ScaleType = "Crop"
         }, {
             ThumbnailTitle,
@@ -157,7 +156,7 @@ function KeySystem.new(Config, Filename, func, keyValidator)
         Size = UDim2.new(1, ThumbnailFrame and -ThumbnailSize or 0,1,0),
         Position = UDim2.new(0, ThumbnailFrame and ThumbnailSize or 0,0,0),
         BackgroundTransparency = 1,
-        Parent = KeyDialog.UIElements.Main
+        Parent = KeyDialog.UIElements.MainContainer
     }, {
         New("Frame", {
             --AutomaticSize = "XY",
@@ -517,8 +516,11 @@ function KeySystem.new(Config, Filename, func, keyValidator)
     SubmitButton.AnchorPoint = Vector2.new(1,0.5)
     SubmitButton.Position = UDim2.new(1,0,0.5,0)
     
+    print("[ HyperUI ] KeySystem: Forcing MainContainer visibility")
+    KeyDialog.UIElements.MainContainer.Visible = true
     print("[ HyperUI ] KeySystem: Opening Dialog")
     KeyDialog:Open()
+    print("[ HyperUI ] KeySystem: Initialization Complete!")
 end
 
 return KeySystem

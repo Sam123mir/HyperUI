@@ -8,8 +8,9 @@
 local function GetHyperUI()
     if _G.HyperUI then return _G.HyperUI end
     
+    print("### HyperUI Loader: v1.6.70 ###")
     local success, result = pcall(function()
-        return game:HttpGet("https://raw.githubusercontent.com/Sam123mir/HyperUI/main/dist/main.lua?cache=" .. tick())
+        return game:HttpGet("https://raw.githubusercontent.com/Sam123mir/HyperUI/main/dist/WindUI.lua?cache=" .. tick())
     end)
     
     if not success then

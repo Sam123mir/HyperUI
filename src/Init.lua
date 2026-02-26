@@ -1,3 +1,4 @@
+print("### HyperUI Loaded: v1.6.70 ###")
 local RunService = game:GetService("RunService")
 local HyperUI = {
     Window = nil,
@@ -13,7 +14,7 @@ local HyperUI = {
     UIScale = 1,
     
     ConfigManager = nil,
-    Version = "0.0.0",
+    Version = "1.6.70",
     
     Services = require("./utils/services/Init"),
     
