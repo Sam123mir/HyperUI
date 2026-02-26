@@ -170,48 +170,39 @@ function TabModule.New(Config, UIScale)
         if Tab.IconColor then
             Icon.ImageLabel.ImageColor3 = Tab.IconColor
         end
-        if not Tab.IconShape then
+
+        if not Tab.IconShape and not Tab.IconColor then
             Icon.Parent = Tab.UIElements.Main.Frame
             Tab.UIElements.Icon = Icon
             Icon.ImageLabel.ImageTransparency = not Tab.Locked and 0 or .7
             TextOffset = -16-2-(Window.UIPadding/2)
             Tab.UIElements.Main.Frame.TextLabel.Size = UDim2.new(1,TextOffset,0,0)
-        elseif Tab.IconColor then
-            local _IconBG = Creator.NewRoundFrame(Tab.IconShape ~= "Circle" and (Tab.UICorner + 5 - (2+(Window.UIPadding/4))) or 9999, "Squircle", {
+        else
+            local Shape = Tab.IconShape or "Squircle"
+            local _IconBG = Creator.NewRoundFrame(Shape ~= "Circle" and (Tab.UICorner + 5 - (2+(Window.UIPadding/4))) or 9999, Shape, {
                 Size = UDim2.new(0,26,0,26),
-                ImageColor3 = Tab.IconColor,
+                ImageColor3 = Tab.IconColor or Color3.fromRGB(100,100,100),
                 Parent = Tab.UIElements.Main.Frame
             }, {
                 Icon,
-                Creator.NewRoundFrame(Tab.IconShape ~= "Circle" and (Tab.UICorner + 5 - (2+(Window.UIPadding/4))) or 9999, "Glass-1.4", {
+                Creator.NewRoundFrame(Shape ~= "Circle" and (Tab.UICorner + 5 - (2+(Window.UIPadding/4))) or 9999, "Glass-1.4", {
                     Size = UDim2.new(1,0,1,0),
                     ThemeTag = {
                         ImageColor3 = "White",
                     },
                     ImageTransparency = 0,
                     Name = "Outline"
-                }, {
-                    -- New("UIGradient", {
-                    --     Rotation = 45,
-                    --     Color = ColorSequence.new({
-                    --         ColorSequenceKeypoint.new(0.0, Color3.fromRGB(255, 255, 255)),
-                    --         ColorSequenceKeypoint.new(0.5, Color3.fromRGB(255, 255, 255)),
-                    --         ColorSequenceKeypoint.new(1.0, Color3.fromRGB(255, 255, 255)),
-                    --     }),
-                    --     Transparency = NumberSequence.new({
-                    --         NumberSequenceKeypoint.new(0.0, 0.1),
-                    --         NumberSequenceKeypoint.new(0.5, 1),
-                    --         NumberSequenceKeypoint.new(1.0, 0.1),
-                    --     })
-                    -- }),
-                }),
+                }, {}),
             })
             Icon.AnchorPoint = Vector2.new(0.5,0.5)
             Icon.Position = UDim2.new(0.5,0,0.5,0)
             Icon.ImageLabel.ImageTransparency = 0
-            Icon.ImageLabel.ImageColor3 = Creator.GetTextColorForHSB(Tab.IconColor, 0.68)
+            if Tab.IconColor then
+                Icon.ImageLabel.ImageColor3 = Creator.GetTextColorForHSB(Tab.IconColor, 0.68)
+            end
             TextOffset = -26-2-(Window.UIPadding/2)
             Tab.UIElements.Main.Frame.TextLabel.Size = UDim2.new(1,TextOffset,0,0)
+            Tab.UIElements.Icon = Icon
         end
         
         
@@ -532,70 +523,96 @@ function TabModule:OnChange(func)
     TabModule.OnChangeFunc = func
 end
 
-function TabModule:SelectTab(TabIndex)
-    if not TabModule.Tabs[TabIndex].Locked then
-        TabModule.SelectedTab = TabIndex
-        
-        for _, TabObject in next, TabModule.Tabs do
-            if not TabObject.Locked then
-                Creator.SetThemeTag(TabObject.UIElements.Main, {
+    function TabModule:SelectTab(TabIndex)
+    local TabObject = TabModule.Tabs[TabIndex]
+    if not TabObject or TabObject.Locked then return end
+    
+    TabModule.SelectedTab = TabIndex
+    
+    for _, Tab in next, TabModule.Tabs do
+        if not Tab.Locked then
+            local Main = Tab.UIElements.Main
+            local Frame = Main:FindFirstChild("Frame")
+            
+            Creator.SetThemeTag(Main, {
+                ImageTransparency = "TabBorderTransparency"
+            }, 0.15)
+            
+            if Tab.Border and Main:FindFirstChild("Outline") then
+                Creator.SetThemeTag(Main.Outline, {
                     ImageTransparency = "TabBorderTransparency"
                 }, 0.15)
-                if TabObject.Border then
-                    Creator.SetThemeTag(TabObject.UIElements.Main.Outline, {
-                        ImageTransparency = "TabBorderTransparency"
+            end
+            
+            if Frame then
+                local Label = Frame:FindFirstChild("TextLabel")
+                if Label then
+                    Creator.SetThemeTag(Label, {
+                        TextTransparency = "TabTextTransparency"
                     }, 0.15)
                 end
-                Creator.SetThemeTag(TabObject.UIElements.Main.Frame.TextLabel, {
-                    TextTransparency = "TabTextTransparency"
-                }, 0.15)
-                if TabObject.UIElements.Icon and not TabObject.IconColor then
-                    Creator.SetThemeTag(TabObject.UIElements.Icon.ImageLabel, {
+                
+                local IconObj = Tab.UIElements.Icon
+                if IconObj and IconObj:FindFirstChild("ImageLabel") and not Tab.IconColor then
+                    Creator.SetThemeTag(IconObj.ImageLabel, {
                         ImageTransparency = "TabIconTransparency"
                     }, 0.15)
                 end
-                TabObject.Selected = false
             end
+            Tab.Selected = false
         end
-        Creator.SetThemeTag(TabModule.Tabs[TabIndex].UIElements.Main, {
-            ImageTransparency = "TabBackgroundActiveTransparency"
+    end
+
+    local SelectedMain = TabObject.UIElements.Main
+    local SelectedFrame = SelectedMain:FindFirstChild("Frame")
+
+    Creator.SetThemeTag(SelectedMain, {
+        ImageTransparency = "TabBackgroundActiveTransparency"
+    }, 0.15)
+    
+    if TabObject.Border and SelectedMain:FindFirstChild("Outline") then
+        Creator.SetThemeTag(SelectedMain.Outline, {
+            ImageTransparency = "TabBorderTransparencyActive"
         }, 0.15)
-        if TabModule.Tabs[TabIndex].Border then
-            Creator.SetThemeTag(TabModule.Tabs[TabIndex].UIElements.Main.Outline, {
-                ImageTransparency = "TabBorderTransparencyActive"
+    end
+    
+    if SelectedFrame then
+        local SelectedLabel = SelectedFrame:FindFirstChild("TextLabel")
+        if SelectedLabel then
+            Creator.SetThemeTag(SelectedLabel, {
+                TextTransparency = "TabTextTransparencyActive"
             }, 0.15)
         end
-        Creator.SetThemeTag(TabModule.Tabs[TabIndex].UIElements.Main.Frame.TextLabel, {
-            TextTransparency = "TabTextTransparencyActive"
-        }, 0.15)
-        if TabModule.Tabs[TabIndex].UIElements.Icon and not TabModule.Tabs[TabIndex].IconColor then
-            Creator.SetThemeTag(TabModule.Tabs[TabIndex].UIElements.Icon.ImageLabel, {
+        
+        local SelectedIcon = TabObject.UIElements.Icon
+        if SelectedIcon and SelectedIcon:FindFirstChild("ImageLabel") and not TabObject.IconColor then
+            Creator.SetThemeTag(SelectedIcon.ImageLabel, {
                 ImageTransparency = "TabIconTransparencyActive"
             }, 0.15)
         end
-        TabModule.Tabs[TabIndex].Selected = true
-        
-        task.spawn(function()
-            for _, ContainerObject in next, TabModule.Containers do
-                ContainerObject.AnchorPoint = Vector2.new(0,0.05)
-                ContainerObject.Visible = false
-            end
-            TabModule.Containers[TabIndex].Visible = true
-            local TweenService = game:GetService("TweenService")
-
-            local tweenInfo = TweenInfo.new(
-                0.15,
-                Enum.EasingStyle.Quart,
-                Enum.EasingDirection.Out
-            )
-            local tween = TweenService:Create(TabModule.Containers[TabIndex], tweenInfo, {
-                AnchorPoint = Vector2.new(0,0)
-            })
-            tween:Play()
-        end)
-        
-        TabModule.OnChangeFunc(TabIndex)
     end
+    TabObject.Selected = true
+    
+    task.spawn(function()
+        for _, ContainerObject in next, TabModule.Containers do
+            ContainerObject.AnchorPoint = Vector2.new(0, 0.05)
+            ContainerObject.Visible = false
+        end
+        TabModule.Containers[TabIndex].Visible = true
+        local TweenService = game:GetService("TweenService")
+
+        local tweenInfo = TweenInfo.new(
+            0.15,
+            Enum.EasingStyle.Quart,
+            Enum.EasingDirection.Out
+        )
+        local tween = TweenService:Create(TabModule.Containers[TabIndex], tweenInfo, {
+            AnchorPoint = Vector2.new(0,0)
+        })
+        tween:Play()
+    end)
+    
+    TabModule.OnChangeFunc(TabIndex)
 end
 
 return TabModule

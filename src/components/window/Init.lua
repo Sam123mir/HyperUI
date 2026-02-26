@@ -55,7 +55,7 @@ return function(Config)
         ElementsRadius = Config.ElementsRadius,
         Radius = Config.Radius or 16,
         Transparent = Config.Transparent or false,
-        HideSearchBar = Config.HideSearchBar ~= false,
+        HideSearchBar = Config.HideSearchBar == true,
         ScrollBarEnabled = Config.ScrollBarEnabled or false,
         SideBarWidth = Config.SideBarWidth or 200,
         Acrylic = Config.Acrylic or false,
@@ -511,7 +511,21 @@ return function(Config)
             Padding = UDim.new(0, 8),
             SortOrder = "LayoutOrder"
         }),
-        WindowTitle
+        WindowTitle,
+        New("TextLabel", {
+            Text = "|",
+            FontFace = Font.new(Creator.Font, Enum.FontWeight.ExtraLight),
+            BackgroundTransparency = 1,
+            AutomaticSize = "XY",
+            Name = "Separator",
+            TextXAlignment = "Center",
+            TextSize = 16,
+            ThemeTag = {
+                TextColor3 = "Text"
+            },
+            TextTransparency = 0.5,
+            LayoutOrder = 1,
+        })
     })
     
     -- / Tags / Badges /
@@ -687,8 +701,8 @@ return function(Config)
                 }),
                 New("UIPadding", {
                     PaddingTop = UDim.new(0,Window.UIPadding),
-                    PaddingLeft = UDim.new(0,Window.Topbar.ButtonsType == "Default" and Window.UIPadding or Window.UIPadding-2),
-                    PaddingRight = UDim.new(0,8),
+                    PaddingLeft = UDim.new(0,Window.Topbar.ButtonsType == "Default" and Window.UIPadding or 8),
+                    PaddingRight = UDim.new(0,Window.Topbar.ButtonsType == "Default" and 8 or Window.UIPadding),
                     PaddingBottom = UDim.new(0,Window.UIPadding),
                 })
             })
@@ -895,7 +909,29 @@ return function(Config)
     end, (Window.Topbar.ButtonsType == "Default" and 997 or 998), nil, Color3.fromHex("#F4C948"))
     
     Window:CreateTopbarButton("Close", "x", function() 
-        Window:Destroy()
+        if Window.IgnoreAlerts then
+            Window:Destroy()
+            return
+        end
+
+        Window:Dialog({
+            Title = "Close Window",
+            Content = "Are you sure you want to close the window?",
+            Buttons = {
+                {
+                    Title = "Cancel",
+                    Variant = "Secondary",
+                    Callback = function() end
+                },
+                {
+                    Title = "Close",
+                    Variant = "Primary",
+                    Callback = function()
+                        Window:Destroy()
+                    end
+                }
+            }
+        })
     end, (Window.Topbar.ButtonsType == "Default" and 996 or 997), nil, Color3.fromHex("#FF6060"))
     
     function Window:OnOpen(func)

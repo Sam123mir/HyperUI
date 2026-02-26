@@ -9,7 +9,8 @@ local CreateButton = require("./ui/Button").New
 local CreateInput = require("./ui/Input").New
 
 function KeySystem.new(Config, Filename, func, keyValidator)
-    local KeyDialogInit = require("./window/Dialog").Init({UIElements = {Main = {Main = Config.HyperUI.ScreenGui.KeySystem}}}, Config.HyperUI.ScreenGui.KeySystem)
+    local DialogModule = require("./window/Dialog")
+    local KeyDialogInit = DialogModule.Init({ UIElements = { Main = Config.HyperUI.ScreenGui } }, Config.HyperUI.ScreenGui)
     local KeyDialog = KeyDialogInit.Create(true)
     
     local Services = {}
