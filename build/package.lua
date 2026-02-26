@@ -1,4 +1,4 @@
--- Generated from package.json | build/build.sh
+-- Generated from package.json | build/build.ps1
 
 return [[
 {
@@ -30,4 +30,5 @@ return [[
         "chokidar-cli": "^3.0.0",
         "concurrently": "^9.2.0"
     }
-}]]
+}
+]]

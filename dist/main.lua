@@ -13,6 +13,8 @@
     Discord: https://discord.gg/ftgs-development-hub-1300692552005189632
     License: MIT
 ]]
+
+
 local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}end return a.cache[b].c end}do function a.a()local b=(cloneref or clonereference or function(b)return b end)
 
 local d=b(game:GetService"ReplicatedStorage":WaitForChild("GetIcons",99999):InvokeServer())
@@ -2068,39 +2070,8 @@ return[[
         "chokidar-cli": "^3.0.0",
         "concurrently": "^9.2.0"
     }
-}]]end function a.l()
-
-local aa={}
-
-local ab=a.load'c'
-local ac=ab.New
-local ad=ab.Tween
-
-
-function aa.New(ae,af,ag,ah,ai,aj,ak,al)
-ah=ah or"Primary"
-local am=al or(not ak and 10 or 99)
-local an
-if af and af~=""then
-an=ac("ImageLabel",{
-Image=ab.Icon(af)[1],
-ImageRectSize=ab.Icon(af)[2].ImageRectSize,
-ImageRectOffset=ab.Icon(af)[2].ImageRectPosition,
-Size=UDim2.new(0,21,0,21),
-BackgroundTransparency=1,
-ImageColor3=ah=="White"and Color3.new(0,0,0)or nil,
-ImageTransparency=ah=="White"and.4 or 0,
-ThemeTag={
-ImageColor3=ah~="White"and"Icon"or nil,
 }
-})
-end
-
-local ao=ac("TextButton",{
-Size=UDim2.new(0,0,1,0),
-AutomaticSize="X",
-Parent=ai,
-BackgroundTransparency=1
+]]end function a.l()local aa={}local ab=a.load'c'local ac=ab.New local ad=ab.Tween function aa.New(ae,af,ag,ah,ai,aj,ak,al)ah=ah or"Primary"local am=al or(not ak and 10 or 99)local an if af and af~=""then an=ac("ImageLabel",{Image=ab.Icon(af)[1],ImageRectSize=ab.Icon(af)[2].ImageRectSize,ImageRectOffset=ab.Icon(af)[2].ImageRectPosition,Size=UDim2.new(0,21,0,21),BackgroundTransparency=1,ImageColor3=ah=="White"and Color3.new(0,0,0)or nil,ImageTransparency=ah=="White"and.4 or 0,ThemeTag={ImageColor3=ah~="White"and"Icon"or nil,}})end local ao=ac("TextButton",{Size=UDim2.new(0,0,1,0),AutomaticSize="X",Parent=ai,BackgroundTransparency=1
 },{
 ab.NewRoundFrame(am,"Squircle",{
 ThemeTag={
@@ -2514,7 +2485,7 @@ local ae=a.load'l'.New
 local af=a.load'm'.New
 
 function aa.new(ag,ah,ai,aj)
-local ak=a.load'n'.Init(nil,ag.HyperUI.ScreenGui.KeySystem)
+local ak=a.load'n'.Init({UIElements={Main={Main=ag.HyperUI.ScreenGui.KeySystem}}},ag.HyperUI.ScreenGui.KeySystem)
 local al=ak.Create(true)
 
 local am={}
@@ -2934,9 +2905,34 @@ task.wait(.4)
 ai(true)
 end
 
+local function shakeUI()
+local az=al.UIElements.MainContainer.Position
+local aA=0.05
+local aB=10
+
+task.spawn(function()
+for b=1,3 do
+ad(al.UIElements.MainContainer,aA,{Position=az+UDim2.fromOffset(aB,0)}):Play()
+task.wait(aA)
+ad(al.UIElements.MainContainer,aA,{Position=az-UDim2.fromOffset(aB,0)}):Play()
+task.wait(aA)
+end
+ad(al.UIElements.MainContainer,aA,{Position=az}):Play()
+end)
+end
+
 local az=ae("Validate Key","check-circle",function()
 local az=tostring(an or"empty")local aA=
 ag.Folder or ag.Title
+
+local function notifyError(aB)
+shakeUI()
+ag.HyperUI:Notify{
+Title="Key System Error",
+Content=aB or"Invalid key.",
+Icon="triangle-alert",
+}
+end
 
 if ag.KeySystem.KeyValidator then
 local aB=ag.KeySystem.KeyValidator(az)
@@ -2950,11 +2946,7 @@ task.wait(.4)
 ai(true)
 end
 else
-ag.HyperUI:Notify{
-Title="Key System. Error",
-Content="Invalid key.",
-Icon="triangle-alert",
-}
+notifyError"Invalid key."
 end
 elseif not ag.KeySystem.API then
 local aB=ag.KeySystem.Key or ag.KeySystem.Password
@@ -2971,11 +2963,7 @@ task.wait(.4)
 ai(true)
 end
 else
-ag.HyperUI:Notify{
-Title="Key System Error",
-Content="Invalid key entered. Please try again.",
-Icon="triangle-alert",
-}
+notifyError"Invalid key entered. Please try again."
 end
 else
 local aB,b
@@ -2991,11 +2979,7 @@ end
 if aB then
 handleSuccess(az)
 else
-ag.HyperUI:Notify{
-Title="Key System. Error",
-Content=b,
-Icon="triangle-alert",
-}
+notifyError(b)
 end
 end
 end,"Primary",aw)
@@ -3080,6 +3064,14 @@ Position=UDim2.new(0.5,0,0,20),
 AnchorPoint=Vector2.new(0.5,0.5),
 AutomaticSize=Enum.AutomaticSize.XY,
 Parent=ah,
+},{
+ac("UIGradient",{
+Color=ColorSequence.new{
+ColorSequenceKeypoint.new(0,Color3.fromRGB(150,150,150)),
+ColorSequenceKeypoint.new(0.5,Color3.fromRGB(255,255,255)),
+ColorSequenceKeypoint.new(1,Color3.fromRGB(150,150,150)),
+}
+})
 })
 
 
@@ -3090,6 +3082,17 @@ AnchorPoint=Vector2.new(0.5,0.5),
 BackgroundTransparency=1,
 Parent=ah,
 })
+
+
+task.spawn(function()
+local ak=aj.Position
+while ah.Parent do
+ad(aj,1.5,{Position=ak+UDim2.fromOffset(0,10)},Enum.EasingStyle.Sine,Enum.EasingDirection.InOut):Play()
+task.wait(1.5)
+ad(aj,1.5,{Position=ak},Enum.EasingStyle.Sine,Enum.EasingDirection.InOut):Play()
+task.wait(1.5)
+end
+end)
 
 ac("Frame",{
 Size=UDim2.fromOffset(50,50),
@@ -6745,13 +6748,13 @@ local au=aq.Size.X.Offset
 function am.Set(av,aw,ax,ay)
 if not ay then
 if aw then
-ad(aq.Frame,0.15,{
+ad(aq.Frame,0.25,{
 Position=UDim2.new(0,au-at-2,0.5,0),
-},Enum.EasingStyle.Quint,Enum.EasingDirection.Out):Play()
+},Enum.EasingStyle.Back,Enum.EasingDirection.Out):Play()
 else
-ad(aq.Frame,0.15,{
+ad(aq.Frame,0.25,{
 Position=UDim2.new(0,2,0.5,0),
-},Enum.EasingStyle.Quint,Enum.EasingDirection.Out):Play()
+},Enum.EasingStyle.Back,Enum.EasingDirection.Out):Play()
 end
 else
 if aw then
@@ -11905,10 +11908,10 @@ ae.Drag(ao)
 
 
 an._FooterCloseCallback=function()
-ao.Visible=false
+
 end
 an._FooterOpenCallback=function()
-ao.Visible=true
+
 end
 
 
@@ -13030,10 +13033,9 @@ function ax.ToggleTransparency(F,G)
 ax.Transparent=G
 av.HyperUI.Transparent=G
 
+if ax.UIElements.Main:FindFirstChild"Background"then
 ax.UIElements.Main.Background.ImageTransparency=G and av.HyperUI.TransparencyValue or 0
-
-
-
+end
 end
 
 function ax.LockAll(F)
@@ -13398,44 +13400,12 @@ O:Open()
 return O
 end
 
-local aC=false
 
-ax:CreateTopbarButton("Close","solar:close-circle-bold-duotone",function()
-if not aC then
-if not ax.IgnoreAlerts then
-aC=true
-ax:SetToTheCenter()
-ax:Dialog{
 
-Title="Close Window",
-Content="Do you want to close this window? You will not be able to open it again.",
-Buttons={
-{
-Title="Cancel",
 
-Callback=function()aC=false end,
-Variant="Secondary",
-},
-{
-Title="Close Window",
-
-Callback=function()
-aC=false
-ax:Destroy()
-end,
-Variant="Primary",
-}
-}
-}
-else
-ax:Destroy()
-end
-end
-end,(ax.Topbar.ButtonsType=="Default"and 999 or 997),nil,Color3.fromHex"#F4695F")
-
-function ax.Tag(aD,L)
+function ax.Tag(aC,aD)
 if ax.UIElements.Main.Main.Topbar.Center.Visible==false then ax.UIElements.Main.Main.Topbar.Center.Visible=true end
-return aq:New(L,ax.UIElements.Main.Main.Topbar.Center)
+return aq:New(aD,ax.UIElements.Main.Main.Topbar.Center)
 end
 
 
@@ -13444,45 +13414,45 @@ as.Init(ax,aA,aB)
 
 
 
-local aD=0
-local L=0.4
-local M
-local N=0
+local aC=0
+local aD=0.4
+local L
+local M=0
 
 function onDoubleClick()
 ax:SetToTheCenter()
 end
 
 r.Frame.MouseButton1Up:Connect(function()
-local O=tick()
-local P=ax.Position
+local N=tick()
+local O=ax.Position
 
-N=N+1
+M=M+1
 
-if N==1 then
-aD=O
-M=P
+if M==1 then
+aC=N
+L=O
 
 task.spawn(function()
-task.wait(L)
-if N==1 then
-N=0
-M=nil
+task.wait(aD)
+if M==1 then
+M=0
+L=nil
 end
 end)
 
-elseif N==2 then
-if O-aD<=L and P==M then
+elseif M==2 then
+if N-aC<=aD and O==L then
 onDoubleClick()
 end
 
-N=0
-M=nil
-aD=0
+M=0
+L=nil
+aC=0
 else
-N=1
-aD=O
-M=P
+M=1
+aC=N
+L=O
 end
 end)
 
@@ -13491,8 +13461,8 @@ end)
 
 
 if not ax.HideSearchBar then
-local O=a.load'ac'
-local P=false
+local N=a.load'ac'
+local O=false
 
 
 
@@ -13514,16 +13484,16 @@ local P=false
 
 
 
-local Q=an("Search","search",ax.UIElements.SideBarContainer,true)
-Q.Size=UDim2.new(1,-ax.UIPadding/2,0,39)
-Q.Position=UDim2.new(0,ax.UIPadding/2,0,0)
+local P=an("Search","search",ax.UIElements.SideBarContainer,true)
+P.Size=UDim2.new(1,-ax.UIPadding/2,0,39)
+P.Position=UDim2.new(0,ax.UIPadding/2,0,0)
 
-ak.AddSignal(Q.MouseButton1Click,function()
-if P then return end
+ak.AddSignal(P.MouseButton1Click,function()
+if O then return end
 
-O.new(ax.TabModule,ax.UIElements.Main,function()
+N.new(ax.TabModule,ax.UIElements.Main,function()
 
-P=false
+O=false
 if ax.Resizable then
 ax.CanResize=true
 end
@@ -13534,7 +13504,7 @@ end)
 am(b,0.1,{ImageTransparency=.65}):Play()
 b.Active=true
 
-P=true
+O=true
 ax.CanResize=false
 end)
 end
@@ -13542,11 +13512,11 @@ end
 
 
 
-function ax.DisableTopbarButtons(O,P)
-for Q,R in next,P do
-for S,T in next,ax.TopBarButtons do
-if T.Name==R then
-T.Object.Visible=false
+function ax.DisableTopbarButtons(N,O)
+for P,Q in next,O do
+for R,S in next,ax.TopBarButtons do
+if S.Name==Q then
+S.Object.Visible=false
 end
 end
 end
@@ -13581,8 +13551,8 @@ end
 
 
 if av.StatsWidget~=false then
-local O=a.load'ad'
-O.Init(ax)
+local N=a.load'ad'
+N.Init(ax)
 end
 
 return ax

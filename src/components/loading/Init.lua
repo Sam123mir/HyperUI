@@ -61,6 +61,14 @@ function Loading.new(Config)
         AnchorPoint = Vector2.new(0.5, 0.5),
         AutomaticSize = Enum.AutomaticSize.XY,
         Parent = MainFrame,
+    }, {
+        New("UIGradient", {
+            Color = ColorSequence.new({
+                ColorSequenceKeypoint.new(0, Color3.fromRGB(150, 150, 150)),
+                ColorSequenceKeypoint.new(0.5, Color3.fromRGB(255, 255, 255)),
+                ColorSequenceKeypoint.new(1, Color3.fromRGB(150, 150, 150)),
+            })
+        })
     })
 
     -- / Center Bolt & Circle /
@@ -71,6 +79,17 @@ function Loading.new(Config)
         BackgroundTransparency = 1,
         Parent = MainFrame,
     })
+
+    -- Premium improvement: Floating animation for center content
+    task.spawn(function()
+        local startPos = CenterContent.Position
+        while MainFrame.Parent do
+            Tween(CenterContent, 1.5, { Position = startPos + UDim2.fromOffset(0, 10) }, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut):Play()
+            task.wait(1.5)
+            Tween(CenterContent, 1.5, { Position = startPos }, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut):Play()
+            task.wait(1.5)
+        end
+    end)
 
     local BoltContainer = New("Frame", {
         Size = UDim2.fromOffset(50, 50),

@@ -234,10 +234,10 @@ function Footer.Init(Window)
 
     -- / Show/Hide with window /
     Window._FooterCloseCallback = function()
-        FooterFrame.Visible = false
+        -- FooterFrame.Visible = false
     end
     Window._FooterOpenCallback = function()
-        FooterFrame.Visible = true
+        -- FooterFrame.Visible = true
     end
 
     -- Cleanup

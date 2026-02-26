@@ -5,7 +5,7 @@ $pkg_raw = Get-Content package.json -Raw
 
 # Step 1: Create package.lua
 $package_lua = "-- Generated from package.json | build/build.ps1`n`nreturn [[`n$pkg_raw`n]]"
-Set-Content -Path build/package.lua -Value $package_lua -Encoding utf8
+[System.IO.File]::WriteAllText((Join-Path (Get-Location) "build/package.lua"), $package_lua, (New-Object System.Text.UTF8Encoding($false)))
 
 # Step 2: Run Darklua
 $darklua_path = "C:\Users\samir\.aftman\bin\darklua.exe"
@@ -23,7 +23,7 @@ $header = $header -replace '{{LICENSE}}', $pkg_json.license
 $temp_lua = Get-Content dist/temp.lua -Raw
 $final_lua = $header + "`n`n" + $temp_lua
 
-Set-Content -Path dist/main.lua -Value $final_lua -Encoding utf8
+[System.IO.File]::WriteAllText((Join-Path (Get-Location) "dist/main.lua"), $final_lua, (New-Object System.Text.UTF8Encoding($false)))
 Remove-Item dist/temp.lua
 
 Write-Host "Build completed successfully!"

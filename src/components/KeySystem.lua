@@ -9,7 +9,7 @@ local CreateButton = require("./ui/Button").New
 local CreateInput = require("./ui/Input").New
 
 function KeySystem.new(Config, Filename, func, keyValidator)
-    local KeyDialogInit = require("./window/Dialog").Init(nil, Config.HyperUI.ScreenGui.KeySystem)
+    local KeyDialogInit = require("./window/Dialog").Init({UIElements = {Main = {Main = Config.HyperUI.ScreenGui.KeySystem}}}, Config.HyperUI.ScreenGui.KeySystem)
     local KeyDialog = KeyDialogInit.Create(true)
     
     local Services = {}
@@ -429,10 +429,35 @@ function KeySystem.new(Config, Filename, func, keyValidator)
         func(true)
     end
     
+    local function shakeUI()
+        local originalPos = KeyDialog.UIElements.MainContainer.Position
+        local shakeTime = 0.05
+        local shakeIntensity = 10
+        
+        task.spawn(function()
+            for i = 1, 3 do
+                Tween(KeyDialog.UIElements.MainContainer, shakeTime, {Position = originalPos + UDim2.fromOffset(shakeIntensity, 0)}):Play()
+                task.wait(shakeTime)
+                Tween(KeyDialog.UIElements.MainContainer, shakeTime, {Position = originalPos - UDim2.fromOffset(shakeIntensity, 0)}):Play()
+                task.wait(shakeTime)
+            end
+            Tween(KeyDialog.UIElements.MainContainer, shakeTime, {Position = originalPos}):Play()
+        end)
+    end
+
     local SubmitButton = CreateButton("Validate Key", "check-circle", function()
         local key = tostring(EnteredKey or "empty")
         local folder = Config.Folder or Config.Title
         
+        local function notifyError(msg)
+            shakeUI()
+            Config.HyperUI:Notify({
+                Title = "Key System Error",
+                Content = msg or "Invalid key.",
+                Icon = "triangle-alert",
+            })
+        end
+
         if Config.KeySystem.KeyValidator then
             local isValid = Config.KeySystem.KeyValidator(key)
             
@@ -445,11 +470,7 @@ function KeySystem.new(Config, Filename, func, keyValidator)
                     func(true)
                 end
             else
-                Config.HyperUI:Notify({
-                    Title = "Key System. Error",
-                    Content = "Invalid key.",
-                    Icon = "triangle-alert",
-                })
+                notifyError("Invalid key.")
             end
         elseif not Config.KeySystem.API then            
             local keyToCheck = Config.KeySystem.Key or Config.KeySystem.Password
@@ -466,11 +487,7 @@ function KeySystem.new(Config, Filename, func, keyValidator)
                     func(true)
                 end
             else
-                Config.HyperUI:Notify({
-                    Title = "Key System Error",
-                    Content = "Invalid key entered. Please try again.",
-                    Icon = "triangle-alert",
-                })
+                notifyError("Invalid key entered. Please try again.")
             end
         else
             local isSuccess, result
@@ -486,11 +503,7 @@ function KeySystem.new(Config, Filename, func, keyValidator)
             if isSuccess then
                 handleSuccess(key)
             else
-                Config.HyperUI:Notify({
-                    Title = "Key System. Error",
-                    Content = result,
-                    Icon = "triangle-alert",
-                })
+                notifyError(result)
             end
         end
     end, "Primary", ButtonsContainer)

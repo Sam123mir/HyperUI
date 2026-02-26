@@ -119,13 +119,13 @@ function Toggle.New(Value, Icon, IconSize, Parent, Callback, NewElement, Config)
     function Toggle:Set(Toggled, isCallback, isAnim)
         if not isAnim then
             if Toggled then
-                Tween(ToggleFrame.Frame, 0.15, {
+                Tween(ToggleFrame.Frame, 0.25, {
                     Position = UDim2.new(0, ToggleWidth - FrameWidth - 2, 0.5, 0),
-                }, Enum.EasingStyle.Quint, Enum.EasingDirection.Out):Play()
+                }, Enum.EasingStyle.Back, Enum.EasingDirection.Out):Play()
             else
-                Tween(ToggleFrame.Frame, 0.15, {
+                Tween(ToggleFrame.Frame, 0.25, {
                     Position = UDim2.new(0, 2, 0.5, 0),
-                }, Enum.EasingStyle.Quint, Enum.EasingDirection.Out):Play()
+                }, Enum.EasingStyle.Back, Enum.EasingDirection.Out):Play()
             end
         else
             if Toggled then

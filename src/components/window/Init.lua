@@ -1108,10 +1108,9 @@ return function(Config)
         Window.Transparent = Value
         Config.HyperUI.Transparent = Value
         
-        Window.UIElements.Main.Background.ImageTransparency = Value and Config.HyperUI.TransparencyValue or 0
-        -- Window.UIElements.Main.Background.ImageLabel.ImageTransparency = Value and Config.HyperUI.TransparencyValue or 0
-        --Window.UIElements.MainBar.Background.ImageTransparency = Value and 0.97 or 0.95
-        
+        if Window.UIElements.Main:FindFirstChild("Background") then
+            Window.UIElements.Main.Background.ImageTransparency = Value and Config.HyperUI.TransparencyValue or 0
+        end
     end
     
     function Window:LockAll()
@@ -1478,38 +1477,6 @@ return function(Config)
     
     local ClickedClose = false
 
-    Window:CreateTopbarButton("Close", "solar:close-circle-bold-duotone", function()
-        if not ClickedClose then
-            if not Window.IgnoreAlerts then
-                ClickedClose = true
-                Window:SetToTheCenter()
-                Window:Dialog({
-                    --Icon = "trash-2",
-                    Title = "Close Window",
-                    Content = "Do you want to close this window? You will not be able to open it again.",
-                    Buttons = {
-                        {
-                            Title = "Cancel",
-                            --Icon = "chevron-left",
-                            Callback = function() ClickedClose = false end,
-                            Variant = "Secondary",
-                        },
-                        {
-                            Title = "Close Window",
-                            --Icon = "chevron-down",
-                            Callback = function() 
-                                ClickedClose = false
-                                Window:Destroy() 
-                            end,
-                            Variant = "Primary",
-                        }
-                    }
-                })
-            else    
-                Window:Destroy()
-            end
-        end
-    end, (Window.Topbar.ButtonsType == "Default" and 999 or 997), nil, Color3.fromHex("#F4695F"))
     
     function Window:Tag(TagConfig)
         if Window.UIElements.Main.Main.Topbar.Center.Visible == false then Window.UIElements.Main.Main.Topbar.Center.Visible = true end
