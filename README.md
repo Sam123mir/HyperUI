@@ -36,7 +36,7 @@
 - [Discord Server](https://discord.gg/ftgs-development-hub-1300692552005189632)
 - [Documentation](https://Sam123mir.github.io/HyperUI-Docs/)
 - [Installation](https://sam123mir.github.io/HyperUI-Docs/docs/installation)
-- [Example](/main_example.lua) (wip)
+### Example
   ```luau
-  loadstring(game:HttpGet('https://raw.githubusercontent.com/Sam123mir/HyperUI/refs/heads/main/main_example.lua'))()
+  loadstring(game:HttpGet('https://raw.githubusercontent.com/Sam123mir/HyperUI/main/main.lua'))()
   ```
