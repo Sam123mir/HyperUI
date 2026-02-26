@@ -1,0 +1,27 @@
+{
+    "name": "HyperUI",
+    "tree": {
+        "$className": "DataModel",
+        "ReplicatedStorage": {
+            "HyperUI": {
+                "$path": "src/"
+            },
+            "build": {
+                "$path": "build/"
+            }
+        },
+        "ServerScriptService": {
+            "$className": "ServerScriptService",
+            "$path": "src/server/"
+        },
+        "StarterPlayer": {
+            "$className": "StarterPlayer",
+            "StarterPlayerScripts": {
+                "$className": "StarterPlayerScripts",
+                "main": {
+                    "$path": "main2.client.lua"
+                }
+            }
+        }
+    }
+}
