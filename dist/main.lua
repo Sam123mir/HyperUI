@@ -2489,8 +2489,9 @@ local af=a.load'm'.New
 function aa.new(ag,ah,ai,aj)
 local ak=a.load'n'
 print"[ HyperUI ] KeySystem: Required Dialog module"
+print"[ HyperUI ] KeySystem: Initializing Dialog module"
 local al=ak.Init({UIElements={Main=ag.HyperUI.ScreenGui}},ag.HyperUI.ScreenGui.KeySystem)
-print"[ HyperUI ] KeySystem: Initialized Dialog module"
+print"[ HyperUI ] KeySystem: Creating Dialog instance"
 local am=al.Create(true)
 print"[ HyperUI ] KeySystem: Created Dialog instance"
 
@@ -2927,6 +2928,7 @@ ad(am.UIElements.MainContainer,aB,{Position=aA}):Play()
 end)
 end
 
+print"[ HyperUI ] KeySystem: Creating Submit Button"
 local aA=ae("Validate Key","check-circle",function()
 local aA=tostring(ao or"empty")local aB=
 ag.Folder or ag.Title
@@ -2988,20 +2990,12 @@ else
 notifyError(d)
 end
 end
-end,"Primary",ax)
+end,"Primary",ax.Frame)
 
 aA.AnchorPoint=Vector2.new(1,0.5)
 aA.Position=UDim2.new(1,0,0.5,0)
 
-
-
-
-
-
-
-
-
-
+print"[ HyperUI ] KeySystem: Opening Dialog"
 am:Open()
 end
 
@@ -12654,6 +12648,7 @@ Name="Right",
 al("UIListLayout",{
 Padding=UDim.new(0,ax.Topbar.ButtonsType=="Default"and 9 or 0),
 FillDirection="Horizontal",
+HorizontalAlignment="Right",
 SortOrder="LayoutOrder",
 }),
 
@@ -13168,21 +13163,6 @@ ak.AddSignal(ae.InputBegan,function(F,G)
 if G then return end
 
 local H=ae:IsKeyDown(Enum.KeyCode.LeftControl)or ae:IsKeyDown(Enum.KeyCode.RightControl)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 if ax.ToggleKey then
 if F.KeyCode==ax.ToggleKey then
@@ -13947,8 +13927,18 @@ if ay.KeySystem then
 aC=false
 
 local function loadKeysystem()
+print"[ HyperUI ] Initializing Key System..."
 if aB then aB:Finish()end
-an.new(ay,d,function(f)aC=f end)
+local f,g=pcall(function()
+an.new(ay,d,function(f)
+print("[ HyperUI ] Key System success:",f)
+aC=f
+end)
+end)
+if not f then
+warn("[ HyperUI ] Key System failed to initialize: "..tostring(g))
+aC=true
+end
 end
 
 if aB then aB:UpdateStatus("Authenticating session credentials",60)end

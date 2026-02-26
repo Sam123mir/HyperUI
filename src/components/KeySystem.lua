@@ -11,8 +11,9 @@ local CreateInput = require("./ui/Input").New
 function KeySystem.new(Config, Filename, func, keyValidator)
     local DialogModule = require("./window/Dialog")
     print("[ HyperUI ] KeySystem: Required Dialog module")
+    print("[ HyperUI ] KeySystem: Initializing Dialog module")
     local KeyDialogInit = DialogModule.Init({ UIElements = { Main = Config.HyperUI.ScreenGui } }, Config.HyperUI.ScreenGui.KeySystem)
-    print("[ HyperUI ] KeySystem: Initialized Dialog module")
+    print("[ HyperUI ] KeySystem: Creating Dialog instance")
     local KeyDialog = KeyDialogInit.Create(true)
     print("[ HyperUI ] KeySystem: Created Dialog instance")
     
@@ -449,6 +450,7 @@ function KeySystem.new(Config, Filename, func, keyValidator)
         end)
     end
 
+    print("[ HyperUI ] KeySystem: Creating Submit Button")
     local SubmitButton = CreateButton("Validate Key", "check-circle", function()
         local key = tostring(EnteredKey or "empty")
         local folder = Config.Folder or Config.Title
@@ -510,20 +512,12 @@ function KeySystem.new(Config, Filename, func, keyValidator)
                 notifyError(result)
             end
         end
-    end, "Primary", ButtonsContainer)
+    end, "Primary", ButtonsContainer.Frame)
     
     SubmitButton.AnchorPoint = Vector2.new(1,0.5)
     SubmitButton.Position = UDim2.new(1,0,0.5,0)
     
-    -- TitleContainer:GetPropertyChangedSignal("AbsoluteSize"):Connect(function()
-    --     KeyDialog.UIElements.Main.Size = UDim2.new(
-    --         0,
-    --         TitleContainer.AbsoluteSize.X +24+24+24+24+9,
-    --         0,
-    --         0
-    --     )
-    -- end)
-    
+    print("[ HyperUI ] KeySystem: Opening Dialog")
     KeyDialog:Open()
 end
 

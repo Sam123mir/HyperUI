@@ -324,8 +324,18 @@ function HyperUI:CreateWindow(Config)
         CanLoadWindow = false
     
         local function loadKeysystem()
+            print("[ HyperUI ] Initializing Key System...")
             if LoadingScreen then LoadingScreen:Finish() end
-            KeySystem.new(Config, Filename, function(c) CanLoadWindow = c end)
+            local success, err = pcall(function()
+                KeySystem.new(Config, Filename, function(c) 
+                    print("[ HyperUI ] Key System success:", c)
+                    CanLoadWindow = c 
+                end)
+            end)
+            if not success then
+                warn("[ HyperUI ] Key System failed to initialize: " .. tostring(err))
+                CanLoadWindow = true -- Fallback to allow opening if key system crashes
+            end
         end
     
         if LoadingScreen then LoadingScreen:UpdateStatus("Authenticating session credentials", 60) end

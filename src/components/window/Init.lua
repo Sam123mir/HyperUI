@@ -700,6 +700,7 @@ return function(Config)
                     New("UIListLayout", {
                         Padding = UDim.new(0,Window.Topbar.ButtonsType == "Default" and 9 or 0),
                         FillDirection = "Horizontal",
+                        HorizontalAlignment = "Right",
                         SortOrder = "LayoutOrder",
                     }),
                     
@@ -1214,21 +1215,6 @@ return function(Config)
         if isProcessed then return end
         
         local ControlDown = UserInputService:IsKeyDown(Enum.KeyCode.LeftControl) or UserInputService:IsKeyDown(Enum.KeyCode.RightControl)
-
-        local function loadKeysystem()
-            print("[ HyperUI ] Initializing Key System...")
-            if LoadingScreen then LoadingScreen:Finish() end
-            local success, err = pcall(function()
-                KeySystem.new(Config, Filename, function(c) 
-                    print("[ HyperUI ] Key System success:", c)
-                    CanLoadWindow = c 
-                end)
-            end)
-            if not success then
-                warn("[ HyperUI ] Key System failed to initialize: " .. tostring(err))
-                CanLoadWindow = true -- Fallback to allow opening if key system crashes
-            end
-        end
 
         if Window.ToggleKey then
             if input.KeyCode == Window.ToggleKey then
