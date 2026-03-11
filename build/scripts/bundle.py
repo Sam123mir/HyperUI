@@ -1,8 +1,11 @@
 import os
 import re
 import datetime
+import subprocess
+import shutil
 
 SRC_DIR = "src/v2"
+TEMP_DIR = "build/temp"
 OUTPUT_FILE = "dist/HyperUI.lua"
 VERSION = "2.0.0"
 
@@ -30,13 +33,26 @@ def resolve_path(current_module, require_path):
     return "/".join(target_parts)
 
 def bundle():
+    # 0. Process source files with Darklua
+    print("Running Darklua preprocessing...")
+    if os.path.exists(TEMP_DIR):
+        shutil.rmtree(TEMP_DIR)
+    
+    result = subprocess.run(["darklua", "process", SRC_DIR, TEMP_DIR, "-c", "darklua.json"], capture_output=True, text=True)
+    if result.returncode != 0:
+        print("Darklua Error:")
+        print(result.stderr)
+        return
+    else:
+        print("Darklua preprocessing successful.")
+
     modules = {}
     
-    # 1. Collect all modules
-    for root, dirs, files in os.walk(SRC_DIR):
+    # 1. Collect all modules from temp directory
+    for root, dirs, files in os.walk(TEMP_DIR):
         for file in files:
             if file.endswith(".lua"):
-                path = os.path.relpath(os.path.join(root, file), SRC_DIR)
+                path = os.path.relpath(os.path.join(root, file), TEMP_DIR)
                 module_name = path.replace("\\", "/").replace(".lua", "")
                 if module_name.endswith("/init"):
                     module_name = module_name[:-len("/init")]

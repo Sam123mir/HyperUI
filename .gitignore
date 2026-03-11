@@ -28,4 +28,4 @@ build/.init.lua
 *.sw?
 
 # Internal Development
-examples/playground
+examples/playgroundbuild/temp/

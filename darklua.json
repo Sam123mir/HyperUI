@@ -2,9 +2,20 @@
   "rules": [
     "compute_expression",
     "remove_comments",
-    "remove_unused_variables",
     "remove_unused_if_branch",
     "remove_nil_declaration",
+    "remove_empty_do",
+    {
+      "rule": "rename_variables",
+      "globals": [
+        "game", "workspace", "script", "math", "string", "table", "task", "coroutine", "os", "debug", 
+        "getgenv", "getrenv", "secure_call", "hookfunction", "hookmetamethod", "checkcaller",
+        "Color3", "UDim2", "UDim", "Vector2", "Vector3", "CFrame", "Instance", "Enum", "ColorSequence", 
+        "ColorSequenceKeypoint", "NumberSequence", "NumberSequenceKeypoint", "TweenInfo", "require",
+        "pcall", "xpcall", "setmetatable", "getmetatable", "typeof", "type", "tostring", "tonumber",
+        "print", "warn", "error", "spawn", "delay", "tick", "time"
+      ]
+    },
     {
       "rule": "convert_require",
       "current": {
@@ -15,7 +26,7 @@
       },
       "target": {
         "name": "roblox",
-        "use_virtual_resources": true
+        "rojo_sourcemap": "sourcemap.json"
       }
     }
   ]
