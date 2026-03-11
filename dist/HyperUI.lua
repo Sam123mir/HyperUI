@@ -1,6 +1,6 @@
 -- HyperUI Framework
 -- Version: 2.0.0
--- Build Date: 2026-03-11 15:06:43
+-- Build Date: 2026-03-11 15:14:10
 -- Distribution: Single File
 
 local _modules = {}
@@ -32,19 +32,19 @@ _modules["main"] = function()
         local self = setmetatable({}, HyperUI)
         
         -- Initialize Core Systems
-        self.Store = require("core/store").new()
+        self.Store = _require("core/store").new()
         -- Managers
-        self.WindowManager = require("managers/WindowManager").new(self.Store)
-        self.NotificationManager = require("managers/NotificationManager").new(self.Store)
-        self.ThemeManager = require("managers/ThemeManager").new(self.Store)
-        self.FocusManager = require("managers/FocusManager").new(self.Store)
-        self.Config = require("core/config").new(self.Store, {
+        self.WindowManager = _require("managers/WindowManager").new(self.Store)
+        self.NotificationManager = _require("managers/NotificationManager").new(self.Store)
+        self.ThemeManager = _require("managers/ThemeManager").new(self.Store)
+        self.FocusManager = _require("managers/FocusManager").new(self.Store)
+        self.Config = _require("core/config").new(self.Store, {
             FileName = "HyperUI_V2_Config.json",
             AutoSave = true
         })
         
         -- Mount the Runtime
-        self.Runtime = require("runtime/mount").new(self.Store)
+        self.Runtime = _require("runtime/mount").new(self.Store)
         
         -- Register global instance
         local registry = getgenv and getgenv() or _G
@@ -54,7 +54,7 @@ _modules["main"] = function()
     end
     
     function HyperUI:CreateWindow(config)
-        local API = require("api")
+        local API = _require("api")
         local windowId = game:GetService("HttpService"):GenerateGUID(false)
         
         self.Store:Dispatch({
@@ -144,10 +144,10 @@ _modules["api"] = function()
     ]]
     
     return {
-        Window = require("Window"),
-        Tab = require("Tab"),
-        Section = require("Section"),
-        Element = require("Element"),
+        Window = _require("Window"),
+        Tab = _require("Tab"),
+        Section = _require("Section"),
+        Element = _require("Element"),
     }
 end
 
@@ -159,7 +159,7 @@ _modules["api/Section"] = function()
     local SectionAPI = {}
     SectionAPI.__index = SectionAPI
     
-    local Element = require("Element")
+    local Element = _require("Element")
     
     function SectionAPI.new(id, tabId, windowId, store)
         local self = setmetatable({
@@ -309,7 +309,7 @@ _modules["api/Tab"] = function()
         HyperUI v2 - Tab API
     ]]
     
-    local SectionAPI = require("Section")
+    local SectionAPI = _require("Section")
     local TabAPI = {}
     TabAPI.__index = TabAPI
     
@@ -344,7 +344,7 @@ _modules["api/Window"] = function()
         HyperUI v2 - Window API
     ]]
     
-    local TabAPI = require("Tab")
+    local TabAPI = _require("Tab")
     local WindowAPI = {}
     WindowAPI.__index = WindowAPI
     
@@ -396,8 +396,8 @@ _modules["components/Root"] = function()
         The top-level React component for the entire framework.
     ]]
     
-    local React = require("dependencies/React")
-    local Window = require("Window")
+    local React = _require("dependencies/React")
+    local Window = _require("Window")
     
     local function Root(props)
         local state, setState = React.useState(props.store:GetState())
@@ -435,8 +435,8 @@ _modules["components/Containers/ElementList"] = function()
         Standardized layout container for component groups.
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
     
     local function ElementList(props)
         return React.createElement("Frame", {
@@ -466,7 +466,7 @@ _modules["components/Containers/Grid"] = function()
         HyperUI v2 - Grid Component
     ]]
     
-    local React = require("dependencies/React")
+    local React = _require("dependencies/React")
     
     local function Grid(props)
         return React.createElement("Frame", {
@@ -492,42 +492,42 @@ _modules["components/Containers/Section"] = function()
         HyperUI v2 - Section Component
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local useTree = require("hooks/useTree")
-    local ElementList = require("components/ElementList")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local useTree = _require("hooks/useTree")
+    local ElementList = _require("components/ElementList")
     
     -- Component Mapping
     local COMPONENTS = {
-        Button = require("Elements/HyperButton"),
-        IconButton = require("Elements/HyperIconButton"),
-        Toggle = require("Elements/HyperToggle"),
-        Checkbox = require("Elements/HyperCheckbox"),
-        Slider = require("Elements/HyperSlider"),
-        Dropdown = require("Elements/HyperDropdown"),
-        Keybind = require("Elements/HyperKeybind"),
-        ColorPicker = require("Elements/HyperColorPicker"),
-        Input = require("Elements/HyperInput"),
-        NumberInput = require("Elements/HyperNumberInput"),
-        SearchInput = require("Elements/HyperSearchInput"),
-        TextArea = require("Elements/HyperTextArea"),
-        Label = require("Elements/HyperLabel"),
-        Badge = require("Elements/HyperBadge"),
-        Icon = require("Elements/HyperIcon"),
-        ProgressBar = require("Elements/HyperProgressBar"),
-        StatDisplay = require("Elements/HyperStatDisplay"),
-        ComboBox = require("Elements/HyperComboBox"),
-        Avatar = require("Elements/HyperAvatar"),
-        Divider = require("Elements/HyperDivider"),
-        Spacer = require("Elements/HyperSpacer"),
-        Accordion = require("Elements/HyperAccordion"),
-        Collapsible = require("Elements/HyperCollapsible"),
-        CopyButton = require("Elements/HyperCopyButton"),
-        Tag = require("Elements/HyperTag"),
-        StatusIndicator = require("Elements/HyperStatusIndicator"),
-        Grid = require("components/Grid"),
-        Stack = require("components/Stack"),
-        VirtualList = require("components/VirtualList"),
+        Button = _require("Elements/HyperButton"),
+        IconButton = _require("Elements/HyperIconButton"),
+        Toggle = _require("Elements/HyperToggle"),
+        Checkbox = _require("Elements/HyperCheckbox"),
+        Slider = _require("Elements/HyperSlider"),
+        Dropdown = _require("Elements/HyperDropdown"),
+        Keybind = _require("Elements/HyperKeybind"),
+        ColorPicker = _require("Elements/HyperColorPicker"),
+        Input = _require("Elements/HyperInput"),
+        NumberInput = _require("Elements/HyperNumberInput"),
+        SearchInput = _require("Elements/HyperSearchInput"),
+        TextArea = _require("Elements/HyperTextArea"),
+        Label = _require("Elements/HyperLabel"),
+        Badge = _require("Elements/HyperBadge"),
+        Icon = _require("Elements/HyperIcon"),
+        ProgressBar = _require("Elements/HyperProgressBar"),
+        StatDisplay = _require("Elements/HyperStatDisplay"),
+        ComboBox = _require("Elements/HyperComboBox"),
+        Avatar = _require("Elements/HyperAvatar"),
+        Divider = _require("Elements/HyperDivider"),
+        Spacer = _require("Elements/HyperSpacer"),
+        Accordion = _require("Elements/HyperAccordion"),
+        Collapsible = _require("Elements/HyperCollapsible"),
+        CopyButton = _require("Elements/HyperCopyButton"),
+        Tag = _require("Elements/HyperTag"),
+        StatusIndicator = _require("Elements/HyperStatusIndicator"),
+        Grid = _require("components/Grid"),
+        Stack = _require("components/Stack"),
+        VirtualList = _require("components/VirtualList"),
     }
     
     local function Section(props)
@@ -603,8 +603,8 @@ _modules["components/Containers/Sidebar"] = function()
         HyperUI v2 - Sidebar Component
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
     
     local function Sidebar(props)
         return React.createElement("Frame", {
@@ -634,7 +634,7 @@ _modules["components/Containers/Stack"] = function()
         HyperUI v2 - Stack Component
     ]]
     
-    local React = require("dependencies/React")
+    local React = _require("dependencies/React")
     
     local function Stack(props)
         return React.createElement("Frame", {
@@ -662,9 +662,9 @@ _modules["components/Containers/TabBar"] = function()
         HyperUI v2 - TabBar Component
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local useSpring = require("hooks/useSpring")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local useSpring = _require("hooks/useSpring")
     
     local function TabItem(props)
         local isSelected = props.Selected
@@ -714,7 +714,7 @@ _modules["components/Containers/VirtualList"] = function()
         Optimized rendering for large datasets.
     ]]
     
-    local React = require("dependencies/React")
+    local React = _require("dependencies/React")
     
     local function VirtualList(props)
         local items = props.Items or {}
@@ -762,11 +762,11 @@ _modules["components/Elements/BaseElement"] = function()
         The foundational container for all UI elements.
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local useInteractionState = require("hooks/useInteractionState")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local useInteractionState = _require("hooks/useInteractionState")
     
-    local useSpring = require("hooks/useSpring")
+    local useSpring = _require("hooks/useSpring")
     
     local function BaseElement(props)
         local interaction = useInteractionState(not props.Disabled)
@@ -835,10 +835,10 @@ _modules["components/Elements/HyperAccordion"] = function()
         HyperUI v2 - HyperAccordion Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local BaseElement = require("components/BaseElement")
-    local useSpring = require("hooks/useSpring")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local BaseElement = _require("components/BaseElement")
+    local useSpring = _require("hooks/useSpring")
     
     local function HyperAccordion(props)
         local isOpen, setOpen = React.useState(false)
@@ -903,8 +903,8 @@ _modules["components/Elements/HyperAvatar"] = function()
         HyperUI v2 - HyperAvatar Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
     
     local function HyperAvatar(props)
         local userId = props.UserId or 1
@@ -930,8 +930,8 @@ _modules["components/Elements/HyperBadge"] = function()
         HyperUI v2 - HyperBadge Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
     
     local function HyperBadge(props)
         local color = props.Color or Tokens.Color.Accent
@@ -971,9 +971,9 @@ _modules["components/Elements/HyperButton"] = function()
         HyperUI v2 - HyperButton Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local BaseElement = require("components/BaseElement")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local BaseElement = _require("components/BaseElement")
     
     local function HyperButton(props)
         return React.createElement(BaseElement, {
@@ -1001,10 +1001,10 @@ _modules["components/Elements/HyperCheckbox"] = function()
         HyperUI v2 - HyperCheckbox Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local BaseElement = require("components/BaseElement")
-    local useSpring = require("hooks/useSpring")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local BaseElement = _require("components/BaseElement")
+    local useSpring = _require("hooks/useSpring")
     
     local function HyperCheckbox(props)
         local state = props.Value or false
@@ -1074,8 +1074,8 @@ _modules["components/Elements/HyperCollapsible"] = function()
         HyperUI v2 - HyperCollapsible Element
     ]]
     
-    local React = require("dependencies/React")
-    local Accordion = require("components/HyperAccordion")
+    local React = _require("dependencies/React")
+    local Accordion = _require("components/HyperAccordion")
     
     local function HyperCollapsible(props)
         -- Collapsible is essentially a simplified Accordion
@@ -1090,9 +1090,9 @@ _modules["components/Elements/HyperComboBox"] = function()
         HyperUI v2 - HyperComboBox Element
     ]]
     
-    local React = require("dependencies/React")
-    local Dropdown = require("components/Elements/HyperDropdown")
-    local Input = require("components/Elements/HyperInput")
+    local React = _require("dependencies/React")
+    local Dropdown = _require("components/Elements/HyperDropdown")
+    local Input = _require("components/Elements/HyperInput")
     
     local function HyperComboBox(props)
         -- ComboBox is essentially an Input that triggers a Dropdown list
@@ -1121,9 +1121,9 @@ _modules["components/Elements/HyperConfirmationDialog"] = function()
         HyperUI v2 - HyperConfirmationDialog Element
     ]]
     
-    local React = require("dependencies/React")
-    local Modal = require("components/HyperModal")
-    local Button = require("components/HyperButton")
+    local React = _require("dependencies/React")
+    local Modal = _require("components/HyperModal")
+    local Button = _require("components/HyperButton")
     
     local function HyperConfirmationDialog(props)
         return React.createElement(Modal, {
@@ -1153,9 +1153,9 @@ _modules["components/Elements/HyperCopyButton"] = function()
         HyperUI v2 - CopyButton Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local BaseElement = require("components/BaseElement")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local BaseElement = _require("components/BaseElement")
     
     local function CopyButton(props)
         local isCopied, setCopied = React.useState(false)
@@ -1211,8 +1211,8 @@ _modules["components/Elements/HyperDivider"] = function()
         HyperUI v2 - HyperDivider Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
     
     local function HyperDivider(props)
         return React.createElement("Frame", {
@@ -1237,9 +1237,9 @@ _modules["components/Elements/HyperGroup"] = function()
         HyperUI v2 - HyperGroup Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local ElementList = require("Containers/ElementList")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local ElementList = _require("Containers/ElementList")
     
     local function HyperGroup(props)
         return React.createElement("Frame", {
@@ -1267,8 +1267,8 @@ _modules["components/Elements/HyperIcon"] = function()
         HyperUI v2 - HyperIcon Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
     
     local function HyperIcon(props)
         local size = props.Size or 16
@@ -1290,9 +1290,9 @@ _modules["components/Elements/HyperIconButton"] = function()
         HyperUI v2 - HyperIconButton Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local BaseElement = require("components/BaseElement")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local BaseElement = _require("components/BaseElement")
     
     local function HyperIconButton(props)
         return React.createElement(BaseElement, {
@@ -1320,9 +1320,9 @@ _modules["components/Elements/HyperInput"] = function()
         HyperUI v2 - HyperInput Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local BaseElement = require("components/BaseElement")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local BaseElement = _require("components/BaseElement")
     
     local function HyperInput(props)
         return React.createElement(BaseElement, {
@@ -1379,9 +1379,9 @@ _modules["components/Elements/HyperKeybind"] = function()
         HyperUI v2 - HyperKeybind Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local BaseElement = require("components/BaseElement")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local BaseElement = _require("components/BaseElement")
     local UserInputService = game:GetService("UserInputService")
     
     local function HyperKeybind(props)
@@ -1451,8 +1451,8 @@ _modules["components/Elements/HyperLabel"] = function()
         HyperUI v2 - HyperLabel Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
     
     local function HyperLabel(props)
         return React.createElement("Frame", {
@@ -1501,9 +1501,9 @@ _modules["components/Elements/HyperModal"] = function()
         HyperUI v2 - HyperModal Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local useSpring = require("hooks/useSpring")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local useSpring = _require("hooks/useSpring")
     
     local function HyperModal(props)
         local isOpen = props.Open or false
@@ -1602,9 +1602,9 @@ _modules["components/Elements/HyperNumberInput"] = function()
         HyperUI v2 - HyperNumberInput Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local BaseElement = require("components/BaseElement")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local BaseElement = _require("components/BaseElement")
     
     local function HyperNumberInput(props)
         return React.createElement(BaseElement, {
@@ -1665,9 +1665,9 @@ _modules["components/Elements/HyperProgressBar"] = function()
         HyperUI v2 - HyperProgressBar Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local useSpring = require("hooks/useSpring")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local useSpring = _require("hooks/useSpring")
     
     local function HyperProgressBar(props)
         local value = math.clamp(props.Value or 0, 0, 100)
@@ -1713,9 +1713,9 @@ _modules["components/Elements/HyperSearchInput"] = function()
         HyperUI v2 - HyperSearchInput Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local BaseElement = require("components/BaseElement")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local BaseElement = _require("components/BaseElement")
     
     local function HyperSearchInput(props)
         return React.createElement(BaseElement, {
@@ -1765,10 +1765,10 @@ _modules["components/Elements/HyperSlider"] = function()
         HyperUI v2 - HyperSlider Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local BaseElement = require("components/BaseElement")
-    local useSpring = require("hooks/useSpring")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local BaseElement = _require("components/BaseElement")
+    local useSpring = _require("hooks/useSpring")
     
     local function HyperSlider(props)
         local min = props.Min or 0
@@ -1836,7 +1836,7 @@ _modules["components/Elements/HyperSpacer"] = function()
         HyperUI v2 - HyperSpacer Element
     ]]
     
-    local React = require("dependencies/React")
+    local React = _require("dependencies/React")
     
     local function HyperSpacer(props)
         local height = props.Height or 10
@@ -1856,9 +1856,9 @@ _modules["components/Elements/HyperStatDisplay"] = function()
         HyperUI v2 - HyperStatDisplay Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local BaseElement = require("components/BaseElement")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local BaseElement = _require("components/BaseElement")
     
     local function HyperStatDisplay(props)
         return React.createElement(BaseElement, {
@@ -1916,8 +1916,8 @@ _modules["components/Elements/HyperStatusIndicator"] = function()
         HyperUI v2 - HyperStatusIndicator Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
     
     local function HyperStatusIndicator(props)
         local statusColors = {
@@ -1956,8 +1956,8 @@ _modules["components/Elements/HyperTag"] = function()
         HyperUI v2 - HyperTag Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
     
     local function HyperTag(props)
         return React.createElement("Frame", {
@@ -2009,9 +2009,9 @@ _modules["components/Elements/HyperTextArea"] = function()
         HyperUI v2 - HyperTextArea Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local BaseElement = require("components/BaseElement")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local BaseElement = _require("components/BaseElement")
     
     local function HyperTextArea(props)
         return React.createElement(BaseElement, {
@@ -2059,10 +2059,10 @@ _modules["components/Elements/HyperToast"] = function()
         HyperUI v2 - HyperToast Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local BaseElement = require("components/BaseElement")
-    local useSpring = require("hooks/useSpring")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local BaseElement = _require("components/BaseElement")
+    local useSpring = _require("hooks/useSpring")
     
     local function HyperToast(props)
         local priorityColors = {
@@ -2141,10 +2141,10 @@ _modules["components/Elements/HyperToggle"] = function()
         HyperUI v2 - HyperToggle Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local BaseElement = require("components/BaseElement")
-    local useSpring = require("hooks/useSpring")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local BaseElement = _require("components/BaseElement")
+    local useSpring = _require("hooks/useSpring")
     
     local function HyperToggle(props)
         local state = props.Value or false
@@ -2210,9 +2210,9 @@ _modules["components/Elements/HyperTooltip"] = function()
         HyperUI v2 - HyperTooltip Element
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local useSpring = require("hooks/useSpring")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local useSpring = _require("hooks/useSpring")
     
     local function HyperTooltip(props)
         local visible = props.Visible or false
@@ -2259,8 +2259,8 @@ _modules["components/Elements/HyperColorPicker/ColorPreview"] = function()
         HyperUI v2 - ColorPicker Preview
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
     
     local function ColorPreview(props)
         return React.createElement("Frame", {
@@ -2283,8 +2283,8 @@ _modules["components/Elements/HyperColorPicker/HueSlider"] = function()
         HyperUI v2 - ColorPicker Hue Slider
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
     
     local function HueSlider(props)
         return React.createElement("Frame", {
@@ -2337,13 +2337,13 @@ _modules["components/Elements/HyperColorPicker"] = function()
         HyperUI v2 - HyperColorPicker Root
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local BaseElement = require("components/BaseElement")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local BaseElement = _require("components/BaseElement")
     
-    local HueSlider = require("components/Elements/HueSlider")
-    local SaturationSquare = require("components/Elements/SaturationSquare")
-    local ColorPreview = require("components/Elements/ColorPreview")
+    local HueSlider = _require("components/Elements/HueSlider")
+    local SaturationSquare = _require("components/Elements/SaturationSquare")
+    local ColorPreview = _require("components/Elements/ColorPreview")
     
     local function HyperColorPicker(props)
         local isOpen, setOpen = React.useState(false)
@@ -2423,8 +2423,8 @@ _modules["components/Elements/HyperColorPicker/SaturationSquare"] = function()
         HyperUI v2 - ColorPicker Saturation Square
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
     
     local function SaturationSquare(props)
         return React.createElement("Frame", {
@@ -2491,11 +2491,11 @@ _modules["components/Elements/HyperDropdown/DropdownList"] = function()
         HyperUI v2 - Dropdown List
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local VirtualList = require("Containers/VirtualList")
-    local DropdownOption = require("components/Elements/HyperDropdown/DropdownOption")
-    local DropdownSearch = require("components/Elements/HyperDropdown/DropdownSearch")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local VirtualList = _require("Containers/VirtualList")
+    local DropdownOption = _require("components/Elements/HyperDropdown/DropdownOption")
+    local DropdownSearch = _require("components/Elements/HyperDropdown/DropdownSearch")
     
     local function DropdownList(props)
         local searchQuery, setSearchQuery = React.useState("")
@@ -2547,9 +2547,9 @@ _modules["components/Elements/HyperDropdown/DropdownOption"] = function()
         HyperUI v2 - Dropdown Option
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local BaseElement = require("components/BaseElement")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local BaseElement = _require("components/BaseElement")
     
     local function DropdownOption(props)
         return React.createElement(BaseElement, {
@@ -2584,8 +2584,8 @@ _modules["components/Elements/HyperDropdown/DropdownSearch"] = function()
         HyperUI v2 - Dropdown Search
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
     
     local function DropdownSearch(props)
         return React.createElement("TextBox", {
@@ -2617,10 +2617,10 @@ _modules["components/Elements/HyperDropdown/DropdownTrigger"] = function()
         HyperUI v2 - Dropdown Trigger
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local BaseElement = require("components/BaseElement")
-    local useSpring = require("hooks/useSpring")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local BaseElement = _require("components/BaseElement")
+    local useSpring = _require("hooks/useSpring")
     
     local function DropdownTrigger(props)
         local arrowRotation = useSpring(props.Open and 180 or 0, { damping = 0.8, stiffness = 0.2 })
@@ -2684,11 +2684,11 @@ _modules["components/Elements/HyperDropdown"] = function()
         HyperUI v2 - HyperDropdown Root
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
     
-    local DropdownTrigger = require("components/Elements/DropdownTrigger")
-    local DropdownList = require("components/Elements/DropdownList")
+    local DropdownTrigger = _require("components/Elements/DropdownTrigger")
+    local DropdownList = _require("components/Elements/DropdownList")
     
     local function HyperDropdown(props)
         local isOpen, setOpen = React.useState(false)
@@ -2731,12 +2731,12 @@ _modules["components/Window"] = function()
         The main container for all scripts.
     ]]
     
-    local React = require("dependencies/React")
-    local useTree = require("hooks/useTree")
-    local useSpring = require("hooks/useSpring")
-    local Tokens = require("theme/tokens")
+    local React = _require("dependencies/React")
+    local useTree = _require("hooks/useTree")
+    local useSpring = _require("hooks/useSpring")
+    local Tokens = _require("theme/tokens")
     
-    local TabContainer = require("TabContainer") -- Will implement next
+    local TabContainer = _require("TabContainer") -- Will implement next
     
     local function Window(props)
         local node = useTree(props.store, props.id)
@@ -2795,11 +2795,11 @@ _modules["components/Window/TabContainer"] = function()
         Manages tab navigation and content visibility.
     ]]
     
-    local React = require("dependencies/React")
-    local Tokens = require("theme/tokens")
-    local useTree = require("hooks/useTree")
+    local React = _require("dependencies/React")
+    local Tokens = _require("theme/tokens")
+    local useTree = _require("hooks/useTree")
     
-    local Section = require("Containers/Section") -- Will implement next
+    local Section = _require("Containers/Section") -- Will implement next
     
     local function TabContainer(props)
         local activeTabId, setActiveTabId = React.useState(props.tabs[1])
@@ -3221,7 +3221,7 @@ _modules["hooks/useInteractionState"] = function()
         Centralizes hover, press, and focus logic for all elements.
     ]]
     
-    local React = require("dependencies/React")
+    local React = _require("dependencies/React")
     
     local function useInteractionState(enabled)
         local isHovered, setHovered = React.useState(false)
@@ -3261,7 +3261,7 @@ _modules["hooks/useSpring"] = function()
         Lightweight spring animation engine.
     ]]
     
-    local React = require("dependencies/React")
+    local React = _require("dependencies/React")
     local RunService = game:GetService("RunService")
     
     local function lerp(a, b, t)
@@ -3314,7 +3314,7 @@ _modules["hooks/useTree"] = function()
         Selector-based hook for selective node subscriptions.
     ]]
     
-    local React = require("dependencies/React")
+    local React = _require("dependencies/React")
     
     local function useTree(store, nodeId)
         local node, setNode = React.useState(function()
@@ -3343,7 +3343,7 @@ _modules["managers/FocusManager"] = function()
         Coordinates which element has active input focus.
     ]]
     
-    local Signal = require("core/signal/Signal")
+    local Signal = _require("core/signal/Signal")
     
     local FocusManager = {}
     FocusManager.__index = FocusManager
@@ -3770,9 +3770,9 @@ _modules["theme/tokens"] = function()
         Semantic mapping for the visual system.
     ]]
     
-    local Palette = require("palette")
-    local Typography = require("typography")
-    local Shadows = require("shadows")
+    local Palette = _require("palette")
+    local Typography = _require("typography")
+    local Shadows = _require("shadows")
     
     local Tokens = {
         Color = {

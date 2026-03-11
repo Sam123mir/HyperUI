@@ -53,11 +53,11 @@ def bundle():
         # Match require(...) calls
         # We look for require(script...) or similar patterns
         def replace_require(match):
-            req_content = match.group(1)
+            req_content = match.group(1).strip()
             resolved = resolve_path(name if name != "main" else "init", req_content)
-            return f'require("{resolved}")'
+            return f'_require("{resolved}")'
         
-        new_content = re.sub(r'require\((script[^)]+)\)', replace_require, content)
+        new_content = re.sub(r'require\s*\(\s*(script[^)]*)\s*\)', replace_require, content)
         processed_modules[name] = new_content
 
     header = f"""-- HyperUI Framework
