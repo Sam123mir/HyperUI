@@ -4,8 +4,8 @@
 ]]
 
 return {
-    Window = require(script.Parent.Window),
-    Tab = require(script.Parent.Tab),
-    Section = require(script.Parent.Section),
-    Element = require(script.Parent.Element),
+    Window = require(script.Window),
+    Tab = require(script.Tab),
+    Section = require(script.Section),
+    Element = require(script.Element),
 }

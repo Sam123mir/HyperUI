@@ -1,6 +1,6 @@
 -- HyperUI Framework
 -- Version: 2.0.0
--- Build Date: 2026-03-11 15:19:30
+-- Build Date: 2026-03-11 15:27:01
 -- Distribution: Single File
 
 local _modules = {}
