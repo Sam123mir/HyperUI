@@ -26,3 +26,6 @@ build/.init.lua
 *.njsproj
 *.sln
 *.sw?
+
+# Internal Development
+examples/playground

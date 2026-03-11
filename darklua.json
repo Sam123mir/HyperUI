@@ -1,0 +1,22 @@
+{
+  "rules": [
+    "compute_expression",
+    "remove_comments",
+    "remove_unused_variables",
+    "remove_unused_if_branch",
+    "remove_nil_declaration",
+    {
+      "rule": "convert_require",
+      "current": {
+        "name": "path",
+        "sources": {
+          "@src": "src/v2"
+        }
+      },
+      "target": {
+        "name": "roblox",
+        "use_virtual_resources": true
+      }
+    }
+  ]
+}

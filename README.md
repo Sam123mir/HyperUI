@@ -1,42 +1,51 @@
-# <img src="assets/logo.png" width="45" height="45" valign="middle"> HyperUI
+# HyperUI v2
 
-<!--
-<picture>
-    <source srcset="docs/banner-dark.webp" media="(prefers-color-scheme: dark)">
-    <source srcset="docs/banner-light.webp" media="(prefers-color-scheme: light)">
-    <img src="docs/banner-light.webp" alt="HyperUI Banner">
-</picture>-->
+HyperUI v2 is a professional-grade, high-performance UI framework designed specifically for Roblox script creators. It combines the declarative power of **React Luau** with a clean, imperative public API, all bundled into a single distribution file for easy `loadstring` integration.
 
-<img src="docs/banner-new.webp" alt="HyperUI Banner">
+## ✨ Key Features
 
-> [!WARNING]
-> This HyperUI was not inspired by, and the name has nothing to do with UI Frameworks
+- **40+ Professional Components**: A comprehensive library including Buttons, Sliders, MultiDropdowns, ColorPickers, and more.
+- **Premium Aesthetics**: Built-in support for spring animations, typography tokens, and shadow elevations.
+- **High Performance**: Features like `VirtualList` and efficient state management ensure 60 FPS even with hundreds of elements.
+- **Script Creator Focused**: Simple, imperative API (`UI:CreateButton`) with internal complexity abstracted away.
+- **Zero Dependencies**: Bundled into a single file; no need for end-users to install React or Rojo.
 
+## 🚀 Installation
 
- 
-> [!WARNING] 
-> HyperUI is currently in Beta.
-> This project is still under active development. Bugs, issues, and unstable features may occur. We’re constantly working on improvements, so please be patient and report any problems you encounter.
+For script creators, integration is as simple as a `loadstring`:
 
+```lua
+local HyperUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Sam123mir/HyperUI/main/dist/HyperUI.lua"))()
 
+local UI = HyperUI.new()
+local Window = UI:CreateWindow({
+    Title = "My Script",
+})
+```
 
-## Credits
-#### Colorpicker script
-- [Dawid-Scripts](https://github.com/dawid-scripts) (Fluent)
+## 🖼️ Official Showcase
 
-#### Icons (https://github.com/Footagesus/Icons)
-- [Lucide-Icons](https://github.com/lucide-icons/lucide) 
-- [Craft Icons](https://www.figma.com/community/file/1415718327120418204)
-- [Geist Icons](https://vercel.com/geist/icons)
-- [Solar Icons](https://icones.js.org/collection/solar)
-- [SF Symbols](https://sf-symbols-one.vercel.app/)
+### HyperUI Demo
+A living specification of every feature and component in the framework.
+- **Location**: `examples/full_demo.lua`
+- **How to Run**: Load the `full_demo.lua` script in Studio or an executor to see a complete showcase window.
 
+## 📂 Component Categories
 
-### Links
-- [Discord Server](https://discord.gg/ftgs-development-hub-1300692552005189632)
-- [Documentation](https://Sam123mir.github.io/HyperUI-Docs/)
-- [Installation](https://sam123mir.github.io/HyperUI-Docs/docs/installation)
-### Example
-  ```luau
-  loadstring(game:HttpGet('https://raw.githubusercontent.com/Sam123mir/HyperUI/main/main.lua'))()
-  ```
+- **Controls**: Button, Slider, Keybind, ColorPicker, Dropdown...
+- **Inputs**: Text, Number, Search, TextArea, ComboBox...
+- **Display**: Label, Badge, Avatar, ProgressBar, StatDisplay...
+- **Layout**: Section, Group, Grid, Stack, Divider, Spacer...
+- **Feedback**: Notification (Toast), Tooltip, Modal, Confirmation...
+- **Navigation**: TabBar, Sidebar, Accordion, Collapsible...
+- **Utility**: CopyButton, Tag, StatusIndicator.
+
+## 📜 Documentation
+
+For more detailed information, see our documentation:
+- [Walkthrough](.gemini/antigravity/brain/637c3651-de3e-470f-b810-ceda7cfba676/walkthrough.md) - Features and testing results.
+- [Development Guide](docs/development.md) - How to extend HyperUI with new components.
+
+---
+
+Built with ❤️ by the HyperUI Team.

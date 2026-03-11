@@ -4,24 +4,17 @@
         "$className": "DataModel",
         "ReplicatedStorage": {
             "HyperUI": {
-                "$path": "src/"
+                "$path": "src/v2"
             },
-            "build": {
-                "$path": "build/"
+            "HyperUI_Bundled": {
+                "$path": "dist"
+            },
+            "HyperUI_Examples": {
+                "$path": "examples"
             }
-        },
-        "ServerScriptService": {
-            "$className": "ServerScriptService",
-            "$path": "src/server/"
         },
         "StarterPlayer": {
-            "$className": "StarterPlayer",
-            "StarterPlayerScripts": {
-                "$className": "StarterPlayerScripts",
-                "main": {
-                    "$path": "main2.client.lua"
-                }
-            }
+            "$className": "StarterPlayer"
         }
     }
 }
