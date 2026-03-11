@@ -65,12 +65,13 @@ def bundle():
 -- Build Date: {datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
 -- Distribution: Single File
 
+local _modules = {{}}
+local _cache = {{}}
+local _require
 """
 
     loader = """
-local _cache = {}
-
-local function _require(name)
+_require = function(name)
     if _cache[name] then return _cache[name] end
     local module = _modules[name]
     if not module then error("Module not found: " .. tostring(name)) end

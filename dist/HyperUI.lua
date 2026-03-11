@@ -1,8 +1,11 @@
 -- HyperUI Framework
 -- Version: 2.0.0
--- Build Date: 2026-03-11 15:14:10
+-- Build Date: 2026-03-11 15:19:30
 -- Distribution: Single File
 
+local _modules = {}
+local _cache = {}
+local _require
 local _modules = {}
 _modules["main"] = function()
     --[[
@@ -3843,9 +3846,7 @@ _modules["theme/typography"] = function()
 end
 
 
-local _cache = {}
-
-local function _require(name)
+_require = function(name)
     if _cache[name] then return _cache[name] end
     local module = _modules[name]
     if not module then error("Module not found: " .. tostring(name)) end
