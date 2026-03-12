@@ -43,7 +43,7 @@ A living specification of every feature and component in the framework.
 ## 📜 Documentation
 
 For more detailed information, see our documentation:
-- [Walkthrough](.gemini/antigravity/brain/637c3651-de3e-470f-b810-ceda7cfba676/walkthrough.md) - Features and testing results.
+- [Documentation UI](docs/GUIA_DE_USUARIO.md) - Documentation for UI
 - [Development Guide](docs/development.md) - How to extend HyperUI with new components.
 
 ---
