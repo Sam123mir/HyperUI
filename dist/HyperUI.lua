@@ -1,6 +1,6 @@
 -- HyperUI Framework
 -- Version: 2.0.0
--- Build Date: 2026-03-11 21:06:10
+-- Build Date: 2026-03-11 21:20:32
 -- Distribution: Single File
 
 local _modules = {}
@@ -70,7 +70,7 @@ _modules["api/Section"] = function()
     local a = {}
     a.__index = a
     
-    local b = _require("Element")
+    local b = _require("api/Element")
     
     function a.new(c, d, e, f)
         local g = setmetatable({
@@ -220,7 +220,7 @@ _modules["api/Tab"] = function()
     
     
     
-    local a = _require("Section")
+    local a = _require("api/Section")
     local b = {}
     b.__index = b
     
@@ -255,7 +255,7 @@ _modules["api/Window"] = function()
     
     
     
-    local a = _require("Tab")
+    local a = _require("api/Tab")
     local b = {}
     b.__index = b
     
@@ -367,39 +367,39 @@ _modules["components/Containers/Section"] = function()
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
     local c = _require("hooks/useTree")
-    local d = _require("components/ElementList")
+    local d = _require("components/Containers/ElementList")
     
     
     local e = {
-        Button = _require("Elements/HyperButton"),
-        IconButton = _require("Elements/HyperIconButton"),
-        Toggle = _require("Elements/HyperToggle"),
-        Checkbox = _require("Elements/HyperCheckbox"),
-        Slider = _require("Elements/HyperSlider"),
-        Dropdown = _require("Elements/HyperDropdown"),
-        Keybind = _require("Elements/HyperKeybind"),
-        ColorPicker = _require("Elements/HyperColorPicker"),
-        Input = _require("Elements/HyperInput"),
-        NumberInput = _require("Elements/HyperNumberInput"),
-        SearchInput = _require("Elements/HyperSearchInput"),
-        TextArea = _require("Elements/HyperTextArea"),
-        Label = _require("Elements/HyperLabel"),
-        Badge = _require("Elements/HyperBadge"),
-        Icon = _require("Elements/HyperIcon"),
-        ProgressBar = _require("Elements/HyperProgressBar"),
-        StatDisplay = _require("Elements/HyperStatDisplay"),
-        ComboBox = _require("Elements/HyperComboBox"),
-        Avatar = _require("Elements/HyperAvatar"),
-        Divider = _require("Elements/HyperDivider"),
-        Spacer = _require("Elements/HyperSpacer"),
-        Accordion = _require("Elements/HyperAccordion"),
-        Collapsible = _require("Elements/HyperCollapsible"),
-        CopyButton = _require("Elements/HyperCopyButton"),
-        Tag = _require("Elements/HyperTag"),
-        StatusIndicator = _require("Elements/HyperStatusIndicator"),
-        Grid = _require("components/Grid"),
-        Stack = _require("components/Stack"),
-        VirtualList = _require("components/VirtualList"),
+        Button = _require("components/Elements/HyperButton"),
+        IconButton = _require("components/Elements/HyperIconButton"),
+        Toggle = _require("components/Elements/HyperToggle"),
+        Checkbox = _require("components/Elements/HyperCheckbox"),
+        Slider = _require("components/Elements/HyperSlider"),
+        Dropdown = _require("components/Elements/HyperDropdown"),
+        Keybind = _require("components/Elements/HyperKeybind"),
+        ColorPicker = _require("components/Elements/HyperColorPicker"),
+        Input = _require("components/Elements/HyperInput"),
+        NumberInput = _require("components/Elements/HyperNumberInput"),
+        SearchInput = _require("components/Elements/HyperSearchInput"),
+        TextArea = _require("components/Elements/HyperTextArea"),
+        Label = _require("components/Elements/HyperLabel"),
+        Badge = _require("components/Elements/HyperBadge"),
+        Icon = _require("components/Elements/HyperIcon"),
+        ProgressBar = _require("components/Elements/HyperProgressBar"),
+        StatDisplay = _require("components/Elements/HyperStatDisplay"),
+        ComboBox = _require("components/Elements/HyperComboBox"),
+        Avatar = _require("components/Elements/HyperAvatar"),
+        Divider = _require("components/Elements/HyperDivider"),
+        Spacer = _require("components/Elements/HyperSpacer"),
+        Accordion = _require("components/Elements/HyperAccordion"),
+        Collapsible = _require("components/Elements/HyperCollapsible"),
+        CopyButton = _require("components/Elements/HyperCopyButton"),
+        Tag = _require("components/Elements/HyperTag"),
+        StatusIndicator = _require("components/Elements/HyperStatusIndicator"),
+        Grid = _require("components/Containers/Grid"),
+        Stack = _require("components/Containers/Stack"),
+        VirtualList = _require("components/Containers/VirtualList"),
     }
     
     local function Section(f)
@@ -709,7 +709,7 @@ _modules["components/Elements/HyperAccordion"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/BaseElement")
+    local c = _require("components/Elements/BaseElement")
     local d = _require("hooks/useSpring")
     
     local function HyperAccordion(e)
@@ -845,7 +845,7 @@ _modules["components/Elements/HyperButton"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/BaseElement")
+    local c = _require("components/Elements/BaseElement")
     
     local function HyperButton(d)
         return a.createElement(c, {
@@ -875,7 +875,7 @@ _modules["components/Elements/HyperCheckbox"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/BaseElement")
+    local c = _require("components/Elements/BaseElement")
     local d = _require("hooks/useSpring")
     
     local function HyperCheckbox(e)
@@ -947,7 +947,7 @@ _modules["components/Elements/HyperCollapsible"] = function()
     
     
     local a = _require("dependencies/React")
-    local b = _require("components/HyperAccordion")
+    local b = _require("components/Elements/HyperAccordion")
     
     local function HyperCollapsible(c)
         
@@ -964,7 +964,7 @@ _modules["components/Elements/HyperColorPicker"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/Elements/BaseElement")
+    local c = _require("components/Elements/HyperColorPicker/BaseElement")
     
     local d = _require("components/Elements/HyperColorPicker/HueSlider")
     local e = _require("components/Elements/HyperColorPicker/SaturationSquare")
@@ -1226,8 +1226,8 @@ _modules["components/Elements/HyperConfirmationDialog"] = function()
     
     
     local a = _require("dependencies/React")
-    local b = _require("components/HyperModal")
-    local c = _require("components/HyperButton")
+    local b = _require("components/Elements/HyperModal")
+    local c = _require("components/Elements/HyperButton")
     
     local function HyperConfirmationDialog(d)
         return a.createElement(b, {
@@ -1259,7 +1259,7 @@ _modules["components/Elements/HyperCopyButton"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/BaseElement")
+    local c = _require("components/Elements/BaseElement")
     
     local function CopyButton(d)
         local e, f = a.useState(false)
@@ -1389,7 +1389,7 @@ _modules["components/Elements/HyperDropdown/DropdownList"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("Containers/VirtualList")
+    local c = _require("components/Containers/VirtualList")
     local d = _require("components/Elements/HyperDropdown/DropdownOption")
     local e = _require("components/Elements/HyperDropdown/DropdownSearch")
     
@@ -1445,7 +1445,7 @@ _modules["components/Elements/HyperDropdown/DropdownOption"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/BaseElement")
+    local c = _require("components/Elements/BaseElement")
     
     local function DropdownOption(d)
         return a.createElement(c, {
@@ -1515,7 +1515,7 @@ _modules["components/Elements/HyperDropdown/DropdownTrigger"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/BaseElement")
+    local c = _require("components/Elements/BaseElement")
     local d = _require("hooks/useSpring")
     
     local function DropdownTrigger(e)
@@ -1582,7 +1582,7 @@ _modules["components/Elements/HyperGroup"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("Containers/ElementList")
+    local c = _require("components/Containers/ElementList")
     
     local function HyperGroup(d)
         return a.createElement("Frame", {
@@ -1635,7 +1635,7 @@ _modules["components/Elements/HyperIconButton"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/BaseElement")
+    local c = _require("components/Elements/BaseElement")
     
     local function HyperIconButton(d)
         return a.createElement(c, {
@@ -1665,7 +1665,7 @@ _modules["components/Elements/HyperInput"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/BaseElement")
+    local c = _require("components/Elements/BaseElement")
     
     local function HyperInput(d)
         return a.createElement(c, {
@@ -1724,7 +1724,7 @@ _modules["components/Elements/HyperKeybind"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/BaseElement")
+    local c = _require("components/Elements/BaseElement")
     local d = game:GetService("UserInputService")
     
     local function HyperKeybind(e)
@@ -1947,7 +1947,7 @@ _modules["components/Elements/HyperNumberInput"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/BaseElement")
+    local c = _require("components/Elements/BaseElement")
     
     local function HyperNumberInput(d)
         return a.createElement(c, {
@@ -2058,7 +2058,7 @@ _modules["components/Elements/HyperSearchInput"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/BaseElement")
+    local c = _require("components/Elements/BaseElement")
     
     local function HyperSearchInput(d)
         return a.createElement(c, {
@@ -2110,7 +2110,7 @@ _modules["components/Elements/HyperSlider"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/BaseElement")
+    local c = _require("components/Elements/BaseElement")
     local d = _require("hooks/useSpring")
     
     local function HyperSlider(e)
@@ -2201,7 +2201,7 @@ _modules["components/Elements/HyperStatDisplay"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/BaseElement")
+    local c = _require("components/Elements/BaseElement")
     
     local function HyperStatDisplay(d)
         return a.createElement(c, {
@@ -2354,7 +2354,7 @@ _modules["components/Elements/HyperTextArea"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/BaseElement")
+    local c = _require("components/Elements/BaseElement")
     
     local function HyperTextArea(d)
         return a.createElement(c, {
@@ -2404,7 +2404,7 @@ _modules["components/Elements/HyperToast"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/BaseElement")
+    local c = _require("components/Elements/BaseElement")
     local d = _require("hooks/useSpring")
     
     local function HyperToast(e)
@@ -2486,7 +2486,7 @@ _modules["components/Elements/HyperToggle"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/BaseElement")
+    local c = _require("components/Elements/BaseElement")
     local d = _require("hooks/useSpring")
     
     local function HyperToggle(e)
@@ -2604,7 +2604,7 @@ _modules["components/Root"] = function()
     
     
     local a = _require("dependencies/React")
-    local b = _require("Window")
+    local b = _require("components/Window")
     
     local function Root(c)
         local d, e = a.useState(c.store:GetState())
@@ -2647,7 +2647,7 @@ _modules["components/Window"] = function()
     local c = _require("hooks/useSpring")
     local d = _require("theme/tokens")
     
-    local e = _require("components/TabContainer") 
+    local e = _require("components/Window/TabContainer") 
     
     local function Window(f)
         local g = b(f.store, f.id)
@@ -2710,7 +2710,7 @@ _modules["components/Window/TabContainer"] = function()
     local b = _require("theme/tokens")
     local c = _require("hooks/useTree")
     
-    local d = _require("Containers/Section") 
+    local d = _require("components/Containers/Section") 
     
     local function TabContainer(e)
         local f, g = a.useState(e.tabs[1])
@@ -3774,9 +3774,9 @@ _modules["theme/tokens"] = function()
     
     
     
-    local a = _require("palette")
-    local b = _require("typography")
-    local c = _require("shadows")
+    local a = _require("theme/palette")
+    local b = _require("theme/typography")
+    local c = _require("theme/shadows")
     
     
     

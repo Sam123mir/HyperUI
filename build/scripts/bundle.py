@@ -13,21 +13,24 @@ def resolve_path(current_module, require_path):
     parts = require_path.split('.')
     current_parts = current_module.split('/')
     
-    # Start with the directory of current file
+    # target_parts is the directory containing the script
     target_parts = current_parts[:-1]
     
-    i = 0
     if parts[0] == "script":
-        i += 1
-        while i < len(parts) and parts[i] == "Parent":
-            if target_parts:
-                target_parts.pop()
+        i = 1
+        # The first "Parent" refers to the current directory (target_parts)
+        if i < len(parts) and parts[i] == "Parent":
             i += 1
+            # Subsequent "Parent" calls move up the directory tree
+            while i < len(parts) and parts[i] == "Parent":
+                if target_parts:
+                    target_parts.pop()
+                i += 1
         
         # Add remaining parts
         target_parts.extend(parts[i:])
     else:
-        # Absolute from root or other handling (not needed here based on structure)
+        # Not starting with script, treat as absolute path or string-based require
         return require_path.replace('.', '/')
     
     return "/".join(target_parts)
@@ -52,8 +55,8 @@ def bundle():
     for root, dirs, files in os.walk(TEMP_DIR):
         for file in files:
             if file.endswith(".lua"):
-                path = os.path.relpath(os.path.join(root, file), TEMP_DIR)
-                module_name = path.replace("\\", "/").replace(".lua", "")
+                original_path = os.path.relpath(os.path.join(root, file), TEMP_DIR).replace("\\", "/")
+                module_name = original_path.replace(".lua", "")
                 if module_name.endswith("/init"):
                     module_name = module_name[:-len("/init")]
                 if module_name == "init":
@@ -61,16 +64,20 @@ def bundle():
                 
                 with open(os.path.join(root, file), "r", encoding="utf-8") as f:
                     content = f.read()
-                    modules[module_name] = content
+                    if module_name in modules:
+                        print(f"WARNING: Collision detected for module '{module_name}'! Overwriting previous.")
+                    modules[module_name] = {"content": content, "original_path": original_path.replace(".lua", "")}
 
     # 2. Rewrite requires
     processed_modules = {}
-    for name, content in modules.items():
+    for name, data in modules.items():
+        content = data["content"]
+        original_path_no_ext = data["original_path"]
+        
         # Match require(...) calls
-        # We look for require(script...) or similar patterns
         def replace_require(match):
             req_content = match.group(1).strip()
-            resolved = resolve_path(name if name != "main" else "init", req_content)
+            resolved = resolve_path(original_path_no_ext, req_content)
             return f'_require("{resolved}")'
         
         new_content = re.sub(r'require\s*\(\s*(script[^)]*)\s*\)', replace_require, content)
@@ -102,8 +109,7 @@ local require = _require
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(header)
-        f.write("local _modules = {}\n")
-        for name, content in processed_modules.items():
+        for name, content in sorted(processed_modules.items()):
             f.write(f'_modules["{name}"] = function()\n')
             indented = "\n".join("    " + line for line in content.splitlines())
             f.write(indented + "\n")
