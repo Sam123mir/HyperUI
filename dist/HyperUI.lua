@@ -1,6 +1,6 @@
 -- HyperUI Framework
 -- Version: 2.0.0
--- Build Date: 2026-03-12 17:50:24
+-- Build Date: 2026-03-12 18:03:12
 -- Distribution: Single File
 
 local _modules = {}
@@ -14,14 +14,14 @@ _modules["Packages/ReactRoblox"] = function()
     return _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox")
 end
 
-_modules["Packages/_Index/jsdotlua_boolean@1.2.7/boolean/src"] = function()
+_modules["Packages/_Index/jsdotlua_boolean@1.2.7/boolean"] = function()
     return {
-    	toJSBoolean = _require("Packages/_Index/jsdotlua_boolean@1.2.7/boolean/src/toJSBoolean"),
+    	toJSBoolean = _require("Packages/_Index/jsdotlua_boolean@1.2.7/boolean/toJSBoolean"),
     }
 end
 
-_modules["Packages/_Index/jsdotlua_boolean@1.2.7/boolean/src/toJSBoolean"] = function()
-    local a = _require("Packages/_Index/jsdotlua_boolean@1.2.7/boolean/number")
+_modules["Packages/_Index/jsdotlua_boolean@1.2.7/boolean/toJSBoolean"] = function()
+    local a = _require("Packages/_Index/jsdotlua_boolean@1.2.7/number")
     
     
     return function(b: any): boolean
@@ -33,15 +33,15 @@ _modules["Packages/_Index/jsdotlua_boolean@1.2.7/number"] = function()
     return _require("Packages/_Index/jsdotlua_number@1.2.7/number")
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map")
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object")
-    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Set")
-    local e = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/WeakMap")
-    local f = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/inspect")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Map")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Object")
+    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Set")
+    local e = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/WeakMap")
+    local f = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/inspect")
     
-    local g = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+    local g = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     
     export type Array<T> = g.Array<T>
     export type Map<T, V> = g.Map<T, V>
@@ -61,41 +61,41 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src"] = functio
     }
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     
     export type Array<T> = a.Array<T>
     
     return {
-    	concat = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/concat"),
-    	every = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/every"),
-    	filter = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/filter"),
-    	find = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/find"),
-    	findIndex = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/findIndex"),
-    	flat = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/flat"),
-    	flatMap = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/flatMap"),
-    	forEach = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/forEach"),
-    	from = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from"),
-    	includes = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/includes"),
-    	indexOf = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/indexOf"),
-    	isArray = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/isArray"),
-    	join = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/join"),
-    	map = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/map"),
-    	reduce = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/reduce"),
-    	reverse = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/reverse"),
-    	shift = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/shift"),
-    	slice = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/slice"),
-    	some = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/some"),
-    	sort = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/sort"),
-    	splice = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/splice"),
-    	unshift = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/unshift"),
+    	concat = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/concat"),
+    	every = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/every"),
+    	filter = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/filter"),
+    	find = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/find"),
+    	findIndex = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/findIndex"),
+    	flat = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/flat"),
+    	flatMap = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/flatMap"),
+    	forEach = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/forEach"),
+    	from = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/from"),
+    	includes = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/includes"),
+    	indexOf = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/indexOf"),
+    	isArray = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/isArray"),
+    	join = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/join"),
+    	map = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/map"),
+    	reduce = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/reduce"),
+    	reverse = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/reverse"),
+    	shift = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/shift"),
+    	slice = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/slice"),
+    	some = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/some"),
+    	sort = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/sort"),
+    	splice = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/splice"),
+    	unshift = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/unshift"),
     }
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/concat"] = function()
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/concat"] = function()
     local a = _G.__DEV__
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/isArray")
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/isArray")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = c.Array<T>
     
     local d = [[Array.concat(...) only works with array-like tables but it received an object-like table.
@@ -147,9 +147,9 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/conca
     return concat
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/every"] = function()
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/every"] = function()
     local a = _G.__DEV__
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = b.Array<T>
     type Object = b.Object
     type callbackFn<T> = (element: T, index: number, array: Array<T>) -> boolean
@@ -191,9 +191,9 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/every
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/filter"] = function()
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/filter"] = function()
     local a = _G.__DEV__
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = b.Array<T>
     type Object = b.Object
     type callbackFn<T> = (element: T, index: number, array: Array<T>) -> boolean
@@ -241,8 +241,8 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/filte
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/find"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/find"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     type PredicateFunction<T> = (value: T, index: number, array: Array<T>) -> boolean
     
@@ -257,8 +257,8 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/find"
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/findIndex"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/findIndex"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     type PredicateFunction<T> = (T, number, Array<T>) -> boolean
     
@@ -273,10 +273,10 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/findI
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/flat"] = function()
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/flat"] = function()
     local a = _G.__DEV__
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/isArray")
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/isArray")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = c.Array<T>
     local function flat<T>(d: Array<T>, e: number?): Array<T>
     	if a then
@@ -308,11 +308,11 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/flat"
     return flat
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/flatMap"] = function()
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/flatMap"] = function()
     local a = _G.__DEV__
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/flat")
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/map")
-    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/flat")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/map")
+    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = d.Array<T>
     type callbackFn<T, U> = (element: T, index: number, array: Array<T>) -> U
     type callbackFnWithThisArg<T, U, V> = (thisArg: V, element: T, index: number, array: Array<T>) -> U
@@ -336,9 +336,9 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/flatM
     return flatMap
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/forEach"] = function()
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/forEach"] = function()
     local a = _G.__DEV__
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = b.Array<T>
     type Object = b.Object
     type callbackFn<T> = (element: T, index: number, array: Array<T>) -> ()
@@ -377,17 +377,17 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/forEa
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Set")
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map/Map")
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/isArray")
-    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/instance-of")
-    local e = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/from"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Set")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Map/Map")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/isArray")
+    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/instance-of")
+    local e = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     
-    local f = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/fromString")
-    local g = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/fromSet")
-    local h = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/fromMap")
-    local i = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/fromArray")
+    local f = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/from/fromString")
+    local g = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/from/fromSet")
+    local h = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/from/fromMap")
+    local i = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/from/fromArray")
     
     type Array<T> = e.Array<T>
     type Object = e.Object
@@ -425,8 +425,8 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from"
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/fromArray"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/from/fromArray"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Object = a.Object
     
     type Array<T> = a.Array<T>
@@ -459,8 +459,8 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/fromMap"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/from/fromMap"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Object = a.Object
     type Array<T> = a.Array<T>
     type Map<K, V> = a.Map<K, V>
@@ -495,8 +495,8 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/fromSet"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/from/fromSet"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Object = a.Object
     type Array<T> = a.Array<T>
     type Set<T> = a.Set<T>
@@ -528,8 +528,8 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/fromString"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/from/fromString"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Object = a.Object
     type Array<T> = a.Array<T>
     
@@ -564,18 +564,18 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/includes"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/includes"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/indexOf")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/indexOf")
     
     return function<T>(c: Array<T>, d: T, e: number?): boolean
     	return b(c, d, e) ~= -1
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/indexOf"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/indexOf"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     
     
@@ -605,7 +605,7 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/index
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/isArray"] = function()
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/isArray"] = function()
     return function(a: any): boolean
     	if typeof(a) ~= "table" then
     		return false
@@ -638,10 +638,10 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/isArr
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/join"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/join"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/map")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/map")
     
     return function<T>(c: Array<T>, d: string?): string
     	if #c == 0 then
@@ -656,9 +656,9 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/join"
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/map"] = function()
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/map"] = function()
     local a = _G.__DEV__
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = b.Array<T>
     type Object = b.Object
     type callbackFn<T, U> = (element: T, index: number, array: Array<T>) -> U
@@ -701,9 +701,9 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/map"]
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/reduce"] = function()
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/reduce"] = function()
     local a = _G.__DEV__
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = b.Array<T>
     type reduceFn<T, U> = (previousValue: U, currentValue: T, currentIndex: number, array: Array<T>) -> U
     
@@ -743,9 +743,9 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/reduc
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/reverse"] = function()
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/reverse"] = function()
     
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     
     return function<T>(b: Array<T>): Array<T>
@@ -760,10 +760,10 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/rever
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/shift"] = function()
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/shift"] = function()
     local a = _G.__DEV__
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/isArray")
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/isArray")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = c.Array<T>
     
     return function<T>(d: Array<T>): T?
@@ -781,8 +781,8 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/shift
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/slice"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/slice"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     
     
@@ -826,8 +826,8 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/slice
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/some"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/some"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     type Object = a.Object
     
@@ -860,9 +860,9 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/some"
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/sort"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/None")
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/sort"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/None")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = b.Array<T>
     type Comparable = (any, any) -> number
     local c = function<T>(c: T, d: T): boolean
@@ -893,8 +893,8 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/sort"
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/splice"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/splice"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     
     
@@ -943,10 +943,10 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/splic
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/unshift"] = function()
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/unshift"] = function()
     local a = _G.__DEV__
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/isArray")
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/isArray")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = c.Array<T>
     
     return function<T>(d: Array<T>, ...: T): number
@@ -968,12 +968,12 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/unshi
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Map"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map/Map")
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map/coerceToMap")
-    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map/coerceToTable")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Map/Map")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Map/coerceToMap")
+    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Map/coerceToTable")
     
     export type Map<K, V> = a.Map<K, V>
     
@@ -984,14 +984,14 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map"] = fun
     }
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map/Map"] = function()
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Map/Map"] = function()
     local a = _G.__DEV__
     
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/forEach")
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/map")
-    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/isArray")
-    local e = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/instance-of")
-    local f = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/forEach")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/map")
+    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/isArray")
+    local e = _require("Packages/_Index/jsdotlua_collections@1.2.7/instance-of")
+    local f = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Object = f.Object
     type Array<T> = f.Array<T>
     type Table<T, V> = f.Table<T, V>
@@ -1171,11 +1171,11 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map/Map"] =
     return g
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map/coerceToMap"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map/Map")
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object")
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/instance-of")
-    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Map/coerceToMap"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Map/Map")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Object")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/instance-of")
+    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     
     type Map<K, V> = d.Map<K, V>
     type Table<K, V> = d.Table<K, V>
@@ -1188,11 +1188,11 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map/coerceT
     return coerceToMap
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map/coerceToTable"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map/Map")
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/instance-of")
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/reduce")
-    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Map/coerceToTable"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Map/Map")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/instance-of")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/reduce")
+    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     
     type Map<K, V> = d.Map<K, V>
     type Table<K, V> = d.Table<K, V>
@@ -1212,24 +1212,24 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map/coerceT
     return coerceToTable
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object"] = function()
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Object"] = function()
     return {
-    	assign = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/assign"),
-    	entries = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/entries"),
-    	freeze = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/freeze"),
-    	is = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/is"),
-    	isFrozen = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/isFrozen"),
-    	keys = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/keys"),
-    	preventExtensions = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/preventExtensions"),
-    	seal = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/seal"),
-    	values = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/values"),
+    	assign = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/assign"),
+    	entries = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/entries"),
+    	freeze = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/freeze"),
+    	is = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/is"),
+    	isFrozen = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/isFrozen"),
+    	keys = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/keys"),
+    	preventExtensions = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/preventExtensions"),
+    	seal = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/seal"),
+    	values = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/values"),
     	
     	
-    	None = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/None"),
+    	None = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/None"),
     }
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/None"] = function()
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/None"] = function()
     
     
     
@@ -1242,9 +1242,9 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/None
     return a
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/assign"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/None")
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/assign"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/None")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Object = b.Object
     
     
@@ -1304,8 +1304,8 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/assi
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/entries"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/entries"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     type Map<K, V> = a.Map<K, V>
     type Tuple<T, V> = a.Tuple<T, V>
@@ -1331,8 +1331,8 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/entr
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/freeze"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/freeze"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     type Object = a.Object
     
@@ -1342,7 +1342,7 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/free
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/is"] = function()
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/is"] = function()
     
     
     return function(a: any, b: any): boolean
@@ -1354,10 +1354,10 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/is"]
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/isFrozen"] = function()
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/isFrozen"] = function()
     local a = _G.__DEV__
     
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = b.Array<T>
     type Object = b.Object
     
@@ -1369,10 +1369,10 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/isFr
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/keys"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Set")
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/instance-of")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/keys"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Set")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/instance-of")
     type Array<T> = b.Array<T>
     type Set<T> = b.Set<T>
     type Table = { [any]: any }
@@ -1406,8 +1406,8 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/keys
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/preventExtensions"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/preventExtensions"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     type Object = a.Object
     
@@ -1432,8 +1432,8 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/prev
     return preventExtensions
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/seal"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/seal"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     type Object = a.Object
     
@@ -1443,8 +1443,8 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/seal
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/values"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/values"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     
     
@@ -1473,16 +1473,16 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/valu
     end
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Set"] = function()
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/Set"] = function()
     
     local a = _G.__DEV__
     
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/inspect")
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/isArray")
-    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/forEach")
-    local e = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/fromString")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/inspect")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/isArray")
+    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/forEach")
+    local e = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/from/fromString")
     
-    local f = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+    local f = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     
     type Array<T> = f.Array<T>
     type Object = f.Object
@@ -1623,8 +1623,8 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Set"] = fun
     return g
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/WeakMap"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/WeakMap"] = function()
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     
     type WeakMap<K, V> = a.WeakMap<K, V>
     
@@ -1663,13 +1663,13 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/WeakMap"] =
     return b :: WeakMap<any, any> & WeakMap_Statics
 end
 
-_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/inspect"] = function()
+_modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/inspect"] = function()
     
     
     local a = game:GetService("HttpService")
     
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/isArray")
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/isArray")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     
     type Array<T> = c.Array<T>
     
@@ -1905,14 +1905,14 @@ _modules["Packages/_Index/jsdotlua_console@1.2.7/collections"] = function()
     return _require("Packages/_Index/jsdotlua_collections@1.2.7/collections")
 end
 
-_modules["Packages/_Index/jsdotlua_console@1.2.7/console/src"] = function()
-    local a = _require("Packages/_Index/jsdotlua_console@1.2.7/console/src/makeConsoleImpl")
+_modules["Packages/_Index/jsdotlua_console@1.2.7/console"] = function()
+    local a = _require("Packages/_Index/jsdotlua_console@1.2.7/console/makeConsoleImpl")
     
     return a()
 end
 
-_modules["Packages/_Index/jsdotlua_console@1.2.7/console/src/makeConsoleImpl"] = function()
-    local a = _require("Packages/_Index/jsdotlua_console@1.2.7/console/collections").inspect
+_modules["Packages/_Index/jsdotlua_console@1.2.7/console/makeConsoleImpl"] = function()
+    local a = _require("Packages/_Index/jsdotlua_console@1.2.7/collections").inspect
     
     local b = "  "
     
@@ -2009,7 +2009,7 @@ _modules["Packages/_Index/jsdotlua_console@1.2.7/console/src/makeConsoleImpl"] =
     end
 end
 
-_modules["Packages/_Index/jsdotlua_es7-types@1.2.7/es7-types/src"] = function()
+_modules["Packages/_Index/jsdotlua_es7-types@1.2.7/es7-types"] = function()
     export type Object = { [string]: any }
     export type Array<T> = { [number]: T }
     export type Function = (...any) -> ...any
@@ -2079,13 +2079,13 @@ _modules["Packages/_Index/jsdotlua_es7-types@1.2.7/es7-types/src"] = function()
     return {}
 end
 
-_modules["Packages/_Index/jsdotlua_instance-of@1.2.7/instance-of/src"] = function()
-    local a = _require("Packages/_Index/jsdotlua_instance-of@1.2.7/instance-of/src/instanceof")
+_modules["Packages/_Index/jsdotlua_instance-of@1.2.7/instance-of"] = function()
+    local a = _require("Packages/_Index/jsdotlua_instance-of@1.2.7/instance-of/instanceof")
     
     return a
 end
 
-_modules["Packages/_Index/jsdotlua_instance-of@1.2.7/instance-of/src/instanceof"] = function()
+_modules["Packages/_Index/jsdotlua_instance-of@1.2.7/instance-of/instanceof"] = function()
     
     local a = _G.__DEV__
     
@@ -2153,22 +2153,22 @@ _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/instance-of"] = function(
     return _require("Packages/_Index/jsdotlua_instance-of@1.2.7/instance-of")
 end
 
-_modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src"] = function()
-    local a = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/boolean")
-    local b = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/collections")
-    local c = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/console")
-    local d = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/math")
-    local e = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/number")
-    local f = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/string")
-    local g = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/symbol-luau")
-    local h = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/timers")
-    local i = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/es7-types")
+_modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill"] = function()
+    local a = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/boolean")
+    local b = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/collections")
+    local c = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/console")
+    local d = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/math")
+    local e = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/number")
+    local f = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/string")
+    local g = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/symbol-luau")
+    local h = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/timers")
+    local i = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/es7-types")
     
-    local j = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/AssertionError")
-    local k = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/Error")
-    local l = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/Promise")
-    local m = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/extends")
-    local n = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/instance-of")
+    local j = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/AssertionError")
+    local k = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/Error")
+    local l = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/Promise")
+    local m = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/extends")
+    local n = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/instance-of")
     
     export type Array<T> = i.Array<T>
     export type AssertionError = j.AssertionError
@@ -2213,15 +2213,15 @@ _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src"] = fun
     }
 end
 
-_modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/AssertionError"] = function()
-    local a = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/AssertionError/AssertionError.global")
+_modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/AssertionError"] = function()
+    local a = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/AssertionError/AssertionError.global")
     
     export type AssertionError = a.AssertionError
     
     return a.AssertionError
 end
 
-_modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/AssertionError/AssertionError.global"] = function()
+_modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/AssertionError/AssertionError.global"] = function()
     
     
     
@@ -2245,16 +2245,16 @@ _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/Asserti
     
     
     
-    local a = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/collections")
+    local a = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/collections")
     local b = a.Array
     local c = a.Object
-    local d = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/boolean")
-    local e = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/string")
-    local f = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/es7-types")
+    local d = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/boolean")
+    local e = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/string")
+    local f = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/es7-types")
     local g = a.inspect
     
-    local h = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/Error")
-    local i = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/instance-of")
+    local h = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/Error")
+    local i = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/instance-of")
     
     type Error = h.Error
     type Array<T> = f.Array<T>
@@ -2803,14 +2803,14 @@ _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/Asserti
     return { AssertionError = q }
 end
 
-_modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/Error"] = function()
-    local a = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/Error/Error.global")
+_modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/Error"] = function()
+    local a = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/Error/Error.global")
     export type Error = a.Error
     return a
 end
 
-_modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/Error/Error.global"] = function()
-    local a = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/es7-types")
+_modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/Error/Error.global"] = function()
+    local a = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/es7-types")
     
     type Function = a.Function
     
@@ -2895,7 +2895,7 @@ _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/Error/E
     })
 end
 
-_modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/Promise"] = function()
+_modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/Promise"] = function()
     
     export type PromiseLike<T> = {
     	andThen: (
@@ -2931,13 +2931,13 @@ _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/Promise
     return {}
 end
 
-_modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/encodeURIComponent"] = function()
+_modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/encodeURIComponent"] = function()
     
     local a = game:GetService("HttpService")
     
-    local b = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/string")
+    local b = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/string")
     local c = b.charCodeAt
-    local d = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/Error")
+    local d = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/Error")
     
     local function encodeURIComponent(e: string): string
     	local f = utf8.len(e)
@@ -2975,7 +2975,7 @@ _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/encodeU
     return encodeURIComponent
 end
 
-_modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/extends"] = function()
+_modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/extends"] = function()
     
     
     
@@ -3047,70 +3047,70 @@ _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/timers"] = function()
     return _require("Packages/_Index/jsdotlua_timers@1.2.7/timers")
 end
 
-_modules["Packages/_Index/jsdotlua_math@1.2.7/math/src"] = function()
+_modules["Packages/_Index/jsdotlua_math@1.2.7/math"] = function()
     return {
-    	clz32 = _require("Packages/_Index/jsdotlua_math@1.2.7/math/src/clz32"),
+    	clz32 = _require("Packages/_Index/jsdotlua_math@1.2.7/math/clz32"),
     }
 end
 
-_modules["Packages/_Index/jsdotlua_math@1.2.7/math/src/clz32"] = function()
+_modules["Packages/_Index/jsdotlua_math@1.2.7/math/clz32"] = function()
     return bit32.countlz
 end
 
-_modules["Packages/_Index/jsdotlua_number@1.2.7/number/src"] = function()
+_modules["Packages/_Index/jsdotlua_number@1.2.7/number"] = function()
     return {
-    	isFinite = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src/isFinite"),
-    	isInteger = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src/isInteger"),
-    	isNaN = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src/isNaN"),
-    	isSafeInteger = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src/isSafeInteger"),
-    	MAX_SAFE_INTEGER = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src/MAX_SAFE_INTEGER"),
-    	MIN_SAFE_INTEGER = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src/MIN_SAFE_INTEGER"),
+    	isFinite = _require("Packages/_Index/jsdotlua_number@1.2.7/number/isFinite"),
+    	isInteger = _require("Packages/_Index/jsdotlua_number@1.2.7/number/isInteger"),
+    	isNaN = _require("Packages/_Index/jsdotlua_number@1.2.7/number/isNaN"),
+    	isSafeInteger = _require("Packages/_Index/jsdotlua_number@1.2.7/number/isSafeInteger"),
+    	MAX_SAFE_INTEGER = _require("Packages/_Index/jsdotlua_number@1.2.7/number/MAX_SAFE_INTEGER"),
+    	MIN_SAFE_INTEGER = _require("Packages/_Index/jsdotlua_number@1.2.7/number/MIN_SAFE_INTEGER"),
     	NaN = 0/0,
-    	toExponential = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src/toExponential"),
+    	toExponential = _require("Packages/_Index/jsdotlua_number@1.2.7/number/toExponential"),
     }
 end
 
-_modules["Packages/_Index/jsdotlua_number@1.2.7/number/src/MAX_SAFE_INTEGER"] = function()
+_modules["Packages/_Index/jsdotlua_number@1.2.7/number/MAX_SAFE_INTEGER"] = function()
     
     return 9007199254740991
 end
 
-_modules["Packages/_Index/jsdotlua_number@1.2.7/number/src/MIN_SAFE_INTEGER"] = function()
+_modules["Packages/_Index/jsdotlua_number@1.2.7/number/MIN_SAFE_INTEGER"] = function()
     
     return -9007199254740991
 end
 
-_modules["Packages/_Index/jsdotlua_number@1.2.7/number/src/isFinite"] = function()
+_modules["Packages/_Index/jsdotlua_number@1.2.7/number/isFinite"] = function()
     return function(a)
     	return typeof(a) == "number" and a == a and a ~= math.huge and a ~= -math.huge
     end
 end
 
-_modules["Packages/_Index/jsdotlua_number@1.2.7/number/src/isInteger"] = function()
+_modules["Packages/_Index/jsdotlua_number@1.2.7/number/isInteger"] = function()
     
     return function(a)
     	return type(a) == "number" and a ~= math.huge and a == math.floor(a)
     end
 end
 
-_modules["Packages/_Index/jsdotlua_number@1.2.7/number/src/isNaN"] = function()
+_modules["Packages/_Index/jsdotlua_number@1.2.7/number/isNaN"] = function()
     
     return function(a)
     	return type(a) == "number" and a ~= a
     end
 end
 
-_modules["Packages/_Index/jsdotlua_number@1.2.7/number/src/isSafeInteger"] = function()
+_modules["Packages/_Index/jsdotlua_number@1.2.7/number/isSafeInteger"] = function()
     
-    local a = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src/isInteger")
-    local b = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src/MAX_SAFE_INTEGER")
+    local a = _require("Packages/_Index/jsdotlua_number@1.2.7/number/isInteger")
+    local b = _require("Packages/_Index/jsdotlua_number@1.2.7/number/MAX_SAFE_INTEGER")
     
     return function(c)
     	return a(c) and math.abs(c) <= b
     end
 end
 
-_modules["Packages/_Index/jsdotlua_number@1.2.7/number/src/toExponential"] = function()
+_modules["Packages/_Index/jsdotlua_number@1.2.7/number/toExponential"] = function()
     
     return function(a: string | number, b: number?): string | nil
     	local c = a
@@ -7517,6 +7517,28956 @@ _modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react"] = function()
     return _require("Packages/_Index/jsdotlua_react@17.2.1/react")
 end
 
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactRootTags")
+    
+    export type Dispatcher = a.Dispatcher
+    export type Fiber = a.Fiber
+    export type FiberRoot = a.FiberRoot
+    
+    
+    export type UpdateQueue<T> = a.UpdateQueue<T>
+    
+    export type RootTag = b.RootTag
+    
+    
+    
+    
+    
+    local function initialize(c): { [string]: any }
+    	local d = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHostConfig")	
+    for e, f in c do
+    		d[e] = f
+    	end
+    
+    	return _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberReconciler")
+    end
+    
+    return initialize
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/DebugTracing"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    type Array<T> = { [number]: T }
+    type Map<K, V> = { [K]: V }
+    type Object = { [string]: any }
+    type Function = (any) -> any?
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    local b = a.console
+    local c = {}
+    
+    
+    local d
+    
+    
+    local e = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLane")
+    type Lane = e.Lane
+    type Lanes = e.Lanes
+    type Wakeable = a.Wakeable
+    
+    local f =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactFeatureFlags.enableDebugTracing
+    
+    local g: Object = b
+    local h: nil | Function 
+    
+    local i: Array<any> = {}
+    
+    local j: number = 0
+    
+    
+    function decimalToBinaryString(k: number): string
+    	local l = ""
+    	repeat
+    		local m = k / 2
+    		local n, o = math.modf(m)
+    		k = n
+    		l = math.ceil(o) .. l
+    	until k == 0
+    
+    	local m = 31 - string.len(l)
+    	return string.rep("0", m) .. l
+    end
+    
+    local function formatLanes(k: Lane | Lanes): string
+    	return "0b"
+    		
+    		.. decimalToBinaryString(k)
+    end
+    
+    local function group(...): ()
+    	for k, l in { ... } do
+    		table.insert(i, l)
+    	end
+    	if h == nil then
+    		h = g.log
+    		g.log = d
+    	end
+    end
+    
+    local function groupEnd(): ()
+    	table.remove(i, 1)
+    	while j > #i do
+    		g.groupEnd()
+    		j -= 1
+    	end
+    	if #i == 0 then
+    		g.log = h
+    		h = nil
+    	end
+    end
+    
+    function d(...): ()
+    	if j < #i then
+    		for k = j + 1, #i do
+    			local l = i[k]
+    			g.group(l)
+    		end
+    		j = #i
+    	end
+    	if typeof(h) == "function" then
+    		(h :: any)(...)
+    	else
+    		g.log(...)
+    	end
+    end
+    
+    
+    local k = ""
+    
+    local function logCommitStarted(l: Lanes): ()
+    	if _G.__DEV__ then
+    		if f then
+    			group(
+    				string.format("* commit (%s)", formatLanes(l)),
+    				k,
+    				"",
+    				
+    				""
+    			)
+    		end
+    	end
+    end
+    c.logCommitStarted = logCommitStarted
+    
+    local function logCommitStopped(): ()
+    	if _G.__DEV__ then
+    		if f then
+    			groupEnd()
+    		end
+    	end
+    end
+    c.logCommitStopped = logCommitStopped
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function logComponentSuspended(l: string, m: Wakeable): ()
+    	if _G.__DEV__ then
+    		if f then
+    			
+    			
+    			
+    			d(
+    				string.format("* %s suspended", l)
+    				
+    				
+    				
+    				
+    				
+    			)
+    			m:andThen(function()
+    				d(
+    					string.format("* %s resolved", l)
+    					
+    					
+    					
+    					
+    					
+    				)
+    			end, function()
+    				d(
+    					string.format("* %s rejected", l)
+    					
+    					
+    					
+    					
+    					
+    				)
+    			end)
+    		end
+    	end
+    end
+    c.logComponentSuspended = logComponentSuspended
+    
+    local function logLayoutEffectsStarted(l: Lanes): ()
+    	if _G.__DEV__ then
+    		if f then
+    			group(
+    				string.format("* layout effects (%s)", formatLanes(l))
+    				
+    				
+    				
+    				
+    			)
+    		end
+    	end
+    end
+    c.logLayoutEffectsStarted = logLayoutEffectsStarted
+    
+    local function logLayoutEffectsStopped(): ()
+    	if _G.__DEV__ then
+    		if f then
+    			groupEnd()
+    		end
+    	end
+    end
+    c.logLayoutEffectsStopped = logLayoutEffectsStopped
+    
+    local function logPassiveEffectsStarted(l: Lanes): ()
+    	if _G.__DEV__ then
+    		if f then
+    			group(
+    				string.format("* passive effects (%s)", formatLanes(l))
+    				
+    				
+    				
+    				
+    			)
+    		end
+    	end
+    end
+    c.logPassiveEffectsStarted = logPassiveEffectsStarted
+    
+    local function logPassiveEffectsStopped(): ()
+    	if _G.__DEV__ then
+    		if f then
+    			groupEnd()
+    		end
+    	end
+    end
+    c.logPassiveEffectsStopped = logPassiveEffectsStopped
+    
+    local function logRenderStarted(l: Lanes): ()
+    	if _G.__DEV__ then
+    		if f then
+    			group(
+    				string.format("* render (%s)", formatLanes(l))
+    				
+    				
+    				
+    				
+    			)
+    		end
+    	end
+    end
+    c.logRenderStarted = logRenderStarted
+    
+    local function logRenderStopped(): ()
+    	if _G.__DEV__ then
+    		if f then
+    			groupEnd()
+    		end
+    	end
+    end
+    c.logRenderStopped = logRenderStopped
+    
+    local function logForceUpdateScheduled(l: string, m: Lane): ()
+    	if _G.__DEV__ then
+    		if f then
+    			d(
+    				string.format("* %s forced update (%s)", l, formatLanes(m))
+    				
+    				
+    				
+    				
+    			)
+    		end
+    	end
+    end
+    c.logForceUpdateScheduled = logForceUpdateScheduled
+    
+    local function logStateUpdateScheduled(
+    	l: string,
+    	m: Lane,
+    	n: any
+    ): ()
+    	if _G.__DEV__ then
+    		if f then
+    			d(
+    				string.format("* %s updated state (%s)", l, formatLanes(m))
+    				
+    				
+    				
+    				
+    				
+    			)
+    		end
+    	end
+    end
+    c.logStateUpdateScheduled = logStateUpdateScheduled
+    return c
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/MaxInts"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    return { MAX_SIGNED_31_BIT_INT = 1073741823 }
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactCapturedValue"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = a.Fiber
+    
+    local b =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberComponentStack").getStackByFiberInDevAndProd
+    
+    export type CapturedValue<T> = {
+    	value: T,
+    	source: Fiber | nil,
+    	stack: string | nil
+    }
+    
+    local c = {}
+    
+    c.createCapturedValue = function<T>(d: T, e: Fiber | nil): CapturedValue<T>
+    	
+    	
+    	return {
+    		value = d,
+    		source = e,
+    		stack = b(e),
+    	}
+    end
+    
+    return c
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactChildFiber.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _G.__DEV__ :: boolean
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/luau-polyfill")
+    local c = b.Array
+    local d = b.Error
+    type Array<T> = { [number]: T }
+    type Set<T> = { [T]: boolean }
+    type Object = { [any]: any }
+    type Map<K, V> = { [K]: V }
+    
+    local e = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").console
+    local f = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").describeError
+    
+    local g = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    
+    
+    type ReactElement = g.ReactElement<any, any>
+    type ReactPortal = g.ReactPortal
+    
+    local h = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react")
+    type LazyComponent<T, P> = h.LazyComponent<T, P>
+    
+    local i = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = i.Fiber
+    type RoactStableKey = i.RoactStableKey
+    local j = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLane")
+    type Lanes = j.Lanes
+    
+    local k = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").getComponentName
+    local l = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberFlags")
+    local m = l.Placement
+    local n = l.Deletion
+    local o = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactSymbols
+    local p = o.getIteratorFn
+    local q = o.REACT_ELEMENT_TYPE
+    local r = o.REACT_FRAGMENT_TYPE
+    local s = o.REACT_PORTAL_TYPE
+    local t = o.REACT_LAZY_TYPE
+    local u = o.REACT_BLOCK_TYPE
+    local v = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactWorkTags")
+    local w = v.FunctionComponent
+    local x = v.ClassComponent
+    local y = v.HostText
+    local z = v.HostPortal
+    local A = v.ForwardRef
+    local B = v.Fragment
+    local C = v.SimpleMemoComponent
+    local D = v.Block
+    local E = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").invariant
+    local F = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactFeatureFlags
+    
+    
+    local G = F.enableLazyElements
+    local H = F.enableBlocksAPI
+    
+    local I = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiber.new")
+    local J = I.createWorkInProgress
+    local K = I.resetWorkInProgress
+    local L = I.createFiberFromElement
+    local M = I.createFiberFromFragment
+    local N = I.createFiberFromText
+    local O = I.createFiberFromPortal
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local P = {}
+    
+    local Q
+    
+    
+    
+    
+    local R
+    local S
+    local T = function(T: any, U: Fiber) end
+    
+    if a then
+    	Q = false
+    	
+    	
+    
+    	
+    	
+    
+    	
+    	
+    
+    
+    
+    R = {}
+    	S = {}
+    
+    	
+    	
+    	
+    	
+    	T = function(U: any, V: Fiber)
+    		if U == nil or type(U) ~= "table" then
+    			return
+    		end
+    		if not U._store or U._store.validated or U.key ~= nil then
+    			return
+    		end
+    		E(
+    			U._store ~= nil and type(U._store) == "table",
+    [[React Component in warnForMissingKey should have a _store. This error is likely caused by a bug in React. Please file an issue.]]		
+    
+    )
+    		U._store.validated = true
+    
+    		local W = k(V.type) or "Component"
+    
+    		if R[W] then
+    			return
+    		end
+    		R[W] = true
+    
+    		e.error(
+    [[Each child in a list should have a unique "key" prop. See https://reactjs.org/link/warning-keys for more information.]]		
+    
+    
+    )
+    	end
+    end
+    
+    local U = c.isArray
+    
+    function coerceRef(V: Fiber, W: Fiber | nil, X: ReactElement)
+    	local Y = X.ref
+    	if Y ~= nil and type(Y) == "string" then
+    		
+    		if
+    			not X._owner
+    			or not X._self
+    			or X._owner.stateNode == X._self
+    		then
+    			
+    			local Z
+    			if a then
+    				Z = k(V.type) or "Component"
+    			else
+    				Z = "<enable __DEV__ mode for component names>"
+    			end
+    			error(
+    				d.new(
+    					string.format(
+    [[Component "%s" contains the string ref "%s". Support for string refs has been removed. We recommend using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref]]
+    
+    
+    
+    
+    ,
+    						Z,
+    						tostring(Y)
+    					)
+    				)
+    			)
+    		end
+    
+    		if not X._owner then
+    			error(
+    				"Expected ref to be a function or an object returned by React.createRef(), or nil."
+    			)
+    		end
+    
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    	end
+    	return Y
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function warnOnFunctionType(V: Fiber)
+    	if a then
+    		local W = k(V.type) or "Component"
+    
+    		if S[W] then
+    			return
+    		end
+    		S[W] = true
+    
+    		e.error(
+    [[Functions are not valid as a React child. This may happen if you return a Component instead of <Component /> from render. Or maybe you meant to call this function rather than return it.]]		
+    
+    
+    )
+    	end
+    end
+    
+    
+    
+    function resolveLazyType<T, P>(V: LazyComponent<T, P>): LazyComponent<T, P> | T
+    	
+    	
+    	local W = V._payload
+    	local X = V._init
+    	local Y, Z = xpcall(X, f, W)
+    	if not Y then
+    		
+    		return V
+    	end
+    
+    	return Z
+    end
+    
+    
+    
+    
+    
+    local function ChildReconciler(V)
+    	local function deleteChild(W: Fiber, X: Fiber)
+    		if not V then
+    			
+    			return
+    		end
+    		local Y = W.deletions
+    		if Y == nil then
+    			W.deletions = { X }
+    			W.flags = bit32.bor(W.flags, n)
+    		else
+    			table.insert(Y, X)
+    		end
+    	end
+    
+    	local function deleteRemainingChildren(
+    		W: Fiber,
+    		X: Fiber | nil
+    	)
+    		if not V then
+    			
+    			return nil
+    		end
+    
+    		
+    		
+    		local Y = X
+    		while Y ~= nil do
+    			deleteChild(W, Y)
+    			Y = Y.sibling
+    		end
+    		return nil
+    	end
+    
+    	local function mapRemainingChildren(
+    		W: Fiber,
+    		X: Fiber
+    	): { [(string | number)]: Fiber }
+    		
+    		
+    		
+    		local Y: { [(string | number)]: Fiber } = {}
+    
+    		
+    		local Z: Fiber? = X
+    		while Z ~= nil do
+    			if Z.key ~= nil then
+    				Y[Z.key] = Z
+    			else
+    				Y[Z.index] = Z
+    			end
+    			Z = Z.sibling
+    		end
+    		return Y
+    	end
+    
+    	local function useFiber(W: Fiber, X: any): Fiber
+    		
+    		
+    		local Y = J(W, X)
+    		
+    		Y.index = 1
+    		Y.sibling = nil
+    		return Y
+    	end
+    
+    	local function placeChild(
+    		W: Fiber,
+    		X: number,
+    		Y: number
+    	): number
+    		W.index = Y
+    		if not V then
+    			
+    			return X
+    		end
+    		local Z = W.alternate
+    		if Z ~= nil then
+    			local _ = Z.index
+    			if _ < X then
+    				
+    				W.flags = bit32.bor(W.flags, m)
+    				return X
+    			else
+    				
+    				return _
+    			end
+    		else
+    			
+    			W.flags = bit32.bor(W.flags, m)
+    			return X
+    		end
+    	end
+    
+    	local function placeSingleChild(W: Fiber): Fiber
+    		
+    		
+    		if V and W.alternate == nil then
+    			W.flags = bit32.bor(W.flags, m)
+    		end
+    		return W
+    	end
+    
+    	local function updateTextNode(
+    		W: Fiber,
+    		X: Fiber | nil,
+    		Y: string,
+    		Z: Lanes
+    	)
+    		
+    		if X == nil or (X :: Fiber).tag ~= y then
+    			
+    			local _ = N(Y, W.mode, Z)
+    			_.return_ = W
+    			return _
+    		else
+    			
+    			local _ = useFiber(X :: Fiber, Y)
+    			_.return_ = W
+    			return _
+    		end
+    	end
+    
+    	local function updateElement(
+    		W: Fiber,
+    		X: Fiber | nil,
+    		Y: ReactElement,
+    		Z: Lanes
+    	): Fiber
+    		if X ~= nil then
+    			if
+    				(X :: Fiber).elementType == Y.type
+    				
+    				
+    				
+    			then
+    				
+    				local _ = useFiber(X :: Fiber, Y.props)
+    				_.ref = coerceRef(W, X, Y)
+    				_.return_ = W
+    				if a then
+    					_._debugSource = Y._source
+    					_._debugOwner = Y._owner
+    				end
+    				return _
+    			elseif H and (X :: Fiber).tag == D then
+    				
+    				
+    				
+    				local _: any = Y.type
+    				if type(_) == "table" and _["$$typeof"] == t then
+    					_ = resolveLazyType(_) :: LazyComponent<any, any>
+    				end
+    				if
+    					_["$$typeof"] == u
+    					and _._render == (X :: Fiber).type._render
+    				then
+    					
+    					local aa = useFiber(X :: Fiber, Y.props)
+    					aa.return_ = W
+    					aa.type = _
+    					if a then
+    						aa._debugSource = Y._source
+    						aa._debugOwner = Y._owner
+    					end
+    					return aa
+    				end
+    			end
+    		end
+    		
+    		local aa = L(Y, W.mode, Z)
+    		aa.ref = coerceRef(W, X, Y)
+    		aa.return_ = W
+    		return aa
+    	end
+    
+    	local function updatePortal(
+    		aa: Fiber,
+    		W: Fiber | nil,
+    		X: ReactPortal,
+    		Y: Lanes
+    	): Fiber
+    		
+    		if
+    			W == nil
+    			or (W :: Fiber).tag ~= z
+    			or (W :: Fiber).stateNode.containerInfo ~= X.containerInfo
+    			or (W :: Fiber).stateNode.implementation ~= X.implementation
+    		then
+    			
+    			local Z = O(X, aa.mode, Y)
+    			Z.return_ = aa
+    			return Z
+    		else
+    			
+    			local Z = useFiber(W :: Fiber, X.children or {})
+    			Z.return_ = aa
+    			return Z
+    		end
+    	end
+    
+    	local function updateFragment(
+    		aa: Fiber,
+    		W: Fiber | nil,
+    		
+    		
+    		X: any,
+    		Y: Lanes,
+    		Z: nil | string
+    	): Fiber
+    		if W == nil or (W :: Fiber).tag ~= B then
+    			
+    			local _ =
+    				M(X, aa.mode, Y, Z)
+    			_.return_ = aa
+    			return _
+    		else
+    			
+    			local _ = useFiber(W :: Fiber, X)
+    			_.return_ = aa
+    			return _
+    		end
+    	end
+    
+    	
+    	
+    	
+    	
+    	local function assignStableKey(aa: any?, W: Object): ()
+    		
+    		
+    		
+    
+    		
+    		
+    		
+    		if W.key == nil then
+    			
+    			local X = type(aa)
+    			if X == "string" or X == "number" then
+    				W.key = aa
+    			elseif X == "table" then
+    				W.key = tostring(aa)
+    			end
+    		end
+    	end
+    
+    	local function createChild(
+    		aa: Fiber,
+    		W: any,
+    		X: Lanes,
+    		
+    		Y: any?
+    	): Fiber | nil
+    		
+    		if W == nil then
+    			return nil
+    		end
+    
+    		
+    		local Z = type(W)
+    
+    		
+    		if Z == "table" then
+    			
+    			
+    			assignStableKey(Y, W)
+    			
+    			local _ = W["$$typeof"]
+    			if _ == q then
+    				local ab = L(W, aa.mode, X)
+    				ab.ref = coerceRef(aa, nil, W)
+    				ab.return_ = aa
+    				return ab
+    			elseif _ == s then
+    				local ab = O(W, aa.mode, X)
+    				ab.return_ = aa
+    				return ab
+    			elseif _ == t then
+    				if G then
+    					local ab = W._payload
+    					local ac = W._init
+    					
+    					
+    					return createChild(aa, ac(ab), X)
+    				end
+    			end
+    
+    			
+    			
+    			local ab =
+    				M(W, aa.mode, X, nil)
+    			ab.return_ = aa
+    			return ab
+    
+    			
+    			
+    		end
+    
+    		if Z == "string" or Z == "number" then
+    			
+    			
+    			
+    			local ab =
+    				N(tostring(W), aa.mode, X)
+    			ab.return_ = aa
+    			return ab
+    		end
+    
+    		if a then
+    			if Z == "function" then
+    				warnOnFunctionType(aa)
+    			end
+    		end
+    
+    		return nil
+    	end
+    
+    	local function updateSlot(
+    		aa: Fiber,
+    		ab: Fiber | nil,
+    		ac: any,
+    		W: Lanes,
+    		
+    		X: any?
+    	): Fiber | nil
+    		
+    		if ac == nil then
+    			return nil
+    		end
+    
+    		
+    
+    		local Y = if ab ~= nil then ab.key else nil
+    		
+    		local Z = type(ac)
+    
+    		if Z == "table" then
+    			
+    			
+    			assignStableKey(X, ac)
+    			
+    			local _ = ac["$$typeof"]
+    			if _ == q then
+    				if ac.key == Y then
+    					if ac.type == r then
+    						return updateFragment(
+    							aa,
+    							ab,
+    							ac.props.children,
+    							W,
+    							Y :: string?
+    						)
+    					end
+    					return updateElement(aa, ab, ac, W)
+    				else
+    					return nil
+    				end
+    			elseif _ == s then
+    				if ac.key == Y then
+    					return updatePortal(aa, ab, ac, W)
+    				else
+    					return nil
+    				end
+    			elseif _ == t then
+    				if G then
+    					local ad = ac._payload
+    					local ae = ac._init
+    					
+    					
+    					return updateSlot(aa, ab, ae(ad), W)
+    				end
+    			end
+    
+    			
+    			
+    			if Y ~= nil then
+    				return nil
+    			end
+    
+    			return updateFragment(aa, ab, ac, W)
+    
+    			
+    			
+    		end
+    
+    		
+    		if Z == "string" or Z == "number" then
+    			
+    			
+    			
+    			if Y ~= nil then
+    				return nil
+    			end
+    			return updateTextNode(aa, ab, tostring(ac), W)
+    		end
+    
+    		if a then
+    			if Z == "function" then
+    				warnOnFunctionType(aa)
+    			end
+    		end
+    
+    		return nil
+    	end
+    
+    	local function updateFromMap(
+    		aa: Map<string | number, Fiber>,
+    		ab: Fiber,
+    		ac: number,
+    		ad: any,
+    		ae: Lanes,
+    		
+    		W: any?
+    	): Fiber | nil
+    		
+    		if ad == nil then
+    			return nil
+    		end
+    
+    		
+    		local X = type(ad)
+    
+    		if X == "table" then
+    			
+    			
+    			assignStableKey(W, ad)
+    			local Y
+    			
+    			local Z = ad["$$typeof"]
+    			if Z == q then
+    				if ad.key == nil then
+    					Y = ac
+    				else
+    					Y = ad.key
+    				end
+    				local _ = aa[Y]
+    				if ad.type == r then
+    					return updateFragment(
+    						ab,
+    						_,
+    						ad.props.children,
+    						ae,
+    						ad.key
+    					)
+    				end
+    				return updateElement(ab, _, ad, ae)
+    			elseif Z == s then
+    				if ad.key == nil then
+    					Y = ac
+    				else
+    					Y = ad.key
+    				end
+    				local _ = aa[Y]
+    				return updatePortal(ab, _, ad, ae)
+    			elseif Z == t then
+    				if G then
+    					local _ = ad._payload
+    					local af = ad._init
+    					
+    					
+    					return updateFromMap(
+    						aa,
+    						ab,
+    						ac,
+    						af(_),
+    						ae
+    					)
+    				end
+    			end
+    
+    			
+    			
+    			local af = aa[ac]
+    			return updateFragment(ab, af, ad, ae)
+    
+    			
+    			
+    		end
+    
+    		
+    		if X == "string" or X == "number" then
+    			
+    			
+    			local af = aa[ac] or nil
+    			return updateTextNode(ab, af, tostring(ad), ae)
+    		end
+    
+    		if a then
+    			if X == "function" then
+    				warnOnFunctionType(ab)
+    			end
+    		end
+    
+    		return nil
+    	end
+    
+    	
+    	
+    
+    local function warnOnInvalidKey(
+    		aa: any,
+    		ab: Set<string> | nil,
+    		ac: Fiber
+    	): Set<string> | nil
+    		if a then
+    			if aa == nil or type(aa) ~= "table" then
+    				return ab
+    			end
+    			
+    			local ad = aa["$$typeof"]
+    			if ad == q or ad == s then
+    				T(aa, ac)
+    				local ae = aa.key
+    				if type(ae) ~= "string" then
+    					
+    				elseif ab == nil then
+    					ab = {};
+    					(ab :: Set<string>)[ae] = true
+    				elseif not (ab :: Set<string>)[ae] then
+    					(ab :: Set<string>)[ae] = true
+    				else
+    					e.error(
+    'Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u{2014} the behavior is unsupported and could change in a future version.'
+    
+    
+    
+    ,
+    						ae
+    					)
+    				end
+    			elseif ad == t then
+    				if G then
+    					local ae = aa._payload
+    					local af = aa._init
+    					warnOnInvalidKey(af(ae), ab, ac)
+    				end
+    			end
+    		end
+    		return ab
+    	end
+    
+    	local function reconcileChildrenArray(
+    		aa: Fiber,
+    		ab: Fiber | nil,
+    		ac: Array<any>,
+    		ad: Lanes
+    	): Fiber | nil
+    		
+    		
+    		
+    		
+    
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    
+    		
+    		
+    
+    		
+    		
+    
+    		if a then
+    			
+    			local ae 			
+    for af, W in ac do
+    				ae = warnOnInvalidKey(W, ae, aa)
+    			end
+    		end
+    
+    		local ae: Fiber | nil 		
+    local af: Fiber | nil 
+    		
+    local W: Fiber | nil = ab
+    		local X = 1
+    		local Y = 1
+    		local Z: Fiber | nil 		
+    		
+    local _ = #ac
+    		
+    		while W ~= nil and Y <= _ do
+    			if W.index > Y then
+    				Z = W
+    				W = nil
+    			else
+    				Z = W.sibling
+    			end
+    			
+    			
+    
+    
+    
+    
+    local ag
+    			
+    			local ah = ac[Y]
+    			if
+    				ah ~= nil
+    				and type(ah) == "table"
+    				and ah["$$typeof"] ~= nil
+    			then
+    				ag =
+    					updateSlot(aa, W, ah, ad, Y)
+    			else
+    				ag = updateSlot(aa, W, ah, ad)
+    			end
+    			if ag == nil then
+    				
+    				
+    				
+    				
+    				if W == nil then
+    					W = Z
+    				end
+    				break
+    			end
+    			if V then
+    				
+    				if W and (ag :: Fiber).alternate == nil then
+    					
+    					
+    					
+    					deleteChild(aa, W :: Fiber)
+    				end
+    			end
+    			X = placeChild(ag :: Fiber, X, Y)
+    			if af == nil then
+    				
+    				ae = ag
+    			else
+    				
+    				
+    				
+    				
+    				(af :: Fiber).sibling = ag
+    			end
+    			af = ag
+    			W = Z
+    			
+    			Y += 1
+    		end
+    
+    		if Y > _ then
+    			
+    			deleteRemainingChildren(aa, W)
+    			return ae
+    		end
+    
+    		if W == nil then
+    			
+    			
+    			
+    			while Y <= _ do
+    				
+    				
+    
+    
+    
+    
+    local ag
+    				
+    				local ah = ac[Y]
+    				if
+    					ah ~= nil
+    					and type(ah) == "table"
+    					and ah["$$typeof"] ~= nil
+    				then
+    					ag = createChild(aa, ah, ad, Y)
+    				else
+    					ag = createChild(aa, ah, ad)
+    				end
+    				if ag == nil then
+    					
+    					Y += 1
+    					continue
+    				end
+    				
+    				X = placeChild(ag :: Fiber, X, Y)
+    				if af == nil then
+    					
+    					ae = ag
+    				else
+    					(af :: Fiber).sibling = ag
+    				end
+    				af = ag
+    				
+    				Y += 1
+    			end
+    			return ae
+    		end
+    
+    		
+    		
+    		local ag = mapRemainingChildren(aa, W :: Fiber)
+    
+    		
+    		
+    		while Y <= _ do
+    			local ah = updateFromMap(
+    				ag,
+    				aa,
+    				Y,
+    				ac[Y],
+    				ad,
+    				
+    				Y
+    			)
+    			if ah ~= nil then
+    				if V then
+    					if ah.alternate ~= nil then
+    						
+    						
+    						
+    						
+    						ag[if ah.key == nil
+    							then Y
+    							else ah.key] =
+    							nil
+    					end
+    				end
+    				X = placeChild(ah, X, Y)
+    				if af == nil then
+    					ae = ah
+    				else
+    					(af :: Fiber).sibling = ah
+    				end
+    				af = ah
+    			end
+    			
+    			Y += 1
+    		end
+    
+    		if V then
+    			
+    			
+    			for ah, ai in ag do
+    				deleteChild(aa, ai)
+    			end
+    		end
+    
+    		return ae
+    	end
+    
+    	
+    	local function reconcileChildrenIterator(
+    		aa: Fiber,
+    		ab: Fiber | nil,
+    		
+    		
+    		ac: any,
+    		ad: Lanes,
+    		
+    		ae: (...any) -> any
+    	): Fiber | nil
+    		
+    		
+    
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    
+    		if a then
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    
+    			
+    			if ac.entries == ae then
+    				if not Q then
+    					e.error(
+    [[Using Maps as children is not supported. Use an array of keyed ReactElements instead.]]					
+    
+    )
+    				end
+    				Q = true
+    			end
+    
+    			
+    			
+    			local af = ae(ac)
+    			if af then
+    				local ag 				
+    local ah = af.next()
+    				while not ah.done do
+    					ah = af.next()
+    					local ai = ah.value
+    					ag = warnOnInvalidKey(ai, ag, aa)
+    				end
+    			end
+    		end
+    
+    		local af = ae(ac)
+    		
+    		
+    
+    		local ag: Fiber | nil 		
+    local ah: Fiber 
+    		
+    local ai = ab
+    		local W = 1
+    		local X = 1
+    		local Y: Fiber | nil 
+    		
+    local Z = af.next()
+    		while ai ~= nil and not Z.done do
+    			if ai.index > X then
+    				Y = ai
+    				ai = nil
+    			else
+    				Y = ai.sibling
+    			end
+    			local _ =
+    				updateSlot(aa, ai, Z.value, ad, Z.key)
+    			if _ == nil then
+    				
+    				
+    				
+    				
+    				if ai == nil then
+    					ai = Y
+    				end
+    				break
+    			end
+    			if V then
+    				
+    				if ai and (_ :: Fiber).alternate == nil then
+    					
+    					
+    					deleteChild(aa, ai)
+    				end
+    			end
+    			W = placeChild(_ :: Fiber, W, X)
+    			if ah == nil then
+    				
+    				ag = _
+    			else
+    				
+    				
+    				
+    				
+    				ah.sibling = _ :: Fiber
+    			end
+    			ah = _ :: Fiber
+    			ai = Y
+    
+    			X += 1
+    			Z = af.next()
+    		end
+    
+    		if Z.done then
+    			
+    			deleteRemainingChildren(aa, ai)
+    			return ag
+    		end
+    
+    		if ai == nil then
+    			
+    			
+    			while not Z.done do
+    				local _ = createChild(aa, Z.value, ad, Z.key)
+    				if _ == nil then
+    					X += 1
+    					Z = af.next()
+    					continue
+    				end
+    				
+    				W = placeChild(_ :: Fiber, W, X)
+    				if ah == nil then
+    					
+    					ag = _
+    				else
+    					ah.sibling = _
+    				end
+    				ah = _ :: Fiber
+    
+    				X += 1
+    				Z = af.next()
+    			end
+    			return ag
+    		end
+    
+    		
+    		
+    		local _
+    
+    		
+    		while not Z.done do
+    			if not _ then
+    				
+    				_ = mapRemainingChildren(aa, ai :: Fiber)
+    			end
+    			local aj = updateFromMap(
+    				_,
+    				aa,
+    				X,
+    				Z.value,
+    				ad,
+    				Z.key
+    			)
+    			if aj ~= nil then
+    				if V then
+    					if aj.alternate ~= nil then
+    						
+    						
+    						
+    						
+    						if aj.key == nil then
+    							_[X] = nil
+    						else
+    							_[aj.key] = nil
+    						end
+    					end
+    				end
+    				W = placeChild(aj, W, X)
+    				if ah == nil then
+    					ag = aj
+    				else
+    					ah.sibling = aj
+    				end
+    				ah = aj
+    			end
+    
+    			X += 1
+    			Z = af.next()
+    		end
+    
+    		if V then
+    			
+    			
+    			for aj, ak in _ do
+    				deleteChild(aa, ak)
+    			end
+    		end
+    
+    		return ag
+    	end
+    
+    	local function reconcileSingleTextNode(
+    		aa: Fiber,
+    		ab: Fiber | nil,
+    		ac: string,
+    		ad: Lanes
+    	): Fiber
+    		
+    		
+    		
+    		if ab ~= nil and (ab :: Fiber).tag == y then
+    			
+    			
+    			deleteRemainingChildren(aa, (ab :: Fiber).sibling)
+    			local ae = useFiber(ab :: Fiber, ac)
+    			ae.return_ = aa
+    			return ae
+    		end
+    		
+    		
+    		deleteRemainingChildren(aa, ab)
+    		local ae = N(ac, aa.mode, ad)
+    		ae.return_ = aa
+    		return ae
+    	end
+    
+    	local function reconcileSingleElement(
+    		aa: Fiber,
+    		ab: Fiber | nil,
+    		ac: ReactElement,
+    		ad: Lanes
+    	): Fiber
+    		local ae = ac.key
+    		local af = ab
+    		while af ~= nil do
+    			
+    			
+    			if af.key == ae then
+    				if af.tag == B then
+    					if ac.type == r then
+    						deleteRemainingChildren(aa, af.sibling)
+    						local ag = useFiber(af, ac.props.children)
+    						ag.return_ = aa
+    						if a then
+    							ag._debugSource = ac._source
+    							ag._debugOwner = ac._owner
+    						end
+    						return ag
+    					end
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    				else
+    					if
+    						af.elementType == ac.type
+    						
+    						
+    						
+    						
+    						
+    						
+    					then
+    						deleteRemainingChildren(aa, af.sibling)
+    						local ag = useFiber(af, ac.props)
+    						ag.ref = coerceRef(aa, af, ac)
+    						ag.return_ = aa
+    						if a then
+    							ag._debugSource = ac._source
+    							ag._debugOwner = ac._owner
+    						end
+    						return ag
+    					end
+    				end
+    				
+    				deleteRemainingChildren(aa, af)
+    				break
+    			else
+    				deleteChild(aa, af)
+    			end
+    			af = af.sibling
+    		end
+    
+    		if ac.type == r then
+    			local ag = M(
+    				ac.props.children,
+    				aa.mode,
+    				ad,
+    				
+    				ac.key :: string
+    			)
+    			ag.return_ = aa
+    			return ag
+    		else
+    			local ag = L(ac, aa.mode, ad)
+    			ag.ref = coerceRef(aa, ab, ac)
+    			ag.return_ = aa
+    			return ag
+    		end
+    	end
+    
+    	local function reconcileSinglePortal(
+    		aa: Fiber,
+    		ab: Fiber | nil,
+    		ac: ReactPortal,
+    		ad: Lanes
+    	): Fiber
+    		local ae = ac.key
+    		local af = ab
+    		while af ~= nil do
+    			
+    			
+    			if af.key == ae then
+    				if
+    					af.tag == z
+    					and af.stateNode.containerInfo == ac.containerInfo
+    					and af.stateNode.implementation == ac.implementation
+    				then
+    					deleteRemainingChildren(aa, af.sibling)
+    					local ag = useFiber(af, ac.children or {})
+    					ag.return_ = aa
+    					return ag
+    				else
+    					deleteRemainingChildren(aa, af)
+    					break
+    				end
+    			else
+    				deleteChild(aa, af)
+    			end
+    			af = af.sibling
+    		end
+    
+    		local ag = O(ac, aa.mode, ad)
+    		ag.return_ = aa
+    		return ag
+    	end
+    
+    	
+    	
+    	
+    	local function reconcileChildFibers(
+    		aa: Fiber,
+    		ab: Fiber | nil,
+    		ac: any,
+    		ad: Lanes
+    	): Fiber | nil
+    		
+    		
+    		
+    		
+    
+    		
+    		local ae = type(ac)
+    
+    		
+    		
+    		
+    		local af = ac ~= nil
+    			and ae == "table"
+    			and ac.type == r
+    			and ac.key == nil
+    		if af then
+    			ac = ac.props.children
+    			ae = type(ac)
+    		end
+    		local ag = U(ac)
+    
+    		
+    		
+    		local ah = ac ~= nil
+    			and ae == "table"
+    			and not ag
+    
+    		if ah then
+    			
+    			local ai = ac["$$typeof"]
+    			if ai == q then
+    				return placeSingleChild(
+    					reconcileSingleElement(
+    						aa,
+    						ab,
+    						ac,
+    						ad
+    					)
+    				)
+    			elseif ai == s then
+    				return placeSingleChild(
+    					reconcileSinglePortal(aa, ab, ac, ad)
+    				)
+    			elseif ai == t then
+    				if G then
+    					local aj = ac._payload
+    					local ak = ac._init
+    					
+    					return reconcileChildFibers(
+    						aa,
+    						ab,
+    						ak(aj),
+    						ad
+    					)
+    				end
+    			end
+    		
+    		elseif ag then
+    			return reconcileChildrenArray(aa, ab, ac, ad)
+    		elseif ae == "string" or ae == "number" then
+    			return placeSingleChild(
+    				reconcileSingleTextNode(
+    					aa,
+    					ab,
+    					tostring(ac),
+    					ad
+    				)
+    			)
+    		end
+    
+    		
+    		local ai = p(ac)
+    		if ai then
+    			return reconcileChildrenIterator(
+    				aa,
+    				ab,
+    				ac,
+    				ad,
+    				ai
+    			)
+    		end
+    
+    		
+    		
+    		
+    		
+    		
+    
+    		if a then
+    			if ae == "function" then
+    				warnOnFunctionType(aa)
+    			end
+    		end
+    		if ac == nil and not af then
+    			
+    			local aj = false
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			if
+    				aj
+    				and (
+    					aa.tag == x
+    					or aa.tag == w
+    					or aa.tag == A
+    					or aa.tag == C
+    				)
+    			then
+    				E(
+    					false,
+    [[%s(...): Nothing was returned from render. This usually means a return statement is missing. Or, to render nothing, return nil.]]
+    
+    ,
+    					k(aa.type) or "Component"
+    				)
+    			end
+    		end
+    
+    		
+    		return deleteRemainingChildren(aa, ab)
+    	end
+    
+    	return reconcileChildFibers
+    end
+    
+    P.reconcileChildFibers = ChildReconciler(true)
+    P.mountChildFibers = ChildReconciler(false)
+    
+    P.cloneChildFibers = function(aa: Fiber | nil, ab: Fiber)
+    	
+    	
+    	
+    	
+    	
+    
+    	if ab.child == nil then
+    		return
+    	end
+    
+    	local ac = ab.child :: Fiber
+    	local ad = J(ac, ac.pendingProps)
+    	ab.child = ad
+    
+    	ad.return_ = ab
+    	while ac.sibling ~= nil do
+    		ac = ac.sibling
+    		ad.sibling = J(ac, ac.pendingProps)
+    		
+    		ad = ad.sibling :: Fiber
+    		ad.return_ = ab
+    	end
+    	ad.sibling = nil
+    end
+    
+    
+    P.resetChildFibers = function(aa: Fiber, ab: Lanes): ()
+    	local ac = aa.child
+    	while ac ~= nil do
+    		K(ac, ab)
+    		ac = ac.sibling
+    	end
+    end
+    
+    return P
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactCurrentFiber"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _G.__DEV__ :: boolean
+    
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = b.Fiber
+    
+    local c = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactSharedInternals
+    local d = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberComponentStack")
+    local e = d.getStackByFiberInDevAndProd
+    local f = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").getComponentName
+    
+    local g = c.ReactDebugCurrentFrame
+    
+    
+    type Exports = {
+    	current: Fiber | nil,
+    	isRendering: boolean,
+    	
+    	[string]: any
+    }
+    
+    local h: Exports = {
+    	current = nil,
+    	isRendering = false,
+    }
+    
+    h.getCurrentFiberOwnerNameInDevOrNull = function(): string?
+    	if a then
+    		if h.current == nil then
+    			return nil
+    		end
+    		
+    		local i = (h.current :: Fiber)._debugOwner
+    		if i then
+    			return f(i.type)
+    		end
+    	end
+    	return nil
+    end
+    
+    local function getCurrentFiberStackInDev(): string
+    	if a then
+    		if h.current == nil then
+    			return ""
+    		end
+    		
+    		
+    		
+    		return e(h.current :: Fiber)
+    	end
+    	return ""
+    end
+    
+    h.resetCurrentFiber = function(): ()
+    	if a then
+    		
+    		(g :: any).getCurrentStack = nil
+    		h.current = nil
+    		h.isRendering = false
+    	end
+    end
+    
+    h.setCurrentFiber = function(i: Fiber): ()
+    	if a then
+    		
+    		(g :: any).getCurrentStack = getCurrentFiberStackInDev
+    		h.current = i
+    		h.isRendering = false
+    	end
+    end
+    
+    h.setIsRendering = function(i: boolean): ()
+    	if a then
+    		h.isRendering = i
+    	end
+    end
+    
+    h.getIsRendering = function(): boolean
+    	if a then
+    		return h.isRendering
+    	end
+    	return false
+    end
+    
+    return h
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiber.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _G.__DEV__
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/luau-polyfill")
+    local c = b.Object
+    local d = b.Array
+    local e = b.util.inspect
+    
+    
+    local f = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").console
+    
+    local g = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    
+    
+    type ReactElement = g.ReactElement<any, any>
+    type ReactFragment = g.ReactFragment
+    type ReactPortal = g.ReactPortal
+    type ReactFundamentalComponent<T, U> = g.ReactFundamentalComponent<T, U>
+    type ReactScope = g.ReactScope
+    local h = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    export type Fiber = h.Fiber
+    
+    
+    type RoactStableKey = h.RoactStableKey
+    local i = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactRootTags")
+    type RootTag = i.RootTag
+    local j = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactWorkTags")
+    type WorkTag = j.WorkTag
+    local k = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactTypeOfMode")
+    type TypeOfMode = k.TypeOfMode
+    local l = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLane")
+    type Lanes = l.Lanes
+    local m = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHostConfig")
+    type SuspenseInstance = m.SuspenseInstance
+    local n = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberOffscreenComponent")
+    type OffscreenProps = n.OffscreenProps
+    
+    local o = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").invariant
+    local p = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactFeatureFlags
+    local q = p.enableProfilerTimer
+    
+    
+    local r = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberFlags")
+    local s = r.NoFlags
+    local t = r.Placement
+    local u = r.StaticMask
+    local v = i.ConcurrentRoot
+    local w = i.BlockingRoot
+    local x = j.IndeterminateComponent
+    local y = j.ClassComponent
+    local z = j.HostRoot
+    local A = j.HostComponent
+    local B = j.HostText
+    local C = j.HostPortal
+    local D = j.ForwardRef
+    local E = j.Fragment
+    local F = j.Mode
+    local G = j.ContextProvider
+    local H = j.ContextConsumer
+    local I = j.Profiler
+    local J = j.SuspenseComponent
+    local K = j.SuspenseListComponent
+    local L = j.DehydratedFragment
+    local M = j.FunctionComponent
+    local N = j.MemoComponent
+    local O = j.SimpleMemoComponent
+    local P = j.LazyComponent
+    local Q = j.FundamentalComponent
+    local R = j.ScopeComponent
+    local S = j.OffscreenComponent
+    local T = j.LegacyHiddenComponent
+    local U = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").getComponentName
+    
+    local V = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberDevToolsHook.new")
+    local W = V.isDevToolsPresent
+    local X = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHotReloading.new")
+    local Y = X.resolveClassForHotReloading
+    local Z =
+    	X.resolveFunctionForHotReloading
+    local _ =
+    	X.resolveForwardRefForHotReloading
+    local aa = l.NoLanes
+    local ab = k.NoMode
+    local ac = k.ConcurrentMode
+    local ad = k.DebugTracingMode
+    local ae = k.ProfileMode
+    local af = k.StrictMode
+    local ag = k.BlockingMode
+    local ah = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactSymbols
+    local ai = ah.REACT_FORWARD_REF_TYPE
+    local aj = ah.REACT_FRAGMENT_TYPE
+    local ak = ah.REACT_ELEMENT_TYPE
+    local al = ah.REACT_DEBUG_TRACING_MODE_TYPE
+    local am = ah.REACT_STRICT_MODE_TYPE
+    local an = ah.REACT_PROFILER_TYPE
+    local ao = ah.REACT_PROVIDER_TYPE
+    local ap = ah.REACT_CONTEXT_TYPE
+    local aq = ah.REACT_SUSPENSE_TYPE
+    local ar = ah.REACT_SUSPENSE_LIST_TYPE
+    local as = ah.REACT_MEMO_TYPE
+    local at = ah.REACT_LAZY_TYPE
+    
+    
+    local au = ah.REACT_OFFSCREEN_TYPE
+    local av = ah.REACT_LEGACY_HIDDEN_TYPE
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local aw, ax, ay, az, aA, aB, aC, aD
+    
+    local aE = 1
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function createFiber(
+    	aF: WorkTag,
+    	aG: any,
+    	aH: RoactStableKey?,
+    	aI: TypeOfMode,
+    	aJ: any?,
+    	aK: any?,
+    	aL: any?,
+    	aM: Lanes?
+    ): Fiber
+    	
+    	
+    	local aN: Fiber = {
+    		
+    		tag = aF,
+    		key = aH,
+    		elementType = aJ,
+    		type = aK,
+    		stateNode = aL,
+    
+    		
+    		
+    		
+    		
+    		index = 1,
+    
+    		
+    
+    		pendingProps = aG,
+    		
+    		
+    		
+    		
+    
+    		mode = aI,
+    
+    		
+    		flags = s,
+    		subtreeFlags = s,
+    		
+    
+    		lanes = if aM then aM else aa,
+    		childLanes = aa,
+    
+    		
+    	} :: any
+    
+    	if q then
+    		
+    		
+    		
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    aN.actualDuration = 0
+    		aN.actualStartTime = -1
+    aN.selfBaseDuration = 0
+    		aN.treeBaseDuration = 0
+    	end
+    
+    	if a then
+    		
+    		aN._debugID = aE
+    		aE += 1
+    		aN._debugSource = nil
+    		aN._debugOwner = nil
+    		aN._debugNeedsRemount = false
+    		aN._debugHookTypes = nil
+    		
+    		
+    
+    		
+    		
+    		
+    		
+    
+    		
+    	end
+    	return aN
+    	
+    end
+    
+    
+    function _shouldConstruct(aF)
+    	
+    	
+    	return type(aF) ~= "function" and not not aF.isReactComponent
+    end
+    
+    
+    local function isSimpleFunctionComponent(aF: any)
+    	
+    	return type(aF) == "function"
+    	
+    	
+    	
+    end
+    
+    local function resolveLazyComponentTag(aF: any): WorkTag
+    	local aG = typeof(aF)
+    	if aG == "function" then
+    		return M
+    	end
+    
+    	if aG == "table" then
+    		if aF.isReactComponent then
+    			return y
+    		end
+    		local aH = aF["$$typeof"]
+    		if aH == ai then
+    			return D
+    		end
+    		if aH == as then
+    			return N
+    		end
+    	end
+    
+    	return x
+    end
+    
+    
+    local function createWorkInProgress(aF: Fiber, aG: any): Fiber
+    	
+    	local aH = aF.alternate :: Fiber
+    	if aH == nil then
+    		
+    		
+    		
+    		
+    		
+    		aH = createFiber(
+    			aF.tag,
+    			aG,
+    			aF.key,
+    			aF.mode,
+    			aF.elementType,
+    			aF.type,
+    			aF.stateNode
+    		)
+    
+    		if a then
+    			
+    			aH._debugID = aF._debugID
+    			aH._debugSource = aF._debugSource
+    			aH._debugOwner = aF._debugOwner
+    			aH._debugHookTypes = aF._debugHookTypes
+    		end
+    
+    		aH.alternate = aF
+    		aF.alternate = aH
+    	else
+    		aH.pendingProps = aG
+    		
+    		aH.type = aF.type
+    
+    		
+    		
+    		aH.flags = s
+    
+    		
+    		aH.subtreeFlags = s
+    		aH.deletions = nil
+    
+    		if q then
+    			
+    			
+    			
+    			
+    			aH.actualDuration = 0
+    			aH.actualStartTime = -1
+    end
+    	end
+    
+    	
+    	
+    	aH.flags = bit32.band(aF.flags, u)
+    	aH.childLanes = aF.childLanes
+    	aH.lanes = aF.lanes
+    
+    	aH.child = aF.child
+    	aH.memoizedProps = aF.memoizedProps
+    	aH.memoizedState = aF.memoizedState
+    	aH.updateQueue = aF.updateQueue
+    
+    	
+    	
+    	local aI = aF.dependencies
+    	if aI == nil then
+    		aH.dependencies = nil
+    	else
+    		aH.dependencies = {
+    			lanes = aI.lanes,
+    			firstContext = aI.firstContext,
+    		}
+    	end
+    
+    	
+    	aH.sibling = aF.sibling
+    	aH.index = aF.index
+    	aH.ref = aF.ref
+    
+    	if q then
+    		aH.selfBaseDuration = aF.selfBaseDuration
+    		aH.treeBaseDuration = aF.treeBaseDuration
+    	end
+    
+    	if a then
+    		aH._debugNeedsRemount = aF._debugNeedsRemount
+    		if
+    			aH.tag == x
+    			or aH.tag == M
+    			or aH.tag == O
+    		then
+    			aH.type = Z(aF.type)
+    		elseif aH.tag == y then
+    			aH.type = Y(aF.type)
+    		elseif aH.tag == D then
+    			aH.type = _(aF.type)
+    		end
+    	end
+    
+    	return aH
+    end
+    
+    
+    local function resetWorkInProgress(aF: Fiber, aG: Lanes)
+    	
+    	
+    	
+    	
+    
+    	
+    	
+    
+    	
+    	
+    	aF.flags =
+    		bit32.band(aF.flags, bit32.bor(u, t))
+    
+    	
+    
+    	local aH = aF.alternate
+    	if aH == nil then
+    		
+    		aF.childLanes = aa
+    		aF.lanes = aG
+    
+    		aF.child = nil
+    		aF.subtreeFlags = s
+    		aF.memoizedProps = nil
+    		aF.memoizedState = nil
+    		aF.updateQueue = nil
+    
+    		aF.dependencies = nil
+    
+    		aF.stateNode = nil
+    
+    		if q then
+    			
+    			
+    			aF.selfBaseDuration = 0
+    			aF.treeBaseDuration = 0
+    		end
+    	else
+    		
+    		aF.childLanes = aH.childLanes
+    		aF.lanes = aH.lanes
+    
+    		aF.child = aH.child
+    		aF.subtreeFlags = aH.subtreeFlags
+    		aF.deletions = nil
+    		aF.memoizedProps = aH.memoizedProps
+    		aF.memoizedState = aH.memoizedState
+    		aF.updateQueue = aH.updateQueue
+    		
+    		aF.type = aH.type
+    
+    		
+    		
+    		local aI = aH.dependencies
+    		if aI == nil then
+    			aF.dependencies = nil
+    		else
+    			aF.dependencies = {
+    				lanes = aI.lanes,
+    				firstContext = aI.firstContext,
+    			}
+    		end
+    
+    		if q then
+    			
+    			
+    			aF.selfBaseDuration = aH.selfBaseDuration
+    			aF.treeBaseDuration = aH.treeBaseDuration
+    		end
+    	end
+    
+    	return aF
+    end
+    
+    local function createHostRootFiber(aF: RootTag): Fiber
+    	local aG
+    	if aF == v then
+    		aG = bit32.bor(ac, ag, af)
+    	elseif aF == w then
+    		aG = bit32.bor(ag, af)
+    	else
+    		aG = ab
+    	end
+    
+    	
+    	if q and W() then
+    		
+    		
+    		
+    		aG = bit32.bor(aG, ae)
+    	end
+    
+    	return createFiber(z, nil, nil, aG)
+    end
+    
+    local function createFiberFromTypeAndProps(
+    	aF: any, 
+    	aG: string?,
+    	aH: any,
+    	aI: nil | Fiber,
+    	aJ: TypeOfMode,
+    	aK: Lanes
+    ): Fiber
+    	local aL = x
+    	
+    	
+    	local aM = aF
+    	local aN = type(aF)
+    	
+    	
+    	if aN == "function" then
+    		if a then
+    			aM = Z(aM)
+    		end
+    	elseif aN == "table" and not not aF.isReactComponent then
+    		aL = y
+    		if a then
+    			aM = Y(aM)
+    		end
+    	elseif aN == "string" then
+    		aL = A
+    	else
+    		if aF == aj then
+    			return ay(aH.children, aJ, aK, aG)
+    		elseif aF == al then
+    			aL = F
+    			aJ = bit32.bor(aJ, ad)
+    		elseif aF == am then
+    			aL = F
+    			aJ = bit32.bor(aJ, af)
+    		elseif aF == an then
+    			return ax(aH, aJ, aK, aG)
+    		elseif aF == aq then
+    			return aA(aH, aJ, aK, aG)
+    			
+    			
+    		elseif aF == au then
+    			return aB(aH, aJ, aK, aG)
+    		elseif aF == av then
+    			return aC(aH, aJ, aK, aG)
+    			
+    			
+    			
+    			
+    		else
+    			local aO = false
+    			local aP
+    			if aN == "table" then
+    				aP = aF["$$typeof"]
+    				if aP == ao then
+    					aL = G
+    					aO = true
+    				elseif aP == ap then
+    					
+    					aL = H
+    					aO = true
+    				elseif aP == ai then
+    					aL = D
+    					if a then
+    						aM = _(aM)
+    					end
+    					aO = true
+    				elseif aP == as then
+    					aL = N
+    					aO = true
+    				elseif aP == at then
+    					aL = P
+    					aM = nil
+    					aO = true
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    				end
+    			end
+    			if not aO then
+    				local aQ = ""
+    				if a then
+    					if
+    						aF == nil
+    						or (aN == "table" and #c.keys(aF) == 0)
+    					then
+    						aQ ..= [[ You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.]]					
+    elseif aF ~= nil and aN == "table" then
+    						
+    						aQ ..= "\n" .. e(aF)
+    					end
+    					local aR
+    					if aI then
+    						aR = U(aI.type)
+    					end
+    					if aR ~= nil and aR ~= "" then
+    						aQ ..= "\n\nCheck the render method of `" .. aR .. "`."
+    					elseif aI then
+    						
+    						
+    						aQ ..= "\n" .. e(aI)
+    					end
+    				end
+    
+    				
+    				local aR
+    				if aF == nil then
+    					aR = "nil"
+    				elseif d.isArray(aF) then
+    					aR = "array"
+    				elseif aN == "table" and aP == ak then
+    					aR =
+    						string.format("<%s />", U(aF.type) or "Unknown")
+    					aQ =
+    						" Did you accidentally export a JSX literal or Element instead of a component?"
+    				else
+    					aR = aN
+    				end
+    
+    				o(
+    					false,
+    [[Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s]]
+    
+    ,
+    					aR,
+    					aQ
+    				)
+    			end
+    		end
+    	end
+    
+    	
+    	local aO =
+    		createFiber(aL, aH, aG, aJ, aF, aM, nil, aK)
+    
+    	
+    	
+    	
+    	
+    
+    	if a then
+    		aO._debugOwner = aI
+    	end
+    
+    	return aO
+    end
+    
+    local function createFiberFromElement(
+    	aF: ReactElement,
+    	aG: TypeOfMode,
+    	aH: Lanes
+    ): Fiber
+    	local aI 	
+    if a then
+    		aI = aF._owner
+    	end
+    	local aJ = aF.type
+    	local aK = aF.key
+    	local aL = aF.props
+    	local aM = createFiberFromTypeAndProps(
+    		aJ,
+    		
+    		aK :: string,
+    		aL,
+    		aI,
+    		aG,
+    		aH
+    	)
+    	if a then
+    		aM._debugSource = aF._source
+    		aM._debugOwner = aF._owner
+    	end
+    	return aM
+    end
+    
+    function ay(
+    	aF: ReactFragment,
+    	aG: TypeOfMode,
+    	aH: Lanes,
+    	aI: string?
+    ): Fiber
+    	
+    	local aJ = createFiber(E, aF, aI, aG, nil, nil, nil, aH)
+    	
+    	
+    	return aJ
+    end
+    
+    function az(
+    	aF: ReactFundamentalComponent<any, any>,
+    	aG: any,
+    	aH: TypeOfMode,
+    	aI: Lanes,
+    	aJ: string?
+    ): Fiber
+    	
+    	local aK = createFiber(
+    		Q,
+    		aG,
+    		aJ,
+    		aH,
+    		aF,
+    		aF,
+    		nil,
+    		aI
+    	)
+    	
+    	
+    	
+    	
+    	return aK
+    end
+    
+    function aw(
+    	aF: ReactScope,
+    	aG: any,
+    	aH: TypeOfMode,
+    	aI: Lanes,
+    	aJ: string?
+    ): Fiber
+    	
+    	local aK =
+    		createFiber(R, aG, aJ, aH, aF, aF, nil, aI)
+    	
+    	
+    	
+    	
+    	return aK
+    end
+    
+    function ax(
+    	aF: any,
+    	aG: TypeOfMode,
+    	aH: Lanes,
+    	aI: string?
+    ): Fiber
+    	if a then
+    		if typeof(aF.id) ~= "string" then
+    			f.error('Profiler must specify an "id" as a prop')
+    		end
+    	end
+    
+    	
+    	local aJ = createFiber(
+    		I,
+    		aF,
+    		aI,
+    		bit32.bor(aG, ae),
+    		an,
+    		an,
+    		if q
+    			then {
+    				effectDuration = 0,
+    				passiveEffectDuration = 0,
+    			}
+    			else nil,
+    		aH
+    	)
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	return aJ
+    end
+    
+    function aA(
+    	aF: any,
+    	aG: TypeOfMode,
+    	aH: Lanes,
+    	aI: string?
+    ): Fiber
+    	
+    	local aJ = createFiber(
+    		J,
+    		aF,
+    		aI,
+    		aG,
+    		aq,
+    		aq,
+    		nil,
+    		aH
+    	)
+    
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    	
+    	return aJ
+    end
+    
+    function aD(
+    	aF: any,
+    	aG: TypeOfMode,
+    	aH: Lanes,
+    	aI: string?
+    ): Fiber
+    	
+    	local aJ = createFiber(
+    		K,
+    		aF,
+    		aI,
+    		aG,
+    		ar,
+    		if a then ar else nil,
+    		nil,
+    		aH
+    	)
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	return aJ
+    end
+    
+    function aB(
+    	aF: OffscreenProps,
+    	aG: TypeOfMode,
+    	aH: Lanes,
+    	aI: string?
+    ): Fiber
+    	
+    	local aJ = createFiber(
+    		S,
+    		aF,
+    		aI,
+    		aG,
+    		au,
+    		if a then au else nil,
+    		nil,
+    		aH
+    	)
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	return aJ
+    end
+    
+    function aC(
+    	aF: OffscreenProps,
+    	aG: TypeOfMode,
+    	aH: Lanes,
+    	aI: string?
+    ): Fiber
+    	
+    	local aJ = createFiber(
+    		T,
+    		aF,
+    		aI,
+    		aG,
+    		av,
+    		if a then av else nil,
+    		nil,
+    		aH
+    	)
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	return aJ
+    end
+    
+    local function createFiberFromText(aF: string, aG: TypeOfMode, aH: Lanes): Fiber
+    	
+    	local aI = createFiber(B, aF, nil, aG, nil, nil, nil, aH)
+    	
+    	
+    	return aI
+    end
+    
+    local function createFiberFromHostInstanceForDeletion(): Fiber
+    	
+    	local aF = createFiber(A, nil, nil, ab, "DELETED", "DELETED")
+    	
+    	
+    	
+    	
+    	return aF
+    end
+    
+    local function createFiberFromDehydratedFragment(aF: SuspenseInstance): Fiber
+    	
+    	local aG =
+    		createFiber(L, nil, nil, ab, nil, nil, aF)
+    	
+    	
+    	return aG
+    end
+    
+    local function createFiberFromPortal(
+    	aF: ReactPortal,
+    	aG: TypeOfMode,
+    	aH: Lanes
+    ): Fiber
+    	local aI = if aF.children ~= nil then aF.children else {}
+    	
+    	local aJ = createFiber(C, aI, aF.key, aG, nil, nil, {
+    		containerInfo = aF.containerInfo,
+    		pendingChildren = nil, 
+    		implementation = aF.implementation,
+    	}, aH)
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	return aJ
+    end
+    
+    
+    
+    local function assignFiberPropertiesInDEV(aF: Fiber, aG: Fiber): Fiber
+    	if aF == nil then
+    		
+    		
+    		aF = createFiber(x, nil, nil, ab)
+    	end
+    
+    	
+    	
+    	
+    	
+    	
+    
+    	aF.tag = aG.tag
+    	aF.key = aG.key
+    	aF.elementType = aG.elementType
+    	aF.type = aG.type
+    	aF.stateNode = aG.stateNode
+    	aF.return_ = aG.return_
+    	aF.child = aG.child
+    	aF.sibling = aG.sibling
+    	aF.index = aG.index
+    	aF.ref = aG.ref
+    	aF.pendingProps = aG.pendingProps
+    	aF.memoizedProps = aG.memoizedProps
+    	aF.updateQueue = aG.updateQueue
+    	aF.memoizedState = aG.memoizedState
+    	aF.dependencies = aG.dependencies
+    	aF.mode = aG.mode
+    	aF.flags = aG.flags
+    	aF.subtreeFlags = aG.subtreeFlags
+    	aF.deletions = aG.deletions
+    	aF.lanes = aG.lanes
+    	aF.childLanes = aG.childLanes
+    	aF.alternate = aG.alternate
+    	if q then
+    		aF.actualDuration = aG.actualDuration
+    		aF.actualStartTime = aG.actualStartTime
+    		aF.selfBaseDuration = aG.selfBaseDuration
+    		aF.treeBaseDuration = aG.treeBaseDuration
+    	end
+    	aF._debugID = aG._debugID
+    	aF._debugSource = aG._debugSource
+    	aF._debugOwner = aG._debugOwner
+    	aF._debugNeedsRemount = aG._debugNeedsRemount
+    	aF._debugHookTypes = aG._debugHookTypes
+    	return aF
+    end
+    
+    
+    return {
+    	isSimpleFunctionComponent = isSimpleFunctionComponent,
+    	resolveLazyComponentTag = resolveLazyComponentTag,
+    	createWorkInProgress = createWorkInProgress,
+    	resetWorkInProgress = resetWorkInProgress,
+    	createHostRootFiber = createHostRootFiber,
+    	createFiberFromTypeAndProps = createFiberFromTypeAndProps,
+    	createFiberFromElement = createFiberFromElement,
+    	createFiberFromFragment = ay,
+    	createFiberFromFundamental = az,
+    	createFiberFromSuspense = aA,
+    	createFiberFromSuspenseList = aD,
+    	createFiberFromOffscreen = aB,
+    	createFiberFromLegacyHidden = aC,
+    	createFiberFromText = createFiberFromText,
+    	createFiberFromHostInstanceForDeletion = createFiberFromHostInstanceForDeletion,
+    	createFiberFromDehydratedFragment = createFiberFromDehydratedFragment,
+    	createFiberFromPortal = createFiberFromPortal,
+    	assignFiberPropertiesInDEV = assignFiberPropertiesInDEV,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberBeginWork.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function unimplemented(a: string)
+    	print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    	print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    	print("UNIMPLEMENTED ERROR: " .. tostring(a))
+    	error("FIXME (roblox): " .. a .. " is unimplemented", 2)
+    end
+    
+    local a = _G.__DEV__ :: boolean
+    local b =
+    	_G.__DISABLE_ALL_WARNINGS_EXCEPT_PROP_VALIDATION__ :: boolean
+    local c = _G.__COMPAT_WARNINGS__ :: boolean
+    
+    
+    local d = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    local e = d.console
+    local f = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/luau-polyfill")
+    local g = f.Array
+    local h = f.Object
+    local i = f.util.inspect
+    
+    local j = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    type ReactProviderType<T> = j.ReactProviderType<T>
+    type ReactContext<T> = j.ReactContext<T>
+    type React_Component<Props, State> = j.React_Component<Props, State>
+    
+    local k = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react")
+    type LazyComponentType<T, P> = k.LazyComponent<T, P>
+    
+    local l = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = l.Fiber
+    type FiberRoot = l.FiberRoot
+    local m = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLane")
+    type Lanes = m.Lanes
+    
+    
+    
+    local n = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberSuspenseComponent.new")
+    type SuspenseState = n.SuspenseState
+    type SuspenseListRenderState = n.SuspenseListRenderState
+    type SuspenseListTailMode = n.SuspenseListTailMode
+    local o = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberSuspenseContext.new")
+    type SuspenseContext = o.SuspenseContext
+    
+    local p = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberOffscreenComponent")
+    type OffscreenProps = p.OffscreenProps
+    type OffscreenState = p.OffscreenState
+    
+    local q = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").checkPropTypes
+    
+    local r = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactWorkTags")
+    
+    local s = r.FunctionComponent
+    local t = r.ClassComponent
+    local u = r.HostRoot
+    local v = r.HostComponent
+    local w = r.HostText
+    local x = r.HostPortal
+    local y = r.ForwardRef
+    local z = r.Fragment
+    local A = r.Mode
+    local B = r.ContextProvider
+    local C = r.ContextConsumer
+    local D = r.Profiler
+    local E = r.SuspenseComponent
+    local F = r.SuspenseListComponent
+    local G = r.MemoComponent
+    local H = r.SimpleMemoComponent
+    local I = r.LazyComponent
+    local J = r.IncompleteClassComponent
+    
+    
+    local K = r.OffscreenComponent
+    local L = r.LegacyHiddenComponent
+    local M = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberFlags")
+    local N = M.NoFlags
+    local O = M.StaticMask
+    local P = M.PerformedWork
+    local Q = M.Placement
+    local R = M.Hydrating
+    local S = M.ContentReset
+    local T = M.DidCapture
+    
+    local U = M.Ref
+    local V = M.Deletion
+    local W = M.ForceUpdateForLegacySuspense
+    local X = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactSharedInternals
+    local Y = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactFeatureFlags
+    local Z =
+    	Y.debugRenderPhaseSideEffectsForStrictMode
+    local _ = Y.disableLegacyContext
+    local aa = Y.disableModulePatternComponents
+    local ab = Y.enableProfilerTimer
+    local ac = Y.enableSchedulerTracing
+    local ad = Y.enableSuspenseServerRenderer
+    
+    local ae =
+    	Y.warnAboutDefaultPropsOnFunctionComponents
+    
+    local af = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").invariant
+    local ag = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").describeError
+    local ah = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").shallowEqual
+    local ai = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").getComponentName
+    local aj = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactSymbols
+    local ak = aj.REACT_LAZY_TYPE
+    local al = aj.getIteratorFn
+    local am = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactStrictModeWarnings.new")
+    local an = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactCurrentFiber")
+    local ao =
+    	an.getCurrentFiberOwnerNameInDevOrNull
+    local ap = an.setIsRendering
+    local aq = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHotReloading.new")
+    local ar =
+    	aq.resolveFunctionForHotReloading
+    local as =
+    	aq.resolveForwardRefForHotReloading
+    local at =
+    	aq.resolveClassForHotReloading
+    
+    local au = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactChildFiber.new"):: any
+    local av = au.mountChildFibers
+    local aw = au.reconcileChildFibers
+    local ax = au.cloneChildFibers
+    local ay = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactUpdateQueue.new")
+    local az = ay.processUpdateQueue
+    local aA = ay.cloneUpdateQueue
+    local aB = ay.initializeUpdateQueue
+    local aC = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactTypeOfMode")
+    local aD = aC.ConcurrentMode
+    local aE = aC.NoMode
+    local aF = aC.ProfileMode
+    local aG = aC.StrictMode
+    local aH = aC.BlockingMode
+    local aI = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHostConfig")
+    local aJ = aI.shouldSetTextContent
+    local aK = aI.isSuspenseInstancePending
+    local aL = aI.isSuspenseInstanceFallback
+    local aM = aI.registerSuspenseInstanceRetry
+    local aN = aI.supportsHydration
+    type SuspenseInstance = aI.SuspenseInstance
+    
+    local aO = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHostContext.new")
+    local aP = aO.pushHostContext
+    local aQ = aO.pushHostContainer
+    local aR = o.suspenseStackCursor
+    local aS = o.hasSuspenseContext
+    local aT = o.ForceSuspenseFallback
+    local aU = o.addSubtreeSuspenseContext
+    local aV =
+    	o.InvisibleParentSuspenseContext
+    local aW = o.pushSuspenseContext
+    
+    local aX =
+    	o.setDefaultShallowSuspenseContext
+    
+    
+    
+    local aY = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberNewContext.new")
+    local aZ = aY.propagateContextChange
+    local a_ = aY.readContext
+    local a0 = aY.calculateChangedBits
+    
+    local a1 = aY.prepareToReadContext
+    local a2 = aY.pushProvider
+    
+    
+    local a3 = {
+    	renderWithHooksRef = nil :: any,
+    	bailoutHooksRef = nil :: any,
+    	shouldSuspendRef = nil :: any,
+    }
+    
+    local function shouldSuspend(a4: Fiber): boolean
+    	if not a3.shouldSuspendRef then
+    		a3.shouldSuspendRef = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberReconciler").shouldSuspend
+    	end
+    	return a3.shouldSuspendRef(a4)
+    end
+    
+    
+    local function initReactFiberHooks()
+    	local a4 = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHooks.new")	
+    a3.renderWithHooksRef = a4.renderWithHooks
+    	a3.bailoutHooksRef = a4.bailoutHooks
+    end
+    
+    
+    local function renderWithHooks(...)
+    	if not a3.renderWithHooksRef then
+    		initReactFiberHooks()
+    	end
+    	return a3.renderWithHooksRef(...)
+    end
+    
+    
+    local function bailoutHooks(...)
+    	if not a3.bailoutHooksRef then
+    		initReactFiberHooks()
+    	end
+    	return a3.bailoutHooksRef(...)
+    end
+    
+    local a4 =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactProfilerTimer.new").stopProfilerTimerIfRunning
+    local a5 = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberContext.new")
+    local a6 = a5.getMaskedContext
+    local a7 = a5.getUnmaskedContext
+    local a8 = a5.hasContextChanged
+    local a9 = a5.pushContextProvider
+    local ba = a5.isContextProvider
+    local bb = a5.pushTopLevelContextObject
+    local bc = a5.invalidateContextProvider
+    
+    local bd = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHydrationContext.new")
+    local be = bd.resetHydrationState
+    local bf = bd.enterHydrationState
+    local bg =
+    	bd.reenterHydrationStateFromDehydratedSuspenseInstance
+    local bh =
+    	bd.tryToClaimNextHydratableInstance
+    local bi = bd.warnIfHydrating
+    local bj = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberClassComponent.new"):: any
+    local bk = bj.adoptClassInstance
+    local bl = bj.applyDerivedStateFromProps
+    local bm = bj.constructClassInstance
+    local bn = bj.mountClassInstance
+    local bo = bj.resumeMountClassInstance
+    local bp = bj.updateClassInstance
+    
+    local bq =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLazyComponent.new").resolveDefaultProps
+    local br = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiber.new")
+    local bs = br.resolveLazyComponentTag
+    local bt = br.createFiberFromFragment
+    local bu = br.createFiberFromOffscreen
+    
+    local bv = br.createFiberFromTypeAndProps
+    local bw = br.isSimpleFunctionComponent
+    local bx = br.createWorkInProgress
+    local by = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberWorkLoop.new"):: any
+    local bz = by.pushRenderLanes
+    local bA = by.markSpawnedWork
+    local bB = by.retryDehydratedSuspenseBoundary
+    local bC = by.scheduleUpdateOnFiber
+    local bD = by.renderDidSuspendDelayIfPossible
+    local bE = by.getWorkInProgressRoot
+    local bF = by.getExecutionContext
+    local bG = by.RetryAfterError
+    local bH = by.NoContext
+    
+    local bI
+    local bJ =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactMutableSource.new").setWorkInProgressVersion
+    local bK =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberWorkInProgress").markSkippedUpdateLanes
+    local bL = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ConsolePatchingDev
+    local bM = bL.disableLogs
+    local bN = bL.reenableLogs
+    
+    local bO = X.ReactCurrentOwner
+    
+    local bP: { [string]: any } = {}
+    
+    
+    local bQ, bR
+    
+    local bS: boolean = false
+    
+    
+    local bT = {
+    	didWarnAboutBadClass = {} :: { [string]: boolean },
+    	didWarnAboutModulePatternComponent = {} :: { [string]: boolean },
+    	didWarnAboutContextTypeOnFunctionComponent = {} :: { [string]: boolean },
+    	didWarnAboutGetDerivedStateOnFunctionComponent = {} :: { [string]: boolean },
+    	didWarnAboutFunctionRefs = {} :: { [string]: boolean },
+    	didWarnAboutDefaultPropsOnFunctionComponent = {} :: { [string]: boolean },
+    }
+    
+    
+    
+    local bU
+    
+    if a then
+    	bT.didWarnAboutBadClass = {}
+    	bT.didWarnAboutModulePatternComponent = {}
+    	bT.didWarnAboutContextTypeOnFunctionComponent = {}
+    	bT.didWarnAboutGetDerivedStateOnFunctionComponent = {}
+    	bT.didWarnAboutFunctionRefs = {}
+    	bP.didWarnAboutReassigningProps = false
+    	
+    	
+    	bT.didWarnAboutDefaultPropsOnFunctionComponent = {}
+    end
+    
+    local function reconcileChildren(
+    	bV: Fiber | nil,
+    	bW: Fiber,
+    	bX: any,
+    	bY: Lanes
+    )
+    	if bV == nil then
+    		
+    		
+    		
+    		
+    		bW.child =
+    			av(bW, nil, bX, bY)
+    	else
+    		
+    		
+    		
+    
+    		
+    		
+    		bW.child = aw(
+    			bW,
+    			(bV :: Fiber).child,
+    			bX,
+    			bY
+    		)
+    	end
+    end
+    
+    local function forceUnmountCurrentAndReconcile(
+    	bV: Fiber,
+    	bW: Fiber,
+    	bX: any,
+    	bY: Lanes
+    )
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	bW.child =
+    		aw(bW, bV.child, nil, bY)
+    	
+    	
+    	
+    	
+    	bW.child =
+    		aw(bW, nil, bX, bY)
+    end
+    
+    local function updateForwardRef(
+    	bV: Fiber | nil,
+    	bW: Fiber,
+    	bX: any,
+    	bY: any,
+    	bZ: Lanes
+    )
+    	
+    	
+    	
+    
+    	if a or b then
+    		if bW.type ~= bW.elementType then
+    			
+    			
+    			
+    			local b_ = bX.propTypes
+    			local b0 = bX.validateProps
+    			if b_ or b0 then
+    				q(
+    					b_,
+    					b0,
+    					bY, 
+    					"prop",
+    					ai(bX)
+    				)
+    			end
+    		end
+    	end
+    
+    	local b_ = bX.render
+    	local b0 = bW.ref
+    
+    	
+    	local b1
+    	a1(
+    		bW,
+    		bZ,
+    		bP.markWorkInProgressReceivedUpdate
+    	)
+    	if a then
+    		bO.current = bW
+    		ap(true)
+    		b1 =
+    			renderWithHooks(bV, bW, b_, bY, b0, bZ)
+    		if
+    			Z
+    			and bit32.band(bW.mode, aG) ~= 0
+    		then
+    			bM()
+    			local b2, b3 = xpcall(
+    				renderWithHooks,
+    				ag,
+    				bV,
+    				bW,
+    				b_,
+    				bY,
+    				b0,
+    				bZ
+    			)
+    			if b2 then
+    				b1 = b3
+    			end
+    			
+    			bN()
+    
+    			if not b2 then
+    				error(b3)
+    			end
+    		end
+    		ap(false)
+    	else
+    		b1 =
+    			renderWithHooks(bV, bW, b_, bY, b0, bZ)
+    	end
+    
+    	if bV ~= nil and not bS then
+    		bailoutHooks(bV, bW, bZ)
+    		return bQ(bV, bW, bZ)
+    	end
+    
+    	
+    	bW.flags = bit32.bor(bW.flags, P)
+    	reconcileChildren(bV, bW, b1, bZ)
+    	return bW.child
+    end
+    
+    local function updateMemoComponent(
+    	bV: Fiber | nil,
+    	bW: Fiber,
+    	bX: any,
+    	bY: any,
+    	bZ: Lanes,
+    	b_: Lanes
+    ): nil | Fiber
+    	if bV == nil then
+    		local b0 = bX.type
+    		if
+    			bw(b0)
+    			and bX.compare == nil
+    			
+    			and bX.defaultProps == nil
+    		then
+    			local b1 = b0
+    			if a then
+    				b1 = ar(b0)
+    			end
+    			
+    			
+    			
+    			bW.tag = H
+    			bW.type = b1
+    			if a then
+    				validateFunctionComponentInDev(bW, b0)
+    			end
+    			return bU(
+    				bV,
+    				bW,
+    				b1,
+    				bY,
+    				bZ,
+    				b_
+    			)
+    		end
+    		if a or b then
+    			
+    			local b1
+    			local b2
+    			
+    			if type(b0) == "table" then
+    				b1 = b0.propTypes
+    				b2 = b0.validateProps
+    			end
+    
+    			if b1 or b2 then
+    				
+    				
+    				q(
+    					b1,
+    					b2,
+    					bY, 
+    					"prop",
+    					ai(b0)
+    				)
+    			end
+    		end
+    		local b1 = bv(
+    			bX.type,
+    			nil,
+    			bY,
+    			bW,
+    			bW.mode,
+    			b_
+    		)
+    		b1.ref = bW.ref
+    		b1.return_ = bW
+    		bW.child = b1
+    		return b1
+    	end
+    	
+    	
+    	local b0 = bV :: Fiber
+    	if a or b then
+    		local b1 = bX.type
+    		
+    		local b2
+    		local b3
+    		
+    		if type(b1) == "table" then
+    			b2 = b1.propTypes
+    			b3 = b1.validateProps
+    		end
+    
+    		if b2 or b3 then
+    			
+    			
+    			q(
+    				b2,
+    				b3,
+    				bY, 
+    				"prop",
+    				ai(b1)
+    			)
+    		end
+    	end
+    	local b1 = (b0.child :: any) :: Fiber 
+    	if not m.includesSomeLane(bZ, b_) then
+    		
+    		
+    		local b2 = b1.memoizedProps
+    		
+    		local b3 = bX.compare
+    		if b3 == nil then
+    			b3 = ah
+    		end
+    		if b3(b2, bY) and b0.ref == bW.ref then
+    			return bQ(b0, bW, b_)
+    		end
+    	end
+    	
+    	bW.flags = bit32.bor(bW.flags, P)
+    	local b2 = bx(b1, bY)
+    	b2.ref = bW.ref
+    	b2.return_ = bW
+    	bW.child = b2
+    	return b2
+    end
+    
+    function bU(
+    	bV: Fiber | nil,
+    	bW: Fiber,
+    	bX: any,
+    	bY: any,
+    	bZ: Lanes,
+    	b_: Lanes
+    ): nil | Fiber
+    	
+    	
+    	
+    
+    	if a or b then
+    		if bW.type ~= bW.elementType then
+    			
+    			
+    			local b0 = bW.elementType
+    			if b0["$$typeof"] == ak then
+    				
+    				
+    				
+    				local b1: LazyComponentType<any, any> = b0
+    				local b2 = b1._payload
+    				local b3 = b1._init
+    				local b4, b5 = xpcall(b3, ag, b2)
+    				if b4 then
+    					b0 = b5
+    				else
+    					b0 = nil
+    				end
+    				
+    				
+    				local b6
+    				local b7
+    				
+    				if b0 ~= nil and type(b0) == "table" then
+    					b6 = (b0 :: any).propTypes
+    					
+    					b7 = (b0 :: any).validateProps
+    				end
+    
+    				if b6 or b7 then
+    					q(
+    						b6,
+    						b7,
+    						bY, 
+    						"prop",
+    						ai(b0)
+    					)
+    				end
+    			end
+    		end
+    	end
+    	if bV ~= nil then
+    		
+    		
+    		local b0 = bV :: Fiber
+    		local b1 = b0.memoizedProps
+    		
+    		local b2 = true
+    		if a then
+    			b2 = bW.type == b0.type
+    		end
+    		if
+    			ah(b1, bY)
+    			and b0.ref == bW.ref
+    			
+    			and b2
+    		then
+    			bS = false
+    			if not m.includesSomeLane(b_, bZ) then
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				bW.lanes = b0.lanes
+    				return bQ(b0, bW, b_)
+    			elseif bit32.band(b0.flags, W) ~= N then
+    				
+    				
+    				bS = true
+    			end
+    		end
+    	end
+    	return bR(
+    		bV,
+    		bW,
+    		bX,
+    		bY,
+    		b_
+    	)
+    end
+    
+    local function updateOffscreenComponent(
+    	bV: Fiber?,
+    	bW: Fiber,
+    	bX: Lanes
+    ): Fiber | nil
+    	local bY: OffscreenProps = bW.pendingProps
+    	local bZ = bY.children
+    
+    	local b_: OffscreenState?
+    	if bV ~= nil then
+    		
+    		b_ = (bV :: Fiber).memoizedState
+    	end
+    
+    	if
+    		bY.mode == "hidden"
+    		or bY.mode == "unstable-defer-without-hiding"
+    	then
+    		if bit32.band(bW.mode, aD) == aE then
+    			
+    			
+    			local b0: OffscreenState = {
+    				baseLanes = m.NoLanes,
+    			}
+    			bW.memoizedState = b0
+    			bz(bW, bX)
+    		
+    		elseif
+    			not m.includesSomeLane(bX, m.OffscreenLane)
+    		then
+    			local b0
+    			if b_ ~= nil then
+    				
+    				local b1 = (b_ :: OffscreenState).baseLanes
+    				b0 = m.mergeLanes(b1, bX)
+    			else
+    				b0 = bX
+    			end
+    
+    			
+    			if ac then
+    				bA(m.OffscreenLane)
+    			end
+    
+    			
+    			bW.childLanes =
+    				m.laneToLanes(m.OffscreenLane)
+    			bW.lanes = bW.childLanes
+    
+    			local b1: OffscreenState = {
+    				baseLanes = b0,
+    			}
+    			bW.memoizedState = b1
+    			
+    			
+    			bz(bW, b0)
+    			return nil
+    		else
+    			
+    			local b0: OffscreenState = {
+    				baseLanes = m.NoLanes,
+    			}
+    			bW.memoizedState = b0
+    			
+    			local b1 = bX
+    
+    			
+    			if b_ ~= nil then
+    				
+    				b1 = (b_ :: OffscreenState).baseLanes
+    			end
+    
+    			bz(bW, b1)
+    		end
+    	else
+    		local b0
+    		if b_ ~= nil then
+    			
+    			b0 = m.mergeLanes(
+    				(b_ :: OffscreenState).baseLanes,
+    				bX
+    			)
+    			
+    			bW.memoizedState = nil
+    		else
+    			
+    			
+    			
+    			b0 = bX
+    		end
+    		bz(bW, b0)
+    	end
+    
+    	reconcileChildren(bV, bW, bZ, bX)
+    	return bW.child
+    end
+    
+    
+    
+    
+    local bV = updateOffscreenComponent
+    
+    function updateFragment(bW: Fiber | nil, bX: Fiber, bY: Lanes)
+    	local bZ = bX.pendingProps
+    	reconcileChildren(bW, bX, bZ, bY)
+    	return bX.child
+    end
+    
+    function updateMode(bW: Fiber | nil, bX: Fiber, bY: Lanes)
+    	local bZ = bX.pendingProps.children
+    	reconcileChildren(bW, bX, bZ, bY)
+    	return bX.child
+    end
+    
+    function updateProfiler(bW: Fiber | nil, bX: Fiber, bY: Lanes)
+    	if ab then
+    		
+    		
+    		local bZ = bX.stateNode
+    		bZ.effectDuration = 0
+    		bZ.passiveEffectDuration = 0
+    	end
+    	local bZ = bX.pendingProps
+    	local b_ = bZ.children
+    	reconcileChildren(bW, bX, b_, bY)
+    	return bX.child
+    end
+    
+    local function markRef(bW: Fiber | nil, bX: Fiber)
+    	local bY = bX.ref
+    	if
+    		(bW == nil and bY ~= nil)
+    		or (bW ~= nil and (bW :: Fiber).ref ~= bY)
+    	then
+    		
+    		bX.flags = bit32.bor(bX.flags, U)
+    	end
+    end
+    
+    function bR(
+    	bW,
+    	bX,
+    	bY,
+    	bZ: any,
+    	b_
+    )
+    	if a or b then
+    		
+    		if
+    			type(bY) ~= "function"
+    			and (bX.type ~= bX.elementType)
+    		then
+    			
+    			
+    			
+    			local b0
+    			local b1
+    			
+    			if type(bY) == "table" then
+    				b0 = (bY :: any).propTypes
+    				b1 = (bY :: any).validateProps
+    			end
+    
+    			if b0 or b1 then
+    				q(
+    					b0,
+    					b1,
+    					bZ, 
+    					"prop",
+    					ai(bY)
+    				)
+    			end
+    		end
+    	end
+    
+    	local b0
+    	if not _ then
+    		local b1 = a7(bX, bY, true)
+    		b0 = a6(bX, b1)
+    	end
+    
+    	local b1
+    	a1(
+    		bX,
+    		b_,
+    		bP.markWorkInProgressReceivedUpdate
+    	)
+    	if a then
+    		bO.current = bX
+    		ap(true)
+    		b1 = renderWithHooks(
+    			bW,
+    			bX,
+    			bY,
+    			bZ,
+    			b0,
+    			b_
+    		)
+    		if
+    			Z
+    			and bit32.band(bX.mode, aG) ~= 0
+    		then
+    			bM()
+    			local b2, b3 = xpcall(
+    				renderWithHooks,
+    				ag,
+    				bW,
+    				bX,
+    				bY,
+    				bZ,
+    				b0,
+    				b_
+    			)
+    			
+    			bN()
+    			if b2 then
+    				b1 = b3
+    			else
+    				error(b3)
+    			end
+    		end
+    		ap(false)
+    	else
+    		b1 = renderWithHooks(
+    			bW,
+    			bX,
+    			bY,
+    			bZ,
+    			b0,
+    			b_
+    		)
+    	end
+    
+    	if bW ~= nil and not bS then
+    		bailoutHooks(bW, bX, b_)
+    		return bQ(bW, bX, b_)
+    	end
+    
+    	
+    	bX.flags = bit32.bor(bX.flags, P)
+    	reconcileChildren(bW, bX, b1, b_)
+    	return bX.child
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function updateClassComponent(
+    	bW: any,
+    	bX: Fiber,
+    	bY: any,
+    	bZ: any,
+    	b_: Lanes
+    )
+    	if a or b then
+    		if bX.type ~= bX.elementType then
+    			
+    			
+    			
+    			local b0 = bY.propTypes
+    			local b1 = bY.validateProps
+    			if b0 or b1 then
+    				q(
+    					b0,
+    					b1,
+    					bZ, 
+    					"prop",
+    					ai(bY)
+    				)
+    			end
+    		end
+    	end
+    
+    	
+    	
+    	
+    	local b0
+    	if ba(bY) then
+    		b0 = true
+    		a9(bX)
+    	else
+    		b0 = false
+    	end
+    	
+    	a1(
+    		bX,
+    		b_,
+    		bP.markWorkInProgressReceivedUpdate
+    	)
+    
+    	local b1 = bX.stateNode
+    	local b2
+    	if b1 == nil then
+    		if bW ~= nil then
+    			
+    			
+    			
+    			
+    			bW.alternate = nil
+    			bX.alternate = nil
+    			
+    			bX.flags = bit32.bor(bX.flags, Q)
+    		end
+    		
+    		bm(bX, bY, bZ)
+    		bn(bX, bY, bZ, b_)
+    		b2 = true
+    	elseif bW == nil then
+    		
+    		b2 =
+    			bo(bX, bY, bZ, b_)
+    	else
+    		b2 = bp(
+    			bW,
+    			bX,
+    			bY,
+    			bZ,
+    			b_
+    		)
+    	end
+    	local b3 = finishClassComponent(
+    		bW,
+    		bX,
+    		bY,
+    		b2,
+    		b0,
+    		b_
+    	)
+    	if a then
+    		local b4 = bX.stateNode
+    		if b2 and b4.props ~= bZ then
+    			if not bP.didWarnAboutReassigningProps then
+    				e.error(
+    [[It looks like %s is reassigning its own `this.props` while rendering. This is not supported and can lead to confusing bugs.]]
+    ,
+    					ai(bX.type) or "a component"
+    				)
+    			end
+    			bP.didWarnAboutReassigningProps = true
+    		end
+    	end
+    	return b3
+    end
+    
+    function finishClassComponent(
+    	bW: Fiber | nil,
+    	bX: Fiber,
+    	bY: any,
+    	bZ: boolean,
+    	b_: boolean,
+    	b0: Lanes
+    )
+    	
+    	markRef(bW, bX)
+    
+    	local b1 = bit32.band(bX.flags, T) ~= N
+    
+    	if not bZ and not b1 then
+    		
+    		if b_ then
+    			bc(bX, bY, false)
+    		end
+    
+    		return bQ(bW, bX, b0)
+    	end
+    
+    	local b2 = bX.stateNode
+    
+    	
+    	bO.current = bX
+    	local b3
+    	if
+    		b1
+    		and (
+    			bY.getDerivedStateFromError == nil
+    			or type(bY.getDerivedStateFromError) ~= "function"
+    		)
+    	then
+    		
+    		
+    		
+    		
+    		
+    		b3 = nil
+    
+    		if ab then
+    			a4(bX)
+    		end
+    	else
+    		if a then
+    			ap(true)
+    			
+    			b3 = b2:render()
+    			if
+    				Z
+    				and bit32.band(bX.mode, aG) ~= 0
+    			then
+    				bM()
+    				
+    				local b4, b5 = xpcall(b2.render, ag, b2)
+    				
+    				bN()
+    				if not b4 then
+    					error(b5)
+    				end
+    			end
+    			ap(false)
+    		else
+    			
+    			b3 = b2:render()
+    		end
+    	end
+    
+    	
+    	bX.flags = bit32.bor(bX.flags, P)
+    	if bW ~= nil and b1 then
+    		
+    		
+    		
+    		
+    		forceUnmountCurrentAndReconcile(
+    			bW :: Fiber,
+    			bX,
+    			b3,
+    			b0
+    		)
+    	else
+    		reconcileChildren(bW, bX, b3, b0)
+    	end
+    
+    	
+    	
+    	bX.memoizedState = b2.state
+    
+    	
+    	if b_ then
+    		bc(bX, bY, true)
+    	end
+    
+    	return bX.child
+    end
+    
+    local function pushHostRootContext(bW)
+    	
+    	local bX = bW.stateNode
+    	if bX.pendingContext then
+    		bb(
+    			bW,
+    			bX.pendingContext,
+    			bX.pendingContext ~= bX.context
+    		)
+    	elseif bX.context then
+    		
+    		bb(bW, bX.context, false)
+    	end
+    	aQ(bW, bX.containerInfo)
+    end
+    
+    local function updateHostRoot(bW, bX, bY)
+    	pushHostRootContext(bX)
+    	local bZ = bX.updateQueue
+    	af(
+    		bW ~= nil and bZ ~= nil,
+    [[If the root does not have an updateQueue, we should have already bailed out. This error is likely caused by a bug in React. Please file an issue.]]	
+    
+    
+    )
+    	local b_ = bX.pendingProps
+    	local b0 = bX.memoizedState
+    	local b1
+    	if b0 ~= nil then
+    		b1 = b0.element
+    	end
+    	aA(bW, bX)
+    	az(bX, b_, nil, bY)
+    	local b2 = bX.memoizedState
+    	
+    	
+    	local b3 = b2.element
+    	if b3 == b1 then
+    		be()
+    		return bQ(bW, bX, bY)
+    	end
+    	local b4: FiberRoot = bX.stateNode
+    	if b4.hydrate and bf(bX) then
+    		
+    		
+    		
+    		
+    
+    		if aN then
+    			local b5 = b4.mutableSourceEagerHydrationData
+    			if b5 ~= nil then
+    				for b6 = 1, #b5, 2 do
+    					
+    					
+    					
+    					
+    					local b7 = b5[b6]
+    					local b8 = b5[b6 + 1]
+    					bJ(b7, b8)
+    				end
+    			end
+    		end
+    
+    		local b5 = av(bX, nil, b3, bY)
+    		bX.child = b5
+    
+    		local b6 = b5
+    		while b6 do
+    			
+    			
+    			
+    			
+    			
+    			
+    			b6.flags =
+    				bit32.bor(bit32.band(b6.flags, bit32.bnot(Q)), R)
+    			b6 = b6.sibling
+    		end
+    	else
+    		
+    		
+    		reconcileChildren(bW, bX, b3, bY)
+    		be()
+    	end
+    	return bX.child
+    end
+    
+    
+    
+    
+    
+    
+    
+    local function updateHostComponent(
+    	bW: any,
+    	bX: Fiber,
+    	bY: Lanes
+    )
+    	aP(bX)
+    
+    	if bW == nil then
+    		bh(bX)
+    	end
+    
+    	local bZ = bX.type
+    	local b_ = bX.pendingProps
+    	local b0
+    	if bW ~= nil then
+    		b0 = bW.memoizedProps
+    	end
+    
+    	local b1 = b_.children
+    	local b2 = aJ(bZ, b_)
+    
+    	if b2 then
+    		
+    		
+    		
+    		
+    		b1 = nil
+    	elseif b0 ~= nil and aJ(bZ, b0) then
+    		
+    		
+    		bX.flags = bit32.bor(bX.flags, S)
+    	end
+    
+    	
+    	bX.flags = bit32.bor(bX.flags, P)
+    
+    	markRef(bW, bX)
+    	reconcileChildren(bW, bX, b1, bY)
+    	return bX.child
+    end
+    
+    local function updateHostText(bW, bX)
+    	if bW == nil then
+    		bh(bX)
+    	end
+    	
+    	
+    	return nil
+    end
+    
+    local function mountLazyComponent(
+    	bW,
+    	bX,
+    	bY,
+    	bZ,
+    	b_
+    )
+    	if bW ~= nil then
+    		
+    		
+    		
+    		
+    		bW.alternate = nil
+    		bX.alternate = nil
+    		
+    		bX.flags = bit32.bor(bX.flags, Q)
+    	end
+    
+    	local b0 = bX.pendingProps
+    	local b1: LazyComponentType<any, any> = bY
+    	local b2 = b1._payload
+    	local b3 = b1._init
+    	local b4 = b3(b2)
+    	
+    	bX.type = b4
+    	bX.tag = bs(b4)
+    	local b5 = bX.tag
+    	local b6 = bq(b4, b0)
+    	local b7
+    	if b5 == s then
+    		if a then
+    			validateFunctionComponentInDev(bX, b4)
+    			b4 = ar(b4)
+    			bX.type = b4
+    		end
+    		b7 = bR(
+    			nil,
+    			bX,
+    			b4,
+    			b6,
+    			b_
+    		)
+    		return b7
+    	elseif b5 == t then
+    		if a then
+    			b4 = at(b4)
+    			bX.type = b4
+    		end
+    		b7 = updateClassComponent(
+    			nil,
+    			bX,
+    			b4,
+    			b6,
+    			b_
+    		)
+    		return b7
+    	elseif b5 == y then
+    		if a then
+    			b4 = as(b4)
+    			bX.type = b4
+    		end
+    		b7 =
+    			updateForwardRef(nil, bX, b4, b6, b_)
+    		return b7
+    	elseif b5 == G then
+    		if a or b then
+    			if bX.type ~= bX.elementType then
+    				
+    				local b8 = b4.propTypes
+    				local b9 = b4.validateProps
+    				if b8 or b9 then
+    					q(
+    						b8,
+    						b9,
+    						b6, 
+    						"prop",
+    						ai(b4)
+    					)
+    				end
+    			end
+    		end
+    		b7 = updateMemoComponent(
+    			nil,
+    			bX,
+    			b4,
+    			bq(b4.type, b6), 
+    			bZ,
+    			b_
+    		)
+    		return b7
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    	end
+    	local b8 = ""
+    	if a then
+    		if
+    			b4 ~= nil
+    			and type(b4) == "table"
+    			and b4["$$typeof"] == ak
+    		then
+    			b8 = " Did you wrap a component in React.lazy() more than once?"
+    		elseif type(b4) == "table" and b4["$$typeof"] == nil then
+    			b8 = "\n" .. i(b4)
+    		end
+    	end
+    	
+    	
+    	
+    	af(
+    		false,
+    [[Element type is invalid. Received a promise that resolves to: %s. Lazy element type must resolve to a class or function.%s]]
+    ,
+    		tostring(b4),
+    		b8
+    	)
+    	
+    	return nil
+    end
+    
+    function mountIncompleteClassComponent(
+    	bW,
+    	bX,
+    	bY,
+    	bZ,
+    	b_
+    )
+    	if bW ~= nil then
+    		
+    		
+    		
+    		
+    		bW.alternate = nil
+    		bX.alternate = nil
+    		
+    		bX.flags = bit32.bor(bX.flags, Q)
+    	end
+    
+    	
+    	bX.tag = t
+    
+    	
+    
+    	
+    	
+    	
+    	local b0
+    	if ba(bY) then
+    		b0 = true
+    		a9(bX)
+    	else
+    		b0 = false
+    	end
+    	a1(
+    		bX,
+    		b_,
+    		bP.markWorkInProgressReceivedUpdate
+    	)
+    
+    	bm(bX, bY, bZ)
+    	bn(bX, bY, bZ, b_)
+    
+    	return finishClassComponent(
+    		nil,
+    		bX,
+    		bY,
+    		true,
+    		b0,
+    		b_
+    	)
+    end
+    
+    local function mountIndeterminateComponent(
+    	bW,
+    	bX,
+    	bY,
+    	bZ
+    )
+    	if bW ~= nil then
+    		
+    		
+    		
+    		
+    		bW.alternate = nil
+    		bX.alternate = nil
+    		
+    		bX.flags = bit32.bor(bX.flags, Q)
+    	end
+    
+    	local b_ = bX.pendingProps
+    	local b0
+    	if not _ then
+    		local b1 = a7(bX, bY, false)
+    		b0 = a6(bX, b1)
+    	end
+    
+    	a1(
+    		bX,
+    		bZ,
+    		bP.markWorkInProgressReceivedUpdate
+    	)
+    	local b1
+    
+    	if a then
+    		if
+    			
+    			
+    			type(bY) == "table" and type(bY.render) == "function"
+    		then
+    			local b2 = ai(bY) or "Unknown"
+    
+    			if not bT.didWarnAboutBadClass[b2] then
+    				e.error(
+    [[The <%s /> component appears to have a render method, but doesn't extend React.Component. This is likely to cause errors. Change %s to extend React.Component instead.]]
+    ,
+    					b2,
+    					b2
+    				)
+    				bT.didWarnAboutBadClass[b2] = true
+    			end
+    		end
+    
+    		if bit32.band(bX.mode, aG) ~= 0 then
+    			am.recordLegacyContextWarning(bX)
+    		end
+    
+    		ap(true)
+    		bO.current = bX
+    		b1 =
+    			renderWithHooks(nil, bX, bY, b_, b0, bZ)
+    		ap(false)
+    	else
+    		b1 =
+    			renderWithHooks(nil, bX, bY, b_, b0, bZ)
+    	end
+    	
+    	bX.flags = bit32.bor(bX.flags, P)
+    	
+    	local b2 = type(b1)
+    	
+    
+    	if a then
+    		
+    		
+    		if
+    			b1 ~= nil
+    			and b2 == "table"
+    			and type(b1.render) == "function"
+    			and b1["$$typeof"] == nil
+    		then
+    			local b3 = ai(bY) or "Unknown"
+    			if not bT.didWarnAboutModulePatternComponent[b3] then
+    				e.error(
+    [[The <%s /> component appears to be a function component that returns a class instance. Change %s to a class that extends React.Component instead. ]]
+    ,
+    					
+    					
+    					
+    					
+    					b3,
+    					b3
+    					
+    				)
+    				bT.didWarnAboutModulePatternComponent[b3] = true
+    			end
+    		end
+    	end
+    
+    	if
+    		
+    		
+    		not aa
+    		and b1 ~= nil
+    		and b2 == "table"
+    		and type(b1.render) == "function"
+    		and b1["$$typeof"] == nil
+    	then
+    		if a then
+    			local b3 = ai(bY) or "Unknown"
+    			if not bT.didWarnAboutModulePatternComponent[b3] then
+    				e.error(
+    					"The <%s /> component appears to be a function component that returns a class instance. "
+    						.. "Change %s to a class that extends React.Component instead. "
+    						
+    						
+    						
+    						
+    						.. b3,
+    					b3
+    					
+    				)
+    				bT.didWarnAboutModulePatternComponent[b3] = true
+    			end
+    		end
+    
+    		
+    		bX.tag = t
+    
+    		
+    		bX.memoizedState = nil
+    		bX.updateQueue = nil
+    
+    		
+    		
+    		
+    		local b3 = false
+    		if ba(bY) then
+    			b3 = true
+    			a9(bX)
+    		else
+    			b3 = false
+    		end
+    
+    		
+    		bX.memoizedState = b1.state
+    
+    		aB(bX)
+    
+    		
+    		local b4
+    		if type(bY) ~= "function" then
+    			b4 = (bY :: React_Component<any, any>).getDerivedStateFromProps
+    		end
+    		if
+    			b4 ~= nil
+    			and type(b4) == "function"
+    		then
+    			bl(
+    				bX,
+    				bY,
+    				b4,
+    				b_
+    			)
+    		end
+    
+    		bk(bX, b1)
+    		bn(bX, bY, b_, bZ)
+    		return finishClassComponent(
+    			nil,
+    			bX,
+    			bY,
+    			true,
+    			b3,
+    			bZ
+    		)
+    	else
+    		
+    		bX.tag = s
+    		if a then
+    			if _ and bY.contextTypes then
+    				e.error(
+    [[%s uses the legacy contextTypes API which is no longer supported. Use React.createContext() with React.useContext() instead.]]
+    ,
+    					ai(bY) or "Unknown"
+    				)
+    			end
+    
+    			if
+    				Z
+    				and bit32.band(bX.mode, aG) ~= 0
+    			then
+    				bM()
+    				local b3, b4 = xpcall(
+    					renderWithHooks,
+    					ag,
+    					nil,
+    					bX,
+    					bY,
+    					b_,
+    					b0,
+    					bZ
+    				)
+    				
+    				bN()
+    				if b3 then
+    					b1 = b4
+    				else
+    					error(b4)
+    				end
+    			end
+    		end
+    		reconcileChildren(nil, bX, b1, bZ)
+    		if a then
+    			validateFunctionComponentInDev(bX, bY)
+    		end
+    		return bX.child
+    	end
+    end
+    
+    function validateFunctionComponentInDev(bW: Fiber, bX: any)
+    	if a then
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		if bW.ref ~= nil then
+    			local bY = ""
+    			local bZ = ao()
+    			if bZ then
+    				bY ..= "\n\nCheck the render method of `" .. bZ .. "`."
+    			end
+    
+    			local b_ = bZ or bW._debugID or ""
+    			local b0 = bW._debugSource
+    			if b0 then
+    				b_ = b0.fileName .. ":" .. b0.lineNumber
+    			end
+    			if not bT.didWarnAboutFunctionRefs[b_] then
+    				bT.didWarnAboutFunctionRefs[b_] = true
+    				e.error(
+    [[Function components cannot be given refs. Attempts to access this ref will fail. Did you mean to use React.forwardRef()?%s]]
+    
+    ,
+    					bY
+    				)
+    			end
+    		end
+    
+    		if
+    			ae
+    			
+    			and type(bX) ~= "function"
+    			and bX.defaultProps ~= nil
+    		then
+    			local bY = ai(bX) or "Unknown"
+    
+    			if not bT.didWarnAboutDefaultPropsOnFunctionComponent[bY] then
+    				e.error(
+    [[%s: Support for defaultProps will be removed from function components in a future major release.]]
+    
+    , 
+    					bY
+    				)
+    				bT.didWarnAboutDefaultPropsOnFunctionComponent[bY] = true
+    			end
+    		end
+    
+    		
+    		if
+    			type(bX) ~= "function"
+    			and bX.getDerivedStateFromProps ~= nil
+    			and type(bX.getDerivedStateFromProps) == "function"
+    		then
+    			local bY = ai(bX) or "Unknown"
+    
+    			if
+    				not bT.didWarnAboutGetDerivedStateOnFunctionComponent[bY]
+    			then
+    				e.error(
+    					"%s: Function components do not support getDerivedStateFromProps.",
+    					bY
+    				)
+    				bT.didWarnAboutGetDerivedStateOnFunctionComponent[bY] =
+    					true
+    			end
+    		end
+    
+    		
+    		if
+    			type(bX) ~= "function"
+    			and bX.contextType ~= nil
+    			and type(bX.contextType) == "table"
+    		then
+    			local bY = ai(bX) or "Unknown"
+    
+    			if not bT.didWarnAboutContextTypeOnFunctionComponent[bY] then
+    				e.error(
+    					"%s: Function components do not support contextType.",
+    					bY
+    				)
+    				bT.didWarnAboutContextTypeOnFunctionComponent[bY] = true
+    			end
+    		end
+    	end
+    end
+    
+    local bW: SuspenseState = {
+    	dehydrated = nil,
+    	retryLane = m.NoLane,
+    }
+    
+    local function mountSuspenseOffscreenState(bX: Lanes): OffscreenState
+    	return {
+    		baseLanes = bX,
+    	}
+    end
+    
+    local function updateSuspenseOffscreenState(
+    	bX: OffscreenState,
+    	bY: Lanes
+    ): OffscreenState
+    	return {
+    		baseLanes = m.mergeLanes(bX.baseLanes, bY),
+    	}
+    end
+    
+    
+    local function shouldRemainOnFallback(
+    	bX: SuspenseContext,
+    	bY: nil | Fiber,
+    	bZ: Fiber,
+    	b_: Lanes
+    )
+    	
+    	
+    	
+    	if bY ~= nil then
+    		local b0: SuspenseState = (bY :: Fiber).memoizedState
+    		if b0 == nil then
+    			
+    			
+    			
+    			
+    			return false
+    		end
+    	end
+    
+    	
+    	return aS(bX, aT)
+    end
+    
+    local function getRemainingWorkInPrimaryTree(bX: Fiber, bY)
+    	
+    	return m.removeLanes(bX.childLanes, bY)
+    end
+    
+    
+    local bX
+    local bY
+    local bZ
+    local b_
+    local b0
+    
+    local function updateSuspenseComponent(b1, b2, b3)
+    	local b4 = b2.pendingProps
+    
+    	
+    	if a then
+    		if shouldSuspend(b2) then
+    			b2.flags = bit32.bor(b2.flags, T)
+    		end
+    	end
+    
+    	local b5: SuspenseContext = aR.current
+    
+    	local b6 = false
+    	local b7 = bit32.band(b2.flags, T) ~= N
+    
+    	if
+    		b7
+    		or shouldRemainOnFallback(b5, b1, b2, b3)
+    	then
+    		
+    		
+    		b6 = true
+    		b2.flags = bit32.band(b2.flags, bit32.bnot(T))
+    	else
+    		
+    		if b1 == nil or b1.memoizedState ~= nil then
+    			
+    			
+    			
+    			
+    			
+    			if
+    				b4.fallback ~= nil
+    				and b4.unstable_avoidThisFallback ~= true
+    			then
+    				b5 = aU(
+    					b5,
+    					aV
+    				)
+    			end
+    		end
+    	end
+    
+    	b5 = aX(b5)
+    
+    	aW(b2, b5)
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	if b1 == nil then
+    		
+    		
+    		
+    		if b4.fallback ~= nil then
+    			bh(b2)
+    			
+    			if ad then
+    				local b8: nil | SuspenseState = b2.memoizedState
+    				if b8 ~= nil then
+    					local b9 = (b8 :: SuspenseState).dehydrated
+    					if b9 ~= nil then
+    						return bY(
+    							b2,
+    							b9,
+    							b3
+    						)
+    					end
+    				end
+    			end
+    		end
+    
+    		local b8 = b4.children
+    		local b9 = b4.fallback
+    		if b6 then
+    			local ca = mountSuspenseFallbackChildren(
+    				b2,
+    				b8,
+    				b9,
+    				b3
+    			)
+    			local cb: Fiber = b2.child :: any
+    			cb.memoizedState = mountSuspenseOffscreenState(b3)
+    			b2.memoizedState = bW
+    			return ca
+    		elseif
+    			b4.unstable_expectedLoadTime ~= nil
+    			and type(b4.unstable_expectedLoadTime) == "number"
+    		then
+    			
+    			
+    			
+    			local ca = mountSuspenseFallbackChildren(
+    				b2,
+    				b8,
+    				b9,
+    				b3
+    			)
+    			local cb: Fiber = b2.child :: any
+    			cb.memoizedState = mountSuspenseOffscreenState(b3)
+    			b2.memoizedState = bW
+    
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			b2.lanes = m.SomeRetryLane
+    			if ac then
+    				bA(m.SomeRetryLane)
+    			end
+    			return ca
+    		else
+    			return bZ(
+    				b2,
+    				b8,
+    				b3
+    			)
+    		end
+    	else
+    		
+    
+    		
+    		
+    		local b8: nil | SuspenseState = b1.memoizedState
+    		if b8 ~= nil then
+    			
+    
+    			
+    			if ad then
+    				
+    				local b9 = (b8 :: SuspenseState).dehydrated
+    
+    				if b9 ~= nil then
+    					if not b7 then
+    						return b0(
+    							b1,
+    							b2,
+    							b9,
+    							b8,
+    							b3
+    						)
+    					elseif b2.memoizedState ~= nil then
+    						
+    						
+    						b2.child = b1.child
+    						
+    						
+    						b2.flags = bit32.bor(b2.flags, T)
+    						return nil
+    					else
+    						
+    						
+    						local ca = b4.children
+    						local cb = b4.fallback
+    						local cc =
+    							mountSuspenseFallbackAfterRetryWithoutHydrating(
+    								b1,
+    								b2,
+    								ca,
+    								cb,
+    								b3
+    							)
+    						local cd: Fiber = b2.child :: any
+    						cd.memoizedState =
+    							mountSuspenseOffscreenState(b3)
+    						b2.memoizedState = bW
+    						return cc
+    					end
+    				end
+    			end
+    
+    			if b6 then
+    				local b9 = b4.fallback
+    				local ca = b4.children
+    				local cb = b_(
+    					b1,
+    					b2,
+    					ca,
+    					b9,
+    					b3
+    				)
+    				local cc: Fiber = b2.child :: any
+    				local cd: OffscreenState | nil = (b1.child :: any).memoizedState
+    
+    				
+    				if cd == nil then
+    					cc.memoizedState =
+    						mountSuspenseOffscreenState(b3)
+    				else
+    					
+    					cc.memoizedState = updateSuspenseOffscreenState(
+    						cd :: OffscreenState,
+    						b3
+    					)
+    				end
+    
+    				cc.childLanes =
+    					getRemainingWorkInPrimaryTree(b1, b3)
+    				b2.memoizedState = bW
+    				return cb
+    			else
+    				local b9 = b4.children
+    				local ca = bX(
+    					b1,
+    					b2,
+    					b9,
+    					b3
+    				)
+    				b2.memoizedState = nil
+    				return ca
+    			end
+    		else
+    			
+    			if b6 then
+    				
+    				local b9 = b4.fallback
+    				local ca = b4.children
+    				local cb = b_(
+    					b1,
+    					b2,
+    					ca,
+    					b9,
+    					b3
+    				)
+    				local cc: Fiber = b2.child :: any
+    				local cd: OffscreenState | nil = (b1.child :: any).memoizedState
+    
+    				
+    				if cd == nil then
+    					cc.memoizedState =
+    						mountSuspenseOffscreenState(b3)
+    				else
+    					
+    					cc.memoizedState = updateSuspenseOffscreenState(
+    						cd :: OffscreenState,
+    						b3
+    					)
+    				end
+    
+    				cc.childLanes =
+    					getRemainingWorkInPrimaryTree(b1, b3)
+    				
+    				
+    				b2.memoizedState = bW
+    				return cb
+    			else
+    				
+    				
+    				local b9 = b4.children
+    				local ca = bX(
+    					b1,
+    					b2,
+    					b9,
+    					b3
+    				)
+    				b2.memoizedState = nil
+    				return ca
+    			end
+    		end
+    	end
+    end
+    
+    function bZ(b1, b2, b3)
+    	local b4 = b1.mode
+    	local b5: OffscreenProps = {
+    		mode = "visible",
+    		children = b2,
+    	}
+    	local b6 =
+    		bu(b5, b4, b3, nil)
+    	b6.return_ = b1
+    	b1.child = b6
+    	return b6
+    end
+    
+    function mountSuspenseFallbackChildren(
+    	b1,
+    	b2,
+    	b3,
+    	b4
+    )
+    	local b5 = b1.mode
+    	local b6: Fiber | nil = b1.child
+    
+    	local b7: OffscreenProps = {
+    		mode = "hidden",
+    		children = b2,
+    	}
+    
+    	local b8
+    	local b9
+    	if bit32.band(b5, aH) == aE and b6 ~= nil then
+    		
+    		
+    		b8 = b6
+    		b8.childLanes = m.NoLanes
+    		b8.pendingProps = b7
+    
+    		if ab and bit32.band(b1.mode, aF) ~= 0 then
+    			
+    			
+    			
+    			
+    			b8.actualDuration = 0
+    			b8.actualStartTime = -1
+    b8.selfBaseDuration = 0
+    			b8.treeBaseDuration = 0
+    		end
+    
+    		b9 =
+    			bt(b3, b5, b4, nil)
+    	else
+    		b8 =
+    			bu(b7, b5, m.NoLanes, nil)
+    		b9 =
+    			bt(b3, b5, b4, nil)
+    	end
+    
+    	b8.return_ = b1
+    	b9.return_ = b1
+    	b8.sibling = b9
+    	b1.child = b8
+    	return b9
+    end
+    
+    local function createWorkInProgressOffscreenFiber(
+    	b1: Fiber,
+    	b2: OffscreenProps
+    )
+    	
+    	
+    	return bx(b1, b2)
+    end
+    
+    function bX(
+    	b1,
+    	b2,
+    	b3,
+    	b4
+    )
+    	local b5: Fiber = b1.child :: any
+    	local b6: Fiber | nil = b5.sibling
+    
+    	local b7 =
+    		createWorkInProgressOffscreenFiber(b5, {
+    			mode = "visible",
+    			children = b3,
+    		})
+    	if bit32.band(b2.mode, aH) == aE then
+    		b7.lanes = b4
+    	end
+    	b7.return_ = b2
+    	b7.sibling = nil
+    	if b6 ~= nil then
+    		
+    		local b8 = b2.deletions
+    		if b8 == nil then
+    			b2.deletions = { b6 }
+    			
+    			b2.flags = bit32.bor(b2.flags, V)
+    		else
+    			table.insert(b8, b6)
+    		end
+    	end
+    
+    	b2.child = b7
+    	return b7
+    end
+    
+    function b_(
+    	b1,
+    	b2,
+    	b3,
+    	b4,
+    	b5
+    )
+    	local b6 = b2.mode
+    	local b7: Fiber = b1.child :: any
+    	local b8: Fiber | nil = b7.sibling
+    
+    	local b9: OffscreenProps = {
+    		mode = "hidden",
+    		children = b3,
+    	}
+    
+    	local ca
+    	if
+    		
+    		
+    		bit32.band(b6, aH) == aE
+    		
+    		
+    		
+    		
+    		
+    		
+    		and b2.child ~= b7
+    	then
+    		local cb: Fiber = b2.child
+    		ca = cb
+    		ca.childLanes = m.NoLanes
+    		ca.pendingProps = b9
+    
+    		if ab and bit32.band(b2.mode, aF) ~= 0 then
+    			
+    			
+    			
+    			
+    			ca.actualDuration = 0
+    			ca.actualStartTime = -1
+    ca.selfBaseDuration =
+    				b7.selfBaseDuration
+    			ca.treeBaseDuration =
+    				b7.treeBaseDuration
+    		end
+    
+    		
+    		
+    		
+    		b2.deletions = nil
+    	else
+    		ca = createWorkInProgressOffscreenFiber(
+    			b7,
+    			b9
+    		)
+    
+    		
+    		
+    		
+    		ca.subtreeFlags =
+    			bit32.band(b7.subtreeFlags, O)
+    	end
+    	local cb
+    	if b8 ~= nil then
+    		cb =
+    			bx(b8, b4)
+    	else
+    		cb =
+    			bt(b4, b6, b5, nil)
+    		
+    		
+    		cb.flags = bit32.bor(cb.flags, Q)
+    	end
+    
+    	cb.return_ = b2
+    	ca.return_ = b2
+    	ca.sibling = cb
+    	b2.child = ca
+    
+    	return cb
+    end
+    
+    local function retrySuspenseComponentWithoutHydrating(
+    	b1: Fiber,
+    	b2: Fiber,
+    	b3: Lanes
+    )
+    	
+    	aw(b2, b1.child, nil, b3)
+    
+    	
+    	local b4 = b2.pendingProps
+    	local b5 = b4.children
+    	local b6 =
+    		bZ(b2, b5, b3)
+    	
+    	
+    	b6.flags = bit32.bor(b6.flags, Q)
+    	b2.memoizedState = nil
+    
+    	return b6
+    end
+    
+    function mountSuspenseFallbackAfterRetryWithoutHydrating(
+    	b1,
+    	b2,
+    	b3,
+    	b4,
+    	b5
+    )
+    	local b6 = b2.mode
+    	local b7 =
+    		bu(b3, b6, m.NoLanes, nil)
+    	local b8 =
+    		bt(b4, b6, b5, nil)
+    	
+    	
+    	b8.flags = bit32.bor(b8.flags, Q)
+    
+    	b7.return_ = b2
+    	b8.return_ = b2
+    	b7.sibling = b8
+    	b2.child = b7
+    
+    	if bit32.band(b2.mode, aH) ~= aE then
+    		
+    		
+    		aw(b2, b1.child, nil, b5)
+    	end
+    
+    	return b8
+    end
+    
+    function bY(
+    	b1: Fiber,
+    	b2: SuspenseInstance,
+    	b3: Lanes
+    ): nil | Fiber
+    	
+    	
+    	if bit32.band(b1.mode, aH) == aE then
+    		if a then
+    			e.error(
+    [[Cannot hydrate Suspense in legacy mode. Switch fromReactDOM.hydrate(element, container) to ReactDOM.createBlockingRoot(container, { hydrate: true }).render(element) or remove the Suspense componentsthe server rendered components.]]			
+    
+    
+    
+    
+    )
+    		end
+    		b1.lanes = m.laneToLanes(m.SyncLane)
+    	elseif aL(b2) then
+    		
+    		
+    		
+    		
+    		
+    
+    		
+    		
+    		
+    		
+    		
+    		
+    		if ac then
+    			bA(m.DefaultHydrationLane)
+    		end
+    		b1.lanes =
+    			m.laneToLanes(m.DefaultHydrationLane)
+    	else
+    		
+    		
+    		b1.lanes = m.laneToLanes(m.OffscreenLane)
+    		if ac then
+    			bA(m.OffscreenLane)
+    		end
+    	end
+    	return nil
+    end
+    
+    function b0(
+    	b1: Fiber,
+    	b2: Fiber,
+    	b3: SuspenseInstance,
+    	b4: SuspenseState,
+    	b5: Lanes
+    ): nil | Fiber
+    	
+    	
+    	bi()
+    
+    	if bit32.band(bF(), bG) ~= bH then
+    		return retrySuspenseComponentWithoutHydrating(
+    			b1,
+    			b2,
+    			b5
+    		)
+    	end
+    
+    	if bit32.band(b2.mode, aH) == aE then
+    		return retrySuspenseComponentWithoutHydrating(
+    			b1,
+    			b2,
+    			b5
+    		)
+    	end
+    
+    	if aL(b3) then
+    		
+    		
+    		
+    		return retrySuspenseComponentWithoutHydrating(
+    			b1,
+    			b2,
+    			b5
+    		)
+    	end
+    	
+    	
+    	local b6 =
+    		m.includesSomeLane(b5, b1.childLanes)
+    	if bS or b6 then
+    		
+    		
+    		local b7 = bE()
+    		if b7 ~= nil then
+    			local b8 =
+    				m.getBumpedLaneForHydration(b7, b5)
+    			if
+    				b8 ~= m.NoLane
+    				and b8 ~= b4.retryLane
+    			then
+    				
+    				
+    				
+    				b4.retryLane = b8
+    				
+    				local b9 = m.NoTimestamp
+    				bC(b1, b8, b9)
+    				
+    				
+    				
+    				
+    				
+    				
+    			
+    end
+    		end
+    
+    		
+    		
+    		
+    		
+    		
+    		bD()
+    		return retrySuspenseComponentWithoutHydrating(
+    			b1,
+    			b2,
+    			b5
+    		)
+    	elseif aK(b3) then
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		b2.flags = bit32.bor(b2.flags, T)
+    		
+    		b2.child = b1.child
+    
+    		
+    		
+    		local b7 = function()
+    			return bB(b1)
+    		end
+    
+    		if ac then
+    			if bI == nil then
+    				bI =
+    					_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/scheduler").tracing.unstable_wrap
+    			end
+    			b7 = bI(b7)
+    		end
+    
+    		aM(b3, b7)
+    		return nil
+    	else
+    		
+    		bg(
+    			b2,
+    			b3
+    		)
+    		local b7 = b2.pendingProps
+    		local b8 = b7.children
+    		local b9 =
+    			bZ(b2, b8, b5)
+    		
+    		
+    		
+    		
+    		
+    		
+    		b9.flags = bit32.bor(b9.flags, R)
+    		return b9
+    	end
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    function updatePortalComponent(
+    	b1: Fiber | nil,
+    	b2: Fiber,
+    	b3: Lanes
+    )
+    	aQ(b2, b2.stateNode.containerInfo)
+    	local b4 = b2.pendingProps
+    	if b1 == nil then
+    		
+    		
+    		
+    		
+    		
+    		b2.child =
+    			aw(b2, nil, b4, b3)
+    	else
+    		reconcileChildren(b1, b2, b4, b3)
+    	end
+    	return b2.child
+    end
+    
+    local b1 = false
+    
+    local function updateContextProvider(
+    	b2: Fiber | nil,
+    	b3: Fiber,
+    	b4: Lanes
+    )
+    	local b5: ReactProviderType<any> = b3.type
+    	local b6: ReactContext<any> = b5._context
+    
+    	local b7 = b3.pendingProps
+    	local b8 = b3.memoizedProps
+    
+    	local b9 = b7.value
+    
+    	if a or b then
+    		if g.indexOf(h.keys(b7), "value") < 1 then
+    			if not b1 then
+    				b1 = true
+    				e.error(
+    					"The `value` prop is required for the `<Context.Provider>`. Did you misspell it or forget to pass it?"
+    				)
+    			end
+    		end
+    		
+    		local ca = b3.type.propTypes
+    		local cb = b3.type.validateProps
+    
+    		if ca or cb then
+    			q(
+    				ca,
+    				cb,
+    				b7,
+    				"prop",
+    				"Context.Provider"
+    			)
+    		end
+    	end
+    
+    	a2(b3, b9)
+    
+    	if b8 ~= nil then
+    		local ca = b8.value
+    		local cb = a0(b6, b9, ca)
+    		if cb == 0 then
+    			
+    			if
+    				b8.children == b7.children
+    				and not a8()
+    			then
+    				return bQ(b2, b3, b4)
+    			end
+    		else
+    			
+    			
+    			aZ(b3, b6, cb, b4)
+    		end
+    	end
+    
+    	local ca = b7.children
+    	reconcileChildren(b2, b3, ca, b4)
+    	return b3.child
+    end
+    
+    
+    local b2 = {
+    	usingContextAsConsumer = false,
+    	usingLegacyConsumer = false,
+    }
+    
+    function updateContextConsumer(
+    	b3: Fiber | nil,
+    	b4: Fiber,
+    	b5: Lanes
+    )
+    	local b6: ReactContext<any> = b4.type
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	if a then
+    		if (b6 :: any)._context == nil then
+    			
+    			
+    			
+    			if b6 ~= b6.Consumer then
+    				if not b2.usingContextAsConsumer then
+    					b2.usingContextAsConsumer = true
+    					e.error(
+    [[Rendering <Context> directly is not supported and will be removed in a future major release. Did you mean to render <Context.Consumer> instead?]]					
+    
+    )
+    				end
+    			end
+    		else
+    			b6 = (b6 :: any)._context
+    		end
+    	end
+    	local b7 = b4.pendingProps
+    
+    	
+    	local b8
+    	if b7.render then
+    		if a and c then
+    			if not b2.usingLegacyConsumer then
+    				b2.usingLegacyConsumer = true
+    				e.warn(
+    [[Your Context.Consumer component is using legacy Roact syntax, which won't be supported in future versions of Roact. 
+    Please provide no props and supply the 'render' function as a child (the 3rd argument of createElement). For example: 
+           createElement(ContextConsumer, {render = function(...) end})
+    becomes:
+           createElement(ContextConsumer, nil, function(...) end)
+    For more info, reference the React documentation here: 
+    https://reactjs.org/docs/context.html#contextconsumer]]				
+    )
+    			end
+    		end
+    		b8 = b7.render
+    	else
+    		b8 = b7.children
+    	end
+    
+    	if a then
+    		if type(b8) ~= "function" then
+    			e.error(
+    [[A context consumer was rendered with multiple children, or a child that isn't a function. A context consumer expects a single child that is a function. If you did pass a function, make sure there is no trailing or leading whitespace around it.]]			
+    
+    
+    
+    )
+    		end
+    	end
+    
+    	a1(
+    		b4,
+    		b5,
+    		bP.markWorkInProgressReceivedUpdate
+    	)
+    	local b9 = a_(b6, b7.unstable_observedBits)
+    	local ca
+    	if a then
+    		bO.current = b4
+    		ap(true)
+    		ca = b8(b9)
+    		ap(false)
+    	else
+    		ca = b8(b9)
+    	end
+    
+    	
+    	b4.flags = bit32.bor(b4.flags, P)
+    	reconcileChildren(b3, b4, ca, b5)
+    	return b4.child
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    bP.markWorkInProgressReceivedUpdate = function()
+    	bS = true
+    end
+    
+    function bQ(
+    	b3: Fiber | nil,
+    	b4: Fiber,
+    	b5: Lanes
+    ): Fiber | nil
+    	if b3 then
+    		
+    		b4.dependencies = b3.dependencies
+    	end
+    
+    	if ab then
+    		
+    		a4(b4)
+    	end
+    
+    	bK(b4.lanes)
+    
+    	
+    	if not m.includesSomeLane(b5, b4.childLanes) then
+    		
+    		
+    		
+    		return nil
+    	else
+    		
+    		
+    		ax(b3, b4)
+    		return b4.child
+    	end
+    end
+    
+    function remountFiber(
+    	b3: Fiber,
+    	b4: Fiber,
+    	b5: Fiber
+    ): Fiber | nil
+    	if a then
+    		local b6 = b4.return_
+    		if b6 == nil then
+    			error("Cannot swap the root fiber.")
+    		end
+    		
+    		assert(b6 ~= nil, "returnFiber was nil in remountFiber")
+    
+    		
+    		
+    		b3.alternate = nil
+    		b4.alternate = nil
+    
+    		
+    		b5.index = b4.index
+    		b5.sibling = b4.sibling
+    		b5.return_ = b4.return_
+    		b5.ref = b4.ref
+    
+    		
+    		if b4 == b6.child then
+    			b6.child = b5
+    		else
+    			local b7 = b6.child
+    			if b7 == nil then
+    				error("Expected parent to have a child.")
+    			end
+    			
+    			assert(b7 ~= nil, "prevSibling was nil in remountFiber")
+    
+    			while b7.sibling ~= b4 do
+    				b7 = b7.sibling
+    				if b7 == nil then
+    					error("Expected to find the previous sibling.")
+    				end
+    			end
+    			b7.sibling = b5
+    		end
+    
+    		
+    		
+    		local b7 = b6.deletions
+    		if b7 == nil then
+    			b6.deletions = { b3 }
+    			
+    			b6.flags = bit32.bor(b6.flags, V)
+    		else
+    			table.insert(b7, b3)
+    		end
+    
+    		b5.flags = bit32.bor(b5.flags, Q)
+    
+    		
+    		return b5
+    	else
+    		error(
+    [[Did not expect this call in production. This is a bug in React. Please file an issue.]]		
+    
+    )
+    	end
+    end
+    
+    
+    
+    local function beginWork(b3: any, b4: Fiber, b5: Lanes): Fiber?
+    	local b6 = b4.lanes
+    
+    	if a then
+    		if b4._debugNeedsRemount and b3 ~= nil then
+    			
+    			return remountFiber(
+    				b3,
+    				b4,
+    				bv(
+    					b4.type,
+    					
+    					b4.key :: string?,
+    					b4.pendingProps,
+    					b4._debugOwner or nil,
+    					b4.mode,
+    					b4.lanes
+    				)
+    			)
+    		end
+    	end
+    
+    	if b3 ~= nil then
+    		local b7 = b3.memoizedProps
+    		local b8 = b4.pendingProps
+    
+    		if
+    			b7 ~= b8
+    			or a8()
+    			
+    			or if a then b4.type ~= b3.type else false
+    		then
+    			
+    			
+    			bS = true
+    		elseif not m.includesSomeLane(b5, b6) then
+    			bS = false
+    			
+    			
+    			
+    			if b4.tag == u then
+    				pushHostRootContext(b4)
+    				be()
+    			elseif b4.tag == v then
+    				aP(b4)
+    			elseif b4.tag == t then
+    				local b9 = b4.type
+    				if ba(b9) then
+    					a9(b4)
+    				end
+    			elseif b4.tag == x then
+    				aQ(b4, b4.stateNode.containerInfo)
+    			elseif b4.tag == B then
+    				local b9 = b4.memoizedProps.value
+    				a2(b4, b9)
+    			elseif b4.tag == D then
+    				if ab then
+    					
+    					
+    					local b9 = b4.stateNode
+    					b9.effectDuration = 0
+    					b9.passiveEffectDuration = 0
+    				end
+    			elseif b4.tag == E then
+    				local b9: SuspenseState | nil = b4.memoizedState
+    				if b9 ~= nil then
+    					if ad then
+    						if (b9 :: SuspenseState).dehydrated ~= nil then
+    							aW(
+    								b4,
+    								aX(
+    									aR.current
+    								)
+    							)
+    							
+    							
+    							
+    							b4.flags =
+    								bit32.bor(b4.flags, T)
+    							
+    							
+    							return nil
+    						end
+    					end
+    
+    					
+    					
+    					
+    					
+    					local ca: Fiber = b4.child :: any
+    					local cb = ca.childLanes
+    					if
+    						m.includesSomeLane(b5, cb)
+    					then
+    						
+    						
+    						return updateSuspenseComponent(
+    							b3,
+    							b4,
+    							b5
+    						)
+    					else
+    						
+    						
+    						aW(
+    							b4,
+    							aX(aR.current)
+    						)
+    						
+    						
+    						local cc = bQ(
+    							b3,
+    							b4,
+    							b5
+    						)
+    						if cc ~= nil then
+    							
+    							
+    							return cc.sibling
+    						else
+    							return nil
+    						end
+    					end
+    				else
+    					aW(
+    						b4,
+    						aX(aR.current)
+    					)
+    				end
+    			elseif b4.tag == F then
+    				unimplemented("beginWork: SuspenseListComponent")
+    			
+    
+    			
+    			
+    			
+    			
+    
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    
+    			
+    			
+    			
+    			
+    			
+    			
+    			elseif
+    				b4.tag == K
+    				or b4.tag == L
+    			then
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				b4.lanes = m.NoLanes
+    				return updateOffscreenComponent(b3, b4, b5)
+    			end
+    			return bQ(b3, b4, b5)
+    		else
+    			if bit32.band(b3.flags, W) ~= N then
+    				
+    				
+    				bS = true
+    			else
+    				
+    				
+    				
+    				
+    				bS = false
+    			end
+    		end
+    	else
+    		bS = false
+    	end
+    
+    	
+    	
+    	
+    	
+    	
+    	b4.lanes = m.NoLanes
+    
+    	if b4.tag == r.IndeterminateComponent then
+    		return mountIndeterminateComponent(
+    			b3,
+    			b4,
+    			b4.type,
+    			b5
+    		)
+    	elseif b4.tag == I then
+    		local b7 = b4.elementType
+    		return mountLazyComponent(
+    			b3,
+    			b4,
+    			b7,
+    			b6,
+    			b5
+    		)
+    	elseif b4.tag == s then
+    		local b7 = b4.type
+    		local b8 = b4.pendingProps
+    		local b9
+    		if b4.elementType == b7 then
+    			b9 = b8
+    		else
+    			b9 = bq(b7, b8)
+    		end
+    		return bR(
+    			b3,
+    			b4,
+    			b7,
+    			b9,
+    			b5
+    		)
+    	elseif b4.tag == t then
+    		local b7 = b4.type
+    		local b8 = b4.pendingProps
+    		local b9 = b4.elementType == b7 and b8
+    			or bq(b7, b8)
+    		return updateClassComponent(
+    			b3,
+    			b4,
+    			b7,
+    			b9,
+    			b5
+    		)
+    	elseif b4.tag == u then
+    		return updateHostRoot(b3, b4, b5)
+    	elseif b4.tag == v then
+    		return updateHostComponent(b3, b4, b5)
+    	elseif b4.tag == w then
+    		return updateHostText(b3, b4)
+    	elseif b4.tag == E then
+    		return updateSuspenseComponent(b3, b4, b5)
+    	elseif b4.tag == x then
+    		return updatePortalComponent(b3, b4, b5)
+    	elseif b4.tag == y then
+    		local b7 = b4.type
+    		local b8 = b4.pendingProps
+    		local b9 = b8
+    		if b4.elementType ~= b7 then
+    			b9 = bq(b7, b8)
+    		end
+    		return updateForwardRef(b3, b4, b7, b9, b5)
+    	elseif b4.tag == z then
+    		return updateFragment(b3, b4, b5)
+    	elseif b4.tag == A then
+    		return updateMode(b3, b4, b5)
+    	elseif b4.tag == D then
+    		return updateProfiler(b3, b4, b5)
+    	elseif b4.tag == B then
+    		return updateContextProvider(b3, b4, b5)
+    	elseif b4.tag == C then
+    		return updateContextConsumer(b3, b4, b5)
+    	elseif b4.tag == G then
+    		local b7 = b4.type
+    		local b8 = b4.pendingProps
+    		
+    		local b9 = bq(b7, b8)
+    		if a or b then
+    			if b4.type ~= b4.elementType then
+    				
+    				local ca
+    				local cb
+    				
+    				if type(b7) == "table" then
+    					ca = b7.propTypes
+    					cb = b7.validateProps
+    				end
+    				if ca or cb then
+    					q(
+    						ca,
+    						cb,
+    						b9, 
+    						"prop",
+    						ai(b7)
+    					)
+    				end
+    			end
+    		end
+    		b9 = bq(b7.type, b9)
+    		return updateMemoComponent(
+    			b3,
+    			b4,
+    			b7,
+    			b9,
+    			b6,
+    			b5
+    		)
+    	elseif b4.tag == H then
+    		return bU(
+    			b3,
+    			b4,
+    			b4.type,
+    			b4.pendingProps,
+    			b6,
+    			b5
+    		)
+    	elseif b4.tag == J then
+    		local b7 = b4.type
+    		local b8 = b4.pendingProps
+    		local b9 = b4.elementType == b7 and b8
+    			or bq(b7, b8)
+    		return mountIncompleteClassComponent(
+    			b3,
+    			b4,
+    			b7,
+    			b9,
+    			b5
+    		)
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	elseif b4.tag == K then
+    		return updateOffscreenComponent(b3, b4, b5)
+    	elseif b4.tag == L then
+    		return bV(b3, b4, b5)
+    	end
+    	af(
+    		false,
+    [[Unknown unit of work tag (%s). This error is likely caused by a bug in React. Please file an issue.]]
+    ,
+    		tostring(b4.tag)
+    	)
+    	return nil
+    end
+    bP.beginWork = beginWork
+    
+    return bP
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberClassComponent.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _G.__DEV__ :: boolean
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/luau-polyfill")
+    local c = b.Object
+    
+    
+    local d = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").console
+    local e = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = e.Fiber
+    local f = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLane")
+    type Lanes = f.Lanes
+    local g = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactUpdateQueue.new")
+    type UpdateQueue<State> = e.UpdateQueue<State>
+    
+    local h = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    type React_Component<Props, State> = h.React_Component<Props, State>
+    
+    local i = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react")
+    
+    local j = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberFlags")
+    local k = j.Update
+    local l = j.Snapshot
+    local m = j.MountLayoutDev
+    
+    local n = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactFeatureFlags
+    local o =
+    	n.debugRenderPhaseSideEffectsForStrictMode
+    local p = n.disableLegacyContext
+    local q = n.enableDebugTracing
+    local r = n.enableSchedulingProfiler
+    local s = n.warnAboutDeprecatedLifecycles
+    local t = n.enableDoubleInvokingEffects
+    
+    local u = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactStrictModeWarnings.new")
+    local v = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberTreeReflection").isMounted
+    local w = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactInstanceMap
+    local x = w.get
+    local y = w.set
+    local z = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").shallowEqual
+    local A = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").getComponentName
+    local B = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").UninitializedState
+    local C = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").describeError
+    
+    local D = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactSymbols
+    local E = D.REACT_CONTEXT_TYPE
+    local F = D.REACT_PROVIDER_TYPE
+    
+    local G =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLazyComponent.new").resolveDefaultProps
+    local H = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactTypeOfMode")
+    local I = H.DebugTracingMode
+    local J = H.StrictMode
+    
+    local K = g.enqueueUpdate
+    local L = g.processUpdateQueue
+    local M =
+    	g.checkHasForceUpdateAfterProcessing
+    local N =
+    	g.resetHasForceUpdateBeforeProcessing
+    local O = g.createUpdate
+    local P = g.ReplaceState
+    local Q = g.ForceUpdate
+    local R = g.initializeUpdateQueue
+    local S = g.cloneUpdateQueue
+    local T = f.NoLanes
+    
+    local U = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberContext.new")
+    local V = U.cacheContext
+    local W = U.getMaskedContext
+    local X = U.getUnmaskedContext
+    local Y = U.hasContextChanged
+    local Z = U.emptyContextObject
+    
+    local _ = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberNewContext.new")
+    local aa = _.readContext
+    
+    
+    
+    
+    
+    local ab = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/DebugTracing")
+    local ac = ab.logForceUpdateScheduled
+    local ad = ab.logStateUpdateScheduled
+    
+    local ae = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ConsolePatchingDev
+    local af = ae.disableLogs
+    local ag = ae.reenableLogs
+    
+    local ah = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/SchedulingProfiler")
+    local ai = ah.markForceUpdateScheduled
+    local aj = ah.markStateUpdateScheduled
+    
+    local ak = {}
+    
+    
+    
+    
+    
+    
+    
+    
+    local al = i.Component:extend("").__refs
+    
+    local am
+    local an
+    local ao
+    local ap
+    local aq
+    local ar
+    local as
+    local at
+    local au
+    local av
+    
+    if a then
+    	am = {}
+    	an = {}
+    	ao = {}
+    	ap = {}
+    	at = {}
+    	aq = {}
+    	au = {}
+    	av = {}
+    
+    	local aw = {}
+    
+    	function as(ax: any, ay: string)
+    		if ax == nil or type(ax) == "function" then
+    			return
+    		end
+    		local az = ay .. "_" .. tostring(ax)
+    		if not aw[az] then
+    			aw[az] = true
+    			d.error(
+    [[%s(...): Expected the last optional `callback` argument to be a function. Instead received: %s.]]
+    ,
+    				ay,
+    				tostring(ax)
+    			)
+    		end
+    	end
+    
+    	function ar(ax, ay)
+    		
+    		
+    		
+    		
+    		
+    
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    	end
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    end
+    
+    local function applyDerivedStateFromProps<Props, State>(
+    	aw: Fiber,
+    	ax: React_Component<Props, State>,
+    	ay: (Props, State) -> State?,
+    	az: Props
+    )
+    	local aA = aw.memoizedState
+    
+    	if a then
+    		if
+    			o
+    			and bit32.band(aw.mode, J) ~= 0
+    		then
+    			af()
+    			
+    			local aB, aC =
+    				xpcall(ay, C, az, aA)
+    
+    			ag()
+    
+    			if not aB then
+    				error(aC)
+    			end
+    		end
+    	end
+    
+    	local aB = ay(az, aA)
+    
+    	if a then
+    		ar(ax, aB)
+    	end
+    	
+    	local aC = if aB == nil
+    		then aA
+    		else c.assign({}, aA, aB)
+    	aw.memoizedState = aC
+    
+    	
+    	
+    	if aw.lanes == T then
+    		
+    		local aD: UpdateQueue<any> = aw.updateQueue
+    		aD.baseState = aC
+    	end
+    end
+    
+    
+    local aw 
+    local function initializeClassComponentUpdater()
+    	local ax = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberWorkLoop.new")	
+    local ay = ax.requestEventTime
+    	local az = ax.requestUpdateLane
+    	local aA = ax.scheduleUpdateOnFiber
+    
+    	aw = {
+    		isMounted = v,
+    		enqueueSetState = function(aB, aC, aD: (() -> (...any))?)
+    			local aE = x(aB)
+    			local aF = ay()
+    			local aG = az(aE)
+    
+    			local aH = O(aF, aG, aC, aD)
+    			
+    			if aD ~= nil then
+    				if a then
+    					as(aD, "setState")
+    				end
+    				
+    			end
+    
+    			K(aE, aH)
+    			aA(aE, aG, aF)
+    
+    			if a then
+    				if q then
+    					if bit32.band(aE.mode, I) ~= 0 then
+    						local aI = A(aE.type) or "Unknown"
+    						ad(aI, aG, aC)
+    					end
+    				end
+    			end
+    
+    			if r then
+    				aj(aE, aG)
+    			end
+    		end,
+    		enqueueReplaceState = function(aB, aC, aD)
+    			local aE = x(aB)
+    			local aF = ay()
+    			local aG = az(aE)
+    
+    			local aH = O(aF, aG, aC, aD)
+    			aH.tag = P
+    			
+    
+    			if aD ~= nil then
+    				if a then
+    					as(aD, "replaceState")
+    				end
+    				
+    			end
+    
+    			K(aE, aH)
+    			aA(aE, aG, aF)
+    
+    			if a then
+    				if q then
+    					if bit32.band(aE.mode, I) ~= 0 then
+    						local aI = A(aE.type) or "Unknown"
+    						ad(aI, aG, aC)
+    					end
+    				end
+    			end
+    
+    			if r then
+    				aj(aE, aG)
+    			end
+    		end,
+    		enqueueForceUpdate = function(aB, aC)
+    			local aD = x(aB)
+    			local aE = ay()
+    			local aF = az(aD)
+    
+    			local aG = O(aE, aF, nil, aC)
+    			aG.tag = Q
+    
+    			if aC ~= nil then
+    				if a then
+    					as(aC, "forceUpdate")
+    				end
+    				
+    			end
+    
+    			K(aD, aG)
+    			aA(aD, aF, aE)
+    
+    			if a then
+    				if q then
+    					if bit32.band(aD.mode, I) ~= 0 then
+    						local aH = A(aD.type) or "Unknown"
+    						ac(aH, aF)
+    					end
+    				end
+    			end
+    
+    			if r then
+    				ai(aD, aF)
+    			end
+    		end,
+    	}
+    end
+    
+    local function getClassComponentUpdater()
+    	if aw == nil then
+    		initializeClassComponentUpdater()
+    	end
+    	return aw
+    end
+    
+    function checkShouldComponentUpdate(
+    	ax,
+    	ay,
+    	az,
+    	aA,
+    	aB,
+    	aC,
+    	aD
+    )
+    	local aE = ax.stateNode
+    	if
+    		aE.shouldComponentUpdate ~= nil
+    		and type(aE.shouldComponentUpdate) == "function"
+    	then
+    		if a then
+    			if
+    				o
+    				and bit32.band(ax.mode, J) ~= 0
+    			then
+    				af()
+    				
+    				
+    				local aF, aG = xpcall(
+    					aE.shouldComponentUpdate,
+    					C,
+    					aE,
+    					aA,
+    					aC,
+    					aD
+    				)
+    				
+    				ag()
+    				if not aF then
+    					error(aG)
+    				end
+    			end
+    		end
+    		
+    		local aF =
+    			aE:shouldComponentUpdate(aA, aC, aD)
+    
+    		if a then
+    			if aF == nil then
+    				d.error(
+    [[%s.shouldComponentUpdate(): Returned nil instead of a boolean value. Make sure to return true or false.]]
+    ,
+    					A(ay) or "Component"
+    				)
+    			end
+    		end
+    
+    		return aF
+    	end
+    
+    	
+    	
+    	if type(ay) == "table" and ay.isPureReactComponent then
+    		return (
+    			not z(az, aA) or not z(aB, aC)
+    		)
+    	end
+    
+    	return true
+    end
+    
+    local function checkClassInstance(ax: Fiber, ay: any, az: any)
+    	local aA = ax.stateNode
+    	if a then
+    		local aB = A(ay) or "Component"
+    		local aC = aA.render
+    
+    		if not aC then
+    			
+    			
+    			if type(ay.render) == "function" then
+    				d.error(
+    [[%s(...): No `render` method found on the returned component instance: did you accidentally return an object from the constructor?]]
+    ,
+    					aB
+    				)
+    			else
+    				d.error(
+    [[%s(...): No `render` method found on the returned component instance: you may have forgotten to define `render`.]]
+    ,
+    					aB
+    				)
+    			end
+    		end
+    
+    		if
+    			aA.getInitialState
+    			and not aA.getInitialState.isReactClassApproved
+    			and not aA.state
+    		then
+    			d.error(
+    [[getInitialState was defined on %s, a plain JavaScript class. This is only supported for classes created using React.createClass. Did you mean to define a state property instead?]]
+    
+    ,
+    				aB
+    			)
+    		end
+    		if
+    			aA.getDefaultProps
+    			and not aA.getDefaultProps.isReactClassApproved
+    		then
+    			d.error(
+    [[getDefaultProps was defined on %s, a plain JavaScript class. This is only supported for classes created using React.createClass. Use a static property to define defaultProps instead.]]
+    
+    ,
+    				aB
+    			)
+    		end
+    		
+    		if aA.propTypes and not ay.propTypes then
+    			d.error(
+    [[propTypes was defined as an instance property on %s. Use a static property to define propTypes instead.]]
+    ,
+    				aB
+    			)
+    		end
+    		
+    		if aA.contextType and not ay.contextType then
+    			d.error(
+    [[contextType was defined as an instance property on %s. Use a static property to define contextType instead.]]
+    ,
+    				aB
+    			)
+    		end
+    
+    		if p then
+    			if ay.childContextTypes then
+    				d.error(
+    [[%s uses the legacy childContextTypes API which is no longer supported. Use React.createContext() instead.]]
+    ,
+    					aB
+    				)
+    			end
+    			if ay.contextTypes then
+    				d.error(
+    [[%s uses the legacy contextTypes API which is no longer supported. Use React.createContext() with static contextType instead.]]
+    ,
+    					aB
+    				)
+    			end
+    		else
+    			
+    			if aA.contextTypes and not ay.contextTypes then
+    				d.error(
+    [[contextTypes was defined as an instance property on %s. Use a static property to define contextTypes instead.]]
+    ,
+    					aB
+    				)
+    			end
+    
+    			
+    			if
+    				type(ay) == "table"
+    				and ay.contextType
+    				and ay.contextTypes
+    				and not au[ay]
+    			then
+    				au[ay] = true
+    				d.error(
+    [[%s declares both contextTypes and contextType static properties. The legacy contextTypes property will be ignored.]]
+    ,
+    					aB
+    				)
+    			end
+    		end
+    
+    		if type(aA.componentShouldUpdate) == "function" then
+    			d.error(
+    [[%s has a method called componentShouldUpdate(). Did you mean shouldComponentUpdate()? The name is phrased as a question because the function is expected to return a value.]]
+    
+    
+    ,
+    				aB
+    			)
+    		end
+    		
+    		if
+    			type(ay) == "table"
+    			and ay.isPureReactComponent
+    			and aA.shouldComponentUpdate ~= nil
+    		then
+    			d.error(
+    [[%s has a method called shouldComponentUpdate(). shouldComponentUpdate should not be used when extending React.PureComponent. Please extend React.Component if shouldComponentUpdate is used.]]
+    
+    ,
+    				A(ay) or "A pure component"
+    			)
+    		end
+    		if type(aA.componentDidUnmount) == "function" then
+    			d.error(
+    [[%s has a method called componentDidUnmount(). But there is no such lifecycle method. Did you mean componentWillUnmount()?]]
+    
+    ,
+    				aB
+    			)
+    		end
+    		if type(aA.componentDidReceiveProps) == "function" then
+    			d.error(
+    [[%s has a method called componentDidReceiveProps(). But there is no such lifecycle method. If you meant to update the state in response to changing props, use componentWillReceiveProps(). If you meant to fetch data or run side-effects or mutations after React has updated the UI, use componentDidUpdate().]]
+    
+    
+    
+    ,
+    				aB
+    			)
+    		end
+    		if type(aA.componentWillRecieveProps) == "function" then
+    			d.error(
+    [[%s has a method called componentWillRecieveProps(). Did you mean componentWillReceiveProps()?]]
+    ,
+    				aB
+    			)
+    		end
+    		if type(aA.UNSAFE_componentWillRecieveProps) == "function" then
+    			d.error(
+    [[%s has a method called UNSAFE_componentWillRecieveProps(). Did you mean UNSAFE_componentWillReceiveProps()?]]
+    ,
+    				aB
+    			)
+    		end
+    		local aD = aA.props ~= az
+    		if aA.props ~= nil and aD then
+    			d.error(
+    [[%s(...): When calling super() in `%s`, make sure to pass up the same props that your component's constructor was passed.]]
+    ,
+    				aB,
+    				aB
+    			)
+    		end
+    		if rawget(aA, "defaultProps") then
+    			d.error(
+    [[Setting defaultProps as an instance property on %s is not supported and will be ignored. Instead, define defaultProps as a static property on %s.]]
+    ,
+    				aB,
+    				aB
+    			)
+    		end
+    
+    		if
+    			type(aA.getSnapshotBeforeUpdate) == "function"
+    			and type(aA.componentDidUpdate) ~= "function"
+    			and not ao[ay]
+    		then
+    			ao[ay] = true
+    			d.error(
+    [[%s: getSnapshotBeforeUpdate() should be used with componentDidUpdate(). This component defines getSnapshotBeforeUpdate() only.]]
+    ,
+    				A(ay)
+    			)
+    		end
+    
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		local aE = aA.state
+    		
+    		
+    		
+    		if aE ~= nil and type(aE) ~= "table" then
+    			d.error("%s.state: must be set to an object or nil", aB)
+    		end
+    		
+    		if
+    			type(ay) == "table"
+    			and type(aA.getChildContext) == "function"
+    			and type(ay.childContextTypes) ~= "table"
+    		then
+    			d.error(
+    [[%s.getChildContext(): childContextTypes must be defined in order to use getChildContext().]]
+    ,
+    				aB
+    			)
+    		end
+    	end
+    end
+    
+    local function adoptClassInstance(ax: Fiber, ay: any)
+    	
+    	ay.__updater = getClassComponentUpdater()
+    	ax.stateNode = ay
+    	
+    	y(ay, ax)
+    	if a then
+    		ay._reactInternalInstance = ak
+    	end
+    end
+    
+    local function constructClassInstance(ax: Fiber, ay: any, az: any): any
+    	local aA = false
+    	local aB = Z
+    	local aC = Z
+    	local aD = ay.contextType
+    
+    	if a then
+    		
+    		if ay["contextType"] ~= nil then
+    			
+    			local aE =
+    				
+    				aD == nil or (aD["$$typeof"] == E and aD._context == nil) 
+    
+    			if not aE and not av[ay] then
+    				av[ay] = true
+    
+    				local aF = ""
+    				if aD == nil then
+    					aF =
+    [[ However, it is set to nil. This can be caused by a typo or by mixing up named and default imports. This can also happen due to a circular dependency, so try moving the createContext() call to a separate file.]]				
+    
+    elseif type(aD) ~= "table" then
+    					aF = " However, it is set to a " .. type(aD) .. "."
+    				elseif aD["$$typeof"] == F then
+    					aF = " Did you accidentally pass the Context.Provider instead?"
+    				elseif aD._context ~= nil then
+    					
+    					aF = " Did you accidentally pass the Context.Consumer instead?"
+    				else
+    					aF ..= " However, it is set to an object with keys {"
+    					for aG, aH in aD do
+    						aF ..= aG .. ", "
+    					end
+    					aF ..= "}."
+    				end
+    				d.error(
+    [[%s defines an invalid contextType. contextType should point to the Context object returned by React.createContext().%s]]
+    ,
+    					A(ay) or "Component",
+    					aF
+    				)
+    			end
+    		end
+    	end
+    
+    	
+    	if aD ~= nil and type(aD) == "table" then
+    		aC = aa(aD)
+    	elseif not p then
+    		aB = X(ax, ay, true)
+    		local aE = ay.contextTypes
+    		aA = aE ~= nil
+    		aC = aA
+    				and W(ax, aB)
+    			or Z
+    	end
+    
+    	
+    	if a then
+    		if
+    			o
+    			and bit32.band(ax.mode, J) ~= 0
+    		then
+    			af()
+    			
+    			
+    			local aE, aF = xpcall(ay.__ctor, C, az, aC) 
+    			
+    			ag()
+    
+    			if not aE then
+    				error(aF)
+    			end
+    		end
+    	end
+    
+    	
+    	
+    	local aE = ay.__ctor(az, aC)
+    	
+    	
+    	
+    	
+    	
+    	ax.memoizedState = aE.state
+    	local aF = ax.memoizedState
+    	adoptClassInstance(ax, aE)
+    
+    	if a then
+    		
+    		
+    		if
+    			type(ay.getDerivedStateFromProps) == "function"
+    			and aF == B
+    		then
+    			local aG = A(ay) or "Component"
+    			if not an[aG] then
+    				an[aG] = true
+    				
+    				d.error(
+    [[`%s` uses `getDerivedStateFromProps` but its initial state has not been initialized. This is not recommended. Instead, define the initial state by passing an object to `self:setState` in the `init` method of `%s`. This ensures that `getDerivedStateFromProps` arguments have a consistent shape.]]
+    
+    
+    ,
+    					aG,
+    					
+    					
+    					aG
+    				)
+    			end
+    		end
+    
+    		
+    		
+    		
+    		if
+    			type(ay.getDerivedStateFromProps) == "function"
+    			or type(aE.getSnapshotBeforeUpdate) == "function"
+    		then
+    			local aG 			
+    local aH 			
+    local aI 			
+    if
+    				
+    				type(aE.componentWillMount) == "function" 
+    				
+    			then
+    				aG = "componentWillMount"
+    			elseif type(aE.UNSAFE_componentWillMount) == "function" then
+    				aG = "UNSAFE_componentWillMount"
+    			end
+    			if
+    				
+    				type(aE.componentWillReceiveProps) == "function" 
+    				
+    			then
+    				aH = "componentWillReceiveProps"
+    			elseif type(aE.UNSAFE_componentWillReceiveProps) == "function" then
+    				aH = "UNSAFE_componentWillReceiveProps"
+    			end
+    			if
+    				
+    				type(aE.componentWillUpdate) == "function" 
+    				
+    			then
+    				aI = "componentWillUpdate"
+    			elseif type(aE.UNSAFE_componentWillUpdate) == "function" then
+    				aI = "UNSAFE_componentWillUpdate"
+    			end
+    			if
+    				aG ~= nil
+    				or aH ~= nil
+    				or aI ~= nil
+    			then
+    				local aJ = A(ay) or "Component"
+    				local aK
+    				if type(ay.getDerivedStateFromProps) == "function" then
+    					aK = "getDerivedStateFromProps()"
+    				else
+    					aK = "getSnapshotBeforeUpdate()"
+    				end
+    
+    				local aL
+    				if aG ~= nil then
+    					aL = ("\n  " .. tostring(aG))
+    				else
+    					aL = ""
+    				end
+    
+    				local aM
+    				if aH ~= nil then
+    					aM = (
+    						"\n  " .. tostring(aH)
+    					)
+    				else
+    					aM = ""
+    				end
+    
+    				local aN
+    				if aI ~= nil then
+    					aN = "\n  " .. tostring(aI)
+    				else
+    					aN = ""
+    				end
+    
+    				if not ap[aJ] then
+    					ap[aJ] = true
+    					d.error(
+    [[Unsafe legacy lifecycles will not be called for components using new component APIs.
+    
+    %s uses %s but also contains the following legacy lifecycles:%s%s%s
+    
+    The above lifecycles should be removed. Learn more about this warning here:
+    https://reactjs.org/link/unsafe-component-lifecycles]],
+    						aJ,
+    						aK,
+    						aL,
+    						aM,
+    						aN
+    					)
+    				end
+    			end
+    		end
+    	end
+    
+    	
+    	
+    	if aA then
+    		V(ax, aB, aC)
+    	end
+    
+    	return aE
+    end
+    
+    local function callComponentWillMount(ax, ay)
+    	local az = ay.state
+    
+    	if
+    		ay.componentWillMount ~= nil
+    		and type(ay.componentWillMount) == "function"
+    	then
+    		
+    		ay:componentWillMount()
+    	end
+    	
+    	if
+    		ay.UNSAFE_componentWillMount ~= nil
+    		and type(ay.UNSAFE_componentWillMount) == "function"
+    	then
+    		
+    		ay:UNSAFE_componentWillMount()
+    	end
+    
+    	if az ~= ay.state then
+    		if a then
+    			d.error(
+    [[%s.componentWillMount(): Assigning directly to this.state is deprecated (except inside a component's constructor). Use setState instead.]],
+    				A(ax.type) or "Component"
+    			)
+    		end
+    		getClassComponentUpdater().enqueueReplaceState(ay, ay.state)
+    	end
+    end
+    
+    function callComponentWillReceiveProps(ax, ay, az, aA)
+    	local aB = ay.state
+    	if
+    		ay.componentWillReceiveProps ~= nil
+    		and type(ay.componentWillReceiveProps) == "function"
+    	then
+    		
+    		ay:componentWillReceiveProps(az, aA)
+    	end
+    	if
+    		ay.UNSAFE_componentWillReceiveProps ~= nil
+    		and type(ay.UNSAFE_componentWillReceiveProps) == "function"
+    	then
+    		
+    		ay:UNSAFE_componentWillReceiveProps(az, aA)
+    	end
+    
+    	if ay.state ~= aB then
+    		if a then
+    			local aC = A(ax.type) or "Component"
+    			if not am[aC] then
+    				am[aC] = true
+    				d.error(
+    [[%s.componentWillReceiveProps(): Assigning directly to this.state is deprecated (except inside a component's constructor). Use setState instead.]]
+    
+    ,
+    					aC
+    				)
+    			end
+    		end
+    		getClassComponentUpdater().enqueueReplaceState(ay, ay.state)
+    	end
+    end
+    
+    
+    local function mountClassInstance(
+    	ax: Fiber,
+    	ay: any,
+    	az: any,
+    	aA: Lanes
+    )
+    	if a then
+    		checkClassInstance(ax, ay, az)
+    	end
+    
+    	local aB = ax.stateNode
+    	aB.props = az
+    	aB.state = ax.memoizedState
+    	
+    	
+    	aB.__refs = al
+    
+    	R(ax)
+    
+    	
+    	local aC
+    	if type(ay) == "table" then
+    		aC = ay.contextType
+    	end
+    	
+    	if aC ~= nil and type(aC) == "table" then
+    		aB.context = aa(aC)
+    	elseif p then
+    		aB.context = Z
+    	else
+    		local aD = X(ax, ay, true)
+    		aB.context = W(ax, aD)
+    	end
+    
+    	if a then
+    		if aB.state == az then
+    			local aD = A(ay) or "Component"
+    			if not at[aD] then
+    				at[aD] = true
+    				d.error(
+    [[%s: It is not recommended to assign props directly to state because updates to props won't be reflected in state. In most cases, it is better to use props directly.]]
+    
+    ,
+    					aD
+    				)
+    			end
+    		end
+    
+    		if bit32.band(ax.mode, J) ~= 0 then
+    			u.recordLegacyContextWarning(ax, aB)
+    		end
+    
+    		if s then
+    			u.recordUnsafeLifecycleWarnings(
+    				ax,
+    				aB
+    			)
+    		end
+    	end
+    
+    	L(ax, az, aB, aA)
+    	aB.state = ax.memoizedState
+    
+    	
+    	local aD = type(ay)
+    	local aE
+    	if type(ay) == "table" then
+    		aE = ay.getDerivedStateFromProps
+    	end
+    	if
+    		aE ~= nil
+    		and type(aE) == "function"
+    	then
+    		applyDerivedStateFromProps(
+    			ax,
+    			ay,
+    			aE,
+    			az
+    		)
+    		aB.state = ax.memoizedState
+    	end
+    
+    	
+    	
+    	
+    	if
+    		aD == "table"
+    		and type(ay.getDerivedStateFromProps) ~= "function"
+    		and type(aB.getSnapshotBeforeUpdate) ~= "function"
+    		and (
+    			type(aB.UNSAFE_componentWillMount) == "function"
+    			or type(aB.componentWillMount) == "function"
+    		)
+    	then
+    		callComponentWillMount(ax, aB)
+    		
+    		
+    		L(ax, az, aB, aA)
+    		aB.state = ax.memoizedState
+    	end
+    
+    	if type(aB.componentDidMount) == "function" then
+    		if a and t then
+    			ax.flags =
+    				bit32.bor(ax.flags, bit32.bor(m, k))
+    		else
+    			ax.flags = bit32.bor(ax.flags, k)
+    		end
+    	end
+    end
+    
+    function resumeMountClassInstance(
+    	ax: Fiber,
+    	ay: any,
+    	az: any,
+    	aA: Lanes
+    ): boolean
+    	local aB = ax.stateNode
+    
+    	local aC = ax.memoizedProps
+    	aB.props = aC
+    
+    	local aD = aB.context
+    	local aE = ay.contextType
+    	local aF = Z
+    
+    	
+    	if aE ~= nil and type(aE) == "table" then
+    		aF = aa(aE)
+    	elseif not p then
+    		local aG = X(ax, ay, true)
+    		aF = W(ax, aG)
+    	end
+    
+    	local aG = ay.getDerivedStateFromProps
+    	local aH = type(aG) == "function"
+    		or type(aB.getSnapshotBeforeUpdate) == "function"
+    
+    	
+    	
+    	
+    
+    	
+    	
+    	if
+    		not aH
+    		and (
+    			type(aB.UNSAFE_componentWillReceiveProps) == "function"
+    			or type(aB.componentWillReceiveProps) == "function"
+    		)
+    	then
+    		if aC ~= az or aD ~= aF then
+    			callComponentWillReceiveProps(ax, aB, az, aF)
+    		end
+    	end
+    
+    	N()
+    
+    	local aI = ax.memoizedState
+    	aB.state = aI
+    	local aJ = aI
+    	L(ax, az, aB, aA)
+    	aJ = ax.memoizedState
+    	if
+    		aC == az
+    		and aI == aJ
+    		and not Y()
+    		and not M()
+    	then
+    		
+    		
+    		if type(aB.componentDidMount) == "function" then
+    			if a and t then
+    				ax.flags =
+    					bit32.bor(ax.flags, m, k)
+    			else
+    				ax.flags = bit32.bor(ax.flags, k)
+    			end
+    		end
+    		return false
+    	end
+    
+    	if
+    		aG ~= nil
+    		and type(aG) == "function"
+    	then
+    		applyDerivedStateFromProps(
+    			ax,
+    			ay,
+    			aG,
+    			az
+    		)
+    		aJ = ax.memoizedState
+    	end
+    
+    	local aK = M()
+    		or checkShouldComponentUpdate(
+    			ax,
+    			ay,
+    			aC,
+    			az,
+    			aI,
+    			aJ,
+    			aF
+    		)
+    
+    	if aK then
+    		
+    		
+    		if
+    			not aH
+    			and (
+    				type(aB.UNSAFE_componentWillMount) == "function"
+    				or type(aB.componentWillMount) == "function"
+    			)
+    		then
+    			if type(aB.componentWillMount) == "function" then
+    				aB:componentWillMount()
+    			end
+    			if type(aB.UNSAFE_componentWillMount) == "function" then
+    				aB:UNSAFE_componentWillMount()
+    			end
+    		end
+    		if type(aB.componentDidMount) == "function" then
+    			if a and t then
+    				ax.flags =
+    					bit32.bor(ax.flags, m, k)
+    			else
+    				ax.flags = bit32.bor(ax.flags, k)
+    			end
+    		end
+    	else
+    		
+    		
+    		if type(aB.componentDidMount) == "function" then
+    			if a and t then
+    				ax.flags =
+    					bit32.bor(ax.flags, m, k)
+    			else
+    				ax.flags = bit32.bor(ax.flags, k)
+    			end
+    		end
+    
+    		
+    		
+    		ax.memoizedProps = az
+    		ax.memoizedState = aJ
+    	end
+    
+    	
+    	
+    	aB.props = az
+    	aB.state = aJ
+    	aB.context = aF
+    
+    	return aK
+    end
+    
+    
+    local function updateClassInstance(
+    	ax: Fiber,
+    	ay: Fiber,
+    	az: any,
+    	aA: any,
+    	aB: Lanes
+    ): boolean
+    	local aC = ay.stateNode
+    
+    	S(ax, ay)
+    
+    	local aD = ay.memoizedProps
+    	local aE = if ay.type == ay.elementType
+    		then aD
+    		else G(ay.type, aD)
+    	aC.props = aE
+    	local aF = ay.pendingProps
+    
+    	local aG = aC.context
+    	local aH
+    	local aI
+    	
+    	if type(az) == "table" then
+    		aH = az.contextType
+    		aI = az.getDerivedStateFromProps
+    	end
+    	local aJ = Z
+    	if type(aH) == "table" then
+    		aJ = aa(aH)
+    	elseif not p then
+    		local aK = X(ay, az, true)
+    		aJ = W(ay, aK)
+    	end
+    
+    	local aK = (
+    		aI ~= nil
+    		and type(aI) == "function"
+    	)
+    		or (
+    			aC.getSnapshotBeforeUpdate ~= nil
+    			and type(aC.getSnapshotBeforeUpdate) == "function"
+    		)
+    
+    	
+    	
+    	
+    
+    	
+    	
+    	if
+    		not aK
+    		and (
+    			(
+    				aC.UNSAFE_componentWillReceiveProps ~= nil
+    				and type(aC.UNSAFE_componentWillReceiveProps) == "function"
+    			)
+    			or (
+    				aC.componentWillReceiveProps ~= nil
+    				and type(aC.componentWillReceiveProps) == "function"
+    			)
+    		)
+    	then
+    		if aD ~= aF or aG ~= aJ then
+    			callComponentWillReceiveProps(ay, aC, aA, aJ)
+    		end
+    	end
+    
+    	N()
+    
+    	local aL = ay.memoizedState
+    	aC.state = aL
+    	local aM = aC.state
+    	L(ay, aA, aC, aB)
+    	aM = ay.memoizedState
+    
+    	if
+    		aD == aF
+    		and aL == aM
+    		and not Y()
+    		and not M()
+    	then
+    		
+    		
+    		if
+    			aC.componentDidUpdate ~= nil
+    			and type(aC.componentDidUpdate) == "function"
+    		then
+    			if
+    				aD ~= ax.memoizedProps
+    				or aL ~= ax.memoizedState
+    			then
+    				ay.flags = bit32.bor(ay.flags, k)
+    			end
+    		end
+    		if
+    			aC.getSnapshotBeforeUpdate ~= nil
+    			and type(aC.getSnapshotBeforeUpdate) == "function"
+    		then
+    			if
+    				aD ~= ax.memoizedProps
+    				or aL ~= ax.memoizedState
+    			then
+    				ay.flags = bit32.bor(ay.flags, l)
+    			end
+    		end
+    		return false
+    	end
+    
+    	if
+    		aI ~= nil
+    		and type(aI) == "function"
+    	then
+    		applyDerivedStateFromProps(
+    			ay,
+    			az,
+    			aI,
+    			aA
+    		)
+    		aM = ay.memoizedState
+    	end
+    
+    	local aN = M()
+    		or checkShouldComponentUpdate(
+    			ay,
+    			az,
+    			aE,
+    			aA,
+    			aL,
+    			aM,
+    			aJ
+    		)
+    
+    	if aN then
+    		
+    		
+    		if
+    			not aK
+    			and (
+    				(
+    					aC.UNSAFE_componentWillUpdate ~= nil
+    					and type(aC.UNSAFE_componentWillUpdate) == "function"
+    				)
+    				or (
+    					aC.componentWillUpdate ~= nil
+    					and type(aC.componentWillUpdate) == "function"
+    				)
+    			)
+    		then
+    			if
+    				aC.componentWillUpdate ~= nil
+    				and type(aC.componentWillUpdate) == "function"
+    			then
+    				
+    				aC:componentWillUpdate(aA, aM, aJ)
+    			end
+    			if
+    				aC.UNSAFE_componentWillUpdate ~= nil
+    				and type(aC.UNSAFE_componentWillUpdate) == "function"
+    			then
+    				
+    				aC:UNSAFE_componentWillUpdate(aA, aM, aJ)
+    			end
+    		end
+    		if
+    			aC.componentDidUpdate ~= nil
+    			and type(aC.componentDidUpdate) == "function"
+    		then
+    			ay.flags = bit32.bor(ay.flags, k)
+    		end
+    		if
+    			aC.getSnapshotBeforeUpdate ~= nil
+    			and type(aC.getSnapshotBeforeUpdate) == "function"
+    		then
+    			ay.flags = bit32.bor(ay.flags, l)
+    		end
+    	else
+    		
+    		
+    		if
+    			aC.componentDidUpdate ~= nil
+    			and type(aC.componentDidUpdate) == "function"
+    		then
+    			if
+    				aD ~= ax.memoizedProps
+    				or aL ~= ax.memoizedState
+    			then
+    				ay.flags = bit32.bor(ay.flags, k)
+    			end
+    		end
+    		if
+    			aC.getSnapshotBeforeUpdate ~= nil
+    			and type(aC.getSnapshotBeforeUpdate) == "function"
+    		then
+    			if
+    				aD ~= ax.memoizedProps
+    				or aL ~= ax.memoizedState
+    			then
+    				ay.flags = bit32.bor(ay.flags, l)
+    			end
+    		end
+    
+    		
+    		
+    		ay.memoizedProps = aA
+    		ay.memoizedState = aM
+    	end
+    
+    	
+    	
+    	aC.props = aA
+    	aC.state = aM
+    	aC.context = aJ
+    
+    	return aN
+    end
+    
+    return {
+    	adoptClassInstance = adoptClassInstance,
+    	constructClassInstance = constructClassInstance,
+    	mountClassInstance = mountClassInstance,
+    	resumeMountClassInstance = resumeMountClassInstance,
+    	updateClassInstance = updateClassInstance,
+    
+    	applyDerivedStateFromProps = applyDerivedStateFromProps,
+    	
+    	emptyRefsObject = al,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberCommitWork.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function unimplemented(a: string)
+    	print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    	print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    	print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    	print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    	print("UNIMPLEMENTED ERROR: " .. tostring(a))
+    	error("FIXME (roblox): " .. a .. " is unimplemented", 2)
+    end
+    
+    local a = _G.__DEV__ :: boolean
+    local b = _G.__YOLO__ :: boolean
+    
+    
+    local c = 0
+    local d = 20
+    
+    local function isCallable(e)
+    	if typeof(e) == "function" then
+    		return true
+    	end
+    	if typeof(e) == "table" then
+    		local f = getmetatable(e)
+    		if f and rawget(f, "__call") then
+    			return true
+    		end
+    		if e._isMockFunction then
+    			return true
+    		end
+    	end
+    	return false
+    end
+    
+    
+    local e = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").console
+    local f = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/luau-polyfill")
+    local g = f.Error
+    local h = f.Set
+    type Array<T> = { [number]: T }
+    
+    local i = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHostConfig")
+    type Instance = i.Instance
+    type Container = i.Container
+    type TextInstance = i.TextInstance
+    
+    
+    
+    
+    
+    type UpdatePayload = Array<any>
+    
+    
+    local j = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = j.Fiber
+    type FiberRoot = j.FiberRoot
+    local k = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberSuspenseComponent.new")
+    type SuspenseState = k.SuspenseState
+    
+    local l = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactUpdateQueue.new")
+    type UpdateQueue<T> = j.UpdateQueue<T>
+    
+    
+    
+    
+    type Effect = {
+    	tag: HookFlags,
+    	create: () -> (() -> ())?,
+    	destroy: (() -> ())?,
+    	deps: Array<any>?,
+    	next: Effect
+    }
+    type FunctionComponentUpdateQueue = {
+    	lastEffect: Effect?
+    }
+    
+    local m = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    type Wakeable = m.Wakeable
+    
+    type ReactPriorityLevel = j.ReactPriorityLevel
+    local n = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberOffscreenComponent")
+    type OffscreenState = n.OffscreenState
+    local o = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactHookEffectTags")
+    type HookFlags = o.HookFlags
+    
+    
+    local p = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/scheduler").tracing.unstable_wrap
+    local q = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactFeatureFlags
+    local r = q.enableSchedulerTracing
+    local s = q.enableProfilerTimer
+    local t = q.enableProfilerCommitHooks
+    
+    
+    local u = q.enableSuspenseCallback
+    
+    local v = q.enableDoubleInvokingEffects
+    local w = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactWorkTags")
+    local x = w.FunctionComponent
+    local y = w.ForwardRef
+    local z = w.ClassComponent
+    local A = w.HostRoot
+    local B = w.HostComponent
+    local C = w.HostText
+    local D = w.HostPortal
+    local E = w.Profiler
+    local F = w.SuspenseComponent
+    local G = w.DehydratedFragment
+    local H = w.IncompleteClassComponent
+    local I = w.MemoComponent
+    local J = w.SimpleMemoComponent
+    local K = w.SuspenseListComponent
+    local L = w.FundamentalComponent
+    local M = w.ScopeComponent
+    local N = w.Block
+    local O = w.OffscreenComponent
+    local P = w.LegacyHiddenComponent
+    local Q = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactErrorUtils
+    local R = Q.invokeGuardedCallback
+    local S = Q.hasCaughtError
+    local T = Q.clearCaughtError
+    local U = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberFlags")
+    local V = U.NoFlags
+    local W = U.ContentReset
+    local X = U.Placement
+    local Y = U.Snapshot
+    local Z = U.Update
+    local _ = U.Callback
+    local aa = U.LayoutMask
+    local ab = U.PassiveMask
+    local ac = U.Ref
+    local ad = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").getComponentName
+    local ae = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").invariant
+    local af = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").describeError
+    local ag = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactCurrentFiber")
+    
+    local ah = ag.current
+    local ai = ag.resetCurrentFiber
+    local aj = ag.setCurrentFiber
+    local ak = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberDevToolsHook.new").onCommitUnmount
+    local al =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLazyComponent.new").resolveDefaultProps
+    local am = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactProfilerTimer.new")
+    local an = am.startLayoutEffectTimer
+    local ao = am.recordPassiveEffectDuration
+    local ap = am.recordLayoutEffectDuration
+    local aq = am.startPassiveEffectTimer
+    local ar = am.getCommitTime
+    local as = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactTypeOfMode").ProfileMode
+    local at = l.commitUpdateQueue
+    local au = i.getPublicInstance
+    local av = i.supportsMutation
+    local aw = i.supportsPersistence
+    local ax = i.supportsHydration
+    local ay = i.commitMount
+    local az = i.commitUpdate
+    local aA = i.resetTextContent
+    local aB = i.commitTextUpdate
+    local aC = i.appendChild
+    local aD = i.appendChildToContainer
+    local aE = i.insertBefore
+    local aF = i.insertInContainerBefore
+    local aG = i.removeChild
+    local aH = i.removeChildFromContainer
+    
+    
+    
+    
+    local aI = i.hideInstance
+    local aJ = i.hideTextInstance
+    local aK = i.unhideInstance
+    local aL = i.unhideTextInstance
+    
+    
+    
+    local aM = i.commitHydratedSuspenseInstance
+    local aN = i.clearContainer
+    
+    
+    
+    local aO
+    
+    local function resolveRetryWakeable(aP: Fiber, aQ: Wakeable): ()
+    	if not aO then
+    		aO = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberWorkLoop.new"):: any
+    	end
+    	aO.resolveRetryWakeable(aP, aQ)
+    end
+    
+    local function markCommitTimeOfFallback(): ()
+    	if not aO then
+    		aO = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberWorkLoop.new"):: any
+    	end
+    	aO.markCommitTimeOfFallback()
+    end
+    
+    
+    local function schedulePassiveEffectCallback(): ()
+    	e.warn(
+    		"ReactFiberCommitWork: schedulePassiveEffectCallback causes a dependency cycle\n"
+    			.. debug.traceback()
+    	)
+    end
+    
+    
+    local function captureCommitPhaseError(
+    	aP: Fiber,
+    	aQ: Fiber | nil,
+    	aR: any?
+    ): ()
+    	e.warn(
+    		"ReactFiberCommitWork: captureCommitPhaseError causes a dependency cycle"
+    	)
+    	error(aR)
+    end
+    
+    local aP = o.NoFlags
+    local aQ = o.HasEffect
+    local aR = o.Layout
+    local aS = o.Passive
+    
+    
+    local aT
+    local aU = function()
+    	if not aT then
+    		aT =
+    			_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberBeginWork.new").didWarnAboutReassigningProps
+    	end
+    	return aT
+    end
+    
+    
+    type Set<T> = { [T]: boolean }
+    
+    
+    local aV, aW, aX, aY, aZ, a_, a0, a1, a2, a3
+    
+    
+    local a4: Fiber | nil 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function callComponentWillUnmountWithTimer(a5, a6)
+    	a6.props = a5.memoizedProps
+    	a6.state = a5.memoizedState
+    	if
+    		s
+    		and t
+    		and bit32.band(a5.mode, as) ~= 0
+    	then
+    		
+    		local a7, a8 = xpcall(function()
+    			an()
+    			
+    			a6:componentWillUnmount()
+    		end, af)
+    
+    		ap(a5)
+    
+    		if not a7 then
+    			error(a8)
+    		end
+    	else
+    		
+    		a6:componentWillUnmount()
+    	end
+    end
+    
+    
+    function safelyCallComponentWillUnmount(
+    	a5: Fiber,
+    	a6: any,
+    	a7
+    ): ()
+    	
+    	local a8, a9 =
+    		xpcall(callComponentWillUnmountWithTimer, af, a5, a6)
+    
+    	if not a8 then
+    		captureCommitPhaseError(a5, a7, a9)
+    	end
+    end
+    
+    local function safelyDetachRef(a5: Fiber, a6: Fiber): ()
+    	local a7 = a5.ref
+    	if a7 ~= nil then
+    		if typeof(a7) == "function" then
+    			
+    			local a8, a9 = xpcall(a7, af)
+    			if not a8 then
+    				captureCommitPhaseError(a5, a6, a9)
+    			end
+    		else
+    			
+    			a7.current = nil
+    		end
+    	end
+    end
+    
+    local function safelyCallDestroy(
+    	a5: Fiber,
+    	a6: Fiber | nil,
+    	a7: () -> ()
+    ): ()
+    	
+    	local a8, a9 = xpcall(a7, af)
+    	if not a8 then
+    		captureCommitPhaseError(a5, a6, a9)
+    	end
+    end
+    
+    local function commitBeforeMutationLifeCycles(
+    	a5: Fiber | nil,
+    	a6: Fiber
+    ): ()
+    	if
+    		a6.tag == x
+    		or a6.tag == y
+    		or a6.tag == J
+    		or a6.tag == N
+    	then
+    		return
+    	elseif a6.tag == z then
+    		if bit32.band(a6.flags, Y) ~= 0 then
+    			if a5 ~= nil then
+    				local a7 = (a5 :: Fiber).memoizedProps
+    				local a8 = (a5 :: Fiber).memoizedState
+    				local a9 = a6.stateNode
+    				
+    				
+    				
+    				if a then
+    					if
+    						a6.type == a6.elementType
+    						and not aU
+    					then
+    						if a9.props ~= a6.memoizedProps then
+    							e.error(
+    [[Expected %s props to match memoized props before getSnapshotBeforeUpdate. This might either be because of a bug in React, or because a component reassigns its own `this.props`. Please file an issue.]]
+    
+    
+    
+    ,
+    								ad(a6.type) or "instance"
+    							)
+    						end
+    						if a9.state ~= a6.memoizedState then
+    							e.error(
+    [[Expected %s state to match memoized state before getSnapshotBeforeUpdate. This might either be because of a bug in React, or because a component reassigns its own `this.state`. Please file an issue.]]
+    
+    
+    
+    ,
+    								ad(a6.type) or "instance"
+    							)
+    						end
+    					end
+    				end
+    				
+    				local ba = a9:getSnapshotBeforeUpdate(
+    					a6.elementType == a6.type and a7
+    						or al(a6.type, a7),
+    					a8
+    				)
+    				if a then
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    				end
+    				a9.__reactInternalSnapshotBeforeUpdate = ba
+    			end
+    		end
+    		return
+    	elseif a6.tag == A then
+    		if av then
+    			if bit32.band(a6.flags, Y) ~= 0 then
+    				local a7 = a6.stateNode
+    				aN(a7.containerInfo)
+    			end
+    		end
+    		return
+    	elseif
+    		a6.tag == B
+    		or a6.tag == C
+    		or a6.tag == D
+    		or a6.tag == H
+    	then
+    		
+    		return
+    	end
+    	ae(
+    		false,
+    [[This unit of work tag should not have side-effects. This error is likely caused by a bug in React. Please file an issue.]]	
+    
+    )
+    end
+    
+    local function commitHookEffectListUnmount(
+    	a5: HookFlags,
+    	a6: Fiber,
+    	a7: Fiber?
+    )
+    	local a8: FunctionComponentUpdateQueue | nil = a6.updateQueue
+    	local a9
+    	if a8 ~= nil then
+    		a9 = (a8 :: FunctionComponentUpdateQueue).lastEffect
+    	end
+    
+    	if a9 ~= nil then
+    		local ba = a9.next
+    		local bb = ba
+    		repeat
+    			if bit32.band(bb.tag, a5) == a5 then
+    				
+    				local bc = bb.destroy
+    				bb.destroy = nil
+    				if bc ~= nil then
+    					safelyCallDestroy(a6, a7, bc)
+    				end
+    			end
+    			bb = bb.next
+    		until bb == ba
+    	end
+    end
+    
+    local function commitHookEffectListMount(a5: HookFlags, a6: Fiber)
+    	local a7: FunctionComponentUpdateQueue | nil =
+    		a6.updateQueue :: any
+    	local a8 = if a7 ~= nil then a7.lastEffect else nil
+    	if a8 ~= nil then
+    		local a9 = a8.next
+    		local ba = a9
+    		repeat
+    			if bit32.band(ba.tag, a5) == a5 then
+    				
+    				local bb = ba.create
+    				ba.destroy = bb()
+    
+    				if a then
+    					local bc = ba.destroy
+    					if bc ~= nil and typeof(bc) ~= "function" then
+    						local bd
+    						if bc == nil then
+    							bd = [[ You returned nil. If your effect does not require clean up, return nil (or nothing).]]						
+    
+    elseif typeof(bc.andThen) == "function" then
+    							bd =
+    [=[
+    
+    
+    It looks like you wrote useEffect(Promise.new(function() --[[...]] end) or returned a Promise. Instead, write the async function inside your effect and call it immediately:
+    
+    useEffect(function()
+      function fetchData()
+        -- You can await here
+        local response = MyAPI.getData(someId):await()
+        -- ...
+      end
+      fetchData()
+    end, {someId}) -- Or {} if effect doesn't need props or state
+    
+    Learn more about data fetching with Hooks: https://reactjs.org/link/hooks-data-fetching]=]						else
+    							bd = " You returned: " .. bc
+    						end
+    						e.error(
+    [[An effect function must not return anything besides a function, which is used for clean-up.%s]],
+    							bd
+    						)
+    					end
+    				end
+    			end
+    			ba = ba.next
+    		until ba == a9
+    	end
+    end
+    
+    function commitProfilerPassiveEffect(a5: FiberRoot, a6: Fiber): ()
+    	if s and t then
+    		if a6.tag == E then
+    			local a7 = a6.stateNode.passiveEffectDuration
+    			local a8, a9 =
+    				a6.memoizedProps.id, a6.memoizedProps.onPostCommit
+    
+    			
+    			
+    			local ba = ar()
+    
+    			if typeof(a9) == "function" then
+    				if r then
+    					a9(
+    						a8,
+    						if a6.alternate == nil then "mount" else "update",
+    						a7,
+    						ba,
+    						a5.memoizedInteractions
+    					)
+    				else
+    					a9(
+    						a8,
+    						if a6.alternate == nil then "mount" else "update",
+    						a7,
+    						ba
+    					)
+    				end
+    			end
+    		end
+    	end
+    end
+    
+    local function recursivelyCommitLayoutEffects(
+    	a5: Fiber,
+    	a6: FiberRoot,
+    	
+    	a7: (
+    		sourceFiber: Fiber,
+    		nearestMountedAncestor: Fiber?,
+    		error: any
+    	) -> (),
+    	a8: () -> ()
+    )
+    	if a7 ~= nil then
+    		captureCommitPhaseError = a7
+    	end
+    	if a8 ~= nil then
+    		schedulePassiveEffectCallback = a8
+    	end
+    	local a9 = a5.flags
+    	local ba = a5.tag
+    	if ba == E then
+    		local bb 		if s and t then
+    			bb = a4
+    			a4 = a5
+    		end
+    
+    		local bc = a5.child
+    		while bc ~= nil do
+    			local bd = bit32.band(a5.subtreeFlags, aa)
+    			if bd ~= V then
+    				if a then
+    					local be = ah
+    					aj(bc)
+    					R(
+    						nil,
+    						recursivelyCommitLayoutEffects,
+    						nil,
+    						bc,
+    						a6,
+    						
+    						captureCommitPhaseError,
+    						schedulePassiveEffectCallback
+    					)
+    					if S() then
+    						local bf = T()
+    						captureCommitPhaseError(bc, a5, bf)
+    					end
+    					if be ~= nil then
+    						aj(be)
+    					else
+    						ai()
+    					end
+    				else
+    					local be, bf = xpcall(
+    						
+    						recursivelyCommitLayoutEffects,
+    						af,
+    						bc,
+    						a6,
+    						captureCommitPhaseError,
+    						schedulePassiveEffectCallback
+    					)
+    					if not be then
+    						captureCommitPhaseError(bc, a5, bf)
+    					end
+    				end
+    			end
+    			bc = bc.sibling
+    		end
+    
+    		local bd = bit32.band(a9, bit32.bor(Z, _))
+    		if bd ~= V then
+    			if s then
+    				if a then
+    					local be = ah
+    					aj(a5)
+    					R(
+    						nil,
+    						commitLayoutEffectsForProfiler,
+    						nil,
+    						a5,
+    						a6
+    					)
+    					if S() then
+    						local bf = T()
+    						captureCommitPhaseError(
+    							a5,
+    							a5.return_,
+    							bf
+    						)
+    					end
+    					if be ~= nil then
+    						aj(be)
+    					else
+    						ai()
+    					end
+    				else
+    					
+    					local be, bf = xpcall(
+    						commitLayoutEffectsForProfiler,
+    						af,
+    						a5,
+    						a6
+    					)
+    					if not be then
+    						captureCommitPhaseError(
+    							a5,
+    							a5.return_,
+    							bf
+    						)
+    					end
+    				end
+    			end
+    		end
+    
+    		if s and t then
+    			
+    			
+    			if bb ~= nil then
+    				bb.stateNode.effectDuration += a5.stateNode.effectDuration
+    			end
+    
+    			a4 = bb
+    		end
+    	
+    	
+    	else
+    		local bb = a5.child
+    		while bb ~= nil do
+    			local bc = bit32.band(a5.subtreeFlags, aa)
+    			if bc ~= V then
+    				if a then
+    					local bd = ag.current
+    					aj(bb)
+    					
+    					
+    
+    
+    if c < d then
+    						c += 1
+    						R(
+    							nil,
+    							recursivelyCommitLayoutEffects,
+    							nil,
+    							bb,
+    							a6,
+    							
+    							captureCommitPhaseError,
+    							schedulePassiveEffectCallback
+    						)
+    						c -= 1
+    
+    						if S() then
+    							local be = T()
+    							captureCommitPhaseError(bb, a5, be)
+    						end
+    					else
+    						recursivelyCommitLayoutEffects(
+    							bb,
+    							a6,
+    							captureCommitPhaseError,
+    							schedulePassiveEffectCallback
+    						)
+    					end
+    					if bd ~= nil then
+    						aj(bd)
+    					else
+    						ai()
+    					end
+    				else
+    					
+    					local bd, be
+    					if not b and c < d then
+    						
+    						
+    
+    
+    c += 1
+    
+    						bd, be = xpcall(
+    							
+    							recursivelyCommitLayoutEffects,
+    							af,
+    							bb,
+    							a6,
+    							captureCommitPhaseError,
+    							schedulePassiveEffectCallback
+    						)
+    
+    						c -= 1
+    					else
+    						bd = true
+    						recursivelyCommitLayoutEffects(
+    							bb,
+    							a6,
+    							captureCommitPhaseError,
+    							schedulePassiveEffectCallback
+    						)
+    					end
+    
+    					if not bd then
+    						captureCommitPhaseError(bb, a5, be)
+    					end
+    				end
+    			end
+    			bb = bb.sibling
+    		end
+    
+    		local bc = bit32.band(a9, bit32.bor(Z, _))
+    		if bc ~= V then
+    			if
+    				ba == x
+    				or ba == y
+    				or ba == J
+    				or ba == N
+    			then
+    				if
+    					s
+    					and t
+    					and bit32.band(a5.mode, as) ~= 0
+    				then
+    					
+    					local bd, be = xpcall(function()
+    						an()
+    						commitHookEffectListMount(
+    							bit32.bor(aR, aQ),
+    							a5
+    						)
+    					end, af)
+    					
+    					ap(a5)
+    					if not bd then
+    						error(be)
+    					end
+    				else
+    					commitHookEffectListMount(
+    						bit32.bor(aR, aQ),
+    						a5
+    					)
+    				end
+    
+    				if bit32.band(a5.subtreeFlags, ab) ~= V then
+    					schedulePassiveEffectCallback()
+    				end
+    			elseif ba == z then
+    				
+    				a0(a5)
+    			elseif ba == A then
+    				aZ(a5)
+    			elseif ba == B then
+    				a_(a5)
+    			elseif ba == F then
+    				commitSuspenseHydrationCallbacks(a6, a5)
+    			elseif
+    				ba == L
+    				or ba == D
+    				or ba == C
+    				or ba == H
+    				or ba == P
+    				or ba == O
+    				or ba == M
+    				or ba == K
+    			then
+    			
+    			else
+    				ae(
+    					false,
+    [[This unit of work tag should not have side-effects. This error is likely caused by a bug in React. Please file an issue.]]				)
+    			end
+    		end
+    
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		if bit32.band(a9, ac) ~= 0 then
+    			commitAttachRef(a5)
+    		end
+    		
+    	end
+    end
+    
+    function commitLayoutEffectsForProfiler(a5: Fiber, a6: FiberRoot)
+    	if s then
+    		local a7 = a5.flags
+    		local a8 = a5.alternate
+    
+    		local a9, ba =
+    			a5.memoizedProps.onCommit, a5.memoizedProps.onRender
+    		local bb = a5.stateNode.effectDuration
+    
+    		local bc = ar()
+    
+    		local bd = Z
+    		local be = _
+    
+    		if
+    			bit32.band(a7, bd) ~= V
+    			
+    			and isCallable(ba)
+    		then
+    			if r then
+    				ba(
+    					a5.memoizedProps.id,
+    					if a8 == nil then "mount" else "update",
+    					a5.actualDuration,
+    					a5.treeBaseDuration,
+    					a5.actualStartTime,
+    					bc,
+    					a6.memoizedInteractions
+    				)
+    			else
+    				ba(
+    					a5.memoizedProps.id,
+    					if a8 == nil then "mount" else "update",
+    					a5.actualDuration,
+    					a5.treeBaseDuration,
+    					a5.actualStartTime,
+    					bc
+    				)
+    			end
+    		end
+    
+    		if t then
+    			if
+    				bit32.band(a7, be) ~= V
+    				
+    				and isCallable(a9)
+    			then
+    				if r then
+    					a9(
+    						a5.memoizedProps.id,
+    						if a8 == nil then "mount" else "update",
+    						bb,
+    						bc,
+    						a6.memoizedInteractions
+    					)
+    				else
+    					a9(
+    						a5.memoizedProps.id,
+    						if a8 == nil then "mount" else "update",
+    						bb,
+    						bc
+    					)
+    				end
+    			end
+    		end
+    	end
+    end
+    
+    function a0(a5: Fiber)
+    	local a6 = a5.stateNode
+    	local a7 = a5.alternate
+    	if bit32.band(a5.flags, Z) ~= 0 then
+    		if a7 == nil then
+    			
+    			
+    			
+    			if a then
+    				if
+    					a5.type == a5.elementType
+    					and not aU
+    				then
+    					if a6.props ~= a5.memoizedProps then
+    						e.error(
+    [[Expected %s props to match memoized props before componentDidMount. This might either be because of a bug in React, or because a component reassigns its own `this.props`. Please file an issue.]],
+    							ad(a5.type) or "instance"
+    						)
+    					end
+    					if a6.state ~= a5.memoizedState then
+    						e.error(
+    [[Expected %s state to match memoized state before componentDidMount. This might either be because of a bug in React, or because a component reassigns its own `this.state`. Please file an issue.]],
+    							ad(a5.type) or "instance"
+    						)
+    					end
+    				end
+    			end
+    			if
+    				s
+    				and t
+    				and bit32.band(a5.mode, as) ~= 0
+    			then
+    				local a8, a9 = xpcall(function()
+    					an()
+    					
+    					a6:componentDidMount()
+    				end, af)
+    				
+    				ap(a5)
+    				if not a8 then
+    					error(a9)
+    				end
+    			else
+    				
+    				a6:componentDidMount()
+    			end
+    		else
+    			local a8 = a5.elementType == a5.type
+    					and a7.memoizedProps
+    				or al(a5.type, a7.memoizedProps)
+    			local a9 = a7.memoizedState
+    			
+    			
+    			
+    			if a then
+    				if
+    					a5.type == a5.elementType
+    					and not aU
+    				then
+    					if a6.props ~= a5.memoizedProps then
+    						e.error(
+    [[Expected %s props to match memoized props before componentDidUpdate. This might either be because of a bug in React, or because a component reassigns its own `this.props`. Please file an issue.]]
+    
+    
+    
+    ,
+    							ad(a5.type) or "instance"
+    						)
+    					end
+    					if a6.state ~= a5.memoizedState then
+    						e.error(
+    [[Expected %s state to match memoized state before componentDidUpdate. This might either be because of a bug in React, or because a component reassigns its own `this.state`. Please file an issue.]]
+    
+    
+    
+    ,
+    							ad(a5.type) or "instance"
+    						)
+    					end
+    				end
+    			end
+    			if
+    				s
+    				and t
+    				and bit32.band(a5.mode, as) ~= 0
+    			then
+    				local ba, bb = xpcall(function()
+    					an()
+    					
+    					a6:componentDidUpdate(
+    						a8,
+    						a9,
+    						a6.__reactInternalSnapshotBeforeUpdate
+    					)
+    				end, af)
+    				
+    				ap(a5)
+    				if not ba then
+    					error(bb)
+    				end
+    			else
+    				
+    				a6:componentDidUpdate(
+    					a8,
+    					a9,
+    					a6.__reactInternalSnapshotBeforeUpdate
+    				)
+    			end
+    		end
+    	end
+    
+    	
+    	
+    	local a8: UpdateQueue<any> | nil = a5.updateQueue
+    	if a8 ~= nil then
+    		if a then
+    			if
+    				a5.type == a5.elementType
+    				and not aU
+    			then
+    				if a6.props ~= a5.memoizedProps then
+    					e.error(
+    [[Expected %s props to match memoized props before processing the update queue. This might either be because of a bug in React, or because a component reassigns its own `this.props`. Please file an issue.]]
+    
+    
+    
+    ,
+    						ad(a5.type) or "instance"
+    					)
+    				end
+    				if a6.state ~= a5.memoizedState then
+    					e.error(
+    [[Expected %s state to match memoized state before processing the update queue. This might either be because of a bug in React, or because a component reassigns its own `this.state`. Please file an issue.]]
+    
+    
+    
+    ,
+    						ad(a5.type) or "instance"
+    					)
+    				end
+    			end
+    		end
+    		
+    		
+    		
+    		at(a5, a8, a6)
+    	end
+    end
+    
+    function aZ(a5: Fiber)
+    	
+    	
+    	local a6: UpdateQueue<any> | nil = a5.updateQueue
+    	if a6 ~= nil then
+    		local a7 		
+    if a5.child ~= nil then
+    			
+    			local a8 = a5.child
+    			if a8.tag == B then
+    				a7 = au(a8.stateNode)
+    			elseif a8.tag == z then
+    				a7 = a8.stateNode
+    			end
+    		end
+    		at(a5, a6, a7)
+    	end
+    end
+    
+    function a_(a5: Fiber)
+    	local a6: Instance = a5.stateNode
+    	local a7 = a5.alternate
+    
+    	
+    	
+    	
+    	
+    	if a7 == nil and bit32.band(a5.flags, Z) ~= 0 then
+    		local a8 = a5.type
+    		local a9 = a5.memoizedProps
+    		ay(a6, a8, a9, a5)
+    	end
+    end
+    
+    local function hideOrUnhideAllChildren(a5, a6)
+    	if av then
+    		
+    		
+    		local a7: Fiber = a5
+    		while true do
+    			if a7.tag == B then
+    				local a8 = a7.stateNode
+    				if a6 then
+    					aI(a8)
+    				else
+    					aK(a7.stateNode, a7.memoizedProps)
+    				end
+    			elseif a7.tag == C then
+    				local a8 = a7.stateNode
+    				if a6 then
+    					aJ(a8)
+    				else
+    					aL(a8, a7.memoizedProps)
+    				end
+    			elseif
+    				(a7.tag == O or a7.tag == P)
+    				and (a7.memoizedState :: OffscreenState) ~= nil
+    				and a7 ~= a5
+    			then
+    			
+    			
+    			elseif a7.child ~= nil then
+    				
+    				(a7.child :: Fiber).return_ = a7
+    				a7 = a7.child :: Fiber
+    				continue
+    			end
+    			if a7 == a5 then
+    				return
+    			end
+    			while a7.sibling == nil do
+    				if a7.return_ == nil or a7.return_ == a5 then
+    					return
+    				end
+    				a7 = a7.return_ :: Fiber 
+    			end
+    			
+    			(a7.sibling :: Fiber).return_ = a7.return_
+    			
+    			a7 = a7.sibling :: Fiber
+    		end
+    	end
+    end
+    
+    function commitAttachRef(a5: Fiber)
+    	local a6 = a5.ref
+    	if a6 ~= nil then
+    		local a7 = a5.stateNode
+    		local a8
+    		if a5.tag == B then
+    			a8 = au(a7)
+    		else
+    			a8 = a7
+    		end
+    		
+    		
+    		
+    		
+    		
+    		if typeof(a6) == "function" then
+    			a6(a8)
+    		else
+    			if a then
+    				
+    				
+    				
+    				
+    				
+    				if typeof(a6) ~= "table" then
+    					e.error(
+    [[Unexpected ref object provided for %s. Use either a ref-setter function or React.createRef().]]
+    ,
+    						ad(a5.type) or "instance"
+    					)
+    					return
+    				end
+    			end
+    
+    			a6.current = a8
+    		end
+    	end
+    end
+    
+    function commitDetachRef(a5: Fiber)
+    	local a6 = a5.ref
+    	if a6 ~= nil then
+    		if typeof(a6) == "function" then
+    			a6(nil)
+    		else
+    			a6.current = nil
+    		end
+    	end
+    end
+    
+    
+    
+    
+    function a3(
+    	a5: FiberRoot,
+    	a6: Fiber,
+    	a7: Fiber,
+    	a8: ReactPriorityLevel
+    ): ()
+    	ak(a6)
+    
+    	if
+    		a6.tag == x
+    		or a6.tag == y
+    		or a6.tag == I
+    		or a6.tag == J
+    		or a6.tag == N
+    	then
+    		local a9: FunctionComponentUpdateQueue | nil = a6.updateQueue
+    		if a9 ~= nil then
+    			local ba = (a9 :: FunctionComponentUpdateQueue).lastEffect
+    			if ba ~= nil then
+    				local bb = ba.next
+    
+    				local bc = bb
+    				repeat
+    					if bc.destroy ~= nil then
+    						if bit32.band(bc.tag, aR) ~= aP then
+    							if
+    								s
+    								and t
+    								and bit32.band(a6.mode, as) ~= 0
+    							then
+    								an()
+    								safelyCallDestroy(
+    									a6,
+    									a7,
+    									bc.destroy
+    								)
+    								ap(a6)
+    							else
+    								safelyCallDestroy(
+    									a6,
+    									a7,
+    									bc.destroy
+    								)
+    							end
+    						end
+    					end
+    					bc = bc.next
+    				until bc == bb
+    			end
+    		end
+    		return
+    	elseif a6.tag == z then
+    		safelyDetachRef(a6, a7)
+    		local a9 = a6.stateNode
+    		if typeof(a9.componentWillUnmount) == "function" then
+    			safelyCallComponentWillUnmount(a6, a9, a7)
+    		end
+    		return
+    	elseif a6.tag == B then
+    		safelyDetachRef(a6, a7)
+    		return
+    	elseif a6.tag == D then
+    		
+    		
+    		
+    		if av then
+    			a1(
+    				a5,
+    				a6,
+    				a7,
+    				a8
+    			)
+    		elseif aw then
+    			unimplemented("emptyPortalContainer")
+    			
+    		end
+    		return
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    	end
+    end
+    
+    function a2(
+    	a5: FiberRoot,
+    	a6: Fiber,
+    	a7: Fiber,
+    	a8: ReactPriorityLevel
+    )
+    	
+    	
+    	
+    	
+    	
+    	local a9: Fiber = a6
+    	while true do
+    		a3(a5, a9, a7, a8)
+    		
+    		
+    		if
+    			a9.child ~= nil
+    			
+    			
+    			and (not av or a9.tag ~= D)
+    		then
+    			(a9.child :: Fiber).return_ = a9
+    			a9 = a9.child :: Fiber
+    			continue
+    		end
+    		if a9 == a6 then
+    			return
+    		end
+    		while a9.sibling == nil do
+    			if a9.return_ == nil or a9.return_ == a6 then
+    				return
+    			end
+    			a9 = a9.return_ :: Fiber 
+    		end
+    		(a9.sibling :: Fiber).return_ = a9.return_
+    		a9 = a9.sibling :: Fiber
+    	end
+    end
+    
+    local function detachFiberMutation(a5: Fiber)
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	local a6 = a5.alternate
+    	if a6 ~= nil then
+    		a6.return_ = nil
+    		a5.alternate = nil
+    	end
+    	a5.return_ = nil
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function getHostParentFiber(a5: Fiber): Fiber
+    	local a6 = a5.return_
+    	while a6 ~= nil do
+    		if aV(a6) then
+    			return a6
+    		end
+    		a6 = a6.return_
+    	end
+    	
+    	error(
+    		g.new(
+    [[Expected to find a host parent. This error is likely caused by a bug in React. Please file an issue.]]		
+    
+    )
+    	)
+    	
+    end
+    
+    function aV(a5: Fiber): boolean
+    	return a5.tag == B or a5.tag == A or a5.tag == D
+    end
+    
+    function aW(a5: Fiber): Instance?
+    	
+    	
+    	
+    	
+    	local a6: Fiber = a5
+    	while true do
+    		
+    		
+    		local a7 = false
+    		
+    		while a6.sibling == nil do
+    			if a6.return_ == nil or aV(a6.return_) then
+    				
+    				
+    				return nil
+    			end
+    			a6 = a6.return_ :: Fiber 
+    		end
+    		(a6.sibling :: Fiber).return_ = a6.return_ :: Fiber
+    		a6 = a6.sibling :: Fiber
+    		while
+    			a6.tag ~= B
+    			and a6.tag ~= C
+    			and a6.tag ~= G
+    		do
+    			
+    			
+    			if bit32.band(a6.flags, X) ~= 0 then
+    				
+    				a7 = true
+    				break
+    			end
+    			
+    			
+    			if a6.child == nil or a6.tag == D then
+    				a7 = true
+    				break
+    			else
+    				(a6.child :: Fiber).return_ = a6
+    				a6 = a6.child :: Fiber
+    			end
+    		end
+    		if a7 then
+    			continue
+    		end
+    		
+    		if bit32.band(a6.flags, X) == 0 then
+    			
+    			return a6.stateNode
+    		end
+    	end
+    end
+    
+    local function commitPlacement(a5: Fiber)
+    	if not av then
+    		return
+    	end
+    
+    	
+    	local a6 = getHostParentFiber(a5)
+    
+    	
+    	local a7
+    	local a8
+    	local a9 = a6.stateNode
+    	if a6.tag == B then
+    		a7 = a9
+    		a8 = false
+    	elseif a6.tag == A then
+    		a7 = a9.containerInfo
+    		a8 = true
+    	elseif a6.tag == D then
+    		a7 = a9.containerInfo
+    		a8 = true
+    	
+    	
+    	
+    	
+    	
+    	else
+    		
+    		ae(
+    			false,
+    [[Invalid host parent fiber. This error is likely caused by a bug in React. Please file an issue.]]		
+    
+    )
+    	end
+    	if bit32.band(a6.flags, W) ~= 0 then
+    		
+    		aA(a7)
+    		
+    		a6.flags = bit32.band(a6.flags, bit32.bnot(W))
+    	end
+    
+    	local ba = aW(a5)
+    	
+    	
+    	if a8 then
+    		aY(a5, ba, a7)
+    	else
+    		aX(a5, ba, a7)
+    	end
+    end
+    
+    function aY(
+    	a5: Fiber,
+    	a6: Instance?,
+    	a7: Container
+    )
+    	local a8 = a5.tag
+    	local a9 = a8 == B or a8 == C
+    	
+    	if a9 then 
+    		local ba = a5.stateNode
+    		if a6 then
+    			aF(a7, ba, a6)
+    		else
+    			aD(a7, ba)
+    		end
+    	elseif a8 == D then
+    	
+    	
+    	
+    	else
+    		local ba = a5.child
+    		if ba ~= nil then
+    			aY(ba, a6, a7)
+    			local bb = ba.sibling
+    			while bb ~= nil do
+    				aY(bb, a6, a7)
+    				bb = bb.sibling
+    			end
+    		end
+    	end
+    end
+    
+    function aX(a5: Fiber, a6: Instance?, a7: Instance): ()
+    	local a8 = a5.tag
+    	local a9 = a8 == B or a8 == C
+    	
+    	if a9 then 
+    		local ba = a5.stateNode
+    		if a6 then
+    			aE(a7, ba, a6)
+    		else
+    			aC(a7, ba)
+    		end
+    	elseif a8 == D then
+    	
+    	
+    	
+    	else
+    		local ba = a5.child
+    		if ba ~= nil then
+    			aX(ba, a6, a7)
+    			local bb = ba.sibling
+    			while bb ~= nil do
+    				aX(bb, a6, a7)
+    				bb = bb.sibling
+    			end
+    		end
+    	end
+    end
+    
+    function a1(
+    	a5: FiberRoot,
+    	a6: Fiber,
+    	a7: Fiber,
+    	a8: ReactPriorityLevel
+    ): ()
+    	
+    	
+    	local a9: Fiber = a6
+    
+    	
+    	
+    	local ba = false
+    
+    	
+    	local bb
+    	local bc
+    
+    	while true do
+    		if not ba then
+    			
+    			local bd = a9.return_ :: Fiber
+    			while true do
+    				
+    				if bd == nil then
+    					error(
+    						g.new(
+    [[Expected to find a host parent. This error is likely caused by a bug in React. Please file an issue.]]						
+    
+    )
+    					)
+    				end
+    				
+    				local be = bd.stateNode
+    				if bd.tag == B then
+    					bb = be
+    					bc = false
+    					break
+    				elseif bd.tag == A then
+    					bb = be.containerInfo
+    					bc = true
+    					break
+    				elseif bd.tag == D then
+    					bb = be.containerInfo
+    					bc = true
+    					break
+    					
+    					
+    					
+    					
+    					
+    					
+    				end
+    				
+    				bd = bd.return_ :: Fiber
+    			end
+    			ba = true
+    		end
+    
+    		if a9.tag == B or a9.tag == C then
+    			a2(
+    				a5,
+    				a9,
+    				a7,
+    				a8
+    			)
+    			
+    			
+    			if bc then
+    				
+    				
+    				
+    				
+    				
+    				aH(bb, a9.stateNode)
+    			else
+    				
+    				
+    				
+    				
+    				
+    				aG(bb, a9.stateNode)
+    			end
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		elseif a9.tag == D then
+    			if a9.child ~= nil then
+    				
+    				
+    				bb = a9.stateNode.containerInfo
+    				bc = true
+    				
+    				a9.child.return_ = a9
+    				a9 = a9.child
+    				continue
+    			end
+    		else
+    			a3(a5, a9, a7, a8)
+    			
+    			if a9.child ~= nil then
+    				a9.child.return_ = a9
+    				a9 = a9.child
+    				continue
+    			end
+    		end
+    		if a9 == a6 then
+    			return
+    		end
+    		while a9.sibling == nil do
+    			if a9.return_ == nil or a9.return_ == a6 then
+    				return
+    			end
+    			
+    			a9 = a9.return_ :: Fiber
+    			if a9.tag == D then
+    				
+    				
+    				ba = false
+    			end
+    		end
+    		
+    		(a9.sibling :: Fiber).return_ = a9.return_
+    		a9 = a9.sibling :: Fiber
+    	end
+    end
+    
+    local function commitDeletion(
+    	a5: FiberRoot,
+    	a6: Fiber,
+    	a7: Fiber,
+    	a8: ReactPriorityLevel
+    ): ()
+    	
+    	
+    	
+    	
+    	a1(
+    		a5,
+    		a6,
+    		a7,
+    		a8
+    	)
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	local a9 = a6.alternate
+    	detachFiberMutation(a6)
+    	if a9 ~= nil then
+    		detachFiberMutation(a9)
+    	end
+    end
+    
+    local function commitWork(a5: Fiber | nil, a6: Fiber)
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    
+    	if
+    		a6.tag == x
+    		or a6.tag == y
+    		or a6.tag == I
+    		or a6.tag == J
+    		or a6.tag == N
+    	then
+    		
+    		
+    		
+    		
+    		
+    		if
+    			s
+    			and t
+    			and bit32.band(a6.mode, as) ~= 0
+    		then
+    			
+    			local a7, a8 = xpcall(function()
+    				an()
+    				commitHookEffectListUnmount(
+    					bit32.bor(aR, aQ),
+    					a6,
+    					a6.return_
+    				)
+    			end, af)
+    			
+    			ap(a6)
+    			if not a7 then
+    				error(a8)
+    			end
+    		else
+    			commitHookEffectListUnmount(
+    				bit32.bor(aR, aQ),
+    				a6,
+    				a6.return_
+    			)
+    		end
+    		return
+    	elseif a6.tag == z then
+    		return
+    	elseif a6.tag == B then
+    		local a7: Instance = a6.stateNode
+    		if a7 ~= nil then
+    			
+    			local a8 = a6.memoizedProps
+    			
+    			
+    			
+    			local a9
+    			if a5 then
+    				a9 = a5.memoizedProps
+    			else
+    				a9 = a8
+    			end
+    			local ba = a6.type
+    			
+    			local bb: nil | UpdatePayload = a6.updateQueue :: any
+    			a6.updateQueue = nil
+    			if bb ~= nil then
+    				az(
+    					a7,
+    					bb,
+    					ba,
+    					a9,
+    					a8,
+    					a6
+    				)
+    			end
+    		end
+    		return
+    	elseif a6.tag == C then
+    		ae(
+    			a6.stateNode ~= nil,
+    [[This should have a text node initialized. This error is likely caused by a bug in React. Please file an issue.]]		
+    
+    )
+    		local a7: TextInstance = a6.stateNode
+    		local a8: string = a6.memoizedProps
+    		
+    		
+    		
+    		local a9: string
+    		if a5 ~= nil then
+    			a9 = (a5 :: Fiber).memoizedProps
+    			a9 = a8
+    		end
+    		aB(a7, a9, a8)
+    		return
+    	elseif a6.tag == A then
+    		if ax then
+    			local a7: FiberRoot = a6.stateNode
+    			if a7.hydrate then
+    				
+    				a7.hydrate = false
+    				unimplemented("commitWork: HostRoot: commitHydratedContainer")
+    				
+    			end
+    		end
+    		return
+    	elseif a6.tag == E then
+    		return
+    	elseif a6.tag == F then
+    		commitSuspenseComponent(a6)
+    		attachSuspenseRetryListeners(a6)
+    		return
+    	elseif a6.tag == K then
+    		unimplemented("commitWork: SuspenseListComponent")
+    	
+    	
+    	elseif a6.tag == H then
+    		return
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	elseif
+    		a6.tag == O
+    		or a6.tag == P
+    	then
+    		local a7: OffscreenState | nil = a6.memoizedState
+    		local a8 = a7 ~= nil
+    		hideOrUnhideAllChildren(a6, a8)
+    		return
+    	end
+    	ae(
+    		false,
+    [[This unit of work tag should not have side-effects. This error is likely caused by a bug in React. Please file an issue.]]	
+    
+    )
+    end
+    
+    function commitSuspenseComponent(a5: Fiber)
+    	local a6: SuspenseState | nil = a5.memoizedState
+    
+    	if a6 ~= nil then
+    		markCommitTimeOfFallback()
+    
+    		if av then
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			local a7: Fiber = a5.child :: any
+    			hideOrUnhideAllChildren(a7, true)
+    		end
+    	end
+    
+    	if u and a6 ~= nil then
+    		local a7 = a5.memoizedProps.suspenseCallback
+    		if typeof(a7) == "function" then
+    			local a8: Set<Wakeable> | nil = a5.updateQueue :: any
+    			if a8 ~= nil then
+    				a7(table.clone(a8))
+    			end
+    		elseif a then
+    			if a7 ~= nil then
+    				e.error(
+    					"Unexpected type for suspenseCallback: %s",
+    					tostring(a7)
+    				)
+    			end
+    		end
+    	end
+    end
+    
+    function commitSuspenseHydrationCallbacks(a5: FiberRoot, a6: Fiber)
+    	if not ax then
+    		return
+    	end
+    	local a7: SuspenseState | nil = a6.memoizedState
+    	if a7 == nil then
+    		local a8 = a6.alternate
+    		if a8 ~= nil then
+    			local a9: SuspenseState | nil = a8.memoizedState
+    			if a9 ~= nil then
+    				local ba = a9.dehydrated
+    				if ba ~= nil then
+    					aM(ba)
+    					if u then
+    						local bb = a5.hydrationCallbacks
+    						if bb ~= nil then
+    							local bc = bb.onHydrated
+    							if bc then
+    								bc(ba)
+    							end
+    						end
+    					end
+    				end
+    			end
+    		end
+    	end
+    end
+    
+    function attachSuspenseRetryListeners(a5: Fiber)
+    	
+    	
+    	
+    	local a6: Set<Wakeable> | nil = a5.updateQueue :: any
+    	if a6 ~= nil then
+    		a5.updateQueue = nil
+    		local a7 = a5.stateNode
+    		if a7 == nil then
+    			a5.stateNode = h.new()
+    			a7 = a5.stateNode
+    		end
+    		for a8, a9 in a6 :: Set<Wakeable> do
+    			
+    			local ba = function()
+    				return resolveRetryWakeable(a5, a8)
+    			end
+    
+    			if not a7:has(a8) then
+    				if r then
+    					if a8.__reactDoNotTraceInteractions ~= true then
+    						ba = p(ba)
+    					end
+    				end
+    				a7:add(a8)
+    				a8:andThen(function()
+    					return ba()
+    				end, function()
+    					return ba()
+    				end)
+    			end
+    		end
+    	end
+    end
+    
+    
+    
+    
+    function isSuspenseBoundaryBeingHidden(a5: Fiber | nil, a6: Fiber): boolean
+    	if a5 ~= nil then
+    		
+    		local a7: SuspenseState | nil = (a5 :: Fiber).memoizedState
+    		if a7 == nil or (a7 :: SuspenseState).dehydrated ~= nil then
+    			local a8: SuspenseState | nil = a6.memoizedState
+    			return a8 ~= nil and (a8 :: SuspenseState).dehydrated == nil
+    		end
+    	end
+    	return false
+    end
+    
+    function commitResetTextContent(a5: Fiber): ()
+    	if not av then
+    		return
+    	end
+    	aA(a5.stateNode)
+    end
+    
+    local function commitPassiveUnmount(a5: Fiber): ()
+    	if
+    		a5.tag == x
+    		or a5.tag == y
+    		or a5.tag == J
+    		or a5.tag == N
+    	then
+    		if
+    			s
+    			and t
+    			and bit32.band(a5.mode, as) ~= 0
+    		then
+    			aq()
+    			commitHookEffectListUnmount(
+    				bit32.bor(aS, aQ),
+    				a5,
+    				a5.return_
+    			)
+    			ao(a5)
+    		else
+    			commitHookEffectListUnmount(
+    				bit32.bor(aS, aQ),
+    				a5,
+    				a5.return_
+    			)
+    		end
+    	end
+    end
+    
+    local function commitPassiveUnmountInsideDeletedTree(
+    	a5: Fiber,
+    	a6: Fiber | nil
+    ): ()
+    	if
+    		a5.tag == x
+    		or a5.tag == y
+    		or a5.tag == J
+    		or a5.tag == N
+    	then
+    		if
+    			s
+    			and t
+    			and bit32.band(a5.mode, as) ~= 0
+    		then
+    			aq()
+    			commitHookEffectListUnmount(aS, a5, a6)
+    			ao(a5)
+    		else
+    			commitHookEffectListUnmount(aS, a5, a6)
+    		end
+    	end
+    end
+    
+    local function commitPassiveMount(a5: FiberRoot, a6: Fiber): ()
+    	if
+    		a6.tag == x
+    		or a6.tag == y
+    		or a6.tag == J
+    		or a6.tag == N
+    	then
+    		if
+    			s
+    			and t
+    			and bit32.band(a6.mode, as) ~= 0
+    		then
+    			aq()
+    			
+    			local a7, a8 = xpcall(
+    				commitHookEffectListMount,
+    				af,
+    				bit32.bor(aS, aQ),
+    				a6
+    			)
+    			
+    			ao(a6)
+    			if not a7 then
+    				error(a8)
+    			end
+    		else
+    			commitHookEffectListMount(bit32.bor(aS, aQ), a6)
+    		end
+    	elseif a6.tag == E then
+    		commitProfilerPassiveEffect(a5, a6)
+    	end
+    end
+    
+    function invokeLayoutEffectMountInDEV(a5: Fiber): ()
+    	if a and v then
+    		if
+    			a5.tag == x
+    			or a5.tag == y
+    			or a5.tag == J
+    			or a5.tag == N
+    		then
+    			R(
+    				nil,
+    				commitHookEffectListMount,
+    				nil,
+    				bit32.bor(aR, aQ),
+    				a5
+    			)
+    			if S() then
+    				local a6 = T()
+    				captureCommitPhaseError(a5, a5.return_, a6)
+    			end
+    			return
+    		end
+    	elseif a5.tag == z then
+    		local a6 = a5.stateNode
+    		R(nil, a6.componentDidMount, a6)
+    		if S() then
+    			local a7 = T()
+    			captureCommitPhaseError(a5, a5.return_, a7)
+    		end
+    		return
+    	end
+    end
+    
+    function invokePassiveEffectMountInDEV(a5: Fiber): ()
+    	if a and v then
+    		if
+    			a5.tag == x
+    			or a5.tag == y
+    			or a5.tag == J
+    			or a5.tag == N
+    		then
+    			R(
+    				nil,
+    				commitHookEffectListMount,
+    				nil,
+    				bit32.bor(aS, aQ),
+    				a5
+    			)
+    			if S() then
+    				local a6 = T()
+    				captureCommitPhaseError(a5, a5.return_, a6)
+    			end
+    			return
+    		end
+    	end
+    end
+    
+    function invokeLayoutEffectUnmountInDEV(a5: Fiber): ()
+    	if a and v then
+    		if
+    			a5.tag == x
+    			or a5.tag == y
+    			or a5.tag == J
+    			or a5.tag == N
+    		then
+    			R(
+    				nil,
+    				commitHookEffectListUnmount,
+    				nil,
+    				bit32.bor(aR, aQ),
+    				a5,
+    				a5.return_
+    			)
+    			if S() then
+    				local a6 = T()
+    				captureCommitPhaseError(a5, a5.return_, a6)
+    			end
+    			return
+    		end
+    	elseif a5.tag == z then
+    		local a6 = a5.stateNode
+    		if typeof(a6.componentWillUnmount) == "function" then
+    			safelyCallComponentWillUnmount(a5, a6, a5.return_)
+    		end
+    		return
+    	end
+    end
+    
+    function invokePassiveEffectUnmountInDEV(a5: Fiber): ()
+    	if a and v then
+    		if
+    			a5.tag == x
+    			or a5.tag == y
+    			or a5.tag == J
+    			or a5.tag == N
+    		then
+    			R(
+    				nil,
+    				commitHookEffectListUnmount,
+    				nil,
+    				bit32.bor(aS, aQ),
+    				a5,
+    				a5.return_
+    			)
+    			if S() then
+    				local a6 = T()
+    				captureCommitPhaseError(a5, a5.return_, a6)
+    			end
+    			return
+    		end
+    	end
+    end
+    
+    return {
+    	safelyCallDestroy = safelyCallDestroy,
+    
+    	commitBeforeMutationLifeCycles = commitBeforeMutationLifeCycles,
+    	commitResetTextContent = commitResetTextContent,
+    	commitPlacement = commitPlacement,
+    	commitDeletion = commitDeletion,
+    	commitWork = commitWork,
+    	commitAttachRef = commitAttachRef,
+    	commitDetachRef = commitDetachRef,
+    	commitPassiveUnmount = commitPassiveUnmount,
+    	commitPassiveUnmountInsideDeletedTree = commitPassiveUnmountInsideDeletedTree,
+    	commitPassiveMount = commitPassiveMount,
+    	invokeLayoutEffectMountInDEV = invokeLayoutEffectMountInDEV,
+    	invokeLayoutEffectUnmountInDEV = invokeLayoutEffectUnmountInDEV,
+    	invokePassiveEffectMountInDEV = invokePassiveEffectMountInDEV,
+    	invokePassiveEffectUnmountInDEV = invokePassiveEffectUnmountInDEV,
+    	isSuspenseBoundaryBeingHidden = isSuspenseBoundaryBeingHidden,
+    	recursivelyCommitLayoutEffects = recursivelyCommitLayoutEffects,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberCompleteWork.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function unimplemented(a: string)
+    	print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    	print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    	print("UNIMPLEMENTED ERROR: " .. tostring(a))
+    	error("FIXME (roblox): " .. a .. " is unimplemented", 2)
+    end
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = a.Fiber
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLane")
+    type Lanes = b.Lanes
+    type Lane = b.Lane
+    local c = b.OffscreenLane
+    
+    
+    
+    
+    
+    local d = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHostConfig")
+    type Instance = d.Instance
+    type Type = d.Type
+    type Props = d.Props
+    type Container = d.Container
+    type ChildSet = d.ChildSet
+    
+    
+    
+    
+    local e = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberOffscreenComponent")
+    type OffscreenState = e.OffscreenState
+    
+    local f = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactMutableSource.new")
+    local g =
+    	f.resetWorkInProgressVersions
+    
+    
+    
+    local h = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactWorkTags")
+    local i = h.IndeterminateComponent
+    local j = h.FunctionComponent
+    local k = h.ClassComponent
+    local l = h.HostRoot
+    local m = h.HostComponent
+    local n = h.HostText
+    local o = h.HostPortal
+    local p = h.ContextProvider
+    local q = h.ContextConsumer
+    local r = h.ForwardRef
+    local s = h.Fragment
+    local t = h.Mode
+    local u = h.Profiler
+    local v = h.SuspenseComponent
+    local w = h.SuspenseListComponent
+    local x = h.MemoComponent
+    local y = h.SimpleMemoComponent
+    local z = h.LazyComponent
+    local A = h.IncompleteClassComponent
+    local B = h.FundamentalComponent
+    local C = h.ScopeComponent
+    local D = h.Block
+    local E = h.OffscreenComponent
+    local F = h.LegacyHiddenComponent
+    local G = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberSuspenseComponent.new")
+    type SuspenseState = G.SuspenseState
+    type SuspenseListRenderState = G.SuspenseState
+    
+    local H = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactTypeOfMode")
+    local I = H.NoMode
+    local J = H.ConcurrentMode
+    local K = H.BlockingMode
+    local L = H.ProfileMode
+    
+    local M = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberFlags")
+    local N = M.Ref
+    local O = M.Update
+    local P = M.Callback
+    local Q = M.Passive
+    local R = M.Deletion
+    local S = M.NoFlags
+    local T = M.DidCapture
+    local U = M.Snapshot
+    local V = M.MutationMask
+    local W = M.LayoutMask
+    local X = M.PassiveMask
+    local Y = M.StaticMask
+    local Z = M.PerformedWork
+    
+    local _ = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").invariant
+    
+    local aa = d.createInstance
+    local ab = d.createTextInstance
+    local ac = d.appendInitialChild
+    local ad = d.finalizeInitialChildren
+    local ae = d.prepareUpdate
+    local af = d.supportsMutation
+    local ag = d.supportsPersistence
+    
+    
+    
+    local ah = d.createContainerChildSet
+    
+    local ai = d.finalizeContainerChildren
+    
+    
+    
+    
+    local aj = d.preparePortalMount
+    
+    local ak = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHostContext.new")
+    local al = ak.getRootHostContainer
+    local am = ak.popHostContext
+    local an = ak.getHostContext
+    local ao = ak.popHostContainer
+    
+    local ap = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberSuspenseContext.new")
+    local aq = ap.popSuspenseContext
+    local ar = ap.suspenseStackCursor
+    local as =
+    	ap.InvisibleParentSuspenseContext
+    local at = ap.hasSuspenseContext
+    type SuspenseContext = ap.SuspenseContext
+    
+    
+    
+    
+    
+    
+    local au = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberContext.new")
+    local av = au.isContextProvider
+    local aw = au.popContext
+    local ax = au.popTopLevelContextObject
+    local ay = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberNewContext.new").popProvider
+    
+    local az = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHydrationContext.new")
+    local aA =
+    	az.prepareToHydrateHostSuspenseInstance
+    local aB = az.popHydrationState
+    local aC = az.resetHydrationState
+    
+    local aD =
+    	az.prepareToHydrateHostInstance
+    local aE =
+    	az.prepareToHydrateHostTextInstance
+    local aF = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactFeatureFlags
+    local aG = aF.enableSchedulerTracing
+    local aH = aF.enableSuspenseCallback
+    local aI = aF.enableSuspenseServerRenderer
+    local aJ = aF.enableFundamentalAPI
+    
+    local aK = aF.enableProfilerTimer
+    
+    local aL = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberWorkLoop.new"):: any
+    
+    local aM = aL.popRenderLanes
+    
+    
+    local aN = aL.markSpawnedWork
+    local aO = aL.renderDidSuspend
+    local aP = aL.renderDidSuspendDelayIfPossible
+    
+    
+    
+    
+    
+    
+    
+    local aQ = b.NoLanes
+    local aR = b.includesSomeLane
+    local aS = b.mergeLanes
+    
+    
+    local aT = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactProfilerTimer.new")
+    local aU = aT.transferActualDuration
+    
+    local function markUpdate(aV: Fiber)
+    	
+    	
+    	aV.flags = bit32.bor(aV.flags, O)
+    end
+    
+    local function markRef(aV: Fiber)
+    	aV.flags = bit32.bor(aV.flags, N)
+    end
+    
+    
+    
+    local function hadNoMutationsEffects(aV, aW: Fiber)
+    	local aX = aV ~= nil and aV.child == aW.child
+    	if aX then
+    		return true
+    	end
+    
+    	local aY = aW.child
+    	while aY ~= nil do
+    		if bit32.band(aY.flags, V) ~= S then
+    			return false
+    		end
+    		if bit32.band(aY.subtreeFlags, V) ~= S then
+    			return false
+    		end
+    		aY = aY.sibling
+    	end
+    	return true
+    end
+    
+    local aV
+    local aW
+    local aX
+    local aY
+    if af then
+    	
+    
+    	aV = function(
+    		aZ: Instance,
+    		a_: Fiber,
+    		a0: boolean,
+    		a1: boolean
+    	)
+    		
+    		
+    		local a2 = a_.child
+    		while a2 ~= nil do
+    			if a2.tag == m or a2.tag == n then
+    				ac(aZ, a2.stateNode)
+    			elseif aJ and a2.tag == B then
+    				ac(aZ, a2.stateNode.instance)
+    			elseif a2.tag == o then
+    			
+    			
+    			
+    			elseif a2.child ~= nil then
+    				a2.child.return_ = a2
+    				a2 = a2.child
+    				continue
+    			end
+    			if a2 == a_ then
+    				return
+    			end
+    			while a2.sibling == nil do
+    				if a2.return_ == nil or a2.return_ == a_ then
+    					return
+    				end
+    				a2 = a2.return_
+    			end
+    			
+    			(a2.sibling :: Fiber).return_ = a2.return_
+    			a2 = a2.sibling
+    		end
+    	end
+    
+    	aW = function(aZ: nil | Fiber, a_: Fiber)
+    		
+    	end
+    	function aX(
+    		aZ: Fiber,
+    		a_: Fiber,
+    		a0: Type,
+    		a1: Props,
+    		a2: Container
+    	)
+    		
+    		
+    		local a3 = aZ.memoizedProps
+    		if a3 == a1 then
+    			
+    			
+    			return
+    		end
+    
+    		
+    		
+    		
+    		
+    		local a4: Instance = a_.stateNode
+    		local a5 = an()
+    		
+    		
+    		
+    		local a6 = ae(
+    			a4,
+    			a0,
+    			a3,
+    			a1,
+    			a2,
+    			a5
+    		)
+    		
+    		a_.updateQueue = a6
+    		
+    		
+    		if a6 then
+    			markUpdate(a_)
+    		end
+    	end
+    	function aY(
+    		aZ: Fiber,
+    		a_: Fiber,
+    		a0: string,
+    		a1: string
+    	)
+    		
+    		if a0 ~= a1 then
+    			markUpdate(a_)
+    		end
+    	end
+    elseif ag then
+    	
+    	aV = function(
+    		aZ: Instance,
+    		a_: Fiber,
+    		a0: boolean,
+    		a1: boolean
+    	)
+    		unimplemented("appendAllChildren")
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    	end
+    
+    	
+    	local function appendAllChildrenToContainer(
+    		aZ: ChildSet,
+    		a_: Fiber,
+    		a0: boolean,
+    		a1: boolean
+    	)
+    		unimplemented("appendAllChildrenToContainer")
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    	end
+    
+    	function aW(aZ: nil | Fiber, a_: Fiber)
+    		local a0: {
+    			containerInfo: Container,
+    			pendingChildren: ChildSet,
+    			
+    			[any]: any		
+    } =
+    			a_.stateNode
+    		local a1 = hadNoMutationsEffects(aZ, a_)
+    		if a1 then
+    		
+    		else
+    			local a2 = a0.containerInfo
+    			local a3 = ah(a2)
+    			
+    			appendAllChildrenToContainer(a3, a_, false, false)
+    			a0.pendingChildren = a3
+    			
+    			markUpdate(a_)
+    			ai(a2, a3)
+    		end
+    	end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    else
+    	
+    	aW = function(aZ: nil | Fiber, a_: Fiber)
+    		
+    	end
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    end
+    
+    local function bubbleProperties(aZ: Fiber)
+    	local a_ = aZ.alternate ~= nil
+    		and (aZ.alternate :: Fiber).child == aZ.child
+    
+    	local a0 = aQ
+    	local a1 = S
+    
+    	if not a_ then
+    		
+    		if
+    			aK
+    			and bit32.band(aZ.mode, L) ~= I
+    		then
+    			
+    			
+    			local a2 = aZ.actualDuration
+    			local a3 = aZ.selfBaseDuration
+    
+    			local a4 = aZ.child
+    			while a4 ~= nil do
+    				a0 =
+    					aS(a0, aS(a4.lanes, a4.childLanes))
+    
+    				a1 = bit32.bor(a1, a4.subtreeFlags)
+    				a1 = bit32.bor(a1, a4.flags)
+    
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				a2 += a4.actualDuration
+    
+    				a3 += a4.treeBaseDuration
+    				a4 = a4.sibling
+    			end
+    
+    			aZ.actualDuration = a2
+    			aZ.treeBaseDuration = a3
+    		else
+    			local a2 = aZ.child
+    			while a2 ~= nil do
+    				
+    				
+    				
+    				
+    				
+    				a0 =
+    					bit32.bor(a0, bit32.bor(a2.lanes, a2.childLanes))
+    
+    				a1 = bit32.bor(a1, a2.subtreeFlags)
+    				a1 = bit32.bor(a1, a2.flags)
+    
+    				
+    				
+    				
+    				
+    				a2.return_ = aZ
+    
+    				a2 = a2.sibling
+    			end
+    		end
+    
+    		aZ.subtreeFlags = bit32.bor(aZ.subtreeFlags, a1)
+    	else
+    		
+    		if
+    			aK
+    			and bit32.band(aZ.mode, L) ~= I
+    		then
+    			
+    			
+    			local a2 = aZ.selfBaseDuration
+    
+    			local a3 = aZ.child
+    			while a3 ~= nil do
+    				a0 =
+    					aS(a0, aS(a3.lanes, a3.childLanes))
+    
+    				
+    				
+    				
+    				
+    				a1 =
+    					bit32.bor(a1, bit32.band(a3.subtreeFlags, Y))
+    				a1 =
+    					bit32.bor(a1, bit32.band(a3.flags, Y))
+    
+    				a2 += a3.treeBaseDuration
+    				a3 = a3.sibling
+    			end
+    
+    			aZ.treeBaseDuration = a2
+    		else
+    			local a2 = aZ.child
+    			while a2 ~= nil do
+    				
+    				
+    				
+    				
+    				
+    				a0 =
+    					bit32.bor(a0, bit32.bor(a2.lanes, a2.childLanes))
+    
+    				
+    				
+    				
+    				
+    				a1 =
+    					bit32.bor(a1, bit32.band(a2.subtreeFlags, Y))
+    				a1 =
+    					bit32.bor(a1, bit32.band(a2.flags, Y))
+    
+    				
+    				
+    				
+    				
+    				a2.return_ = aZ
+    
+    				a2 = a2.sibling
+    			end
+    		end
+    
+    		aZ.subtreeFlags = bit32.bor(aZ.subtreeFlags, a1)
+    	end
+    
+    	aZ.childLanes = a0
+    
+    	return a_
+    end
+    
+    
+    
+    
+    
+    
+    
+    local function completeWork(
+    	aZ,
+    	a_: Fiber,
+    	a0: Lanes
+    ): Fiber | nil
+    	local a1 = a_.pendingProps
+    
+    	if
+    		a_.tag == i
+    		or a_.tag == z
+    		or a_.tag == y
+    		or a_.tag == j
+    		or a_.tag == r
+    		or a_.tag == s
+    		or a_.tag == t
+    		or a_.tag == q
+    		or a_.tag == x
+    	then
+    		bubbleProperties(a_)
+    		return nil
+    	elseif a_.tag == k then
+    		local a2 = a_.type
+    		if av(a2) then
+    			aw(a_)
+    		end
+    		bubbleProperties(a_)
+    		return nil
+    	elseif a_.tag == l then
+    		ao(a_)
+    		ax(a_)
+    		g()
+    		
+    		
+    		local a2 = a_.stateNode
+    		if a2.pendingContext then
+    			a2.context = a2.pendingContext
+    			a2.pendingContext = nil
+    		end
+    		if aZ == nil or aZ.child == nil then
+    			
+    			
+    			local a3 = aB(a_)
+    			if a3 then
+    				
+    				
+    				markUpdate(a_)
+    			elseif not a2.hydrate then
+    				
+    				
+    				
+    				
+    				a_.flags = bit32.bor(a_.flags, U)
+    			end
+    		end
+    		aW(aZ, a_)
+    		bubbleProperties(a_)
+    		return nil
+    	elseif a_.tag == m then
+    		am(a_)
+    		local a2 = al()
+    		local a3 = a_.type
+    		if aZ ~= nil and a_.stateNode ~= nil then
+    			aX(
+    				aZ,
+    				a_,
+    				a3,
+    				a1,
+    				a2
+    			)
+    
+    			if aZ.ref ~= a_.ref then
+    				markRef(a_)
+    			end
+    		else
+    			if not a1 then
+    				_(
+    					a_.stateNode ~= nil,
+    [[We must have new props for new mounts. This error is likely caused by a bug in React. Please file an issue.]]				
+    
+    )
+    				
+    				bubbleProperties(a_)
+    				return nil
+    			end
+    
+    			local a4 = an()
+    			
+    			
+    			
+    			
+    			local a5 = aB(a_)
+    			if a5 then
+    				
+    				
+    				if
+    					aD(
+    						a_,
+    						a2,
+    						a4
+    					)
+    				then
+    					
+    					
+    					markUpdate(a_)
+    				end
+    			else
+    				local a6 = aa(
+    					a3,
+    					a1,
+    					a2,
+    					a4,
+    					a_
+    				)
+    
+    				aV(a6, a_, false, false)
+    
+    				a_.stateNode = a6
+    
+    				
+    				
+    				
+    				if
+    					ad(
+    						a6,
+    						a3,
+    						a1,
+    						a2,
+    						a4
+    					)
+    				then
+    					markUpdate(a_)
+    				end
+    			end
+    
+    			if a_.ref ~= nil then
+    				
+    				markRef(a_)
+    			end
+    		end
+    		bubbleProperties(a_)
+    		return nil
+    	elseif a_.tag == n then
+    		local a2 = a1
+    		if aZ and a_.stateNode ~= nil then
+    			local a3 = aZ.memoizedProps
+    			
+    			
+    			aY(aZ, a_, a3, a2)
+    		else
+    			if typeof(a2) ~= "string" then
+    				_(
+    					a_.stateNode ~= nil,
+    [[We must have new props for new mounts. This error is likely caused by a bug in React. Please file an issue.]]				
+    
+    )
+    				
+    			end
+    			local a3 = al()
+    			local a4 = an()
+    			local a5 = aB(a_)
+    			if a5 then
+    				if aE(a_) then
+    					markUpdate(a_)
+    				end
+    			else
+    				a_.stateNode = ab(
+    					a2,
+    					a3,
+    					a4,
+    					a_
+    				)
+    			end
+    		end
+    		bubbleProperties(a_)
+    		return nil
+    	elseif a_.tag == u then
+    		local a2 = bubbleProperties(a_)
+    		if not a2 then
+    			
+    			
+    			
+    			
+    			
+    			local a3 = O
+    			local a4 = P
+    			local a5 = Q
+    			local a6 = a_.subtreeFlags
+    			local a7 = a_.flags
+    			local a8 = a7
+    
+    			
+    			if
+    				bit32.band(a7, Z) ~= S
+    				or bit32.band(a6, Z) ~= S
+    			then
+    				a8 = bit32.bor(a8, a3)
+    			end
+    
+    			
+    			
+    			
+    			
+    			
+    			if
+    				bit32.band(a7, bit32.bor(W, R)) ~= S
+    				or bit32.band(a6, bit32.bor(W, R))
+    					~= S
+    			then
+    				a8 = bit32.bor(a8, a4)
+    			end
+    
+    			
+    			
+    			
+    			if
+    				bit32.band(a7, X) ~= S
+    				or bit32.band(a6, X) ~= S
+    			then
+    				a8 = bit32.bor(a8, a5)
+    			end
+    			a_.flags = a8
+    			
+    		
+    end
+    
+    		return nil
+    	elseif a_.tag == v then
+    		aq(a_)
+    		local a2: nil | SuspenseState = a_.memoizedState
+    
+    		if aI then
+    			
+    			if a2 ~= nil and (a2 :: SuspenseState).dehydrated ~= nil then
+    				if aZ == nil then
+    					local a3 = aB(a_)
+    					_(
+    						a3,
+    [[A dehydrated suspense component was completed without a hydrated node. This is probably a bug in React.]]					
+    
+    )
+    					aA(a_)
+    					if aG then
+    						aN(c)
+    					end
+    					bubbleProperties(a_)
+    					if aK then
+    						if bit32.band(a_.mode, L) ~= I then
+    							local a4 = a2 ~= nil
+    							if a4 then
+    								
+    								local a5 = a_.child
+    								if a5 ~= nil then
+    									
+    									a_.treeBaseDuration = (
+    										a5.treeBaseDuration :: any
+    									) :: number
+    								end
+    							end
+    						end
+    					end
+    					return nil
+    				else
+    					
+    					
+    					
+    					aC()
+    					if bit32.band(a_.flags, T) == S then
+    						
+    						a_.memoizedState = nil
+    					end
+    					
+    					
+    					
+    					
+    					
+    					a_.flags = bit32.bor(a_.flags, O)
+    					bubbleProperties(a_)
+    					if aK then
+    						if bit32.band(a_.mode, L) ~= I then
+    							local a3 = a2 ~= nil
+    							if a3 then
+    								
+    								local a4 = a_.child
+    								if a4 ~= nil then
+    									
+    									
+    									a_.treeBaseDuration -= a4.treeBaseDuration
+    								end
+    							end
+    						end
+    					end
+    					return nil
+    				end
+    			end
+    		end
+    
+    		if bit32.band(a_.flags, T) ~= S then
+    			
+    			a_.lanes = a0
+    			
+    			if
+    				aK
+    				and bit32.band(a_.mode, L) ~= I
+    			then
+    				aU(a_)
+    			end
+    			
+    			return a_
+    		end
+    
+    		local a3 = a2 ~= nil
+    		local a4 = false
+    		if aZ == nil then
+    			if a_.memoizedProps.fallback ~= nil then
+    				aB(a_)
+    			end
+    		else
+    			local a5: nil | SuspenseState = aZ.memoizedState
+    			a4 = a5 ~= nil
+    		end
+    
+    		if a3 and not a4 then
+    			
+    			
+    			
+    			
+    			
+    			if bit32.band(a_.mode, K) ~= I then
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				local a5 = aZ == nil
+    					and a_.memoizedProps.unstable_avoidThisFallback
+    						~= true
+    				if
+    					a5
+    					or at(
+    						ar.current,
+    						as :: SuspenseContext
+    					)
+    				then
+    					
+    					
+    					aO()
+    				else
+    					
+    					
+    					aP()
+    				end
+    			end
+    		end
+    
+    		if ag then
+    			
+    			if a3 then
+    				
+    				
+    				
+    				a_.flags = bit32.bor(a_.flags, O)
+    			end
+    		end
+    		if af then
+    			
+    			if a3 or a4 then
+    				
+    				
+    				
+    				
+    				
+    				a_.flags = bit32.bor(a_.flags, O)
+    			end
+    		end
+    		if
+    			aH
+    			and a_.updateQueue ~= nil
+    			and a_.memoizedProps.suspenseCallback ~= nil
+    		then
+    			
+    			a_.flags = bit32.bor(a_.flags, O)
+    		end
+    		bubbleProperties(a_)
+    		if aK then
+    			if bit32.band(a_.mode, L) ~= I then
+    				if a3 then
+    					
+    					local a5 = a_.child
+    					if a5 ~= nil then
+    						
+    						
+    						a_.treeBaseDuration -= a5.treeBaseDuration
+    					end
+    				end
+    			end
+    		end
+    		return nil
+    	elseif a_.tag == o then
+    		ao(a_)
+    		aW(aZ, a_)
+    		if aZ == nil then
+    			aj(a_.stateNode.containerInfo)
+    		end
+    		bubbleProperties(a_)
+    		return nil
+    	elseif a_.tag == p then
+    		
+    		ay(a_)
+    		bubbleProperties(a_)
+    		return nil
+    	elseif a_.tag == A then
+    		
+    		
+    		local a2 = a_.type
+    		if av(a2) then
+    			aw(a_)
+    		end
+    		bubbleProperties(a_)
+    		return nil
+    	elseif a_.tag == w then
+    		unimplemented("SuspenseListComponent")
+    	
+    
+    	
+    	
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	elseif a_.tag == B then
+    		unimplemented("FundamentalComponent")
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	elseif a_.tag == C then
+    		unimplemented("ScopeComponent")
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	elseif a_.tag == D then
+    		unimplemented("Block")
+    	
+    	
+    	
+    	
+    	elseif
+    		a_.tag == E
+    		or a_.tag == F
+    	then
+    		aM(a_)
+    		local a2: OffscreenState | nil = a_.memoizedState
+    		local a3 = a2 ~= nil
+    
+    		if aZ ~= nil then
+    			local a4: OffscreenState | nil = aZ.memoizedState
+    
+    			local a5 = a4 ~= nil
+    			if
+    				a5 ~= a3
+    				and a1.mode ~= "unstable-defer-without-hiding"
+    			then
+    				a_.flags = bit32.bor(a_.flags, O)
+    			end
+    		end
+    
+    		
+    		if
+    			not a3
+    			or aR(
+    				aL.subtreeRenderLanes,
+    				c :: Lane
+    			)
+    			or bit32.band(a_.mode, J) == I
+    		then
+    			bubbleProperties(a_)
+    		end
+    
+    		return nil
+    	end
+    	_(
+    		false,
+    [[Unknown unit of work tag (%s). This error is likely caused by a bug in React. Please file an issue.]]
+    ,
+    		tostring(a_.tag)
+    	)
+    	return nil
+    end
+    
+    return {
+    	completeWork = completeWork,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberComponentStack"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/luau-polyfill")
+    type Function = (...any) -> ...any
+    type Error = a.Error
+    
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = b.Fiber
+    
+    local c = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactWorkTags")
+    local d = c.HostComponent
+    local e = c.LazyComponent
+    local f = c.SuspenseComponent
+    local g = c.SuspenseListComponent
+    local h = c.FunctionComponent
+    local i = c.IndeterminateComponent
+    local j = c.ForwardRef
+    local k = c.SimpleMemoComponent
+    local l = c.ClassComponent
+    
+    local m = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactComponentStackFrame
+    local n =
+    	m.describeBuiltInComponentFrame
+    local o =
+    	m.describeFunctionComponentFrame
+    local p = m.describeClassComponentFrame
+    
+    local function describeFiber(q: Fiber): string
+    	
+    	local r: nil | Function 	
+    if _G.__DEV__ then
+    		
+    		local s = q._debugOwner
+    		if s then
+    			r = s.type
+    		end
+    	end
+    	local s 	
+    if _G.__DEV__ then
+    		s = q._debugSource
+    	end
+    	if q.tag == d then
+    		return n(q.type, s, r)
+    	elseif q.tag == e then
+    		return n("Lazy", s, r)
+    	elseif q.tag == f then
+    		return n("Suspense", s, r)
+    	elseif q.tag == g then
+    		return n("SuspenseList", s, r)
+    	elseif
+    		q.tag == h
+    		or q.tag == i
+    		or q.tag == k
+    	then
+    		return o(q.type, s, r)
+    	elseif q.tag == j then
+    		return o(q.type.render, s, r)
+    	elseif q.tag == l then
+    		return p(q.type, s, r)
+    	else
+    		return ""
+    	end
+    end
+    
+    return {
+    	getStackByFiberInDevAndProd = function(q: Fiber?): string
+    		local r: boolean, s: Error | string = pcall(function()
+    			local r = ""
+    			local s = q
+    			repeat
+    				r ..= describeFiber(s :: Fiber)
+    				s = (s :: Fiber).return_
+    			until s == nil
+    			return r
+    		end)
+    
+    		if not r then
+    			local t = "\nError generating stack: "
+    			if
+    				typeof(s) == "table"
+    				and (s :: Error).message
+    				and (s :: Error).stack
+    			then
+    				return t
+    					.. (s :: Error).message
+    					.. "\n"
+    					.. tostring((s :: Error).stack)
+    			end
+    			return t .. tostring(s)
+    		end
+    
+    		return s :: string
+    	end,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberContext.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _G.__DEV__ :: boolean
+    local b =
+    	_G.__DISABLE_ALL_WARNINGS_EXCEPT_PROP_VALIDATION__ :: boolean
+    
+    local c = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/luau-polyfill")
+    local d = c.Object
+    local e = c.Error
+    
+    
+    local f = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").console
+    
+    local g = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = g.Fiber
+    local h = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberStack.new")
+    type StackCursor<T> = h.StackCursor<T>
+    
+    local i = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberTreeReflection").isFiberMounted
+    local j =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactFeatureFlags.disableLegacyContext
+    local k = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactWorkTags")
+    local l = k.ClassComponent
+    local m = k.HostRoot
+    local n = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").getComponentName
+    local o = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").checkPropTypes
+    
+    local p = h.createCursor
+    local q = h.push
+    local r = h.pop
+    
+    local s
+    
+    if a then
+    	s = {}
+    end
+    
+    local t = {}
+    if a then
+    	d.freeze(t)
+    end
+    
+    
+    type Object = { [any]: any }
+    
+    
+    local u: StackCursor<Object> = p(t)
+    
+    local v: StackCursor<boolean> = p(false)
+    
+    
+    
+    local w: Object = t
+    
+    
+    local x
+    
+    
+    local function getUnmaskedContext(
+    	y: Fiber,
+    	z: any,
+    	A: boolean
+    ): Object
+    	
+    	
+    	
+    	
+    	if A and x(z) then
+    		
+    		
+    		
+    		
+    		return w
+    	end
+    	return u.current
+    	
+    end
+    
+    local function cacheContext(
+    	y: Fiber,
+    	z: Object,
+    	A: Object
+    ): ()
+    	
+    	
+    	
+    	
+    	local B = y.stateNode
+    	B.__reactInternalMemoizedUnmaskedChildContext = z
+    	B.__reactInternalMemoizedMaskedChildContext = A
+    	
+    end
+    
+    local function getMaskedContext(y: Fiber, z: Object): Object
+    	
+    	
+    	
+    	
+    	local A = y.type
+    	
+    	
+    	if type(A) == "function" then
+    		return z
+    	end
+    
+    	local B = A.contextTypes
+    	if not B then
+    		return t
+    	end
+    
+    	
+    	
+    	
+    	local C = y.stateNode
+    	if
+    		C
+    		and C.__reactInternalMemoizedUnmaskedChildContext == z
+    	then
+    		return C.__reactInternalMemoizedMaskedChildContext
+    	end
+    
+    	local D = {}
+    	for E, F in B do
+    		D[E] = z[E]
+    	end
+    
+    	if a or b then
+    		local E = n(A) or "Unknown"
+    		
+    		o(B, nil, D, "context", E)
+    	end
+    
+    	
+    	
+    	if C then
+    		cacheContext(y, z, D)
+    	end
+    
+    	return D
+    	
+    end
+    
+    local function hasContextChanged(): boolean
+    	if j then
+    		return false
+    	else
+    		return v.current
+    	end
+    end
+    
+    
+    function x(y): boolean
+    	
+    	
+    	
+    	
+    	
+    	
+    	if type(y) == "function" then
+    		return false
+    	end
+    	local z = y.childContextTypes
+    	return z ~= nil
+    	
+    end
+    
+    local function popContext(y: Fiber): ()
+    	
+    	
+    	
+    	
+    	r(v, y)
+    	r(u, y)
+    	
+    end
+    
+    local function popTopLevelContextObject(y: Fiber): ()
+    	
+    	
+    	
+    	
+    	r(v, y)
+    	r(u, y)
+    	
+    end
+    
+    local function pushTopLevelContextObject(
+    	y: Fiber,
+    	z: Object,
+    	A: boolean
+    ): ()
+    	
+    	
+    	
+    	
+    	if u.current ~= t then
+    		error(
+    			e.new(
+    [[Unexpected context found on stack. This error is likely caused by a bug in React. Please file an issue.]]			
+    
+    )
+    		)
+    	end
+    
+    	q(u, z, y)
+    	q(v, A, y)
+    	
+    end
+    
+    local function processChildContext(
+    	y: Fiber,
+    	z: any,
+    	A: Object
+    ): Object
+    	
+    	
+    	
+    	
+    	local B = y.stateNode
+    	local C = z.childContextTypes
+    
+    	
+    	
+    	if
+    		B.getChildContext == nil
+    		or type(B.getChildContext) ~= "function"
+    	then
+    		if a then
+    			local D = n(z) or "Unknown"
+    
+    			if not s[D] then
+    				s[D] = true
+    				f.error(
+    [[%s.childContextTypes is specified but there is no getChildContext() method on the instance. You can either define getChildContext() on %s or remove childContextTypes from it.]]
+    
+    ,
+    					D,
+    					D
+    				)
+    			end
+    		end
+    		return A
+    	end
+    
+    	local D = B:getChildContext()
+    	for E, F in D do
+    		if C[E] == nil then
+    			local G = n(z) or "Unknown"
+    			error(
+    				e.new(
+    					string.format(
+    						'%s.getChildContext(): key "%s" is not defined in childContextTypes.',
+    						G,
+    						E
+    					)
+    				)
+    			)
+    		end
+    	end
+    	if a or b then
+    		local E = n(z) or "Unknown"
+    		
+    		o(C, nil, D, "child context", E)
+    	end
+    
+    	return d.assign({}, A, D)
+    	
+    end
+    
+    local function pushContextProvider(y: Fiber): boolean
+    	
+    	
+    	
+    	
+    	local z = y.stateNode
+    	
+    	
+    	
+    	local A = (
+    		z and z.__reactInternalMemoizedMergedChildContext
+    	) or t
+    
+    	
+    	
+    	w = u.current
+    	q(u, A, y)
+    	q(v, v.current, y)
+    
+    	return true
+    	
+    end
+    
+    local function invalidateContextProvider(
+    	y: Fiber,
+    	z: any,
+    	A: boolean
+    ): ()
+    	
+    	
+    	
+    	
+    	local B = y.stateNode
+    
+    	if not B then
+    		error(
+    			e.new(
+    [[Expected to have an instance by this point. This error is likely caused by a bug in React. Please file an issue.]]			
+    
+    )
+    		)
+    	end
+    
+    	if A then
+    		
+    		
+    		
+    		local C = processChildContext(y, z, w)
+    		B.__reactInternalMemoizedMergedChildContext = C
+    
+    		
+    		
+    		r(v, y)
+    		r(u, y)
+    		
+    		q(u, C, y)
+    		q(v, A, y)
+    	else
+    		r(v, y)
+    		q(v, A, y)
+    	end
+    	
+    end
+    
+    local function findCurrentUnmaskedContext(y: Fiber): Object
+    	
+    	
+    	
+    	
+    	
+    	
+    	if y.tag ~= l or not i(y) then
+    		error(
+    			e.new(
+    [[Expected subtree parent to be a mounted class component. This error is likely caused by a bug in React. Please file an issue.]]			
+    
+    )
+    		)
+    	end
+    
+    	
+    	local z: any = y
+    	repeat
+    		if z.tag == m then
+    			return z.stateNode.context
+    		elseif z.tag == l then
+    			local A = z.type
+    			
+    			if A.childContextTypes ~= nil then
+    				return z.stateNode.__reactInternalMemoizedMergedChildContext
+    			end
+    		end
+    
+    		z = z.return_
+    	until z == nil
+    
+    	error(
+    		e.new(
+    [[Found unexpected detached subtree parent. This error is likely caused by a bug in React. Please file an issue.]]		
+    
+    )
+    	)
+    	
+    end
+    
+    return {
+    	emptyContextObject = t,
+    	getUnmaskedContext = getUnmaskedContext,
+    	cacheContext = cacheContext,
+    	getMaskedContext = getMaskedContext,
+    	hasContextChanged = hasContextChanged,
+    	popContext = popContext,
+    	popTopLevelContextObject = popTopLevelContextObject,
+    	pushTopLevelContextObject = pushTopLevelContextObject,
+    	processChildContext = processChildContext,
+    	isContextProvider = x,
+    	pushContextProvider = pushContextProvider,
+    	invalidateContextProvider = invalidateContextProvider,
+    	findCurrentUnmaskedContext = findCurrentUnmaskedContext,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberDevToolsHook.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").console
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/luau-polyfill")
+    type Object = b.Object
+    local c = {}
+    
+    
+    type DevToolsHook = {
+    	
+    	inject: (Object) -> number | nil,
+    	supportsFiber: boolean,
+    	isDisabled: boolean	
+    
+    }
+    
+    
+    local function isCallable(d)
+    	if typeof(d) == "function" then
+    		return true
+    	end
+    	if typeof(d) == "table" then
+    		local e = getmetatable(d)
+    		if e and rawget(e, "__call") then
+    			return true
+    		end
+    		if d._isMockFunction then
+    			return true
+    		end
+    	end
+    	return false
+    end
+    
+    local d =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactFeatureFlags.enableProfilerTimer
+    
+    local e = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = e.Fiber
+    type FiberRoot = e.FiberRoot
+    type ReactPriorityLevel = e.ReactPriorityLevel
+    local f = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    type ReactNodeList = f.ReactNodeList
+    
+    local g = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberFlags").DidCapture
+    
+    
+    
+    
+    local h 
+    local i 
+    local j = false
+    
+    
+    c.isDevToolsPresent = function()
+    	return _G.__REACT_DEVTOOLS_GLOBAL_HOOK__ ~= nil
+    end
+    
+    c.injectInternals = function(k: Object): boolean
+    	if _G.__REACT_DEVTOOLS_GLOBAL_HOOK__ == nil then
+    		
+    		return false
+    	end
+    	local l: DevToolsHook = _G.__REACT_DEVTOOLS_GLOBAL_HOOK__
+    	if l.isDisabled then
+    		
+    		
+    		
+    		return true
+    	end
+    	if not l.supportsFiber then
+    		if _G.__DEV__ then
+    			a.error(
+    [[The installed version of React DevTools is too old and will not work with the current version of React. Please update React DevTools. https://reactjs.org/link/react-devtools]]			
+    
+    
+    )
+    		end
+    		
+    		return true
+    	end
+    	local m, n = pcall(function()
+    		h = l.inject(k)
+    		
+    		i = l
+    	end)
+    
+    	if not m then
+    		
+    		if _G.__DEV__ then
+    			a.error("React instrumentation encountered an error: %s.", n)
+    		end
+    	end
+    	
+    	return true
+    end
+    
+    c.onScheduleRoot = function(k: FiberRoot, l: ReactNodeList)
+    	if _G.__DEV__ then
+    		if
+    			i
+    			
+    			and isCallable(i.onScheduleFiberRoot)
+    		then
+    			local m, n =
+    				pcall(i.onScheduleFiberRoot, h, k, l)
+    
+    			if not m then
+    				if _G.__DEV__ and not j then
+    					j = true
+    					a.error("React instrumentation encountered an error: %s", n)
+    				end
+    			end
+    		end
+    	end
+    end
+    
+    c.onCommitRoot = function(k: FiberRoot, l: ReactPriorityLevel)
+    	if
+    		i
+    		
+    		and isCallable(i.onCommitFiberRoot)
+    	then
+    		local m, n = pcall(function()
+    			local m = bit32.band(k.current.flags, g) == g
+    			if d then
+    				i.onCommitFiberRoot(h, k, l, m)
+    			else
+    				i.onCommitFiberRoot(h, k, nil, m)
+    			end
+    		end)
+    		if not m then
+    			if _G.__DEV__ then
+    				if not j then
+    					j = true
+    					a.error("React instrumentation encountered an error: %s", n)
+    				end
+    			end
+    		end
+    	end
+    end
+    
+    c.onCommitUnmount = function(k: Fiber)
+    	if
+    		i
+    		
+    		and isCallable(i.onCommitFiberUnmount)
+    	then
+    		local l, m = pcall(i.onCommitFiberUnmount, h, k)
+    		if not l then
+    			if _G.__DEV__ then
+    				if not j then
+    					j = true
+    					a.error("React instrumentation encountered an error: %s", m)
+    				end
+    			end
+    		end
+    	end
+    end
+    
+    return c
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberErrorDialog"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = {}
+    
+    a.showErrorDialog = function(b, c): boolean
+    	
+    	return true
+    end
+    
+    return a
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberErrorLogger"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/luau-polyfill")
+    type Error = a.Error
+    local b = a.util.inspect
+    local c = a.setTimeout
+    
+    local d = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    local e = d.console
+    local f = d.errorToString
+    
+    local g = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = g.Fiber
+    local h = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactCapturedValue")
+    type CapturedValue<T> = h.CapturedValue<T>
+    
+    local i = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberErrorDialog").showErrorDialog
+    local j = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactWorkTags").ClassComponent
+    local k = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").getComponentName
+    
+    local l = {}
+    
+    l.logCapturedError = function(m: Fiber, n: CapturedValue<any>)
+    	local o, p = pcall(function()
+    		local o = i(m, n)
+    
+    		
+    		
+    		if o == false then
+    			
+    			return nil
+    		end
+    
+    		local p = n.value
+    		if _G.__DEV__ then
+    			local q = n.source
+    			local r = n.stack
+    			local s = r or ""
+    			
+    			
+    			
+    			if p ~= nil and p._suppressLogging then
+    				if m.tag == j then
+    					
+    					
+    					
+    					return
+    				end
+    				
+    				
+    				
+    				
+    				e["error"](p) 
+    				
+    				
+    			end
+    
+    			local t
+    			if q ~= nil then
+    				t = k(q.type)
+    			else
+    				t = nil
+    			end
+    
+    			local u
+    			if t then
+    				u = "The above error occurred in the <"
+    					.. tostring(t)
+    					.. "> component:"
+    			else
+    				u =
+    					"The above error occurred in one of your React components:"
+    			end
+    
+    			local v
+    			local w = k(m.type)
+    			if w then
+    				v = "React will try to recreate this component tree from scratch "
+    					.. "using the error boundary you provided, "
+    					.. w
+    					.. "."
+    			else
+    				v = [[Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.]]			
+    end
+    			local x = u
+    				.. "\n"
+    				.. s
+    				.. "\n\n"
+    				.. v
+    
+    			
+    			
+    			
+    			
+    			e["error"](x) 
+    		else
+    			
+    			
+    			
+    			e["error"](b(p)) 
+    		end
+    
+    		
+    		return nil
+    	end)
+    
+    	if not o then
+    		warn("failed to error with error: " .. b(p))
+    		
+    		
+    		
+    		
+    		
+    		c(function()
+    			
+    			error(f(p :: any))
+    		end)
+    	end
+    end
+    
+    return l
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberFlags"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    export type Flags = number
+    
+    local a = {}
+    
+    
+    a.NoFlags = 
+    	0b000000000000000000
+    a.PerformedWork = 
+    	0b000000000000000001
+    
+    
+    a.Placement = 
+    	0b000000000000000010
+    a.Update = 
+    	0b000000000000000100
+    a.PlacementAndUpdate = 
+    	0b000000000000000110
+    a.Deletion = 
+    	0b000000000000001000
+    a.ContentReset = 
+    	0b000000000000010000
+    a.Callback = 
+    	0b000000000000100000
+    a.DidCapture = 
+    	0b000000000001000000
+    a.Ref = 
+    	0b000000000010000000
+    a.Snapshot = 
+    	0b000000000100000000
+    a.Passive = 
+    	0b000000001000000000
+    
+    a.PassiveUnmountPendingDev = 
+    	0b000010000000000000
+    a.Hydrating = 
+    	0b000000010000000000
+    a.HydratingAndUpdate = 
+    	0b000000010000000100
+    
+    
+    a.LifecycleEffectMask = 
+    	0b000000001110100100
+    
+    
+    a.HostEffectMask = 
+    	0b000000011111111111
+    
+    
+    a.Incomplete = 
+    	0b000000100000000000
+    a.ShouldCapture = 
+    	0b000001000000000000
+    a.ForceUpdateForLegacySuspense = 
+    	0b000100000000000000
+    
+    
+    
+    
+    
+    
+    a.PassiveStatic = 
+    	0b001000000000000000
+    
+    
+    a.BeforeMutationMask = 
+    	0b000000001100001010
+    a.MutationMask = 
+    	0b000000010010011110
+    a.LayoutMask = 
+    	0b000000000010100100
+    a.PassiveMask = 
+    	0b000000001000001000
+    
+    
+    
+    
+    a.StaticMask = 
+    	0b001000000000000000
+    
+    
+    
+    
+    a.MountLayoutDev = 
+    	0b010000000000000000
+    a.MountPassiveDev = 
+    	0b100000000000000000
+    
+    return a
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHooks.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function unimplemented(a: string)
+    	print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    	print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    	print("UNIMPLEMENTED ERROR: " .. a)
+    	error("FIXME (roblox): " .. a .. " is unimplemented")
+    end
+    local a = _G.__DEV__ :: boolean
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/luau-polyfill")
+    local c = b.Array
+    local d = b.Error
+    local e = b.Object
+    
+    
+    local f = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react").createRef
+    local g = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react").createBinding
+    
+    
+    local h = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").console
+    
+    local i = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    type ReactContext<T> = i.ReactContext<T>
+    type ReactBinding<T> = i.ReactBinding<T>
+    type ReactBindingUpdater<T> = i.ReactBindingUpdater<T>
+    type MutableSource<T> = i.MutableSource<T>
+    type MutableSourceGetSnapshotFn<Source, Snapshot> = i.MutableSourceGetSnapshotFn<
+    	Source,
+    	Snapshot
+    >
+    type MutableSourceSubscribeFn<Source, Snapshot> = i.MutableSourceSubscribeFn<
+    	Source,
+    	Snapshot
+    >
+    
+    local j = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = j.Fiber
+    type Dispatcher = j.Dispatcher
+    type HookType = j.HookType
+    type ReactPriorityLevel = j.ReactPriorityLevel
+    local k = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLane")
+    type Lanes = k.Lanes
+    type Lane = k.Lane
+    local l = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactHookEffectTags")
+    type HookFlags = l.HookFlags
+    type FiberRoot = j.FiberRoot
+    
+    
+    type OpaqueIDType = any
+    
+    local m = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactSharedInternals
+    local n = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactFeatureFlags
+    local o: boolean? = n.enableDebugTracing
+    local p: boolean? = n.enableSchedulingProfiler
+    local q: boolean? = n.enableNewReconciler
+    
+    local r = n.enableDoubleInvokingEffects
+    
+    
+    local s = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactTypeOfMode").DebugTracingMode
+    local t = k.NoLane
+    local u = k.NoLanes
+    
+    local v = k.isSubsetOfLanes
+    local w = k.mergeLanes
+    local x = k.removeLanes
+    local y = k.markRootEntangled
+    local z = k.markRootMutableRead
+    
+    
+    
+    
+    local A = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberNewContext.new")
+    local B = A.readContext
+    local C = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberFlags")
+    local D = C.Update
+    local E = C.Passive
+    local F = C.PassiveStatic
+    local G = C.MountLayoutDev
+    local H = C.MountPassiveDev
+    local I = l.HasEffect
+    local J = l.Layout
+    local K = l.Passive
+    local L = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberWorkLoop.new"):: any
+    local M =
+    	L.warnIfNotCurrentlyActingUpdatesInDEV
+    local N = L.scheduleUpdateOnFiber
+    local O = L.warnIfNotScopedWithMatchingAct
+    local P = L.requestEventTime
+    local Q = L.requestUpdateLane
+    local R = L.markSkippedUpdateLanes
+    local S = L.getWorkInProgressRoot
+    local T =
+    	L.warnIfNotCurrentlyActingEffectsInDEV
+    
+    
+    
+    
+    
+    
+    
+    local U = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").invariant
+    local V = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").getComponentName
+    
+    local function is(W: any, X: any)
+    	return W == X and (W ~= 0 or 1 / W == 1 / X) or W ~= W and X ~= X 
+    end
+    local W =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberBeginWork.new").markWorkInProgressReceivedUpdate :: any
+    
+    
+    
+    
+    
+    
+    local X = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHydrationContext.new").getIsHydrating
+    
+    
+    
+    
+    local Y = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHostConfig")
+    local Z = Y.makeClientId
+    
+    
+    
+    local _ = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactMutableSource.new")
+    local aa = _.warnAboutMultipleRenderersDEV
+    local ab = _.getWorkInProgressVersion
+    local ac = _.setWorkInProgressVersion
+    local ad = _.markSourceAsDirty
+    
+    
+    local ae = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/DebugTracing").logStateUpdateScheduled
+    local af = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/SchedulingProfiler").markStateUpdateScheduled
+    
+    local ag = m.ReactCurrentDispatcher
+    
+    
+    
+    type Array<T> = { [number]: T }
+    
+    type Update<S, A> = {
+    	lane: Lane,
+    	action: A,
+    	eagerReducer: ((S, A) -> S) | nil,
+    	eagerState: S | nil,
+    	next: Update<S, A>,
+    	priority: ReactPriorityLevel?
+    }
+    
+    type UpdateQueue<S, A> = {
+    	pending: Update<S, A> | nil,
+    	dispatch: ((A) -> ...any) | nil,
+    	lastRenderedReducer: ((S, A) -> S) | nil,
+    	lastRenderedState: S | nil
+    }
+    
+    local ah
+    local ai
+    if a then
+    	ai = {}
+    	ah = {}
+    end
+    
+    export type Hook = {
+    	memoizedState: any,
+    	baseState: any,
+    	baseQueue: Update<any, any> | nil,
+    	queue: UpdateQueue<any, any> | nil,
+    	next: Hook?
+    }
+    
+    export type Effect = {
+    	tag: HookFlags,
+    	
+    	create: (() -> (() -> ())) | (() -> ()),
+    	destroy: (() -> ())?,
+    	deps: Array<any> | nil,
+    	next: Effect
+    }
+    
+    export type FunctionComponentUpdateQueue = {
+    	lastEffect: Effect?
+    }
+    
+    type BasicStateAction<S> = ((S) -> S) | S
+    
+    type Dispatch<A> = (A) -> ()
+    
+    local aj: any = {}
+    
+    
+    local ak: Lanes = u
+    
+    
+    local al: Fiber = nil :: any
+    
+    
+    
+    
+    
+    
+    
+    local am: any 
+    
+    
+    local an: any 
+    
+    
+    
+    
+    
+    local ao: boolean = false
+    
+    
+    
+    
+    local ap: boolean = false
+    
+    local aq = 25
+    
+    
+    local ar: HookType? 
+    
+    
+    
+    
+    local as: Array<HookType> | nil 
+    local at: number = 0
+    
+    
+    
+    
+    
+    local au: boolean = false
+    
+    
+    local av: Dispatcher | nil 
+    local aw: Dispatcher | nil 
+    local ax: Dispatcher | nil 
+    local ay: Dispatcher | nil 
+    local az: Dispatcher | nil 
+    local aA: Dispatcher | nil 
+    local aB: Dispatcher | nil 
+    
+    
+    local function getHighestIndex(aC: Array<any>)
+    	local aD = 0
+    	for aE, aF in aC do
+    		aD = if aE > aD then aE else aD
+    	end
+    	return aD
+    end
+    
+    
+    
+    local function isArrayOrSparseArray(aC: any)
+    	if type(aC) ~= "table" then
+    		return false
+    	end
+    	for aD, aE in aC do
+    		if type(aD) ~= "number" then
+    			return false
+    		end
+    	end
+    	return true
+    end
+    
+    local function mountHookTypesDev()
+    	if a then
+    		local aC = (ar :: any) :: HookType
+    
+    		if as == nil then
+    			
+    			as = ({ aC } :: any) :: Array<HookType>
+    		else
+    			table.insert(as, aC)
+    		end
+    	end
+    end
+    
+    function updateHookTypesDev()
+    	if a then
+    		
+    		local aC: HookType = (ar :: any) :: HookType
+    
+    		if as ~= nil then
+    			at += 1
+    			if as[at] ~= aC then
+    				warnOnHookMismatchInDev(aC)
+    			end
+    		end
+    	end
+    end
+    
+    local function checkDepsAreArrayDev(aC: any)
+    	if a then
+    		if aC ~= nil and not isArrayOrSparseArray(aC) then
+    			
+    			
+    			h.error(
+    [[%s received a final argument that is not an array (instead, received `%s`). When specified, the final argument must be an array.]]
+    ,
+    				ar,
+    				type(aC)
+    			)
+    		end
+    	end
+    end
+    
+    function warnOnHookMismatchInDev(aC: HookType)
+    	if a then
+    		
+    		local aD = V(al.type)
+    			or "Component"
+    		if not ah[aD] then
+    			ah[aD] = true
+    
+    			if as ~= nil then
+    				local aE = ""
+    
+    				local aF = 30
+    
+    				for aG = 1, at do
+    					local aH = (as :: any)[aG]
+    					local aI
+    					if aG == at then
+    						aI = aC
+    					else
+    						aI = aH
+    					end
+    
+    					
+    					local aJ = tostring(aG) .. ". " .. (aH or "undefined")
+    
+    					
+    					
+    					while string.len(aJ) < aF do
+    						aJ ..= " "
+    					end
+    
+    					aJ ..= aI .. "\n"
+    
+    					aE ..= aJ
+    				end
+    
+    				h.error(
+    [[React has detected a change in the order of Hooks called by %s. This will lead to bugs and errors if not fixed. For more information, read the Rules of Hooks: https://reactjs.org/link/rules-of-hooks
+    
+       Previous render            Next render
+       ------------------------------------------------------
+    %s   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ]]
+    ,
+    					aD,
+    					aE
+    				)
+    			end
+    		end
+    	end
+    end
+    
+    local function throwInvalidHookError(): ()
+    	error(
+    		d.new(
+    [[Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+    1. You might have mismatching versions of React and the renderer (such as React DOM)
+    2. You might be breaking the Rules of Hooks
+    3. You might have more than one copy of React in the same app
+    See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.]]		
+    
+    )
+    	)
+    end
+    
+    
+    
+    local function areHookInputsEqual(aC: Array<any>, aD: Array<any>)
+    	if a then
+    		if au then
+    			
+    			return false
+    		end
+    	end
+    
+    	if aD == nil then
+    		if a then
+    			
+    			h.error(
+    [[%s received a final argument during this render, but not during the previous render. Even though the final argument is optional, its type cannot change between renders.]]
+    
+    ,
+    				ar
+    			)
+    		end
+    		return false
+    	end
+    
+    	
+    	
+    	local aE = getHighestIndex(aC)
+    	local aF = getHighestIndex(aD)
+    
+    	
+    	
+    	
+    	
+    	
+    	if aE ~= aF then
+    		
+    		
+    
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    
+    		
+    		
+    		return false
+    	end
+    	
+    
+    	local aG = math.min(aF, aE)
+    	for aH = 1, aG do
+    		if is(aC[aH], aD[aH]) then
+    			continue
+    		end
+    		return false
+    	end
+    	return true
+    end
+    
+    aj.bailoutHooks = function(aC: Fiber, aD: Fiber, aE: Lanes)
+    	
+    	aD.updateQueue = aC.updateQueue
+    	if a and r then
+    		aD.flags = bit32.band(
+    			aD.flags,
+    			bit32.bnot(
+    				bit32.bor(
+    					H,
+    					E,
+    					G,
+    					D
+    				)
+    			)
+    		)
+    	else
+    		aD.flags = bit32.band(
+    			aD.flags,
+    			bit32.bnot(bit32.bor(E, D))
+    		)
+    	end
+    	aC.lanes = x(aC.lanes, aE)
+    end
+    
+    local aC = false
+    aj.resetHooksAfterThrow = function(): ()
+    	
+    	
+    	ag.current = aj.ContextOnlyDispatcher
+    
+    	if ao then
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		local aD: any = al.memoizedState
+    		while aD ~= nil do
+    			local aE = aD.queue
+    			if aE ~= nil then
+    				aE.pending = nil
+    			end
+    			aD = aD.next
+    		end
+    		ao = false
+    	end
+    
+    	ak = u
+    	al = nil :: any
+    
+    	am = nil
+    	an = nil
+    
+    	if a then
+    		as = nil
+    		at = 0
+    
+    		ar = nil
+    
+    		aC = false
+    	end
+    
+    	ap = false
+    end
+    
+    local function mountWorkInProgressHook(): Hook
+    	local aD: Hook = {
+    		memoizedState = nil,
+    
+    		baseState = nil,
+    		baseQueue = nil,
+    		queue = nil,
+    
+    		next = nil,
+    	}
+    
+    	if an == nil then
+    		
+    		al.memoizedState = aD
+    		an = aD
+    	else
+    		
+    		an.next = aD
+    		an = aD
+    	end
+    	return an
+    end
+    
+    local function updateWorkInProgressHook(): Hook
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	local aD
+    	if am == nil then
+    		local aE = al.alternate
+    		if aE ~= nil then
+    			aD = aE.memoizedState
+    		else
+    			aD = nil
+    		end
+    	else
+    		aD = am.next
+    	end
+    
+    	
+    	
+    	local aE: Hook
+    	if an == nil then
+    		aE = al.memoizedState
+    	else
+    		aE = an.next
+    	end
+    
+    	if aE ~= nil then
+    		
+    		an = aE
+    		aE = an.next
+    
+    		am = aD
+    	else
+    		
+    
+    		
+    		if aD == nil then
+    			error(d.new("Rendered more hooks than during the previous render."))
+    		end
+    
+    		am = aD
+    
+    		local aF: Hook = {
+    			memoizedState = am.memoizedState,
+    
+    			baseState = am.baseState,
+    			baseQueue = am.baseQueue,
+    			queue = am.queue,
+    
+    			next = nil,
+    		}
+    
+    		if an == nil then
+    			
+    			an = aF
+    			al.memoizedState = aF
+    		else
+    			
+    			an.next = aF
+    			an = aF
+    		end
+    	end
+    	return an
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    function basicStateReducer<S>(aD: S, aE: BasicStateAction<S>): S
+    	
+    	if type(aE) == "function" then
+    		return aE(aD)
+    	else
+    		return aE
+    	end
+    end
+    
+    function mountReducer<S, I, A>(
+    	aD: (S, A) -> S,
+    	aE: I,
+    	aF: ((I) -> S)?
+    ): (S, Dispatch<A>)
+    	local aG = mountWorkInProgressHook()
+    	local aH
+    	if aF ~= nil then
+    		aH = aF(aE)
+    	else
+    		aH = (aE :: any) :: S
+    	end
+    	aG.baseState = aH
+    	aG.memoizedState = aG.baseState
+    
+    	local aI: UpdateQueue<S, A> = {
+    		pending = nil,
+    		dispatch = nil,
+    		lastRenderedReducer = aD,
+    		lastRenderedState = aH :: any,
+    	}
+    	aG.queue = aI
+    
+    	
+    	
+    	local aJ = al
+    	
+    	local aK: Dispatch<A> = function(aK, ...)
+    		
+    		dispatchAction(aJ, aI :: UpdateQueue<any, any>, aK, ...)
+    	end :: any
+    	aI.dispatch = aK :: any
+    	
+    	return aG.memoizedState, aK
+    	
+    end
+    
+    function updateReducer<S, I, A>(
+    	aD: (S, A) -> S,
+    	aE: I,
+    	aF: ((I) -> S)?
+    ): (S, Dispatch<A>)
+    	local aG = updateWorkInProgressHook()
+    	local aH = aG.queue
+    	
+    	assert(
+    		aH ~= nil,
+    		"Should have a queue. This is likely a bug in React. Please file an issue."
+    	)
+    
+    	aH.lastRenderedReducer = aD
+    
+    	local aI: Hook = am
+    
+    	
+    	local aJ = aI.baseQueue
+    
+    	
+    	local aK = aH.pending
+    	if aK ~= nil then
+    		
+    		
+    		if aJ ~= nil then
+    			
+    			local aL = aJ.next
+    			local aM = aK.next
+    			aJ.next = aM
+    			aK.next = aL
+    		end
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		aJ = aK
+    		aI.baseQueue = aJ
+    		aH.pending = nil
+    	end
+    
+    	if aJ ~= nil then
+    		
+    		local aL = aJ.next
+    		local aM = aI.baseState
+    
+    		local aN 		
+    local aO 		
+    local aP 		
+    local aQ = aL
+    		repeat
+    			local aR = aQ.lane
+    			
+    			
+    			if bit32.band(ak, aR) ~= aR then
+    				
+    				
+    				
+    				local aS: Update<S, A> = {
+    					lane = aR,
+    					action = aQ.action,
+    					eagerReducer = aQ.eagerReducer,
+    					eagerState = aQ.eagerState,
+    					next = nil :: any,
+    				}
+    				if aP == nil then
+    					aP = aS
+    					aO = aP
+    					aN = aM
+    				else
+    					aP.next = aS
+    					aP = aP.next
+    				end
+    				
+    				
+    				
+    				al.lanes =
+    					w(al.lanes, aR)
+    				R(aR)
+    			else
+    				
+    
+    				if aP ~= nil then
+    					local aS: Update<S, A> = {
+    						
+    						
+    						
+    						lane = t,
+    						action = aQ.action,
+    						eagerReducer = aQ.eagerReducer,
+    						eagerState = aQ.eagerState,
+    						next = nil :: any,
+    					}
+    					aP.next = aS
+    					aP = aP.next
+    				end
+    
+    				
+    				if aQ.eagerReducer == aD then
+    					
+    					
+    					aM = aQ.eagerState
+    				else
+    					local aS = aQ.action
+    					aM = aD(aM, aS)
+    				end
+    			end
+    			aQ = aQ.next
+    		until aQ == nil or aQ == aL
+    
+    		if aP == nil then
+    			aN = aM
+    		else
+    			aP.next = aO
+    		end
+    
+    		
+    		
+    		if not is(aM, aG.memoizedState) then
+    			W()
+    		end
+    
+    		aG.memoizedState = aM
+    		aG.baseState = aN
+    		aG.baseQueue = aP
+    
+    		aH.lastRenderedState = aM
+    	end
+    
+    	local aL: Dispatch<A> = aH.dispatch :: any
+    	
+    	return aG.memoizedState, aL
+    end
+    
+    function rerenderReducer<S, I, A>(
+    	aD: (S, A) -> S,
+    	aE: I,
+    	aF: ((I) -> S)?
+    ): (S, Dispatch<A>)
+    	local aG = updateWorkInProgressHook()
+    	local aH = aG.queue
+    	
+    	assert(
+    		aH ~= nil,
+    		"Should have a queue. This is likely a bug in React. Please file an issue."
+    	)
+    
+    	aH.lastRenderedReducer = aD
+    
+    	
+    	
+    	local aI: Dispatch<A> = aH.dispatch :: Dispatch<A>
+    	local aJ = aH.pending
+    	local aK = aG.memoizedState
+    	if aJ ~= nil then
+    		
+    		aH.pending = nil
+    
+    		local aL = aJ.next
+    		local aM = aL
+    		repeat
+    			
+    			
+    			
+    			local aN = aM.action
+    			aK = aD(aK, aN)
+    			aM = aM.next
+    		until aM == aL
+    
+    		
+    		
+    		if not is(aK, aG.memoizedState) then
+    			W()
+    		end
+    
+    		aG.memoizedState = aK
+    		
+    		
+    		
+    		
+    		if aG.baseQueue == nil then
+    			aG.baseState = aK
+    		end
+    
+    		aH.lastRenderedState = aK
+    	end
+    	
+    	return aK, aI
+    end
+    
+    type MutableSourceMemoizedState<Source, Snapshot> = {
+    	refs: {
+    		getSnapshot: MutableSourceGetSnapshotFn<Source, Snapshot>,
+    		setSnapshot: (Snapshot) -> ()	
+    },
+    	source: MutableSource<any>,
+    	subscribe: MutableSourceSubscribeFn<Source, Snapshot>
+    }
+    
+    function readFromUnsubcribedMutableSource<Source, Snapshot>(
+    	aD: FiberRoot,
+    	aE: MutableSource<Source>,
+    	aF: MutableSourceGetSnapshotFn<
+    		Source,
+    		Snapshot
+    	>
+    ): Snapshot
+    	if a then
+    		aa(aE)
+    	end
+    
+    	local aG = aE._getVersion
+    	local aH = aG(aE._source)
+    
+    	
+    	local aI = false
+    
+    	
+    	
+    	
+    	local aJ = ab(aE)
+    	if aJ ~= nil then
+    		
+    		
+    		aI = aJ == aH
+    	else
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		aI = v(ak, aD.mutableReadLanes)
+    
+    		if aI then
+    			
+    			
+    			
+    			ac(aE, aH)
+    		end
+    	end
+    
+    	if aI then
+    		local aK = aF(aE._source)
+    		if a then
+    			
+    			if type(aK :: any) == "function" then
+    				h.error(
+    [[Mutable source should not return a function as the snapshot value. Functions may close over mutable values and cause tearing.]]				
+    
+    )
+    			end
+    		end
+    		return aK
+    	else
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		ad(aE)
+    
+    		error(
+    			d.new(
+    				"Cannot read from mutable source during the current render without tearing. This is a bug in React. Please file an issue."
+    			)
+    		)
+    	end
+    end
+    
+    function useMutableSource<Source, Snapshot>(
+    	aD: Hook,
+    	aE: MutableSource<Source>,
+    	aF: MutableSourceGetSnapshotFn<
+    		Source,
+    		Snapshot
+    	>,
+    	aG: MutableSourceSubscribeFn<
+    		Source,
+    		Snapshot
+    	>
+    ): Snapshot
+    	local aH: FiberRoot = S()
+    	U(
+    		aH ~= nil,
+    		"Expected a work-in-progress root. This is a bug in React. Please file an issue."
+    	)
+    
+    	local aI = aE._getVersion
+    	local aJ = aI(aE._source)
+    
+    	local aK = ag.current
+    	
+    	assert(aK ~= nil, "dispatcher was nil, this is a bug in React")
+    	
+    	local aL, aM = aK.useState(function()
+    		return readFromUnsubcribedMutableSource(aH, aE, aF)
+    	end)
+    	local aN = aL
+    
+    	
+    	
+    
+    	
+    	local aO = an
+    
+    	local aP: MutableSourceMemoizedState<any, any> = aD.memoizedState
+    	if aP.refs == nil then
+    		error(tostring(debug.traceback()))
+    	end
+    	local aQ = aP.refs
+    	local aR = aQ.getSnapshot
+    	local aS = aP.source
+    	local aT = aP.subscribe
+    
+    	local aU = al
+    
+    	aD.memoizedState = {
+    		refs = aQ,
+    		source = aE,
+    		subscribe = aG,
+    	}
+    
+    	
+    	aK.useEffect(function()
+    		aQ.getSnapshot = aF
+    
+    		
+    		
+    		
+    		
+    		aQ.setSnapshot = aM
+    
+    		
+    		local aV = aI(aE._source)
+    		if not is(aJ, aV) then
+    			local aW = aF(aE._source)
+    			if a then
+    				
+    				if type(aW :: any) == "function" then
+    					h.error(
+    [[Mutable source should not return a function as the snapshot value. Functions may close over mutable values and cause tearing.]]					
+    
+    )
+    				end
+    			end
+    
+    			if not is(aN, aW) then
+    				aM(aW)
+    
+    				local aX = Q(aU)
+    				z(aH, aX)
+    			end
+    			
+    			
+    			
+    			y(aH, aH.mutableReadLanes)
+    		end
+    		
+    	end, { aF, aE, aG } :: Array<any>)
+    
+    	
+    	aK.useEffect(function()
+    		local aV = function()
+    			local aV = aQ.getSnapshot
+    			local aW = aQ.setSnapshot
+    
+    			
+    			local aX, aY = pcall(function()
+    				aW(aV(aE._source))
+    
+    				
+    				local aX = Q(aU)
+    
+    				z(aH, aX)
+    			end)
+    
+    			if not aX then
+    				
+    				
+    				
+    				
+    				aW(function()
+    					error(aY)
+    				end)
+    			end
+    		end
+    
+    		local aW = aG(aE._source, aV)
+    		if a then
+    			if type(aW) ~= "function" then
+    				h.error(
+    					"Mutable source subscribe function must return an unsubscribe function."
+    				)
+    			end
+    		end
+    
+    		return aW
+    		
+    	end, { aE, aG } :: Array<any>)
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	if
+    		not is(aR, aF)
+    		or not is(aS, aE)
+    		or not is(aT, aG)
+    	then
+    		
+    		
+    		
+    		
+    		local aV = {
+    			pending = nil,
+    			dispatch = nil,
+    			lastRenderedReducer = basicStateReducer,
+    			lastRenderedState = aN,
+    		}
+    
+    		
+    		local aW = al
+    
+    		aM = function(...)
+    			dispatchAction(aW, aV, ...)
+    		end :: any
+    		aV.dispatch = aM :: any
+    		aO.queue = aV
+    		aO.baseQueue = nil
+    		aN = readFromUnsubcribedMutableSource(aH, aE, aF)
+    		aO.baseState = aN
+    		aO.memoizedState = aO.baseState
+    	end
+    
+    	return aN
+    end
+    
+    function mountMutableSource<Source, Snapshot>(
+    	aD: MutableSource<Source>,
+    	aE: MutableSourceGetSnapshotFn<
+    		Source,
+    		Snapshot
+    	>,
+    	aF: MutableSourceSubscribeFn<
+    		Source,
+    		Snapshot
+    	>
+    ): Snapshot
+    	local aG = mountWorkInProgressHook()
+    	aG.memoizedState = {
+    		refs = {
+    			getSnapshot = aE,
+    			setSnapshot = nil,
+    		},
+    		source = aD,
+    		subscribe = aF,
+    	}
+    	return useMutableSource(aG, aD, aE, aF)
+    end
+    
+    function updateMutableSource<Source, Snapshot>(
+    	aD: MutableSource<Source>,
+    	aE: MutableSourceGetSnapshotFn<
+    		Source,
+    		Snapshot
+    	>,
+    	aF: MutableSourceSubscribeFn<
+    		Source,
+    		Snapshot
+    	>
+    ): Snapshot
+    	local aG = updateWorkInProgressHook()
+    	return useMutableSource(aG, aD, aE, aF)
+    end
+    
+    function mountState<S>(aD: (() -> S) | S): (S, Dispatch<BasicStateAction<S>>)
+    	local aE = mountWorkInProgressHook()
+    	if type(aD) == "function" then
+    		
+    		
+    		local aF: () -> S = aD
+    		aD = aF()
+    	end
+    	aE.baseState = aD
+    	aE.memoizedState = aE.baseState
+    	local aF: UpdateQueue<S, BasicStateAction<S>> = {
+    		pending = nil,
+    		dispatch = nil,
+    		lastRenderedReducer = nil, 
+    		lastRenderedState = aD :: any,
+    	}
+    	
+    	aF.lastRenderedReducer = basicStateReducer
+    	aE.queue = aF
+    
+    	
+    	local aG = al
+    	local aH: Dispatch<BasicStateAction<S>> = function(aH, ...)
+    		
+    		dispatchAction(aG, aF :: UpdateQueue<any, any>, aH, ...)
+    	end :: any
+    	aF.dispatch = aH
+    	
+    	return aE.memoizedState, aH
+    end
+    
+    function updateState<S>(aD: (() -> S) | S): (S, Dispatch<BasicStateAction<S>>)
+    	return updateReducer(basicStateReducer, aD)
+    end
+    
+    function rerenderState<S>(aD: (() -> S) | S): (S, Dispatch<BasicStateAction<S>>)
+    	return rerenderReducer(basicStateReducer, aD)
+    end
+    
+    local function pushEffect(aD, aE, aF, aG)
+    	local aH: Effect = {
+    		tag = aD,
+    		create = aE,
+    		destroy = aF,
+    		deps = aG,
+    		
+    		next = nil :: any,
+    	}
+    	local aI: FunctionComponentUpdateQueue =
+    		al.updateQueue :: any
+    	if aI == nil then
+    		
+    		
+    		aI = {
+    			lastEffect = nil,
+    		}
+    		al.updateQueue = aI
+    		aH.next = aH
+    		aI.lastEffect = aH
+    	else
+    		local aJ = aI.lastEffect
+    		if aJ == nil then
+    			aI.lastEffect = aH
+    			aH.next = aH
+    		else
+    			local aK = aJ.next
+    			aJ.next = aH
+    			aH.next = aK
+    			aI.lastEffect = aH
+    		end
+    	end
+    	return aH
+    end
+    
+    
+    function mountBinding<T>(aD: T): (ReactBinding<T>, ReactBindingUpdater<T>)
+    	local aE = mountWorkInProgressHook()
+    	local aF, aG = g(aD)
+    
+    	
+    	aE.memoizedState = { aF :: any, aG :: any }
+    	return aF, aG
+    end
+    
+    function updateBinding<T>(aD: T): (ReactBinding<T>, ReactBindingUpdater<T>)
+    	local aE = updateWorkInProgressHook()
+    	return unpack(aE.memoizedState)
+    end
+    
+    function mountRef<T>(aD: T): { current: T }
+    	local aE = mountWorkInProgressHook()
+    	
+    	local aF: any = f()
+    	aF.current = aD
+    	
+    	
+    	
+    	aE.memoizedState = aF
+    	return aF
+    end
+    
+    function updateRef<T>(aD: T): { current: T }
+    	local aE = updateWorkInProgressHook()
+    	return aE.memoizedState
+    end
+    
+    local function mountEffectImpl(aD, aE, aF, aG): ()
+    	local aH = mountWorkInProgressHook()
+    	
+    	
+    	local aI = aG
+    	al.flags = bit32.bor(al.flags, aD)
+    
+    	aH.memoizedState =
+    		pushEffect(bit32.bor(I, aE), aF, nil, aI)
+    end
+    
+    
+    function updateEffectImpl(aD, aE, aF, aG: Array<any>?): ()
+    	
+    	local aH = updateWorkInProgressHook()
+    	
+    	
+    	local aI = aG
+    	local aJ
+    
+    	if am ~= nil then
+    		local aK = am.memoizedState
+    		aJ = aK.destroy
+    		if aI ~= nil then
+    			local aL = aK.deps
+    			if areHookInputsEqual(aI, aL) then
+    				aH.memoizedState = pushEffect(aE, aF, aJ, aI)
+    				return
+    			end
+    		end
+    	end
+    
+    	al.flags = bit32.bor(al.flags, aD)
+    
+    	aH.memoizedState =
+    		pushEffect(bit32.bor(I, aE), aF, aJ, aI)
+    end
+    
+    local function mountEffect(
+    	
+    	aD: (() -> ()) | (() -> (() -> ())),
+    	aE: Array<any>?
+    ): ()
+    	if a then
+    		
+    		
+    		if type(_G.jest) ~= "nil" or _G.__TESTEZ_RUNNING_TEST__ then
+    			T(al)
+    		end
+    	end
+    
+    	if a and r then
+    		mountEffectImpl(
+    			bit32.bor(H, E, F),
+    			K,
+    			aD,
+    			aE
+    		)
+    	else
+    		mountEffectImpl(
+    			bit32.bor(E, F),
+    			K,
+    			aD,
+    			aE
+    		)
+    	end
+    end
+    
+    local function updateEffect(
+    	
+    	aD: (() -> ()) | (() -> (() -> ())),
+    	aE: Array<any>?
+    ): ()
+    	if a then
+    		
+    		
+    		if type(_G.jest) ~= "nil" or _G.__TESTEZ_RUNNING_TEST__ then
+    			T(al)
+    		end
+    	end
+    	updateEffectImpl(E, K, aD, aE)
+    end
+    
+    local function mountLayoutEffect(
+    	
+    	aD: (() -> ()) | (() -> (() -> ())),
+    	aE: Array<any>?
+    ): ()
+    	if a and r then
+    		mountEffectImpl(
+    			bit32.bor(G, D),
+    			J,
+    			aD,
+    			aE
+    		)
+    	else
+    		mountEffectImpl(D, J, aD, aE)
+    	end
+    end
+    
+    local function updateLayoutEffect(
+    	
+    	aD: (() -> ()) | (() -> (() -> ())),
+    	aE: Array<any>?
+    ): ()
+    	updateEffectImpl(D, J, aD, aE)
+    end
+    
+    function imperativeHandleEffect<T>(
+    	aD: () -> T,
+    	aE: { current: T | nil } | ((inst: T | nil) -> ...any) | nil
+    	
+    ): nil | (() -> ...any
+    )	if aE ~= nil and type(aE) == "function" then
+    		local aF = aE
+    		local aG = aD()
+    		aF(aG)
+    		return function()
+    			return aF(nil)
+    		end
+    	elseif aE ~= nil then
+    		local aF = aE :: any
+    		
+    		if a then
+    			
+    			
+    			
+    			
+    			local aG = getmetatable(aF) ~= nil
+    				and #e.keys(aF) == 0
+    			if not aG then
+    				h.error(
+    [[Expected useImperativeHandle() first argument to either be a ref callback or React.createRef() object. Instead received: %s.]]
+    ,
+    					"an object with keys {"
+    						.. c.join(e.keys(aF), ", ")
+    						.. "}"
+    				)
+    			end
+    		end
+    		local aG = aD()
+    		aF.current = aG
+    		return function()
+    			aF.current = nil
+    		end
+    	
+    	else
+    		return nil
+    	end
+    end
+    
+    function mountImperativeHandle<T>(
+    	aD: { current: T | nil } | ((inst: T | nil) -> ...any) | nil,
+    	aE: () -> T,
+    	aF: Array<any> | nil
+    ): ()
+    	if a then
+    		if type(aE) ~= "function" then
+    			h.error(
+    [[Expected useImperativeHandle() second argument to be a function that creates a handle. Instead received: %s.]]
+    ,
+    				
+    				if aE ~= nil then type(aE) else "nil"
+    				
+    			)
+    		end
+    	end
+    	
+    	local aG = if aF ~= nil then c.concat(aF, { aD }) else nil
+    
+    	if a and r then
+    		return mountEffectImpl(
+    			bit32.bor(G, D),
+    			J,
+    			function()
+    				return imperativeHandleEffect(aE, aD)
+    			end,
+    			aG
+    		)
+    	else
+    		return mountEffectImpl(D, J, function()
+    			return imperativeHandleEffect(aE, aD)
+    		end, aG)
+    	end
+    end
+    
+    function updateImperativeHandle<T>(
+    	aD: { current: T | nil } | ((inst: T | nil) -> ...any) | nil,
+    	aE: () -> T,
+    	aF: Array<any> | nil
+    ): ()
+    	if a then
+    		if type(aE) ~= "function" then
+    			local aG = "nil"
+    			if aE then
+    				aG = type(aE)
+    			end
+    			h.error(
+    [[Expected useImperativeHandle() second argument to be a function that creates a handle. Instead received: %s.]]
+    ,
+    				aG
+    			)
+    		end
+    	end
+    
+    	
+    	
+    	local aG
+    	if aF ~= nil then
+    		aG = table.clone(aF)
+    		table.insert(aG, aD)
+    	end
+    
+    	return updateEffectImpl(D, J, function()
+    		return imperativeHandleEffect(aE, aD)
+    	end, aG)
+    end
+    
+    function mountDebugValue<T>(aD: T, aE: nil | ((T) -> any)): ()
+    	
+    	
+    	
+    end
+    
+    local aD = mountDebugValue
+    
+    function mountCallback<T>(aE: T, aF: Array<any> | nil): T
+    	local aG = mountWorkInProgressHook()
+    	local aH = aF
+    	
+    	aG.memoizedState = { aE :: any, aH :: any }
+    	return aE
+    end
+    
+    function updateCallback<T>(aE: T, aF: Array<any> | nil): T
+    	local aG = updateWorkInProgressHook()
+    	local aH = aF
+    	local aI = aG.memoizedState
+    	if aI ~= nil then
+    		if aH ~= nil then
+    			
+    			local aJ: Array<any> = aI[2]
+    			if areHookInputsEqual(aH, aJ) then
+    				return aI[1]
+    			end
+    		end
+    	end
+    	
+    	aG.memoizedState = { aE :: any, aH :: any }
+    	return aE
+    end
+    
+    
+    function mountMemo<T...>(aE: () -> T..., aF: Array<any> | nil): ...any
+    	local aG = mountWorkInProgressHook()
+    
+    	
+    	local aH = aF
+    	
+    	local aI = { aE() }
+    	aG.memoizedState = { aI :: any, aH }
+    	return unpack(aI)
+    end
+    
+    
+    function updateMemo<T...>(aE: () -> T..., aF: Array<any> | nil): ...any
+    	local aG = updateWorkInProgressHook()
+    	
+    	local aH = aF
+    	local aI = aG.memoizedState
+    	if aI ~= nil then
+    		
+    		if aH ~= nil then
+    			local aJ: Array<any> = aI[2]
+    			if areHookInputsEqual(aH, aJ) then
+    				return unpack(aI[1])
+    			end
+    		end
+    	end
+    	
+    	local aJ = { aE() }
+    	aG.memoizedState = { aJ :: any, aH }
+    	return unpack(aJ)
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local aE = false
+    aj.getIsUpdatingOpaqueValueInRenderPhaseInDEV = function(): boolean?
+    	if a then
+    		return aE
+    	end
+    	return nil
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    function mountOpaqueIdentifier()
+    	local aF
+    	if a then
+    		h.warn("!!! unimplemented: warnOnOpaqueIdentifierAccessInDEV")
+    	
+    	
+    	
+    	
+    	else
+    		aF = Z
+    	end
+    
+    	if X() then
+    		unimplemented("ReactFiberHooks: getIsHydrating() true")
+    		return nil
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	else
+    		local aG = aF()
+    		mountState(aG)
+    		return aG
+    	end
+    end
+    
+    function updateOpaqueIdentifier(): OpaqueIDType
+    	local aF, aG = updateState(nil)
+    	return aF
+    end
+    
+    function rerenderOpaqueIdentifier(): OpaqueIDType
+    	local aF, aG = rerenderState(nil)
+    	return aF
+    end
+    
+    function dispatchAction<S, A>(aF: Fiber, aG: UpdateQueue<S, A>, aH: A, ...): ()
+    	if a then
+    		local aI = select("#", ...)
+    		local aJ
+    		if aI == 1 then
+    			aJ = select(1, ...)
+    		end
+    		if type(aJ) == "function" then
+    			h.error(
+    [[State updates from the useState() and useReducer() Hooks don't support the second callback argument. To execute a side effect after rendering, declare it in the component body with useEffect().]]			
+    
+    
+    )
+    		end
+    	end
+    
+    	local aI = P()
+    	local aJ = Q(aF)
+    
+    	local aK: Update<S, A> = {
+    		lane = aJ,
+    		action = aH,
+    		eagerReducer = nil,
+    		eagerState = nil,
+    		next = nil :: any,
+    	}
+    
+    	
+    	local aL = aG.pending
+    	if aL == nil then
+    		
+    		aK.next = aK
+    	else
+    		aK.next = aL.next
+    		aL.next = aK
+    	end
+    	aG.pending = aK
+    
+    	local aM = aF.alternate
+    	if
+    		aF == al
+    		or (aM ~= nil and aM == al)
+    	then
+    		
+    		
+    		
+    		ao = true
+    		ap = true
+    	else
+    		if
+    			aF.lanes == u and (aM == nil or aM.lanes == u)
+    		then
+    			
+    			
+    			
+    			local aN = aG.lastRenderedReducer
+    			if aN ~= nil then
+    				local aO
+    				if a then
+    					aO = ag.current
+    					ag.current =
+    						aA
+    				end
+    				
+    				local aP: S = aG.lastRenderedState :: any
+    				
+    				local aQ, aR = pcall(aN, aP, aH)
+    				
+    				
+    				
+    				
+    				if aQ then
+    					aK.eagerReducer = aN
+    					aK.eagerState = aR
+    				end
+    
+    				
+    				if a then
+    					ag.current = aO
+    				end
+    
+    				if is(aR, aP) then
+    					
+    					
+    					
+    					
+    					return
+    				end
+    				
+    				if not aQ then
+    					
+    				end
+    			end
+    		end
+    		if a then
+    			
+    			
+    			if type(_G.jest) ~= "nil" or _G.__TESTEZ_RUNNING_TEST__ then
+    				O(aF)
+    				M(aF)
+    			end
+    		end
+    		N(aF, aJ, aI)
+    	end
+    
+    	if a then
+    		if o then
+    			if bit32.band(aF.mode, s) ~= 0 then
+    				local aN = V(aF.type) or "Unknown"
+    				ae(aN, aJ, aH)
+    			end
+    		end
+    	end
+    
+    	if p then
+    		af(aF, aJ)
+    	end
+    
+    	return
+    end
+    
+    
+    local aF: Dispatcher = {
+    	readContext = B,
+    
+    	useCallback = throwInvalidHookError :: any,
+    	useContext = throwInvalidHookError :: any,
+    	useEffect = throwInvalidHookError :: any,
+    	useImperativeHandle = throwInvalidHookError :: any,
+    	useLayoutEffect = throwInvalidHookError :: any,
+    	useMemo = throwInvalidHookError :: any,
+    	useReducer = throwInvalidHookError :: any,
+    	useRef = throwInvalidHookError :: any,
+    	useBinding = throwInvalidHookError :: any,
+    	useState = throwInvalidHookError :: any,
+    	useDebugValue = throwInvalidHookError :: any,
+    	
+    	
+    	useMutableSource = throwInvalidHookError :: any,
+    	useOpaqueIdentifier = throwInvalidHookError :: any,
+    
+    	unstable_isNewReconciler = q,
+    }
+    aj.ContextOnlyDispatcher = aF
+    
+    local aG: Dispatcher = {
+    	readContext = B,
+    
+    	useCallback = mountCallback,
+    	useContext = B,
+    	useEffect = mountEffect,
+    	useImperativeHandle = mountImperativeHandle,
+    	useLayoutEffect = mountLayoutEffect,
+    	
+    	useMemo = mountMemo :: any,
+    	useReducer = mountReducer,
+    	useRef = mountRef,
+    	useBinding = mountBinding,
+    	useState = mountState,
+    	useDebugValue = mountDebugValue,
+    	
+    	
+    	useMutableSource = mountMutableSource,
+    	useOpaqueIdentifier = mountOpaqueIdentifier,
+    
+    	unstable_isNewReconciler = q,
+    }
+    
+    local aH: Dispatcher = {
+    	readContext = B,
+    
+    	useCallback = updateCallback,
+    	useContext = B,
+    	useEffect = updateEffect,
+    	useImperativeHandle = updateImperativeHandle,
+    	useLayoutEffect = updateLayoutEffect,
+    	
+    	useMemo = updateMemo :: any,
+    	useReducer = updateReducer,
+    	useRef = updateRef,
+    	useBinding = updateBinding,
+    	useState = updateState,
+    	useDebugValue = aD,
+    	
+    	
+    	useMutableSource = updateMutableSource,
+    	useOpaqueIdentifier = updateOpaqueIdentifier,
+    
+    	unstable_isNewReconciler = q,
+    }
+    
+    local aI: Dispatcher = {
+    	readContext = B,
+    
+    	useCallback = updateCallback,
+    	useContext = B,
+    	useEffect = updateEffect,
+    	useImperativeHandle = updateImperativeHandle,
+    	useLayoutEffect = updateLayoutEffect,
+    	
+    	useMemo = updateMemo :: any,
+    	useReducer = rerenderReducer,
+    	useRef = updateRef,
+    	useBinding = updateBinding,
+    	useState = rerenderState,
+    	useDebugValue = aD,
+    	
+    	
+    	useMutableSource = updateMutableSource,
+    	useOpaqueIdentifier = rerenderOpaqueIdentifier,
+    
+    	unstable_isNewReconciler = q,
+    }
+    
+    if a then
+    	local aJ = function()
+    		h.error(
+    [[Context can only be read while React is rendering. In classes, you can read it in the render method or getDerivedStateFromProps. In function components, you can read it directly in the function body, but not inside Hooks like useReducer() or useMemo().]]		
+    
+    
+    
+    )
+    	end
+    
+    	local aK = function()
+    		h.error(
+    [[Do not call Hooks inside useEffect(...), useMemo(...), or other built-in Hooks. You can only call Hooks at the top level of your React function. For more information, see https://reactjs.org/link/rules-of-hooks]]		
+    
+    
+    
+    )
+    	end
+    
+    	av = {
+    		readContext = function<T>(aL: ReactContext<T>, aM: number | boolean | nil): T
+    			return B(aL, aM)
+    		end,
+    		useCallback = function<T>(aL: T, aM: Array<any> | nil): T
+    			ar = "useCallback"
+    			mountHookTypesDev()
+    			checkDepsAreArrayDev(aM)
+    			return mountCallback(aL, aM)
+    		end,
+    		useContext = function<T>(aL: ReactContext<T>, aM: nil | number | boolean): T
+    			ar = "useContext"
+    			mountHookTypesDev()
+    			return B(aL, aM)
+    		end,
+    		useEffect = function(
+    			
+    			aL: (() -> ()) | (() -> (() -> ())),
+    			aM: Array<any>?
+    		): ()
+    			ar = "useEffect"
+    			mountHookTypesDev()
+    			checkDepsAreArrayDev(aM)
+    			return mountEffect(aL, aM)
+    		end,
+    		useImperativeHandle = function<T>(
+    			aL: { current: T | nil } | ((inst: T | nil) -> ...any) | nil,
+    			aM: () -> T,
+    			aN: Array<any> | nil
+    		): ()
+    			ar = "useImperativeHandle"
+    			mountHookTypesDev()
+    			checkDepsAreArrayDev(aN)
+    			return mountImperativeHandle(aL, aM, aN)
+    		end,
+    		useLayoutEffect = function(
+    			
+    			aL: (() -> ()) | (() -> (() -> ())),
+    			aM: Array<any>?
+    		): ()
+    			ar = "useLayoutEffect"
+    			mountHookTypesDev()
+    			checkDepsAreArrayDev(aM)
+    			return mountLayoutEffect(aL, aM)
+    		end,
+    		
+    		useMemo = function<T...>(aL: () -> T..., aM: Array<any> | nil): ...any
+    			ar = "useMemo"
+    			mountHookTypesDev()
+    			checkDepsAreArrayDev(aM)
+    			local aN = ag.current
+    			ag.current = az
+    			
+    			
+    
+    
+    local aO = { pcall(mountMemo, aL, aM) }
+    			ag.current = aN
+    			if not aO[1] then
+    				error(aO[2])
+    			end
+    			
+    			return unpack(aO, 2)
+    		end :: any,
+    		useReducer = function<S, I, A>(
+    			aL: (S, A) -> S,
+    			aM: I,
+    			aN: ((I) -> S)?
+    		): (S, Dispatch<A>)
+    			ar = "useReducer"
+    			mountHookTypesDev()
+    			local aO = ag.current
+    			ag.current = az
+    			local aP, aQ, aR = pcall(mountReducer, aL, aM, aN)
+    			
+    			ag.current = aO
+    			if not aP then
+    				error(aQ)
+    			end
+    			
+    			return aQ, aR
+    		end,
+    		useRef = function<T>(aL: T): { current: T }
+    			ar = "useRef"
+    			mountHookTypesDev()
+    			return mountRef(aL)
+    		end,
+    		
+    		useBinding = function<T>(aL: T): (ReactBinding<T>, ReactBindingUpdater<T>)
+    			ar = "useBinding"
+    			mountHookTypesDev()
+    			return mountBinding(aL)
+    		end,
+    		useState = function<S>(aL: (() -> S) | S): (S, Dispatch<BasicStateAction<S>>)
+    			ar = "useState"
+    			mountHookTypesDev()
+    			local aM = ag.current
+    			ag.current = az
+    			
+    			local aN, aO, aP = pcall(mountState, aL)
+    			ag.current = aM
+    			if not aN then
+    				error(aO)
+    			end
+    			
+    			return aO, aP
+    		end,
+    		useDebugValue = function<T>(aL: T, aM: ((value: T) -> any)?): ()
+    			ar = "useDebugValue"
+    			mountHookTypesDev()
+    			return mountDebugValue(aL, aM)
+    		end,
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		useMutableSource = function<Source, Snapshot>(
+    			aL: MutableSource<Source>,
+    			aM: MutableSourceGetSnapshotFn<
+    				Source,
+    				Snapshot
+    			>,
+    			aN: MutableSourceSubscribeFn<
+    				Source,
+    				Snapshot
+    			>
+    		): Snapshot
+    			ar = "useMutableSource"
+    			mountHookTypesDev()
+    			return mountMutableSource(aL, aM, aN)
+    		end,
+    		useOpaqueIdentifier = function()
+    			ar = "useOpaqueIdentifier"
+    			mountHookTypesDev()
+    			return mountOpaqueIdentifier()
+    		end,
+    
+    		unstable_isNewReconciler = q,
+    	}
+    
+    	aw = {
+    		readContext = function<T>(aL: ReactContext<T>, aM: number | boolean | nil): T
+    			return B(aL, aM)
+    		end,
+    		useCallback = function<T>(aL: T, aM: Array<any> | nil): T
+    			ar = "useCallback"
+    			updateHookTypesDev()
+    			checkDepsAreArrayDev(aM)
+    			return mountCallback(aL, aM)
+    		end,
+    		useContext = function<T>(aL: ReactContext<T>, aM: nil | number | boolean): T
+    			ar = "useContext"
+    			updateHookTypesDev()
+    			return B(aL, aM)
+    		end,
+    		useEffect = function(
+    			
+    			aL: (() -> ()) | (() -> (() -> ())),
+    			aM: Array<any>?
+    		): ()
+    			ar = "useEffect"
+    			updateHookTypesDev()
+    			return mountEffect(aL, aM)
+    		end,
+    		useImperativeHandle = function<T>(
+    			aL: { current: T | nil } | ((inst: T | nil) -> ...any) | nil,
+    			aM: () -> T,
+    			aN: Array<any> | nil
+    		): ()
+    			ar = "useImperativeHandle"
+    			updateHookTypesDev()
+    			return mountImperativeHandle(aL, aM, aN)
+    		end,
+    		useLayoutEffect = function(
+    			
+    			aL: (() -> ()) | (() -> (() -> ())),
+    			aM: Array<any>?
+    		): ()
+    			ar = "useLayoutEffect"
+    			updateHookTypesDev()
+    			return mountLayoutEffect(aL, aM)
+    		end,
+    		
+    		useMemo = function<T...>(aL: () -> T..., aM: Array<any> | nil): ...any
+    			ar = "useMemo"
+    			updateHookTypesDev()
+    			local aN = ag.current
+    			ag.current = az
+    			
+    			
+    
+    
+    local aO = { pcall(mountMemo, aL, aM) }
+    			ag.current = aN
+    			if not aO[1] then
+    				error(aO[2])
+    			end
+    			return unpack(aO, 2)
+    		end :: any,
+    		useReducer = function<S, I, A>(
+    			aL: (S, A) -> S,
+    			aM: I,
+    			aN: ((I) -> S)?
+    		): (S, Dispatch<A>)
+    			ar = "useReducer"
+    			updateHookTypesDev()
+    			local aO = ag.current
+    			ag.current = az
+    			local aP, aQ, aR = pcall(mountReducer, aL, aM, aN)
+    			
+    			ag.current = aO
+    			if not aP then
+    				error(aQ)
+    			end
+    			
+    			return aQ, aR
+    		end,
+    		useRef = function<T>(aL: T): { current: T }
+    			ar = "useRef"
+    			updateHookTypesDev()
+    			return mountRef(aL)
+    		end,
+    		
+    		useBinding = function<T>(aL: T): (ReactBinding<T>, ReactBindingUpdater<T>)
+    			ar = "useBinding"
+    			updateHookTypesDev()
+    			return mountBinding(aL)
+    		end,
+    		useState = function<S>(aL: (() -> S) | S): (S, Dispatch<BasicStateAction<S>>)
+    			ar = "useState"
+    			updateHookTypesDev()
+    			local aM = ag.current
+    			ag.current = az
+    			
+    			local aN, aO, aP = pcall(mountState, aL)
+    			ag.current = aM
+    			if not aN then
+    				error(aO)
+    			end
+    			
+    			return aO, aP
+    		end,
+    		useDebugValue = function<T>(aL: T, aM: ((value: T) -> any)?): ()
+    			ar = "useDebugValue"
+    			updateHookTypesDev()
+    			return mountDebugValue(aL, aM)
+    		end,
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		useMutableSource = function<Source, Snapshot>(
+    			aL: MutableSource<Source>,
+    			aM: MutableSourceGetSnapshotFn<
+    				Source,
+    				Snapshot
+    			>,
+    			aN: MutableSourceSubscribeFn<
+    				Source,
+    				Snapshot
+    			>
+    		): Snapshot
+    			ar = "useMutableSource"
+    			updateHookTypesDev()
+    			return mountMutableSource(aL, aM, aN)
+    		end,
+    		useOpaqueIdentifier = function()
+    			ar = "useOpaqueIdentifier"
+    			updateHookTypesDev()
+    			return mountOpaqueIdentifier()
+    		end,
+    
+    		unstable_isNewReconciler = q,
+    	}
+    
+    	ax = {
+    		readContext = function<T>(aL: ReactContext<T>, aM: number | boolean | nil): T
+    			return B(aL, aM)
+    		end,
+    		useCallback = function<T>(aL: T, aM: Array<any> | nil): T
+    			ar = "useCallback"
+    			updateHookTypesDev()
+    			return updateCallback(aL, aM)
+    		end,
+    		useContext = function<T>(aL: ReactContext<T>, aM: nil | number | boolean): T
+    			ar = "useContext"
+    			updateHookTypesDev()
+    			return B(aL, aM)
+    		end,
+    		useEffect = function(
+    			
+    			aL: (() -> ()) | (() -> (() -> ())),
+    			aM: Array<any>?
+    		): ()
+    			ar = "useEffect"
+    			updateHookTypesDev()
+    			return updateEffect(aL, aM)
+    		end,
+    		useImperativeHandle = function<T>(
+    			aL: { current: T | nil } | ((inst: T | nil) -> ...any) | nil,
+    			aM: () -> T,
+    			aN: Array<any> | nil
+    		): ()
+    			ar = "useImperativeHandle"
+    			updateHookTypesDev()
+    			return updateImperativeHandle(aL, aM, aN)
+    		end,
+    		useLayoutEffect = function(
+    			
+    			aL: (() -> ()) | (() -> (() -> ())),
+    			aM: Array<any>?
+    		): ()
+    			ar = "useLayoutEffect"
+    			updateHookTypesDev()
+    			return updateLayoutEffect(aL, aM)
+    		end,
+    		
+    		useMemo = function<T...>(aL: () -> T..., aM: Array<any> | nil): ...any
+    			ar = "useMemo"
+    			updateHookTypesDev()
+    			local aN = ag.current
+    			ag.current = aA
+    			
+    			
+    
+    
+    local aO = { pcall(updateMemo, aL, aM) }
+    			ag.current = aN
+    			if not aO[1] then
+    				error(aO[2])
+    			end
+    			return unpack(aO, 2)
+    		end :: any,
+    		useReducer = function<S, I, A>(
+    			aL: (S, A) -> S,
+    			aM: I,
+    			aN: ((I) -> S)?
+    		): (S, Dispatch<A>)
+    			ar = "useReducer"
+    			updateHookTypesDev()
+    			local aO = ag.current
+    			ag.current = aA
+    			local aP, aQ, aR = pcall(updateReducer, aL, aM, aN)
+    			
+    			ag.current = aO
+    			if not aP then
+    				error(aQ)
+    			end
+    			
+    			return aQ, aR
+    		end,
+    		useRef = function<T>(aL: T): { current: T }
+    			ar = "useRef"
+    			updateHookTypesDev()
+    			return updateRef(aL)
+    		end,
+    		
+    		useBinding = function<T>(aL: T): (ReactBinding<T>, ReactBindingUpdater<T>)
+    			ar = "useBinding"
+    			updateHookTypesDev()
+    			return updateBinding(aL)
+    		end,
+    		useState = function<S>(aL: (() -> S) | S): (S, Dispatch<BasicStateAction<S>>)
+    			ar = "useState"
+    			updateHookTypesDev()
+    			local aM = ag.current
+    			ag.current = aA
+    			
+    			local aN, aO, aP = pcall(updateState, aL)
+    			ag.current = aM
+    			if not aN then
+    				error(aO)
+    			end
+    			
+    			return aO, aP
+    		end,
+    		useDebugValue = function<T>(aL: T, aM: ((value: T) -> any)?): ()
+    			ar = "useDebugValue"
+    			updateHookTypesDev()
+    			return aD(aL, aM)
+    		end,
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		useMutableSource = function<Source, Snapshot>(
+    			aL: MutableSource<Source>,
+    			aM: MutableSourceGetSnapshotFn<
+    				Source,
+    				Snapshot
+    			>,
+    			aN: MutableSourceSubscribeFn<
+    				Source,
+    				Snapshot
+    			>
+    		): Snapshot
+    			ar = "useMutableSource"
+    			updateHookTypesDev()
+    			return updateMutableSource(aL, aM, aN)
+    		end,
+    		useOpaqueIdentifier = function(): OpaqueIDType
+    			ar = "useOpaqueIdentifier"
+    			updateHookTypesDev()
+    			return updateOpaqueIdentifier()
+    		end,
+    
+    		unstable_isNewReconciler = q,
+    	}
+    
+    	ay = {
+    		readContext = function<T>(aL: ReactContext<T>, aM: number | boolean | nil): T
+    			return B(aL, aM)
+    		end,
+    		useCallback = function<T>(aL: T, aM: Array<any> | nil): T
+    			ar = "useCallback"
+    			updateHookTypesDev()
+    			return mountCallback(aL, aM)
+    		end,
+    		useContext = function<T>(aL: ReactContext<T>, aM: nil | number | boolean): T
+    			ar = "useContext"
+    			updateHookTypesDev()
+    			return B(aL, aM)
+    		end,
+    		useEffect = function(
+    			
+    			aL: (() -> ()) | (() -> (() -> ())),
+    			aM: Array<any> | nil
+    		): ()
+    			ar = "useEffect"
+    			updateHookTypesDev()
+    			return updateEffect(aL, aM)
+    		end,
+    		useImperativeHandle = function<T>(
+    			aL: { current: T | nil } | ((inst: T | nil) -> ...any) | nil,
+    			aM: () -> T,
+    			aN: Array<any> | nil
+    		): ()
+    			ar = "useImperativeHandle"
+    			updateHookTypesDev()
+    			return updateImperativeHandle(aL, aM, aN)
+    		end,
+    		useLayoutEffect = function(
+    			
+    			aL: (() -> ()) | (() -> (() -> ())),
+    			aM: Array<any>?
+    		): ()
+    			ar = "useLayoutEffect"
+    			updateHookTypesDev()
+    			return updateLayoutEffect(aL, aM)
+    		end,
+    		
+    		useMemo = function<T...>(aL: () -> T..., aM: Array<any> | nil): ...any
+    			ar = "useMemo"
+    			updateHookTypesDev()
+    			local aN = ag.current
+    			ag.current = aB
+    			
+    			
+    
+    
+    local aO = { pcall(updateMemo, aL, aM) }
+    			ag.current = aN
+    			if not aO[1] then
+    				error(aO[2])
+    			end
+    			return unpack(aO, 2)
+    		end :: any,
+    		useReducer = function<S, I, A>(
+    			aL: (S, A) -> S,
+    			aM: I,
+    			aN: ((I) -> S)?
+    		): (S, Dispatch<A>)
+    			ar = "useReducer"
+    			updateHookTypesDev()
+    			local aO = ag.current
+    			ag.current = aB
+    			local aP, aQ, aR =
+    				pcall(rerenderReducer, aL, aM, aN)
+    			
+    			ag.current = aO
+    			if not aP then
+    				error(aQ)
+    			end
+    			
+    			return aQ, aR
+    		end,
+    		useRef = function<T>(aL: T): { current: T }
+    			ar = "useRef"
+    			updateHookTypesDev()
+    			return updateRef(aL)
+    		end,
+    		
+    		useBinding = function<T>(aL: T): (ReactBinding<T>, ReactBindingUpdater<T>)
+    			ar = "useBinding"
+    			updateHookTypesDev()
+    			return updateBinding(aL)
+    		end,
+    		useState = function<S>(aL: (() -> S) | S): (S, Dispatch<BasicStateAction<S>>)
+    			ar = "useState"
+    			updateHookTypesDev()
+    			local aM = ag.current
+    			ag.current = aB
+    			
+    			local aN, aO, aP = pcall(rerenderState, aL)
+    			ag.current = aM
+    			if not aN then
+    				error(aO)
+    			end
+    			
+    			return aO, aP
+    		end,
+    		useDebugValue = function<T>(aL: T, aM: ((value: T) -> any)?): ()
+    			ar = "useDebugValue"
+    			updateHookTypesDev()
+    			return aD(aL, aM)
+    		end,
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		useMutableSource = function<Source, Snapshot>(
+    			aL: MutableSource<Source>,
+    			aM: MutableSourceGetSnapshotFn<
+    				Source,
+    				Snapshot
+    			>,
+    			aN: MutableSourceSubscribeFn<
+    				Source,
+    				Snapshot
+    			>
+    		): Snapshot
+    			ar = "useMutableSource"
+    			updateHookTypesDev()
+    			return updateMutableSource(aL, aM, aN)
+    		end,
+    		useOpaqueIdentifier = function(): OpaqueIDType
+    			ar = "useOpaqueIdentifier"
+    			updateHookTypesDev()
+    			return rerenderOpaqueIdentifier()
+    		end,
+    
+    		unstable_isNewReconciler = q,
+    	}
+    
+    	az = {
+    		readContext = function<T>(aL: ReactContext<T>, aM: number | boolean | nil): T
+    			aJ()
+    			return B(aL, aM)
+    		end,
+    		useCallback = function<T>(aL: T, aM: Array<any> | nil): T
+    			ar = "useCallback"
+    			aK()
+    			mountHookTypesDev()
+    			return mountCallback(aL, aM)
+    		end,
+    		useContext = function<T>(aL: ReactContext<T>, aM: nil | number | boolean): T
+    			ar = "useContext"
+    			aK()
+    			mountHookTypesDev()
+    			return B(aL, aM)
+    		end,
+    		useEffect = function(
+    			
+    			aL: (() -> ()) | (() -> (() -> ())),
+    			aM: Array<any> | nil
+    		): ()
+    			ar = "useEffect"
+    			aK()
+    			mountHookTypesDev()
+    			return mountEffect(aL, aM)
+    		end,
+    		useImperativeHandle = function<T>(
+    			aL: { current: T | nil } | ((inst: T | nil) -> ...any) | nil,
+    			aM: () -> T,
+    			aN: Array<any> | nil
+    		): ()
+    			ar = "useImperativeHandle"
+    			aK()
+    			mountHookTypesDev()
+    			return mountImperativeHandle(aL, aM, aN)
+    		end,
+    		useLayoutEffect = function(
+    			
+    			aL: (() -> ()) | (() -> (() -> ())),
+    			aM: Array<any> | nil
+    		): ()
+    			ar = "useLayoutEffect"
+    			aK()
+    			mountHookTypesDev()
+    			return mountLayoutEffect(aL, aM)
+    		end,
+    		
+    		useMemo = function<T...>(aL: () -> T..., aM: Array<any> | nil): ...any
+    			ar = "useMemo"
+    			aK()
+    			mountHookTypesDev()
+    			local aN = ag.current
+    			ag.current = az
+    			
+    			
+    
+    
+    local aO = { pcall(mountMemo, aL, aM) }
+    			ag.current = aN
+    			if not aO[1] then
+    				error(aO[2])
+    			end
+    			return unpack(aO, 2)
+    		end :: any,
+    		useReducer = function<S, I, A>(
+    			aL: (S, A) -> S,
+    			aM: I,
+    			aN: ((I) -> S)?
+    		): (S, Dispatch<A>)
+    			ar = "useReducer"
+    			aK()
+    			mountHookTypesDev()
+    			local aO = ag.current
+    			ag.current = az
+    			local aP, aQ, aR = pcall(mountReducer, aL, aM, aN)
+    			
+    			ag.current = aO
+    			if not aP then
+    				error(aQ)
+    			end
+    			
+    			return aQ, aR
+    		end,
+    		useRef = function<T>(aL: T): { current: T }
+    			ar = "useRef"
+    			aK()
+    			mountHookTypesDev()
+    			return mountRef(aL)
+    		end,
+    		
+    		useBinding = function<T>(aL: T): (ReactBinding<T>, ReactBindingUpdater<T>)
+    			ar = "useBinding"
+    			aK()
+    			mountHookTypesDev()
+    			return mountBinding(aL)
+    		end,
+    		useState = function<S>(aL: (() -> S) | S): (S, Dispatch<BasicStateAction<S>>)
+    			ar = "useState"
+    			aK()
+    			mountHookTypesDev()
+    			local aM = ag.current
+    			ag.current = az
+    			
+    			local aN, aO, aP = pcall(mountState, aL)
+    			ag.current = aM
+    			if not aN then
+    				error(aO)
+    			end
+    			
+    			return aO, aP
+    		end,
+    		useDebugValue = function<T>(aL: T, aM: ((value: T) -> any)?): ()
+    			ar = "useDebugValue"
+    			aK()
+    			mountHookTypesDev()
+    			return mountDebugValue(aL, aM)
+    		end,
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		useMutableSource = function<Source, Snapshot>(
+    			aL: MutableSource<Source>,
+    			aM: MutableSourceGetSnapshotFn<
+    				Source,
+    				Snapshot
+    			>,
+    			aN: MutableSourceSubscribeFn<
+    				Source,
+    				Snapshot
+    			>
+    		): Snapshot
+    			ar = "useMutableSource"
+    			aK()
+    			mountHookTypesDev()
+    			return mountMutableSource(aL, aM, aN)
+    		end,
+    		useOpaqueIdentifier = function(): OpaqueIDType
+    			ar = "useOpaqueIdentifier"
+    			aK()
+    			mountHookTypesDev()
+    			return mountOpaqueIdentifier()
+    		end,
+    
+    		unstable_isNewReconciler = q,
+    	}
+    
+    	aA = {
+    		readContext = function<T>(aL: ReactContext<T>, aM: number | boolean | nil): T
+    			aJ()
+    			return B(aL, aM)
+    		end,
+    		useCallback = function<T>(aL: T, aM: Array<any> | nil): T
+    			ar = "useCallback"
+    			aK()
+    			updateHookTypesDev()
+    			return mountCallback(aL, aM)
+    		end,
+    		useContext = function<T>(aL: ReactContext<T>, aM: nil | number | boolean): T
+    			ar = "useContext"
+    			aK()
+    			updateHookTypesDev()
+    			return B(aL, aM)
+    		end,
+    		useEffect = function(
+    			
+    			aL: (() -> ()) | (() -> (() -> ())),
+    			aM: Array<any> | nil
+    		): ()
+    			ar = "useEffect"
+    			aK()
+    			updateHookTypesDev()
+    			return updateEffect(aL, aM)
+    		end,
+    		useImperativeHandle = function<T>(
+    			aL: { current: T | nil } | ((inst: T | nil) -> ...any) | nil,
+    			aM: () -> T,
+    			aN: Array<any> | nil
+    		): ()
+    			ar = "useImperativeHandle"
+    			aK()
+    			updateHookTypesDev()
+    			return updateImperativeHandle(aL, aM, aN)
+    		end,
+    		useLayoutEffect = function(
+    			
+    			aL: (() -> ()) | (() -> (() -> ())),
+    			aM: Array<any>?
+    		): ()
+    			ar = "useLayoutEffect"
+    			aK()
+    			updateHookTypesDev()
+    			return updateLayoutEffect(aL, aM)
+    		end,
+    		
+    		useMemo = function<T...>(aL: () -> T..., aM: Array<any> | nil): ...any
+    			ar = "useMemo"
+    			aK()
+    			updateHookTypesDev()
+    			local aN = ag.current
+    			ag.current = aA
+    			
+    			
+    
+    
+    local aO = { pcall(updateMemo, aL, aM) }
+    			ag.current = aN
+    			if not aO[1] then
+    				error(aO[2])
+    			end
+    			return unpack(aO, 2)
+    		end :: any,
+    		useReducer = function<S, I, A>(
+    			aL: (S, A) -> S,
+    			aM: I,
+    			aN: ((I) -> S)?
+    		): (S, Dispatch<A>)
+    			ar = "useReducer"
+    			aK()
+    			updateHookTypesDev()
+    			local aO = ag.current
+    			ag.current = aA
+    			local aP, aQ, aR = pcall(updateReducer, aL, aM, aN)
+    			
+    			ag.current = aO
+    
+    			if not aP then
+    				error(aQ)
+    			end
+    			
+    			return aQ, aR
+    		end,
+    		useRef = function<T>(aL: T): { current: T }
+    			ar = "useRef"
+    			aK()
+    			updateHookTypesDev()
+    			return updateRef(aL)
+    		end,
+    		
+    		useBinding = function<T>(aL: T): (ReactBinding<T>, ReactBindingUpdater<T>)
+    			ar = "useBinding"
+    			aK()
+    			updateHookTypesDev()
+    			return updateBinding(aL)
+    		end,
+    		useState = function<S>(aL: (() -> S) | S): (S, Dispatch<BasicStateAction<S>>)
+    			ar = "useState"
+    			aK()
+    			updateHookTypesDev()
+    			local aM = ag.current
+    			ag.current = aA
+    			
+    			local aN, aO, aP = pcall(updateState, aL)
+    			ag.current = aM
+    			if not aN then
+    				error(aO)
+    			end
+    			
+    			return aO, aP
+    		end,
+    		useDebugValue = function<T>(aL: T, aM: ((value: T) -> any)?): ()
+    			ar = "useDebugValue"
+    			aK()
+    			updateHookTypesDev()
+    			return aD(aL, aM)
+    		end,
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		useMutableSource = function<Source, Snapshot>(
+    			aL: MutableSource<Source>,
+    			aM: MutableSourceGetSnapshotFn<
+    				Source,
+    				Snapshot
+    			>,
+    			aN: MutableSourceSubscribeFn<
+    				Source,
+    				Snapshot
+    			>
+    		): Snapshot
+    			ar = "useMutableSource"
+    			aK()
+    			updateHookTypesDev()
+    			return updateMutableSource(aL, aM, aN)
+    		end,
+    		useOpaqueIdentifier = function(): OpaqueIDType
+    			ar = "useOpaqueIdentifier"
+    			aK()
+    			updateHookTypesDev()
+    			return updateOpaqueIdentifier()
+    		end,
+    
+    		unstable_isNewReconciler = q,
+    	}
+    
+    	aB = {
+    		readContext = function<T>(aL: ReactContext<T>, aM: number | boolean | nil): T
+    			aJ()
+    			return B(aL, aM)
+    		end,
+    		useCallback = function<T>(aL: T, aM: Array<any> | nil): T
+    			ar = "useCallback"
+    			aK()
+    			updateHookTypesDev()
+    			return updateCallback(aL, aM)
+    		end,
+    		useContext = function<T>(aL: ReactContext<T>, aM: nil | number | boolean): T
+    			ar = "useContext"
+    			aK()
+    			updateHookTypesDev()
+    			return B(aL, aM)
+    		end,
+    		useEffect = function(
+    			
+    			aL: (() -> ()) | (() -> (() -> ())),
+    			aM: Array<any> | nil
+    		): ()
+    			ar = "useEffect"
+    			aK()
+    			updateHookTypesDev()
+    			return updateEffect(aL, aM)
+    		end,
+    		useImperativeHandle = function<T>(
+    			aL: { current: T | nil } | ((inst: T | nil) -> ...any) | nil,
+    			aM: () -> T,
+    			aN: Array<any> | nil
+    		): ()
+    			ar = "useImperativeHandle"
+    			aK()
+    			updateHookTypesDev()
+    			return updateImperativeHandle(aL, aM, aN)
+    		end,
+    		useLayoutEffect = function(
+    			
+    			aL: (() -> ()) | (() -> (() -> ())),
+    			aM: Array<any>?
+    		): ()
+    			ar = "useLayoutEffect"
+    			aK()
+    			updateHookTypesDev()
+    			return updateLayoutEffect(aL, aM)
+    		end,
+    		
+    		useMemo = function<T...>(aL: () -> T..., aM: Array<any> | nil): ...any
+    			ar = "useMemo"
+    			aK()
+    			updateHookTypesDev()
+    			local aN = ag.current
+    			ag.current = aA
+    			
+    			
+    
+    
+    local aO = { pcall(updateMemo, aL, aM) }
+    			ag.current = aN
+    			if not aO[1] then
+    				error(aO[2])
+    			end
+    			return unpack(aO, 2)
+    		end :: any,
+    		useReducer = function<S, I, A>(
+    			aL: (S, A) -> S,
+    			aM: I,
+    			aN: ((I) -> S)?
+    		): (S, Dispatch<A>)
+    			ar = "useReducer"
+    			aK()
+    			updateHookTypesDev()
+    			local aO = ag.current
+    			ag.current = aA
+    			local aP, aQ, aR =
+    				pcall(rerenderReducer, aL, aM, aN)
+    			
+    			ag.current = aO
+    			if not aP then
+    				error(aQ)
+    			end
+    			
+    			return aQ, aR
+    		end,
+    		useRef = function<T>(aL: T): { current: T }
+    			ar = "useRef"
+    			aK()
+    			updateHookTypesDev()
+    			return updateRef(aL)
+    		end,
+    		
+    		useBinding = function<T>(aL: T): (ReactBinding<T>, ReactBindingUpdater<T>)
+    			ar = "useBinding"
+    			aK()
+    			updateHookTypesDev()
+    			return updateBinding(aL)
+    		end,
+    		useState = function<S>(aL: (() -> S) | S): (S, Dispatch<BasicStateAction<S>>)
+    			ar = "useState"
+    			aK()
+    			updateHookTypesDev()
+    			local aM = ag.current
+    			ag.current = aA
+    			
+    			local aN, aO, aP = pcall(rerenderState, aL)
+    			ag.current = aM
+    			if not aN then
+    				error(aO)
+    			end
+    			
+    			return aO, aP
+    		end,
+    		useDebugValue = function<T>(aL: T, aM: ((value: T) -> any)?): ()
+    			ar = "useDebugValue"
+    			aK()
+    			updateHookTypesDev()
+    			return aD(aL, aM)
+    		end,
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		useMutableSource = function<Source, Snapshot>(
+    			aL: MutableSource<Source>,
+    			aM: MutableSourceGetSnapshotFn<
+    				Source,
+    				Snapshot
+    			>,
+    			aN: MutableSourceSubscribeFn<
+    				Source,
+    				Snapshot
+    			>
+    		): Snapshot
+    			ar = "useMutableSource"
+    			aK()
+    			updateHookTypesDev()
+    			return updateMutableSource(aL, aM, aN)
+    		end,
+    		useOpaqueIdentifier = function(): OpaqueIDType
+    			ar = "useOpaqueIdentifier"
+    			aK()
+    			updateHookTypesDev()
+    			return rerenderOpaqueIdentifier()
+    		end,
+    
+    		unstable_isNewReconciler = q,
+    	}
+    end
+    
+    local function renderWithHooks<Props, SecondArg>(
+    	aJ: Fiber | nil,
+    	aK: Fiber,
+    	aL: (p: Props, arg: SecondArg) -> any,
+    	aM: Props,
+    	aN: SecondArg,
+    	aO: Lanes
+    ): any
+    	ak = aO
+    	al = aK
+    
+    	if a then
+    		as = if aJ ~= nil
+    			then (aJ._debugHookTypes :: any) :: Array<HookType>
+    			else nil
+    		
+    		at = 0
+    		
+    		
+    		
+    		
+    		
+    	end
+    
+    	aK.memoizedState = nil
+    	
+    	aK.updateQueue = nil
+    	aK.lanes = u
+    
+    	
+    	
+    	
+    
+    	
+    
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    	if a then
+    		if aJ ~= nil and aJ.memoizedState ~= nil then
+    			ag.current = ax
+    		elseif as ~= nil then
+    			
+    			
+    			
+    			
+    			
+    			ag.current = aw
+    		else
+    			ag.current = av
+    		end
+    	else
+    		ag.current = (aJ == nil or aJ.memoizedState == nil)
+    				and aG
+    			or aH
+    	end
+    
+    	local aP = aL(aM, aN)
+    
+    	
+    	if ap then
+    		
+    		
+    		local aQ: number = 0
+    		repeat
+    			ap = false
+    			
+    			if aQ >= aq then
+    				error(
+    					d.new(
+    [[Too many re-renders. React limits the number of renders to prevent an infinite loop.]]					
+    
+    )
+    				)
+    			end
+    
+    			aQ += 1
+    			
+    			
+    			
+    			
+    			
+    			
+    
+    			
+    			am = nil
+    			an = nil
+    
+    			
+    			aK.updateQueue = nil
+    
+    			if a then
+    				
+    				at = 0
+    			end
+    
+    			ag.current = a and ay
+    				or aI
+    
+    			aP = aL(aM, aN)
+    		until not ap
+    	end
+    
+    	
+    	
+    	ag.current = aF
+    
+    	if a then
+    		aK._debugHookTypes = as
+    	end
+    
+    	
+    	
+    	local aQ = am ~= nil and am.next ~= nil
+    
+    	ak = u
+    	al = nil :: any
+    
+    	am = nil
+    	an = nil
+    
+    	if a then
+    		ar = nil
+    		as = nil
+    		at = 0
+    	end
+    
+    	ao = false
+    
+    	
+    	if aQ then
+    		error(
+    			d.new(
+    [[Rendered fewer hooks than expected. This may be caused by an accidental early return statement.]]			
+    
+    )
+    		)
+    	end
+    
+    	return aP
+    end
+    aj.renderWithHooks = renderWithHooks
+    
+    return aj
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHostConfig"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    type Object = { [string]: any }
+    
+    export type Instance = Object
+    export type HostInstance = Instance
+    export type TextInstance = Instance
+    export type Container = Object
+    export type HostContext = Object
+    export type HydratableInstance = Instance | SuspenseInstance
+    export type SuspenseInstance = Object
+    export type PublicInstance = HostInstance
+    
+    export type Type = string
+    export type Props = Object
+    export type ChildSet = {} 
+    export type RendererInspectionConfig = Object
+    
+    
+    local a: { [string]: any } = {}
+    return a
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHostContext.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = a.Fiber
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberStack.new")
+    type StackCursor<T> = b.StackCursor<T>
+    local c = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHostConfig")
+    type Container = c.Container
+    type HostContext = c.HostContext
+    
+    
+    
+    local d = c.getChildHostContext
+    local e = c.getRootHostContext
+    local f = b.createCursor
+    local g = b.push
+    local h = b.pop
+    
+    
+    
+    
+    
+    type NoContextT = {}
+    local i: NoContextT = {}
+    
+    local j: StackCursor<HostContext | NoContextT> = f(i)
+    local k: StackCursor<Fiber | NoContextT> = f(i)
+    local l: StackCursor<Container | NoContextT> =
+    	f(i)
+    
+    function requiredContext<Value>(m: Value | NoContextT): Value
+    	
+    	
+    	
+    	
+    	
+    	
+    	return m :: any
+    end
+    
+    function getRootHostContainer(): Container
+    	
+    	
+    	
+    	return l.current
+    end
+    
+    function pushHostContainer(m: Fiber, n: Container)
+    	
+    	
+    	g(l, n, m)
+    	
+    	
+    	g(k, m, m)
+    
+    	
+    	
+    	
+    	
+    	
+    	g(j, i, m)
+    	local o = e(n)
+    	
+    	h(j, m)
+    	g(j, o, m)
+    end
+    
+    function popHostContainer(m: Fiber)
+    	h(j, m)
+    	h(k, m)
+    	h(l, m)
+    end
+    
+    function getHostContext(): HostContext
+    	
+    	
+    	
+    	return j.current
+    end
+    
+    function pushHostContext(m: Fiber)
+    	local n: Container = requiredContext(l.current)
+    	local o: HostContext = requiredContext(j.current)
+    	local p = d(o, m.type, n)
+    
+    	
+    	if o == p then
+    		return
+    	end
+    
+    	
+    	
+    	g(k, m, m)
+    	g(j, p, m)
+    end
+    
+    function popHostContext(m: Fiber)
+    	
+    	
+    	if k.current ~= m then
+    		return
+    	end
+    
+    	h(j, m)
+    	h(k, m)
+    end
+    
+    return {
+    	getHostContext = getHostContext,
+    	getRootHostContainer = getRootHostContainer,
+    	popHostContainer = popHostContainer,
+    	popHostContext = popHostContext,
+    	pushHostContainer = pushHostContainer,
+    	pushHostContext = pushHostContext,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHotReloading.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    
+    
+    type ReactElement = a.ReactElement<any, any>
+    
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = b.Fiber
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local c = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactSymbols
+    local d = c.REACT_FORWARD_REF_TYPE
+    
+    
+    
+    export type Family = {
+    	current: any
+    }
+    
+    
+    
+    
+    
+    
+    
+    type RefreshHandler = (any) -> (Family?)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local e 
+    
+    
+    local f: { [number]: Fiber } | nil 
+    
+    local g = {}
+    
+    
+    
+    
+    
+    
+    
+    local function resolveFunctionForHotReloading(h: any): any
+    	if _G.__DEV__ then
+    		if e == nil then
+    			
+    			return h
+    		end
+    		local i = e(h)
+    		if i == nil then
+    			return h
+    		end
+    		
+    		return i.current
+    	else
+    		return h
+    	end
+    end
+    g.resolveFunctionForHotReloading = resolveFunctionForHotReloading
+    
+    local function resolveClassForHotReloading(h: any): any
+    	
+    	return resolveFunctionForHotReloading(h)
+    end
+    g.resolveClassForHotReloading = resolveClassForHotReloading
+    
+    local function resolveForwardRefForHotReloading(h: any): any
+    	if _G.__DEV__ then
+    		if e == nil then
+    			
+    			return h
+    		end
+    		local i = e(h)
+    		if i == nil then
+    			
+    			if h ~= nil and typeof(h.render) == "function" then
+    				
+    				
+    				
+    				local j = resolveFunctionForHotReloading(h.render)
+    				if h.render ~= j then
+    					local k = {
+    						["$$typeof"] = d,
+    						render = j,
+    						
+    						displayName = nil,
+    					}
+    					if h.displayName ~= nil then
+    						k.displayName = h.displayName
+    					end
+    					return k
+    				end
+    			end
+    			return h
+    		end
+    		
+    		return i.current
+    	else
+    		return h
+    	end
+    end
+    g.resolveForwardRefForHotReloading = resolveForwardRefForHotReloading
+    
+    g.isCompatibleFamilyForHotReloading =
+    	function(h: Fiber, i: ReactElement): boolean
+    		warn("isCompatibleFamilyForHotReloading is stubbed (returns false)")
+    		return false
+    		
+    		
+    		
+    		
+    		
+    
+    		
+    		
+    
+    		
+    		
+    
+    		
+    		
+    		
+    		
+    
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    	end
+    
+    g.markFailedErrorBoundaryForHotReloading = function(h: Fiber)
+    	if _G.__DEV__ then
+    		if e == nil then
+    			
+    			return
+    		end
+    		
+    		
+    		
+    		
+    		if f == nil then
+    			f = {}
+    		end
+    		
+    		table.insert(f :: { [number]: Fiber }, h)
+    	end
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    return g
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHydrationContext.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").console
+    
+    
+    local function unimplemented(b: string)
+    	print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    	print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    	print("UNIMPLEMENTED ERROR: " .. b)
+    	error("FIXME (roblox): " .. b .. " is unimplemented", 2)
+    end
+    
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = b.Fiber
+    local c = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHostConfig")
+    type Instance = c.Instance
+    type TextInstance = c.TextInstance
+    type HydratableInstance = c.HydratableInstance
+    type SuspenseInstance = c.SuspenseInstance
+    type Container = c.Container
+    type HostContext = c.HostContext
+    
+    local d = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberSuspenseComponent.new")
+    type SuspenseState = d.SuspenseState
+    
+    local e = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactWorkTags")
+    local f = e.HostComponent
+    local g = e.HostText
+    local h = e.HostRoot
+    local i = e.SuspenseComponent
+    local j = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberFlags")
+    local k = j.Placement
+    local l = j.Hydrating
+    
+    
+    local m = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").invariant
+    
+    local n = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiber.new")
+    
+    local o = n.createFiberFromDehydratedFragment
+    
+    local p = c.supportsHydration
+    local q = c.getNextHydratableSibling
+    local r = c.getFirstHydratableChild
+    local s = c.canHydrateInstance
+    local t = c.canHydrateTextInstance
+    local u = c.canHydrateSuspenseInstance
+    local v = c.hydrateInstance
+    local w = c.hydrateTextInstance
+    local x = c.hydrateSuspenseInstance
+    local y =
+    	c.getNextHydratableInstanceAfterSuspenseInstance
+    local z =
+    	c.didNotMatchHydratedContainerTextInstance
+    local A =
+    	c.didNotMatchHydratedTextInstance
+    local B = c.shouldSetTextContent
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local C =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactFeatureFlags.enableSuspenseServerRenderer
+    local D = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLane").OffscreenLane
+    
+    
+    
+    local E: Fiber? 
+    local F: nil | HydratableInstance 
+    local G: boolean = false
+    
+    function warnIfHydrating()
+    	if _G.__DEV__ then
+    		if G then
+    			a.error(
+    				"We should not be hydrating here. This is a bug in React. Please file a bug."
+    			)
+    		end
+    	end
+    end
+    
+    function enterHydrationState(H: Fiber): boolean
+    	if not p then
+    		return false
+    	end
+    
+    	local I = H.stateNode.containerInfo
+    	F = r(I)
+    	E = H
+    	G = true
+    	return true
+    end
+    
+    function reenterHydrationStateFromDehydratedSuspenseInstance(
+    	H: Fiber,
+    	I: SuspenseInstance
+    ): boolean
+    	if not p then
+    		return false
+    	end
+    
+    	F = q(I)
+    	popToNextHostParent(H)
+    	G = true
+    	return true
+    end
+    
+    function deleteHydratableInstance(H: Fiber?, I: HydratableInstance)
+    	unimplemented("deleteHydratableInstance")
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    end
+    
+    function insertNonHydratedInstance(H: Fiber?, I: Fiber)
+    	unimplemented("insertNonHydratedInstance")
+    	I.flags = bit32.bor(bit32.band(I.flags, bit32.bnot(l)), k)
+    	if _G.__DEV__ then
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    	end
+    end
+    
+    function tryHydrate(H, I)
+    	if H.tag == f then
+    		local J = H.type
+    		local K = H.pendingProps
+    		local L = s(I, J, K)
+    		if L ~= nil then
+    			H.stateNode = L
+    			return true
+    		end
+    		return false
+    	elseif H.tag == g then
+    		local J = H.pendingProps
+    		local K = t(I, J)
+    		if K ~= nil then
+    			H.stateNode = K
+    			return true
+    		end
+    		return false
+    	elseif H.tag == i then
+    		if C then
+    			local J: nil | SuspenseInstance =
+    				u(I)
+    			if J ~= nil then
+    				local K: SuspenseState = {
+    					dehydrated = J,
+    					retryLane = D,
+    				}
+    				H.memoizedState = K
+    				
+    				
+    				
+    				
+    				local L =
+    					o(J)
+    				L.return_ = H
+    				H.child = L
+    				return true
+    			end
+    		end
+    		return false
+    	else
+    		return false
+    	end
+    end
+    
+    function tryToClaimNextHydratableInstance(H: Fiber)
+    	if not G then
+    		return
+    	end
+    	local I = F
+    	if not I then
+    		
+    		insertNonHydratedInstance(E, H)
+    		G = false
+    		E = H
+    		return
+    	end
+    	
+    	local J = I :: HydratableInstance
+    	if not tryHydrate(H, I) then
+    		
+    		
+    		
+    		I = q(J)
+    		if not I or not tryHydrate(H, I) then
+    			
+    			insertNonHydratedInstance(E, H)
+    			G = false
+    			E = H
+    			return
+    		end
+    		
+    		
+    		
+    		
+    		deleteHydratableInstance(E, J)
+    	end
+    	E = H
+    	F = r(I)
+    end
+    
+    function prepareToHydrateHostInstance(
+    	H: Fiber,
+    	I: Container,
+    	J: HostContext
+    ): boolean
+    	if not p then
+    		m(
+    			false,
+    [[Expected prepareToHydrateHostInstance() to never be called. This error is likely caused by a bug in React. Please file an issue.]]		
+    
+    )
+    	end
+    
+    	local K: Instance = H.stateNode
+    	local L = v(
+    		K,
+    		H.type,
+    		H.memoizedProps,
+    		I,
+    		J,
+    		H
+    	)
+    	
+    	H.updateQueue = L
+    	
+    	
+    	if L ~= nil then
+    		return true
+    	end
+    	return false
+    end
+    
+    function prepareToHydrateHostTextInstance(H: Fiber): boolean
+    	if not p then
+    		m(
+    			false,
+    [[Expected prepareToHydrateHostTextInstance() to never be called. This error is likely caused by a bug in React. Please file an issue.]]		
+    
+    )
+    	end
+    
+    	local I: TextInstance = H.stateNode
+    	local J: string = H.memoizedProps
+    	local K = w(I, J, H)
+    	if _G.__DEV__ then
+    		if K then
+    			
+    			
+    			local L = E
+    			if L ~= nil then
+    				if L.tag == h then
+    					local M = L.stateNode.containerInfo
+    					z(
+    						M,
+    						I,
+    						J
+    					)
+    				elseif L.tag == f then
+    					local M = L.type
+    					local N = L.memoizedProps
+    					local O = L.stateNode
+    					A(
+    						M,
+    						N,
+    						O,
+    						I,
+    						J
+    					)
+    				end
+    			end
+    		end
+    	end
+    	return K
+    end
+    
+    function prepareToHydrateHostSuspenseInstance(H: Fiber)
+    	if not p then
+    		m(
+    			false,
+    [[Expected prepareToHydrateHostSuspenseInstance() to never be called. This error is likely caused by a bug in React. Please file an issue.]]		
+    
+    )
+    	end
+    
+    	local I: SuspenseState = H.memoizedState
+    	local J: nil | SuspenseInstance
+    	if I ~= nil then
+    		J = I.dehydrated
+    	else
+    		J = nil
+    	end
+    
+    	m(
+    		J,
+    [[Expected to have a hydrated suspense instance. This error is likely caused by a bug in React. Please file an issue.]]	
+    
+    )
+    	x(J, H)
+    end
+    
+    function skipPastDehydratedSuspenseInstance(H: Fiber): nil | HydratableInstance
+    	if not p then
+    		m(
+    			false,
+    [[Expected skipPastDehydratedSuspenseInstance() to never be called. This error is likely caused by a bug in React. Please file an issue.]]		
+    
+    )
+    	end
+    	local I: SuspenseState = H.memoizedState
+    	local J: nil | SuspenseInstance
+    	if I ~= nil then
+    		J = I.dehydrated
+    	else
+    		J = nil
+    	end
+    	m(
+    		J,
+    [[Expected to have a hydrated suspense instance. This error is likely caused by a bug in React. Please file an issue.]]	
+    
+    )
+    	return y(J)
+    end
+    
+    function popToNextHostParent(H: Fiber)
+    	local I = H.return_
+    	while
+    		I ~= nil
+    		and I.tag ~= f
+    		and I.tag ~= h
+    		and I.tag ~= i
+    	do
+    		I = I.return_
+    	end
+    	E = I
+    end
+    
+    function popHydrationState(H: Fiber): boolean
+    	if not p then
+    		return false
+    	end
+    	if H ~= E then
+    		
+    		
+    		return false
+    	end
+    	if not G then
+    		
+    		
+    		
+    		popToNextHostParent(H)
+    		G = true
+    		return false
+    	end
+    
+    	local I = H.type
+    
+    	
+    	
+    	
+    	
+    	
+    	if
+    		H.tag ~= f
+    		or (
+    			I ~= "head"
+    			and I ~= "body"
+    			and not B(I, H.memoizedProps)
+    		)
+    	then
+    		local J = F
+    		while J do
+    			deleteHydratableInstance(H, J)
+    			J = q(J)
+    		end
+    	end
+    
+    	popToNextHostParent(H)
+    	if H.tag == i then
+    		F = skipPastDehydratedSuspenseInstance(H)
+    	else
+    		if E then
+    			F = q(H.stateNode)
+    		else
+    			F = nil
+    		end
+    	end
+    	return true
+    end
+    
+    function resetHydrationState()
+    	if not p then
+    		return
+    	end
+    
+    	E = nil
+    	F = nil
+    	G = false
+    end
+    
+    function getIsHydrating(): boolean
+    	return G
+    end
+    
+    return {
+    	warnIfHydrating = warnIfHydrating,
+    	enterHydrationState = enterHydrationState,
+    	getIsHydrating = getIsHydrating,
+    	reenterHydrationStateFromDehydratedSuspenseInstance = reenterHydrationStateFromDehydratedSuspenseInstance,
+    	resetHydrationState = resetHydrationState,
+    	tryToClaimNextHydratableInstance = tryToClaimNextHydratableInstance,
+    	prepareToHydrateHostInstance = prepareToHydrateHostInstance,
+    	prepareToHydrateHostTextInstance = prepareToHydrateHostTextInstance,
+    	prepareToHydrateHostSuspenseInstance = prepareToHydrateHostSuspenseInstance,
+    	popHydrationState = popHydrationState,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLane"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type FiberRoot = a.FiberRoot
+    type ReactPriorityLevel = a.ReactPriorityLevel
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").console
+    
+    local c =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberSchedulerPriorities.roblox")
+    
+    
+    
+    
+    export type LanePriority = a.LanePriority
+    export type Lane = a.Lane
+    export type Lanes = a.Lanes
+    export type LaneMap<T> = a.LaneMap<T>
+    
+    local d = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").invariant
+    
+    local e = c.ImmediatePriority
+    local f = c.UserBlockingPriority
+    local g = c.NormalPriority
+    local h = c.LowPriority
+    local i = c.IdlePriority
+    local j = c.NoPriority
+    
+    local k = {}
+    
+    local l: LanePriority = 15
+    k.SyncLanePriority = l
+    local m: LanePriority = 14
+    k.SyncBatchedLanePriority = m
+    
+    local n: LanePriority = 13
+    local o: LanePriority = 12
+    k.InputDiscreteLanePriority = o
+    
+    local p: LanePriority = 11
+    local q: LanePriority = 10
+    k.InputContinuousLanePriority = q
+    
+    local r: LanePriority = 9
+    local s: LanePriority = 8
+    k.DefaultLanePriority = s
+    
+    local t: LanePriority = 7
+    local u: LanePriority = 6
+    k.TransitionPriority = u
+    
+    local v: LanePriority = 5
+    
+    local w: LanePriority = 4
+    
+    local x: LanePriority = 3
+    local y: LanePriority = 2
+    
+    local z: LanePriority = 1
+    
+    local A: LanePriority = 0
+    k.NoLanePriority = A
+    
+    
+    
+    
+    local B: Lanes = 
+    	0b0000000000000000000000000000000
+    k.NoLanes = B
+    local C: Lane = 
+    	0b0000000000000000000000000000000
+    k.NoLane = C
+    
+    local D: Lane = 
+    	0b0000000000000000000000000000001
+    k.SyncLane = D
+    local E: Lanes = 
+    	0b0000000000000000000000000000010
+    k.SyncBatchedLane = E
+    
+    local F: Lane = 
+    	0b0000000000000000000000000000100
+    k.InputDiscreteHydrationLane = F
+    local G: Lanes = 
+    	0b0000000000000000000000000011000
+    
+    local H: Lane = 
+    	0b0000000000000000000000000100000
+    local I: Lanes = 
+    	0b0000000000000000000000011000000
+    
+    local J: Lane = 
+    	0b0000000000000000000000100000000
+    k.DefaultHydrationLane = J
+    local K: Lanes = 
+    	0b0000000000000000000111000000000
+    k.DefaultLanes = K
+    
+    local L: Lane = 
+    	0b0000000000000000001000000000000
+    local M: Lanes = 
+    	0b0000000001111111110000000000000
+    
+    local N: Lanes = 
+    	0b0000011110000000000000000000000
+    
+    k.RetryLanes = N
+    local O: Lanes = 
+    	0b0000010000000000000000000000000
+    k.SomeRetryLane = O
+    
+    local P: Lane = 
+    	0b0000100000000000000000000000000
+    k.SelectiveHydrationLane = P
+    
+    local Q = 
+    	0b0000111111111111111111111111111
+    
+    local R: Lane = 
+    	0b0001000000000000000000000000000
+    k.IdleHydrationLane = R
+    local S: Lanes = 
+    	0b0110000000000000000000000000000
+    
+    local T: Lane = 
+    	0b1000000000000000000000000000000
+    k.OffscreenLane = T
+    
+    local U = -1
+    k.NoTimestamp = U
+    
+    local V: LanePriority = k.NoLanePriority
+    
+    k.getCurrentUpdateLanePriority = function(): LanePriority
+    	return V
+    end
+    
+    k.setCurrentUpdateLanePriority = function(W: LanePriority)
+    	V = W
+    end
+    
+    
+    
+    local W: LanePriority = k.DefaultLanePriority
+    
+    local function getHighestPriorityLanes(X: Lanes | Lane): Lanes
+    	if bit32.band(D, X) ~= B then
+    		W = l
+    		return D
+    	end
+    	if bit32.band(E, X) ~= B then
+    		W = m
+    		return E
+    	end
+    	if bit32.band(F, X) ~= B then
+    		W = n
+    		return F
+    	end
+    	local Y = bit32.band(G, X)
+    	if Y ~= B then
+    		W = o
+    		return Y
+    	end
+    	if bit32.band(X, H) ~= B then
+    		W = p
+    		return H
+    	end
+    	local Z = bit32.band(I, X)
+    	if Z ~= B then
+    		W = q
+    		return Z
+    	end
+    	if bit32.band(X, J) ~= B then
+    		W = r
+    		return J
+    	end
+    	local _ = bit32.band(K, X)
+    	if _ ~= B then
+    		W = s
+    		return _
+    	end
+    	if bit32.band(X, L) ~= B then
+    		W = t
+    		return L
+    	end
+    	local aa = bit32.band(M, X)
+    	if aa ~= B then
+    		W = u
+    		return aa
+    	end
+    	local ab = bit32.band(N, X)
+    	if ab ~= B then
+    		W = v
+    		return ab
+    	end
+    	if bit32.band(X, P) ~= 0 then
+    		W = w
+    		return P
+    	end
+    	if bit32.band(X, R) ~= B then
+    		W = x
+    		return R
+    	end
+    	local ac = bit32.band(S, X)
+    	if ac ~= B then
+    		W = y
+    		return ac
+    	end
+    	if bit32.band(T, X) ~= B then
+    		W = z
+    		return T
+    	end
+    	if _G.__DEV__ then
+    		b.error("Should have found matching lanes. This is a bug in React.")
+    	end
+    	
+    	W = s
+    	return X
+    end
+    
+    local function schedulerPriorityToLanePriority(
+    	aa: ReactPriorityLevel
+    ): LanePriority
+    	if aa == e then
+    		return l
+    	elseif aa == f then
+    		return q
+    	elseif
+    		aa == g
+    		or aa == h
+    	then
+    		
+    		return s
+    	elseif aa == i then
+    		return y
+    	else
+    		return A
+    	end
+    end
+    k.schedulerPriorityToLanePriority = schedulerPriorityToLanePriority
+    
+    local function lanePriorityToSchedulerPriority(
+    	aa: LanePriority
+    ): ReactPriorityLevel
+    	if aa == l or aa == m then
+    		return e
+    	elseif
+    		aa == n
+    		or aa == o
+    		or aa == p
+    		or aa == q
+    	then
+    		return f
+    	elseif
+    		aa == r
+    		or aa == s
+    		or aa == t
+    		or aa == u
+    		or aa == w
+    		or aa == v
+    	then
+    		return g
+    	elseif
+    		aa == x
+    		or aa == y
+    		or aa == z
+    	then
+    		return i
+    	elseif aa == A then
+    		return j
+    	else
+    		d(
+    			false,
+    			"Invalid update priority: %s. This is a bug in React.",
+    			aa
+    		)
+    		
+    		error("unreachable")
+    	end
+    end
+    k.lanePriorityToSchedulerPriority = lanePriorityToSchedulerPriority
+    
+    
+    local aa, ab, ac
+    
+    local function getNextLanes(X: FiberRoot, Y: Lanes): Lanes
+    	
+    	local Z = X.pendingLanes
+    	if Z == B then
+    		W = A
+    		return B
+    	end
+    
+    	local _ = B
+    	local ad = A
+    
+    	local ae = X.expiredLanes
+    	local af = X.suspendedLanes
+    	local ag = X.pingedLanes
+    
+    	
+    	if ae ~= B then
+    		_ = ae
+    		W = l
+    		ad = l
+    	else
+    		
+    		
+    		local ah = bit32.band(Z, Q)
+    		if ah ~= B then
+    			local ai =
+    				bit32.band(ah, bit32.bnot(af))
+    			if ai ~= B then
+    				_ = getHighestPriorityLanes(ai)
+    				ad = W
+    			else
+    				local aj = bit32.band(ah, ag)
+    				if aj ~= B then
+    					_ = getHighestPriorityLanes(aj)
+    					ad = W
+    				end
+    			end
+    		else
+    			
+    			local ai = bit32.band(Z, bit32.bnot(af))
+    			if ai ~= B then
+    				_ = getHighestPriorityLanes(ai)
+    				ad = W
+    			else
+    				if ag ~= B then
+    					_ = getHighestPriorityLanes(ag)
+    					ad = W
+    				end
+    			end
+    		end
+    	end
+    
+    	if _ == B then
+    		
+    		
+    		return B
+    	end
+    
+    	
+    	
+    	
+    	
+    	_ =
+    		bit32.band(Z, bit32.lshift(ab(_), 1) - 1)
+    
+    	
+    	
+    	
+    	if
+    		Y ~= B
+    		and Y ~= _
+    		
+    		
+    		and bit32.band(Y, af) == B
+    	then
+    		getHighestPriorityLanes(Y)
+    		local ah = W
+    		if ad <= ah then
+    			return Y
+    		else
+    			W = ad
+    		end
+    	end
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	local ah = X.entangledLanes
+    	if ah ~= B then
+    		local ai = X.entanglements
+    		local aj = bit32.band(_, ah)
+    		while aj > 0 do
+    			local ak = aa(aj)
+    			local al = bit32.lshift(1, ak)
+    
+    			_ = bit32.bor(_, ai[ak])
+    
+    			aj = bit32.band(aj, bit32.bnot(al))
+    		end
+    	end
+    
+    	return _
+    end
+    k.getNextLanes = getNextLanes
+    
+    local function getMostRecentEventTime(ad: FiberRoot, ae: Lanes): number
+    	local af = ad.eventTimes
+    
+    	local ag = U
+    	while ae > 0 do
+    		local ah = aa(ae)
+    		local ai = bit32.lshift(1, ah)
+    
+    		local aj = af[ah]
+    		if aj > ag then
+    			ag = aj
+    		end
+    
+    		ae = bit32.band(ae, bit32.bnot(ai))
+    	end
+    
+    	return ag
+    end
+    k.getMostRecentEventTime = getMostRecentEventTime
+    
+    local function computeExpirationTime(ad: Lane, ae: number)
+    	
+    	getHighestPriorityLanes(ad)
+    	local af = W
+    	if af >= q then
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		return ae + 250
+    	elseif af >= u then
+    		return ae + 5000
+    	else
+    		
+    		return U
+    	end
+    end
+    k.computeExpirationTime = computeExpirationTime
+    
+    local function markStarvedLanesAsExpired(ad: FiberRoot, ae: number)
+    	
+    	
+    	
+    
+    	local af = ad.pendingLanes
+    	local ag = ad.suspendedLanes
+    	local ah = ad.pingedLanes
+    	local ai = ad.expirationTimes
+    
+    	
+    	
+    	
+    	local aj = af
+    	while aj > 0 do
+    		local ak = aa(aj)
+    		local al = bit32.lshift(1, ak)
+    
+    		local X = ai[ak]
+    		if X == U then
+    			
+    			
+    			
+    			if
+    				bit32.band(al, ag) == B
+    				or bit32.band(al, ah) ~= B
+    			then
+    				
+    				ai[ak] = computeExpirationTime(al, ae)
+    			end
+    		elseif X <= ae then
+    			
+    			ad.expiredLanes = bit32.bor(ad.expiredLanes, al)
+    		end
+    
+    		aj = bit32.band(aj, bit32.bnot(al))
+    	end
+    end
+    k.markStarvedLanesAsExpired = markStarvedLanesAsExpired
+    
+    
+    
+    local function getHighestPriorityPendingLanes(ad: FiberRoot)
+    	return getHighestPriorityLanes(ad.pendingLanes)
+    end
+    k.getHighestPriorityPendingLanes = getHighestPriorityPendingLanes
+    
+    local function getLanesToRetrySynchronouslyOnError(ad: FiberRoot): Lanes
+    	local ae =
+    		bit32.band(ad.pendingLanes, bit32.bnot(T))
+    	if ae ~= B then
+    		return ae
+    	end
+    	if bit32.band(ae, T) ~= 0 then
+    		return T
+    	end
+    	return B
+    end
+    k.getLanesToRetrySynchronouslyOnError = getLanesToRetrySynchronouslyOnError
+    
+    local function returnNextLanesPriority()
+    	return W
+    end
+    k.returnNextLanesPriority = returnNextLanesPriority
+    
+    local function includesNonIdleWork(ad: Lanes)
+    	return bit32.band(ad, Q) ~= B
+    end
+    k.includesNonIdleWork = includesNonIdleWork
+    
+    local function includesOnlyRetries(ad: Lanes)
+    	return bit32.band(ad, N) == ad
+    end
+    k.includesOnlyRetries = includesOnlyRetries
+    
+    local function includesOnlyTransitions(ad: Lanes)
+    	return bit32.band(ad, M) == ad
+    end
+    k.includesOnlyTransitions = includesOnlyTransitions
+    
+    
+    local ad
+    
+    
+    
+    local function findUpdateLane(ae: LanePriority, af: Lanes): Lane
+    	if ae == A then
+    		
+    	elseif ae == l then
+    		return D
+    	elseif ae == m then
+    		return E
+    	elseif ae == o then
+    		local ag =
+    			ad(bit32.band(G, bit32.bnot(af)))
+    		if ag == C then
+    			
+    			return findUpdateLane(q, af)
+    		end
+    		return ag
+    	elseif ae == q then
+    		local ag =
+    			ad(bit32.band(I, bit32.bnot(af)))
+    		if ag == C then
+    			
+    			return findUpdateLane(s, af)
+    		end
+    		return ag
+    	elseif ae == s then
+    		local ag = ad(bit32.band(K, bit32.bnot(af)))
+    		if ag == C then
+    			
+    			
+    			ag = ad(bit32.band(M, bit32.bnot(af)))
+    			if ag == C then
+    				
+    				
+    				
+    				ag = ad(K)
+    			end
+    		end
+    		return ag
+    	elseif
+    		ae == u 
+    		or ae == v 
+    	then
+    		
+    	elseif ae == y then
+    		local ag = ad(bit32.band(S, bit32.bnot(af)))
+    		if ag == C then
+    			ag = ad(S)
+    		end
+    		return ag
+    		
+    	
+    end
+    	d(false, "Invalid update priority: %s. This is a bug in React.", ae)
+    	
+    	error("unreachable")
+    end
+    k.findUpdateLane = findUpdateLane
+    
+    
+    
+    local function findTransitionLane(ae: Lanes, af: Lanes): Lane
+    	
+    	
+    	local ag = ad(bit32.band(M, bit32.bnot(af)))
+    	if ag == C then
+    		
+    		
+    		ag = ad(bit32.band(M, bit32.bnot(ae)))
+    		if ag == C then
+    			
+    			
+    			ag = ad(M)
+    		end
+    	end
+    	return ag
+    end
+    k.findTransitionLane = findTransitionLane
+    
+    
+    
+    local function findRetryLane(ae: Lanes): Lane
+    	
+    	
+    	
+    	local af = ad(bit32.band(N, bit32.bnot(ae)))
+    	if af == C then
+    		af = ad(N)
+    	end
+    	return af
+    end
+    k.findRetryLane = findRetryLane
+    
+    local function getHighestPriorityLane(ae: Lanes)
+    	return bit32.band(ae, -ae)
+    end
+    
+    function ab(ae: Lanes): Lane
+    	
+    	local af = 31 - bit32.countlz(ae)
+    	if af < 0 then
+    		return B
+    	else
+    		return bit32.lshift(1, af)
+    	end
+    end
+    
+    function ac(ae: Lanes | Lane): Lanes
+    	return bit32.lshift(ab(ae), 1) - 1
+    end
+    
+    function ad(ae: Lanes): Lane
+    	
+    	
+    	
+    	
+    	return getHighestPriorityLane(ae)
+    end
+    k.pickArbitraryLane = ad
+    
+    function aa(ae: Lanes)
+    	return 31 - bit32.countlz(ae)
+    end
+    
+    
+    
+    
+    
+    
+    local function includesSomeLane(ae: Lanes | Lane, af: Lanes | Lane)
+    	return bit32.band(ae, af) ~= B
+    end
+    k.includesSomeLane = includesSomeLane
+    
+    local function isSubsetOfLanes(ae: Lanes, af: Lanes | Lane)
+    	return bit32.band(ae, af) == af
+    end
+    k.isSubsetOfLanes = isSubsetOfLanes
+    
+    local function mergeLanes(ae: Lanes | Lane, af: Lanes | Lane): Lanes
+    	return bit32.bor(ae, af)
+    end
+    k.mergeLanes = mergeLanes
+    
+    local function removeLanes(ae: Lanes, af: Lanes | Lane): Lanes
+    	return bit32.band(ae, bit32.bnot(af))
+    end
+    k.removeLanes = removeLanes
+    
+    
+    
+    local function laneToLanes(ae: Lane): Lanes
+    	return ae
+    end
+    k.laneToLanes = laneToLanes
+    
+    local function higherPriorityLane(ae: Lane, af: Lane)
+    	
+    	if ae ~= C and af ~= C then
+    		if ae < af then
+    			return ae
+    		end
+    		return af
+    	else
+    		if ae ~= C then
+    			return ae
+    		end
+    		return af
+    	end
+    end
+    k.higherPriorityLane = higherPriorityLane
+    
+    local function higherLanePriority(ae: LanePriority, af: LanePriority): LanePriority
+    	if ae ~= A and ae > af then
+    		return ae
+    	else
+    		return af
+    	end
+    end
+    k.higherLanePriority = higherLanePriority
+    
+    
+    
+    local function createLaneMap(ae): LaneMap<any>
+    	
+    	
+    	
+    	
+    	local af = {
+    		[0] = ae,
+    		[1] = ae,
+    		[2] = ae,
+    		[3] = ae,
+    		[4] = ae,
+    		[5] = ae,
+    		[6] = ae,
+    		[7] = ae,
+    		[8] = ae,
+    		[9] = ae,
+    		[10] = ae,
+    		[11] = ae,
+    		[12] = ae,
+    		[13] = ae,
+    		[14] = ae,
+    		[15] = ae,
+    		[16] = ae,
+    		[17] = ae,
+    		[18] = ae,
+    		[19] = ae,
+    		[20] = ae,
+    		[21] = ae,
+    		[22] = ae,
+    		[23] = ae,
+    		[24] = ae,
+    		[25] = ae,
+    		[26] = ae,
+    		[27] = ae,
+    		[28] = ae,
+    		[29] = ae,
+    		[30] = ae,
+    		[31] = ae,
+    		
+    	}
+    	return af
+    end
+    k.createLaneMap = createLaneMap
+    
+    local function markRootUpdated(ae: FiberRoot, af: Lane, ag: number)
+    	ae.pendingLanes = bit32.bor(ae.pendingLanes, af)
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    	local ah = af - 1 
+    
+    	ae.suspendedLanes = bit32.band(ae.suspendedLanes, ah)
+    	ae.pingedLanes = bit32.band(ae.pingedLanes, ah)
+    
+    	local ai = ae.eventTimes
+    	
+    	
+    	local aj = 31 - bit32.countlz(af)
+    	
+    	
+    	ai[aj] = ag
+    end
+    k.markRootUpdated = markRootUpdated
+    
+    local function markRootSuspended(ae: FiberRoot, af: Lanes)
+    	ae.suspendedLanes = bit32.bor(ae.suspendedLanes, af)
+    	ae.pingedLanes = bit32.band(ae.pingedLanes, bit32.bnot(af))
+    
+    	
+    	local ag = ae.expirationTimes
+    	local ah = af
+    	while ah > 0 do
+    		local ai = aa(ah)
+    		local aj = bit32.lshift(1, ai)
+    
+    		ag[ai] = U
+    
+    		ah = bit32.band(ah, bit32.bnot(aj))
+    	end
+    end
+    k.markRootSuspended = markRootSuspended
+    
+    local function markRootPinged(ae: FiberRoot, af: Lanes, ag: number)
+    	ae.pingedLanes =
+    		bit32.bor(ae.pingedLanes, bit32.band(ae.suspendedLanes, af))
+    end
+    k.markRootPinged = markRootPinged
+    
+    local function markRootExpired(ae: FiberRoot, af: Lanes)
+    	ae.expiredLanes =
+    		bit32.bor(ae.expiredLanes, bit32.band(af, ae.pendingLanes))
+    end
+    k.markRootExpired = markRootExpired
+    
+    local function markDiscreteUpdatesExpired(ae: FiberRoot)
+    	ae.expiredLanes =
+    		bit32.bor(ae.expiredLanes, bit32.band(G, ae.pendingLanes))
+    end
+    k.markDiscreteUpdatesExpired = markDiscreteUpdatesExpired
+    
+    local function hasDiscreteLanes(ae: Lanes)
+    	return bit32.band(ae, G) ~= B
+    end
+    k.hasDiscreteLanes = hasDiscreteLanes
+    
+    local function markRootMutableRead(ae: FiberRoot, af: Lane)
+    	ae.mutableReadLanes =
+    		bit32.bor(ae.mutableReadLanes, bit32.band(af, ae.pendingLanes))
+    end
+    k.markRootMutableRead = markRootMutableRead
+    
+    local function markRootFinished(ae: FiberRoot, af: Lanes)
+    	local ag = bit32.band(ae.pendingLanes, bit32.bnot(af))
+    
+    	ae.pendingLanes = af
+    
+    	
+    	ae.suspendedLanes = 0
+    	ae.pingedLanes = 0
+    
+    	ae.expiredLanes = bit32.band(ae.expiredLanes, af)
+    	ae.mutableReadLanes = bit32.band(ae.mutableReadLanes, af)
+    
+    	ae.entangledLanes = bit32.band(ae.entangledLanes, af)
+    
+    	local ah = ae.entanglements
+    	local ai = ae.eventTimes
+    	local aj = ae.expirationTimes
+    
+    	
+    	local ak = ag
+    	while ak > 0 do
+    		local al = aa(ak)
+    		local X = bit32.lshift(1, al)
+    
+    		ah[al] = B
+    		ai[al] = U
+    		aj[al] = U
+    
+    		ak = bit32.band(ak, bit32.bnot(X))
+    	end
+    end
+    k.markRootFinished = markRootFinished
+    
+    local function markRootEntangled(ae: FiberRoot, af: Lanes)
+    	ae.entangledLanes = bit32.bor(ae.entangledLanes, af)
+    
+    	local ag = ae.entanglements
+    	local ah = af
+    	while ah > 0 do
+    		local ai = aa(ah)
+    		local aj = bit32.lshift(1, ai)
+    
+    		ag[ai] = bit32.bor(ag[ai], af)
+    
+    		ah = bit32.band(ah, bit32.bnot(aj))
+    	end
+    end
+    k.markRootEntangled = markRootEntangled
+    
+    local function getBumpedLaneForHydration(ae: FiberRoot, af: Lanes): Lane
+    	getHighestPriorityLanes(af)
+    	local ag = W
+    
+    	local ah
+    
+    	if
+    		ag == l
+    		or ag == m
+    	then
+    		ah = C
+    	elseif
+    		ag == n
+    		or ag == o
+    	then
+    		ah = F
+    	elseif
+    		ag == p
+    		or ag == q
+    	then
+    		ah = H
+    	elseif
+    		ag == r
+    		or ag == s
+    	then
+    		ah = J
+    	elseif
+    		ag == t
+    		or ag == u
+    	then
+    		ah = L
+    	elseif ag == v then
+    		
+    		
+    		ah = L
+    	elseif ag == w then
+    		ah = P
+    	elseif
+    		ag == x
+    		or ag == y
+    	then
+    		ah = R
+    	elseif
+    		ag == z
+    		or ag == A
+    	then
+    		ah = C
+    	else
+    		d(false, "Invalid lane: %s. This is a bug in React.", tostring(ah))
+    	end
+    
+    	
+    	
+    	
+    	if bit32.band(ah, bit32.bor(ae.suspendedLanes, af)) ~= C then
+    		
+    		return C
+    	end
+    
+    	return ah
+    end
+    k.getBumpedLaneForHydration = getBumpedLaneForHydration
+    
+    return k
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLazyComponent.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    type Object = { [any]: any }
+    
+    local function resolveDefaultProps(a: any, b: Object): Object
+    	
+    	if a and typeof(a) == "table" and a.defaultProps then
+    		
+    		
+    		local c = table.clone(b) :: Object
+    		local d = a.defaultProps
+    		for e, f in d do
+    			if c[e] == nil then
+    				c[e] = d[e]
+    			end
+    		end
+    		return c
+    	end
+    	return b
+    end
+    
+    return {
+    	resolveDefaultProps = resolveDefaultProps,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberNewContext.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/luau-polyfill")
+    local b = a.Number
+    local c = a.Error
+    
+    
+    local d = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").console
+    
+    local e = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    type ReactContext<T> = e.ReactContext<T>
+    local f = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = f.Fiber
+    type ContextDependency<T> = f.ContextDependency<T>
+    
+    local g = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberStack.new")
+    type StackCursor<T> = g.StackCursor<T>
+    local h = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLane")
+    type Lanes = h.Lanes
+    local i = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactUpdateQueue.new")
+    type SharedQueue<T> = i.SharedQueue<T>
+    
+    local j = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHostConfig")
+    local k = j.isPrimaryRenderer
+    local l = g.createCursor
+    local m = g.push
+    local n = g.pop
+    local o = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/MaxInts").MAX_SIGNED_31_BIT_INT
+    local p = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactWorkTags")
+    local q = p.ContextProvider
+    local r = p.ClassComponent
+    
+    local s = h.NoLanes
+    local t = h.NoTimestamp
+    local u = h.isSubsetOfLanes
+    local v = h.includesSomeLane
+    local w = h.mergeLanes
+    local x = h.pickArbitraryLane
+    
+    local y = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").objectIs
+    local z = i.createUpdate
+    local A = i.ForceUpdate
+    
+    
+    
+    
+    local B = {}
+    
+    local C: StackCursor<any> = l(nil)
+    
+    local D
+    if _G.__DEV__ then
+    	
+    	D = {}
+    end
+    
+    local E: Fiber | nil 
+    local F: ContextDependency<any> | nil 
+    local G: ReactContext<any> | nil 
+    
+    local H: boolean = false
+    
+    B.resetContextDependencies = function(): ()
+    	
+    	
+    	E = nil
+    	F = nil
+    	G = nil
+    	if _G.__DEV__ then
+    		H = false
+    	end
+    end
+    
+    B.enterDisallowedContextReadInDEV = function(): ()
+    	if _G.__DEV__ then
+    		H = true
+    	end
+    end
+    
+    B.exitDisallowedContextReadInDEV = function(): ()
+    	if _G.__DEV__ then
+    		H = false
+    	end
+    end
+    
+    B.pushProvider = function<T>(I: Fiber, J: T): ()
+    	local K: ReactContext<T> = I.type._context
+    
+    	if k then
+    		m(C, K._currentValue, I)
+    
+    		K._currentValue = J
+    		if _G.__DEV__ then
+    			if
+    				K._currentRenderer ~= nil
+    				and K._currentRenderer ~= D
+    			then
+    				d.error(
+    [[Detected multiple renderers concurrently rendering the same context provider. This is currently unsupported.]]				
+    
+    )
+    			end
+    			K._currentRenderer = D
+    		end
+    	else
+    		m(C, K._currentValue2, I)
+    
+    		K._currentValue2 = J
+    		if _G.__DEV__ then
+    			if
+    				K._currentRenderer2 ~= nil
+    				and K._currentRenderer2 ~= D
+    			then
+    				d.error(
+    [[Detected multiple renderers concurrently rendering the same context provider. This is currently unsupported.]]				
+    
+    )
+    			end
+    			K._currentRenderer2 = D
+    		end
+    	end
+    end
+    
+    B.popProvider = function(I: Fiber)
+    	local J = C.current
+    
+    	n(C, I)
+    
+    	local K: ReactContext<any> = I.type._context
+    	if k then
+    		K._currentValue = J
+    	else
+    		K._currentValue2 = J
+    	end
+    end
+    
+    B.calculateChangedBits =
+    	function<T>(I: ReactContext<T>, J: T, K: T)
+    		if y(K, J) then
+    			
+    			return 0
+    		else
+    			
+    			local L = o
+    			if typeof(I._calculateChangedBits) == "function" then
+    				L = I._calculateChangedBits(K, J)
+    			end
+    
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			return math.floor(L)
+    		end
+    	end
+    
+    B.scheduleWorkOnParentPath = function(I: Fiber | nil, J: Lanes)
+    	
+    	local K = I
+    	while K ~= nil do
+    		local L = K.alternate
+    		if not u(K.childLanes, J) then
+    			K.childLanes = w(K.childLanes, J)
+    			if L ~= nil then
+    				L.childLanes = w(L.childLanes, J)
+    			end
+    		elseif
+    			L ~= nil and not u(L.childLanes, J)
+    		then
+    			L.childLanes = w(L.childLanes, J)
+    		else
+    			
+    			
+    			break
+    		end
+    		K = K.return_
+    	end
+    end
+    
+    B.propagateContextChange = function<T>(
+    	I: Fiber,
+    	J: ReactContext<T>,
+    	K: number,
+    	L: Lanes
+    ): ()
+    	local M = I.child
+    	if M ~= nil then
+    		
+    		M.return_ = I
+    	end
+    	while M ~= nil do
+    		local N
+    
+    		
+    		local O = M.dependencies
+    		if O ~= nil then
+    			N = M.child
+    
+    			local P = O.firstContext
+    			while P ~= nil do
+    				
+    				if
+    					P.context == J
+    					
+    					and bit32.band(P.observedBits, K) ~= 0
+    				then
+    					
+    
+    					if M.tag == r then
+    						
+    						local Q =
+    							z(t, x(L))
+    						Q.tag = A
+    						
+    						
+    						
+    						
+    
+    						
+    						local R = M.updateQueue
+    						if R == nil then
+    						
+    						else
+    							local S: SharedQueue<any> = (R :: any).shared
+    							local T = S.pending
+    							if T == nil then
+    								
+    								Q.next = Q
+    							else
+    								Q.next = T.next
+    								T.next = Q
+    							end
+    							S.pending = Q
+    						end
+    					end
+    
+    					
+    					M.lanes = bit32.bor(M.lanes, L)
+    					local Q = M.alternate
+    					if Q ~= nil then
+    						
+    						Q.lanes = bit32.bor(Q.lanes, L)
+    					end
+    					B.scheduleWorkOnParentPath(M.return_, L)
+    
+    					
+    					
+    					O.lanes = bit32.bor(O.lanes, L)
+    
+    					
+    					
+    					break
+    				end
+    				P = P.next
+    			end
+    		elseif M.tag == q then
+    			
+    			if M.type == I.type then
+    				N = nil
+    			else
+    				N = M.child
+    			end
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		else
+    			
+    			N = M.child
+    		end
+    
+    		if N ~= nil then
+    			
+    			N.return_ = M
+    		else
+    			
+    			N = M
+    			while N ~= nil do
+    				if N == I then
+    					
+    					N = nil
+    					break
+    				end
+    				local P = N.sibling
+    				if P ~= nil then
+    					
+    					P.return_ = N.return_
+    					N = P
+    					break
+    				end
+    				
+    				N = N.return_
+    			end
+    		end
+    		M = N
+    	end
+    end
+    
+    
+    B.prepareToReadContext = function(
+    	I: Fiber,
+    	J: Lanes,
+    	K: () -> ()
+    ): ()
+    	E = I
+    	F = nil
+    	G = nil
+    
+    	local L = I.dependencies
+    	if L ~= nil then
+    		local M = L.firstContext
+    		if M ~= nil then
+    			if v(L.lanes, J) then
+    				
+    				K()
+    			end
+    			
+    			L.firstContext = nil
+    		end
+    	end
+    end
+    
+    B.readContext =
+    	function<T>(I: ReactContext<T>, J: nil | number | boolean): T
+    		if _G.__DEV__ then
+    			
+    			
+    			if H then
+    				d.error(
+    [[Context can only be read while React is rendering. In classes, you can read it in the render method or getDerivedStateFromProps. In function components, you can read it directly in the function body, but not inside Hooks like useReducer() or useMemo().]]				
+    
+    
+    
+    )
+    			end
+    		end
+    
+    		if G == I then
+    		
+    		elseif J == false or J == 0 then
+    		
+    		else
+    			local K 
+    			if
+    				typeof(J) ~= "number"
+    				or J == b.MAX_SAFE_INTEGER
+    			then
+    				
+    				
+    				G = I
+    				K = b.MAX_SAFE_INTEGER
+    			else
+    				K = J
+    			end
+    
+    			local L = {
+    				
+    				context = I,
+    				observedBits = K,
+    				next = nil,
+    			}
+    
+    			if F == nil then
+    				if E == nil then
+    					error(
+    						c.new(
+    [[Context can only be read while React is rendering. In classes, you can read it in the render method or getDerivedStateFromProps. In function components, you can read it directly in the function body, but not inside Hooks like useReducer() or useMemo().]]						
+    
+    
+    
+    )
+    					)
+    				end
+    
+    				
+    				F = L;
+    				(E :: Fiber).dependencies = {
+    					lanes = s,
+    					firstContext = L,
+    					responders = nil,
+    				}
+    			else
+    				
+    				(F :: any).next = L
+    				F = L
+    			end
+    		end
+    		return if k then I._currentValue else I._currentValue2
+    	end
+    
+    return B
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberOffscreenComponent"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    type ReactNodeList = a.ReactNodeList
+    
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLane")
+    type Lanes = b.Lanes
+    
+    export type OffscreenProps = {
+    	
+    	
+    	
+    	
+    	
+    	
+    	mode: string | nil,
+    	children: ReactNodeList
+    }
+    
+    
+    
+    export type OffscreenState = {
+    	
+    	
+    	
+    	baseLanes: Lanes
+    }
+    
+    return {}
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberReconciler"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    return _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberReconciler.new")
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberReconciler.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _G.__DEV__ :: boolean
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    type React_Component<Props, State> = b.React_Component<Props, State>
+    local c = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/luau-polyfill")
+    local d = c.Array
+    local e = c.Object
+    type Function = (...any) -> ...any
+    
+    
+    local f = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").console
+    
+    type Object = { [string]: any }
+    type Array<T> = { [number]: T }
+    
+    local g = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = g.Fiber
+    type SuspenseHydrationCallbacks = g.SuspenseHydrationCallbacks
+    type FiberRoot = g.FiberRoot
+    
+    local h = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactRootTags")
+    type RootTag = h.RootTag
+    
+    local i = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberFlags")
+    
+    local j = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHostConfig")
+    type Instance = j.Instance
+    type TextInstance = j.TextInstance
+    type Container = j.Container
+    type PublicInstance = j.PublicInstance
+    type RendererInspectionConfig = j.RendererInspectionConfig
+    
+    local k = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactWorkTags")
+    local l = k.FundamentalComponent
+    local m = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    type ReactNodeList = m.ReactNodeList
+    
+    local n = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLane")
+    type Lane = n.Lane
+    type LanePriority = n.LanePriority
+    local o = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberSuspenseComponent.new")
+    type SuspenseState = o.SuspenseState
+    
+    local p = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberTreeReflection")
+    local q = p.findCurrentHostFiber
+    local r =
+    	p.findCurrentHostFiberWithNoPortals
+    local s = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactInstanceMap.get
+    local t = k.HostComponent
+    local u = k.ClassComponent
+    local v = k.HostRoot
+    local w = k.SuspenseComponent
+    local x = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").getComponentName
+    local y = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").invariant
+    local z = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").describeError
+    local A =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactFeatureFlags.enableSchedulingProfiler
+    local B = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactSharedInternals
+    local C = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHostConfig").getPublicInstance
+    local D = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberContext.new")
+    local E = D.findCurrentUnmaskedContext
+    local F = D.processChildContext
+    local G = D.emptyContextObject
+    local H = D.isContextProvider
+    local I = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberRoot.new")
+    local J = I.createFiberRoot
+    local K = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberDevToolsHook.new")
+    local L = K.injectInternals
+    local M = K.onScheduleRoot
+    local N = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberWorkLoop.new"):: any
+    local O = N.requestEventTime
+    local P = N.requestUpdateLane
+    local Q = N.scheduleUpdateOnFiber
+    local R = N.flushRoot
+    local S = N.batchedEventUpdates
+    local T = N.batchedUpdates
+    local U = N.unbatchedUpdates
+    local V = N.flushSync
+    local W = N.flushControlled
+    local X = N.deferredUpdates
+    local Y = N.discreteUpdates
+    local Z = N.flushDiscreteUpdates
+    local _ = N.flushPassiveEffects
+    local aa = N.warnIfNotScopedWithMatchingAct
+    local ab = N.warnIfUnmockedScheduler
+    local ac = N.IsThisRendererActing
+    local ad = N.act :: (() -> ()) -> ()
+    local ae = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactUpdateQueue.new")
+    local af = ae.createUpdate
+    local ag = ae.enqueueUpdate
+    local ah = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactCurrentFiber")
+    local ai = ah.isRendering
+    
+    
+    local aj = ah.resetCurrentFiber
+    local ak = ah.setCurrentFiber
+    local al = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactTypeOfMode")
+    local am = al.StrictMode
+    local an = n.SyncLane
+    local ao = n.InputDiscreteHydrationLane
+    local ap = n.SelectiveHydrationLane
+    local aq = n.NoTimestamp
+    local ar = n.getHighestPriorityPendingLanes
+    local as = n.higherPriorityLane
+    local at = n.getCurrentUpdateLanePriority
+    local au = n.setCurrentUpdateLanePriority
+    
+    
+    
+    
+    
+    local av = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/SchedulingProfiler").markRenderScheduled
+    
+    local aw = {}
+    
+    
+    aw.ReactRootTags = h
+    
+    aw.ReactWorkTags = k
+    
+    
+    aw.ReactTypeOfMode = al
+    aw.ReactFiberFlags = i
+    aw.getNearestMountedFiber = p.getNearestMountedFiber
+    aw.findCurrentFiberUsingSlowPath =
+    	p.findCurrentFiberUsingSlowPath
+    
+    
+    aw.createPortal = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactPortal").createPortal
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    type OpaqueRoot = FiberRoot
+    
+    
+    
+    type BundleType = number
+    
+    type DevToolsConfig = {
+    	bundleType: BundleType,
+    	version: string,
+    	rendererPackageName: string,
+    	
+    	
+    	findFiberByHostInstance: ((Instance | TextInstance) -> Fiber)?,
+    	rendererConfig: RendererInspectionConfig?
+    }
+    
+    local ax
+    local ay
+    
+    if a then
+    	ax = false
+    	ay = {}
+    end
+    
+    local function getContextForSubtree(az: any?): Object
+    	if not az then
+    		return G
+    	end
+    
+    	local aA = s(az)
+    	local aB = E(aA)
+    
+    	if aA.tag == u then
+    		local aC = aA.type
+    		if H(aC) then
+    			return F(aA, aC, aB)
+    		end
+    	end
+    
+    	return aB
+    end
+    
+    local function findHostInstance(az: Object): PublicInstance | nil
+    	local aA = s(az)
+    	if aA == nil then
+    		if typeof(az.render) == "function" then
+    			y(false, "Unable to find node on an unmounted component.")
+    		else
+    			y(
+    				false,
+    				"Argument appears to not be a ReactComponent. Keys: %s",
+    				
+    				table.concat(e.keys(az))
+    			)
+    		end
+    	end
+    	local aB = q(aA)
+    	if aB == nil then
+    		return nil
+    	end
+    	return aB.stateNode
+    end
+    
+    local function findHostInstanceWithWarning(
+    	az: Object,
+    	aA: string
+    ): PublicInstance | nil
+    	if a then
+    		local aB = s(az)
+    		if aB == nil then
+    			if typeof(az.render) == "function" then
+    				y(false, "Unable to find node on an unmounted component.")
+    			else
+    				y(
+    					false,
+    					"Argument appears to not be a ReactComponent. Keys: %s",
+    					
+    					table.concat(e.keys(az))
+    				)
+    			end
+    		end
+    		local aC = q(aB)
+    		if aC == nil then
+    			return nil
+    		end
+    		if bit32.band(aC.mode, am) ~= 0 then
+    			local aD = x(aB.type) or "Component"
+    			if not ay[aD] then
+    				ay[aD] = true
+    
+    				local aE = ah.current
+    				local aF, aG = xpcall(function()
+    					ak(aC)
+    					if bit32.band(aB.mode, am) ~= 0 then
+    						f.error(
+    [[%s is deprecated in StrictMode. %s was passed an instance of %s which is inside StrictMode. Instead, add a ref directly to the element you want to reference. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-find-node]]
+    
+    
+    
+    ,
+    							aA,
+    							aA,
+    							aD
+    						)
+    					else
+    						f.error(
+    [[%s is deprecated in StrictMode. %s was passed an instance of %s which renders StrictMode children. Instead, add a ref directly to the element you want to reference. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-find-node]]
+    
+    
+    
+    ,
+    							aA,
+    							aA,
+    							aD
+    						)
+    					end
+    				end, z)
+    
+    				
+    				
+    				if aE then
+    					ak(aE)
+    				else
+    					aj()
+    				end
+    
+    				if not aF then
+    					error(aG)
+    				end
+    			end
+    		end
+    		return aC.stateNode
+    	end
+    	return findHostInstance(az)
+    end
+    
+    aw.createContainer = function(
+    	az: Container,
+    	aA: RootTag,
+    	aB: boolean,
+    	aC: nil | SuspenseHydrationCallbacks
+    ): OpaqueRoot
+    	return J(az, aA, aB, aC)
+    end
+    
+    aw.updateContainer = function(
+    	az: ReactNodeList,
+    	aA: OpaqueRoot,
+    	aB,
+    	aC: Function?
+    ): Lane
+    	if a then
+    		M(aA, az)
+    	end
+    	local aD = aA.current
+    	local aE = O()
+    	if a then
+    		
+    		
+    		if _G.__TESTEZ_RUNNING_TEST__ then
+    			ab(aD)
+    			aa(aD)
+    		end
+    	end
+    	local aF = P(aD)
+    
+    	if A then
+    		av(aF)
+    	end
+    
+    	local aG = getContextForSubtree(aB)
+    	if aA.context == nil then
+    		aA.context = aG
+    	else
+    		aA.pendingContext = aG
+    	end
+    
+    	if a then
+    		if
+    			ai
+    			and ah.current ~= nil
+    			and not ax
+    		then
+    			ax = true
+    			f.error(
+    [[Render methods should be a pure function of props and state; triggering nested component updates from render is not allowed. If necessary, trigger nested updates in componentDidUpdate.
+    
+    Check the render method of %s.]]
+    ,
+    				x((ah.current :: any).type) or "Unknown"
+    			)
+    		end
+    	end
+    
+    	local aH = af(aE, aF)
+    	
+    	
+    	if az == nil then
+    		az = e.None
+    	end
+    	
+    	
+    	aH.payload = {
+    		element = az,
+    	}
+    
+    	
+    	
+    	if aC ~= nil then
+    		if a then
+    			if typeof(aC) ~= "function" then
+    				f.error(
+    [[render(...): Expected the last optional `callback` argument to be a function. Instead received: %s.]]
+    ,
+    					tostring(aC)
+    				)
+    			end
+    		end
+    		aH.callback = aC
+    	end
+    
+    	ag(aD, aH)
+    	Q(aD, aF, aE)
+    
+    	return aF
+    end
+    
+    
+    aw.batchedEventUpdates = S
+    aw.batchedUpdates = T
+    aw.unbatchedUpdates = U
+    aw.deferredUpdates = X
+    aw.discreteUpdates = Y
+    aw.flushDiscreteUpdates = Z
+    aw.flushControlled = W
+    aw.flushSync = V
+    aw.flushPassiveEffects = _
+    aw.IsThisRendererActing = ac
+    aw.act = ad
+    
+    aw.getPublicRootInstance =
+    	function(az: OpaqueRoot): React_Component<any, any> | PublicInstance | nil
+    		local aA = az.current
+    		if not aA.child then
+    			return nil
+    		end
+    		if aA.child.tag == t then
+    			return C(aA.child.stateNode)
+    		else
+    			return aA.child.stateNode
+    		end
+    	end
+    
+    
+    local az
+    
+    aw.attemptSynchronousHydration = function(aA: Fiber)
+    	if aA.tag == v then
+    		local aB: FiberRoot = aA.stateNode
+    		if aB.hydrate then
+    			
+    			local aC = ar(aB)
+    			R(aB, aC)
+    		end
+    	elseif aA.tag == w then
+    		local aB = O()
+    		V(function()
+    			return Q(aA, an, aB)
+    		end)
+    		
+    		
+    		
+    		local aC = ao
+    		az(aA, aC)
+    	end
+    end
+    
+    local function markRetryLaneImpl(aA: Fiber, aB: Lane)
+    	local aC: SuspenseState? = aA.memoizedState
+    	if aC then
+    		if aC ~= nil and aC.dehydrated ~= nil then
+    			aC.retryLane =
+    				as(aC.retryLane, aB)
+    		end
+    	end
+    end
+    
+    
+    az = function(aA: Fiber, aB: Lane)
+    	markRetryLaneImpl(aA, aB)
+    	
+    	local aC = aA.alternate
+    	if aC then
+    		markRetryLaneImpl(aC, aB)
+    	end
+    end
+    
+    aw.attemptUserBlockingHydration = function(aA: Fiber)
+    	if aA.tag ~= w then
+    		
+    		
+    		
+    		
+    		return
+    	end
+    	local aB = O()
+    	local aC = ao
+    	Q(aA, aC, aB)
+    	az(aA, aC)
+    end
+    
+    aw.attemptContinuousHydration = function(aA: Fiber)
+    	if aA.tag ~= w then
+    		
+    		
+    		
+    		
+    		return
+    	end
+    	local aB = O()
+    	local aC = ap
+    	Q(aA, aC, aB)
+    	az(aA, aC)
+    end
+    
+    aw.attemptHydrationAtCurrentPriority = function(aA: Fiber)
+    	if aA.tag ~= w then
+    		
+    		
+    		return
+    	end
+    	local aB = O()
+    	local aC = P(aA)
+    	Q(aA, aC, aB)
+    	az(aA, aC)
+    end
+    
+    aw.runWithPriority = function<T>(aA: LanePriority, aB: () -> T): T
+    	local aC = at()
+    	
+    	au(aA)
+    	local aD, aE = xpcall(aB, z)
+    	au(aC)
+    	if not aD then
+    		error(aE)
+    	end
+    	return aE
+    end
+    
+    aw.getCurrentUpdateLanePriority = at
+    
+    aw.findHostInstance = findHostInstance
+    
+    aw.findHostInstanceWithWarning = findHostInstanceWithWarning
+    
+    aw.findHostInstanceWithNoPortals = function(aA: Fiber): PublicInstance?
+    	local aB = r(aA)
+    	if aB == nil then
+    		return nil
+    	end
+    	if aB.tag == l then
+    		return aB.stateNode.instance
+    	end
+    	return aB.stateNode
+    end
+    
+    local function shouldSuspendImpl(aA)
+    	return false
+    end
+    
+    aw.shouldSuspend = function(aA: Fiber): boolean
+    	return shouldSuspendImpl(aA)
+    end
+    
+    local aA 
+    local aB 
+    local aC 
+    local aD 
+    local aE 
+    local aF 
+    local aG 
+    local aH 
+    
+    if a then
+    	
+    	local function copyWithDeleteImpl(
+    		aI: Object,
+    		aJ: Array<string | number>,
+    		aK: number
+    	)
+    		local aL = aJ[aK]
+    		local aM
+    		if d.isArray(aI) then
+    			aM = d.slice(aI)
+    		else
+    			aM = table.clone(aI)
+    		end
+    		if aK + 1 == #aJ then
+    			if d.isArray(aM) then
+    				
+    				local aN: number = aL
+    				d.splice(aM, aN, 1)
+    			else
+    				aM[aL] = nil
+    			end
+    			return aM
+    		end
+    		
+    		aM[aL] = copyWithDeleteImpl(aI[aL], aJ, aK + 1)
+    		return aM
+    	end
+    
+    	
+    	local function copyWithDelete(
+    		aI: Object,
+    		aJ: Array<string | number>
+    	): Object | Array<any>
+    		return copyWithDeleteImpl(aI, aJ, 0)
+    	end
+    
+    	
+    	local function copyWithRenameImpl(
+    		aI: Object,
+    		aJ: Array<string | number>,
+    		aK: Array<string | number>,
+    		aL: number
+    	)
+    		local aM = aJ[aL]
+    		local aN
+    		if d.isArray(aI) then
+    			aN = d.slice(aI)
+    		else
+    			aN = table.clone(aI)
+    		end
+    		if aL + 1 == #aJ then
+    			local aO = aK[aL]
+    			
+    			aN[aO] = aN[aM]
+    			if d.isArray(aN) then
+    				d.splice(aN, aM, 1)
+    			else
+    				aN[aM] = nil
+    			end
+    		else
+    			
+    			aN[aM] = copyWithRenameImpl(
+    				
+    				aI[aM],
+    				aJ,
+    				aK,
+    				aL + 1
+    			)
+    		end
+    		return aN
+    	end
+    
+    	
+    	local function copyWithRename(
+    		aI: Object,
+    		aJ: Array<string | number>,
+    		aK: Array<string | number>
+    	): Object | Array<any> | nil
+    		if #aJ ~= #aK then
+    			f.warn("copyWithRename() expects paths of the same length")
+    			return nil
+    		else
+    			for aL = 1, #aK do
+    				if aJ[aL] ~= aK[aL] then
+    					f.warn(
+    						"copyWithRename() expects paths to be the same except for the deepest key"
+    					)
+    					return nil
+    				end
+    			end
+    		end
+    		return copyWithRenameImpl(aI, aJ, aK, 0)
+    	end
+    
+    	
+    	local function copyWithSetImpl(
+    		aI: Object,
+    		aJ: Array<string | number>,
+    		aK: number,
+    		aL: any
+    	)
+    		if aK >= (#aJ + 1) then
+    			return aL
+    		end
+    		local aM = aJ[aK]
+    		local aN
+    		if d.isArray(aI) then
+    			aN = d.slice(aI)
+    		else
+    			aN = table.clone(aI)
+    		end
+    		
+    		aN[aM] = copyWithSetImpl(aI[aM], aJ, aK + 2, aL)
+    		return aN
+    	end
+    
+    	
+    	local function copyWithSet(
+    		aI: Object,
+    		aJ: Array<string | number>,
+    		aK: any
+    	): Object | Array<any>
+    		return copyWithSetImpl(aI, aJ, 1, aK)
+    	end
+    
+    	local function findHook(aI: Fiber, aJ: number)
+    		
+    		
+    		local aK = aI.memoizedState
+    		while aK ~= nil and aJ > 1 do
+    			aK = aK.next
+    			aJ -= 1
+    		end
+    		return aK
+    	end
+    
+    	
+    	aA =
+    		function(aI: Fiber, aJ: number, aK: Array<string | number>, aL: any)
+    			local aM = findHook(aI, aJ)
+    			if aM ~= nil then
+    				local aN = copyWithSet(aM.memoizedState, aK, aL)
+    				aM.memoizedState = aN
+    				aM.baseState = aN
+    
+    				
+    				
+    				
+    				
+    				
+    				aI.memoizedProps = table.clone(aI.memoizedProps)
+    
+    				Q(aI, an, aq)
+    			end
+    		end
+    	aB =
+    		function(aI: Fiber, aJ: number, aK: Array<string | number>)
+    			local aL = findHook(aI, aJ)
+    			if aL ~= nil then
+    				local aM = copyWithDelete(aL.memoizedState, aK)
+    				aL.memoizedState = aM
+    				aL.baseState = aM
+    
+    				
+    				
+    				
+    				
+    				
+    				aI.memoizedProps = table.clone(aI.memoizedProps)
+    
+    				Q(aI, an, aq)
+    			end
+    		end
+    	aC = function(
+    		aI: Fiber,
+    		aJ: number,
+    		aK: Array<string | number>,
+    		aL: Array<string | number>
+    	)
+    		local aM = findHook(aI, aJ)
+    		if aM ~= nil then
+    			local aN = copyWithRename(aM.memoizedState, aK, aL)
+    			aM.memoizedState = aN
+    			aM.baseState = aN
+    
+    			
+    			
+    			
+    			
+    			
+    			aI.memoizedProps = table.clone(aI.memoizedProps)
+    
+    			Q(aI, an, aq)
+    		end
+    	end
+    
+    	
+    	aD = function(aI: Fiber, aJ: Array<string | number>, aK: any)
+    		aI.pendingProps = copyWithSet(aI.memoizedProps, aJ, aK)
+    		
+    		local aL = aI.alternate
+    		if aL then
+    			aL.pendingProps = aI.pendingProps
+    		end
+    		Q(aI, an, aq)
+    	end
+    	aE = function(aI: Fiber, aJ: Array<string | number>)
+    		aI.pendingProps = copyWithDelete(aI.memoizedProps, aJ)
+    		
+    		local aK = aI.alternate
+    		if aK then
+    			aK.pendingProps = aI.pendingProps
+    		end
+    		Q(aI, an, aq)
+    	end
+    	aF = function(
+    		aI: Fiber,
+    		aJ: Array<string | number>,
+    		aK: Array<string | number>
+    	)
+    		aI.pendingProps = copyWithRename(aI.memoizedProps, aJ, aK)
+    		
+    		local aL = aI.alternate
+    		if aL then
+    			aL.pendingProps = aI.pendingProps
+    		end
+    		Q(aI, an, aq)
+    	end
+    
+    	aG = function(aI: Fiber)
+    		Q(aI, an, aq)
+    	end
+    
+    	aH = function(aI: (Fiber) -> (boolean))
+    		shouldSuspendImpl = aI
+    	end
+    end
+    
+    function findHostInstanceByFiber(aI: Fiber): Instance | TextInstance | nil
+    	local aJ = q(aI)
+    	if aJ == nil then
+    		return nil
+    	end
+    	return aJ.stateNode
+    end
+    
+    function emptyFindFiberByHostInstance(aI: Instance | TextInstance): Fiber | nil
+    	return nil
+    end
+    
+    function getCurrentFiberForDevTools()
+    	return ah.current
+    end
+    
+    aw.injectIntoDevTools = function(aI: DevToolsConfig): boolean
+    	local aJ = aI.findFiberByHostInstance
+    	local aK = B.ReactCurrentDispatcher
+    	local aL 	
+    if a then
+    		aL = getCurrentFiberForDevTools
+    	end
+    	return L({
+    		bundleType = aI.bundleType,
+    		version = aI.version,
+    		rendererPackageName = aI.rendererPackageName,
+    		rendererConfig = aI.rendererConfig,
+    		overrideHookState = aA,
+    		overrideHookStateDeletePath = aB,
+    		overrideHookStateRenamePath = aC,
+    		overrideProps = aD,
+    		overridePropsDeletePath = aE,
+    		overridePropsRenamePath = aF,
+    		setSuspenseHandler = aH,
+    		scheduleUpdate = aG,
+    		currentDispatcherRef = aK,
+    		findHostInstanceByFiber = findHostInstanceByFiber,
+    		findFiberByHostInstance = aJ or emptyFindFiberByHostInstance,
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		getCurrentFiber = aL,
+    	})
+    end
+    
+    aw.robloxReactProfiling = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/RobloxReactProfiling")
+    
+    return aw
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberRoot.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/luau-polyfill")
+    local b = a.Set
+    local c = a.Map
+    
+    local d = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = d.Fiber
+    type FiberRoot = d.FiberRoot
+    type SuspenseHydrationCallbacks = d.SuspenseHydrationCallbacks
+    local e = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactRootTags")
+    type RootTag = e.RootTag
+    
+    local f = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHostConfig")
+    local g = f.noTimeout
+    local h = f.supportsHydration
+    local i = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiber.new")
+    local j = i.createHostRootFiber
+    local k = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLane")
+    local l = k.NoLanes
+    local m = k.NoLanePriority
+    local n = k.NoTimestamp
+    local o = k.createLaneMap
+    local p = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactFeatureFlags
+    local q = p.enableSchedulerTracing
+    local r = p.enableSuspenseCallback
+    
+    local s = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/scheduler").tracing
+    local t = s.unstable_getThreadID
+    local u = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactUpdateQueue.new")
+    local v = u.initializeUpdateQueue
+    local w = e.LegacyRoot
+    local x = e.BlockingRoot
+    local y = e.ConcurrentRoot
+    
+    local z = {}
+    
+    local function FiberRootNode(A, B, C)
+    	
+    	local D = {
+    		tag = B,
+    		containerInfo = A,
+    		pendingChildren = nil,
+    		
+    		current = (nil :: any) :: Fiber,
+    		pingCache = nil,
+    		finishedWork = nil,
+    		timeoutHandle = g,
+    		context = nil,
+    		pendingContext = nil,
+    		hydrate = C,
+    		callbackNode = nil,
+    		callbackPriority = m,
+    		eventTimes = o(l),
+    		expirationTimes = o(n),
+    
+    		pendingLanes = l,
+    		suspendedLanes = l,
+    		pingedLanes = l,
+    		expiredLanes = l,
+    		mutableReadLanes = l,
+    		finishedLanes = l,
+    
+    		entangledLanes = l,
+    		entanglements = o(l),
+    	}
+    
+    	if h then
+    		D.mutableSourceEagerHydrationData = nil
+    	end
+    
+    	if q then
+    		D.interactionThreadID = t()
+    		D.memoizedInteractions = b.new()
+    		D.pendingInteractionMap = c.new()
+    	end
+    	if r then
+    		D.hydrationCallbacks = nil
+    	end
+    
+    	if _G.__DEV__ then
+    		if B == x then
+    			D._debugRootType = "createBlockingRoot()"
+    		elseif B == y then
+    			D._debugRootType = "createRoot()"
+    		elseif B == w then
+    			D._debugRootType = "createLegacyRoot()"
+    		end
+    	end
+    
+    	return D
+    end
+    
+    z.createFiberRoot = function(
+    	A: any,
+    	B: RootTag,
+    	C: boolean,
+    	D: SuspenseHydrationCallbacks?
+    ): FiberRoot
+    	local E: FiberRoot = FiberRootNode(A, B, C)
+    	if r then
+    		E.hydrationCallbacks = D
+    	end
+    
+    	
+    	
+    	local F = j(B)
+    	E.current = F
+    	F.stateNode = E
+    
+    	v(F)
+    
+    	return E
+    end
+    
+    return z
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberSchedulerPriorities.roblox"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    export type ReactPriorityLevel = number
+    
+    local a: { [string]: ReactPriorityLevel } = {
+    	
+    	
+    	
+    	ImmediatePriority = 99,
+    	UserBlockingPriority = 98,
+    	NormalPriority = 97,
+    	LowPriority = 96,
+    	IdlePriority = 95,
+    	
+    	NoPriority = 90,
+    }
+    
+    return a
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberStack.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").console
+    
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = b.Fiber
+    
+    type Array<T> = { [number]: T }
+    
+    type null = {}
+    local c: null = {}
+    
+    export type StackCursor<T> = { current: T }
+    
+    local d: Array<any> = {}
+    
+    local e: Array<Fiber | null>
+    
+    if _G.__DEV__ then
+    	e = {}
+    end
+    
+    local f = 0
+    
+    local function createCursor<T>(g: T): StackCursor<T>
+    	return {
+    		current = g,
+    	}
+    end
+    
+    local function isEmpty(): boolean
+    	return f == 0
+    end
+    
+    local function pop<T>(g: StackCursor<T>, h: Fiber): ()
+    	if f < 1 then
+    		if _G.__DEV__ then
+    			a.error("Unexpected pop.")
+    		end
+    		return
+    	end
+    
+    	if _G.__DEV__ then
+    		
+    		if h ~= e[f] :: Fiber then
+    			a.error("Unexpected Fiber popped.")
+    		end
+    	end
+    
+    	local i = d[f]
+    	if i == c then
+    		
+    		g.current = nil :: any
+    	else
+    		g.current = i
+    	end
+    
+    	d[f] = nil
+    
+    	if _G.__DEV__ then
+    		e[f] = nil
+    	end
+    
+    	f -= 1
+    end
+    
+    local function push<T>(g: StackCursor<T>, h: T, i: Fiber): ()
+    	f += 1
+    
+    	local j = g.current
+    	if j == nil then
+    		d[f] = c
+    	else
+    		d[f] = j
+    	end
+    
+    	if _G.__DEV__ then
+    		e[f] = i
+    	end
+    
+    	g.current = h
+    end
+    
+    local function checkThatStackIsEmpty()
+    	if _G.__DEV__ then
+    		if f ~= 0 then
+    			a.error("Expected an empty stack. Something was not reset properly.")
+    		end
+    	end
+    end
+    
+    local function resetStackAfterFatalErrorInDev()
+    	if _G.__DEV__ then
+    		f = 0
+    		
+    		table.clear(d)
+    		table.clear(e)
+    	end
+    end
+    
+    return {
+    	createCursor = createCursor,
+    	isEmpty = isEmpty,
+    	pop = pop,
+    	push = push,
+    	
+    	checkThatStackIsEmpty = checkThatStackIsEmpty,
+    	resetStackAfterFatalErrorInDev = resetStackAfterFatalErrorInDev,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberSuspenseComponent.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    type ReactNodeList = a.ReactNodeList
+    type Wakeable = a.Wakeable
+    
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = b.Fiber
+    local c = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHostConfig")
+    type SuspenseInstance = c.SuspenseInstance
+    local d = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLane")
+    type Lane = d.Lane
+    local e = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactWorkTags")
+    local f = e.SuspenseComponent
+    local g = e.SuspenseListComponent
+    local h = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberFlags")
+    local i = h.NoFlags
+    local j = h.DidCapture
+    local k = c.isSuspenseInstancePending
+    local l = c.isSuspenseInstanceFallback
+    
+    
+    type Set<T> = { [T]: boolean }
+    
+    export type SuspenseProps = {
+    	children: ReactNodeList?,
+    	fallback: ReactNodeList?,
+    
+    	
+    	suspenseCallback: (Set<Wakeable>?) -> any,
+    
+    	unstable_expectedLoadTime: number?
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    export type SuspenseState = {
+    	
+    	
+    	
+    	dehydrated: SuspenseInstance?,
+    	
+    	
+    	
+    	retryLane: Lane
+    }
+    
+    
+    
+    export type SuspenseListTailMode = string?
+    
+    export type SuspenseListRenderState = {
+    	isBackwards: boolean,
+    	
+    	rendering: Fiber?,
+    	
+    	renderingStartTime: number,
+    	
+    	last: Fiber?,
+    	
+    	tail: Fiber?,
+    	
+    	tailMode: SuspenseListTailMode
+    }
+    
+    local m = {}
+    
+    m.shouldCaptureSuspense =
+    	function(n: Fiber, o: boolean): boolean
+    		
+    		
+    		local p: SuspenseState? = n.memoizedState
+    		if p then
+    			if p.dehydrated ~= nil then
+    				
+    				return true
+    			end
+    			return false
+    		end
+    		local q = n.memoizedProps
+    		
+    		if q.fallback == nil then
+    			return false
+    		end
+    		
+    		if q.unstable_avoidThisFallback ~= true then
+    			return true
+    		end
+    		
+    		
+    		if o then
+    			return false
+    		end
+    		
+    		return true
+    	end
+    
+    m.findFirstSuspended = function(n: Fiber): Fiber?
+    	local o = n
+    	while o ~= nil do
+    		if o.tag == f then
+    			local p: SuspenseState? = o.memoizedState
+    			if p then
+    				local q: SuspenseInstance? = p.dehydrated
+    				if
+    					q == nil
+    					or k(q)
+    					or l(q)
+    				then
+    					return o
+    				end
+    			end
+    		elseif
+    			o.tag == g
+    			
+    			
+    			and o.memoizedProps.revealOrder ~= nil
+    		then
+    			local p = bit32.band(o.flags, j) ~= i
+    			if p then
+    				return o
+    			end
+    		elseif o.child ~= nil then
+    			o.child.return_ = o
+    			o = o.child
+    			continue
+    		end
+    		if o == n then
+    			return nil
+    		end
+    		while o.sibling == nil do
+    			if o.return_ == nil or o.return_ == n then
+    				return nil
+    			end
+    			
+    			o = o.return_ :: Fiber
+    		end
+    		
+    		(o.sibling :: Fiber).return_ = o.return_
+    		o = o.sibling :: Fiber
+    	end
+    	return nil
+    end
+    
+    return m
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberSuspenseContext.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = a.Fiber
+    
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberStack.new")
+    type StackCursor<T> = b.StackCursor<T>
+    
+    local c = b.createCursor
+    local d = b.push
+    local e = b.pop
+    
+    export type SuspenseContext = number
+    export type SubtreeSuspenseContext = SuspenseContext
+    export type ShallowSuspenseContext = SuspenseContext
+    
+    local f = {}
+    
+    local g: SuspenseContext = 0b00
+    
+    
+    
+    
+    
+    local h: SuspenseContext = 0b01
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local i: SubtreeSuspenseContext = 0b01
+    f.InvisibleParentSuspenseContext = i
+    
+    
+    
+    
+    
+    local j: ShallowSuspenseContext = 0b10
+    f.ForceSuspenseFallback = j
+    
+    local k: StackCursor<SuspenseContext> =
+    	c(g)
+    f.suspenseStackCursor = k
+    
+    function f.hasSuspenseContext(
+    	l: SuspenseContext,
+    	m: SuspenseContext
+    ): boolean
+    	return bit32.band(l, m) ~= 0
+    end
+    
+    function f.setDefaultShallowSuspenseContext(
+    	l: SuspenseContext
+    ): SuspenseContext
+    	return bit32.band(l, h)
+    end
+    
+    function f.setShallowSuspenseContext(
+    	l: SuspenseContext,
+    	m: ShallowSuspenseContext
+    ): SuspenseContext
+    	return bit32.bor(
+    		bit32.band(l, h),
+    		m
+    	)
+    end
+    
+    function f.addSubtreeSuspenseContext(
+    	l: SuspenseContext,
+    	m: SubtreeSuspenseContext
+    ): SuspenseContext
+    	return bit32.bor(l, m)
+    end
+    
+    function f.pushSuspenseContext(l: Fiber, m: SuspenseContext)
+    	d(k, m, l)
+    end
+    
+    function f.popSuspenseContext(l: Fiber)
+    	e(k, l)
+    end
+    
+    return f
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberThrow.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/luau-polyfill")
+    local b = a.Object
+    
+    local c = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").console
+    type Error = a.Error
+    type Map<K, V> = { [K]: V }
+    type Object = { [string]: any }
+    type Set<T> = { [T]: boolean }
+    
+    local d = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = d.Fiber
+    type FiberRoot = d.FiberRoot
+    type ReactPriorityLevel = d.ReactPriorityLevel
+    local e = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLane")
+    type Lanes = e.Lanes
+    type Lane = e.Lane
+    local f = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactCapturedValue")
+    type CapturedValue<T> = f.CapturedValue<T>
+    local g = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactUpdateQueue.new")
+    type Update<T> = d.Update<T>
+    
+    local h = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    type React_Component<Props, State> = h.React_Component<Props, State>
+    type Thenable<T> = h.Thenable<T>
+    type Wakeable = h.Wakeable
+    
+    local i = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberSuspenseContext.new")
+    type SuspenseContext = i.SuspenseContext
+    
+    local j = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").getComponentName
+    
+    local k = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactWorkTags")
+    local l = k.ClassComponent
+    local m = k.HostRoot
+    local n = k.SuspenseComponent
+    local o = k.IncompleteClassComponent
+    
+    local p = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberFlags")
+    local q = p.DidCapture
+    local r = p.Incomplete
+    local s = p.NoFlags
+    local t = p.ShouldCapture
+    local u = p.LifecycleEffectMask
+    local v = p.ForceUpdateForLegacySuspense
+    local w =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberSuspenseComponent.new").shouldCaptureSuspense
+    local x = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactTypeOfMode")
+    local y = x.NoMode
+    local z = x.BlockingMode
+    local A = x.DebugTracingMode
+    local B = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactFeatureFlags
+    local C = B.enableDebugTracing
+    local D = B.enableSchedulingProfiler
+    local E = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactCapturedValue").createCapturedValue
+    
+    local F = g.enqueueCapturedUpdate
+    local G = g.createUpdate
+    local H = g.CaptureUpdate
+    local I = g.ForceUpdate
+    local J = g.enqueueUpdate
+    local K = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHotReloading.new").markFailedErrorBoundaryForHotReloading
+    
+    local L = i.hasSuspenseContext
+    local M =
+    	i.InvisibleParentSuspenseContext
+    local N = i.suspenseStackCursor
+    
+    
+    
+    local O
+    local P, Q, R
+    
+    
+    local S = function(...)
+    	if not P then
+    		O = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberWorkLoop.new")		
+    P =
+    			O.markLegacyErrorBoundaryAsFailed
+    	end
+    	return P(...)
+    end
+    
+    
+    
+    
+    
+    
+    
+    local T = function(...)
+    	if O == nil then
+    		O = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberWorkLoop.new")	
+    end
+    	R = O.pingSuspendedRoot
+    	return R(...)
+    end
+    local U = function(...)
+    	if O == nil then
+    		O = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberWorkLoop.new")	
+    end
+    	Q =
+    		O.isAlreadyFailedLegacyErrorBoundary
+    	return Q(...)
+    end
+    
+    local V = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberErrorLogger").logCapturedError
+    local W = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/DebugTracing").logComponentSuspended
+    local X = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/SchedulingProfiler").markComponentSuspended
+    
+    local Y = e.SyncLane
+    local Z = e.NoTimestamp
+    local _ = e.includesSomeLane
+    local aa = e.mergeLanes
+    local ab = e.pickArbitraryLane
+    
+    
+    
+    function createRootErrorUpdate(
+    	ac: Fiber,
+    	ad: CapturedValue<Error>,
+    	ae: Lane,
+    	
+    	af
+    ): Update<any>
+    	local ag = G(Z, ae)
+    	
+    	ag.tag = H
+    	
+    	
+    	ag.payload = { element = b.None }
+    	local ah = ad.value
+    	ag.callback = function()
+    		if af ~= nil then
+    			af(ah)
+    		end
+    		V(ac, ad)
+    	end
+    	return ag
+    end
+    
+    function createClassErrorUpdate(
+    	ac: Fiber,
+    	ad: CapturedValue<Error>,
+    	ae: Lane
+    ): Update<any>
+    	local af = G(Z, ae)
+    	af.tag = H
+    	local ag = (ac.type :: React_Component<any, any>).getDerivedStateFromError
+    	if typeof(ag) == "function" then
+    		local ah = ad.value
+    		af.payload = function()
+    			V(ac, ad)
+    			return ag(ah)
+    		end
+    	end
+    
+    	local ah = ac.stateNode
+    	if ah ~= nil and typeof(ah.componentDidCatch) == "function" then
+    		af.callback = function()
+    			if _G.__DEV__ then
+    				K(ac)
+    			end
+    			if typeof(ag) ~= "function" then
+    				
+    				
+    				
+    				
+    				
+    				
+    				S(ah)
+    
+    				
+    				V(ac, ad)
+    			end
+    			local ai = ad.value
+    			local aj = ad.stack
+    			
+    			ah:componentDidCatch(ai, {
+    				componentStack = aj or "",
+    			})
+    			if _G.__DEV__ then
+    				if typeof(ag) ~= "function" then
+    					
+    					
+    					
+    					if not _(ac.lanes, Y) then
+    						c.error(
+    [[%s: Error boundaries should implement getDerivedStateFromError(). In that method, return a state update to display an error message or fallback UI.]]
+    ,
+    							j(ac.type) or "Unknown"
+    						)
+    					end
+    				end
+    			end
+    		end
+    	elseif _G.__DEV__ then
+    		af.callback = function()
+    			K(ac)
+    		end
+    	end
+    	return af
+    end
+    
+    local function attachPingListener(ac: FiberRoot, ad: Wakeable, ae: Lanes)
+    	
+    	
+    	
+    	local af: Map<Wakeable, (Set<any> | Map<Wakeable, Set<any>>)> | nil =
+    		ac.pingCache
+    	local ag
+    	if af == nil then
+    		
+    		
+    		ag = {} :: Set<any>
+    		ac.pingCache = {
+    			[ad] = ag,
+    		} :: Map<Wakeable, (Set<any> | Map<Wakeable, Set<any>>)>
+    		af = ac.pingCache :: Map<Wakeable, (Set<any> | Map<Wakeable, Set<any>>)>
+    	else
+    		ag = (
+    			af :: Map<Wakeable, (Set<any> | Map<Wakeable, Set<any>>)>
+    		)[ad] :: Set<any>
+    		if ag == nil then
+    			ag = {} :: Set<any>;
+    			(af :: Map<Wakeable, (Set<any> | Map<Wakeable, Set<any>>)>)[ad] =
+    				ag
+    		end
+    	end
+    	if not ag[ae] then
+    		
+    		ag[ae] = true
+    		local ah = function()
+    			return T(ac, ad, ae)
+    		end
+    		ad:andThen(ah, ah)
+    	end
+    end
+    
+    function throwException(
+    	ac: FiberRoot,
+    	ad: Fiber,
+    	ae: Fiber,
+    	af: any,
+    	ag: Lanes,
+    	ah,
+    	ai
+    )
+    	
+    	ae.flags = bit32.bor(ae.flags, r)
+    
+    	if
+    		af ~= nil
+    		and typeof(af) == "table"
+    		and typeof(af.andThen) == "function"
+    	then
+    		
+    		local aj: Wakeable = af
+    
+    		if _G.__DEV__ then
+    			if C then
+    				if bit32.band(ae.mode, A) ~= 0 then
+    					local ak = j(ae.type) or "Unknown"
+    					W(ak, aj)
+    				end
+    			end
+    		end
+    
+    		if D then
+    			X(ae, aj)
+    		end
+    
+    		if bit32.band(ae.mode, z) == y then
+    			
+    			
+    			local ak = ae.alternate
+    			if ak then
+    				
+    				ae.updateQueue = ak.updateQueue
+    				ae.memoizedState = ak.memoizedState
+    				ae.lanes = ak.lanes
+    			else
+    				
+    				ae.updateQueue = nil
+    				ae.memoizedState = nil
+    			end
+    		end
+    
+    		local ak = L(
+    			N.current,
+    			M :: SuspenseContext
+    		)
+    
+    		
+    		local al = ad
+    		repeat
+    			if
+    				al.tag == n
+    				and w(al, ak)
+    			then
+    				
+    
+    				
+    				
+    				local am: Set<Wakeable> = al.updateQueue
+    				if am == nil then
+    					local an = {
+    						[aj] = true,
+    					}
+    					
+    					al.updateQueue = an
+    				else
+    					am[aj] = true
+    				end
+    
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				if bit32.band(al.mode, z) == y then
+    					al.flags = bit32.bor(al.flags, q)
+    					ae.flags =
+    						bit32.bor(ae.flags, v)
+    
+    					
+    					
+    					
+    					ae.flags = bit32.band(
+    						ae.flags,
+    						bit32.bnot(bit32.bor(u, r))
+    					)
+    
+    					if ae.tag == l then
+    						local an = ae.alternate
+    						if an == nil then
+    							
+    							
+    							
+    							ae.tag = o
+    						else
+    							
+    							
+    							
+    							local ao = G(Z, Y)
+    							ao.tag = I
+    							J(ae, ao)
+    						end
+    					end
+    
+    					
+    					
+    					ae.lanes = aa(ae.lanes, Y)
+    
+    					
+    					return
+    				end
+    
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    				
+    
+    				attachPingListener(ac, aj, ag)
+    
+    				al.flags = bit32.bor(al.flags, t)
+    				al.lanes = ag
+    
+    				return
+    			end
+    			
+    			
+    			al = al.return_ :: Fiber 
+    		until al == nil
+    
+    		
+    		
+    		af = (j(ae.type) or "A React component")
+    			.. [[ suspended while rendering, but no fallback UI was specified.
+    
+    Add a <Suspense fallback=...> component higher in the tree to provide a loading indicator or placeholder to display.]]	
+    
+    end
+    
+    	
+    	
+    	
+    	ai()
+    
+    	af = E(af, ae)
+    	local aj = ad
+    	repeat
+    		if aj.tag == m then
+    			local ak = af
+    			aj.flags = bit32.bor(aj.flags, t)
+    			local al = ab(ag)
+    			aj.lanes = aa(aj.lanes, al)
+    			
+    			local am =
+    				createRootErrorUpdate(aj, ak, al, ah)
+    			F(aj, am)
+    			return
+    		elseif aj.tag == l then
+    			
+    			local ak = af
+    			local al = aj.type
+    			local am = aj.stateNode
+    			if
+    				bit32.band(aj.flags, q) == s
+    				and (
+    					typeof(al.getDerivedStateFromError) == "function"
+    					or (
+    						am ~= nil
+    						and typeof(am.componentDidCatch) == "function"
+    						and not U(am)
+    					)
+    				)
+    			then
+    				aj.flags = bit32.bor(aj.flags, t)
+    				local an = ab(ag)
+    				aj.lanes = aa(aj.lanes, an)
+    				
+    				local ao = createClassErrorUpdate(aj, ak, an)
+    				F(aj, ao)
+    				return
+    			end
+    		end
+    		aj = aj.return_ :: Fiber 
+    	until aj == nil
+    end
+    
+    return {
+    	throwException = throwException,
+    	createRootErrorUpdate = createRootErrorUpdate,
+    	createClassErrorUpdate = createClassErrorUpdate,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberTransition"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactSharedInternals
+    
+    local b = a.ReactCurrentBatchConfig
+    
+    return {
+    	NoTransition = 0,
+    	requestCurrentTransition = function(): number
+    		return b.transition
+    	end,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberTreeReflection"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").console
+    
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = b.Fiber
+    local c = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHostConfig")
+    type Container = c.Container
+    type SuspenseInstance = c.SuspenseInstance
+    local d = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberSuspenseComponent.new")
+    type SuspenseState = d.SuspenseState
+    
+    local e = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").invariant
+    
+    local f = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactInstanceMap.get
+    local g = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactSharedInternals
+    local h = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").getComponentName
+    local i = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactWorkTags")
+    local j = i.ClassComponent
+    local k = i.HostComponent
+    local l = i.HostRoot
+    local m = i.HostPortal
+    local n = i.HostText
+    local o = i.FundamentalComponent
+    local p = i.SuspenseComponent
+    local q = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberFlags")
+    local r = q.NoFlags
+    local s = q.Placement
+    local t = q.Hydrating
+    local u =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactFeatureFlags.enableFundamentalAPI
+    
+    local v = g.ReactCurrentOwner
+    
+    local w = {}
+    
+    local function getNearestMountedFiber(x: Fiber): Fiber?
+    	local y = x
+    	
+    	local z: Fiber | nil = x
+    	if not x.alternate then
+    		
+    		
+    		local A = y
+    		repeat
+    			y = A
+    			if bit32.band(y.flags, bit32.bor(s, t)) ~= r then
+    				
+    				
+    				
+    				z = y.return_
+    			end
+    			A = y.return_
+    		until not A
+    	else
+    		while y.return_ do
+    			y = y.return_
+    		end
+    	end
+    	if y.tag == l then
+    		
+    		
+    		return z
+    	end
+    	
+    	
+    	return nil
+    end
+    w.getNearestMountedFiber = getNearestMountedFiber
+    
+    w.getSuspenseInstanceFromFiber = function(x: Fiber): SuspenseInstance?
+    	if x.tag == p then
+    		local y: SuspenseState? = x.memoizedState
+    		if y == nil then
+    			local z = x.alternate
+    			if z ~= nil then
+    				y = z.memoizedState
+    			end
+    		end
+    		if y then
+    			return y.dehydrated
+    		end
+    	end
+    	return nil
+    end
+    
+    w.getContainerFromFiber = function(x: Fiber): Container?
+    	return if x.tag == l then x.stateNode.containerInfo else nil
+    end
+    
+    w.isFiberMounted = function(x: Fiber): boolean
+    	return getNearestMountedFiber(x) == x
+    end
+    
+    
+    
+    w.isMounted = function(x): boolean
+    	if _G.__DEV__ then
+    		local y: any = v.current
+    		if y ~= nil and y.tag == j then
+    			local z: Fiber = y
+    			local A = z.stateNode
+    			if not A._warnedAboutRefsInRender then
+    				a.error(
+    [[%s is accessing isMounted inside its render() function. render() should be a pure function of props and state. It should never access something that requires stale data from the previous render, such as refs. Move this logic to componentDidMount and componentDidUpdate instead.]]
+    
+    
+    
+    ,
+    					h(z.type) or "A component"
+    				)
+    			end
+    			A._warnedAboutRefsInRender = true
+    		end
+    	end
+    
+    	local y: Fiber? = f(x)
+    	if not y then
+    		return false
+    	else
+    		
+    		local z: any = y
+    		return getNearestMountedFiber(z) == y
+    	end
+    end
+    
+    local function assertIsMounted(x)
+    	e(
+    		getNearestMountedFiber(x) == x,
+    		"Unable to find node on an unmounted component."
+    	)
+    end
+    
+    local function findCurrentFiberUsingSlowPath(x: Fiber): Fiber?
+    	local y = x.alternate
+    	if not y then
+    		
+    		local z = getNearestMountedFiber(x)
+    		e(z ~= nil, "Unable to find node on an unmounted component.")
+    		if z ~= x then
+    			return nil
+    		end
+    		return x
+    	end
+    	
+    	
+    	
+    	local z: Fiber = x
+    	local A: Fiber = y
+    	while true do
+    		local B = z.return_
+    		if B == nil then
+    			
+    			break
+    		end
+    		local C = B.alternate
+    		if C == nil then
+    			
+    			
+    			
+    			
+    			local D = B.return_
+    			if D ~= nil then
+    				z = D
+    				A = D
+    				continue
+    			end
+    			
+    			break
+    		end
+    
+    		
+    		
+    		
+    		if B.child == C.child then
+    			local D = B.child
+    			while D do
+    				if D == z then
+    					
+    					assertIsMounted(B)
+    					return x
+    				end
+    				if D == A then
+    					
+    					assertIsMounted(B)
+    					return y
+    				end
+    				D = D.sibling
+    			end
+    			
+    			
+    			e(false, "Unable to find node on an unmounted component.")
+    		end
+    
+    		if z.return_ ~= A.return_ then
+    			
+    			
+    			
+    			
+    			z = B
+    			A = C
+    		else
+    			
+    			
+    			
+    			
+    			
+    			local D = false
+    			local E = B.child
+    			while E do
+    				if E == z then
+    					D = true
+    					z = B
+    					A = C
+    					break
+    				end
+    				if E == A then
+    					D = true
+    					A = B
+    					z = C
+    					break
+    				end
+    				E = E.sibling
+    			end
+    			if not D then
+    				
+    				E = C.child
+    				while E do
+    					if E == z then
+    						D = true
+    						z = C
+    						A = B
+    						break
+    					end
+    					if E == A then
+    						D = true
+    						A = C
+    						z = B
+    						break
+    					end
+    					E = E.sibling
+    				end
+    				e(
+    					D,
+    [[Child was not found in either parent set. This indicates a bug in React related to the return pointer. Please file an issue.]]				
+    
+    )
+    			end
+    		end
+    
+    		e(
+    			z.alternate == A,
+    [[Return fibers should always be each others' alternates. This error is likely caused by a bug in React. Please file an issue.]]		
+    
+    )
+    	end
+    	
+    	
+    	e(z.tag == l, "Unable to find node on an unmounted component.")
+    	if z.stateNode.current == z then
+    		
+    		return x
+    	end
+    	
+    	return y
+    end
+    w.findCurrentFiberUsingSlowPath = findCurrentFiberUsingSlowPath
+    
+    w.findCurrentHostFiber = function(x: Fiber): Fiber?
+    	local y = findCurrentFiberUsingSlowPath(x)
+    	if not y then
+    		return nil
+    	end
+    
+    	
+    	
+    	local z: Fiber = y :: Fiber
+    	while true do
+    		local A = z.child
+    		if z.tag == k or z.tag == n then
+    			return z
+    		elseif A then
+    			A.return_ = z
+    			z = A
+    			continue
+    		end
+    		if z == y then
+    			return nil
+    		end
+    		local B = z.return_
+    		local C = z.sibling
+    		while not C do
+    			if not B or B == y then
+    				return nil
+    			end
+    			
+    			z = B :: Fiber
+    		end
+    		
+    		(C :: Fiber).return_ = B :: Fiber
+    		z = C :: Fiber
+    	end
+    	
+    	
+    	return nil
+    end
+    
+    w.findCurrentHostFiberWithNoPortals = function(x: Fiber): Fiber?
+    	local y = findCurrentFiberUsingSlowPath(x)
+    	if not y then
+    		return nil
+    	end
+    
+    	
+    	local z: Fiber = y :: Fiber
+    	while true do
+    		local A = z.child
+    		if
+    			z.tag == k
+    			or z.tag == n
+    			or (u and z.tag == o)
+    		then
+    			return z
+    		elseif A and z.tag ~= m then
+    			A.return_ = z
+    			z = A
+    			continue
+    		end
+    		if z == y then
+    			return nil
+    		end
+    		local B = z.return_
+    		local C = z.sibling
+    		while not C do
+    			if not B or B == y then
+    				return nil
+    			end
+    			
+    			z = B :: Fiber
+    		end
+    		
+    		(C :: Fiber).return_ = B :: Fiber
+    		z = C :: Fiber
+    	end
+    	
+    	
+    	return nil
+    end
+    
+    w.isFiberSuspenseAndTimedOut = function(x: Fiber): boolean
+    	local y = x.memoizedState
+    	return x.tag == p
+    		and y ~= nil
+    		and y.dehydrated == nil
+    end
+    
+    w.doesFiberContain = function(x: Fiber, y: Fiber): boolean
+    	local z = y
+    	local A = x.alternate
+    	while z ~= nil do
+    		if z == x or z == A then
+    			return true
+    		end
+    		
+    		z = z.return_ :: Fiber
+    	end
+    	return false
+    end
+    
+    return w
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberUnwindWork.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = a.Fiber
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLane")
+    type Lanes = b.Lanes
+    local c = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberSuspenseComponent.new")
+    type SuspenseState = c.SuspenseState
+    
+    local d =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactMutableSource.new").resetWorkInProgressVersions
+    local e = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactWorkTags")
+    
+    local f = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberFlags")
+    local g = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactTypeOfMode")
+    
+    local h = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactFeatureFlags
+    local i = h.enableSuspenseServerRenderer
+    local j = h.enableProfilerTimer
+    
+    local k = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHostContext.new")
+    local l = k.popHostContainer
+    local m = k.popHostContext
+    local n =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberSuspenseContext.new").popSuspenseContext
+    local o =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHydrationContext.new").resetHydrationState
+    local p = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberContext.new")
+    local q = p.isContextProvider
+    local r = p.popContext
+    local s = p.popTopLevelContextObject
+    local t = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberNewContext.new").popProvider
+    
+    local u
+    local v = function(...)
+    	if not u then
+    		u = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberWorkLoop.new").popRenderLanes
+    	end
+    	return u(...)
+    end
+    local w =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactProfilerTimer.new").transferActualDuration
+    
+    local x = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").invariant
+    
+    local function unwindWork(y: Fiber, z: Lanes): Fiber?
+    	if y.tag == e.ClassComponent then
+    		local A = y.type
+    		if q(A) then
+    			r(y)
+    		end
+    		local B = y.flags
+    		if bit32.band(B, f.ShouldCapture) ~= 0 then
+    			y.flags = bit32.bor(
+    				bit32.band(B, bit32.bnot(f.ShouldCapture)),
+    				f.DidCapture
+    			)
+    			if
+    				j
+    				and bit32.band(y.mode, g.ProfileMode)
+    					~= g.NoMode
+    			then
+    				w(y)
+    			end
+    			return y
+    		end
+    		return nil
+    	elseif y.tag == e.HostRoot then
+    		l(y)
+    		s(y)
+    		d()
+    		local A = y.flags
+    		x(
+    			bit32.band(A, f.DidCapture) == f.NoFlags,
+    [[The root failed to unmount after an error. This is likely a bug in React. Please file an issue.]]		
+    
+    )
+    		y.flags = bit32.bor(
+    			bit32.band(A, bit32.bnot(f.ShouldCapture)),
+    			f.DidCapture
+    		)
+    		return y
+    	elseif y.tag == e.HostComponent then
+    		
+    		m(y)
+    		return nil
+    	elseif y.tag == e.SuspenseComponent then
+    		n(y)
+    		if i then
+    			local A = y.memoizedState
+    			if A ~= nil and A.dehydrated ~= nil then
+    				x(
+    					y.alternate ~= nil,
+    [[Threw in newly mounted dehydrated component. This is likely a bug in React. Please file an issue.]]				
+    
+    )
+    				o()
+    			end
+    		end
+    		local A = y.flags
+    		if bit32.band(A, f.ShouldCapture) ~= 0 then
+    			y.flags = bit32.bor(
+    				bit32.band(A, bit32.bnot(f.ShouldCapture)),
+    				f.DidCapture
+    			)
+    			
+    			if
+    				j
+    				and (
+    					bit32.band(y.mode, g.ProfileMode)
+    					~= g.NoMode
+    				)
+    			then
+    				w(y)
+    			end
+    			return y
+    		end
+    		return nil
+    	elseif y.tag == e.SuspenseListComponent then
+    		n(y)
+    		
+    		
+    		return nil
+    	elseif y.tag == e.HostPortal then
+    		l(y)
+    		return nil
+    	elseif y.tag == e.ContextProvider then
+    		t(y)
+    		return nil
+    	elseif
+    		y.tag == e.OffscreenComponent
+    		or y.tag == e.LegacyHiddenComponent
+    	then
+    		v(y)
+    		return nil
+    	else
+    		return nil
+    	end
+    end
+    
+    function unwindInterruptedWork(y: Fiber)
+    	if y.tag == e.ClassComponent then
+    		
+    		local z
+    		if typeof(y.type) == "table" then
+    			z = y.type.childContextTypes
+    		end
+    		if z ~= nil then
+    			r(y)
+    		end
+    	elseif y.tag == e.HostRoot then
+    		l(y)
+    		s(y)
+    		d()
+    	elseif y.tag == e.HostComponent then
+    		m(y)
+    	elseif y.tag == e.HostPortal then
+    		l(y)
+    	elseif y.tag == e.SuspenseComponent then
+    		n(y)
+    	elseif y.tag == e.SuspenseListComponent then
+    		n(y)
+    	elseif y.tag == e.ContextProvider then
+    		t(y)
+    	elseif
+    		y.tag == e.OffscreenComponent
+    		or y.tag == e.LegacyHiddenComponent
+    	then
+    		v(y)
+    		return
+    	else 
+    		return
+    	end
+    end
+    
+    return {
+    	unwindWork = unwindWork,
+    	unwindInterruptedWork = unwindInterruptedWork,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberWorkInProgress"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLane")
+    local b: Lanes = a.NoLanes
+    local c = a.mergeLanes
+    type Lanes = a.Lanes
+    type Lane = a.Lane
+    
+    local d = {}
+    
+    
+    d.workInProgressRootSkippedLanes = function(e: Lanes?): Lanes
+    	if e == nil then
+    		return b
+    	end
+    
+    	
+    	b = e :: Lanes
+    	return b
+    end
+    
+    d.markSkippedUpdateLanes = function(e: Lane | Lanes): ()
+    	b = c(e, b)
+    end
+    
+    return d
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberWorkLoop.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _G.__DEV__
+    local b = _G.__YOLO__
+    
+    
+    local c = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").console
+    local d = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/luau-polyfill")
+    local e = d.Set
+    type Set<T> = d.Set<T>
+    type Array<T> = d.Array<T>
+    
+    local f: any = {}
+    
+    local g = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    type Thenable<T> = g.Thenable<T>
+    type Wakeable = g.Wakeable
+    
+    local h = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = h.Fiber
+    type FiberRoot = h.FiberRoot
+    type ReactPriorityLevel = h.ReactPriorityLevel
+    local i = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLane")
+    type Lanes = i.Lanes
+    type Lane = i.Lane
+    
+    local j = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/scheduler")
+    
+    
+    type Interaction = j.Interaction
+    
+    local k = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberSuspenseComponent.new")
+    type SuspenseState = k.SuspenseState
+    local l = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberStack.new")
+    type StackCursor<T> = l.StackCursor<T>
+    
+    local m = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactFeatureFlags
+    
+    
+    
+    
+    
+    
+    local n = m.enableDebugTracing
+    local o = m.enableSchedulingProfiler
+    local p = m.skipUnmountedBoundaries
+    local q = m.enableDoubleInvokingEffects
+    local r = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    
+    type Dispatcher = r.Dispatcher
+    local s = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").describeError
+    local t = r.ReactSharedInternals
+    local u = r.invariant
+    
+    local v = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/SchedulerWithReactIntegration.new")
+    local w = v.scheduleCallback
+    local x = v.cancelCallback
+    local y = v.getCurrentPriorityLevel
+    local z = v.runWithPriority
+    local A = v.shouldYield
+    local B = v.requestPaint
+    local C = v.now
+    local D = v.NoPriority
+    local E = v.ImmediatePriority
+    local F = v.UserBlockingPriority
+    local G = v.NormalPriority
+    local H = v.flushSyncCallbackQueue
+    local I = v.scheduleSyncCallback
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local J = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/DebugTracing")
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local K = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/SchedulingProfiler")
+    
+    local L = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/scheduler").tracing
+    local M, N =
+    	L.__interactionsRef, L.__subscriberRef
+    
+    local O = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHostConfig")
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local P = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiber.new")
+    
+    
+    
+    local Q = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactTypeOfMode")
+    
+    
+    
+    
+    
+    
+    local R = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactWorkTags")
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local S = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactRootTags").LegacyRoot
+    local T = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberFlags")
+    type Flags = T.Flags
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local U = i.SyncLane
+    local V = i.SyncBatchedLane
+    local W = i.NoTimestamp
+    local X = i.findUpdateLane
+    local Y = i.findTransitionLane
+    local Z = i.findRetryLane
+    local _ = i.includesSomeLane
+    local aa = i.isSubsetOfLanes
+    local ab = i.mergeLanes
+    local ac = i.removeLanes
+    local ad = i.pickArbitraryLane
+    local ae = i.hasDiscreteLanes
+    local af = i.includesNonIdleWork
+    local ag = i.includesOnlyRetries
+    local ah = i.includesOnlyTransitions
+    local ai = i.getNextLanes
+    local aj = i.returnNextLanesPriority
+    local ak = i.setCurrentUpdateLanePriority
+    local al = i.getCurrentUpdateLanePriority
+    local am = i.markStarvedLanesAsExpired
+    local an =
+    	i.getLanesToRetrySynchronouslyOnError
+    local ao = i.getMostRecentEventTime
+    local ap = i.markRootUpdated
+    local aq = i.markRootSuspended
+    local ar = i.markRootPinged
+    local as = i.markRootExpired
+    local at = i.markDiscreteUpdatesExpired
+    local au = i.markRootFinished
+    local av = i.schedulerPriorityToLanePriority
+    local aw = i.lanePriorityToSchedulerPriority
+    local ax = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberTransition")
+    
+    
+    
+    
+    local ay = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberUnwindWork.new"):: any
+    local az = ay.unwindWork
+    local aA = ay.unwindInterruptedWork
+    local aB = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberThrow.new"):: any
+    local aC = aB.throwException
+    local aD = aB.createRootErrorUpdate
+    local aE = aB.createClassErrorUpdate
+    local aF = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberCommitWork.new")
+    local aG =
+    	aF.commitBeforeMutationLifeCycles
+    local aH = aF.commitPlacement
+    local aI = aF.commitWork
+    local aJ = aF.commitDeletion
+    local aK = aF.commitPassiveUnmount
+    local aL =
+    	aF.commitPassiveUnmountInsideDeletedTree
+    local aM = aF.commitPassiveMount
+    local aN = aF.commitDetachRef
+    
+    
+    
+    local aO = aF.invokeLayoutEffectMountInDEV
+    local aP = aF.invokePassiveEffectMountInDEV
+    local aQ = aF.invokeLayoutEffectUnmountInDEV
+    local aR =
+    	aF.invokePassiveEffectUnmountInDEV
+    local aS = aF.recursivelyCommitLayoutEffects
+    
+    local aT = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/promise")
+    
+    local aU = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactUpdateQueue.new").enqueueUpdate
+    
+    local aV =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberNewContext.new").resetContextDependencies
+    
+    
+    local aW = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/RobloxReactProfiling")
+    
+    
+    local aX
+    
+    
+    local aY = {
+    	resetHooksAfterThrowRef = (nil :: any) :: (...any) -> ...any,
+    	ContextOnlyDispatcherRef = (nil :: any) :: Dispatcher,
+    	getIsUpdatingOpaqueValueInRenderPhaseInDEVRef = (nil :: any) :: (...any) -> ...any,
+    	originalBeginWorkRef = (nil :: any) :: (...any) -> ...any,
+    	completeWorkRef = (nil :: any) :: (...any) -> ...any,
+    }
+    
+    
+    local aZ =
+    	function(aZ: Fiber | nil, a_: Fiber, a0: Lanes): Fiber | nil
+    		if not aY.originalBeginWorkRef then
+    			aY.originalBeginWorkRef =
+    				_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberBeginWork.new").beginWork
+    		end
+    		return aY.originalBeginWorkRef(aZ, a_, a0)
+    	end
+    
+    local a_ =
+    	function(a_: Fiber | nil, a0: Fiber, a1: Lanes): Fiber | nil
+    		if not aY.completeWorkRef then
+    			aY.completeWorkRef =
+    				_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberCompleteWork.new").completeWork
+    		end
+    		return (aY.completeWorkRef :: any)(a_, a0, a1)
+    	end
+    
+    local a0
+    
+    local function initReactFiberHooks()
+    	a0 = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHooks.new")	
+    aY.resetHooksAfterThrowRef = a0.resetHooksAfterThrow
+    	aY.ContextOnlyDispatcherRef = a0.ContextOnlyDispatcher
+    	aY.getIsUpdatingOpaqueValueInRenderPhaseInDEVRef =
+    		a0.getIsUpdatingOpaqueValueInRenderPhaseInDEV
+    end
+    
+    
+    local a1 = function(): ()
+    	if not aY.resetHooksAfterThrowRef then
+    		initReactFiberHooks()
+    	end
+    	return aY.resetHooksAfterThrowRef()
+    end
+    
+    
+    local a2 = function(): Dispatcher
+    	if not aY.ContextOnlyDispatcherRef then
+    		initReactFiberHooks()
+    	end
+    	return aY.ContextOnlyDispatcherRef
+    end
+    
+    
+    local a3 = function(): boolean?
+    	if not aY.getIsUpdatingOpaqueValueInRenderPhaseInDEVRef then
+    		initReactFiberHooks()
+    	end
+    	return aY.getIsUpdatingOpaqueValueInRenderPhaseInDEVRef()
+    end
+    
+    local a4 = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactCapturedValue").createCapturedValue
+    local a5 = l.push
+    local a6 = l.pop
+    local a7 = l.createCursor
+    
+    local a8 = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactProfilerTimer.new")
+    
+    
+    local a9 = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").getComponentName
+    local ba = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactStrictModeWarnings.new")
+    local bb = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactCurrentFiber")
+    
+    
+    local bc = bb.current
+    local bd = bb.resetCurrentFiber
+    local be = bb.setCurrentFiber
+    local bf = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactErrorUtils
+    local bg = bf.invokeGuardedCallback
+    local bh = bf.hasCaughtError
+    local bi = bf.clearCaughtError
+    local bj = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberDevToolsHook.new").onCommitRoot
+    local bk = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactTestSelectors").onCommitRoot
+    
+    
+    local bl = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").enqueueTask
+    local bm = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberTreeReflection").doesFiberContain
+    
+    local bn = t.ReactCurrentDispatcher
+    local bo = t.ReactCurrentOwner
+    local bp = t.IsSomeRendererActing
+    local bq, br
+    
+    
+    
+    
+    local bs: { [string]: any } = {}
+    
+    type ExecutionContext = number
+    
+    local bt = 
+    	0b0000000
+    local bu = 
+    	0b0000001
+    local bv = 
+    	0b0000010
+    local bw = 
+    	0b0000100
+    local bx = 
+    	0b0001000
+    local by = 
+    	0b0010000
+    local bz = 
+    	0b0100000
+    local bA = 
+    	0b1000000
+    
+    f.NoContext = bt
+    f.RetryAfterError = bA
+    
+    
+    
+    type RootExitStatus = number
+    
+    local bB: { [string]: RootExitStatus } = {
+    	Incomplete = 0,
+    	FatalErrored = 1,
+    	Errored = 2,
+    	Suspended = 3,
+    	SuspendedWithDelay = 4,
+    	Completed = 5,
+    }
+    
+    
+    local bC: ExecutionContext = bt
+    
+    local bD: FiberRoot? 
+    
+    local bE: Fiber? 
+    
+    local bF: Lanes = i.NoLanes
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    f.subtreeRenderLanes = i.NoLanes
+    local bG: StackCursor<Lanes> = a7(i.NoLanes)
+    
+    
+    local bH: RootExitStatus = bB.Incomplete
+    
+    local bI: any 
+    
+    
+    
+    
+    local bJ: Lanes = i.NoLanes
+    
+    
+    local bK = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberWorkInProgress")
+    local bL: (value: Lanes?) -> Lanes =
+    	bK.workInProgressRootSkippedLanes 
+    
+    local bM: Lanes = i.NoLanes
+    
+    local bN: Lanes = i.NoLanes
+    
+    local bO: FiberRoot | nil 
+    
+    
+    
+    local bP: number = 0
+    local bQ: number = 500
+    
+    
+    
+    local bR: number = math.huge
+    
+    
+    local bS = 500
+    
+    
+    local bT: Fiber | nil 
+    
+    local function resetRenderTimer()
+    	bR = C() + bS
+    end
+    
+    f.getRenderTargetTime = function(): number
+    	return bR
+    end
+    
+    local bU = false
+    local bV 
+    local bW: Set<any> | nil 
+    
+    local bX: boolean = false
+    local bY: FiberRoot? 
+    local bZ: ReactPriorityLevel = D
+    local b_: Lanes = i.NoLanes
+    
+    local b0: Set<h.FiberRoot> | nil 
+    
+    
+    local b1 = 50
+    local b2: number = 0
+    local b3: FiberRoot | nil 
+    
+    local b4 = 50
+    local b5: number = 0
+    
+    
+    
+    
+    
+    
+    local b6: nil | Array<Lane | Lanes> 
+    
+    
+    
+    
+    local b7: number = W
+    local b8: Lanes = i.NoLanes
+    local b9: Lanes = i.NoLanes
+    
+    local ca: nil | Fiber 
+    local cb: boolean = false
+    
+    f.getWorkInProgressRoot = function(): FiberRoot?
+    	return bD
+    end
+    
+    f.requestEventTime = function()
+    	if
+    		bit32.band(bC, bit32.bor(by, bz))
+    		~= bt
+    	then
+    		
+    		return C()
+    	end
+    	
+    	if b7 ~= W then
+    		
+    		return b7
+    	end
+    	
+    	b7 = C()
+    	return b7
+    end
+    
+    
+    
+    
+    
+    f.requestUpdateLane = function(cc: Fiber): Lane
+    	
+    	local cd = cc.mode
+    	if bit32.band(cd, Q.BlockingMode) == Q.NoMode then
+    		return U :: Lane
+    	elseif bit32.band(cd, Q.ConcurrentMode) == Q.NoMode then
+    		return if y() == E
+    			then U :: Lane
+    			else V :: Lane
+    	elseif
+    		not m.deferRenderPhaseUpdateToNextBatch
+    		and bit32.band(bC, by) ~= bt
+    		and bF ~= i.NoLanes
+    	then
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		return ad(bF)
+    	end
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	if b8 == i.NoLanes then
+    		b8 = bJ
+    	end
+    
+    	local ce = ax.requestCurrentTransition()
+    		~= ax.NoTransition
+    	if ce then
+    		if b9 ~= i.NoLanes then
+    			if bO ~= nil then
+    				b9 = bO.pendingLanes
+    			else
+    				b9 = i.NoLanes
+    			end
+    		end
+    		return Y(b8, b9)
+    	end
+    
+    	
+    	
+    	local cf = y()
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	local cg
+    	if
+    		
+    		bit32.band(bC, bw) ~= bt
+    		and cf == F
+    	then
+    		cg =
+    			X(i.InputDiscreteLanePriority, b8)
+    	else
+    		local ch = av(cf)
+    
+    		if m.decoupleUpdatePriorityFromScheduler then
+    			
+    			
+    			
+    			local ci = al()
+    
+    			if
+    				ch ~= ci
+    				and ci ~= i.NoLanePriority
+    			then
+    				if a then
+    					c.error(
+    						"Expected current scheduler lane priority %s to match current update lane priority %s",
+    						tostring(ch),
+    						tostring(ci)
+    					)
+    				end
+    			end
+    		end
+    
+    		cg = X(ch, b8)
+    	end
+    
+    	return cg
+    end
+    
+    function requestRetryLane(cc: Fiber): Lane
+    	
+    	
+    	
+    
+    	
+    	local cd = cc.mode
+    	if bit32.band(cd, Q.BlockingMode) == Q.NoMode then
+    		return U :: Lane
+    	elseif bit32.band(cd, Q.ConcurrentMode) == Q.NoMode then
+    		return if y() == E
+    			then U :: Lane
+    			else V :: Lane
+    	end
+    
+    	
+    	if b8 == i.NoLanes then
+    		b8 = bJ
+    	end
+    	return Z(b8)
+    end
+    
+    f.scheduleUpdateOnFiber = function(
+    	cc: Fiber,
+    	cd: Lane,
+    	ce: number
+    ): FiberRoot | nil
+    	bs.checkForNestedUpdates()
+    
+    	local cf = bs.markUpdateLaneFromFiberToRoot(cc, cd)
+    	if cf == nil then
+    		return nil
+    	end
+    
+    	
+    	ap(cf, cd, ce)
+    
+    	if cf == bD then
+    		
+    		
+    		
+    		
+    		
+    		bs.warnAboutRenderPhaseUpdatesInDEV(cc)
+    
+    		if
+    			m.deferRenderPhaseUpdateToNextBatch
+    			or bit32.band(bC, by) == bt
+    		then
+    			bM =
+    				ab(bM, cd)
+    		end
+    		if bH == bB.SuspendedWithDelay then
+    			
+    			
+    			
+    			
+    			
+    			
+    			bs.markRootSuspended(cf, bF)
+    		end
+    	end
+    
+    	
+    	
+    	local cg = y()
+    
+    	if cd == U then
+    		if
+    			
+    			bit32.band(bC, bx) ~= bt
+    			
+    			and bit32.band(bC, bit32.bor(by, bz))
+    				== bt
+    		then
+    			
+    			bs.schedulePendingInteractions(cf, cd)
+    
+    			
+    			
+    			
+    			bs.performSyncWorkOnRoot(cf)
+    		else
+    			aX(cf, ce)
+    			bs.schedulePendingInteractions(cf, cd)
+    			if bC == bt then
+    				
+    				
+    				
+    				
+    				
+    				resetRenderTimer()
+    				H()
+    			end
+    		end
+    	else
+    		
+    		if
+    			bit32.band(bC, bw) ~= bt
+    			
+    			
+    			and (
+    				cg == F
+    				or cg == E
+    			)
+    		then
+    			
+    			
+    			if b0 == nil then
+    				b0 = e.new({ cf })
+    			else
+    				b0:add(cf)
+    			end
+    		end
+    		
+    		aX(cf, ce)
+    		bs.schedulePendingInteractions(cf, cd)
+    	end
+    
+    	
+    	
+    	
+    	
+    	
+    	bO = cf
+    	return cf
+    end
+    
+    
+    
+    
+    
+    bs.markUpdateLaneFromFiberToRoot = function(cc: Fiber, cd: Lane): FiberRoot?
+    	
+    	cc.lanes = ab(cc.lanes, cd)
+    	local ce = cc.alternate
+    	if ce ~= nil then
+    		ce.lanes = ab(ce.lanes, cd)
+    	end
+    	if a then
+    		if
+    			ce == nil
+    			and bit32.band(
+    					cc.flags,
+    					bit32.bor(T.Placement, T.Hydrating)
+    				)
+    				~= T.NoFlags
+    		then
+    			bs.warnAboutUpdateOnNotYetMountedFiberInDEV(cc)
+    		end
+    	end
+    	
+    	local cf = cc
+    	local cg = cc.return_
+    	while cg ~= nil do
+    		cg.childLanes = ab(cg.childLanes, cd)
+    		ce = cg.alternate
+    		if ce ~= nil then
+    			ce.childLanes = ab(ce.childLanes, cd)
+    		else
+    			if a then
+    				if
+    					bit32.band(
+    						cg.flags,
+    						bit32.bor(T.Placement, T.Hydrating)
+    					) ~= T.NoFlags
+    				then
+    					bs.warnAboutUpdateOnNotYetMountedFiberInDEV(cc)
+    				end
+    			end
+    		end
+    		cf = cg
+    		cg = cg.return_
+    	end
+    	if cf.tag == R.HostRoot then
+    		local ch: FiberRoot = cf.stateNode
+    		return ch
+    	else
+    		return nil
+    	end
+    end
+    
+    
+    
+    
+    
+    
+    aX = function(cc: FiberRoot, cd: number)
+    	local ce = cc.callbackNode
+    
+    	
+    	
+    	am(cc, cd)
+    
+    	
+    	local cf
+    	if cc == bD then
+    		cf = bF
+    	else
+    		cf = i.NoLanes
+    	end
+    	local cg = ai(cc, cf)
+    	
+    	local ch = aj()
+    
+    	if cg == i.NoLanes then
+    		
+    		if ce ~= nil then
+    			x(ce)
+    			cc.callbackNode = nil
+    			cc.callbackPriority = i.NoLanePriority
+    		end
+    		return
+    	end
+    
+    	
+    	if ce ~= nil then
+    		local ci = cc.callbackPriority
+    		if ci == ch then
+    			
+    			return
+    		end
+    		
+    		
+    		x(ce)
+    	end
+    
+    	
+    	local ci
+    	if ch == i.SyncLanePriority then
+    		
+    		
+    		ci = I(function()
+    			
+    			local cj = aW.profileRootBeforeUnitOfWork(cc)
+    			local ck = bs.performSyncWorkOnRoot(cc)
+    			aW.profileRootAfterYielding(cj)
+    			return ck
+    		end)
+    	elseif ch == i.SyncBatchedLanePriority then
+    		ci = w(E, function()
+    			
+    			local cj = aW.profileRootBeforeUnitOfWork(cc)
+    			local ck = bs.performSyncWorkOnRoot(cc)
+    			aW.profileRootAfterYielding(cj)
+    			return ck
+    		end)
+    	else
+    		local cj =
+    			aw(ch)
+    		ci = w(cj, function()
+    			
+    			local ck = aW.profileRootBeforeUnitOfWork(cc)
+    			local cl = bs.performConcurrentWorkOnRoot(cc)
+    			aW.profileRootAfterYielding(ck)
+    			return cl
+    		end)
+    	end
+    
+    	cc.callbackPriority = ch
+    	cc.callbackNode = ci
+    end
+    
+    
+    
+    
+    bs.performConcurrentWorkOnRoot = function(cc): (() -> ...any) | nil
+    	
+    	
+    	b7 = W
+    	b8 = i.NoLanes
+    	b9 = i.NoLanes
+    
+    	u(
+    		bit32.band(bC, bit32.bor(by, bz)) == bt,
+    		"Should not already be working."
+    	)
+    
+    	
+    	
+    	local cd = cc.callbackNode
+    	local ce = f.flushPassiveEffects()
+    	if ce then
+    		
+    		
+    		if cc.callbackNode ~= cd then
+    			
+    			
+    			
+    			return nil
+    			
+    		
+    end
+    	end
+    
+    	
+    	
+    	local cf = ai(
+    		cc,
+    		if cc == bD
+    			then bF
+    			else i.NoLanes
+    	)
+    	if cf == i.NoLanes then
+    		
+    		return nil
+    	end
+    
+    	local cg = bs.renderRootConcurrent(cc, cf)
+    
+    	if
+    		_(bJ, bM)
+    	then
+    		
+    		
+    		
+    		
+    		
+    		
+    		bs.prepareFreshStack(cc, i.NoLanes)
+    	elseif cg ~= bB.Incomplete then
+    		if cg == bB.Errored then
+    			bC = bit32.bor(bC, bA)
+    
+    			
+    			
+    			if cc.hydrate then
+    				cc.hydrate = false
+    				O.clearContainer(cc.containerInfo)
+    			end
+    
+    			
+    			
+    			
+    			
+    			cf = an(cc)
+    			if cf ~= i.NoLanes then
+    				cg = bs.renderRootSync(cc, cf)
+    			end
+    		end
+    
+    		if cg == bB.FatalErrored then
+    			local ch = bI
+    			bs.prepareFreshStack(cc, i.NoLanes)
+    			bs.markRootSuspended(cc, cf)
+    			aX(cc, C())
+    			error(ch)
+    		end
+    
+    		
+    		
+    		local ch: Fiber = cc.current.alternate :: any
+    		cc.finishedWork = ch
+    		cc.finishedLanes = cf
+    		bs.finishConcurrentRender(cc, cg, cf)
+    	end
+    
+    	aX(cc, C())
+    	if cc.callbackNode == cd then
+    		
+    		
+    		return function()
+    			return bs.performConcurrentWorkOnRoot(cc)
+    		end
+    	end
+    	
+    	return nil :: any
+    end
+    
+    
+    
+    local cc = 0
+    local cd = false
+    
+    function shouldForceFlushFallbacksInDEV()
+    	
+    	return a and cc > 0
+    end
+    
+    bs.finishConcurrentRender = function(ce, cf, cg)
+    	if
+    		cf == bB.Incomplete
+    		or cf == bB.FatalErrored
+    	then
+    		u(false, "Root did not complete. This is a bug in React.")
+    	
+    	
+    	
+    	elseif cf == bB.Errored then
+    		
+    		
+    		bs.commitRoot(ce)
+    	elseif cf == bB.Suspended then
+    		bs.markRootSuspended(ce, cg)
+    
+    		
+    		
+    		if
+    			ag(cg)
+    			
+    			and not shouldForceFlushFallbacksInDEV()
+    		then
+    			
+    			
+    			local ch = bP
+    				+ bQ
+    				- C()
+    			
+    			if ch > 10 then
+    				local ci = ai(ce, i.NoLanes)
+    				if ci ~= i.NoLanes then
+    					
+    					return
+    				end
+    				local cj = ce.suspendedLanes
+    				if not aa(cj, cg) then
+    					
+    					
+    					
+    					
+    					local ck = f.requestEventTime()
+    					ar(ce, cj, ck)
+    					return
+    				end
+    
+    				
+    				
+    				
+    				ce.timeoutHandle = O.scheduleTimeout(function()
+    					return bs.commitRoot(ce)
+    				end, ch)
+    				return
+    			end
+    		end
+    		
+    		bs.commitRoot(ce)
+    	elseif cf == bB.SuspendedWithDelay then
+    		bs.markRootSuspended(ce, cg)
+    
+    		if ah(cg) then
+    			
+    			
+    			
+    			return
+    		end
+    
+    		if not shouldForceFlushFallbacksInDEV() then
+    			
+    			
+    			
+    			
+    			
+    			
+    
+    			local ch = ao(ce, cg)
+    			local ci = ch
+    			local cj = C() - ci
+    			local ck = jnd(cj) - cj
+    
+    			
+    			if ck > 10 then
+    				
+    				
+    				ce.timeoutHandle = O.scheduleTimeout(function()
+    					return bs.commitRoot(ce)
+    				end, ck)
+    				return
+    			end
+    		end
+    		
+    		bs.commitRoot(ce)
+    	elseif cf == bB.Completed then
+    		
+    		bs.commitRoot(ce)
+    	else
+    		u(false, "Unknown root exit status.")
+    	end
+    end
+    
+    bs.markRootSuspended = function(ce, cf)
+    	
+    	
+    	
+    	
+    	cf = ac(cf, bN)
+    	cf = ac(cf, bM)
+    	aq(ce, cf)
+    end
+    
+    
+    
+    bs.performSyncWorkOnRoot = function(ce)
+    	u(
+    		bit32.band(bC, bit32.bor(by, bz)) == bt,
+    		"Should not already be working."
+    	)
+    
+    	f.flushPassiveEffects()
+    
+    	local cf
+    	local cg
+    	if
+    		ce == bD
+    		and _(ce.expiredLanes, bF)
+    	then
+    		
+    		
+    		cf = bF
+    		cg = bs.renderRootSync(ce, cf)
+    		if
+    			_(
+    				bJ,
+    				bM
+    			)
+    		then
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			cf = ai(ce, cf)
+    			cg = bs.renderRootSync(ce, cf)
+    		end
+    	else
+    		cf = ai(ce, i.NoLanes)
+    		cg = bs.renderRootSync(ce, cf)
+    	end
+    
+    	if ce.tag ~= S and cg == bB.Errored then
+    		bC = bit32.bor(bC, bA)
+    
+    		
+    		
+    		if ce.hydrate then
+    			ce.hydrate = false
+    			O.clearContainer(ce.containerInfo)
+    		end
+    
+    		
+    		
+    		
+    		
+    		cf = an(ce)
+    		if cf ~= i.NoLanes then
+    			cg = bs.renderRootSync(ce, cf)
+    		end
+    	end
+    
+    	if cg == bB.FatalErrored then
+    		local ch = bI
+    		bs.prepareFreshStack(ce, i.NoLanes)
+    		bs.markRootSuspended(ce, cf)
+    		aX(ce, C())
+    		error(ch)
+    	end
+    
+    	
+    	
+    	local ch: Fiber = ce.current.alternate :: any
+    	ce.finishedWork = ch
+    	ce.finishedLanes = cf
+    	bs.commitRoot(ce)
+    
+    	
+    	
+    	aX(ce, C())
+    
+    	return nil
+    end
+    
+    f.flushRoot = function(ce: FiberRoot, cf: Lanes)
+    	as(ce, cf)
+    	aX(ce, C())
+    	if
+    		bit32.band(bC, bit32.bor(by, bz))
+    		== bt
+    	then
+    		resetRenderTimer()
+    		H()
+    	end
+    end
+    
+    f.getExecutionContext = function(): ExecutionContext
+    	return bC
+    end
+    
+    f.flushDiscreteUpdates = function()
+    	
+    	
+    	
+    	
+    	if
+    		bit32.band(
+    			bC,
+    			bit32.bor(bu, by, bz)
+    		) ~= bt
+    	then
+    		if a then
+    			if bit32.band(bC, by) ~= bt then
+    				c.error(
+    [[unstable_flushDiscreteUpdates: Cannot flush updates when React is already rendering.]]				
+    
+    )
+    			end
+    		end
+    		
+    		
+    		
+    		return
+    	end
+    	bs.flushPendingDiscreteUpdates()
+    	
+    	
+    	f.flushPassiveEffects()
+    end
+    
+    f.deferredUpdates = function<A>(ce: () -> A): A
+    	if m.decoupleUpdatePriorityFromScheduler then
+    		local cf = al()
+    		
+    		local cg, ch
+    		if not b then
+    			
+    			ak(i.DefaultLanePriority)
+    			cg, ch =
+    				xpcall(z, s, G, ce)
+    		else
+    			cg = true
+    			ak(i.DefaultLanePriority)
+    			ch = z(G, ce)
+    		end
+    
+    		
+    		ak(cf)
+    
+    		if cg then
+    			return ch
+    		else
+    			error(ch)
+    		end
+    	else
+    		return z(G, ce)
+    	end
+    end
+    
+    bs.flushPendingDiscreteUpdates = function()
+    	if b0 ~= nil then
+    		
+    		
+    		local ce = b0
+    		b0 = nil
+    		ce:forEach(function(cf)
+    			at(cf)
+    			aX(cf, C())
+    		end)
+    	end
+    	
+    	H()
+    end
+    
+    f.batchedUpdates = function<A, R>(ce: (A) -> R, cf: A): R
+    	local cg = bC
+    	bC = bit32.bor(bC, bu)
+    
+    	
+    	local ch, ci
+    	if not b then
+    		ch, ci = xpcall(ce, s, cf)
+    	else
+    		ch = true
+    		ci = ce(cf)
+    	end
+    
+    	
+    	bC = cg
+    	if bC == bt then
+    		
+    		resetRenderTimer()
+    		H()
+    	end
+    
+    	if ch then
+    		return ci
+    	else
+    		error(ci)
+    	end
+    end
+    
+    f.batchedEventUpdates = function<A, R>(ce: (A) -> R, cf: A): R
+    	local cg = bC
+    	bC = bit32.bor(bC, bv)
+    
+    	
+    	local ch, ci
+    	if not b then
+    		ch, ci = xpcall(ce, s, cf)
+    	else
+    		ch = true
+    		ci = ce(cf)
+    	end
+    
+    	
+    	bC = cg
+    	if bC == bt then
+    		
+    		resetRenderTimer()
+    		H()
+    	end
+    
+    	if ch then
+    		return ci
+    	else
+    		error(ci)
+    	end
+    end
+    
+    f.discreteUpdates =
+    	function<A, B, C, D, R>(ce: (A, B, C, D) -> R, cf: A, cg: B, ch: C, ci: D): R
+    		local cj = bC
+    		bC = bit32.bor(bC, bw)
+    
+    		if m.decoupleUpdatePriorityFromScheduler then
+    			local ck = al()
+    			
+    			ak(i.InputDiscreteLanePriority)
+    			local cl, cm = xpcall(
+    				z,
+    				s,
+    				F,
+    				function()
+    					return ce(cf, cg, ch, ci)
+    				end
+    			)
+    
+    			
+    			ak(ck)
+    			bC = cj
+    			if bC == bt then
+    				
+    				resetRenderTimer()
+    				H()
+    			end
+    
+    			if cl then
+    				return cm
+    			else
+    				error(cm)
+    			end
+    		else
+    			local ck, cl = xpcall(
+    				z,
+    				s,
+    				F,
+    				function()
+    					return ce(cf, cg, ch, ci)
+    				end
+    			)
+    
+    			
+    			bC = cj
+    			if bC == bt then
+    				
+    				resetRenderTimer()
+    				H()
+    			end
+    
+    			if ck then
+    				return cl
+    			else
+    				error(cl)
+    			end
+    		end
+    	end
+    
+    f.unbatchedUpdates = function<A, R>(ce: (A) -> R, cf: A): R
+    	local cg = bC
+    	bC = bit32.band(bC, bit32.bnot(bu))
+    	bC = bit32.bor(bC, bx)
+    	
+    	local ch, ci
+    	if not b then
+    		ch, ci = xpcall(ce, s, cf)
+    	else
+    		ch = true
+    		ci = ce(cf)
+    	end
+    
+    	
+    	bC = cg
+    	if bC == bt then
+    		
+    		resetRenderTimer()
+    		H()
+    	end
+    
+    	if ch then
+    		return ci
+    	else
+    		error(ci)
+    	end
+    end
+    
+    f.flushSync = function<A, R>(ce: (A) -> R, cf: A): R
+    	local cg = bC
+    	if
+    		(bit32.band(cg, bit32.bor(by, bz)))
+    		~= bt
+    	then
+    		if a then
+    			c.error(
+    [[flushSync was called from inside a lifecycle method. React cannot flush when React is already rendering. Consider moving this call to a scheduler task or micro task.]]			
+    
+    
+    )
+    		end
+    		return ce(cf)
+    	end
+    	bC = bit32.bor(bC, bu)
+    
+    	if m.decoupleUpdatePriorityFromScheduler then
+    		local ch = al()
+    
+    		
+    		ak(i.SyncLanePriority)
+    		
+    		local ci, cj
+    		if not b then
+    			if ce then
+    				ci, cj = xpcall(
+    					z,
+    					s,
+    					E,
+    					function()
+    						return ce(cf)
+    					end
+    				)
+    			else
+    				ci = true
+    				
+    				cj = nil :: any
+    			end
+    		else
+    			ci = true
+    			ak(i.SyncLanePriority)
+    			if ce then
+    				cj = z(E, function()
+    					return ce(cf)
+    				end)
+    			else
+    				
+    				cj = nil :: any
+    			end
+    		end
+    
+    		
+    		ak(ch)
+    		bC = cg
+    		
+    		
+    		
+    		H()
+    
+    		if not ci then
+    			error(cj)
+    		end
+    		return cj
+    	else
+    		
+    		local ch, ci
+    		if not b then
+    			if ce then
+    				ch, ci = xpcall(
+    					z,
+    					s,
+    					E,
+    					function()
+    						return ce(cf)
+    					end
+    				)
+    			else
+    				ch = true
+    				
+    				ci = nil :: any
+    			end
+    		else
+    			ch = true
+    			if ce then
+    				ci = z(E, function()
+    					return ce(cf)
+    				end)
+    			else
+    				
+    				ci = nil :: any
+    			end
+    		end
+    		
+    		bC = cg
+    		
+    		
+    		
+    		H()
+    		if not ch then
+    			error(ci)
+    		end
+    		return ci
+    	end
+    end
+    
+    f.flushControlled = function(ce: () -> any)
+    	local cf = bC
+    	bC = bit32.bor(bC, bu)
+    	if m.decoupleUpdatePriorityFromScheduler then
+    		local cg = al()
+    		
+    		ak(i.SyncLanePriority)
+    		local ch, ci =
+    			xpcall(z, s, E, ce)
+    
+    		
+    		ak(cg)
+    
+    		bC = cf
+    		if bC == bt then
+    			
+    			resetRenderTimer()
+    			H()
+    		end
+    
+    		if not ch then
+    			error(ci)
+    		end
+    	else
+    		local cg, ch =
+    			xpcall(z, s, E, ce)
+    		
+    		bC = cf
+    		if bC == bt then
+    			
+    			resetRenderTimer()
+    			H()
+    		end
+    
+    		if not cg then
+    			error(ch)
+    		end
+    	end
+    end
+    
+    f.pushRenderLanes = function(ce: Fiber, cf: Lanes)
+    	a5(bG, f.subtreeRenderLanes, ce)
+    	f.subtreeRenderLanes = ab(f.subtreeRenderLanes, cf)
+    	bJ = ab(bJ, cf)
+    end
+    
+    f.popRenderLanes = function(ce: Fiber)
+    	f.subtreeRenderLanes = bG.current
+    	a6(bG, ce)
+    end
+    
+    bs.prepareFreshStack = function(ce: FiberRoot, cf: Lanes)
+    	ce.finishedWork = nil
+    	ce.finishedLanes = i.NoLanes
+    
+    	local cg = ce.timeoutHandle
+    	if cg ~= O.noTimeout then
+    		
+    		
+    		ce.timeoutHandle = O.noTimeout
+    		
+    		O.cancelTimeout(cg)
+    	end
+    
+    	if bE ~= nil then
+    		local ch = bE.return_
+    		while ch ~= nil do
+    			aA(ch)
+    			ch = ch.return_
+    		end
+    	end
+    	bD = ce
+    	bE = P.createWorkInProgress(ce.current, nil)
+    	bF = cf
+    	f.subtreeRenderLanes = cf
+    	bJ = cf
+    	bH = bB.Incomplete
+    	bI = nil
+    	bL(i.NoLanes)
+    	bM = i.NoLanes
+    	bN = i.NoLanes
+    
+    	if m.enableSchedulerTracing then
+    		b6 = nil
+    	end
+    
+    	if a then
+    		ba.discardPendingWarnings()
+    	end
+    end
+    
+    bs.handleError = function(ce, cf): ()
+    	while true do
+    		local cg = bE
+    		
+    		local ch, ci = pcall(function()
+    			
+    			aV()
+    			a1()
+    			bd()
+    			
+    			
+    			bo.current = nil
+    
+    			if cg == nil or cg.return_ == nil then
+    				
+    				
+    				
+    				
+    				bH = bB.FatalErrored
+    				bI = cf
+    				
+    				
+    				
+    				
+    				
+    				
+    				bE = nil
+    				
+    				return
+    			end
+    
+    			
+    			if
+    				m.enableProfilerTimer
+    				and bit32.band(
+    						(cg :: Fiber).mode,
+    						Q.ProfileMode
+    					)
+    					~= 0
+    			then
+    				
+    				
+    				
+    				a8.stopProfilerTimerIfRunningAndRecordDelta(
+    					cg :: Fiber,
+    					true
+    				)
+    			end
+    
+    			
+    			aC(
+    				ce,
+    				(cg :: Fiber).return_,
+    				cg :: Fiber,
+    				cf,
+    				bF,
+    				f.onUncaughtError,
+    				f.renderDidError
+    			)
+    			bs.completeUnitOfWork(cg)
+    		end)
+    		if not ch then
+    			
+    			cf = ci
+    			if bE == cg and cg ~= nil then
+    				
+    				
+    				cg = cg.return_
+    				bE = cg
+    			else
+    				cg = bE
+    			end
+    			continue
+    		end
+    		
+    		return
+    	end
+    end
+    
+    bs.pushDispatcher = function()
+    	local ce = bn.current
+    
+    	
+    	bn.current = a2()
+    	if ce == nil then
+    		
+    		
+    		
+    
+    		
+    		return a2()
+    	else
+    		return ce
+    	end
+    end
+    
+    bs.popDispatcher = function(ce)
+    	bn.current = ce
+    end
+    
+    bs.pushInteractions = function(ce)
+    	if m.enableSchedulerTracing then
+    		local cf: Set<Interaction>? = M.current
+    		M.current = ce.memoizedInteractions
+    		return cf
+    	end
+    	return nil
+    end
+    
+    bs.popInteractions = function(ce)
+    	if m.enableSchedulerTracing then
+    		M.current = ce
+    	end
+    end
+    
+    f.markCommitTimeOfFallback = function(): ()
+    	bP = C()
+    end
+    
+    f.markSkippedUpdateLanes = function(ce: Lane | Lanes): ()
+    	bK.markSkippedUpdateLanes(ce)
+    end
+    
+    f.renderDidSuspend = function(): ()
+    	if bH == bB.Incomplete then
+    		bH = bB.Suspended
+    	end
+    end
+    
+    f.renderDidSuspendDelayIfPossible = function(): ()
+    	if
+    		bH == bB.Incomplete
+    		or bH == bB.Suspended
+    	then
+    		bH = bB.SuspendedWithDelay
+    	end
+    
+    	
+    	
+    	if
+    		bD ~= nil
+    		and (
+    			af(bL())
+    			or af(bM)
+    		)
+    	then
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		bs.markRootSuspended(bD, bF)
+    	end
+    end
+    
+    f.renderDidError = function()
+    	if bH ~= bB.Completed then
+    		bH = bB.Errored
+    	end
+    end
+    
+    
+    
+    f.renderHasNotSuspendedYet = function(): boolean
+    	
+    	
+    	return bH == bB.Incomplete
+    end
+    
+    bs.renderRootSync = function(ce: FiberRoot, cf: Lanes)
+    	local cg = bC
+    	bC = bit32.bor(bC, by)
+    	local ch = bs.pushDispatcher()
+    
+    	
+    	
+    	if bD ~= ce or bF ~= cf then
+    		bs.prepareFreshStack(ce, cf)
+    		bs.startWorkOnPendingInteractions(ce, cf)
+    	end
+    
+    	local ci = bs.pushInteractions(ce)
+    
+    	if a then
+    		if n then
+    			J.logRenderStarted(cf)
+    		end
+    	end
+    
+    	if o then
+    		K.markRenderStarted(cf)
+    	end
+    
+    	while true do
+    		
+    		local cj, ck
+    		if not b then
+    			cj, ck = xpcall(bs.workLoopSync, s)
+    		else
+    			cj = true
+    			bs.workLoopSync()
+    		end
+    
+    		if not cj then
+    			bs.handleError(ce, ck)
+    		else
+    			break
+    		end
+    	end
+    	aV()
+    	if m.enableSchedulerTracing then
+    		bs.popInteractions(ci)
+    	end
+    
+    	bC = cg
+    	bs.popDispatcher(ch)
+    
+    	if bE ~= nil then
+    		
+    		u(
+    			false,
+    [[Cannot commit an incomplete root. This error is likely caused by a bug in React. Please file an issue.]]		
+    
+    )
+    	end
+    
+    	if a then
+    		if n then
+    			J.logRenderStopped()
+    		end
+    	end
+    
+    	if o then
+    		K.markRenderStopped()
+    	end
+    
+    	
+    	bD = nil
+    	bF = i.NoLanes
+    
+    	return bH
+    end
+    
+    
+    
+    bs.workLoopSync = function()
+    	
+    	while bE ~= nil do
+    		bs.performUnitOfWork(bE)
+    	end
+    end
+    
+    bs.renderRootConcurrent = function(ce: FiberRoot, cf: Lanes)
+    	local cg = bC
+    	bC = bit32.bor(bC, by)
+    	local ch = bs.pushDispatcher()
+    
+    	
+    	
+    	if bD ~= ce or bF ~= cf then
+    		resetRenderTimer()
+    		bs.prepareFreshStack(ce, cf)
+    		bs.startWorkOnPendingInteractions(ce, cf)
+    	end
+    
+    	local ci = bs.pushInteractions(ce)
+    
+    	if a then
+    		if n then
+    			J.logRenderStarted(cf)
+    		end
+    	end
+    
+    	if o then
+    		K.markRenderStarted(cf)
+    	end
+    
+    	while true do
+    		
+    		local cj, ck
+    		if not b then
+    			
+    			cj, ck = xpcall(bs.workLoopConcurrent, s)
+    			if cj then
+    				ck = "break"
+    			end
+    		else
+    			cj = true
+    			ck = "break"
+    			bs.workLoopConcurrent()
+    		end
+    
+    		if ck == "break" then
+    			break
+    		end
+    		if not cj then
+    			bs.handleError(ce, ck)
+    		end
+    	end
+    	aV()
+    	if m.enableSchedulerTracing then
+    		bs.popInteractions(ci)
+    	end
+    
+    	bs.popDispatcher(ch)
+    	bC = cg
+    
+    	if a then
+    		if n then
+    			J.logRenderStopped()
+    		end
+    	end
+    
+    	
+    	if bE ~= nil then
+    		
+    		if o then
+    			K.markRenderYielded()
+    		end
+    		return bB.Incomplete
+    	else
+    		
+    		if o then
+    			K.markRenderStopped()
+    		end
+    
+    		
+    		bD = nil
+    		bF = i.NoLanes
+    
+    		
+    		return bH
+    	end
+    end
+    
+    
+    bs.workLoopConcurrent = function()
+    	
+    	while bE ~= nil and not A() do
+    		bs.performUnitOfWork(bE)
+    	end
+    end
+    
+    bs.performUnitOfWork = function(ce: Fiber): ()
+    	
+    	local cf = aW.profileUnitOfWorkBefore(ce)
+    
+    	
+    	
+    	
+    	local cg = ce.alternate
+    	be(ce)
+    
+    	local ch
+    	if
+    		m.enableProfilerTimer
+    		and bit32.band(ce.mode, Q.ProfileMode)
+    			~= Q.NoMode
+    	then
+    		a8.startProfilerTimer(ce)
+    		ch = bs.beginWork(cg, ce, f.subtreeRenderLanes)
+    		a8.stopProfilerTimerIfRunningAndRecordDelta(ce, true)
+    	else
+    		ch = bs.beginWork(cg, ce, f.subtreeRenderLanes)
+    	end
+    
+    	bd()
+    	ce.memoizedProps = ce.pendingProps
+    	if ch == nil then
+    		
+    		bs.completeUnitOfWork(ce)
+    	else
+    		bE = ch
+    	end
+    
+    	bo.current = nil
+    
+    	
+    	aW.profileUnitOfWorkAfter(cf)
+    end
+    
+    bs.completeUnitOfWork = function(ce: Fiber)
+    	
+    	
+    	local cf = ce
+    	repeat
+    		
+    		
+    		
+    		local cg = cf.alternate
+    		local ch = cf.return_
+    
+    		
+    		if
+    			bit32.band(cf.flags, T.Incomplete)
+    			== T.NoFlags
+    		then
+    			be(cf)
+    			local ci
+    			if
+    				not m.enableProfilerTimer
+    				or bit32.band(cf.mode, Q.ProfileMode)
+    					== Q.NoMode
+    			then
+    				ci = a_(cg, cf, f.subtreeRenderLanes)
+    			else
+    				a8.startProfilerTimer(cf)
+    				ci = a_(cg, cf, f.subtreeRenderLanes)
+    				
+    				a8.stopProfilerTimerIfRunningAndRecordDelta(
+    					cf,
+    					false
+    				)
+    			end
+    			bd()
+    
+    			if ci ~= nil then
+    				
+    				bE = ci
+    				return
+    			end
+    		else
+    			
+    			
+    			
+    			local ci = az(cf, f.subtreeRenderLanes)
+    
+    			
+    
+    			if ci ~= nil then
+    				
+    				
+    				
+    				
+    				ci.flags = bit32.band(ci.flags, T.HostEffectMask)
+    				bE = ci
+    				return
+    			end
+    
+    			if
+    				m.enableProfilerTimer
+    				and bit32.band(cf.mode, Q.ProfileMode)
+    					~= Q.NoMode
+    			then
+    				
+    				a8.stopProfilerTimerIfRunningAndRecordDelta(
+    					cf,
+    					false
+    				)
+    
+    				
+    				
+    				local cj = cf.actualDuration or 0
+    				local ck = cf.child
+    				while ck ~= nil do
+    					cj += ck.actualDuration or 0
+    					ck = ck.sibling
+    				end
+    				cf.actualDuration = cj
+    			end
+    
+    			if ch ~= nil then
+    				
+    				ch.flags =
+    					bit32.bor(ch.flags, T.Incomplete)
+    				ch.subtreeFlags = T.NoFlags
+    				ch.deletions = nil
+    			end
+    		end
+    
+    		local ci = cf.sibling
+    		if ci ~= nil then
+    			
+    			bE = ci
+    			return
+    		end
+    		
+    		
+    		cf = ch :: any
+    		
+    		bE = cf
+    	until cf == nil
+    
+    	
+    	if bH == bB.Incomplete then
+    		bH = bB.Completed
+    	end
+    end
+    
+    bs.commitRoot = function(ce)
+    	local cf = y()
+    	z(E, function()
+    		
+    		aW.profileCommitBefore()
+    		local cg = bs.commitRootImpl(ce, cf)
+    		aW.profileCommitAfter()
+    		return cg
+    	end)
+    	return nil
+    end
+    
+    
+    bs.commitRootImpl = function(ce: FiberRoot, cf)
+    	repeat
+    		
+    		
+    		
+    		
+    		
+    		
+    		f.flushPassiveEffects()
+    	until bY == nil
+    	flushRenderPhaseStrictModeWarningsInDEV()
+    
+    	u(
+    		bit32.band(bC, bit32.bor(by, bz)) == bt,
+    		"Should not already be working."
+    	)
+    
+    	
+    	local cg = ce.finishedWork :: Fiber
+    	local ch = ce.finishedLanes
+    
+    	if a then
+    		if n then
+    			J.logCommitStarted(ch)
+    		end
+    	end
+    
+    	if o then
+    		K.markCommitStarted(ch)
+    	end
+    
+    	if cg == nil then
+    		if a then
+    			if n then
+    				J.logCommitStopped()
+    			end
+    		end
+    
+    		if o then
+    			K.markCommitStopped()
+    		end
+    
+    		return nil
+    	end
+    	ce.finishedWork = nil
+    	ce.finishedLanes = i.NoLanes
+    
+    	u(
+    		cg ~= ce.current,
+    [[Cannot commit the same tree as before. This error is likely caused by a bug in React. Please file an issue.]]	
+    
+    )
+    
+    	
+    	
+    	ce.callbackNode = nil
+    
+    	
+    	
+    	local ci = ab(cg.lanes, cg.childLanes)
+    	au(ce, ci)
+    
+    	
+    	
+    	
+    	if b0 ~= nil then
+    		if
+    			not ae(ci)
+    			and b0:has(ce)
+    		then
+    			b0:delete(ce)
+    		end
+    	end
+    
+    	if ce == bD then
+    		
+    		bD = nil
+    		bE = nil
+    		bF = i.NoLanes
+    		
+    		
+    		
+    	
+    end
+    
+    	
+    	
+    	
+    	
+    	
+    	local cj = bit32.band(
+    		cg.subtreeFlags,
+    		bit32.bor(
+    			T.BeforeMutationMask,
+    			T.MutationMask,
+    			T.LayoutMask,
+    			T.PassiveMask
+    		)
+    	) ~= T.NoFlags
+    	local ck = bit32.band(
+    		cg.flags,
+    		bit32.bor(
+    			T.BeforeMutationMask,
+    			T.MutationMask,
+    			T.LayoutMask,
+    			T.PassiveMask
+    		)
+    	) ~= T.NoFlags
+    
+    	if cj or ck then
+    		local cl
+    		if m.decoupleUpdatePriorityFromScheduler then
+    			cl = al()
+    			ak(i.SyncLanePriority)
+    		end
+    
+    		local cm = bC
+    		bC = bit32.bor(bC, bz)
+    		local cn = bs.pushInteractions(ce)
+    
+    		
+    		bo.current = nil
+    
+    		
+    		
+    		
+    
+    		
+    		
+    		
+    		ca = O.prepareForCommit(ce.containerInfo)
+    		cb = false
+    
+    		bs.commitBeforeMutationEffects(cg)
+    
+    		
+    		ca = nil
+    
+    		if m.enableProfilerTimer then
+    			
+    			
+    			a8.recordCommitTime()
+    		end
+    
+    		
+    		bs.commitMutationEffects(cg, ce, cf)
+    
+    		if cb then
+    			O.afterActiveInstanceBlur()
+    		end
+    		O.resetAfterCommit(ce.containerInfo)
+    
+    		
+    		
+    		
+    		
+    		ce.current = cg
+    
+    		
+    		
+    		
+    		if a then
+    			if n then
+    				J.logLayoutEffectsStarted(ch)
+    			end
+    		end
+    		if o then
+    			K.markLayoutEffectsStarted(ch)
+    		end
+    
+    		if a then
+    			be(cg)
+    			bg(
+    				nil,
+    				aS,
+    				nil,
+    				cg,
+    				ce,
+    				
+    				f.captureCommitPhaseError,
+    				f.schedulePassiveEffectCallback
+    			)
+    			if bh() then
+    				local co = bi()
+    				bq(cg, cg, co)
+    			end
+    			bd()
+    		else
+    			
+    			local co, cp
+    			if not b then
+    				
+    				co, cp = xpcall(
+    					aS,
+    					s,
+    					cg,
+    					ce,
+    					f.captureCommitPhaseError,
+    					f.schedulePassiveEffectCallback
+    				)
+    			else
+    				co = true
+    				aS(
+    					cg,
+    					ce,
+    					f.captureCommitPhaseError,
+    					f.schedulePassiveEffectCallback
+    				)
+    			end
+    
+    			if not co then
+    				bq(cg, cg, cp)
+    			end
+    		end
+    
+    		if a then
+    			if n then
+    				J.logLayoutEffectsStopped()
+    			end
+    		end
+    		if o then
+    			K.markLayoutEffectsStopped()
+    		end
+    
+    		
+    		if
+    			bit32.band(cg.subtreeFlags, T.PassiveMask)
+    				~= T.NoFlags
+    			or bit32.band(cg.flags, T.PassiveMask)
+    				~= T.NoFlags
+    		then
+    			if not bX then
+    				bX = true
+    				w(G, function()
+    					f.flushPassiveEffects()
+    					return nil
+    				end)
+    			end
+    		end
+    
+    		
+    		
+    		B()
+    
+    		if m.enableSchedulerTracing then
+    			bs.popInteractions(cn)
+    		end
+    		bC = cm
+    
+    		if
+    			m.decoupleUpdatePriorityFromScheduler
+    			and cl ~= nil
+    		then
+    			
+    			ak(cl)
+    		end
+    	else
+    		
+    		ce.current = cg
+    		
+    		
+    		
+    		if m.enableProfilerTimer then
+    			a8.recordCommitTime()
+    		end
+    	end
+    
+    	local cl = bX
+    
+    	if bX then
+    		
+    		
+    		bX = false
+    		bY = ce
+    		b_ = ch
+    		bZ = cf
+    	end
+    
+    	
+    	ci = ce.pendingLanes
+    
+    	
+    	if ci ~= i.NoLanes then
+    		if m.enableSchedulerTracing then
+    			if b6 ~= nil then
+    				local cm = b6
+    				b6 = nil
+    				for cn = 1, #cm do
+    					scheduleInteractions(
+    						ce,
+    						cm[cn],
+    						ce.memoizedInteractions
+    					)
+    				end
+    			end
+    			bs.schedulePendingInteractions(ce, ci)
+    		end
+    	else
+    		
+    		
+    		bW = nil
+    	end
+    
+    	if a and q then
+    		if not cl then
+    			commitDoubleInvokeEffectsInDEV(ce.current, false)
+    		end
+    	end
+    
+    	if m.enableSchedulerTracing then
+    		if not cl then
+    			
+    			
+    			
+    			
+    			bs.finishPendingInteractions(ce, ch)
+    		end
+    	end
+    
+    	if ci == U then
+    		
+    		
+    		if ce == b3 then
+    			b2 += 1
+    		else
+    			b2 = 0
+    			b3 = ce
+    		end
+    	else
+    		b2 = 0
+    	end
+    
+    	bj(cg.stateNode, cf)
+    
+    	if a then
+    		bk()
+    	end
+    
+    	
+    	
+    	aX(ce, C())
+    
+    	if bU then
+    		bU = false
+    		local cm = bV
+    		bV = nil
+    		
+    		error(cm)
+    	end
+    
+    	if bit32.band(bC, bx) ~= bt then
+    		if a then
+    			if n then
+    				J.logCommitStopped()
+    			end
+    		end
+    
+    		if o then
+    			K.markCommitStopped()
+    		end
+    
+    		
+    		
+    		
+    		
+    		return nil
+    	end
+    
+    	
+    	H()
+    
+    	if a then
+    		if n then
+    			J.logCommitStopped()
+    		end
+    	end
+    
+    	if o then
+    		K.markCommitStopped()
+    	end
+    
+    	return nil
+    end
+    
+    bs.commitBeforeMutationEffects = function(ce: Fiber)
+    	local cf = ce
+    	while cf ~= nil do
+    		if cf.deletions ~= nil then
+    			bs.commitBeforeMutationEffectsDeletions(cf.deletions)
+    		end
+    
+    		if cf.child ~= nil then
+    			local cg =
+    				bit32.band(cf.subtreeFlags, T.BeforeMutationMask)
+    			if cg ~= T.NoFlags then
+    				bs.commitBeforeMutationEffects(cf.child)
+    			end
+    		end
+    
+    		if a then
+    			be(cf)
+    			bg(nil, bs.commitBeforeMutationEffectsImpl, nil, cf)
+    			if bh() then
+    				local cg = bi()
+    				f.captureCommitPhaseError(cf, cf.return_, cg)
+    			end
+    			bd()
+    		else
+    			
+    			local cg, ch
+    			if not b then
+    				cg, ch =
+    					xpcall(bs.commitBeforeMutationEffectsImpl, s, cf)
+    			else
+    				cg = true
+    				bs.commitBeforeMutationEffectsImpl(cf)
+    			end
+    
+    			if not cg then
+    				f.captureCommitPhaseError(cf, cf.return_, ch)
+    			end
+    		end
+    		
+    		cf = cf.sibling :: Fiber
+    	end
+    end
+    
+    bs.commitBeforeMutationEffectsImpl = function(ce: Fiber)
+    	local cf = ce.alternate
+    	local cg = ce.flags
+    
+    	if not cb and ca ~= nil then
+    		
+    		
+    		if
+    			ce.tag == R.SuspenseComponent
+    			and aF.isSuspenseBoundaryBeingHidden(cf, ce)
+    			and bm(ce, ca)
+    		then
+    			cb = true
+    			O.beforeActiveInstanceBlur()
+    		end
+    	end
+    
+    	if bit32.band(cg, T.Snapshot) ~= T.NoFlags then
+    		be(ce)
+    		aG(cf, ce)
+    		bd()
+    	end
+    
+    	if bit32.band(cg, T.Passive) ~= T.NoFlags then
+    		
+    		
+    		if not bX then
+    			bX = true
+    			w(G, function()
+    				f.flushPassiveEffects()
+    				return nil
+    			end)
+    		end
+    	end
+    end
+    
+    bs.commitBeforeMutationEffectsDeletions = function(ce: Array<Fiber>)
+    	for cf = 1, #ce do
+    		local cg = ce[cf]
+    
+    		
+    		
+    		
+    		
+    		if bm(cg, (ca :: any) :: Fiber) then
+    			cb = true
+    			O.beforeActiveInstanceBlur()
+    		end
+    	end
+    end
+    
+    bs.commitMutationEffects =
+    	function(ce: Fiber, cf: FiberRoot, cg: ReactPriorityLevel)
+    		local ch = ce
+    		while ch ~= nil do
+    			local ci = ch.deletions
+    			if ci ~= nil then
+    				
+    				for cj, ck in ci do
+    					
+    					local cl, cm = xpcall(
+    						aJ,
+    						s,
+    						cf,
+    						ck,
+    						ch,
+    						cg
+    					)
+    					if not cl then
+    						f.captureCommitPhaseError(ck, ch, cm)
+    					end
+    				end
+    			end
+    
+    			if ch.child ~= nil then
+    				local cj =
+    					bit32.band(ch.subtreeFlags, T.MutationMask)
+    				if cj ~= T.NoFlags then
+    					bs.commitMutationEffects(ch.child, cf, cg)
+    				end
+    			end
+    
+    			if a then
+    				be(ch)
+    				bg(
+    					nil,
+    					bs.commitMutationEffectsImpl,
+    					nil,
+    					ch,
+    					cf,
+    					cg
+    				)
+    				if bh() then
+    					local cj = bi()
+    					f.captureCommitPhaseError(ch, ch.return_, cj)
+    				end
+    				bd()
+    			else
+    				
+    				local cj, ck
+    				if not b then
+    					cj, ck = xpcall(
+    						bs.commitMutationEffectsImpl,
+    						s,
+    						ch,
+    						cf,
+    						cg
+    					)
+    				else
+    					cj = true
+    					bs.commitMutationEffectsImpl(ch, cf, cg)
+    				end
+    				if not cj then
+    					f.captureCommitPhaseError(ch, ch.return_, ck)
+    				end
+    			end
+    			
+    			ch = ch.sibling :: Fiber
+    		end
+    	end
+    
+    bs.commitMutationEffectsImpl =
+    	function(ce: Fiber, cf: FiberRoot, cg)
+    		local ch = ce.flags
+    		
+    		
+    		
+    		
+    		
+    
+    		if bit32.band(ch, T.Ref) ~= 0 then
+    			local ci = ce.alternate
+    			if ci ~= nil then
+    				aN(ci)
+    			end
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    		end
+    
+    		
+    		
+    		
+    		
+    		local ci = bit32.band(
+    			ch,
+    			bit32.bor(
+    				T.Placement,
+    				T.Update,
+    				T.Hydrating
+    			)
+    		)
+    		if ci == T.Placement then
+    			aH(ce)
+    			
+    			
+    			
+    			
+    			ce.flags = bit32.band(ce.flags, bit32.bnot(T.Placement))
+    		elseif ci == T.PlacementAndUpdate then
+    			
+    			aH(ce)
+    			
+    			
+    			ce.flags = bit32.band(ce.flags, bit32.bnot(T.Placement))
+    
+    			
+    			local cj = ce.alternate
+    			aI(cj, ce)
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		elseif ci == T.Update then
+    			local cj = ce.alternate
+    			aI(cj, ce)
+    		end
+    	end
+    
+    bs.commitMutationEffectsDeletions =
+    	function(ce: Array<Fiber>, cf: Fiber, cg: FiberRoot, ch)
+    		
+    		for ci, cj in ce do
+    			
+    			local ck, cl = xpcall(
+    				aJ,
+    				s,
+    				cg,
+    				cj,
+    				cf,
+    				ch
+    			)
+    			if not ck then
+    				f.captureCommitPhaseError(cj, cf, cl)
+    			end
+    		end
+    	end
+    
+    f.schedulePassiveEffectCallback = function()
+    	if not bX then
+    		bX = true
+    		w(G, function()
+    			f.flushPassiveEffects()
+    			return nil
+    		end)
+    	end
+    end
+    
+    
+    local ce
+    f.flushPassiveEffects = function(): boolean
+    	
+    	if bZ ~= D then
+    		local cf = if bZ
+    				> G
+    			then G
+    			else bZ
+    		bZ = D
+    		if m.decoupleUpdatePriorityFromScheduler then
+    			local cg = al()
+    
+    			
+    			ak(av(cf))
+    			
+    			local ch, ci
+    			if not b then
+    				ch, ci = xpcall(
+    					z,
+    					s,
+    					cf,
+    					ce
+    				)
+    			else
+    				ch = true
+    				ak(
+    					av(cf)
+    				)
+    				ci = z(cf, ce)
+    			end
+    
+    			
+    			ak(cg)
+    
+    			if not ch then
+    				error(ci)
+    			end
+    			return ci
+    		else
+    			return z(cf, ce)
+    		end
+    	end
+    	return false
+    end
+    
+    br = function(cf, cg: Fiber): ()
+    	local ch = cg
+    	while ch ~= nil do
+    		local ci 		
+    if
+    			m.enableProfilerTimer
+    			and m.enableProfilerCommitHooks
+    		then
+    			if ch.tag == R.Profiler then
+    				ci = bT
+    				bT = ch
+    			end
+    		end
+    
+    		local cj =
+    			bit32.band(ch.subtreeFlags, T.PassiveMask)
+    
+    		if ch.child ~= nil and cj ~= T.NoFlags then
+    			br(cf, ch.child)
+    		end
+    
+    		if
+    			bit32.band(ch.flags, T.Passive) ~= T.NoFlags
+    		then
+    			if a then
+    				be(ch)
+    				bg(nil, aM, nil, cf, ch)
+    				if bh() then
+    					local ck = bi()
+    					f.captureCommitPhaseError(ch, ch.return_, ck)
+    				end
+    				bd()
+    			else
+    				
+    				local ck, cl
+    				if not b then
+    					ck, cl =
+    						xpcall(aM, s, cf, ch)
+    				else
+    					ck = true
+    					aM(cf, ch)
+    				end
+    
+    				if not ck then
+    					f.captureCommitPhaseError(ch, ch.return_, cl)
+    				end
+    			end
+    		end
+    
+    		if
+    			m.enableProfilerTimer
+    			and m.enableProfilerCommitHooks
+    		then
+    			if ch.tag == R.Profiler then
+    				
+    				
+    				if ci ~= nil then
+    					ci.stateNode.passiveEffectDuration += ch.stateNode.passiveEffectDuration
+    				end
+    
+    				bT = ci
+    			end
+    		end
+    
+    		
+    		ch = ch.sibling :: Fiber
+    	end
+    end
+    
+    local function flushPassiveUnmountEffects(cf: Fiber): ()
+    	local cg = cf
+    	while cg ~= nil do
+    		local ch = cg.deletions
+    		if ch ~= nil then
+    			for ci = 1, #ch do
+    				local cj = ch[ci]
+    				bs.flushPassiveUnmountEffectsInsideOfDeletedTree(cj, cg)
+    
+    				
+    				bs.detachFiberAfterEffects(cj)
+    			end
+    		end
+    
+    		local ci = cg.child
+    		if ci ~= nil then
+    			
+    			
+    			
+    			
+    			local cj =
+    				bit32.band(cg.subtreeFlags, T.PassiveMask)
+    			if cj ~= T.NoFlags then
+    				flushPassiveUnmountEffects(ci)
+    			end
+    		end
+    
+    		local cj = bit32.band(cg.flags, T.Passive)
+    		if cj ~= T.NoFlags then
+    			be(cg)
+    			aK(cg)
+    			bd()
+    		end
+    
+    		
+    		cg = cg.sibling :: Fiber
+    	end
+    end
+    
+    bs.flushPassiveUnmountEffectsInsideOfDeletedTree =
+    	function(cf: Fiber, cg: Fiber)
+    		if
+    			bit32.band(cf.subtreeFlags, T.PassiveStatic)
+    			~= T.NoFlags
+    		then
+    			
+    			
+    			
+    			
+    			local ch = cf.child
+    			while ch ~= nil do
+    				bs.flushPassiveUnmountEffectsInsideOfDeletedTree(
+    					ch,
+    					cg
+    				)
+    				ch = ch.sibling
+    			end
+    		end
+    
+    		if
+    			bit32.band(cf.flags, T.PassiveStatic)
+    			~= T.NoFlags
+    		then
+    			be(cf)
+    			aL(
+    				cf,
+    				cg
+    			)
+    			bd()
+    		end
+    	end
+    
+    ce = function()
+    	if bY == nil then
+    		return false
+    	end
+    
+    	
+    	local cf = bY :: FiberRoot
+    	local cg = b_
+    	bY = nil
+    	b_ = i.NoLanes
+    
+    	u(
+    		bit32.band(bC, bit32.bor(by, bz)) == bt,
+    		"Cannot flush passive effects while already rendering."
+    	)
+    
+    	if a then
+    		if n then
+    			J.logPassiveEffectsStarted(cg)
+    		end
+    	end
+    
+    	if o then
+    		K.markPassiveEffectsStarted(cg)
+    	end
+    
+    	local ch = bC
+    	bC = bit32.bor(bC, bz)
+    	local ci = bs.pushInteractions(cf)
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	flushPassiveUnmountEffects(cf.current)
+    	br(cf, cf.current)
+    
+    	if a then
+    		if n then
+    			J.logPassiveEffectsStopped()
+    		end
+    	end
+    
+    	if o then
+    		K.markPassiveEffectsStopped()
+    	end
+    
+    	if a and q then
+    		commitDoubleInvokeEffectsInDEV(cf.current, true)
+    	end
+    
+    	if m.enableSchedulerTracing then
+    		bs.popInteractions(ci)
+    		bs.finishPendingInteractions(cf, cg)
+    	end
+    
+    	bC = ch
+    
+    	H()
+    
+    	
+    	
+    	if bY == nil then
+    		b5 = 0
+    	else
+    		b5 = b5 + 1
+    	end
+    
+    	return true
+    end
+    
+    f.isAlreadyFailedLegacyErrorBoundary = function(cf): boolean
+    	return
+    		bW ~= nil
+    			and bW:has(cf)
+    end
+    
+    f.markLegacyErrorBoundaryAsFailed = function(cf)
+    	if bW == nil then
+    		bW = e.new({ cf })
+    	else
+    		bW:add(cf)
+    	end
+    end
+    
+    
+    local function prepareToThrowUncaughtError(cf)
+    	if not bU then
+    		bU = true
+    		bV = cf
+    	end
+    end
+    f.onUncaughtError = prepareToThrowUncaughtError
+    
+    bq = function(cf: Fiber, cg: Fiber, ch)
+    	local ci = a4(ch, cg)
+    	
+    	local cj =
+    		aD(cf, ci, U, f.onUncaughtError)
+    	aU(cf, cj)
+    	local ck = f.requestEventTime()
+    	local cl = bs.markUpdateLaneFromFiberToRoot(cf, U)
+    	if cl ~= nil then
+    		ap(cl, U, ck)
+    		aX(cl, ck)
+    		bs.schedulePendingInteractions(cl, U)
+    	end
+    end
+    
+    
+    
+    
+    
+    
+    f.captureCommitPhaseError =
+    	function(cf: Fiber, cg, ch)
+    		if cf.tag == R.HostRoot then
+    			
+    			
+    			bq(cf, cf, ch)
+    			return
+    		end
+    
+    		local ci 		
+    if p then
+    			ci = cg
+    		else
+    			ci = cf.return_
+    		end
+    
+    		while ci ~= nil do
+    			if ci.tag == R.HostRoot then
+    				bq(ci, cf, ch)
+    				return
+    			else
+    				if ci.tag == R.ClassComponent then
+    					local cj = ci.type
+    					local ck = ci.stateNode
+    					if
+    						typeof(cj.getDerivedStateFromError) == "function"
+    						or (
+    							typeof(ck.componentDidCatch) == "function"
+    							and not f.isAlreadyFailedLegacyErrorBoundary(ck)
+    						)
+    					then
+    						local cl = a4(ch, cf)
+    						local cm = aE(ci, cl, U)
+    						aU(ci, cm)
+    						local cn = f.requestEventTime()
+    						local co = bs.markUpdateLaneFromFiberToRoot(ci, U)
+    						if co ~= nil then
+    							ap(co, U, cn)
+    							aX(co, cn)
+    							bs.schedulePendingInteractions(co, U)
+    						end
+    						return
+    					end
+    				end
+    				ci = ci.return_
+    			end
+    		end
+    	end
+    
+    f.pingSuspendedRoot =
+    	function(cf: FiberRoot, cg: Wakeable, ch: Lanes)
+    		local ci = cf.pingCache
+    		if ci ~= nil then
+    			
+    			
+    			ci[cg] = nil
+    		end
+    
+    		local cj = f.requestEventTime()
+    		ar(cf, ch, cj)
+    
+    		if
+    			bD == cf
+    			and aa(bF, ch)
+    		then
+    			
+    			
+    			
+    
+    			
+    			
+    
+    			
+    			
+    			if
+    				bH == bB.SuspendedWithDelay
+    				or bH == bB.Suspended
+    					and ag(bF)
+    					and C() - bP < bQ
+    			then
+    				
+    				bs.prepareFreshStack(cf, i.NoLanes)
+    			else
+    				
+    				
+    				bN =
+    					ab(bN, ch)
+    			end
+    		end
+    
+    		aX(cf, cj)
+    		bs.schedulePendingInteractions(cf, ch)
+    	end
+    
+    function retryTimedOutBoundary(cf: Fiber, cg: Lane)
+    	
+    	
+    	
+    	
+    	if cg == i.NoLane then
+    		cg = requestRetryLane(cf)
+    	end
+    	
+    	local ch = f.requestEventTime()
+    	local ci = bs.markUpdateLaneFromFiberToRoot(cf, cg)
+    	if ci ~= nil then
+    		ap(ci, cg, ch)
+    		aX(ci, ch)
+    		bs.schedulePendingInteractions(ci, cg)
+    	end
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    f.resolveRetryWakeable = function(cf: Fiber, cg: Wakeable)
+    	local ch = i.NoLane 
+    	local ci 
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	ci = cf.stateNode
+    	
+    
+    	if ci ~= nil then
+    		
+    		
+    		ci:delete(cg)
+    	end
+    
+    	retryTimedOutBoundary(cf, ch)
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    function jnd(cf: number): number
+    	if cf < 120 then
+    		return 120
+    	elseif cf < 480 then
+    		return 480
+    	elseif cf < 1080 then
+    		return 1080
+    	elseif cf < 1920 then
+    		return 1920
+    	elseif cf < 3000 then
+    		return 3000
+    	elseif cf < 4320 then
+    		return 4320
+    	else
+    		return math.ceil(cf / 1960) * 1960
+    	end
+    end
+    
+    bs.checkForNestedUpdates = function()
+    	if b2 > b1 then
+    		b2 = 0
+    		b3 = nil
+    		u(
+    			false,
+    [[Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.]]		
+    
+    
+    
+    )
+    	end
+    
+    	if a then
+    		if b5 > b4 then
+    			b5 = 0
+    			c.error(
+    [[Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.]]			
+    
+    
+    
+    )
+    		end
+    	end
+    end
+    
+    function flushRenderPhaseStrictModeWarningsInDEV()
+    	if a then
+    		ba.flushLegacyContextWarning()
+    
+    		if m.warnAboutDeprecatedLifecycles then
+    			ba.flushPendingUnsafeLifecycleWarnings()
+    		end
+    	end
+    end
+    
+    function commitDoubleInvokeEffectsInDEV(cf: Fiber, cg: boolean)
+    	if a and q then
+    		be(cf)
+    		invokeEffectsInDev(
+    			cf,
+    			T.MountLayoutDev,
+    			aQ
+    		)
+    		if cg then
+    			invokeEffectsInDev(
+    				cf,
+    				T.MountPassiveDev,
+    				aR
+    			)
+    		end
+    
+    		invokeEffectsInDev(
+    			cf,
+    			T.MountLayoutDev,
+    			aO
+    		)
+    		if cg then
+    			invokeEffectsInDev(
+    				cf,
+    				T.MountPassiveDev,
+    				aP
+    			)
+    		end
+    		bd()
+    	end
+    end
+    
+    function invokeEffectsInDev(
+    	cf: Fiber,
+    	cg: Flags,
+    	ch: (fiber: Fiber) -> ()
+    ): ()
+    	if a and q then
+    		local ci = cf
+    		while ci ~= nil do
+    			if ci.child ~= nil then
+    				local cj = bit32.band(ci.subtreeFlags, cg)
+    				if cj ~= T.NoFlags then
+    					invokeEffectsInDev(ci.child, cg, ch)
+    				end
+    			end
+    
+    			if bit32.band(ci.flags, cg) ~= T.NoFlags then
+    				ch(ci)
+    			end
+    			
+    			ci = ci.sibling :: Fiber
+    		end
+    	end
+    end
+    
+    
+    local cf: any 
+    bs.warnAboutUpdateOnNotYetMountedFiberInDEV = function(cg)
+    	if a then
+    		if bit32.band(bC, by) ~= bt then
+    			
+    			return
+    		end
+    
+    		if
+    			bit32.band(
+    				cg.mode,
+    				bit32.bor(Q.BlockingMode, Q.ConcurrentMode)
+    			) == 0
+    		then
+    			return
+    		end
+    
+    		local ch = cg.tag
+    		if
+    			ch ~= R.IndeterminateComponent
+    			and ch ~= R.HostRoot
+    			and ch ~= R.ClassComponent
+    			and ch ~= R.FunctionComponent
+    			and ch ~= R.ForwardRef
+    			and ch ~= R.MemoComponent
+    			and ch ~= R.SimpleMemoComponent
+    			and ch ~= R.Block
+    		then
+    			
+    			return
+    		end
+    
+    		
+    		
+    		local ci = a9(cg.type) or "ReactComponent"
+    		if cf ~= nil then
+    			if cf[ci] then
+    				return
+    			end
+    			cf[ci] = true
+    		else
+    			
+    			cf = { [ci] = true }
+    		end
+    
+    		local cj = bb.current
+    		local ck, cl = pcall(function()
+    			be(cg)
+    			c.error(
+    [[Can't perform a React state update on a component that hasn't mounted yet. This indicates that you have a side-effect in your render function that asynchronously later calls tries to update the component. Move this work to useEffect instead.]]			
+    
+    
+    
+    )
+    		end)
+    
+    		
+    		if cj then
+    			be(cg)
+    		else
+    			bd()
+    		end
+    
+    		if not ck then
+    			error(cl)
+    		end
+    	end
+    end
+    
+    
+    if a and m.replayFailedUnitOfWorkWithInvokeGuardedCallback then
+    	local cg 	
+    bs.beginWork = function(ch, ci, cj)
+    		
+    		
+    		
+    
+    		
+    		
+    		local ck =
+    			P.assignFiberPropertiesInDEV(cg, ci)
+    		local cl, cm =
+    			xpcall(aZ, s, ch, ci, cj)
+    		if not cl then
+    			local cn = cm
+    
+    			if
+    				cn ~= nil
+    				and typeof(cn) == "table"
+    				and typeof(cn.andThen) == "function"
+    			then
+    				
+    				error(cn)
+    			end
+    
+    			
+    			
+    			aV()
+    			a1()
+    			
+    			
+    
+    			
+    			aA(ci)
+    
+    			
+    			P.assignFiberPropertiesInDEV(ci, ck)
+    
+    			if
+    				m.enableProfilerTimer
+    				and bit32.band(ci.mode, Q.ProfileMode) ~= 0
+    			then
+    				
+    				a8.startProfilerTimer(ci)
+    			end
+    
+    			
+    			bg(nil, aZ, nil, ch, ci, cj)
+    
+    			if bh() then
+    				local co = bi()
+    				
+    				
+    				error(co)
+    			else
+    				
+    				error(cn)
+    			end
+    		end
+    
+    		return cm
+    	end
+    else
+    	bs.beginWork = aZ
+    end
+    
+    local cg = false
+    local ch
+    if a then
+    	ch = {}
+    end
+    
+    bs.warnAboutRenderPhaseUpdatesInDEV = function(ci: Fiber): ()
+    	if a then
+    		if
+    			bb.isRendering
+    			and bit32.band(bC, by) ~= bt
+    			and not a3()
+    		then
+    			if
+    				ci.tag == R.FunctionComponent
+    				or ci.tag == R.ForwardRef
+    				or ci.tag == R.SimpleMemoComponent
+    			then
+    				local cj = (function()
+    					if bE ~= nil then
+    						return a9((bE :: Fiber).type)
+    					end
+    					return "Unknown"
+    				end)()
+    				
+    				local ck = cj
+    				
+    				
+    				if ch[ck] == nil then
+    					ch[ck] = true
+    					local cl = a9(ci.type)
+    						or "Unknown"
+    					c.error(
+    [[Cannot update a component (`%s`) while rendering a different component (`%s`). To locate the bad setState() call inside `%s`, follow the stack trace as described in https://reactjs.org/link/setstate-in-render]]
+    
+    ,
+    						cl,
+    						cj,
+    						cj
+    					)
+    				end
+    			elseif ci.tag == R.ClassComponent then
+    				if not cg then
+    					c.error(
+    [[Cannot update during an existing state transition (such as within `render`). Render methods should be a pure function of props and state.]]					
+    
+    
+    )
+    					cg = true
+    				end
+    			end
+    		end
+    	end
+    end
+    
+    
+    f.IsThisRendererActing = { current = false }
+    
+    f.warnIfNotScopedWithMatchingAct = function(ci: Fiber)
+    	if a then
+    		if
+    			O.warnsIfNotActing == true
+    			and bp.current == true
+    			and f.IsThisRendererActing.current ~= true
+    		then
+    			local cj = bb.current
+    			local ck, cl = pcall(function()
+    				be(ci)
+    				
+    
+    				
+    				
+    				
+    				c.error(
+    [[It looks like you're using the wrong act() around your test interactions.
+    Be sure to use the matching version of act() corresponding to your renderer:
+    
+    -- for react-roblox:
+    local React = require(Packages.React)
+    -- ...
+    React.TestUtils.act(function() ... end)
+    
+    -- for react-test-renderer:
+    local TestRenderer = require(Packages.ReactTestRenderer)
+    -- ...
+    TestRenderer.act(function() ... end)]]				)
+    			end)
+    
+    			
+    			if cj then
+    				be(ci)
+    			else
+    				bd()
+    			end
+    
+    			if not ck then
+    				error(cl)
+    			end
+    		end
+    	end
+    end
+    
+    f.warnIfNotCurrentlyActingEffectsInDEV = function(ci: Fiber): ()
+    	if a then
+    		if
+    			O.warnsIfNotActing == true
+    			and bit32.band(ci.mode, Q.StrictMode) ~= Q.NoMode
+    			and bp.current == false
+    			and f.IsThisRendererActing.current == false
+    		then
+    			
+    			c.error(
+    [=[An update to %s ran an effect, but was not wrapped in act(...).
+    
+    When testing, code that causes React state updates should be wrapped into act(...):
+    
+    act(function()
+      --[[ fire events that update state ]]
+    end)
+    --[[ assert on the output ]]
+    
+    This ensures that you're testing the behavior the user would see in the real client. Learn more at https://reactjs.org/link/wrap-tests-with-act]=],
+    				a9(ci.type)
+    			)
+    		end
+    	end
+    end
+    
+    f.warnIfNotCurrentlyActingUpdatesInDEV = function(ci: Fiber): ()
+    	if a then
+    		if
+    			O.warnsIfNotActing == true
+    			and bC == bt
+    			and bp.current == false
+    			and f.IsThisRendererActing.current == false
+    		then
+    			local cj = bc
+    			local ck, cl = pcall(function()
+    				be(ci)
+    				
+    				c.error(
+    [=[An update to %s inside a test was not wrapped in act(...).
+    
+    When testing, code that causes React state updates should be wrapped into act(...):
+    
+    act(function()
+      --[[ fire events that update state ]]
+    end)
+    --[[ assert on the output ]]
+    
+    This ensures that you're testing the behavior the user would see in the client application. Learn more at https://reactjs.org/link/wrap-tests-with-act]=],
+    					a9(ci.type)
+    				)
+    			end)
+    
+    			
+    			if cj then
+    				be(ci)
+    			else
+    				bd()
+    			end
+    
+    			if ck then
+    				return cl
+    			end
+    		end
+    	end
+    	
+    	return
+    end
+    
+    
+    local ci = false
+    
+    
+    
+    
+    
+    f.warnIfUnmockedScheduler = function(cj: Fiber)
+    	if a then
+    		if
+    			ci == false
+    			and j.unstable_flushAllWithoutAsserting == nil
+    		then
+    			if
+    				bit32.band(cj.mode, Q.BlockingMode) ~= 0
+    				or bit32.band(cj.mode, Q.ConcurrentMode) ~= 0
+    			then
+    				ci = true
+    				
+    
+    				
+    				
+    				
+    				c.error(
+    [[In Concurrent or Sync modes, the 'scheduler' module needs to be mocked to guarantee consistent behaviour across tests and client application. For example, with Jest: 
+    jest.mock('scheduler', function() return require(@pkg/scheduler).unstable_mock end)
+    
+    For more info, visit https://reactjs.org/link/mock-scheduler]]				
+    
+    )
+    			elseif m.warnAboutUnmockedScheduler == true then
+    				ci = true
+    				
+    
+    				
+    				
+    				
+    				c.error(
+    [[Starting from React v18, the 'scheduler' module will need to be mocked to guarantee consistent behaviour across tests and client applications. For example, with Jest: 
+    jest.mock('scheduler', function() return require(@pkg/scheduler).unstable_mock end)
+    
+    For more info, visit https://reactjs.org/link/mock-scheduler]]				
+    
+    
+    )
+    			end
+    		end
+    	end
+    end
+    
+    function computeThreadID(cj: FiberRoot, ck: Lane | Lanes)
+    	
+    	
+    	
+    	
+    	return ck * 1000 + cj.interactionThreadID
+    end
+    
+    f.markSpawnedWork = function(cj: Lane | Lanes)
+    	if not m.enableSchedulerTracing then
+    		return
+    	end
+    	if b6 == nil then
+    		b6 = { cj }
+    	else
+    		
+    		table.insert(b6 :: Array<number>, cj)
+    	end
+    end
+    
+    function scheduleInteractions(
+    	cj: FiberRoot,
+    	ck: Lane | Lanes,
+    	cl: Set<Interaction>
+    )
+    	if not m.enableSchedulerTracing then
+    		return
+    	end
+    
+    	if cl.size > 0 then
+    		local cm = cj.pendingInteractionMap
+    		local cn = cm:get(ck)
+    		if cn ~= nil then
+    			cl:forEach(function(co)
+    				if not cn:has(co) then
+    					
+    					co.__count += 1
+    				end
+    
+    				cn:add(co)
+    			end)
+    		else
+    			cm:set(ck, e.new(cl))
+    
+    			
+    			for co, cp in cl do
+    				cp.__count += 1
+    			end
+    		end
+    
+    		local co = N.current
+    		if co ~= nil then
+    			local cp = computeThreadID(cj, ck)
+    			co.onWorkScheduled(cl, cp)
+    		end
+    	end
+    end
+    
+    bs.schedulePendingInteractions = function(cj: FiberRoot, ck: Lane | Lanes)
+    	
+    	
+    	
+    	if not m.enableSchedulerTracing then
+    		return
+    	end
+    
+    	scheduleInteractions(cj, ck, M.current)
+    end
+    
+    bs.startWorkOnPendingInteractions = function(cj: FiberRoot, ck: Lanes)
+    	
+    	if not m.enableSchedulerTracing then
+    		return
+    	end
+    
+    	
+    	
+    	
+    	local cl: Set<Interaction> = e.new()
+    	cj.pendingInteractionMap:forEach(function(cm, cn)
+    		if _(ck, cn) then
+    			cm:forEach(function(co)
+    				cl:add(co)
+    			end)
+    		end
+    	end)
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	cj.memoizedInteractions = cl :: any
+    
+    	if cl.size > 0 then
+    		local cm = N.current
+    		if cm ~= nil then
+    			local cn = computeThreadID(cj, ck)
+    			local co, cp =
+    				xpcall(cm.onWorkStarted, s, cl, cn)
+    			if not co then
+    				
+    				w(E, function()
+    					error(cp)
+    				end)
+    			end
+    		end
+    	end
+    end
+    
+    bs.finishPendingInteractions = function(cj: FiberRoot, ck)
+    	if not m.enableSchedulerTracing then
+    		return
+    	end
+    
+    	local cl = cj.pendingLanes
+    
+    	local cm
+    
+    	
+    	local cn = true
+    	local co
+    	if cm ~= nil and cj.memoizedInteractions.size > 0 then
+    		
+    		
+    		local cp = computeThreadID(cj, ck)
+    		cm = N.current
+    		
+    		cn, co = xpcall(
+    			cm.onWorkStopped,
+    			s,
+    			cj.memoizedInteractions,
+    			cp
+    		)
+    	end
+    
+    	
+    	
+    	
+    	
+    	local cp = cj.pendingInteractionMap
+    	cp:forEach(function(cq, cr)
+    		
+    		
+    		
+    		if not _(cl, cr) then
+    			cp:delete(cr)
+    			cq:forEach(function(cs)
+    				cs.__count -= 1
+    
+    				if cm ~= nil and cs.__count == 0 then
+    					local ct, cu = xpcall(
+    						cm.onInteractionScheduledWorkCompleted,
+    						s,
+    						cs
+    					)
+    					if not ct then
+    						
+    						w(E, function()
+    							error(cu)
+    						end)
+    					end
+    				end
+    			end)
+    		end
+    	end)
+    
+    	
+    	if not cn then
+    		
+    		w(E, function()
+    			error(co)
+    		end)
+    	end
+    end
+    
+    
+    
+    
+    
+    
+    local cj = false
+    local ck = false
+    
+    local cl = j.unstable_flushAllWithoutAsserting
+    local cm = typeof(cl) == "function"
+    
+    
+    
+    local function flushActWork(): boolean
+    	if cl ~= nil then
+    		local cn = cj
+    		cj = true
+    		local co, cp = xpcall(cl, s)
+    
+    		
+    		cj = cn
+    
+    		if not co then
+    			error(cp)
+    		else
+    			return cp
+    		end
+    	else
+    		
+    		
+    		local cn = cj
+    		cj = true
+    		
+    		local co, cp = xpcall(function()
+    			local co = false
+    			while f.flushPassiveEffects() do
+    				co = true
+    			end
+    			return co
+    		end, s)
+    
+    		
+    		cj = cn
+    
+    		if not co then
+    			error(cp)
+    		else
+    			return cp
+    		end
+    	end
+    end
+    
+    local function flushWorkAndMicroTasks(cn: (any?) -> ())
+    	
+    	local co, cp = xpcall(flushActWork, s)
+    	if co then
+    		co, cp = xpcall(bl, s, function()
+    			if flushActWork() then
+    				flushWorkAndMicroTasks(cn)
+    			else
+    				cn()
+    			end
+    		end)
+    	end
+    
+    	if not co then
+    		cn(cp)
+    	end
+    end
+    
+    f.act = function(cn: () -> Thenable<any>): Thenable<any>
+    	
+    	
+    	
+    	
+    	if not (a or _G.__ROACT_17_MOCK_SCHEDULER__) then
+    		if cd == false then
+    			cd = true
+    			
+    			c.error(
+    				"act(...) is not supported in production builds of React, and might not behave as expected."
+    			)
+    		end
+    	end
+    
+    	local co = cc
+    	cc += 1
+    
+    	local cp = bp.current
+    	local cq = f.IsThisRendererActing.current
+    	local cr = ck
+    	bp.current = true
+    	f.IsThisRendererActing.current = true
+    	ck = true
+    
+    	local function onDone()
+    		cc -= 1
+    		bp.current = cp
+    		f.IsThisRendererActing.current = cq
+    		ck = cr
+    		if a then
+    			if cc > co then
+    				
+    				c.error(
+    [[You seem to have overlapping act() calls, this is not supported. Be sure to await previous act() calls before making a new one. ]]				
+    
+    )
+    			end
+    		end
+    	end
+    
+    	local cs, ct = xpcall(f.batchedUpdates, s, cn)
+    	if not cs then
+    		onDone()
+    		error(ct)
+    	end
+    
+    	if
+    		ct ~= nil
+    		and typeof(ct) == "table"
+    		and typeof(ct.andThen) == "function"
+    	then
+    		
+    		
+    		local cu = false
+    		if a then
+    			if typeof(aT) ~= nil then
+    				
+    				aT.resolve():andThen(function() end):andThen(function()
+    					if cu == false then
+    						
+    						
+    						c.error(
+    [=[You called act(Promise.new(function() --[[ ... ]] end)) without :await() or :expect(). This could lead to unexpected testing behaviour, interleaving multiple act calls and mixing their scopes. You should - act(function() Promise.new(function() --[[ ... ]] end):await() end);]=]						
+    
+    
+    )
+    					end
+    				end)
+    			end
+    		end
+    
+    		
+    		
+    		
+    		return {
+    			
+    			andThen = function<U>(cv, cw, cx)
+    				cu = true
+    				return ct:andThen(function()
+    					if
+    						cc > 1
+    						or (
+    							cm == true
+    							and cp == true
+    						)
+    					then
+    						onDone()
+    						cw()
+    						return
+    					end
+    					
+    					
+    					flushWorkAndMicroTasks(function(cy: any?)
+    						onDone()
+    						if cy then
+    							cx(cy)
+    						else
+    							cw()
+    						end
+    					end)
+    				end, function(cy)
+    					onDone()
+    					cx(cy)
+    				end)
+    			end,
+    		}
+    	else
+    		if a then
+    			if ct ~= nil then
+    				
+    				c.error(
+    [[The callback passed to act(...) function must return nil, or a Promise. You returned %s]]
+    ,
+    					tostring(ct)
+    				)
+    			end
+    		end
+    
+    		
+    		local cu, cv = xpcall(function()
+    			if
+    				cc == 1
+    				and (cm == false or cp == false)
+    			then
+    				
+    				
+    				flushActWork()
+    			end
+    			onDone()
+    		end, s)
+    
+    		if not cu then
+    			onDone()
+    			error(cv)
+    		end
+    
+    		
+    		return {
+    			
+    			andThen = function<U>(cw, cx, cy)
+    				if a then
+    					c.error(
+    						"Do not await the result of calling act(...) with sync logic, it is not a Promise."
+    					)
+    				end
+    				cx()
+    			end,
+    		}
+    	end
+    end
+    
+    bs.detachFiberAfterEffects = function(cn: Fiber)
+    	
+    	
+    	cn.child = nil
+    	cn.deletions = nil
+    	cn.dependencies = nil
+    	cn.memoizedProps = nil
+    	cn.memoizedState = nil
+    	cn.pendingProps = nil
+    	cn.sibling = nil
+    	cn.stateNode = nil
+    	cn.updateQueue = nil
+    
+    	if a then
+    		cn._debugOwner = nil
+    	end
+    end
+    
+    return f
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactHookEffectTags"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    export type HookFlags = number
+    
+    return {
+    	
+    	NoFlags = 0b000,
+    
+    	
+    	
+    	HasEffect = 0b001,
+    
+    	
+    	
+    	Layout = 0b010,
+    	
+    	Passive = 0b100,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/luau-polyfill")
+    type Array<T> = a.Array<T>
+    type Map<K, V> = a.Map<K, V>
+    type Object = { [string]: any }
+    type SimpleSet<T> = { [T]: boolean }
+    type SimpleMap<K, V> = { [K]: V }
+    type Set<T> = a.Set<T>
+    
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    
+    
+    type Source = b.Source
+    type RefObject = b.RefObject
+    type ReactContext<T> = b.ReactContext<T>
+    type MutableSourceVersion = b.MutableSourceVersion
+    type MutableSource<Source> = b.MutableSource<Source>
+    type MutableSourceSubscribeFn<Source, Snapshot> = b.MutableSourceSubscribeFn<
+    	Source,
+    	Snapshot
+    >
+    type MutableSourceGetSnapshotFn<Source, Snapshot> = b.MutableSourceGetSnapshotFn<
+    	Source,
+    	Snapshot
+    >
+    
+    
+    
+    
+    type SuspenseInstance = any
+    
+    local c = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactWorkTags")
+    type WorkTag = c.WorkTag
+    local d = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactTypeOfMode")
+    type TypeOfMode = d.TypeOfMode
+    local e = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberFlags")
+    type Flags = e.Flags
+    
+    
+    export type LanePriority = number
+    export type Lanes = number
+    export type Lane = number
+    export type LaneMap<T> = { [number]: T }
+    
+    
+    export type Update<State> = {
+    	
+    	
+    	eventTime: number,
+    	lane: Lane,
+    
+    	
+    	
+    	tag: number,
+    	payload: any,
+    	callback: (() -> ...any)?,
+    
+    	next: Update<State>?
+    }
+    
+    export type SharedQueue<State> = {
+    	pending: Update<State>?
+    }
+    
+    export type UpdateQueue<State> = {
+    	baseState: State,
+    	firstBaseUpdate: Update<State>?,
+    	lastBaseUpdate: Update<State>?,
+    	shared: SharedQueue<State>,
+    	effects: Array<Update<State>>?
+    }
+    
+    export type HookType =
+    	"useState"
+    	| "useReducer"
+    	| "useContext"
+    	| "useRef"
+    	
+    	| "useBinding"
+    	| "useEffect"
+    	| "useLayoutEffect"
+    	| "useCallback"
+    	| "useMemo"
+    	| "useImperativeHandle"
+    	| "useDebugValue"
+    	| "useDeferredValue"
+    	| "useTransition"
+    	| "useMutableSource"
+    	| "useOpaqueIdentifier"
+    local f = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactRootTags")
+    type RootTag = f.RootTag
+    
+    
+    
+    type TimeoutHandle = any
+    type NoTimeout = any
+    
+    local g = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    type Wakeable = g.Wakeable
+    
+    local h = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/scheduler")
+    type Interaction = h.Interaction
+    
+    
+    export type ReactPriorityLevel = number
+    
+    export type ContextDependency<T> = {
+    	context: ReactContext<T>,
+    	observedBits: number,
+    	
+    	next: ContextDependency<T> | nil	
+    	
+    	
+    
+    }
+    
+    export type Dependencies = {
+    	lanes: Lanes,
+    	firstContext: ContextDependency<any> | nil	
+    	
+    	
+    
+    }
+    
+    
+    
+    
+    export type RoactStableKey = string | number
+    
+    
+    
+    export type Fiber = {
+    	
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    	
+    
+    	
+    	tag: WorkTag,
+    
+    	
+    	
+    	
+    	key: RoactStableKey?,
+    
+    	
+    	
+    	elementType: any,
+    
+    	
+    	type: any,
+    
+    	
+    	stateNode: any,
+    
+    	
+    	
+    	
+    
+    	
+    
+    	
+    	
+    	
+    	
+    	return_: Fiber | nil,
+    
+    	
+    	child: Fiber?,
+    	sibling: Fiber?,
+    	index: number,
+    
+    	
+    	
+    	
+    	
+    	ref: nil | ((handle: any) -> ()) | { _stringRef: string?, [string]: any } | RefObject,
+    
+    	
+    	pendingProps: any, 
+    	memoizedProps: any, 
+    
+    	
+    	updateQueue: any,
+    
+    	
+    	memoizedState: any,
+    
+    	
+    	dependencies: Dependencies?,
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	mode: TypeOfMode,
+    
+    	
+    	flags: Flags,
+    	subtreeFlags: Flags,
+    	deletions: Array<Fiber>?,
+    
+    	
+    	nextEffect: Fiber?,
+    
+    	
+    	
+    	
+    	firstEffect: Fiber?,
+    	lastEffect: Fiber?,
+    
+    	lanes: Lanes,
+    	childLanes: Lanes,
+    
+    	
+    	
+    	
+    	alternate: Fiber?,
+    
+    	
+    	
+    	
+    	
+    	actualDuration: number?,
+    
+    	
+    	
+    	
+    	actualStartTime: number?,
+    
+    	
+    	
+    	
+    	selfBaseDuration: number?,
+    
+    	
+    	
+    	
+    	treeBaseDuration: number?,
+    
+    	
+    	
+    	
+    	
+    	_debugID: number?,
+    	_debugSource: Source?,
+    	_debugOwner: Fiber?,
+    	_debugIsCurrentlyTiming: boolean?,
+    	_debugNeedsRemount: boolean?,
+    
+    	
+    	_debugHookTypes: Array<HookType>?
+    }
+    
+    export type SuspenseHydrationCallbacks = {
+    	onHydrated: ((SuspenseInstance) -> ())?,
+    	onDeleted: ((SuspenseInstance) -> ())?	
+    	
+    	
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    export type FiberRoot = {
+    	
+    	
+    	tag: RootTag,
+    
+    	
+    	containerInfo: any,
+    	
+    	pendingChildren: any,
+    	
+    	current: Fiber,
+    
+    	
+    	pingCache: SimpleMap<
+    		Wakeable,
+    		(SimpleSet<any> | SimpleMap<Wakeable, SimpleSet<any>>)
+    	> | nil,
+    	
+    
+    	
+    	finishedWork: Fiber?,
+    	
+    	
+    	timeoutHandle: TimeoutHandle | NoTimeout,
+    	
+    	context: Object?,
+    	pendingContext: Object?,
+    	
+    	hydrate: boolean,
+    
+    	
+    	mutableSourceEagerHydrationData: Array<MutableSource<any> | MutableSourceVersion>?,
+    
+    	
+    	
+    	callbackNode: any,
+    	callbackPriority: LanePriority,
+    	eventTimes: LaneMap<number>,
+    	expirationTimes: LaneMap<number>,
+    
+    	pendingLanes: Lanes,
+    	suspendedLanes: Lanes,
+    	pingedLanes: Lanes,
+    	expiredLanes: Lanes,
+    	mutableReadLanes: Lanes,
+    
+    	finishedLanes: Lanes,
+    
+    	entangledLanes: Lanes,
+    	entanglements: LaneMap<Lanes>,
+    
+    	
+    	
+    	
+    	
+    	
+    	interactionThreadID: number,
+    	memoizedInteractions: Set<Interaction>,
+    	pendingInteractionMap: Map<Lane | Lanes, Set<Interaction>>,
+    
+    	
+    	
+    	hydrationCallbacks: SuspenseHydrationCallbacks?
+    	
+    	
+    	
+    
+    }
+    
+    type BasicStateAction<S> = ((S) -> S) | S
+    type Dispatch<A> = (A) -> ()
+    
+    
+    export type Dispatcher = g.Dispatcher
+    
+    
+    return {}
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactMutableSource.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").console
+    
+    type Array<T> = { [number]: T }
+    local b = {}
+    
+    local c = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    type MutableSource<T> = c.MutableSource<T>
+    type MutableSourceVersion = c.MutableSourceVersion
+    
+    local d = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type FiberRoot = d.FiberRoot
+    
+    local e = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHostConfig").isPrimaryRenderer
+    
+    
+    
+    
+    local f: Array<MutableSource<any>> = {}
+    
+    local g
+    if _G.__DEV__ then
+    	
+    	g = {}
+    end
+    
+    b.markSourceAsDirty = function(h: MutableSource<any>)
+    	table.insert(f, h)
+    end
+    
+    b.resetWorkInProgressVersions = function()
+    	for h, i in f do
+    		if e then
+    			i._workInProgressVersionPrimary = nil
+    		else
+    			i._workInProgressVersionSecondary = nil
+    		end
+    	end
+    	table.clear(f)
+    end
+    
+    b.getWorkInProgressVersion =
+    	function(h: MutableSource<any>): nil | MutableSourceVersion
+    		if e then
+    			return h._workInProgressVersionPrimary
+    		else
+    			return h._workInProgressVersionSecondary
+    		end
+    	end
+    
+    b.setWorkInProgressVersion =
+    	function(h: MutableSource<any>, i: MutableSourceVersion)
+    		if e then
+    			h._workInProgressVersionPrimary = i
+    		else
+    			h._workInProgressVersionSecondary = i
+    		end
+    		table.insert(f, h)
+    	end
+    
+    b.warnAboutMultipleRenderersDEV = function(h: MutableSource<any>)
+    	if _G.__DEV__ then
+    		if e then
+    			if h._currentPrimaryRenderer == nil then
+    				h._currentPrimaryRenderer = g
+    			elseif h._currentPrimaryRenderer ~= g then
+    				a.error(
+    [[Detected multiple renderers concurrently rendering the same mutable source. This is currently unsupported.]]				
+    
+    )
+    			end
+    		else
+    			if h._currentSecondaryRenderer == nil then
+    				h._currentSecondaryRenderer = g
+    			elseif h._currentSecondaryRenderer ~= g then
+    				a.error(
+    [[Detected multiple renderers concurrently rendering the same mutable source. This is currently unsupported.]]				
+    
+    )
+    			end
+    		end
+    	end
+    end
+    
+    
+    
+    
+    
+    b.registerMutableSourceForHydration =
+    	function(h: FiberRoot, i: MutableSource<any>)
+    		local j = i._getVersion
+    		local k = j(i._source)
+    
+    		
+    		
+    		if h.mutableSourceEagerHydrationData == nil then
+    			h.mutableSourceEagerHydrationData = { i, k }
+    			
+    			
+    			
+    		
+    end
+    	end
+    
+    return b
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactPortal"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactSymbols.REACT_PORTAL_TYPE
+    
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    type ReactNodeList = b.ReactNodeList
+    type ReactPortal = b.ReactPortal
+    
+    local function createPortal(
+    	c: ReactNodeList,
+    	d: any,
+    	
+    	e: any,
+    	f: string?
+    ): ReactPortal
+    	if f ~= nil then
+    		f = tostring(f)
+    	end
+    	return {
+    		
+    		["$$typeof"] = a,
+    		key = f,
+    		children = c,
+    		containerInfo = d,
+    		implementation = e,
+    	}
+    end
+    
+    return {
+    	createPortal = createPortal,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactProfilerTimer.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = a.Fiber
+    
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactFeatureFlags
+    local c = b.enableProfilerTimer
+    local d = b.enableProfilerCommitHooks
+    
+    local e = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactWorkTags")
+    local f = e.Profiler
+    
+    
+    
+    local g = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/scheduler")
+    
+    local h = g.unstable_now
+    
+    export type ProfilerTimer = {
+    	getCommitTime: () -> number,
+    	recordCommitTime: () -> (),
+    	startProfilerTimer: (Fiber) -> (),
+    	stopProfilerTimerIfRunning: (Fiber) -> (),
+    	stopProfilerTimerIfRunningAndRecordDelta: (Fiber) -> ()	
+    
+    }
+    
+    local i: number = 0
+    local j: number = -1
+    local k: number = -1
+    local l: number = -1
+    
+    function getCommitTime(): number
+    	return i
+    end
+    
+    function recordCommitTime(): ()
+    	if not c then
+    		return
+    	end
+    	i = h()
+    end
+    
+    function startProfilerTimer(m: Fiber): ()
+    	if not c then
+    		return
+    	end
+    
+    	k = h()
+    
+    	
+    	if m.actualStartTime ~= nil and (m.actualStartTime :: number) < 0 then
+    		m.actualStartTime = h()
+    	end
+    end
+    
+    function stopProfilerTimerIfRunning(m: Fiber): ()
+    	if not c then
+    		return
+    	end
+    	k = -1
+    end
+    
+    function stopProfilerTimerIfRunningAndRecordDelta(
+    	m: Fiber,
+    	n: boolean
+    ): ()
+    	if not c then
+    		return
+    	end
+    
+    	if k >= 0 then
+    		local o = h() - k
+    		m.actualDuration += o
+    		if n then
+    			m.selfBaseDuration = o
+    		end
+    		k = -1
+    end
+    end
+    
+    function recordLayoutEffectDuration(m: Fiber): ()
+    	if not c or not d then
+    		return
+    	end
+    
+    	if j >= 0 then
+    		local n = h() - j
+    
+    		j = -1		
+    		
+    
+    local o = m.return_
+    		while o ~= nil do
+    			if o.tag == f then
+    				local p = o.stateNode
+    				p.effectDuration += n
+    				break
+    			end
+    			o = o.return_
+    		end
+    	end
+    end
+    
+    function recordPassiveEffectDuration(m: Fiber): ()
+    	if not c or not d then
+    		return
+    	end
+    
+    	if l >= 0 then
+    		local n = h() - l
+    
+    		l = -1		
+    		
+    
+    local o = m.return_
+    		while o ~= nil do
+    			if o.tag == f then
+    				local p = o.stateNode
+    				if p ~= nil then
+    					
+    					
+    					
+    					p.passiveEffectDuration += n
+    				end
+    				break
+    			end
+    			o = o.return_
+    		end
+    	end
+    end
+    
+    function startLayoutEffectTimer(): ()
+    	if not c or not d then
+    		return
+    	end
+    	j = h()
+    end
+    
+    function startPassiveEffectTimer(): ()
+    	if not c or not d then
+    		return
+    	end
+    	l = h()
+    end
+    
+    function transferActualDuration(m: Fiber): ()
+    	
+    	
+    	
+    	local n = m.child
+    	while n do
+    		m.actualDuration += n.actualDuration
+    		n = n.sibling
+    	end
+    end
+    
+    return {
+    	getCommitTime = getCommitTime,
+    	recordCommitTime = recordCommitTime,
+    	recordLayoutEffectDuration = recordLayoutEffectDuration,
+    	recordPassiveEffectDuration = recordPassiveEffectDuration,
+    	startLayoutEffectTimer = startLayoutEffectTimer,
+    	startPassiveEffectTimer = startPassiveEffectTimer,
+    	startProfilerTimer = startProfilerTimer,
+    	stopProfilerTimerIfRunning = stopProfilerTimerIfRunning,
+    	stopProfilerTimerIfRunningAndRecordDelta = stopProfilerTimerIfRunningAndRecordDelta,
+    	transferActualDuration = transferActualDuration,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactRootTags"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    export type RootTag = number
+    
+    return {
+    	LegacyRoot = 0,
+    	BlockingRoot = 1,
+    	ConcurrentRoot = 2,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactStrictModeWarnings.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").console
+    
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = b.Fiber
+    local c = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactCurrentFiber")
+    local d = c.resetCurrentFiber
+    local e = c.setCurrentFiber
+    local f = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").getComponentName
+    local g = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactTypeOfMode").StrictMode
+    
+    type Set<T> = { [T]: boolean }
+    type Array<T> = { [number]: T }
+    type Map<K, V> = { [K]: V }
+    type FiberArray = Array<Fiber>
+    type FiberToFiberComponentsMap = Map<Fiber, FiberArray>
+    
+    local h = {
+    	recordUnsafeLifecycleWarnings = function(h: Fiber, i: any) end,
+    	flushPendingUnsafeLifecycleWarnings = function() end,
+    	recordLegacyContextWarning = function(h: Fiber, i: any) end,
+    	flushLegacyContextWarning = function() end,
+    	discardPendingWarnings = function() end,
+    }
+    
+    if _G.__DEV__ then
+    	local i = function(i: Fiber): Fiber | nil
+    		local j 
+    		
+    		
+    local k: Fiber? = i
+    		while k ~= nil do
+    			if bit32.band(k.mode, g) ~= 0 then
+    				j = k
+    			end
+    			k = k.return_
+    		end
+    
+    		return j
+    	end
+    
+    	local j = function(j): string
+    		local k = {}
+    		for l, m in j do
+    			table.insert(k, l)
+    		end
+    		table.sort(k)
+    		return table.concat(k, ", ")
+    	end
+    
+    	local k: Array<Fiber> = {}
+    	local l: Array<Fiber> = {}
+    	local m: Array<Fiber> = {}
+    	local n: Array<Fiber> = {}
+    	local o: Array<Fiber> = {}
+    	local p: Array<Fiber> = {}
+    
+    	
+    	local q = {}
+    
+    	h.recordUnsafeLifecycleWarnings =
+    		function(r: Fiber, s: any)
+    			
+    			if q[r.type] then
+    				return
+    			end
+    
+    			if
+    				typeof(s.componentWillMount) == "function"
+    				
+    				
+    				
+    			then
+    				table.insert(k, r)
+    			end
+    
+    			if
+    				bit32.band(r.mode, g) ~= 0
+    				and typeof(s.UNSAFE_componentWillMount) == "function"
+    			then
+    				table.insert(l, r)
+    			end
+    
+    			if
+    				typeof(s.componentWillReceiveProps) == "function"
+    				
+    				
+    			then
+    				table.insert(m, r)
+    			end
+    
+    			if
+    				bit32.band(r.mode, g) ~= 0
+    				and typeof(s.UNSAFE_componentWillReceiveProps) == "function"
+    			then
+    				table.insert(n, r)
+    			end
+    
+    			if
+    				typeof(s.componentWillUpdate) == "function"
+    				
+    				
+    			then
+    				table.insert(o, r)
+    			end
+    
+    			if
+    				bit32.band(r.mode, g) ~= 0
+    				and typeof(s.UNSAFE_componentWillUpdate) == "function"
+    			then
+    				table.insert(p, r)
+    			end
+    		end
+    
+    	h.flushPendingUnsafeLifecycleWarnings = function()
+    		
+    		local r = {}
+    		if #k > 0 then
+    			for s, t in k do
+    				r[f(t.type) or "Component"] =
+    					true
+    				q[t.type] = true
+    			end
+    			table.clear(k)
+    		end
+    
+    		local s = {}
+    		if #l > 0 then
+    			for t, u in l do
+    				s[f(u.type) or "Component"] =
+    					true
+    				q[u.type] = true
+    			end
+    			table.clear(l)
+    		end
+    
+    		local t = {}
+    		if #m > 0 then
+    			for u, v in m do
+    				t[f(v.type) or "Component"] =
+    					true
+    				q[v.type] = true
+    			end
+    
+    			table.clear(m)
+    		end
+    
+    		local u = {}
+    		if #n > 0 then
+    			for v, w in n do
+    				u[f(w.type) or "Component"] =
+    					true
+    				q[w.type] = true
+    			end
+    
+    			table.clear(n)
+    		end
+    
+    		local v = {}
+    		if #o > 0 then
+    			for w, x in o do
+    				v[f(x.type) or "Component"] =
+    					true
+    				q[x.type] = true
+    			end
+    
+    			table.clear(o)
+    		end
+    
+    		local w = {}
+    		if #p > 0 then
+    			for x, y in p do
+    				w[f(y.type) or "Component"] =
+    					true
+    				q[y.type] = true
+    			end
+    
+    			table.clear(p)
+    		end
+    
+    		
+    		
+    		
+    		if next(s) ~= nil then
+    			local x = j(s)
+    			a.error(
+    [[Using UNSAFE_componentWillMount in strict mode is not recommended and may indicate bugs in your code. See https://reactjs.org/link/unsafe-component-lifecycles for details.
+    
+    * Move code with side effects to componentDidMount, and set initial state in the constructor.
+    
+    Please update the following components: %s]],
+    				x
+    			)
+    		end
+    
+    		
+    		if next(u) ~= nil then
+    			local x =
+    				j(u)
+    			a.error(
+    [[Using UNSAFE_componentWillReceiveProps in strict mode is not recommended and may indicate bugs in your code. See https://reactjs.org/link/unsafe-component-lifecycles for details.
+    
+    * Move data fetching code or side effects to componentDidUpdate.
+    * If you're updating state whenever props change, refactor your code to use memoization techniques or move it to static getDerivedStateFromProps. Learn more at: https://reactjs.org/link/derived-state
+    
+    Please update the following components: %s]]
+    ,
+    				x
+    			)
+    		end
+    
+    		
+    		if next(w) ~= nil then
+    			local x = j(w)
+    			a.error(
+    [[Using UNSAFE_componentWillUpdate in strict mode is not recommended and may indicate bugs in your code. See https://reactjs.org/link/unsafe-component-lifecycles for details.
+    
+    * Move data fetching code or side effects to componentDidUpdate.
+    
+    Please update the following components: %s]],
+    				x
+    			)
+    		end
+    
+    		
+    		if next(r) ~= nil then
+    			local x = j(r)
+    
+    			
+    			
+    			
+    			a.warn(
+    [[componentWillMount has been renamed, and is not recommended for use. See https://reactjs.org/link/unsafe-component-lifecycles for details.
+    
+    * Move code with side effects to componentDidMount, and set initial state in the constructor.
+    * Rename componentWillMount to UNSAFE_componentWillMount to suppress this warning in non-strict mode. In React 18.x, only the UNSAFE_ name will work.
+    
+    Please update the following components: %s]],
+    				x
+    			)
+    		end
+    
+    		
+    		if next(t) ~= nil then
+    			local x = j(t)
+    
+    			
+    			
+    			
+    			a.warn(
+    [[componentWillReceiveProps has been renamed, and is not recommended for use. See https://reactjs.org/link/unsafe-component-lifecycles for details.
+    
+    * Move data fetching code or side effects to componentDidUpdate.
+    * If you're updating state whenever props change, refactor your code to use memoization techniques or move it to static getDerivedStateFromProps. Learn more at: https://reactjs.org/link/derived-state
+    * Rename componentWillReceiveProps to UNSAFE_componentWillReceiveProps to suppress this warning in non-strict mode. In React 18.x, only the UNSAFE_ name will work.
+    
+    Please update the following components: %s]]
+    
+    ,
+    				x
+    			)
+    		end
+    
+    		
+    		if next(v) ~= nil then
+    			local x = j(v)
+    
+    			
+    			
+    			
+    			a.warn(
+    [[componentWillUpdate has been renamed, and is not recommended for use. See https://reactjs.org/link/unsafe-component-lifecycles for details.
+    
+    * Move data fetching code or side effects to componentDidUpdate.
+    * Rename componentWillUpdate to UNSAFE_componentWillUpdate to suppress this warning in non-strict mode. In React 18.x, only the UNSAFE_ name will work.
+    
+    Please update the following components: %s]],
+    				x
+    			)
+    		end
+    	end
+    
+    	local r: FiberToFiberComponentsMap = {}
+    
+    	
+    	local s = {}
+    
+    	h.recordLegacyContextWarning =
+    		function(t: Fiber, u: any)
+    			local v = i(t)
+    			if v == nil then
+    				a.error(
+    [[Expected to find a StrictMode component in a strict mode tree. This error is likely caused by a bug in React. Please file an issue.]]				
+    
+    )
+    				return
+    			end
+    
+    			
+    			if s[t.type] then
+    				return
+    			end
+    
+    			
+    			local w = r[v :: Fiber]
+    
+    			
+    			if
+    				typeof(t.type) ~= "function"
+    				and (
+    					t.type.contextTypes ~= nil
+    					or t.type.childContextTypes ~= nil
+    					or (
+    						u ~= nil
+    						and typeof(u.getChildContext) == "function"
+    					)
+    				)
+    			then
+    				if w == nil then
+    					w = {}
+    					
+    					r[v :: Fiber] = w
+    				end
+    				table.insert(w, t)
+    			end
+    		end
+    
+    	h.flushLegacyContextWarning = function()
+    		for t, u in r do
+    			if #u == 0 then
+    				return
+    			end
+    			local v = u[1]
+    
+    			local w = {}
+    			for x, y in u do
+    				w[f(y.type) or "Component"] = true
+    				s[y.type] = true
+    			end
+    
+    			local x = j(w)
+    
+    			local y, z = pcall(function()
+    				e(v)
+    				a.error(
+    [[Legacy context API has been detected within a strict-mode tree.
+    
+    The old API will be supported in all 16.x releases, but applications using it should migrate to the new version.
+    
+    Please update the following components: %s
+    
+    Learn more about this warning here: https://reactjs.org/link/legacy-context]],
+    					x
+    				)
+    			end)
+    
+    			
+    			d()
+    
+    			if not y then
+    				error(z)
+    			end
+    		end
+    	end
+    
+    	h.discardPendingWarnings = function()
+    		
+    		table.clear(k)
+    		table.clear(l)
+    		table.clear(m)
+    		table.clear(n)
+    		table.clear(o)
+    		table.clear(p)
+    		table.clear(r)
+    	end
+    end
+    
+    return h
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactTestSelectors"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/luau-polyfill")
+    type Set<T> = { [T]: boolean }
+    type Array<T> = a.Array<T>
+    type Function = (...any) -> ...any
+    type Object = a.Object
+    
+    
+    
+    
+    
+    
+    
+    
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberHostConfig")
+    local c = b.supportsTestSelectors
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local d = {}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    export type BoundingRect = {
+    	x: number,
+    	y: number,
+    	width: number,
+    	height: number
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local e: Array<Function> = {}
+    
+    d.onCommitRoot = function(): ()
+    	if c then
+    		for f, g in e do
+    			g()
+    		end
+    	end
+    end
+    
+    export type IntersectionObserverOptions = Object
+    
+    export type ObserveVisibleRectsCallback = (
+    	intersections: Array<{ ratio: number, rect: BoundingRect }>
+    ) -> ()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    return d
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactTypeOfMode"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    export type TypeOfMode = number
+    
+    return {
+    	NoMode = 0b00000,
+    	StrictMode = 0b00001,
+    	
+    	
+    	BlockingMode = 0b00010,
+    	ConcurrentMode = 0b00100,
+    	ProfileMode = 0b01000,
+    	DebugTracingMode = 0b10000,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactUpdateQueue.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _G.__DEV__
+    local b = _G.__YOLO__
+    
+    local c = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/luau-polyfill")
+    local d = c.Object
+    
+    
+    local e = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").console
+    
+    local f = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = f.Fiber
+    type Lane = f.Lane
+    type Lanes = f.Lanes
+    
+    local g = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLane")
+    local h = g.NoLane
+    local i = g.NoLanes
+    local j = g.isSubsetOfLanes
+    local k = g.mergeLanes
+    
+    
+    local l 
+    
+    
+    local function enterDisallowedContextReadInDEV()
+    	if not l then
+    		l = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberNewContext.new"):: any
+    	end
+    	l.enterDisallowedContextReadInDEV()
+    end
+    local function exitDisallowedContextReadInDEV()
+    	if not l then
+    		l = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberNewContext.new"):: any
+    	end
+    	l.exitDisallowedContextReadInDEV()
+    end
+    local m = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberFlags")
+    local n = m.Callback
+    local o = m.ShouldCapture
+    local p = m.DidCapture
+    
+    local q = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactFeatureFlags
+    local r =
+    	q.debugRenderPhaseSideEffectsForStrictMode
+    
+    local s = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactTypeOfMode")
+    local t = s.StrictMode
+    
+    local u =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberWorkInProgress").markSkippedUpdateLanes
+    
+    
+    
+    
+    local v = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").describeError
+    
+    local w = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ConsolePatchingDev
+    local x = w.disableLogs
+    local y = w.reenableLogs
+    
+    
+    type Array<T> = { [number]: T }
+    
+    
+    type Update<T> = f.Update<T>
+    type UpdateQueue<T> = f.UpdateQueue<T>
+    export type SharedQueue<T> = f.SharedQueue<T>
+    
+    local z = {}
+    
+    local A = 0
+    z.UpdateState = A
+    local B = 1
+    z.ReplaceState = B
+    local C = 2
+    z.ForceUpdate = C
+    local D = 3
+    z.CaptureUpdate = D
+    
+    
+    
+    
+    local E = false
+    
+    local F
+    local G: SharedQueue<any>?
+    
+    if a then
+    	F = false
+    	G = nil
+    	z.resetCurrentlyProcessingQueue = function()
+    		G = nil
+    	end
+    end
+    
+    
+    local H = 210 
+    
+    local I = table.create(H)
+    local J = H
+    for K = 1, H do
+    	I[K] = {
+    		eventTime = -1,
+    		lane = -1,
+    		tag = -1,
+    		payload = nil,
+    		callback = nil,
+    		next = nil,
+    	}
+    end
+    
+    local function initializeUpdateQueue<State>(K: Fiber): ()
+    	local L: UpdateQueue<State> = {
+    		baseState = K.memoizedState,
+    		firstBaseUpdate = nil,
+    		lastBaseUpdate = nil,
+    		shared = {
+    			pending = nil,
+    		},
+    		effects = nil,
+    	}
+    	K.updateQueue = L
+    end
+    z.initializeUpdateQueue = initializeUpdateQueue
+    
+    local function cloneUpdateQueue<State>(K: Fiber, L: Fiber): ()
+    	
+    	local M: UpdateQueue<State> = L.updateQueue :: any
+    	local N: UpdateQueue<State> = K.updateQueue :: any
+    	if M == N then
+    		
+    		local O: UpdateQueue<State> = table.clone(N)
+    		
+    		L.updateQueue = O
+    	end
+    end
+    z.cloneUpdateQueue = cloneUpdateQueue
+    
+    
+    local function createUpdate(
+    	K: number,
+    	L: Lane,
+    	M: any?,
+    	N: (() -> ...any)?
+    ): Update<any>
+    	
+    	if J > 0 then
+    		local O = I[J]
+    		I[J] = nil
+    		J -= 1
+    
+    		O.eventTime = K
+    		O.lane = L
+    		O.tag = A
+    		O.payload = M
+    		O.callback = N :: any
+    
+    		return O :: Update<any>
+    	end
+    	
+    
+    	
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	local O = {
+    		eventTime = K,
+    		lane = L,
+    
+    		tag = A,
+    		payload = M,
+    		callback = N :: any,
+    
+    		next = nil,
+    	}
+    	return O :: Update<any>
+    end
+    z.createUpdate = createUpdate
+    
+    local function enqueueUpdate<State>(K: Fiber, L: Update<State>)
+    	local M = K.updateQueue
+    	if M == nil then
+    		
+    		return
+    	end
+    
+    	local N: SharedQueue<State> = (M :: any).shared
+    	local O = N.pending
+    	if O == nil then
+    		
+    		L.next = L
+    	else
+    		L.next = O.next
+    		O.next = L
+    	end
+    	N.pending = L
+    
+    	if a then
+    		if G == N and not F then
+    			e.error(
+    [[An update (setState, replaceState, or forceUpdate) was scheduled from inside an update function. Update functions should be pure, with zero side-effects. Consider using componentDidUpdate or a callback.]]			
+    
+    
+    
+    )
+    			F = true
+    		end
+    	end
+    end
+    z.enqueueUpdate = enqueueUpdate
+    
+    local function enqueueCapturedUpdate<State>(K: Fiber, L: Update<State>)
+    	
+    	
+    	
+    	local M: UpdateQueue<State> = K.updateQueue :: any
+    
+    	
+    	local N = K.alternate
+    	if N ~= nil then
+    		local O: UpdateQueue<State> = N.updateQueue :: any
+    		if M == O then
+    			
+    			
+    			
+    			
+    			
+    			
+    			local P 			
+    local Q 			
+    local R = M.firstBaseUpdate
+    			if R ~= nil then
+    				
+    				local S = R
+    				repeat
+    					local T: Update<State> = {
+    						eventTime = S.eventTime,
+    						lane = S.lane,
+    
+    						tag = S.tag,
+    						payload = S.payload,
+    						callback = S.callback,
+    
+    						next = nil,
+    					}
+    					if Q == nil then
+    						Q = T
+    						P = T
+    					else
+    						Q.next = T
+    						Q = T
+    					end
+    					
+    					S = S.next :: Update<State>
+    				until S == nil
+    
+    				
+    				if Q == nil then
+    					Q = L
+    					P = L
+    				else
+    					Q.next = L
+    					Q = L
+    				end
+    			else
+    				
+    				Q = L
+    				P = L
+    			end
+    			M = {
+    				baseState = O.baseState,
+    				firstBaseUpdate = P,
+    				lastBaseUpdate = Q,
+    				shared = O.shared,
+    				effects = O.effects,
+    			}
+    			K.updateQueue = M
+    			return
+    		end
+    	end
+    
+    	
+    	local O = M.lastBaseUpdate
+    	if O == nil then
+    		M.firstBaseUpdate = L
+    	else
+    		O.next = L
+    	end
+    	M.lastBaseUpdate = L
+    end
+    z.enqueueCapturedUpdate = enqueueCapturedUpdate
+    
+    local function getStateFromUpdate<State>(
+    	K: Fiber,
+    	L: UpdateQueue<State>,
+    	M: Update<State>,
+    	N: State,
+    	O: any,
+    	P: any
+    ): any
+    	local Q = M.tag
+    	if Q == B then
+    		local R = M.payload
+    		if type(R) == "function" then
+    			
+    			if a then
+    				enterDisallowedContextReadInDEV()
+    			end
+    			
+    			
+    			
+    			local S = R(N, O)
+    			if a then
+    				if
+    					r
+    					and bit32.band(K.mode, t) ~= 0
+    				then
+    					x()
+    					
+    					local T, U
+    					if not b then
+    						T, U = xpcall(R, v, N, O)
+    					else
+    						T = true
+    						R(N, O)
+    					end
+    					
+    					y()
+    
+    					if not T then
+    						error(U)
+    					end
+    				end
+    				exitDisallowedContextReadInDEV()
+    			end
+    			return S
+    		end
+    		
+    		return R
+    	elseif Q == D or Q == A then
+    		if Q == D then
+    			K.flags = bit32.bor(
+    				bit32.band(K.flags, bit32.bnot(o)),
+    				p
+    			)
+    		end
+    		
+    		local R = M.payload
+    		local S
+    		if type(R) == "function" then
+    			
+    			if a then
+    				enterDisallowedContextReadInDEV()
+    			end
+    			
+    			
+    			
+    			S = R(N, O)
+    			if a then
+    				if
+    					r
+    					and bit32.band(K.mode, t) ~= 0
+    				then
+    					x()
+    					
+    					local T, U
+    					if not b then
+    						T, U = xpcall(R, v, N, O)
+    					else
+    						T = true
+    						R(N, O)
+    					end
+    					
+    					y()
+    
+    					if not T then
+    						error(U)
+    					end
+    				end
+    				exitDisallowedContextReadInDEV()
+    			end
+    		else
+    			
+    			S = R
+    		end
+    		if S == nil then
+    			
+    			return N
+    		end
+    		
+    		
+    		
+    		return d.assign({}, N, S)
+    	elseif Q == C then
+    		E = true
+    		return N
+    	end
+    	return N
+    end
+    z.getStateFromUpdate = getStateFromUpdate
+    
+    local function processUpdateQueue<State>(
+    	K: Fiber,
+    	L: any,
+    	M: any,
+    	N: Lanes
+    ): ()
+    	
+    	local O: UpdateQueue<State> = K.updateQueue :: any
+    
+    	E = false
+    
+    	if a then
+    		G = O.shared
+    	end
+    
+    	local P = O.firstBaseUpdate
+    	local Q = O.lastBaseUpdate
+    
+    	
+    	local R = O.shared.pending
+    	if R ~= nil then
+    		O.shared.pending = nil
+    
+    		
+    		
+    		local S = R
+    		local T = S.next
+    		S.next = nil
+    		
+    		if Q == nil then
+    			P = T
+    		else
+    			Q.next = T
+    		end
+    		Q = S
+    
+    		
+    		
+    		
+    		
+    		
+    		local U = K.alternate
+    		if U ~= nil then
+    			
+    			local V: UpdateQueue<State> = U.updateQueue :: any
+    			local W = V.lastBaseUpdate
+    			if W ~= Q then
+    				if W == nil then
+    					V.firstBaseUpdate = T
+    				else
+    					W.next = T
+    				end
+    				V.lastBaseUpdate = S
+    			end
+    		end
+    	end
+    
+    	
+    	if P ~= nil then
+    		
+    		local S = O.baseState
+    		
+    		
+    		local T = i
+    
+    		local U 		
+    local V 		
+    local W 
+    		
+    local X = P
+    		while true do
+    			local Y = X.lane
+    			local Z = X.eventTime
+    			if not j(N, Y) then
+    				
+    				
+    				
+    				local _: Update<State> = {
+    					eventTime = Z,
+    					lane = Y,
+    
+    					tag = X.tag,
+    					payload = X.payload,
+    					callback = X.callback,
+    
+    					next = nil,
+    				}
+    				if W == nil then
+    					V = _
+    					W = _
+    					U = S
+    				else
+    					W.next = _
+    					W = _
+    				end
+    				
+    				T = k(T, Y)
+    			else
+    				
+    
+    				if W ~= nil then
+    					local _: Update<State> = {
+    						eventTime = Z,
+    						
+    						
+    						
+    						lane = h,
+    
+    						tag = X.tag,
+    						payload = X.payload,
+    						callback = X.callback,
+    
+    						next = nil,
+    					}
+    					W.next = _
+    					W = _
+    				end
+    
+    				
+    				S = getStateFromUpdate(
+    					K,
+    					O,
+    					X,
+    					S,
+    					L,
+    					M
+    				)
+    				local _ = X.callback
+    				if
+    					_ ~= nil
+    					
+    					
+    					and X.lane ~= h
+    				then
+    					K.flags = bit32.bor(K.flags, n)
+    					local aa = O.effects
+    					if aa == nil then
+    						O.effects = { X }
+    					else
+    						table.insert(aa, X)
+    					end
+    				end
+    			end
+    			
+    			X = X.next :: Update<State>
+    			if X == nil then
+    				R = O.shared.pending
+    				if R == nil then
+    					break
+    				else
+    					
+    					
+    					local aa = R
+    					
+    					
+    					local _ = (
+    						aa.next :: any
+    					) :: Update<State>
+    					aa.next = nil
+    					X = _
+    					O.lastBaseUpdate = aa
+    					O.shared.pending = nil
+    				end
+    			end
+    		end
+    
+    		if W == nil then
+    			U = S
+    		end
+    
+    		O.baseState = (U :: any) :: State
+    		O.firstBaseUpdate = V
+    		O.lastBaseUpdate = W
+    
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		u(T)
+    		K.lanes = T
+    		K.memoizedState = S
+    	end
+    
+    	if a then
+    		G = nil
+    	end
+    end
+    z.processUpdateQueue = processUpdateQueue
+    
+    local function callCallback(aa, K)
+    	
+    	if type(aa) ~= "function" then
+    		error(
+    			string.format(
+    [[Invalid argument passed as callback. Expected a function. Instead received: %s]]
+    ,
+    				tostring(aa)
+    			)
+    		)
+    		
+    	end
+    	aa(K)
+    end
+    
+    z.resetHasForceUpdateBeforeProcessing = function()
+    	E = false
+    end
+    
+    z.checkHasForceUpdateAfterProcessing = function(): boolean
+    	return E
+    end
+    
+    local function commitUpdateQueue<State>(
+    	aa: Fiber,
+    	K: UpdateQueue<State>,
+    	L: any
+    ): ()
+    	
+    	local M = K.effects
+    	K.effects = nil
+    	if M ~= nil then
+    		for N, O in M do
+    			local P = O.callback
+    			if P ~= nil then
+    				callCallback(P, L)
+    			end
+    
+    			
+    			table.clear(O)
+    			table.insert(I, O :: any)
+    			J += 1
+    		end
+    	end
+    end
+    z.commitUpdateQueue = commitUpdateQueue
+    
+    return z
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactWorkTags"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    export type WorkTag = number
+    
+    return {
+    	FunctionComponent = 0,
+    	ClassComponent = 1,
+    	IndeterminateComponent = 2, 
+    	HostRoot = 3, 
+    	HostPortal = 4, 
+    	HostComponent = 5,
+    	HostText = 6,
+    	Fragment = 7,
+    	Mode = 8,
+    	ContextConsumer = 9,
+    	ContextProvider = 10,
+    	ForwardRef = 11,
+    	Profiler = 12,
+    	SuspenseComponent = 13,
+    	MemoComponent = 14,
+    	SimpleMemoComponent = 15,
+    	LazyComponent = 16,
+    	IncompleteClassComponent = 17,
+    	DehydratedFragment = 18,
+    	SuspenseListComponent = 19,
+    	FundamentalComponent = 20,
+    	ScopeComponent = 21,
+    	Block = 22,
+    	OffscreenComponent = 23,
+    	LegacyHiddenComponent = 24,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/RobloxReactProfiling"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").getComponentName
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactWorkTags")
+    
+    local c = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = c.Fiber
+    type FiberRoot = c.FiberRoot
+    
+    
+    local d = 1 
+    local e = 10 
+    
+    local f = _G.__REACT_MICROPROFILER_LEVEL or 0
+    
+    export type Marker = {
+    	id: string,
+    	startTime: number,
+    	endTime: number
+    }
+    
+    export type SamplerCallback = (Marker) -> ()
+    
+    local g = false
+    local h: SamplerCallback | nil 
+    
+    function startTimerSampling(i: SamplerCallback)
+    	if g then
+    		warn("RobloxReactProfiling Timer Sampling already running.")
+    	end
+    	g = true
+    	h = i
+    end
+    
+    function endTimerSampling()
+    	g = false
+    	h = nil
+    end
+    
+    function getFirstStringKey(i: { any: any })
+    	for j, k in i do
+    		if type(j) == "string" then
+    			return j
+    		end
+    	end
+    	return nil
+    end
+    
+    function startTimer(i: Marker)
+    	if g then
+    		i.startTime = os.clock()
+    	end
+    end
+    function endTimer(i: Marker)
+    	if g then
+    		i.endTime = os.clock()
+    		if h then
+    			h(i)
+    		end
+    	end
+    end
+    
+    function profileRootBeforeUnitOfWork(i: FiberRoot): Marker?
+    	local j = i.current
+    	local k 
+    	
+    if j then
+    		if j.memoizedProps then
+    			
+    			k = getFirstStringKey(j.memoizedProps)
+    		end
+    
+    		if
+    			k == nil
+    			and j.stateNode
+    			and j.stateNode.containerInfo
+    		then
+    			k = j.stateNode.containerInfo.Name
+    		end
+    	end
+    
+    	
+    	if k == "Folder" and j.child then
+    		local l = j.child
+    		local m 		
+    if l.memoizedProps then
+    			
+    			m = getFirstStringKey(l.memoizedProps)
+    		end
+    
+    		if
+    			m == nil
+    			and l.stateNode
+    			and l.stateNode.containerInfo
+    		then
+    			m = l.stateNode.containerInfo.Name
+    		end
+    		if m ~= nil then
+    			k = m
+    		end
+    	end
+    
+    	if k ~= nil then
+    		local l = {
+    			id = k,
+    			startTime = 0,
+    			endTime = 0,
+    		}
+    		startTimer(l)
+    		debug.profilebegin(k)
+    		return l
+    	end
+    
+    	return nil
+    end
+    
+    function profileRootAfterYielding(i: Marker?)
+    	if i then
+    		endTimer(i)
+    		debug.profileend()
+    	end
+    end
+    
+    function profileUnitOfWorkBefore(i: Fiber)
+    	local j = a(i.type)
+    
+    	if i.key then
+    		j = tostring(i.key) .. "=" .. (j or "?")
+    	end
+    
+    	local k 	
+    if i.stateNode then
+    		if
+    			i.tag == b.HostComponent
+    			or i.tag == b.HostText
+    		then
+    			local l =
+    				i.stateNode:FindFirstAncestorWhichIsA("LayerCollector")
+    			if l then
+    				k = "[" .. l:GetFullName() .. "] "
+    			end
+    		end
+    	end
+    
+    	if k then
+    		j = k .. " : " .. (j or "?")
+    	end
+    
+    	if j ~= nil then
+    		debug.profilebegin(j)
+    		return true
+    	end
+    
+    	return false
+    end
+    
+    function profileUnitOfWorkAfter(i: boolean)
+    	if i then
+    		debug.profileend()
+    	end
+    end
+    
+    function profileCommitBefore()
+    	debug.profilebegin("Commit")
+    end
+    function profileCommitAfter()
+    	debug.profileend()
+    end
+    
+    function noop(...: unknown) end
+    
+    return {
+    	startTimerSampling = startTimerSampling,
+    	endTimerSampling = endTimerSampling,
+    	profileRootBeforeUnitOfWork = if f >= d
+    		then profileRootBeforeUnitOfWork
+    		else noop,
+    	profileRootAfterYielding = if f >= d
+    		then profileRootAfterYielding
+    		else noop,
+    	profileUnitOfWorkBefore = if f >= e
+    		then profileUnitOfWorkBefore
+    		else noop,
+    	profileUnitOfWorkAfter = if f >= e
+    		then profileUnitOfWorkAfter
+    		else noop,
+    	profileCommitBefore = if f >= d
+    		then profileCommitBefore
+    		else noop,
+    	profileCommitAfter = if f >= d
+    		then profileCommitAfter
+    		else noop,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/SchedulerWithReactIntegration.new"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/luau-polyfill")
+    local b = a.Array
+    
+    local c = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    export type ReactPriorityLevel = c.ReactPriorityLevel
+    
+    
+    
+    local d = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/scheduler")
+    
+    local e = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactFeatureFlags
+    
+    local f =
+    	e.decoupleUpdatePriorityFromScheduler
+    local g = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").invariant
+    local h = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").describeError
+    local i = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLane")
+    local j = i.SyncLanePriority
+    local k = i.getCurrentUpdateLanePriority
+    local l = i.setCurrentUpdateLanePriority
+    
+    local m = d.unstable_runWithPriority
+    local n = d.unstable_scheduleCallback
+    local o = d.unstable_cancelCallback
+    local p = d.unstable_shouldYield
+    local q = d.unstable_requestPaint
+    local r = d.unstable_now
+    local s = d.unstable_getCurrentPriorityLevel
+    local t = d.unstable_ImmediatePriority
+    local u = d.unstable_UserBlockingPriority
+    local v = d.unstable_NormalPriority
+    local w = d.unstable_LowPriority
+    local x = d.unstable_IdlePriority
+    
+    
+    
+    
+    local y =
+    	_require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberSchedulerPriorities.roblox")
+    local z = y.ImmediatePriority
+    local A = y.UserBlockingPriority
+    local B = y.NormalPriority
+    local C = y.LowPriority
+    local D = y.IdlePriority
+    local E = y.NoPriority
+    
+    
+    type Array<T> = { [number]: T }
+    
+    
+    local F
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    export type SchedulerCallback = (isSync: boolean) -> SchedulerCallback | nil
+    
+    
+    
+    type SchedulerCallbackOptions = { timeout: number? }
+    
+    local G = {}
+    
+    local H = p
+    local I
+    
+    if q ~= nil then
+    	I = q
+    else
+    	I = function() end
+    end
+    
+    local J: Array<SchedulerCallback>? 
+    local K: any? 
+    local L: boolean = false
+    local M: number = r()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function now(): number
+    	return r() - M
+    end
+    
+    local function getCurrentPriorityLevel(): ReactPriorityLevel
+    	local N = s()
+    	if N == t then
+    		return z
+    	elseif N == u then
+    		return A
+    	elseif N == v then
+    		return B
+    	elseif N == w then
+    		return C
+    	elseif N == x then
+    		return D
+    	else
+    		g(false, "Unknown priority level.")
+    		
+    		return E
+    	end
+    end
+    
+    function reactPriorityToSchedulerPriority(N)
+    	if N == z then
+    		return t
+    	elseif N == A then
+    		return u
+    	elseif N == B then
+    		return v
+    	elseif N == C then
+    		return w
+    	elseif N == D then
+    		return x
+    	else
+    		g(false, "Unknown priority level.")
+    		
+    		return nil
+    	end
+    end
+    
+    
+    local function runWithPriority<T...>(
+    	N: ReactPriorityLevel,
+    	O: () -> T...
+    ): ...any
+    	local P = reactPriorityToSchedulerPriority(N)
+    	return m(P, O)
+    end
+    
+    local function scheduleCallback(
+    	N: ReactPriorityLevel,
+    	O: SchedulerCallback,
+    	P: SchedulerCallbackOptions | nil
+    )
+    	local Q = reactPriorityToSchedulerPriority(N)
+    	return n(Q, O, P)
+    end
+    
+    local function scheduleSyncCallback(N: SchedulerCallback)
+    	
+    	
+    	if J == nil then
+    		J = { N }
+    		
+    		K = n(
+    			t,
+    			F
+    		)
+    	else
+    		
+    		
+    		local O = J
+    		table.insert(O, N)
+    	end
+    	return G
+    end
+    
+    local function cancelCallback(N: any)
+    	if N ~= G then
+    		o(N)
+    	end
+    end
+    
+    local function flushSyncCallbackQueue(): boolean
+    	if K ~= nil then
+    		local N = K
+    		K = nil
+    		o(N)
+    	end
+    	return F()
+    end
+    
+    F = function()
+    	if not L and J ~= nil then
+    		
+    		L = true
+    		local N = 1
+    		if f then
+    			local O = k()
+    			
+    			local P = true
+    			local Q
+    			if not _G.__YOLO__ then
+    				
+    				local R = true
+    				local S = J
+    
+    				l(j)
+    				P, Q = xpcall(
+    					runWithPriority,
+    					h,
+    					z,
+    					
+    					function(): ...any
+    						for T, U in S do
+    							N = T
+    							repeat
+    								
+    								U = U(R) :: any
+    							until U == nil
+    						end
+    					end
+    				)
+    				J = nil
+    			else
+    				P = true
+    				local R = true
+    				local S = J
+    
+    				l(j)
+    				
+    				runWithPriority(z, function(): ...any
+    					for T, U in S do
+    						N = T
+    						repeat
+    							
+    							U = U(R) :: any
+    						until U == nil
+    						N += 1
+    					end
+    				end)
+    				J = nil
+    			end
+    
+    			
+    			l(O)
+    			L = false
+    
+    			if not P then
+    				
+    				if J ~= nil then
+    					J = b.slice(J, N + 1)
+    				end
+    				
+    				n(
+    					t,
+    					flushSyncCallbackQueue
+    				)
+    				error(Q)
+    			end
+    		else
+    			
+    			local O, P
+    			if not _G.__YOLO__ then
+    				
+    				local Q = true
+    				local R = J
+    
+    				O, P = xpcall(
+    					runWithPriority,
+    					h,
+    					z,
+    					
+    					function(): ...any
+    						for S, T in R do
+    							N = S
+    							repeat
+    								
+    								T = T(Q) :: any
+    							until T == nil
+    						end
+    					end
+    				)
+    				J = nil
+    			else
+    				O = true
+    				local Q = true
+    				local R = J
+    				
+    				runWithPriority(z, function(): ...any
+    					for S, T in R do
+    						N = S
+    						repeat
+    							
+    							T = T(Q) :: any
+    						until T == nil
+    					end
+    				end)
+    				J = nil
+    			end
+    
+    			
+    			L = false
+    
+    			if not O then
+    				
+    				if J ~= nil then
+    					J = b.slice(J, N + 1)
+    				end
+    				
+    				n(
+    					t,
+    					flushSyncCallbackQueue
+    				)
+    				error(P)
+    			end
+    		end
+    		return true
+    	else
+    		return false
+    	end
+    end
+    
+    return {
+    	ImmediatePriority = z,
+    	UserBlockingPriority = A,
+    	NormalPriority = B,
+    	LowPriority = C,
+    	IdlePriority = D,
+    	NoPriority = E,
+    
+    	getCurrentPriorityLevel = getCurrentPriorityLevel,
+    	flushSyncCallbackQueue = flushSyncCallbackQueue,
+    	runWithPriority = runWithPriority,
+    	scheduleCallback = scheduleCallback,
+    	scheduleSyncCallback = scheduleSyncCallback,
+    	cancelCallback = cancelCallback,
+    	now = now,
+    	requestPaint = I,
+    	shouldYield = H,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/SchedulingProfiler"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = {}
+    local b = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/luau-polyfill")
+    local c = b.WeakMap
+    type WeakMap<K, V> = b.WeakMap<K, V>
+    
+    local d = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactFiberLane")
+    type Lane = d.Lane
+    type Lanes = d.Lanes
+    
+    local e = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/ReactInternalTypes")
+    type Fiber = e.Fiber
+    
+    local f = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared")
+    type Wakeable = f.Wakeable
+    
+    local g = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactFeatureFlags
+    local h = g.enableSchedulingProfiler
+    local i = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").ReactVersion
+    local j = _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared").getComponentName
+    
+    
+    
+    
+    
+    local k = _G.performance ~= nil
+    local l = _G.performance
+    	or {
+    		mark = function(l)
+    			debug.profilebegin(l)
+    			debug.profileend()
+    		end,
+    	}
+    
+    function formatLanes(m: Lane | Lanes): string
+    	return tostring(m)
+    end
+    
+    
+    if h then
+    	if k then
+    		l.mark("--react-init-" .. tostring(i))
+    	end
+    end
+    
+    a.markCommitStarted = function(m: Lanes): ()
+    	if h then
+    		if k then
+    			l.mark("--commit-start-" .. formatLanes(m))
+    		end
+    	end
+    end
+    
+    a.markCommitStopped = function(): ()
+    	if h then
+    		if k then
+    			l.mark("--commit-stop")
+    		end
+    	end
+    end
+    
+    
+    
+    
+    
+    local m: WeakMap<Wakeable, number> = c.new()
+    local n: number = 0
+    function getWakeableID(o: Wakeable): number
+    	if not m:has(o) then
+    		m:set(o, n)
+    		n += 1
+    	end
+    	return m:get(o)
+    end
+    
+    a.markComponentSuspended = function(o: Fiber, p: Wakeable): ()
+    	if h then
+    		if k then
+    			local q = getWakeableID(p)
+    			local r = j(o.type) or "Unknown"
+    			
+    			l.mark(
+    				"--suspense-suspend-" .. tostring(q) .. "-" .. r
+    			)
+    			p:andThen(function()
+    				l.mark(
+    					"--suspense-resolved-" .. tostring(q) .. "-" .. r
+    				)
+    			end, function()
+    				l.mark(
+    					"--suspense-rejected-" .. tostring(q) .. "-" .. r
+    				)
+    			end)
+    		end
+    	end
+    end
+    
+    a.markLayoutEffectsStarted = function(o: Lanes): ()
+    	if h then
+    		if k then
+    			l.mark("--layout-effects-start-" .. formatLanes(o))
+    		end
+    	end
+    end
+    
+    a.markLayoutEffectsStopped = function(): ()
+    	if h then
+    		if k then
+    			l.mark("--layout-effects-stop")
+    		end
+    	end
+    end
+    
+    a.markPassiveEffectsStarted = function(o: Lanes): ()
+    	if h then
+    		if k then
+    			l.mark("--passive-effects-start-" .. formatLanes(o))
+    		end
+    	end
+    end
+    
+    a.markPassiveEffectsStopped = function(): ()
+    	if h then
+    		if k then
+    			l.mark("--passive-effects-stop")
+    		end
+    	end
+    end
+    
+    a.markRenderStarted = function(o: Lanes): ()
+    	if h then
+    		if k then
+    			l.mark("--render-start-" .. formatLanes(o))
+    		end
+    	end
+    end
+    
+    a.markRenderYielded = function(): ()
+    	if h then
+    		if k then
+    			l.mark("--render-yield")
+    		end
+    	end
+    end
+    
+    a.markRenderStopped = function(): ()
+    	if h then
+    		if k then
+    			l.mark("--render-stop")
+    		end
+    	end
+    end
+    
+    a.markRenderScheduled = function(o: Lane): ()
+    	if h then
+    		if k then
+    			l.mark("--schedule-render-" .. formatLanes(o))
+    		end
+    	end
+    end
+    
+    a.markForceUpdateScheduled = function(o: Fiber, p: Lane): ()
+    	if h then
+    		if k then
+    			local q = j(o.type) or "Unknown"
+    			
+    			l.mark(
+    				"--schedule-forced-update-" .. formatLanes(p) .. "-" .. q
+    			)
+    		end
+    	end
+    end
+    
+    a.markStateUpdateScheduled = function(o: Fiber, p: Lane): ()
+    	if h then
+    		if k then
+    			local q = j(o.type) or "Unknown"
+    			
+    			l.mark(
+    				"--schedule-state-update-" .. formatLanes(p) .. "-" .. q
+    			)
+    		end
+    	end
+    end
+    
+    return a
+end
+
+_modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/forks/ReactFiberHostConfig.test"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    return require("@pkg/@jsdotlua/react-test-renderer")
+end
+
 _modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/scheduler"] = function()
     return _require("Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler")
 end
@@ -7537,6 +36487,3225 @@ _modules["Packages/_Index/jsdotlua_react-roblox@17.2.1/react-reconciler"] = func
     return _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler")
 end
 
+_modules["Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/ReactRobloxHostTypes.roblox")
+    export type RootType = a.RootType
+    return _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/ReactRoblox")
+end
+
+_modules["Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/ReactReconciler.roblox"] = function()
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-reconciler")
+    
+    local b = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/ReactRobloxHostConfig")
+    
+    return a(b)
+end
+
+_modules["Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/ReactRoblox"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/shared")
+    type ReactNodeList = a.ReactNodeList
+    local b = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/ReactRobloxHostTypes.roblox")
+    type Container = b.Container
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local c
+    c = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/ReactRobloxRoot")
+    local d = c.createRoot
+    local e = c.createBlockingRoot
+    local f = c.createLegacyRoot
+    local g = c.isValidContainer
+    
+    
+    
+    local h = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/ReactReconciler.roblox")
+    
+    local i = h.batchedUpdates
+    
+    
+    local j = h.flushSync
+    
+    local k = h.injectIntoDevTools
+    local l = h.flushPassiveEffects
+    local m = h.IsThisRendererActing
+    
+    
+    
+    
+    
+    
+    
+    local n = h.createPortal
+    
+    local o = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/shared").ReactVersion
+    local p = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/shared").invariant
+    local q = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/shared").ReactFeatureFlags
+    
+    local r = q.enableNewReconciler
+    
+    local s = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/ReactRobloxComponentTree")
+    local t = s.getInstanceFromNode
+    local u = s.getNodeFromInstance
+    local v = s.getFiberCurrentPropsFromNode
+    local w = s.getClosestInstanceFromNode
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local x = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/shared").Event
+    local y = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/shared").Change
+    local z = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/shared").Tag
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function createPortal(
+    	A: ReactNodeList,
+    	B: Container,
+    	C: string?
+    ): any
+    	
+    	p(
+    		g(B),
+    		
+    		"Target container is not a Roblox Instance."
+    	)
+    	
+    	
+    	
+    	
+    	
+    	return n(A, B, nil, C)
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local A = {
+    	
+    	
+    	Events = {
+    		getInstanceFromNode = t,
+    		getNodeFromInstance = u,
+    		getFiberCurrentPropsFromNode = v,
+    		
+    		
+    		flushPassiveEffects = l,
+    		
+    		IsThisRendererActing = m,
+    	},
+    }
+    
+    local B = {
+    	createPortal = createPortal,
+    	unstable_batchedUpdates = i,
+    	flushSync = j,
+    	__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = A,
+    	version = o,
+    	
+    	
+    	
+    	
+    	
+    	
+    	createRoot = d,
+    	createBlockingRoot = e,
+    	createLegacyRoot = f,
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    
+    	
+    	
+    	
+    	Event = x,
+    	Change = y,
+    	Tag = z,
+    	unstable_isNewReconciler = r,
+    
+    	
+    	
+    	act = function(B: () -> ()): ()
+    		error(
+    [[ReactRoblox.act is only available in testing environments, not production. Enable the `__ROACT_17_MOCK_SCHEDULER__` global in your test configuration in order to use `act`.]]		
+    
+    
+    )
+    	end,
+    }
+    
+    if _G.__ROACT_17_MOCK_SCHEDULER__ then
+    	
+    	
+    	
+    	B.act = h.act
+    end
+    
+    
+    
+    local C = k({
+    	findFiberByHostInstance = w,
+    	bundleType = if _G.__DEV__ then 1 else 0,
+    	version = o,
+    	rendererPackageName = "ReactRoblox",
+    })
+    
+    if _G.__DEV__ then
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    end
+    
+    B.robloxReactProfiling = h.robloxReactProfiling
+    
+    return B
+end
+
+_modules["Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/ReactRobloxComponent"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/luau-polyfill")
+    local b = a.Object
+    
+    local c = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/roblox/RobloxComponentProps")
+    
+    local d = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/ReactRobloxHostTypes.roblox")
+    type HostInstance = d.HostInstance
+    
+    
+    
+    
+    type Array<T> = { [number]: T }
+    type Object = { [any]: any }
+    
+    local e: { [string]: any } = {}
+    
+    e.setInitialProperties = c.setInitialProperties
+    
+    
+    local function diffProperties(
+    	f: HostInstance,
+    	g: string,
+    	h: Object,
+    	i: Object,
+    	j: HostInstance
+    ): (nil | Array<any>)
+    	
+    	
+    	
+    
+    	
+    	
+    	local k 
+    	
+    local l = h
+    	local m = i
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    
+    	
+    	
+    	
+    	for n, o in l do
+    		if m[n] ~= nil then
+    			continue
+    		end
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		k = k or table.create(2)
+    		table.insert(k, n)
+    		table.insert(k, b.None)
+    		
+    	end
+    	for n, o in m do
+    		local p = if l ~= nil then l[n] else nil
+    		if o == p then
+    			continue
+    		end
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		k = k or table.create(2)
+    		table.insert(k, n)
+    		table.insert(k, o)
+    		
+    	end
+    	
+    	
+    	
+    	
+    	
+    	
+    	return k
+    end
+    e.diffProperties = diffProperties
+    e.updateProperties = c.updateProperties
+    e.cleanupHostComponent = c.cleanupHostComponent
+    
+    return e
+end
+
+_modules["Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/ReactRobloxComponentTree"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/ReactRobloxHostTypes.roblox")
+    type HostInstance = a.HostInstance
+    type TextInstance = a.TextInstance
+    type SuspenseInstance = a.SuspenseInstance
+    type Container = a.Container
+    type Props = a.Props
+    
+    local b = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-reconciler")
+    type Fiber = b.Fiber
+    local c = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/shared")
+    type ReactScopeInstance = c.ReactScopeInstance
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local d
+    local e
+    local f
+    local g
+    local h
+    
+    local i
+    local j = c.invariant
+    
+    
+    local k: { [any]: any } = {}
+    
+    
+    
+    
+    local l: { [Container]: Fiber } = {}
+    local m: { [(HostInstance | SuspenseInstance | ReactScopeInstance)]: Fiber } =
+    	{}
+    local n: { [(HostInstance | SuspenseInstance)]: Props } = {}
+    
+    local o = string.sub(tostring(math.random()), 3)
+    local p = "__reactFiber$" .. o
+    local q = "__reactContainer$" .. o
+    
+    
+    
+    
+    
+    k.precacheFiberNode =
+    	function(r: Fiber, s: HostInstance | SuspenseInstance | ReactScopeInstance)
+    		m[s] = r
+    	end
+    
+    k.uncacheFiberNode =
+    	function(r: HostInstance | SuspenseInstance | ReactScopeInstance)
+    		m[r] = nil
+    		n[r] = nil
+    	end
+    
+    k.markContainerAsRoot = function(r: Fiber, s: Container)
+    	
+    	l[s] = r
+    	
+    end
+    
+    k.unmarkContainerAsRoot = function(r: Container)
+    	
+    	l[r] = nil
+    	
+    end
+    
+    k.isContainerMarkedAsRoot = function(r: Container): boolean
+    	
+    	return not not l[r]
+    	
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    k.getClosestInstanceFromNode = function(r: Instance): Fiber?
+    	
+    	local s = m[r]
+    	if s then
+    		
+    		return s
+    	end
+    	
+    	
+    	local t = r.Parent
+    	while t do
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		s = m[t]
+    		if s then
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			local u = s.alternate
+    			if
+    				s.child ~= nil
+    				or (u ~= nil and u.child ~= nil)
+    			then
+    				
+    				if i == nil then
+    					i = (_require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/ReactRobloxHostConfig") :: any).getParentSuspenseInstance
+    				end
+    
+    				
+    				
+    				local v = i(r)
+    				while v ~= nil do
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					
+    					local w = m[v]
+    					if w then
+    						return w
+    					end
+    					
+    					
+    					
+    					
+    					v = i(v)
+    					
+    					
+    					
+    				end
+    			end
+    			return s
+    		end
+    		r = t
+    		t = r.Parent
+    	end
+    	return nil
+    end
+    
+    
+    
+    
+    
+    k.getInstanceFromNode = function(r): Fiber?
+    	
+    	if d == nil then
+    		local s = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/ReactReconciler.roblox"):: any
+    		d = s.ReactWorkTags
+    
+    		e = d.HostComponent
+    		f = d.HostComponent
+    		g = d.HostComponent
+    		h = d.HostComponent
+    	end
+    
+    	local s = (r :: any)[p]
+    		or (r :: any)[q]
+    	if s then
+    		if
+    			s.tag == e
+    			or s.tag == f
+    			or s.tag == h
+    			or s.tag == g
+    		then
+    			return s
+    		else
+    			return nil
+    		end
+    	end
+    	return nil
+    end
+    
+    
+    
+    
+    
+    k.getNodeFromInstance = function(r: Fiber): Instance | TextInstance
+    	if r.tag == e or r.tag == f then
+    		
+    		
+    		return r.stateNode
+    	end
+    
+    	
+    	
+    	j(false, "getNodeFromInstance: Invalid argument.")
+    	
+    	error("getNodeFromInstance: Invalid argument.")
+    end
+    
+    k.getFiberCurrentPropsFromNode =
+    	function(r: Instance | TextInstance | SuspenseInstance): Props
+    		return n[r]
+    	end
+    
+    k.updateFiberProps = function(r: Instance | SuspenseInstance, s: Props)
+    	n[r] = s
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    return k
+end
+
+_modules["Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/ReactRobloxHostConfig"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function unimplemented(a: string)
+    	print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    	print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    	print("UNIMPLEMENTED ERROR: " .. tostring(a))
+    	error("FIXME (roblox): " .. a .. " is unimplemented", 2)
+    end
+    
+    local a = game:GetService("CollectionService")
+    local b = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/luau-polyfill")
+    local c = b.util.inspect
+    local d = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/shared").console
+    local e = b.Object
+    local f = b.setTimeout
+    local g = b.clearTimeout
+    
+    
+    
+    
+    
+    
+    
+    
+    local h = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/ReactRobloxHostTypes.roblox")
+    type RootType = h.RootType
+    type Container = h.Container
+    type HostInstance = h.HostInstance
+    type SuspenseInstance = h.SuspenseInstance
+    type TextInstance = h.TextInstance
+    type Props = h.Props
+    type Type = h.Type
+    type HostContext = h.HostContext
+    
+    
+    
+    
+    local i = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/ReactRobloxComponentTree")
+    local j = i.precacheFiberNode
+    local k = i.uncacheFiberNode
+    local l = i.updateFiberProps
+    
+    
+    
+    
+    
+    
+    local m = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/ReactRobloxComponent")
+    
+    
+    local n = m.setInitialProperties
+    local o = m.diffProperties
+    local p = m.updateProperties
+    local q = m.cleanupHostComponent
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local r = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/shared").ReactFeatureFlags
+    
+    
+    local s = r.enableCreateEventHandleAPI
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    type Array<T> = { [number]: T }
+    type Object = { [any]: any }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function recursivelyUncacheFiberNode(t: HostInstance)
+    	
+    	
+    	
+    	if typeof(t :: any) ~= "Instance" then
+    		return
+    	end
+    
+    	k(t)
+    
+    	for u, v in t:GetDescendants() do
+    		k(v)
+    	end
+    end
+    
+    local t: { [any]: any } = {}
+    e.assign(
+    	t,
+    	_require("Packages/_Index/jsdotlua_react-roblox@17.2.1/shared").ReactFiberHostConfig.WithNoPersistence
+    )
+    
+    t.getRootHostContext = function(u: Container): HostContext
+    	
+    	
+    	
+    
+    	
+    	return u.ClassName
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    end
+    
+    t.getChildHostContext = function(
+    	u: HostContext,
+    	v: string,
+    	w: Container
+    ): HostContext
+    	
+    	
+    	return u
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    end
+    
+    t.getPublicInstance = function(u: Instance): any
+    	return u
+    end
+    
+    t.prepareForCommit = function(u: Container): Object?
+    	
+    	
+    	local v 	
+    if s then
+    		unimplemented("enableCreateEventHandleAPI")
+    		
+    		
+    		
+    		
+    	end
+    	
+    	return v
+    end
+    
+    t.beforeActiveInstanceBlur = function()
+    	if s then
+    		unimplemented("enableCreateEventHandleAPI")
+    		
+    		
+    		
+    	end
+    end
+    
+    t.afterActiveInstanceBlur = function()
+    	if s then
+    		unimplemented("enableCreateEventHandleAPI")
+    		
+    		
+    		
+    	end
+    end
+    
+    t.resetAfterCommit = function(u: Container)
+    	
+    	
+    	
+    	
+    	
+    end
+    
+    t.createInstance = function(
+    	u: string,
+    	v: Props,
+    	w: Container,
+    	x: HostContext,
+    	y: Object
+    ): HostInstance
+    	
+    
+    	local z = Instance.new(u)
+    	
+    	
+    	if y.key then
+    		z.Name = y.key
+    	else
+    		local A = y.return_
+    		while A do
+    			if A.key then
+    				z.Name = A.key
+    				break
+    			end
+    			A = A.return_
+    		end
+    	end
+    
+    	j(y, z)
+    	l(z, v)
+    
+    	
+    	
+    
+    	
+    	
+    	
+    	
+    
+    	return z
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    end
+    
+    t.appendInitialChild = function(u: Instance, v: Instance)
+    	
+    	v.Parent = u
+    end
+    
+    t.finalizeInitialChildren = function(
+    	u: HostInstance,
+    	v: string,
+    	w: Props,
+    	x: Container,
+    	y: HostContext
+    ): boolean
+    	n(u, v, w, x)
+    	return false
+    	
+    end
+    
+    local function prepareUpdate(
+    	u: Instance,
+    	v: string,
+    	w: Props,
+    	x: Props,
+    	y: Container,
+    	z: HostContext
+    ): nil | Array<any>
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	return o(u, v, w, x, y)
+    end
+    t.prepareUpdate = prepareUpdate
+    
+    t.shouldSetTextContent = function(u: string, v: Props): boolean
+    	
+    	return false
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    end
+    
+    
+    t.createTextInstance = function(
+    	u: string,
+    	v: Container,
+    	w: HostContext,
+    	x: Object
+    ): any
+    	unimplemented("createTextInstance")
+    	return nil
+    end
+    
+    t.isPrimaryRenderer = true
+    t.warnsIfNotActing = true
+    
+    
+    
+    
+    t.scheduleTimeout = f
+    t.cancelTimeout = g
+    t.noTimeout = -1
+    
+    
+    
+    
+    
+    t.supportsMutation = true
+    
+    t.commitMount = function(
+    	u: Instance,
+    	v: string,
+    	w: Props,
+    	x: Object
+    )
+    	unimplemented("commitMount")
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    end
+    
+    t.commitUpdate = function(
+    	u: Instance,
+    	v: Array<any>,
+    	w: string,
+    	x: Props,
+    	y: Props,
+    	z: Object
+    )
+    	
+    	
+    	l(u, y)
+    	
+    	p(u, v, x)
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function checkTags(u: Instance)
+    	if typeof(u :: any) ~= "Instance" then
+    		d.warn("Could not check tags on non-instance %s.", c(u))
+    		return
+    	end
+    	if not u:IsDescendantOf(game) then
+    		if #a:GetTags(u) > 0 then
+    			d.warn(
+    [[Tags applied to orphaned %s "%s" cannot be accessed via CollectionService:GetTagged. If you're relying on tag behavior in a unit test, consider mounting your test root into the DataModel.]]
+    
+    
+    ,
+    				u.ClassName,
+    				u.Name
+    			)
+    		end
+    	end
+    end
+    
+    t.appendChild = function(u: Instance, v: Instance)
+    	
+    	v.Parent = u
+    	
+    	if _G.__DEV__ then
+    		checkTags(v)
+    	end
+    end
+    
+    t.appendChildToContainer = function(u: Container, v: Instance)
+    	
+    	local w = u
+    	t.appendChild(w, v)
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    end
+    
+    t.insertBefore =
+    	function(u: Instance, v: Instance, w: Instance)
+    		
+    		v.Parent = u
+    		
+    		if _G.__DEV__ then
+    			checkTags(v)
+    		end
+    	end
+    
+    t.insertInContainerBefore =
+    	function(u: Container, v: Instance, w: Instance)
+    		
+    		local x = u
+    		t.insertBefore(x, v, w)
+    		
+    		
+    		
+    		
+    		
+    	end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    t.removeChild = function(u: Instance, v: Instance)
+    	recursivelyUncacheFiberNode(v)
+    	
+    	
+    	q(v)
+    	
+    	v.Parent = nil
+    	
+    	
+    	v:Destroy()
+    end
+    
+    t.removeChildFromContainer = function(u: Container, v: Instance)
+    	
+    	
+    	t.removeChild(u, v)
+    	
+    	
+    	
+    	
+    	
+    end
+    
+    t.clearSuspenseBoundary =
+    	function(u: Instance, v: SuspenseInstance)
+    		
+    		unimplemented("clearSuspenseBoundary")
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    	end
+    
+    t.clearSuspenseBoundaryFromContainer =
+    	function(u: Container, v: SuspenseInstance)
+    		
+    		unimplemented("clearSuspenseBoundaryFromContainer")
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    	end
+    
+    t.hideInstance = function(u: Instance)
+    	unimplemented("hideInstance")
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    end
+    
+    
+    t.hideTextInstance = function(u: TextInstance): ()
+    	unimplemented("hideTextInstance")
+    	
+    end
+    
+    t.unhideInstance = function(u: Instance, v: Props)
+    	unimplemented("unhideInstance")
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    end
+    
+    
+    t.unhideTextInstance = function(u: TextInstance, v: string): ()
+    	unimplemented("unhideTextInstance")
+    	
+    end
+    
+    t.clearContainer = function(u: Container)
+    	
+    	local v = u
+    	for w, x in v:GetChildren() do
+    		t.removeChild(v, x)
+    	end
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    t.preparePortalMount = function(u: Instance): ()
+    	
+    	
+    	
+    	
+    	
+    	
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    return t
+end
+
+_modules["Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/ReactRobloxHostTypes.roblox"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-reconciler")
+    type FiberRoot = a.FiberRoot
+    
+    local b = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/shared")
+    type MutableSource<T> = b.MutableSource<T>
+    type ReactNodeList = b.ReactNodeList
+    
+    type Array<T> = { [number]: T }
+    
+    
+    
+    export type Container = Instance
+    
+    
+    
+    
+    
+    export type HostInstance = Instance
+    
+    export type TextInstance = Instance
+    
+    
+    
+    export type SuspenseInstance = any
+    
+    export type Type = string
+    export type Props = {
+    	autoFocus: boolean?,
+    	children: any,
+    	disabled: boolean?,
+    	hidden: boolean?,
+    	suppressHydrationWarning: boolean?,
+    	dangerouslySetInnerHTML: any,
+    	style: { display: string, [any]: any }?,
+    	bottom: number?,
+    	left: number?,
+    	right: number?,
+    	top: number?,
+    	
+    	[any]: any
+    }
+    
+    
+    
+    export type HydratableInstance = Instance | SuspenseInstance
+    
+    
+    
+    export type PublicInstance = HostInstance
+    
+    
+    type HostContextDev = {
+    	namespace: string,
+    	ancestorInfo: any,
+    	
+    	[any]: any
+    }
+    type HostContextProd = string
+    export type HostContext = HostContextDev | HostContextProd
+    
+    export type RootType = {
+    	render: (self: RootType, children: ReactNodeList) -> (),
+    	unmount: (self: RootType) -> (),
+    	_internalRoot: any,
+    	
+    	
+    	[any]: any
+    }
+    
+    export type RootOptions = {
+    	hydrate: boolean?,
+    	hydrationOptions: {
+    		onHydrated: ((suspenseNode: any) -> ())?,
+    		onDeleted: ((suspenseNode: any) -> ())?,
+    		mutableSources: Array<MutableSource<any>>?,
+    		
+    		[any]: any	
+    }?,
+    	
+    	[any]: any
+    }
+    
+    return {}
+end
+
+_modules["Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/ReactRobloxRoot"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/ReactRobloxHostTypes.roblox")
+    type Container = a.Container
+    type RootType = a.RootType
+    type RootOptions = a.RootOptions
+    
+    local b = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-reconciler")
+    type RootTag = b.RootTag
+    local c = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/shared")
+    type MutableSource<T> = c.MutableSource<T>
+    type ReactNodeList = c.ReactNodeList
+    local d = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-reconciler")
+    type FiberRoot = d.FiberRoot
+    
+    type Array<T> = { [number]: T }
+    
+    local e = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/ReactRobloxComponentTree")
+    
+    local f = e.markContainerAsRoot
+    local g = e.unmarkContainerAsRoot
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local h = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/ReactReconciler.roblox")
+    local i = h.createContainer
+    local j = h.updateContainer
+    
+    
+    local k = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/shared").invariant
+    local l =
+    	_require("Packages/_Index/jsdotlua_react-roblox@17.2.1/shared").ReactFeatureFlags.enableEagerRootListeners
+    
+    
+    local m = h.flushSync
+    local n = h.flushPassiveEffects
+    
+    local o = h.ReactRootTags.BlockingRoot
+    local p = h.ReactRootTags.ConcurrentRoot
+    local q = h.ReactRootTags.LegacyRoot
+    
+    local r
+    
+    local s = {}
+    s.__index = s
+    
+    function s.new(t: Container, u: RootOptions?): RootType
+    	local v: RootType = (setmetatable({}, s) :: any) :: RootType
+    	v._internalRoot = r(t, p, u)
+    
+    	return v
+    end
+    
+    local function createBlockingRoot(
+    	t: Container,
+    	u: RootTag,
+    	v: RootOptions?
+    ): RootType
+    	
+    	local w: RootType = (setmetatable({}, s) :: any) :: RootType
+    	w._internalRoot = r(t, u, v)
+    
+    	return w
+    end
+    
+    function s:render(t: ReactNodeList)
+    	local u = self._internalRoot
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	j(t, u, nil)
+    end
+    
+    function s:unmount()
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	local t = self._internalRoot
+    	local u = t.containerInfo
+    
+    	
+    	m(function()
+    		j(nil, t, nil, function()
+    			g(u)
+    		end)
+    	end)
+    
+    	n()
+    end
+    
+    
+    
+    
+    
+    
+    
+    r = function(t: Container, u: RootTag, v: any)
+    	
+    	local w = v ~= nil and v.hydrate == true
+    	local x = if v ~= nil then v.hydrationOptions else nil
+    	local y = (
+    		v ~= nil
+    		and v.hydrationOptions ~= nil
+    		and v.hydrationOptions.mutableSources
+    	) or nil
+    	local z = i(t, u, w, x)
+    	f(z.current, t)
+    	
+    
+    	if l then
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    	end
+    
+    	if y then
+    		
+    		
+    		
+    		
+    	end
+    
+    	return z
+    end
+    
+    local t = {}
+    
+    local function isValidContainer(u: any): boolean
+    	
+    	
+    	return typeof(u) == "Instance"
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    end
+    
+    t.isValidContainer = isValidContainer
+    
+    
+    t.createRoot = function(u: Container, v: RootOptions?): RootType
+    	k(
+    		isValidContainer(u),
+    		
+    		"createRoot(...): Target container is not a Roblox Instance."
+    	)
+    	warnIfReactDOMContainerInDEV(u)
+    	return s.new(u, v)
+    end
+    
+    t.createBlockingRoot =
+    	function(u: Container, v: RootOptions?): RootType
+    		k(
+    			isValidContainer(u),
+    			
+    			"createRoot(...): Target container is not a Roblox Instance."
+    		)
+    		warnIfReactDOMContainerInDEV(u)
+    		return createBlockingRoot(u, o, v)
+    	end
+    
+    t.createLegacyRoot = function(u: Container, v: RootOptions?): RootType
+    	return createBlockingRoot(u, q, v)
+    end
+    
+    function warnIfReactDOMContainerInDEV(u)
+    	if _G.__DEV__ then
+    		
+    		
+    
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    	end
+    end
+    
+    return t
+end
+
+_modules["Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/roblox/RobloxComponentProps"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _G.__DEV__ :: boolean
+    local b = game:GetService("CollectionService")
+    local c = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/luau-polyfill")
+    local d = c.Object
+    local e = c.util.inspect
+    
+    local f = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/shared").console
+    
+    local g = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react")
+    local h = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/shared").ReactSymbols
+    local i = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/roblox/SingleEventManager")
+    type EventManager = i.EventManager
+    local j = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/shared").Type
+    local k = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/roblox/getDefaultInstanceProperty")
+    local l = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/ReactRobloxHostTypes.roblox")
+    type HostInstance = l.HostInstance
+    local m = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react").Tag
+    
+    
+    
+    
+    type Array<T> = { [number]: T }
+    type Object = { [any]: any }
+    
+    
+    
+    
+    
+    
+    local n: { [HostInstance]: EventManager } = {}
+    local o: { [HostInstance]: { [string]: any } } = {}
+    
+    local p = [[
+    Error applying initial props to Roblox Instance '%s' (%s):
+      %s
+    ]]
+    
+    local q = [[
+    Error updating props on Roblox Instance '%s' (%s):
+      %s
+    ]]
+    
+    local r = [[
+    Error updating binding or ref assigned to key %s of '%s' (%s).
+    
+    Updated value:
+      %s
+    
+    Error:
+      %s
+    
+    %s
+    ]]
+    
+    local function identity(...)
+    	return ...
+    end
+    
+    local function setRobloxInstanceProperty(s, t, u): ()
+    	if u == nil then
+    		local v, w = pcall(s.ResetPropertyToDefault, s, t)
+    		if v then
+    			return
+    		end
+    
+    		local x = s.ClassName
+    		local y, z = k(x, t)
+    		u = z
+    	end
+    
+    	
+    	s[t] = u
+    end
+    
+    local function removeBinding(s, t)
+    	local u = o[s]
+    	if u ~= nil then
+    		local v = u[t]
+    		v()
+    		u[t] = nil
+    	end
+    end
+    
+    local function attachBinding(s, t, u): ()
+    	local function updateBoundProperty(v)
+    		local x, y =
+    			xpcall(setRobloxInstanceProperty, identity, s, t, v)
+    
+    		if not x then
+    			local z = u._source or "<enable DEV mode for stack>"
+    			local A = string.format(
+    				r,
+    				t,
+    				s.Name,
+    				s.ClassName,
+    				tostring(v),
+    				y,
+    				z
+    			)
+    			f.error(A)
+    			
+    			
+    			error(A, 0)
+    		end
+    	end
+    
+    	if o[s] == nil then
+    		o[s] = {}
+    	end
+    
+    	o[s][t] =
+    		g.__subscribeToBinding(u, updateBoundProperty)
+    
+    	updateBoundProperty(u:getValue())
+    end
+    
+    local function applyTags(s: Instance, t: string?, u: string?)
+    	if a then
+    		if u ~= nil and typeof(u) ~= "string" then
+    			f.error(
+    [[Type provided for ReactRoblox.Tag is invalid - tags should be specified as a single string, with individual tags delimited by spaces. Instead received:
+    %s]]
+    ,
+    				e(u)
+    			)
+    			return
+    		end
+    	end
+    
+    	local v = {}
+    	for x in string.gmatch(t or "", "%S+") do
+    		v[x] = true
+    	end
+    	local x = {}
+    	for y in string.gmatch(u or "", "%S+") do
+    		x[y] = true
+    	end
+    
+    	for y, z in v do
+    		if not x[y] then
+    			b:RemoveTag(s, y)
+    		end
+    	end
+    	for y, z in x do
+    		if not v[y] then
+    			b:AddTag(s, y)
+    		end
+    	end
+    end
+    
+    local function removeAllTags(s: Instance)
+    	for t, u in b:GetTags(s) do
+    		b:RemoveTag(s, u)
+    	end
+    end
+    
+    local function applyProp(s: Instance, t, u, v): ()
+    	
+    	
+    	
+    	
+    
+    	local x = j.of(t)
+    
+    	if x == j.HostEvent or x == j.HostChangeEvent then
+    		local y = n[s]
+    		if y == nil then
+    			y = (i.new(s) :: any) :: EventManager
+    			n[s] = y
+    		end
+    
+    		local z = t.name
+    
+    		if x == j.HostChangeEvent then
+    			y:connectPropertyChange(z, u)
+    		else
+    			y:connectEvent(z, u)
+    		end
+    
+    		return
+    	end
+    
+    	
+    	local y = typeof(u) == "table"
+    		and u["$$typeof"] == h.REACT_BINDING_TYPE
+    	local z = v ~= nil
+    		and typeof(v) == "table"
+    		and v["$$typeof"] == h.REACT_BINDING_TYPE
+    	if z then
+    		removeBinding(s, t)
+    	end
+    
+    	if y then
+    		attachBinding(s, t, u)
+    	elseif t == m then
+    		applyTags(s, v, u)
+    	else
+    		setRobloxInstanceProperty(s, t, u)
+    	end
+    end
+    
+    local function applyProps(s: Instance, t: Object): ()
+    	for u, v in t do
+    		
+    		if u == "ref" or u == "children" then
+    			continue
+    		end
+    
+    		applyProp(s, u, v)
+    	end
+    end
+    
+    local function setInitialProperties(
+    	s: HostInstance,
+    	t: string,
+    	u: Object,
+    	v: HostInstance
+    ): ()
+    	
+    	local x, y = xpcall(applyProps, identity, s, u)
+    	
+    	
+    	
+    	if not x then
+    		local z = string.format(
+    			p,
+    			s.Name,
+    			s.ClassName,
+    			y
+    		)
+    		f.error(z)
+    		
+    		
+    		error(z, 0)
+    	end
+    
+    	if n[s] ~= nil then
+    		n[s]:resume()
+    	end
+    end
+    
+    local function safelyApplyProperties(
+    	s: HostInstance,
+    	t: Array<any>,
+    	u: Object
+    ): ()
+    	local v = #t
+    	for x = 1, v, 2 do
+    		local y = t[x]
+    		local z = t[x + 1]
+    		if z == d.None then
+    			z = nil
+    		end
+    		
+    		if y ~= "ref" and y ~= "children" then
+    			applyProp(s, y, z, u[y])
+    		end
+    	end
+    end
+    
+    local function updateProperties(
+    	s: HostInstance,
+    	t: Array<any>,
+    	u: Object
+    ): ()
+    	
+    	if n[s] ~= nil then
+    		n[s]:suspend()
+    	end
+    
+    	local v, x =
+    		xpcall(safelyApplyProperties, identity, s, t, u)
+    
+    	if not v then
+    		
+    		
+    		
+    		local y = string.format(
+    			q,
+    			s.Name,
+    			s.ClassName,
+    			x
+    		)
+    		f.error(y)
+    		
+    		
+    		error(y, 0)
+    	end
+    
+    	if n[s] ~= nil then
+    		n[s]:resume()
+    	end
+    end
+    
+    local function cleanupBindings(s: HostInstance)
+    	local t = o[s]
+    	if t ~= nil then
+    		for u, v in t do
+    			v()
+    		end
+    		o[s] = nil
+    	end
+    end
+    
+    
+    
+    local function cleanupHostComponent(s: HostInstance)
+    	if n[s] ~= nil then
+    		n[s] = nil
+    	end
+    
+    	cleanupBindings(s)
+    
+    	
+    	
+    	
+    	if typeof(s :: any) ~= "Instance" then
+    		return
+    	end
+    
+    	removeAllTags(s)
+    	for t, u in s:GetDescendants() do
+    		if n[u] ~= nil then
+    			n[u] = nil
+    		end
+    		
+    		cleanupBindings(u)
+    		removeAllTags(s)
+    	end
+    end
+    
+    return {
+    	setInitialProperties = setInitialProperties,
+    	updateProperties = updateProperties,
+    	cleanupHostComponent = cleanupHostComponent,
+    
+    	
+    	_instanceToEventManager = n,
+    	_instanceToBindings = o,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/roblox/SingleEventManager"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/shared").console
+    type Function = (...any) -> ...any
+    
+    local b = "Change."
+    
+    local c = {
+    	
+    	Disabled = "Disabled",
+    
+    	
+    	Suspended = "Suspended",
+    
+    	
+    	Enabled = "Enabled",
+    }
+    
+    export type EventManager = {
+    	connectPropertyChange: (self: any, eventName: string, newValue: any) -> (),
+    	connectEvent: (self: any, eventName: string, newValue: any) -> (),
+    	resume: (self: any) -> (),
+    	suspend: (self: any) -> ()
+    }
+    
+    local d = {}
+    d.__index = d
+    
+    function d.new(e: Instance): EventManager
+    	local f = setmetatable({
+    		
+    		_suspendedEventQueue = {},
+    
+    		
+    		
+    		_connections = {},
+    
+    		
+    		
+    		
+    		_listeners = {},
+    
+    		
+    		
+    		_status = c.Disabled,
+    
+    		
+    		_isResuming = false,
+    
+    		
+    		_instance = e,
+    	}, d)
+    
+    	return (f :: any) :: EventManager
+    end
+    
+    function d:connectEvent(e, f)
+    	self:_connect(e, self._instance[e], f)
+    end
+    
+    function d:connectPropertyChange(e, f)
+    	local g, h =
+    		pcall(self._instance.GetPropertyChangedSignal, self._instance, e)
+    
+    	if not g then
+    		error(
+    			string.format(
+    				"Cannot get changed signal on property %q: %s",
+    				tostring(e),
+    				h
+    			),
+    			0
+    		)
+    	end
+    
+    	self:_connect(b .. e, h, f)
+    end
+    
+    function d:_connect(e, f, g)
+    	
+    	if g == nil then
+    		if self._connections[e] ~= nil then
+    			self._connections[e]:Disconnect()
+    			self._connections[e] = nil
+    		end
+    
+    		self._listeners[e] = nil
+    	else
+    		if self._connections[e] == nil then
+    			self._connections[e] = f:Connect(function(...)
+    				if self._status == c.Enabled then
+    					self._listeners[e](self._instance, ...)
+    				elseif self._status == c.Suspended then
+    					
+    					
+    
+    					local h = select("#", ...)
+    					table.insert(
+    						self._suspendedEventQueue,
+    						{ e, h, ... }
+    					)
+    				end
+    			end)
+    		end
+    
+    		self._listeners[e] = g
+    	end
+    end
+    
+    function d:suspend()
+    	self._status = c.Suspended
+    end
+    
+    function d:resume()
+    	
+    	
+    	if self._isResuming then
+    		return
+    	end
+    
+    	self._isResuming = true
+    
+    	
+    	
+    	for e, f in self._suspendedEventQueue do
+    		local g = self._listeners[f[1] ]
+    		local h = f[2]
+    
+    		
+    		
+    		if g ~= nil then
+    			
+    			
+    			local i = coroutine.create(g)
+    			local j, k = coroutine.resume(
+    				i,
+    				self._instance,
+    				unpack(f, 3, 2 + h)
+    			)
+    
+    			
+    			
+    			
+    			if not j then
+    				a.warn("%s", k)
+    			end
+    		end
+    	end
+    
+    	self._isResuming = false
+    	self._status = c.Enabled
+    	table.clear(self._suspendedEventQueue)
+    end
+    
+    return d
+end
+
+_modules["Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox/client/roblox/getDefaultInstanceProperty"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/shared").Symbol
+    
+    local b = a.named("Nil")
+    local c = {}
+    
+    local function tryPropertyName(d, e)
+    	return d[e]
+    end
+    
+    local function getDefaultInstanceProperty(d, e)
+    	local f = c[d]
+    
+    	if f then
+    		local g = f[e]
+    
+    		
+    		
+    		if g == b then
+    			return true, nil
+    		end
+    
+    		if g ~= nil then
+    			return true, g
+    		end
+    	else
+    		f = {}
+    		c[d] = f
+    	end
+    
+    	local g = Instance.new(d)
+    	local h, i = pcall(tryPropertyName, g, e)
+    
+    	g:Destroy()
+    
+    	if h then
+    		if i == nil then
+    			f[e] = b
+    		else
+    			f[e] = i
+    		end
+    	end
+    
+    	return h, i
+    end
+    
+    return getDefaultInstanceProperty
+end
+
 _modules["Packages/_Index/jsdotlua_react-roblox@17.2.1/scheduler"] = function()
     return _require("Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler")
 end
@@ -7549,12 +39718,5815 @@ _modules["Packages/_Index/jsdotlua_react@17.2.1/luau-polyfill"] = function()
     return _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill")
 end
 
+_modules["Packages/_Index/jsdotlua_react@17.2.1/react"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react@17.2.1/luau-polyfill")
+    export type Object = a.Object
+    
+    local b = _require("Packages/_Index/jsdotlua_react@17.2.1/react/React")
+    
+    export type Binding<T> = b.ReactBinding<T>
+    export type BindingUpdater<T> = b.ReactBindingUpdater<T>
+    
+    
+    local c = _require("Packages/_Index/jsdotlua_react@17.2.1/react/ReactLazy")
+    export type LazyComponent<T, P> = c.LazyComponent<T, P>
+    
+    local d = _require("Packages/_Index/jsdotlua_react@17.2.1/shared")
+    export type StatelessFunctionalComponent<P> =
+    	d.React_StatelessFunctionalComponent<P>
+    
+    export type ComponentType<P> = ComponentClass<P> | FC<P>
+    
+    export type AbstractComponent<Config, Instance> = d.React_AbstractComponent<
+    	Config,
+    	Instance
+    >
+    export type ElementType = d.React_ElementType
+    export type Element<C> = d.React_Element<C>
+    export type Key = d.React_Key
+    export type Ref<ElementType> = d.React_Ref<ElementType>
+    export type Node = d.React_Node
+    export type Context<T> = d.ReactContext<T>
+    
+    export type ElementProps<C> = d.React_ElementProps<C>
+    export type ElementConfig<T> = d.React_ElementConfig<T>
+    export type ElementRef<C> = d.React_ElementRef<C>
+    
+    
+    
+    
+    export type ComponentClass<P> = d.React_ComponentType<P>
+    export type PureComponent<Props, State = nil> = b.PureComponent<Props, State>
+    
+    
+    
+    export type ReactElement<Props = Object, ElementType = any> = d.ReactElement<
+    	Props,
+    	ElementType
+    >
+    
+    export type ReactChild = d.ReactElement<any, string> | string | number
+    export type FC<P> = d.React_StatelessFunctionalComponent<P>
+    export type ReactNode = d.React_Node
+    
+    
+    
+    export type React_AbstractComponent<Props, Instance> = d.React_Component<
+    	Props,
+    	Instance
+    >
+    export type React_FowardRefComponent<Props, Instance> =
+    	d.React_ForwardRefComponent<Props, Instance>
+    export type React_MemoComponent<Config, T> = d.React_MemoComponent<Config, T>
+    export type React_Component<Props, State> = d.React_Component<Props, State>
+    export type React_ComponentType<P> = d.React_ComponentType<P>
+    export type React_Context<T> = d.React_Context<T>
+    export type React_Element<ElementType> = d.React_Element<ElementType>
+    export type React_ElementType = d.React_ElementType
+    export type React_Node = d.React_Node
+    
+    
+    
+    return b
+end
+
+_modules["Packages/_Index/jsdotlua_react@17.2.1/react/None.roblox"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react@17.2.1/luau-polyfill")
+    
+    
+    
+    
+    return a.Object.None
+end
+
+_modules["Packages/_Index/jsdotlua_react@17.2.1/react/React"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react@17.2.1/luau-polyfill")
+    type Object = a.Object
+    
+    local b = _require("Packages/_Index/jsdotlua_react@17.2.1/react/ReactMutableSource")
+    local c = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").ReactSharedInternals
+    local d = _require("Packages/_Index/jsdotlua_react@17.2.1/react/ReactBaseClasses")
+    local e = _require("Packages/_Index/jsdotlua_react@17.2.1/react/ReactChildren")
+    local f = _require("Packages/_Index/jsdotlua_react@17.2.1/react/ReactElementValidator")
+    local g = _require("Packages/_Index/jsdotlua_react@17.2.1/react/ReactElement")
+    local h = _require("Packages/_Index/jsdotlua_react@17.2.1/react/ReactCreateRef")
+    local i = _require("Packages/_Index/jsdotlua_react@17.2.1/react/ReactForwardRef")
+    local j = _require("Packages/_Index/jsdotlua_react@17.2.1/react/ReactHooks")
+    local k = _require("Packages/_Index/jsdotlua_react@17.2.1/react/ReactMemo")
+    local l = _require("Packages/_Index/jsdotlua_react@17.2.1/react/ReactContext")
+    local m = _require("Packages/_Index/jsdotlua_react@17.2.1/react/ReactLazy")
+    type LazyComponent<T, P> = m.LazyComponent<T, P>
+    
+    
+    local n = _require("Packages/_Index/jsdotlua_react@17.2.1/react/ReactBinding.roblox")
+    
+    local o = _require("Packages/_Index/jsdotlua_react@17.2.1/react/None.roblox")
+    
+    local p = _require("Packages/_Index/jsdotlua_react@17.2.1/shared")
+    local q = p.ReactSymbols
+    
+    local r = _G.__DEV__ or _G.__DISABLE_ALL_WARNINGS_EXCEPT_PROP_VALIDATION__
+    local s = _require("Packages/_Index/jsdotlua_react@17.2.1/shared")
+    export type React_StatelessFunctionalComponent<P> =
+    	s.React_StatelessFunctionalComponent<P>
+    export type React_ComponentType<P> = s.React_ComponentType<P>
+    type React_AbstractComponent<P, T> = s.React_AbstractComponent<P, T>
+    export type React_ElementProps<ElementType> = s.React_ElementProps<ElementType>
+    export type ReactElement<P = Object, T = any> = s.ReactElement<P, T>
+    export type ReactContext<T> = s.ReactContext<T>
+    export type ReactProviderType<T> = s.ReactProviderType<T>
+    export type React_Node = s.React_Node
+    export type PureComponent<Props, State = nil> = s.React_PureComponent<
+    	Props,
+    	State
+    >
+    
+    export type ReactBinding<T> = s.ReactBinding<T>
+    export type ReactBindingUpdater<T> = s.ReactBindingUpdater<T>
+    
+    
+    type createElementFn = <P, T>(
+    	type_: React_StatelessFunctionalComponent<P>
+    		| React_ComponentType<P>
+    		| React_AbstractComponent<P, T>
+    		| string
+    		| ReactContext<any>
+    		| ReactProviderType<any>
+    		| LazyComponent<T, P>,
+    	props: P?,...
+    (React_Node | ((...any) -> React_Node))
+    ) -> ReactElement<P, T>
+    
+    type cloneElementFn = <P, T>(
+    	element: ReactElement<P, T>,
+    	config: P?,...
+    React_Node
+    ) -> ReactElement<P, T>
+    
+    
+    local t = if r
+    	then f.createElementWithValidation :: createElementFn
+    	else g.createElement :: createElementFn
+    local u: cloneElementFn = if r
+    	then f.cloneElementWithValidation :: cloneElementFn
+    	else g.cloneElement :: cloneElementFn
+    
+    return {
+    	Children = e,
+    	createMutableSource = b,
+    	createRef = h.createRef,
+    	Component = d.Component,
+    	PureComponent = d.PureComponent,
+    	createContext = l.createContext,
+    	forwardRef = i.forwardRef,
+    	lazy = m.lazy,
+    	memo = k.memo,
+    	useCallback = j.useCallback,
+    	useContext = j.useContext,
+    	useEffect = j.useEffect,
+    	useImperativeHandle = j.useImperativeHandle,
+    	useDebugValue = j.useDebugValue,
+    	useLayoutEffect = j.useLayoutEffect,
+    	useMemo = j.useMemo,
+    	useMutableSource = j.useMutableSource,
+    	useReducer = j.useReducer,
+    	useRef = j.useRef,
+    	
+    	useBinding = j.useBinding,
+    	useState = j.useState,
+    	Fragment = q.REACT_FRAGMENT_TYPE,
+    	Profiler = q.REACT_PROFILER_TYPE,
+    	StrictMode = q.REACT_STRICT_MODE_TYPE,
+    	unstable_DebugTracingMode = q.REACT_DEBUG_TRACING_MODE_TYPE,
+    	Suspense = q.REACT_SUSPENSE_TYPE,
+    	createElement = t,
+    	cloneElement = u,
+    	isValidElement = g.isValidElement,
+    	
+    	__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = c,
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	unstable_LegacyHidden = q.REACT_LEGACY_HIDDEN_TYPE,
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    	createBinding = n.create,
+    	joinBindings = n.join,
+    	
+    
+    	
+    	None = o,
+    
+    	
+    	
+    	__subscribeToBinding = n.subscribe,
+    
+    	
+    	Event = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").Event,
+    	Change = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").Change,
+    	Tag = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").Tag,
+    
+    	
+    	
+    	
+    	unstable_parseReactError = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").parseReactError,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react@17.2.1/react/ReactBaseClasses"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _G.__DEV__ :: boolean
+    local b = _G.__COMPAT_WARNINGS__ :: boolean
+    local c = _require("Packages/_Index/jsdotlua_react@17.2.1/luau-polyfill")
+    local d = c.Object
+    type Object = c.Object
+    
+    local e = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").console
+    
+    local f = _require("Packages/_Index/jsdotlua_react@17.2.1/shared")
+    
+    
+    
+    type React_Component<Props, State = nil> = f.React_Component<Props, State>
+    local g = _require("Packages/_Index/jsdotlua_react@17.2.1/react/ReactNoopUpdateQueue")
+    local h = {}
+    
+    if a then
+    	d.freeze(h)
+    end
+    
+    
+    
+    local i = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").UninitializedState
+    
+    
+    
+    
+    
+    
+    
+    local j = {
+    	isReactComponent = true,
+    }
+    
+    
+    
+    
+    
+    
+    local function trimPath(k: string): string
+    	
+    	
+    	
+    	
+    
+    	local l = string.match(k, "%.%u[%.%w]-$")
+    	if l then
+    		return string.gsub(l, "^%.", "")
+    	end
+    
+    	return k
+    end
+    
+    local function warnAboutExistingLifecycle(k, l, m)
+    	e.warn(
+    		"%s already defined '%s', but it also defining the deprecated Roact method '%s'. %s should only implement one of these methods, preferably using the non-deprecated name.",
+    		k,
+    		m,
+    		l,
+    		k
+    	)
+    end
+    
+    local function warnAboutDeprecatedLifecycleName(k, l, m)
+    	if a and b then
+    		local n, o = debug.info(3, "sln")
+    		e.warn(
+    			"%s is using method '%s', which is no longer supported and should be updated to '%s'\nFile: %s:%s",
+    			k,
+    			l,
+    			m,
+    			trimPath(n),
+    			tostring(o)
+    		)
+    	end
+    end
+    
+    local k = {
+    	didMount = "componentDidMount",
+    	shouldUpdate = "shouldComponentUpdate",
+    	willUpdate = "UNSAFE_componentWillUpdate",
+    	didUpdate = "componentDidUpdate",
+    	willUnmount = "componentWillUnmount",
+    }
+    
+    local function handleNewLifecycle(l, m, n)
+    	
+    	if k[m] ~= nil then
+    		
+    		if l[k[m] ] ~= nil then
+    			warnAboutExistingLifecycle(l.__componentName, m, k[m])
+    		
+    		elseif m == "willUpdate" and l["componentWillUpdate"] then
+    			warnAboutExistingLifecycle(
+    				l.__componentName,
+    				m,
+    				"UNSAFE_componentWillUpdate"
+    			)
+    		
+    		else
+    			warnAboutDeprecatedLifecycleName(
+    				l.__componentName,
+    				m,
+    				k[m]
+    			)
+    		end
+    		
+    		m = k[m]
+    	end
+    	rawset(l, m, n)
+    end
+    
+    local l = {
+    	__newindex = handleNewLifecycle,
+    	__index = j,
+    	__tostring = function(l)
+    		return l.__componentName
+    	end,
+    }
+    
+    
+    type React_BaseComponent = React_Component<any, any> & {
+    	extend: (self: React_BaseComponent, name: string) -> React_Component<any, any>
+    }
+    
+    local m = (
+    	setmetatable({ __componentName = "Component" }, l) :: any
+    ) :: React_BaseComponent
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local n = if not _G.__TESTEZ_RUNNING_TEST__ then 900 else 0
+    local o = 1
+    local p = table.create(n)
+    for q = 1, n do
+    	table.insert(p, {
+    		
+    		props = nil,
+    		context = nil,
+    		state = i,
+    		__refs = h,
+    		__updater = g,
+    	})
+    end
+    
+    local function setStateInInit(
+    	q: React_Component<any, any>,
+    	r: any,
+    	s: nil
+    ): ()
+    	if a and (s :: any) ~= nil then
+    		e.warn(
+    [[Received a `callback` argument to `setState` during initialization of "%s". The callback behavior is not supported when using `setState` in `init`.
+    
+    Consider defining similar behavior in a `compontentDidMount` method instead.]]
+    ,
+    			q.__componentName
+    		)
+    	end
+    
+    	
+    	local t = r and type(r)
+    	if
+    		r == nil
+    		or (t ~= "table" and t ~= "function")
+    	then
+    		error(
+    [[setState(...): takes an object of state variables to update or a function which returns an object of state variables.]]		
+    
+    )
+    	end
+    	local u = q.state
+    	local v
+    	if t == "function" then
+    		
+    		v = r(u, q.props)
+    	else
+    		
+    		v = r
+    	end
+    	
+    	
+    	q.state = d.assign({}, u, v)
+    end
+    
+    function m:extend(q): React_Component<any, any>
+    	
+    	
+    	if q == nil then
+    		if b then
+    			e.warn(
+    [[Component:extend() accepting no arguments is deprecated, and will not be supported in a future version of Roact. Please provide an explicit name.]]			
+    
+    )
+    		end
+    		q = ""
+    	elseif type(q) ~= "string" then
+    		error("Component class name must be a string")
+    	end
+    
+    	
+    	local r = {
+    		__componentName = q,
+    		setState = self.setState,
+    		forceUpdate = self.forceUpdate,
+    		init = nil, 
+    	}
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	r.__index = r
+    	
+    
+    	function r.__ctor<P>(s: P, t, u): React_Component<P, any>
+    		local v
+    		
+    		if o <= n then
+    			v = p[o]
+    			
+    			
+    			v.props = s :: any
+    			v.context = t
+    			
+    			p[o] = nil
+    			o += 1
+    		else
+    			
+    			
+    			v = {
+    				
+    				props = s :: any,
+    				context = t,
+    				state = i,
+    				__refs = h,
+    				__updater = u or g,
+    			}
+    
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    		end
+    
+    		
+    		
+    		
+    		
+    		
+    		v = setmetatable(v, r)
+    
+    		
+    		if r.init and type(r.init) == "function" then
+    			
+    			
+    			
+    			v.setState = setStateInInit
+    
+    			r.init(v, s, t)
+    
+    			
+    			v.setState = nil :: any
+    		end
+    
+    		return (v :: any) :: React_Component<P, any>
+    	end
+    
+    	setmetatable(r, getmetatable(self :: any))
+    
+    	return (r :: any) :: React_Component<any, any>
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    function m:setState(q, r)
+    	if
+    		q ~= nil
+    		and type(q) ~= "table"
+    		and type(q) ~= "function"
+    	then
+    		error(
+    [[setState(...): takes an object of state variables to update or a function which returns an object of state variables.]]		
+    
+    )
+    	end
+    	self.__updater.enqueueSetState(self, q, r, "setState")
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    function m:forceUpdate(q)
+    	self.__updater.enqueueForceUpdate(self, q, "forceUpdate")
+    end
+    
+    
+    
+    
+    
+    
+    if a then
+    	
+    	local q = {
+    		isMounted = {
+    			"isMounted",
+    [[Instead, make sure to clean up subscriptions and pending requests in componentWillUnmount to prevent memory leaks.]]
+    ,
+    		},
+    		replaceState = {
+    			"replaceState",
+    [[Refactor your code to use setState instead (see https://github.com/facebook/react/issues/3236).]]
+    ,
+    		},
+    	} :: any
+    
+    	local r = function(r, s)
+    		(m :: any)[r] = function()
+    			e.warn(
+    				"%s(...) is deprecated in plain JavaScript React classes. %s",
+    				s[1],
+    				s[2]
+    			)
+    			return nil
+    		end
+    	end
+    
+    	for s, t in q do
+    		if q[s] ~= nil then
+    			r(s, q[s])
+    		end
+    	end
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    local q = m:extend("PureComponent") :: React_BaseComponent;
+    
+    
+    
+    
+    
+    (q :: any).extend = m.extend
+    
+    
+    
+    
+    
+    
+    local r = {
+    	isReactComponent = true,
+    	isPureReactComponent = true,
+    }
+    
+    
+    
+    setmetatable(q, {
+    	__newindex = handleNewLifecycle,
+    	__index = r,
+    	__tostring = function(s)
+    		return s.__componentName
+    	end,
+    })
+    
+    
+    return {
+    	Component = m,
+    	PureComponent = q :: typeof(m),
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react@17.2.1/react/ReactBinding.roblox"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react@17.2.1/luau-polyfill")
+    local b = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").ReactSymbols
+    
+    local c = _require("Packages/_Index/jsdotlua_react@17.2.1/shared")
+    type Binding<T> = c.ReactBinding<T>
+    type BindingUpdater<T> = c.ReactBindingUpdater<T>
+    
+    local d = a.Symbol
+    local e = _require("Packages/_Index/jsdotlua_react@17.2.1/react/createSignal.roblox")
+    
+    local f = d("BindingImpl")
+    
+    type BindingInternal<T> = {
+    	["$$typeof"]: typeof(b.REACT_BINDING_TYPE),
+    	value: T,
+    
+    	getValue: (BindingInternal<T>) -> T,
+    	
+    	map: <U>(BindingInternal<T>, (T) -> U) -> any,
+    
+    	update: (T) -> (),
+    	subscribe: ((T) -> ()) -> (() -> ())
+    }
+    
+    local g = {}
+    
+    local h = {}
+    
+    function h.getValue<T>(i: BindingInternal<T>): T
+    	return g.getValue(i)
+    end
+    
+    function h.map<T, U>(
+    	i: BindingInternal<T>,
+    	j: (T) -> U
+    ): Binding<U>
+    	return g.map(i, j)
+    end
+    
+    local i = {
+    	__index = h,
+    	__tostring = function(i)
+    		return string.format("RoactBinding(%s)", tostring(i:getValue()))
+    	end,
+    }
+    
+    function g.update<T>(j: any, k: T)
+    	return (j[f] :: BindingInternal<T>).update(k)
+    end
+    
+    function g.subscribe<T>(j: any, k: (T) -> ())
+    	return (j[f] :: BindingInternal<T>).subscribe(k)
+    end
+    
+    function g.getValue<T>(j: any): T
+    	return (j[f] :: BindingInternal<T>):getValue()
+    end
+    
+    function g.create<T>(j: T): (Binding<T>, BindingUpdater<T>)
+    	local k, l = e()
+    	local m = {
+    		value = j,
+    		subscribe = k,
+    	}
+    
+    	function m.update(n: T)
+    		m.value = n
+    		l(n)
+    	end
+    
+    	function m.getValue()
+    		return m.value
+    	end
+    
+    	local n
+    	if _G.__DEV__ then
+    		
+    		n = debug.traceback("Binding created at:", 3)
+    	end
+    
+    	return (setmetatable({
+    		["$$typeof"] = b.REACT_BINDING_TYPE,
+    		[f] = m,
+    		_source = n,
+    	}, i) :: any) :: Binding<T>,
+    		m.update
+    end
+    
+    function g.map<T, U>(
+    	j: BindingInternal<T>,
+    	k: (T) -> U
+    ): Binding<U>
+    	if _G.__DEV__ then
+    		
+    		assert(
+    			typeof(j) == "table"
+    				and j["$$typeof"] == b.REACT_BINDING_TYPE,
+    			"Expected `self` to be a binding"
+    		)
+    		assert(typeof(k) == "function", "Expected arg #1 to be a function")
+    	end
+    
+    	local l = {}
+    
+    	function l.subscribe(m)
+    		return g.subscribe(j, function(n)
+    			m(k(n))
+    		end)
+    	end
+    
+    	function l.update(m)
+    		error("Bindings created by Binding:map(fn) cannot be updated directly", 2)
+    	end
+    
+    	function l.getValue()
+    		return k(j:getValue())
+    	end
+    
+    	local m
+    	if _G.__DEV__ then
+    		
+    		m = debug.traceback("Mapped binding created at:", 3)
+    	end
+    
+    	return (
+    		setmetatable({
+    			["$$typeof"] = b.REACT_BINDING_TYPE,
+    			[f] = l,
+    			_source = m,
+    		}, i) :: any
+    	) :: Binding<U>
+    end
+    
+    
+    
+    function g.join<T>(
+    	j: { [(string | number)]: Binding<any> }
+    ): Binding<T>
+    	if _G.__DEV__ then
+    		assert(typeof(j) == "table", "Expected arg #1 to be of type table")
+    
+    		for k, l in j do
+    			if
+    				typeof(l) ~= "table"
+    				or (l :: any)["$$typeof"] ~= b.REACT_BINDING_TYPE
+    			then
+    				local m = ("Expected arg #1 to contain only bindings, but key %q had a non-binding value"):format(
+    					tostring(k)
+    				)
+    				error(m, 2)
+    			end
+    		end
+    	end
+    
+    	local k = {}
+    
+    	local function getValue()
+    		local l = {}
+    
+    		
+    		for m, n in pairs(j) do
+    			l[m] = n:getValue()
+    		end
+    
+    		return l
+    	end
+    
+    	function k.subscribe(l)
+    		
+    		local m: any = {}
+    
+    		for n, o in j do
+    			m[n] = g.subscribe(o, function(p)
+    				l(getValue())
+    			end)
+    		end
+    
+    		return function()
+    			if m == nil then
+    				return
+    			end
+    
+    			for n, o in m do
+    				o()
+    			end
+    
+    			m = nil
+    		end
+    	end
+    
+    	function k.update(l)
+    		error("Bindings created by joinBindings(...) cannot be updated directly", 2)
+    	end
+    
+    	function k.getValue()
+    		return getValue()
+    	end
+    
+    	local l
+    	if _G.__DEV__ then
+    		
+    		l = debug.traceback("Joined binding created at:", 2)
+    	end
+    
+    	return (
+    		setmetatable({
+    			["$$typeof"] = b.REACT_BINDING_TYPE,
+    			[f] = k,
+    			_source = l,
+    		}, i) :: any
+    	) :: Binding<T>
+    end
+    
+    return g
+end
+
+_modules["Packages/_Index/jsdotlua_react@17.2.1/react/ReactChildren"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react@17.2.1/shared")
+    type ReactNodeList = a.ReactNodeList
+    type React_Node = a.React_Node
+    type ReactElement<P, T> = a.ReactElement<P, T>
+    
+    local b = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").invariant
+    
+    local c = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").ReactSymbols
+    local d = c.getIteratorFn
+    local e = c.REACT_ELEMENT_TYPE
+    local f = c.REACT_PORTAL_TYPE
+    
+    local g = _require("Packages/_Index/jsdotlua_react@17.2.1/luau-polyfill")
+    local h = g.Array
+    
+    type Array<T> = g.Array<T>
+    type Object = g.Object
+    
+    local i = _require("Packages/_Index/jsdotlua_react@17.2.1/react/ReactElement")
+    local j = i.isValidElement
+    local k = i.cloneAndReplaceKey
+    
+    local l = "."
+    local m = ":"
+    
+    
+    
+    
+    
+    
+    
+    
+    local function escape(n: string): string
+    	local o = string.gsub(n, "=", "=0")
+    	o = string.gsub(o, ":", "=2")
+    	return "$" .. o
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function escapeUserProvidedKey(n: string): string
+    	
+    	
+    	return n
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    local function getElementKey(n: any, o: number): string
+    	
+    	
+    	if typeof(n) == "table" and n ~= nil and n.key ~= nil then
+    		
+    		return escape(tostring(n.key))
+    	end
+    	
+    	
+    	
+    	return tostring(o)
+    end
+    
+    local function mapIntoArray(
+    	n: ReactNodeList?,
+    	o: Array<React_Node>,
+    	p: string,
+    	q: string,
+    	r: (React_Node?) -> ReactNodeList?
+    ): number
+    	local s = typeof(n)
+    
+    	
+    	
+    
+    
+    if s == "nil" or s == "boolean" or s == "userdata" then
+    		
+    		n = nil
+    	end
+    
+    	local t = false
+    
+    	if n == nil then
+    		t = true
+    	else
+    		if s == "string" or s == "number" then
+    			t = true
+    		elseif s == "table" then
+    			local u = (n :: any)["$$typeof"]
+    			if
+    				u == e
+    				or u == f
+    			then
+    				t = true
+    			end
+    		end
+    	end
+    
+    	if t then
+    		local u = n
+    		local v = r(u)
+    		
+    		
+    		local w = if q == ""
+    			then l .. getElementKey(u, 1)
+    			else q
+    		if h.isArray(v) then
+    			local x = ""
+    			if w ~= nil then
+    				x = escapeUserProvidedKey(w) .. "/"
+    			end
+    			mapIntoArray(v, o, x, "", function(y)
+    				return y
+    			end)
+    		elseif v ~= nil then
+    			if j(v :: any) then
+    				local x = (v :: ReactElement<Object, any>).key
+    				v = k(
+    					v :: ReactElement<Object, any>,
+    					
+    					
+    					p
+    						
+    						.. (
+    							if x
+    									and (
+    										not u
+    										or (u :: ReactElement<Object, any>).key
+    											~= x
+    									)
+    								
+    								then escapeUserProvidedKey(tostring(x)) .. "/"
+    								else ""
+    						)
+    						.. w
+    				)
+    			end
+    			table.insert(o, v)
+    		end
+    		return 1
+    	end
+    
+    	local u
+    	local v
+    	local w = 0 
+    	local x = if q == ""
+    		then l
+    		else q .. m
+    
+    	if h.isArray(n) then
+    		
+    		for y = 1, #(n :: Array<React_Node>) do
+    			u = (n :: Array<React_Node>)[y]
+    			v = x .. getElementKey(u, y)
+    			w += mapIntoArray(u, o, p, v, r)
+    		end
+    	else
+    		local y = d(n)
+    		if typeof(y) == "function" then
+    			local z: Object & {
+    				entries: any			
+    } = n :: any
+    
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    
+    			local A = y(z)
+    			local B
+    			local C = 1
+    			B = A.next()
+    			while not B.done do
+    				u = B.value
+    				v = x .. getElementKey(u, C)
+    				C += 1
+    				w += mapIntoArray(
+    					u,
+    					o,
+    					p,
+    					v,
+    					r
+    				)
+    				B = A.next()
+    			end
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    		
+    
+    end
+    	end
+    
+    	return w
+    end
+    
+    type MapFunc = (child: React_Node?, index: number) -> ReactNodeList?
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function mapChildren(
+    	n: ReactNodeList?,
+    	o: MapFunc,
+    	p: any
+    ): Array<React_Node>?
+    	if n == nil then
+    		return nil
+    	end
+    	local q = {}
+    	local r = 1
+    	mapIntoArray(n, q, "", "", function(s)
+    		
+    		local t = o(s, r)
+    		r += 1
+    		return t
+    	end)
+    	return q
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function countChildren(n: ReactNodeList?): number
+    	local o = 0
+    	mapChildren(n, function()
+    		o += 1
+    		
+    		return
+    	end)
+    	return o
+    end
+    
+    type ForEachFunc = (child: React_Node?, index: number) -> ()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function forEachChildren(
+    	n: ReactNodeList?,
+    	o: ForEachFunc,
+    	p: any
+    )
+    	mapChildren(n, function(...)
+    		
+    		o(...)
+    		
+    		return
+    	end, p)
+    end
+    
+    
+    
+    
+    
+    
+    
+    local function toArray(n: ReactNodeList?): Array<React_Node>
+    	return mapChildren(n, function(o)
+    		return o
+    	end) or {}
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function onlyChild(n)
+    	
+    	b(
+    		j(n),
+    		"React.Children.only expected to receive a single React element child."
+    	)
+    	return n
+    end
+    
+    return {
+    	forEach = forEachChildren,
+    	map = mapChildren,
+    	count = countChildren,
+    	only = onlyChild,
+    	toArray = toArray,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_react@17.2.1/react/ReactContext"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react@17.2.1/shared")
+    local b = a.console
+    
+    local c = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").ReactSymbols
+    local d = c.REACT_PROVIDER_TYPE
+    local e = c.REACT_CONTEXT_TYPE
+    type ReactContext<T> = a.ReactContext<T>
+    type ReactProviderType<T> = a.ReactProviderType<T>
+    
+    local f = {}
+    
+    f.createContext = function<T>(
+    	g: T,
+    	h: ((a: T, b: T) -> number)?
+    ): ReactContext<T>
+    	local i: ReactContext<any> = {
+    		["$$typeof"] = e,
+    		_calculateChangedBits = h,
+    		
+    		
+    		
+    		
+    		
+    		_currentValue = g,
+    		_currentValue2 = g,
+    		
+    		
+    		_threadCount = 0,
+    		
+    		Provider = (nil :: any) :: ReactProviderType<T>,
+    		Consumer = (nil :: any) :: ReactContext<T>,
+    		
+    		
+    		displayName = nil,
+    		
+    		_currentRenderer = nil,
+    		_currentRenderer2 = nil,
+    	}
+    	i.Provider = {
+    		["$$typeof"] = d,
+    		_context = i,
+    	}
+    
+    	local j = false
+    
+    	if _G.__DEV__ then
+    		
+    		
+    		
+    		local k = {
+    			["$$typeof"] = e,
+    			_context = i,
+    			_calculateChangedBits = i._calculateChangedBits,
+    		}
+    
+    		setmetatable(k, {
+    			__index = function(l, m)
+    				
+    				if m == "_currentValue" then
+    					return i._currentValue
+    				elseif m == "_currentValue2" then
+    					return i._currentValue2
+    				elseif m == "_threadCount" then
+    					return i._threadCount
+    				elseif m == "displayName" then
+    					return i.displayName
+    				end
+    				return nil
+    			end,
+    			__newindex = function(l, m, n)
+    				if m == "_currentValue" then
+    					i._currentValue = n
+    				elseif m == "_currentValue2" then
+    					i._currentValue2 = n
+    				elseif m == "_threadCount" then
+    					i._threadCount = n
+    				elseif m == "displayName" then
+    					if not j then
+    						b.warn(
+    							"Setting `displayName` on Context.Consumer has no effect. "
+    								.. "You should set it directly on the context with Context.displayName = "
+    								.. n
+    								.. "."
+    						)
+    						j = true
+    					end
+    				end
+    			end,
+    		})
+    
+    		i.Consumer = (k :: any) :: ReactContext<any>
+    	else
+    		i.Consumer = i
+    	end
+    
+    	if _G.__DEV__ then
+    		i._currentRenderer = nil
+    		i._currentRenderer2 = nil
+    	end
+    
+    	return i
+    end
+    
+    return f
+end
+
+_modules["Packages/_Index/jsdotlua_react@17.2.1/react/ReactCreateRef"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react@17.2.1/shared")
+    type RefObject = a.RefObject
+    
+    
+    
+    
+    
+    
+    local b = _require("Packages/_Index/jsdotlua_react@17.2.1/react/ReactBinding.roblox")
+    
+    local c = {}
+    
+    
+    c.createRef = function(): RefObject
+    	local d, e = b.create(nil)
+    
+    	local f = {}
+    
+    	
+    	
+    	
+    	
+    	if _G.__DEV__ then
+    		
+    		d._source = debug.traceback("Ref created at:", 1)
+    	end
+    
+    	
+    	
+    
+    setmetatable(f, {
+    		__index = function(g, h)
+    			if h == "current" then
+    				return d:getValue()
+    			else
+    				return (d :: any)[h]
+    			end
+    		end,
+    		__newindex = function(g, h, i)
+    			if h == "current" then
+    				
+    				
+    				
+    				
+    				b.update(d, i)
+    			end
+    
+    			(d :: any)[h] = i
+    		end,
+    		__tostring = function(g)
+    			return string.format("Ref(%s)", tostring(d:getValue()))
+    		end,
+    	})
+    
+    	return (f :: any) :: RefObject
+    end
+    
+    return c
+end
+
+_modules["Packages/_Index/jsdotlua_react@17.2.1/react/ReactElement"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _G.__DEV__ :: boolean
+    local b = _require("Packages/_Index/jsdotlua_react@17.2.1/luau-polyfill")
+    local c = b.Error
+    type Object = b.Object
+    
+    
+    local d = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").console
+    local e = _require("Packages/_Index/jsdotlua_react@17.2.1/shared")
+    type React_StatelessFunctionalComponent<P> = e.React_StatelessFunctionalComponent<
+    	P
+    >
+    type React_ComponentType<P> = e.React_ComponentType<P>
+    type React_AbstractComponent<P, T> = e.React_AbstractComponent<P, T>
+    type ReactProviderType<T> = e.ReactProviderType<T>
+    type React_ElementProps<ElementType> = e.React_ElementProps<ElementType>
+    type React_Node = e.React_Node
+    type ReactElement<P = Object, T = any> = e.ReactElement<P, T>
+    type ReactContext<T> = e.ReactContext<T>
+    type Source = e.Source
+    
+    local f = _require("Packages/_Index/jsdotlua_react@17.2.1/react/ReactLazy")
+    type LazyComponent<T, P> = f.LazyComponent<T, P>
+    
+    local g = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").getComponentName
+    
+    
+    
+    local h =
+    	_require("Packages/_Index/jsdotlua_react@17.2.1/shared").ReactSymbols.REACT_ELEMENT_TYPE
+    local i =
+    	_require("Packages/_Index/jsdotlua_react@17.2.1/shared").ReactSharedInternals.ReactCurrentOwner
+    
+    
+    
+    local j = {
+    	key = true,
+    	ref = true,
+    	__self = true,
+    	__source = true,
+    }
+    
+    
+    local k, l, m
+    
+    if a then
+    	m = {}
+    end
+    
+    local n = {}
+    
+    local function hasValidRef(o)
+    	if a then
+    		
+    		
+    		if o.ref ~= nil and type(o.ref) == "table" then
+    			if (o.ref :: any).isReactWarning then
+    				return false
+    			end
+    		end
+    	end
+    
+    	return o.ref ~= nil
+    end
+    
+    local function hasValidKey(o)
+    	if a then
+    		
+    		
+    		if o.key ~= nil and type(o.key) == "table" then
+    			if (o.key :: any).isReactWarning then
+    				return false
+    			end
+    		end
+    	end
+    
+    	return o.key ~= nil
+    end
+    
+    local o = { isReactWarning = true }
+    
+    
+    
+    
+    local function defineKeyPropWarningGetter(p, q: string)
+    	local r = function()
+    		if a then
+    			if not k then
+    				k = true
+    				d.error(
+    [[%s: `key` is not a prop. Trying to access it will result in `nil` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)]]
+    
+    
+    ,
+    					q
+    				)
+    			end
+    		end
+    	end
+    
+    	
+    	
+    	p.key = nil
+    	setmetatable(p, {
+    		__index = function(s, t)
+    			if t == "key" then
+    				r()
+    				
+    				return o
+    			end
+    			
+    			return nil :: any
+    		end,
+    	})
+    end
+    
+    local function defineRefPropWarningGetter(p, q: string)
+    	
+    	
+    	local r = function()
+    		if a then
+    			if not l then
+    				l = true
+    				d.error(
+    [[%s: `ref` is not a prop. Trying to access it will result in `nil` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)]]
+    
+    
+    ,
+    					q
+    				)
+    			end
+    		end
+    	end
+    
+    	
+    	
+    	p.ref = nil
+    	setmetatable(p :: any, {
+    		__index = function(s, t)
+    			if t == "ref" then
+    				r()
+    				
+    				return o
+    			end
+    			
+    			return nil :: any
+    		end,
+    	})
+    end
+    
+    local function warnIfStringRefCannotBeAutoConverted(p)
+    	if a then
+    		if
+    			
+    			type(p.ref) == "string" and i.current
+    			
+    			
+    		then
+    			local q = g(i.current.type)
+    
+    			
+    			if not m[q] then
+    				error(
+    					string.format(
+    [[Component "%s" contains the string ref "%s". Support for string refs has been removed. We recommend using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref]]
+    
+    
+    
+    ,
+    						q or "Unknown",
+    						p.ref
+    					)
+    				)
+    				
+    			end
+    		end
+    	end
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function ReactElement<P, T>(
+    	p: T,
+    	q,
+    	r,
+    	s,
+    	t: Source?,
+    	u,
+    	v: P
+    ): ReactElement<P, T>
+    	
+    	local w = {
+    		
+    		type = p,
+    		key = q,
+    		ref = r,
+    		props = v,
+    		
+    		_owner = u,
+    	}
+    
+    	
+    	w["$$typeof"] = h
+    
+    	if a then
+    		
+    		
+    		
+    		
+    		local x = {
+    			validated = false,
+    		}
+    		w._store = setmetatable({}, {
+    			
+    			
+    			
+    			
+    			__index = x,
+    			__newindex = function(y, z, A)
+    				if z == "validated" then
+    					x.validated = A
+    				else
+    					rawset(y, z, A)
+    				end
+    			end,
+    		})
+    		
+    		setmetatable(w, {
+    			__index = {
+    				_self = s,
+    				
+    				
+    				_source = t,
+    			},
+    		})
+    	end
+    
+    	
+    	return w :: any
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    n.jsx = function(p, q, r)
+    	
+    	error("JSX is currently unsupported")
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    n.jsxDEV = function(p, q, r, s, t)
+    	
+    	error("JSX is currently unsupported")
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	return nil
+    	
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function createElement<P, T>(
+    	p: React_StatelessFunctionalComponent<P> | React_ComponentType<P> | React_AbstractComponent<P, T> | ReactContext<any> | LazyComponent<T, P> | ReactProviderType<any> | string,
+    	q: P?,
+    	...: React_Node | ((...any) -> React_Node
+    )): ReactElement<P, T>
+    	
+    	local r = if q ~= nil then table.clone(q :: any) :: any else {}
+    	
+    	local s: (string | number)? 	
+    local t 	
+    local u 	
+    local v: Source? 
+    	
+    if q ~= nil then
+    		
+    		
+    		if hasValidRef(q :: any) then
+    			t = ((q :: any) :: React_ElementProps<T>).ref
+    
+    			if a then
+    				warnIfStringRefCannotBeAutoConverted(
+    					(q :: any) :: React_ElementProps<T>
+    				)
+    			end
+    		end
+    
+    		
+    		if hasValidKey(q :: any) then
+    			local w = (q :: any).key
+    			
+    			
+    			
+    			if type(w) == "number" then
+    				s = w
+    			else
+    				
+    				s = tostring(w :: any)
+    			end
+    		end
+    		
+    
+    		
+    		
+    		
+    
+    		v = if ((q :: any) :: React_ElementProps<T>).__source == nil
+    			then nil
+    			else ((q :: any) :: React_ElementProps<T>).__source
+    
+    		
+    		
+    		if r.key ~= nil then
+    			r.key = nil
+    		end
+    		if r.ref ~= nil then
+    			r.ref = nil
+    		end
+    		if r.__self ~= nil then
+    			r.__self = nil
+    		end
+    		if r.__source ~= nil then
+    			r.__source = nil
+    		end
+    		
+    	end
+    
+    	
+    	
+    	
+    	local w = select("#", ...)
+    
+    	if w == 1 then
+    		r.children = select(1, ...)
+    	elseif w > 1 then
+    		
+    		
+    		local x = table.create(w)
+    		for y = 1, w do
+    			local z = select(y, ...)
+    			table.insert(x, z)
+    		end
+    
+    		
+    
+    		if a then
+    			table.freeze(x)
+    		end
+    
+    		r.children = x
+    	end
+    
+    	
+    	
+    	
+    	if
+    		type(p :: any) == "table"
+    		and (p :: T & React_ComponentType<P>).defaultProps
+    	then
+    		
+    		
+    		local x = (p :: T & React_ComponentType<P>).defaultProps :: P
+    
+    		
+    		for y, z in (x :: any) :: Object do
+    			if r[y] == nil then
+    				r[y] = ((x :: any) :: Object)[y]
+    			end
+    		end
+    	end
+    
+    	if a then
+    		if s or t then
+    			
+    			local x
+    
+    			if type(p) == "function" then
+    				
+    				x = debug.info(p, "n") or "<function>"
+    			elseif type(p) == "table" then
+    				x = (
+    					(p :: T & React_ComponentType<P>).displayName
+    					or (p :: T & React_ComponentType<P>).name
+    				) or "Unknown"
+    			else
+    				
+    				x = p :: string
+    			end
+    			
+    
+    			if s then
+    				defineKeyPropWarningGetter(r, x)
+    			end
+    
+    			if t then
+    				defineRefPropWarningGetter(r, x)
+    			end
+    		end
+    
+    		
+    		
+    		if v == nil then
+    			
+    			v = {
+    				fileName = debug.info(3, "s"),
+    				lineNumber = debug.info(3, "l"),
+    			}
+    		end
+    		
+    	end
+    
+    	
+    	return ReactElement(
+    		p,
+    		s,
+    		t,
+    		u,
+    		v,
+    		i.current,
+    		r
+    	) :: any
+    end
+    n.createElement = createElement
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    n.cloneAndReplaceKey =
+    	function<P, T>(p: ReactElement<P, T>, q: any): ReactElement<P, T>
+    		local r = ReactElement(
+    			p.type,
+    			q,
+    			p.ref,
+    			p._self,
+    			p._source,
+    			p._owner,
+    			p.props
+    		)
+    		return r
+    	end
+    
+    
+    
+    
+    
+    
+    n.cloneElement = function<P, T>(
+    	p: ReactElement<P, T>,
+    	q: (P & React_ElementProps<T>)?,
+    	...: React_Node
+    ): ReactElement<P, T>
+    	
+    	if p == nil then
+    		error(
+    			c.new(
+    				"React.cloneElement(...): The argument must be a React element, but you passed "
+    					.. tostring(p)
+    			)
+    		)
+    	end
+    
+    	
+    	local r = p.props
+    	local s: P & React_ElementProps<T> = if r ~= nil
+    		then table.clone(r :: P & React_ElementProps<T>) :: any
+    		else {} :: P & React_ElementProps<T>
+    
+    	
+    	local t = p.key
+    	local u = p.ref
+    
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    	local v = p._source
+    
+    	
+    	local w = p._owner
+    
+    	if q ~= nil then
+    		
+    		local x = q.ref
+    		if x ~= nil then
+    			
+    			u = x
+    			w = i.current
+    		else
+    			hasValidRef(q)
+    		end
+    
+    		local y = q.key
+    		
+    		if y ~= nil then
+    			if type(y) == "number" then
+    				t = y
+    			else
+    				
+    				t = y :: any or "nil"
+    			end
+    		else
+    			hasValidKey((q :: any) :: React_ElementProps<T>)
+    		end
+    		
+    	end
+    
+    	
+    	local x = p.type
+    	local y: P? = if type(x) == "table"
+    		then x.defaultProps
+    		else nil
+    
+    	
+    	
+    	if q ~= nil then
+    		for z, A in q :: any do
+    			if (q :: any)[z] ~= nil and not j[z] then
+    				if (q :: any)[z] == nil and y ~= nil then
+    					
+    					
+    					(s :: any)[z] = (y :: any)[z]
+    				else
+    					(s :: any)[z] = (q :: any)[z]
+    				end
+    			end
+    		end
+    	end
+    
+    	
+    	
+    	
+    	local z = select("#", ...)
+    
+    	if z == 1 then
+    		s.children = select(1, ...)
+    	elseif z > 1 then
+    		(s :: any).children = { ... }
+    	end
+    	
+    
+    	
+    	return ReactElement(
+    		p.type,
+    		t,
+    		u,
+    		nil,
+    		v,
+    		w,
+    		(s :: any) :: P & React_ElementProps<T>
+    	) :: any
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    n.isValidElement = function(p)
+    	return type(p) == "table" and p["$$typeof"] == h
+    end
+    
+    return n
+end
+
+_modules["Packages/_Index/jsdotlua_react@17.2.1/react/ReactElementValidator"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react@17.2.1/luau-polyfill")
+    local b = a.Array
+    type Array<T> = a.Array<T>
+    local c = a.Boolean
+    local d = a.Object
+    type Object = a.Object
+    local e = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").console
+    local f = a.util.inspect
+    type Function = (...any) -> ...any
+    
+    
+    local g = _require("Packages/_Index/jsdotlua_react@17.2.1/shared")
+    type React_StatelessFunctionalComponent<P> = g.React_StatelessFunctionalComponent<
+    	P
+    >
+    type React_ComponentType<P> = g.React_ComponentType<P>
+    type React_Element<ElementType> = g.React_Element<ElementType>
+    type React_ElementProps<ElementType> = g.React_ElementProps<ElementType>
+    type ReactElement<P, T> = g.ReactElement<P, T>
+    type React_Node = g.React_Node
+    type Source = g.Source
+    
+    
+    local h = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").isValidElementType
+    local i = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").getComponentName
+    local j = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").ReactSymbols
+    local k = j.getIteratorFn
+    local l = j.REACT_FORWARD_REF_TYPE
+    local m = j.REACT_MEMO_TYPE
+    local n = j.REACT_FRAGMENT_TYPE
+    local o = j.REACT_ELEMENT_TYPE
+    
+    local p =
+    	_require("Packages/_Index/jsdotlua_react@17.2.1/shared").ReactFeatureFlags.warnAboutSpreadingKeyToJSX
+    local q = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").checkPropTypes
+    local r =
+    	_require("Packages/_Index/jsdotlua_react@17.2.1/shared").ReactSharedInternals.ReactCurrentOwner
+    
+    local s = _require("Packages/_Index/jsdotlua_react@17.2.1/react/ReactElement")
+    local t = s.isValidElement
+    local u = s.createElement
+    local v = s.cloneElement
+    local w = s.jsxDEV
+    
+    local x =
+    	_require("Packages/_Index/jsdotlua_react@17.2.1/shared").ReactSharedInternals.ReactDebugCurrentFrame.setExtraStackFrame
+    local y =
+    	_require("Packages/_Index/jsdotlua_react@17.2.1/shared").ReactComponentStackFrame.describeUnknownElementTypeFrameInDEV
+    
+    local z = {}
+    
+    
+    local function setCurrentlyValidatingElement(A: ReactElement<any, any> | nil)
+    	if _G.__DEV__ then
+    		if A then
+    			local B = A._owner
+    			local C 			
+    if B then
+    				C = B.type
+    			end
+    			local D = y(
+    				A.type,
+    				A._source,
+    				C
+    			);
+    			
+    			(x :: (...any) -> ())(D)
+    		else
+    			
+    			(x :: (...any) -> ())(nil)
+    		end
+    	end
+    end
+    
+    local A
+    
+    if _G.__DEV__ then
+    	A = false
+    end
+    
+    local function hasOwnProperty(B, C)
+    	return B[C] ~= nil
+    end
+    
+    local function getDeclarationErrorAddendum(): string
+    	if r.current then
+    		local B = i(r.current.type)
+    		if B then
+    			return "\n\nCheck the render method of `" .. B .. "`."
+    		end
+    	end
+    	return ""
+    end
+    
+    
+    local function getSourceInfoErrorAddendum(B: Source | nil): string
+    	if B ~= nil then
+    		local C = string.gsub(B.fileName, "^.*[\\/]", "")
+    		local D = B.lineNumber
+    		return "\n\nCheck your code at " .. C .. ":" .. D .. "."
+    	end
+    	return ""
+    end
+    
+    
+    local function getSourceInfoErrorAddendumForProps(
+    	B: React_ElementProps<any>?
+    ): string
+    	if B ~= nil then
+    		return getSourceInfoErrorAddendum(B.__source)
+    	end
+    	return ""
+    end
+    
+    
+    
+    
+    
+    
+    local B = {}
+    
+    
+    local function getCurrentComponentErrorInfo(
+    	C: React_ComponentType<any> | string | Function
+    ): string
+    	local D = getDeclarationErrorAddendum()
+    
+    	if not c.toJSBoolean(D) then
+    		local E = if typeof(C) == "string"
+    			then C
+    			else if typeof(C) == "table"
+    				then C.displayName or C.name
+    				else nil
+    
+    		
+    		if not E and typeof(C) == "function" then
+    			local F = debug.info(C, "n")
+    			
+    			E = if F ~= "" then F else nil
+    		end
+    
+    		if E then
+    			D = string.format(
+    				"\n\nCheck the top-level render call using <%s>.",
+    				E
+    			)
+    		end
+    	end
+    	return D
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function validateExplicitKey<P>(
+    	C: ReactElement<P, any>,
+    	D,
+    	E: any?
+    )
+    	if C._store == nil or C._store.validated then
+    		return
+    	end
+    	
+    	(C._store :: any).validated = true
+    	
+    	
+    	if (C.key ~= nil) ~= (E ~= nil) then
+    		return
+    	end
+    	
+    	local F = getCurrentComponentErrorInfo(D)
+    	if B[F] then
+    		return
+    	end
+    	B[F] = true
+    
+    	
+    	
+    	
+    	local G = ""
+    	if C and C._owner and C._owner ~= r.current then
+    		
+    		G = string.format(
+    			" It was passed a child from %s.",
+    			tostring(i(C._owner.type))
+    		)
+    	end
+    
+    	if _G.__DEV__ then
+    		setCurrentlyValidatingElement(C)
+    		
+    		
+    		if C.key ~= nil and E ~= nil then
+    			
+    			
+    			e.error(
+    [[Child element received a "key" prop ("%s") in addition to a key in the "children" table of its parent ("%s"). Please provide only one key definition. When both are present, the "key" prop will take precedence.%s%s See https://reactjs.org/link/warning-keys for more information.]]
+    
+    
+    
+    ,
+    				tostring(C.key),
+    				tostring(E),
+    				F,
+    				G
+    			)
+    		
+    		else
+    			e.error(
+    [[Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.]]
+    ,
+    				F,
+    				G
+    			)
+    		end
+    		
+    		setCurrentlyValidatingElement(nil)
+    	end
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function validateChildKeys(C, D)
+    	if typeof(C) ~= "table" then
+    		return
+    	end
+    
+    	if b.isArray(C) then
+    		for E = 1, #C do
+    			local F = C[E]
+    			if t(F) then
+    				validateExplicitKey(F :: ReactElement<any, any>, D)
+    			end
+    		end
+    	elseif t(C) then
+    		
+    		if C._store then
+    			C._store.validated = true
+    		end
+    	elseif C then
+    		local E = k(C)
+    		if typeof(E) == "function" then
+    			
+    			
+    			if E ~= C.entries then
+    				local F = E(C)
+    				local G = F.next()
+    				while not G.done do
+    					if t(G.value) then
+    						validateExplicitKey(G.value, D, G.key)
+    					end
+    
+    					G = F.next()
+    				end
+    			end
+    		end
+    	end
+    end
+    
+    
+    
+    
+    
+    
+    
+    local function validatePropTypes<P>(C: ReactElement<P, any>)
+    	if _G.__DEV__ or _G.__DISABLE_ALL_WARNINGS_EXCEPT_PROP_VALIDATION__ then
+    		local D = C.type
+    		if D == nil or typeof(D) == "string" then
+    			return
+    		end
+    
+    		local E
+    		local F
+    		if typeof(D) == "function" then
+    			
+    			
+    			return
+    		elseif typeof(D) == "table" then
+    			E = D.propTypes
+    			F = D.validateProps
+    		else
+    			return
+    		end
+    
+    		if E or F then
+    			
+    			local G = i(D)
+    			
+    			q(E, F, C.props, "prop", G, C)
+    			
+    		elseif (D :: any).PropTypes ~= nil and not A then
+    			A = true
+    			
+    			local G = i(D)
+    			e.error(
+    				"Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?",
+    				G or "Unknown"
+    			)
+    		end
+    		
+    		
+    		if (D :: any).getDefaultProps ~= nil then
+    			e.error(
+    [[getDefaultProps is only used on classic React.createClass definitions. Use a static property named `defaultProps` instead.]]			
+    
+    )
+    		end
+    	end
+    end
+    
+    
+    
+    
+    
+    local function validateFragmentProps<P>(C: ReactElement<P & Object, any>)
+    	if _G.__DEV__ then
+    		local D = d.keys(C.props)
+    		for E = 1, #D do
+    			local F = D[E]
+    			if F ~= "children" and F ~= "key" then
+    				setCurrentlyValidatingElement(C)
+    				e.error(
+    [[Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.]]
+    ,
+    					F
+    				)
+    				setCurrentlyValidatingElement(nil)
+    				break
+    			end
+    		end
+    
+    		if C.ref ~= nil then
+    			setCurrentlyValidatingElement(C)
+    			e.error("Invalid attribute `ref` supplied to `React.Fragment`.")
+    			setCurrentlyValidatingElement(nil)
+    		end
+    	end
+    end
+    
+    
+    local function jsxWithValidation<P, T>(
+    	C: T,
+    	D: P & React_ElementProps<T>,
+    	E: string | number,
+    	F,
+    	G: Source?,
+    	H: any?
+    )
+    	
+    	local I = h(C)
+    
+    	
+    	
+    	if not I then
+    		local J = ""
+    		if C == nil or (typeof(C) == "table" and #d.keys(C) == 0) then
+    			J ..= ([[ You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.]])
+    		end
+    
+    		local K = getSourceInfoErrorAddendum(G)
+    		if K then
+    			J ..= K
+    		else
+    			J ..= getDeclarationErrorAddendum()
+    		end
+    
+    		local L
+    		if C == nil then
+    			L = "nil"
+    		elseif b.isArray(C) then
+    			L = "array"
+    		elseif typeof(C) == "table" and C["$$typeof"] == o then
+    			L = string.format("<%s />", i(C.type) or "Unknown")
+    			J ..= " Did you accidentally export a JSX literal or Element instead of a component?"
+    		else
+    			L = typeof(C)
+    			J ..= "\n" .. f(C)
+    		end
+    
+    		if _G.__DEV__ then
+    			e.error(
+    [[React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s]]
+    
+    ,
+    				L,
+    				J
+    			)
+    		end
+    	end
+    
+    	local J = w(C, D, E, G, H)
+    
+    	
+    	
+    	if J == nil then
+    		return J
+    	end
+    
+    	
+    	
+    	
+    	
+    	
+    
+    	if I then
+    		local K = D.children
+    		if K ~= nil then
+    			if F then
+    				if b.isArray(K) then
+    					for L = 1, #K do
+    						
+    						validateChildKeys(K[L], C :: any)
+    					end
+    
+    					
+    					
+    					d.freeze(K)
+    					
+    				else
+    					if _G.__DEV__ then
+    						e.error(
+    [[React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.]]						
+    
+    
+    )
+    					end
+    				end
+    			else
+    				
+    				validateChildKeys(K, C :: any)
+    			end
+    		end
+    	end
+    
+    	if _G.__DEV__ then
+    		if p then
+    			if hasOwnProperty(D, "key") then
+    				e.error(
+    [[React.jsx: Spreading a key to JSX is a deprecated pattern. Explicitly pass a key after spreading props in your JSX call. E.g. <%s {...props} key={key} />]]
+    
+    ,
+    					i(C) or "ComponentName"
+    				)
+    			end
+    		end
+    	end
+    
+    	if C == n then
+    		
+    		validateFragmentProps((J :: any) :: ReactElement<any, any>)
+    	else
+    		validatePropTypes((J :: any) :: ReactElement<any, any>)
+    	end
+    
+    	return J
+    end
+    z.jsxWithValidation = jsxWithValidation
+    
+    
+    
+    
+    
+    z.jsxWithValidationStatic = function(C, D, E)
+    	return jsxWithValidation(C, D, E, true)
+    end
+    
+    z.jsxWithValidationDynamic = function(C, D, E)
+    	return jsxWithValidation(C, D, E, false)
+    end
+    
+    
+    local function createElementWithValidation<P, T>(
+    	C: React_StatelessFunctionalComponent<
+    		P
+    	> | React_ComponentType<P> | string,
+    	D: (P & React_ElementProps<T>)?,
+    	...: React_Node
+    ): ReactElement<P, T>
+    	
+    	local E = h(C)
+    
+    	
+    	
+    	if not E then
+    		local F = ""
+    		if C == nil or (typeof(C) == "table" and #d.keys(C) == 0) then
+    			F ..= ([[ You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.]])
+    		end
+    
+    		local G = getSourceInfoErrorAddendumForProps(D)
+    		if G then
+    			F ..= G
+    		else
+    			F ..= getDeclarationErrorAddendum()
+    		end
+    
+    		local H
+    		if C == nil then
+    			H = "nil"
+    		elseif b.isArray(C) then
+    			H = "array"
+    		elseif
+    			C ~= nil
+    			and typeof(C) == "table"
+    			and C["$$typeof"] == o
+    		then
+    			H = string.format(
+    				"<%s />",
+    				i((C :: any).type) or "Unknown"
+    			)
+    			F ..= " Did you accidentally export a JSX literal or Element instead of a component?"
+    		else
+    			H = typeof(C)
+    			if C ~= nil then
+    				
+    				F ..= "\n" .. f(C)
+    			end
+    		end
+    
+    		if _G.__DEV__ then
+    			e.error(
+    [[React.createElement: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s]]
+    
+    ,
+    				H,
+    				F
+    			)
+    		end
+    	end
+    
+    	
+    	local F = u(C :: any, D, ...)
+    
+    	
+    	
+    	if F == nil then
+    		return F
+    	end
+    
+    	
+    	
+    	
+    	
+    	
+    	if E then
+    		
+    		for G = 1, select("#", ...) do
+    			
+    			
+    			validateChildKeys(select(G, ...), C :: any)
+    		end
+    	end
+    
+    	if C == n then
+    		validateFragmentProps(F)
+    	else
+    		validatePropTypes(F)
+    	end
+    
+    	return F
+    end
+    z.createElementWithValidation = createElementWithValidation
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    z.cloneElementWithValidation = function<P, T>(
+    	C: ReactElement<P, T>,
+    	D: (P & React_ElementProps<T>)?,
+    	...: React_Node
+    ): ReactElement<P, T>
+    	
+    	local E = { C, D, ... } :: Array<any>
+    	local F = v(C, D, ...)
+    	for G = 3, #E do
+    		validateChildKeys(E[G], F.type)
+    	end
+    	validatePropTypes(F)
+    	return F
+    end
+    
+    return z
+end
+
+_modules["Packages/_Index/jsdotlua_react@17.2.1/react/ReactForwardRef"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").console
+    
+    local b = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").ReactSymbols
+    local c = _require("Packages/_Index/jsdotlua_react@17.2.1/shared")
+    type React_Node = c.React_Node
+    type React_Ref<ElementType> = c.React_Ref<ElementType>
+    type React_ForwardRefComponent<Config, Instance> = c.React_ForwardRefComponent<
+    	Config,
+    	Instance
+    >
+    local d = b.REACT_FORWARD_REF_TYPE
+    local e = b.REACT_MEMO_TYPE
+    
+    local f = {}
+    
+    f.forwardRef =
+    	function<Props, ElementType>(
+    		g: (props: Props, ref: React_Ref<ElementType>) -> React_Node
+    	): React_ForwardRefComponent<Props, ElementType>
+    		if _G.__DEV__ then
+    			
+    			if
+    				typeof(g :: any) == "table"
+    				and (g :: any)["$$typeof"] == e
+    			then
+    				
+    				a.error(
+    [[forwardRef requires a render function but received a `memo` component. Instead of forwardRef(memo(...)), use memo(forwardRef(...)).]]				
+    
+    
+    )
+    			elseif typeof(g) ~= "function" then
+    				a.error(
+    					"forwardRef requires a render function but was given %s.",
+    					typeof(g)
+    				)
+    			else
+    				local h, i = debug.info(g, "a")
+    				if h ~= 0 and h ~= 2 then
+    					a.error(
+    						"forwardRef render functions accept exactly two parameters: props and ref. %s",
+    						(function()
+    							if h == 1 then
+    								return "Did you forget to use the ref parameter?"
+    							end
+    							return "Any additional parameter will be undefined."
+    						end)()
+    					)
+    				end
+    			end
+    
+    			
+    			
+    			
+    
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    		end
+    
+    		local h = {
+    			["$$typeof"] = d,
+    			render = g,
+    		}
+    		if _G.__DEV__ then
+    			local i
+    			
+    			setmetatable(h, {
+    				__index = function(j, k)
+    					if k == "displayName" then
+    						return i
+    					end
+    					return rawget(j, k)
+    				end,
+    				__newindex = function(j, k, l)
+    					if k == "displayName" then
+    						i = l
+    					
+    					
+    					
+    					
+    					else
+    						rawset(j, k, l)
+    					end
+    				end,
+    			})
+    		end
+    
+    		return h
+    	end
+    
+    return f
+end
+
+_modules["Packages/_Index/jsdotlua_react@17.2.1/react/ReactHooks"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react@17.2.1/luau-polyfill")
+    local b = a.Array
+    type Array<T> = a.Array<T>
+    
+    local c = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").console
+    
+    local d = _require("Packages/_Index/jsdotlua_react@17.2.1/shared")
+    
+    type Dispatcher = d.Dispatcher
+    type MutableSource<T> = d.MutableSource<T>
+    type MutableSourceGetSnapshotFn<Source, Snapshot> = d.MutableSourceGetSnapshotFn<
+    	Source,
+    	Snapshot
+    >
+    type MutableSourceSubscribeFn<Source, Snapshot> = d.MutableSourceSubscribeFn<
+    	Source,
+    	Snapshot
+    >
+    type ReactProviderType<T> = d.ReactProviderType<T>
+    type ReactContext<T> = d.ReactContext<T>
+    local e = _require("Packages/_Index/jsdotlua_react@17.2.1/shared")
+    type OpaqueIDType = e.OpaqueIDType
+    
+    
+    
+    local f =
+    	_require("Packages/_Index/jsdotlua_react@17.2.1/shared").ReactSharedInternals.ReactCurrentDispatcher
+    
+    type BasicStateAction<S> = ((S) -> S) | S
+    type Dispatch<A> = (A) -> ()
+    
+    
+    local function resolveDispatcher(): Dispatcher
+    	local g = f.current
+    	
+    	if _G.__DEV__ then
+    		if g == nil then
+    			c.error(
+    [[Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+    1. You might have mismatching versions of React and the renderer (such as React DOM)
+    2. You might be breaking the Rules of Hooks
+    3. You might have more than one copy of React in the same app
+    See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.]]			
+    
+    )
+    		end
+    	end
+    	
+    	
+    	
+    	return g :: Dispatcher
+    end
+    
+    local g = {}
+    
+    local function useContext<T>(
+    	h: ReactContext<T>,
+    	i: number | boolean | nil,
+    	... 
+    ): T
+    	local j = resolveDispatcher()
+    	if _G.__DEV__ then
+    		if i ~= nil then
+    			c.error(
+    [[useContext() second argument is reserved for future use in React. Passing it is not supported. You passed: %s.%s]]
+    
+    ,
+    				i,
+    				(typeof(i) == "number" and b.isArray({ ... }))
+    						and [[
+    
+    
+    Did you call Array.map(useContext)? Calling Hooks inside a loop is not supported. Learn more at https://reactjs.org/link/rules-of-hooks]]					or ""
+    			)
+    		end
+    
+    		
+    		if (h :: any)._context ~= nil then
+    			local k = (h :: any)._context
+    			
+    			
+    			if k.Consumer == h then
+    				c.error(
+    [[Calling useContext(Context.Consumer) is not supported, may cause bugs, and will be removed in a future major release. Did you mean to call useContext(Context) instead?]]				)
+    			elseif k.Provider == h then
+    				c.error(
+    [[Calling useContext(Context.Provider) is not supported. Did you mean to call useContext(Context) instead?]]				
+    
+    )
+    			end
+    		end
+    	end
+    	return j.useContext(h, i)
+    end
+    g.useContext = useContext
+    
+    local function useState<S>(
+    	h: (() -> S) | S,
+    	...
+    ): (S, Dispatch<BasicStateAction<S>>)
+    	local i = resolveDispatcher()
+    	return i.useState(h, ...)
+    end
+    g.useState = useState
+    
+    local function useReducer<S, I, A>(
+    	h: (S, A) -> S,
+    	i: I,
+    	j: ((I) -> S)?
+    ): (S, Dispatch<A>)
+    	local k = resolveDispatcher()
+    	return k.useReducer(h, i, j)
+    end
+    g.useReducer = useReducer
+    
+    
+    local function useRef<T>(h: T): { current: T }
+    	local i = resolveDispatcher()
+    	return i.useRef(h)
+    end
+    g.useRef = useRef
+    
+    
+    local function useBinding<T>(
+    	h: T
+    ): (
+    	d.ReactBinding<T>,
+    	d.ReactBindingUpdater<T>
+    )
+    	local i = resolveDispatcher()
+    	return i.useBinding(h)
+    end
+    g.useBinding = useBinding
+    
+    
+    local function useEffect(
+    	
+    	h: (() -> ()) | (() -> (() -> ())),
+    	i: Array<any> | nil
+    ): ()
+    	local j = resolveDispatcher()
+    	return j.useEffect(h, i)
+    end
+    g.useEffect = useEffect
+    
+    local function useLayoutEffect(
+    	
+    	h: (() -> ()) | (() -> (() -> ())),
+    	i: Array<any> | nil
+    ): ()
+    	local j = resolveDispatcher()
+    	return j.useLayoutEffect(h, i)
+    end
+    g.useLayoutEffect = useLayoutEffect
+    
+    local function useCallback<T>(h: T, i: Array<any> | nil): T
+    	local j = resolveDispatcher()
+    	return j.useCallback(h, i)
+    end
+    g.useCallback = useCallback
+    
+    local function useMemo<T...>(h: () -> T..., i: Array<any> | nil): T...
+    local j = resolveDispatcher()
+    	return j.useMemo(h, i)
+    end
+    g.useMemo = useMemo
+    
+    local function useImperativeHandle<T>(
+    	h: { current: T | nil } | ((inst: T | nil) -> any) | nil,
+    	i: () -> T,
+    	j: Array<any> | nil
+    ): ()
+    	local k = resolveDispatcher()
+    	return k.useImperativeHandle(h, i, j)
+    end
+    g.useImperativeHandle = useImperativeHandle
+    
+    local function useDebugValue<T>(h: T, i: ((value: T) -> any)?): ()
+    	if _G.__DEV__ then
+    		local j = resolveDispatcher()
+    		return j.useDebugValue(h, i)
+    	end
+    
+    	
+    	return nil
+    end
+    g.useDebugValue = useDebugValue
+    
+    g.emptyObject = {}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    g.useOpaqueIdentifier = function(): OpaqueIDType | nil
+    	local h = resolveDispatcher()
+    	return h.useOpaqueIdentifier()
+    end
+    
+    g.useMutableSource =
+    	function<Source, Snapshot>(
+    		h: MutableSource<Source>,
+    		i: MutableSourceGetSnapshotFn<Source, Snapshot>,
+    		j: MutableSourceSubscribeFn<Source, Snapshot>
+    	): Snapshot
+    		local k = resolveDispatcher()
+    		return k.useMutableSource(h, i, j)
+    	end
+    
+    return g
+end
+
+_modules["Packages/_Index/jsdotlua_react@17.2.1/react/ReactLazy"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react@17.2.1/shared")
+    local b = a.console
+    local c = _require("Packages/_Index/jsdotlua_react@17.2.1/luau-polyfill")
+    local d = c.util.inspect
+    
+    local e = _require("Packages/_Index/jsdotlua_react@17.2.1/shared")
+    type Wakeable = e.Wakeable
+    type Thenable<R> = e.Thenable<R>
+    local f = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").ReactSymbols
+    
+    local g = f.REACT_LAZY_TYPE
+    
+    local h = -1
+    local i = 0
+    local j = 1
+    local k = 2
+    
+    type UninitializedPayload<T> = {
+    	
+    	
+    	_status: number,
+    	_result: () -> Thenable<{ default: T, [string]: any }>
+    }
+    
+    type PendingPayload = {
+    	
+    	
+    	_status: number,
+    	_result: Wakeable
+    }
+    
+    type ResolvedPayload<T> = {
+    	
+    	
+    	_status: number,
+    	_result: { default: T, [string]: any }
+    }
+    
+    type RejectedPayload = {
+    	
+    	
+    	_status: number,
+    	_result: any
+    }
+    
+    type Payload<T> =
+    	UninitializedPayload<T>
+    	| PendingPayload
+    	| ResolvedPayload<T>
+    	| RejectedPayload
+    
+    export type LazyComponent<T, P> = {
+    	["$$typeof"]: number,
+    	_payload: P,
+    	_init: (payload: P) -> T	
+    
+    }
+    
+    function lazyInitializer<T>(l: Payload<T>): T
+    	if l._status == h then
+    		local m = l._result
+    		local n = m()
+    		
+    		local o: PendingPayload = l :: any
+    		o._status = i
+    		o._result = n
+    		n:andThen(function(p)
+    			if l._status == i then
+    				local q = p.default
+    				if _G.__DEV__ then
+    					if q == nil then
+    						b.error(
+    [[lazy: Expected the result of a dynamic import() call. Instead received: `%s`
+    
+    Your code should look like: 
+      local MyComponent = lazy(function() return reqquire(script.Parent.MyComponent) end)]]
+    
+    ,
+    							d(p)
+    						)
+    					end
+    				end
+    				
+    				local r: ResolvedPayload<T> = l :: any
+    				r._status = j
+    				r._result = q
+    			end
+    		end, function(p)
+    			if l._status == i then
+    				
+    				local q: RejectedPayload = l :: any
+    				q._status = k
+    				q._result = p
+    			end
+    		end)
+    	end
+    	if l._status == j then
+    		return l._result
+    	else
+    		error(l._result)
+    	end
+    end
+    
+    local l = {}
+    
+    l.lazy = function<T>(
+    	m: () -> Thenable<{ default: T, [string]: any }>
+    ): LazyComponent<T, Payload<T>>
+    	local n: Payload<T> = {
+    		
+    		_status = -1,
+    		_result = m,
+    	}
+    
+    	local o: LazyComponent<T, Payload<T>> = {
+    		["$$typeof"] = g,
+    		_payload = n,
+    		
+    		_init = lazyInitializer :: any,
+    	}
+    
+    	if _G.__DEV__ then
+    		
+    		local p
+    		local q
+    		
+    		setmetatable(o, {
+    			__index = function(r, s)
+    				if s == "defaultProps" then
+    					return p
+    				end
+    				if s == "propTypes" then
+    					return q
+    				end
+    				return
+    			end,
+    			__newindex = function(r, s, t)
+    				if s == "defaultProps" then
+    					b.error(
+    [[React.lazy(...): It is not supported to assign `defaultProps` to a lazy component import. Either specify them where the component is defined, or create a wrapping component around it.]]					
+    
+    
+    )
+    					p = t
+    					
+    					
+    					setmetatable(r, {
+    						__index = function() end,
+    						__newindex = function() end,
+    					})
+    				end
+    				if s == "propTypes" then
+    					b.error(
+    [[React.lazy(...): It is not supported to assign `propTypes` to a lazy component import. Either specify them where the component is defined, or create a wrapping component around it.]]					
+    
+    
+    )
+    					q = t
+    					
+    					
+    					setmetatable(r, {
+    						__index = function() end,
+    						__newindex = function() end,
+    					})
+    				end
+    			end,
+    		})
+    	end
+    
+    	return o
+    end
+    
+    return l
+end
+
+_modules["Packages/_Index/jsdotlua_react@17.2.1/react/ReactMemo"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react@17.2.1/shared")
+    local b = a.console
+    local c = _require("Packages/_Index/jsdotlua_react@17.2.1/luau-polyfill")
+    local d = c.Array
+    local e = c.Object
+    local f = c.util.inspect
+    type React_StatelessFunctionalComponent<Props> = a.React_StatelessFunctionalComponent<
+    	Props
+    >
+    type React_ElementType = a.React_ElementType
+    type React_Component<Props, State> = a.React_Component<Props, State>
+    type React_ComponentType<Props> = a.React_ComponentType<Props>
+    type React_MemoComponent<Config, T> = a.React_MemoComponent<Config, T>
+    type React_AbstractComponent<Config, Instance> = a.React_AbstractComponent<
+    	Config,
+    	Instance
+    >
+    
+    local g = a.ReactSymbols
+    local h = g.REACT_MEMO_TYPE
+    local i = g.REACT_ELEMENT_TYPE
+    local j = a.isValidElementType
+    local k = a.getComponentName
+    
+    local l = {}
+    
+    l.memo = function<Props, T>(
+    	
+    	
+    	m: React_StatelessFunctionalComponent<Props> | React_AbstractComponent<Props, T> | string,
+    	
+    	n: ((oldProps: Props, newProps: Props) -> boolean)?
+    ): React_MemoComponent<Props, any>
+    	if _G.__DEV__ then
+    		local o = j(m)
+    
+    		
+    		
+    		if not o then
+    			local p = ""
+    			if
+    				m == nil
+    				or (typeof(m) == "table" and #e.keys(m) == 0)
+    			then
+    				p = p
+    					.. (
+    [[ You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.]]					
+    
+    )
+    			end
+    			local q
+    			if m == nil then
+    				q = "nil"
+    			elseif d.isArray(m) then
+    				q = "array"
+    			elseif
+    				m ~= nil
+    				and typeof(m) == "table"
+    				and (m :: React_MemoComponent<Props, T>)["$$typeof"]
+    					== i
+    			then
+    				q = string.format(
+    					"<%s />",
+    					k((m :: any).type) or "UNKNOWN"
+    				)
+    				p =
+    					" Did you accidentally export a JSX literal or Element instead of a component?"
+    			else
+    				q = typeof(m)
+    				if m ~= nil then
+    					
+    					p = "\n" .. f(m)
+    				end
+    			end
+    			b.error(
+    				"memo: The first argument must be a component. Instead received: `%s`.%s",
+    				q,
+    				p
+    			)
+    		end
+    	end
+    
+    	local o = {
+    		["$$typeof"] = h,
+    		type = m,
+    		compare = n or nil,
+    	}
+    
+    	if _G.__DEV__ then
+    		local p
+    		
+    		setmetatable(o, {
+    			__index = function(q, r)
+    				if r == "displayName" then
+    					return p
+    				end
+    				return rawget(q, r)
+    			end,
+    			__newindex = function(q, r, s)
+    				if r == "displayName" then
+    					p = s
+    					
+    					if
+    						typeof(m) == "table"
+    						and (m :: React_AbstractComponent<Props, T>).displayName
+    							== nil
+    					then
+    						(m :: React_MemoComponent<Props, T>).displayName = p
+    					end
+    				else
+    					rawset(q, r, s)
+    				end
+    			end,
+    		})
+    	end
+    
+    	return o :: React_MemoComponent<Props, any>
+    end
+    
+    return l
+end
+
+_modules["Packages/_Index/jsdotlua_react@17.2.1/react/ReactMutableSource"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react@17.2.1/shared")
+    type MutableSourceGetVersionFn = a.MutableSourceGetVersionFn
+    type MutableSource<T> = a.MutableSource<T>
+    
+    local function createMutableSource<Source>(
+    	b: Source,
+    	c: MutableSourceGetVersionFn
+    ): MutableSource<Source>
+    	local d: MutableSource<Source> = {
+    		_getVersion = c,
+    		_source = b,
+    		_workInProgressVersionPrimary = nil,
+    		_workInProgressVersionSecondary = nil,
+    	}
+    
+    	if _G.__DEV__ then
+    		d._currentPrimaryRenderer = nil
+    		d._currentSecondaryRenderer = nil
+    	end
+    
+    	return d
+    end
+    
+    return createMutableSource
+end
+
+_modules["Packages/_Index/jsdotlua_react@17.2.1/react/ReactNoopUpdateQueue"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_react@17.2.1/shared").console
+    
+    local b = {}
+    
+    local function warnNoop(c: any, d: string)
+    	if _G.__DEV__ then
+    		
+    		
+    		
+    		
+    		local e = c.__componentName or "ReactClass"
+    		local f = e .. "." .. d
+    		if b[f] then
+    			return
+    		end
+    		
+    		a.error(
+    [[Can't call %s on a component that is not yet mounted. This is a no-op, but it might indicate a bug in your application. Instead, assign to `self.state` directly with the desired state in the %s component's `init` method.]]
+    
+    
+    ,
+    			d,
+    			e
+    		)
+    		b[f] = true
+    	end
+    end
+    
+    
+    
+    
+    local c = {
+    	
+    	
+    
+    
+    
+    
+    
+    isMounted = function(c)
+    		return false
+    	end,
+    	
+    	
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    enqueueForceUpdate = function(c, d, e)
+    		warnNoop(c, "forceUpdate")
+    	end,
+    	
+    	
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    enqueueReplaceState = function(c, d, e, f)
+    		warnNoop(c, "replaceState")
+    	end,
+    	
+    	
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    enqueueSetState = function(c, d, e, f)
+    		warnNoop(c, "setState")
+    	end,
+    }
+    
+    return c
+end
+
+_modules["Packages/_Index/jsdotlua_react@17.2.1/react/createSignal.roblox"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    type Function = (...any) -> ...any
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    type Connection = { callback: Function, disconnected: boolean }
+    type Map<K, V> = { [K]: V }
+    
+    local function createSignal(): ((Function) -> (() -> ()), (...any) -> ())
+    	local a: Map<Function, Connection> = {}
+    	local b = {}
+    	local c = false
+    
+    	local function subscribe(d)
+    		assert(
+    			typeof(d) == "function",
+    			"Can only subscribe to signals with a function."
+    		)
+    
+    		local e = {
+    			callback = d,
+    			disconnected = false,
+    		}
+    
+    		
+    		
+    		if c and not a[d] then
+    			b[d] = e
+    		end
+    
+    		a[d] = e
+    
+    		local function disconnect()
+    			assert(
+    				not e.disconnected,
+    				"Listeners can only be disconnected once."
+    			)
+    
+    			e.disconnected = true
+    			a[d] = nil
+    			b[d] = nil
+    		end
+    
+    		return disconnect
+    	end
+    
+    	local function fire(...)
+    		c = true
+    		for d, e in a do
+    			if not e.disconnected and not b[d] then
+    				d(...)
+    			end
+    		end
+    
+    		c = false
+    
+    		
+    		table.clear(b)
+    	end
+    
+    	return subscribe, fire
+    end
+    
+    return createSignal
+end
+
 _modules["Packages/_Index/jsdotlua_react@17.2.1/shared"] = function()
     return _require("Packages/_Index/jsdotlua_shared@17.2.1/shared")
 end
 
 _modules["Packages/_Index/jsdotlua_scheduler@17.2.1/luau-polyfill"] = function()
     return _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill")
+end
+
+_modules["Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/Scheduler")
+    
+    local function onlyInTestError(b: string)
+    	return function()
+    		error(b .. " is only available in tests, not in production")
+    	end
+    end
+    
+    local b = a(nil )
+    local c = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/Tracing")
+    local d = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/TracingSubscriptions")
+    
+    export type Interaction = c.Interaction
+    
+    
+    
+    
+    
+    if _G.__ROACT_17_MOCK_SCHEDULER__ then
+    	return _require("Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/unstable_mock")
+    end
+    
+    local e = {
+    	unstable_ImmediatePriority = b.unstable_ImmediatePriority,
+    	unstable_UserBlockingPriority = b.unstable_UserBlockingPriority,
+    	unstable_NormalPriority = b.unstable_NormalPriority,
+    	unstable_IdlePriority = b.unstable_IdlePriority,
+    	unstable_LowPriority = b.unstable_LowPriority,
+    	unstable_runWithPriority = b.unstable_runWithPriority,
+    	unstable_next = b.unstable_next,
+    	unstable_scheduleCallback = b.unstable_scheduleCallback,
+    	unstable_cancelCallback = b.unstable_cancelCallback,
+    	unstable_wrapCallback = b.unstable_wrapCallback,
+    	unstable_getCurrentPriorityLevel = b.unstable_getCurrentPriorityLevel,
+    	unstable_shouldYield = b.unstable_shouldYield,
+    	unstable_requestPaint = b.unstable_requestPaint,
+    	unstable_continueExecution = b.unstable_continueExecution,
+    	unstable_pauseExecution = b.unstable_pauseExecution,
+    	unstable_getFirstCallbackNode = b.unstable_getFirstCallbackNode,
+    	unstable_now = b.unstable_now,
+    	unstable_forceFrameRate = b.unstable_forceFrameRate,
+    	unstable_flushAllWithoutAsserting = onlyInTestError(
+    		"unstable_flushAllWithoutAsserting"
+    	) :: any,
+    	unstable_flushAll = onlyInTestError("unstable_flushAll"),
+    	unstable_flushNumberOfYields = onlyInTestError("unstable_flushNumberOfYields"),
+    	unstable_clearYields = onlyInTestError("unstable_clearYields") :: any,
+    	unstable_flushUntilNextPaint = onlyInTestError("unstable_clearYields"),
+    	unstable_advanceTime = onlyInTestError("unstable_advanceTime"),
+    	unstable_flushExpired = onlyInTestError("unstable_flushExpired"),
+    	unstable_yieldValue = onlyInTestError("unstable_yieldValue"),
+    
+    	tracing = {
+    		unstable_wrap = onlyInTestError("unstable_wrap"),
+    		__interactionsRef = {},
+    		__subscriberRef = {},
+    	},
+    }
+    
+    
+    for f, g in c :: any do
+    	e.tracing[f] = g
+    end
+    for f, g in d :: any do
+    	e.tracing[f] = g
+    end
+    
+    return e
+end
+
+_modules["Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/Scheduler"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    return function(a)
+    	local b = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/shared").describeError
+    
+    	local c = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/SchedulerFeatureFlags")	
+    local d = c.enableSchedulerDebugging
+    	local e = c.enableProfiling
+    
+    	local f = a or _require("Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/SchedulerHostConfig")	
+    local g = f.requestHostCallback
+    	local h = f.requestHostTimeout
+    	local i = f.cancelHostTimeout
+    	local j = f.shouldYieldToHost
+    	local k = f.getCurrentTime
+    	local l = f.forceFrameRate
+    	local m = f.requestPaint
+    
+    	
+    	
+    	
+    	
+    	
+    	type Heap = { [number]: Node? }
+    	type Node = {
+    		id: number,
+    		sortIndex: number	
+    }
+    
+    	
+    	local n, o, p
+    
+    	local q = function(q: Heap, r: Node): ()
+    		local s = #q + 1
+    		q[s] = r
+    
+    		o(q, r, s)
+    	end
+    
+    	local r = function(r: Heap): Node?
+    		return r[1]
+    	end
+    
+    	local s = function(s: Heap): Node?
+    		local t = s[1]
+    		if t ~= nil then
+    			local u = s[#s]
+    			s[#s] = nil
+    
+    			if u :: Node ~= t :: Node then
+    				s[1] = u
+    				p(s, u :: Node, 1)
+    			end
+    			return t
+    		else
+    			return nil
+    		end
+    	end
+    
+    	o = function(t: Heap, u: Node, v: number): ()
+    		while true do
+    			local w = math.floor(v / 2)
+    			local x = t[w]
+    			if x ~= nil and n(x :: Node, u :: Node) > 0 then
+    				
+    				t[w] = u
+    				t[v] = x
+    				v = w
+    			else
+    				
+    				return
+    			end
+    		end
+    	end
+    
+    	p = function(t: Heap, u: Node, v: number): ()
+    		local w = #t
+    		while v < w do
+    			local x = v * 2
+    			local y = t[x]
+    			local z = x + 1
+    			local A = t[z]
+    
+    			
+    			if y ~= nil and n(y :: Node, u) < 0 then
+    				if A ~= nil and n(A :: Node, y :: Node) < 0 then
+    					t[v] = A
+    					t[z] = u
+    					v = z
+    				else
+    					t[v] = y
+    					t[x] = u
+    					v = x
+    				end
+    			elseif A ~= nil and n(A :: Node, u :: Node) < 0 then
+    				t[v] = A
+    				t[z] = u
+    				v = z
+    			else
+    				
+    				return
+    			end
+    		end
+    	end
+    
+    	n = function(t: Node, u: Node): number
+    		
+    		local v = t.sortIndex - u.sortIndex
+    
+    		if v == 0 then
+    			return t.id - u.id
+    		end
+    
+    		return v
+    	end
+    
+    	
+    	local t = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/SchedulerPriorities")	
+    local u = t.ImmediatePriority
+    	local v = t.UserBlockingPriority
+    	local w = t.NormalPriority
+    	local x = t.LowPriority
+    	local y = t.IdlePriority
+    
+    	local z = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/SchedulerProfiling")	
+    local A = z.markTaskRun
+    	local B = z.markTaskYield
+    	local C = z.markTaskCompleted
+    	local D = z.markTaskCanceled
+    	local E = z.markTaskErrored
+    	local F = z.markSchedulerSuspended
+    	local G = z.markSchedulerUnsuspended
+    	local H = z.markTaskStart
+    	local I = z.stopLoggingProfilingEvents
+    	local J = z.startLoggingProfilingEvents
+    
+    	
+    	
+    	
+    	local K = 1073741823
+    
+    	
+    	local L = -1	
+    
+    local M = 250
+    	local N = 5000
+    	local O = 10000
+    	
+    	local P = K
+    
+    	
+    	local Q = {}
+    	local R = {}
+    
+    	
+    	local S = 1
+    
+    	
+    	local T = false
+    
+    	local U 	
+    local V = w
+    
+    	
+    	local W = false
+    
+    	local X = false
+    	local Y = false
+    
+    	
+    	local Z, _, aa
+    
+    	local function advanceTimers(ab)
+    		
+    		local ac = r(R)
+    
+    		while ac ~= nil do
+    			if ac.callback == nil then
+    				
+    				s(R)
+    			elseif ac.startTime <= ab then
+    				
+    				s(R)
+    				ac.sortIndex = ac.expirationTime
+    				q(Q, ac)
+    				if e then
+    					H(ac, ab)
+    					ac.isQueued = true
+    				end
+    			else
+    				
+    				return
+    			end
+    
+    			ac = r(R)
+    		end
+    	end
+    
+    	Z = function(ab)
+    		Y = false
+    		advanceTimers(ab)
+    
+    		if not X then
+    			if r(Q) ~= nil then
+    				X = true
+    				g(_)
+    			else
+    				local ac = r(R)
+    				if ac ~= nil then
+    					h(Z, ac.startTime - ab)
+    				end
+    			end
+    		end
+    	end
+    
+    	_ = function(ab, ac)
+    		if e then
+    			G(ac)
+    		end
+    
+    		
+    		X = false
+    		if Y then
+    			
+    			Y = false
+    			i()
+    		end
+    
+    		W = true
+    		local ad = V
+    
+    		
+    		local ae, af
+    		if not _G.__YOLO__ then
+    			
+    			if e then
+    				ae, af =
+    					xpcall(aa, b, ab, ac)
+    
+    				if not ae then
+    					if U ~= nil then
+    						local ag = k()
+    						E(U, ag)
+    						U.isQueued = false
+    					end
+    				end
+    			else
+    				
+    				ae = true
+    				af = aa(ab, ac)
+    			end
+    		else
+    			ae = true
+    			af = aa(ab, ac)
+    		end
+    
+    		
+    		U = nil
+    		V = ad
+    		W = false
+    		if e then
+    			local ag = k()
+    			F(ag)
+    		end
+    
+    		if not ae then
+    			error(af)
+    		end
+    
+    		return af
+    	end
+    
+    	aa = function(ab, ac)
+    		local ad = ac
+    		advanceTimers(ad)
+    		U = r(Q)
+    		while
+    			U ~= nil and not (d and T)
+    		do
+    			if
+    				U.expirationTime > ad
+    				and (not ab or j())
+    			then
+    				
+    				break
+    			end
+    
+    			local ae = U.callback
+    			if typeof(ae) == "function" then
+    				U.callback = nil
+    				V = U.priorityLevel
+    				local af = U.expirationTime <= ad
+    				A(U, ad)
+    				local ag = ae(af)
+    				ad = k()
+    				if typeof(ag) == "function" then
+    					U.callback = ag
+    					B(U, ad)
+    				else
+    					if e then
+    						C(U, ad)
+    						U.isQueued = false
+    					end
+    
+    					if U == r(Q) then
+    						s(Q)
+    					end
+    				end
+    				advanceTimers(ad)
+    			else
+    				s(Q)
+    			end
+    
+    			U = r(Q)
+    		end
+    
+    		
+    		if U ~= nil then
+    			return true
+    		else
+    			local ae = r(R)
+    			if ae ~= nil then
+    				h(Z, ae.startTime - ad)
+    			end
+    
+    			return false
+    		end
+    	end
+    
+    	local function unstable_runWithPriority(ab, ac)
+    		if
+    			ab == u
+    			or ab == v
+    			or ab == w
+    			or ab == x
+    			or ab == y
+    		then
+    			
+    		else
+    			ab = w
+    		end
+    
+    		local ad = V
+    		V = ab
+    
+    		
+    		local ae, af
+    		if not _G.__YOLO__ then
+    			ae, af = xpcall(ac, b)
+    		else
+    			ae = true
+    			af = ac()
+    		end
+    
+    		
+    		V = ad
+    
+    		if not ae then
+    			error(af)
+    		end
+    
+    		return af
+    	end
+    
+    	local function unstable_next(ab)
+    		local ac
+    		if
+    			V == u
+    			or V == v
+    			or V == w
+    		then
+    			
+    			ac = w
+    		else
+    			
+    			ac = V
+    		end
+    
+    		local ad = V
+    		V = ac
+    
+    		
+    		local ae, af
+    		if not _G.__YOLO__ then
+    			ae, af = xpcall(ab, b)
+    		else
+    			ae = true
+    			af = ab()
+    		end
+    
+    		
+    		V = ad
+    
+    		if not ae then
+    			error(af)
+    		end
+    
+    		return af
+    	end
+    
+    	local function unstable_wrapCallback(ab)
+    		local ac = V
+    
+    		return function(...)
+    			
+    			local ad = V
+    			V = ac
+    
+    			
+    			local ae, af
+    			if not _G.__YOLO__ then
+    				ae, af = xpcall(ab, b, ...)
+    			else
+    				ae = true
+    				af = ab(...)
+    			end
+    
+    			
+    			V = ad
+    
+    			if not ae then
+    				error(af)
+    			end
+    
+    			return af
+    		end
+    	end
+    
+    	local function unstable_scheduleCallback(ab, ac, ad)
+    		local ae = k()
+    
+    		local af
+    
+    		if typeof(ad) == "table" then
+    			local ag = ad.delay
+    			if typeof(ag) == "number" and ag > 0 then
+    				af = ae + ag
+    			else
+    				af = ae
+    			end
+    		else
+    			af = ae
+    		end
+    
+    		local ag
+    		if ab == u then
+    			ag = L
+    		elseif ab == v then
+    			ag = M
+    		elseif ab == y then
+    			ag = P
+    		elseif ab == x then
+    			ag = O
+    		else
+    			ag = N
+    		end
+    
+    		local ah = af + ag
+    
+    		local ai = {
+    			id = S,
+    			callback = ac,
+    			priorityLevel = ab,
+    			startTime = af,
+    			expirationTime = ah,
+    			sortIndex = -1,
+    		}
+    		S += 1
+    
+    		if e then
+    			ai.isQueued = false
+    		end
+    
+    		if af > ae then
+    			
+    			ai.sortIndex = af
+    			q(R, ai)
+    			
+    			if #Q == 0 and ai == r(R) then
+    				
+    				if Y then
+    					
+    					i()
+    				else
+    					Y = true
+    				end
+    				
+    				h(Z, af - ae)
+    			end
+    		else
+    			ai.sortIndex = ah
+    			q(Q, ai)
+    			if e then
+    				H(ai, ae)
+    				ai.isQueued = true
+    			end
+    
+    			
+    			
+    			if not X and not W then
+    				X = true
+    				g(_)
+    			end
+    		end
+    
+    		return ai
+    	end
+    
+    	local function unstable_pauseExecution()
+    		T = true
+    	end
+    
+    	local function unstable_continueExecution()
+    		T = false
+    		if not X and not W then
+    			X = true
+    			g(_)
+    		end
+    	end
+    
+    	local function unstable_getFirstCallbackNode()
+    		return r(Q)
+    	end
+    
+    	local function unstable_cancelCallback(ab)
+    		if e then
+    			if ab.isQueued then
+    				local ac = k()
+    				D(ab, ac)
+    				ab.isQueued = false
+    			end
+    		end
+    
+    		
+    		
+    		
+    		ab.callback = nil
+    	end
+    
+    	local function unstable_getCurrentPriorityLevel()
+    		return V
+    	end
+    
+    	local ab = m
+    
+    	return {
+    		unstable_ImmediatePriority = u,
+    		unstable_UserBlockingPriority = v,
+    		unstable_NormalPriority = w,
+    		unstable_IdlePriority = y,
+    		unstable_LowPriority = x,
+    		unstable_runWithPriority = unstable_runWithPriority,
+    		unstable_next = unstable_next,
+    		unstable_scheduleCallback = unstable_scheduleCallback,
+    		unstable_cancelCallback = unstable_cancelCallback,
+    		unstable_wrapCallback = unstable_wrapCallback,
+    		unstable_getCurrentPriorityLevel = unstable_getCurrentPriorityLevel,
+    		unstable_shouldYield = j,
+    		unstable_requestPaint = ab,
+    		unstable_continueExecution = unstable_continueExecution,
+    		unstable_pauseExecution = unstable_pauseExecution,
+    		unstable_getFirstCallbackNode = unstable_getFirstCallbackNode,
+    		unstable_now = k,
+    		unstable_forceFrameRate = l,
+    		
+    		unstable_Profiling = (function()
+    			if e then
+    				return {
+    					startLoggingProfilingEvents = J,
+    					stopLoggingProfilingEvents = I,
+    				}
+    			end
+    			return nil
+    		end)(),
+    	}
+    end
+end
+
+_modules["Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/SchedulerFeatureFlags"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    return {
+    	enableSchedulerDebugging = false,
+    	enableIsInputPending = false,
+    	enableProfiling = _G.__PROFILE__,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/SchedulerHostConfig"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    return _require("Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/forks/SchedulerHostConfig.default")
+end
+
+_modules["Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/SchedulerMinHeap"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    type Heap = { [number]: Node? }
+    type Node = {
+    	id: number,
+    	sortIndex: number
+    }
+    
+    local a = {}
+    
+    local b, c, d
+    
+    a.push = function(e: Heap, f: Node): ()
+    	local g = #e + 1
+    	e[g] = f
+    
+    	c(e, f, g)
+    end
+    
+    a.peek = function(e: Heap): Node?
+    	return e[1]
+    end
+    
+    a.pop = function(e: Heap): Node?
+    	local f = e[1]
+    	if f ~= nil then
+    		local g = e[#e]
+    		e[#e] = nil
+    
+    		if g :: Node ~= f :: Node then
+    			e[1] = g
+    			d(e, g :: Node, 1)
+    		end
+    		return f
+    	else
+    		return nil
+    	end
+    end
+    
+    c = function(e: Heap, f: Node, g: number): ()
+    	while true do
+    		local h = math.floor(g / 2)
+    		local i = e[h]
+    		if i ~= nil and b(i :: Node, f :: Node) > 0 then
+    			
+    			e[h] = f
+    			e[g] = i
+    			g = h
+    		else
+    			
+    			return
+    		end
+    	end
+    end
+    
+    d = function(e: Heap, f: Node, g: number): ()
+    	local h = #e
+    	while g < h do
+    		local i = g * 2
+    		local j = e[i]
+    		local k = i + 1
+    		local l = e[k]
+    
+    		
+    		if j ~= nil and b(j :: Node, f) < 0 then
+    			if l ~= nil and b(l :: Node, j :: Node) < 0 then
+    				e[g] = l
+    				e[k] = f
+    				g = k
+    			else
+    				e[g] = j
+    				e[i] = f
+    				g = i
+    			end
+    		elseif l ~= nil and b(l :: Node, f :: Node) < 0 then
+    			e[g] = l
+    			e[k] = f
+    			g = k
+    		else
+    			
+    			return
+    		end
+    	end
+    end
+    
+    b = function(e: Node, f: Node): number
+    	
+    	local g = e.sortIndex - f.sortIndex
+    
+    	if g == 0 then
+    		return e.id - f.id
+    	end
+    
+    	return g
+    end
+    
+    return a
+end
+
+_modules["Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/SchedulerPriorities"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    export type PriorityLevel = number
+    
+    
+    return {
+    	NoPriority = 0,
+    	ImmediatePriority = 1,
+    	UserBlockingPriority = 2,
+    	NormalPriority = 3,
+    	LowPriority = 4,
+    	IdlePriority = 5,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/SchedulerProfiling"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/shared").console
+    local b = {}
+    
+    local c = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/SchedulerPriorities")
+    type PriorityLevel = c.PriorityLevel
+    
+    local d = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/SchedulerFeatureFlags")
+    local e = d.enableProfiling
+    
+    local f: number = 0
+    local g: number = 0
+    
+    
+    local h = 131072
+    local i = 524288 
+    
+    
+    type EventLog = { EventLog | { number } }
+    
+    local j = 0
+    local k 
+    local l: EventLog? 
+    local m = 1
+    
+    local n = 1
+    local o = 2
+    local p = 3
+    local q = 4
+    local r = 5
+    local s = 6
+    local t = 7
+    local u = 8
+    
+    local function logEvent(v)
+    	if l ~= nil then
+    		
+    		m += #v
+    		if m + 1 > j then
+    			j *= 2
+    			if j > i then
+    				
+    				a["error"](
+    [[Scheduler Profiling: Event log exceeded maximum size. Don't forget to call `stopLoggingProfilingEvents()`.]]				
+    
+    )
+    				b.stopLoggingProfilingEvents()
+    				return
+    			end
+    			local w = {}
+    			table.insert(w, l)
+    			k = w
+    			l = w
+    		end
+    		table.insert(l, v)
+    	end
+    end
+    
+    b.startLoggingProfilingEvents = function()
+    	j = h
+    	k = {}
+    	l = k
+    	m = 1
+    end
+    
+    b.stopLoggingProfilingEvents = function()
+    	local v = k
+    	j = 0
+    	
+    	k = nil :: any
+    	l = nil :: any
+    	m = 1
+    	return v
+    end
+    
+    b.markTaskStart = function(v, w: number)
+    	if e then
+    		if l ~= nil then
+    			
+    			
+    			
+    			logEvent({ n, w * 1000, v.id, v.priorityLevel })
+    		end
+    	end
+    end
+    
+    b.markTaskCompleted = function(v, w: number)
+    	if e then
+    		if l ~= nil then
+    			
+    			
+    			
+    			logEvent({ o, w * 1000, v.id })
+    		end
+    	end
+    end
+    
+    b.markTaskCanceled = function(v, w: number)
+    	if e then
+    		if l ~= nil then
+    			logEvent({ q, w * 1000, v.id })
+    		end
+    	end
+    end
+    
+    b.markTaskErrored = function(v, w: number)
+    	if e then
+    		if l ~= nil then
+    			logEvent({ p, w * 1000, v.id })
+    		end
+    	end
+    end
+    
+    b.markTaskRun = function(v, w: number)
+    	if e then
+    		f += 1
+    
+    		if l ~= nil then
+    			logEvent({ r, w * 1000, v.id, f })
+    		end
+    	end
+    end
+    
+    b.markTaskYield = function(v, w: number)
+    	if e then
+    		if l ~= nil then
+    			logEvent({ s, w * 1000, v.id, f })
+    		end
+    	end
+    end
+    
+    b.markSchedulerSuspended = function(v: number)
+    	if e then
+    		g += 1
+    
+    		if l ~= nil then
+    			logEvent({ t, v * 1000, g })
+    		end
+    	end
+    end
+    
+    b.markSchedulerUnsuspended = function(v: number)
+    	if e then
+    		if l ~= nil then
+    			logEvent({ u, v * 1000, g })
+    		end
+    	end
+    end
+    
+    return b
+end
+
+_modules["Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/Tracing"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    type Function = (any) -> any
+    local a = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/luau-polyfill")
+    type Set<T> = a.Set<T>
+    local b = a.Set
+    local c = {}
+    
+    local d = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/shared").ReactFeatureFlags
+    local e = d.enableSchedulerTracing
+    
+    export type Interaction = {
+    	__count: number,
+    	id: number,
+    	name: string,
+    	timestamp: number
+    }
+    
+    export type Subscriber = {
+    	
+    	onInteractionTraced: (Interaction) -> (),
+    
+    	
+    	onInteractionScheduledWorkCompleted: (Interaction) -> (),
+    
+    	
+    	
+    	
+    	
+    	
+    	onWorkScheduled: (Set<Interaction>, number) -> (),
+    
+    	
+    	
+    	onWorkCanceled: (Set<Interaction>, number) -> (),
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	onWorkStarted: (Set<Interaction>, number) -> (),
+    
+    	
+    	
+    	onWorkStopped: (Set<Interaction>, number) -> ()	
+    
+    }
+    
+    export type InteractionsRef = { current: Set<Interaction> }
+    
+    export type SubscriberRef = { current: Subscriber | nil }
+    
+    local f = 0
+    
+    
+    local g: number = 0
+    local h: number = 0
+    
+    
+    
+    
+    
+    local i: InteractionsRef
+    
+    
+    local j: SubscriberRef
+    
+    if e then
+    	i = {
+    		current = b.new(),
+    	}
+    	j = {
+    		current = nil,
+    	}
+    end
+    
+    c.__interactionsRef = i
+    c.__subscriberRef = j
+    
+    c.unstable_clear = function(k: Function)
+    	if not e then
+    		return k()
+    	end
+    
+    	local l = i.current
+    	i.current = b.new()
+    
+    	
+    	local m, n = pcall(k)
+    	
+    	i.current = l
+    
+    	if not m then
+    		error(n)
+    	end
+    
+    	return n
+    end
+    
+    c.unstable_getCurrent = function(): Set<Interaction> | nil
+    	if not e then
+    		return nil
+    	else
+    		return i.current
+    	end
+    end
+    
+    c.unstable_getThreadID = function(): number
+    	h += 1
+    	return h
+    end
+    
+    c.unstable_trace =
+    	function(k: string, l: number, m: Function, n: number?): any
+    		
+    		local o = if n ~= nil then n else f
+    
+    		if not e then
+    			return m()
+    		end
+    
+    		local p: Interaction = {
+    			__count = 1,
+    			id = g,
+    			name = k,
+    			timestamp = l,
+    		}
+    		g += 1
+    
+    		local q = i.current
+    
+    		
+    		
+    		
+    		local r = b.new(q)
+    		r:add(p)
+    		i.current = r
+    
+    		local s = j.current
+    		local t
+    
+    		
+    		local u, v = pcall(function()
+    			if s ~= nil then
+    				s.onInteractionTraced(p)
+    			end
+    		end)
+    		
+    		
+    		local w, x = pcall(function()
+    			if s ~= nil then
+    				s.onWorkStarted(r, o)
+    			end
+    		end)
+    
+    		
+    		
+    		local y, z = pcall(function()
+    			t = m()
+    		end)
+    		
+    		i.current = q
+    		
+    		local A, B = pcall(function()
+    			if s ~= nil then
+    				s.onWorkStopped(r, o)
+    			end
+    		end)
+    		
+    		p.__count -= 1
+    
+    		
+    		
+    		if s ~= nil and p.__count == 0 then
+    			s.onInteractionScheduledWorkCompleted(p)
+    		end
+    
+    		if not A then
+    			error(B)
+    		end
+    
+    		if not y then
+    			error(z)
+    		end
+    
+    		if not w then
+    			error(x)
+    		end
+    
+    		if not u then
+    			error(v)
+    		end
+    
+    		return t
+    	end
+    
+    c.unstable_wrap = function(
+    	k: Function,
+    	l: number
+    ): any 
+    	
+    	if l == nil then
+    		l = f
+    	end
+    
+    	if not e then
+    		return k
+    	end
+    
+    	local m = i.current
+    
+    	local n = j.current
+    	if n ~= nil then
+    		n.onWorkScheduled(m, l)
+    	end
+    
+    	
+    	
+    	for o, p in m do
+    		p.__count += 1
+    	end
+    
+    	local o = false
+    
+    	local function _wrapped(p, ...)
+    		local q = i.current
+    		i.current = m
+    
+    		n = j.current
+    
+    		
+    		local r, s = pcall(function(...)
+    			local r
+    
+    			
+    			local s, t = pcall(function()
+    				if n ~= nil then
+    					n.onWorkStarted(m, l)
+    				end
+    			end)
+    			
+    			
+    			local u, v = pcall(function(...)
+    				r = k(...)
+    			end, ...)
+    			
+    			i.current = q
+    
+    			if n ~= nil then
+    				n.onWorkStopped(m, l)
+    			end
+    
+    			if not u then
+    				error(v)
+    			end
+    
+    			if not s then
+    				error(t)
+    			end
+    
+    			return r
+    		end, ...)
+    
+    		
+    		if not o then
+    			
+    			
+    			
+    			o = true
+    
+    			
+    			
+    			
+    			for t, u in m do
+    				u.__count -= 1
+    
+    				if n ~= nil and u.__count == 0 then
+    					n.onInteractionScheduledWorkCompleted(u)
+    				end
+    			end
+    		end
+    
+    		if not r then
+    			error(s)
+    		end
+    
+    		return s
+    	end
+    
+    	local p = function()
+    		n = j.current
+    
+    		local p, q = pcall(function()
+    			if n ~= nil then
+    				n.onWorkCanceled(m, l)
+    			end
+    		end)
+    		
+    		
+    		
+    		
+    		for r, s in m do
+    			s.__count -= 1
+    
+    			if n ~= nil and s.__count == 0 then
+    				n.onInteractionScheduledWorkCompleted(s)
+    			end
+    		end
+    
+    		if not p then
+    			error(q)
+    		end
+    	end
+    
+    	local q = {}
+    	setmetatable(q, {
+    		__call = _wrapped,
+    	})
+    	q.cancel = p
+    
+    	return q
+    end
+    
+    return c
+end
+
+_modules["Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/TracingSubscriptions"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    type Set<T> = { [T]: boolean? }
+    type Array<T> = { [number]: T }
+    local a = {}
+    local b = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/luau-polyfill").Object
+    
+    local c = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/Tracing")
+    type Interaction = c.Interaction
+    type Subscriber = c.Subscriber
+    
+    local d = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/shared").ReactFeatureFlags
+    
+    local e = d.enableSchedulerTracing
+    local f = c.__subscriberRef
+    
+    local g: Set<Subscriber> = {}
+    if e then
+    	g = {}
+    end
+    
+    a.unstable_subscribe = function(h: Subscriber): ()
+    	if e then
+    		g[h] = true
+    
+    		if #b.keys(g) == 1 then
+    			f.current = {
+    				onInteractionScheduledWorkCompleted = onInteractionScheduledWorkCompleted,
+    				onInteractionTraced = onInteractionTraced,
+    				onWorkCanceled = onWorkCanceled,
+    				onWorkScheduled = onWorkScheduled,
+    				onWorkStarted = onWorkStarted,
+    				onWorkStopped = onWorkStopped,
+    			}
+    		end
+    	end
+    end
+    
+    a.unstable_unsubscribe = function(h: Subscriber): ()
+    	if e then
+    		g[h] = nil
+    
+    		if #b.keys(g) == 0 then
+    			f.current = nil
+    		end
+    	end
+    end
+    
+    function onInteractionTraced(h: Interaction): ()
+    	local i = false
+    	local j 
+    	
+    for k, l in g do
+    		
+    		local m, n = pcall(k.onInteractionTraced, h)
+    		
+    		if not m then
+    			local o = n
+    			if not i then
+    				i = true
+    				j = o
+    			end
+    		end
+    	end
+    
+    	if i then
+    		error(j)
+    	end
+    end
+    
+    function onInteractionScheduledWorkCompleted(h: Interaction): ()
+    	local i = false
+    	local j 
+    	
+    for k, l in g do
+    		
+    		local m, n =
+    			pcall(k.onInteractionScheduledWorkCompleted, h)
+    		
+    		if not m then
+    			local o = n
+    			if not i then
+    				i = true
+    				j = o
+    			end
+    		end
+    	end
+    
+    	if i then
+    		error(j)
+    	end
+    end
+    
+    function onWorkScheduled(h: Set<Interaction>, i: number): ()
+    	local j = false
+    	local k 
+    	
+    for l, m in g do
+    		
+    		local n, o = pcall(l.onWorkScheduled, h, i)
+    		
+    		if not n then
+    			local p = o
+    			if not j then
+    				j = true
+    				k = p
+    			end
+    		end
+    	end
+    
+    	if j then
+    		error(k)
+    	end
+    end
+    
+    function onWorkStarted(h: Set<Interaction>, i: number): ()
+    	local j = false
+    	local k 
+    	
+    for l, m in g do
+    		
+    		local n, o = pcall(l.onWorkStarted, h, i)
+    		
+    		if not n then
+    			local p = o
+    			if not j then
+    				j = true
+    				k = p
+    			end
+    		end
+    	end
+    
+    	if j then
+    		error(k)
+    	end
+    end
+    
+    function onWorkStopped(h: Set<Interaction>, i: number): ()
+    	local j = false
+    	local k 
+    	
+    for l, m in g do
+    		
+    		local n, o = pcall(l.onWorkStopped, h, i)
+    		
+    		if not n then
+    			local p = o
+    			if not j then
+    				j = true
+    				k = p
+    			end
+    		end
+    	end
+    
+    	if j then
+    		error(k)
+    	end
+    end
+    
+    function onWorkCanceled(h: Set<Interaction>, i: number): ()
+    	local j = false
+    	local k 
+    	
+    for l, m in g do
+    		
+    		local n, o = pcall(l.onWorkCanceled, h, i)
+    		
+    		if not n then
+    			local p = o
+    			if not j then
+    				j = true
+    				k = p
+    			end
+    		end
+    	end
+    
+    	if j then
+    		error(k)
+    	end
+    end
+    
+    return a
+end
+
+_modules["Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/forks/SchedulerHostConfig.default"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/luau-polyfill")
+    type Error = a.Error
+    local b = a.Object
+    local c = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/shared")
+    local d = c.console
+    local e = c.errorToString
+    local f = c.describeError
+    
+    
+    local g = function()
+    	
+    	return os.clock() * 1000
+    end
+    
+    
+    
+    
+    
+    
+    
+    local h = a.setTimeout
+    local i = a.clearTimeout
+    
+    local j = false
+    local k: ((boolean, number) -> boolean) | nil 
+    local l = b.None
+    
+    
+    
+    
+    
+    local m = 15
+    local n = 0
+    
+    
+    
+    local function shouldYieldToHost()
+    	return g() >= n
+    end
+    
+    
+    local function requestPaint() end
+    
+    local function forceFrameRate(o)
+    	if o < 0 or o > 125 then
+    		d.warn(
+    [[forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported]]		
+    
+    )
+    		return
+    	end
+    	if o > 0 then
+    		m = math.floor(1000 / o)
+    	else
+    		
+    		m = 5
+    	end
+    end
+    
+    local function performWorkUntilDeadline()
+    	if k ~= nil then
+    		local o = g()
+    		
+    		
+    		
+    		n = o + m
+    		local p = true
+    
+    		local q, r
+    		local function doWork()
+    			local s = (k :: any)(
+    				p,
+    				o
+    			)
+    			if not s then
+    				j = false
+    				k = nil
+    			else
+    				
+    				
+    
+    				
+    				
+    				
+    				
+    
+    				
+    				
+    				task.delay(0, performWorkUntilDeadline)
+    			end
+    			return nil
+    		end
+    		if not _G.__YOLO__ then
+    			q, r = xpcall(doWork, f)
+    		else
+    			r = doWork()
+    			q = true
+    		end
+    
+    		if not q then
+    			
+    			
+    			task.delay(0, performWorkUntilDeadline)
+    
+    			
+    			
+    			error(e(r :: any))
+    		end
+    	else
+    		j = false
+    	end
+    end
+    
+    
+    local function wrapPerformWorkWithCoroutine(o)
+    	local p = coroutine.create(function()
+    		while true do
+    			
+    			
+    			local p = coroutine.wrap(o)
+    			local q, r = pcall(p)
+    			coroutine.yield(q, r)
+    		end
+    	end)
+    
+    	return function()
+    		local q, r, s = coroutine.resume(p)
+    		
+    		if not r then
+    			error(s)
+    		end
+    	end
+    end
+    performWorkUntilDeadline = wrapPerformWorkWithCoroutine(performWorkUntilDeadline)
+    
+    local function requestHostCallback(o)
+    	k = o
+    	if not j then
+    		j = true
+    
+    		task.delay(0, performWorkUntilDeadline)
+    	end
+    end
+    
+    local function cancelHostCallback()
+    	k = nil
+    end
+    
+    local function requestHostTimeout(o, p)
+    	l = h(function()
+    		o(g())
+    	end, p)
+    end
+    
+    local function cancelHostTimeout()
+    	i(l)
+    	l = b.None
+    end
+    
+    return {
+    	requestHostCallback = requestHostCallback,
+    	cancelHostCallback = cancelHostCallback,
+    	requestHostTimeout = requestHostTimeout,
+    	cancelHostTimeout = cancelHostTimeout,
+    	shouldYieldToHost = shouldYieldToHost,
+    	requestPaint = requestPaint,
+    	getCurrentTime = g,
+    	forceFrameRate = forceFrameRate,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/forks/SchedulerHostConfig.mock"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = {}
+    
+    local b: number = 0
+    local c: ((boolean, number) -> ()) | nil 
+    local d: ((number) -> ()) | nil 
+    local e: number = -1
+    local f: { [number]: any } | nil 
+    local g: number = -1
+    local h: boolean = false
+    local i: boolean = false
+    local j: boolean = false
+    local k: boolean = false
+    local l = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/shared").console
+    local m = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/shared").ConsolePatchingDev
+    local n = m.disabledLog
+    
+    a.requestHostCallback = function(o: (boolean) -> ())
+    	c = o
+    end
+    
+    a.cancelHostCallback = function()
+    	c = nil
+    end
+    
+    a.requestHostTimeout = function(o: (number) -> (), p: number)
+    	d = o
+    	e = b + p
+    end
+    
+    a.cancelHostTimeout = function()
+    	d = nil
+    	e = -1
+    end
+    
+    a.shouldYieldToHost = function(): boolean
+    	
+    	
+    	local o: any = f
+    	if
+    		(
+    			g ~= -1
+    and o ~= nil
+    			and #o >= g
+    		) or (k and j)
+    	then
+    		
+    		h = true
+    		return true
+    	end
+    
+    	return false
+    end
+    
+    a.getCurrentTime = function(): number
+    	return b
+    end
+    
+    a.forceFrameRate = function()
+    	
+    end
+    
+    a.reset = function()
+    	if i then
+    		error("Cannot reset while already flushing work.")
+    	end
+    
+    	b = 0
+    	c = nil
+    	d = nil
+    	e = -1
+    f = nil
+    	g = -1
+    h = false
+    	i = false
+    	j = false
+    end
+    
+    
+    a.unstable_flushNumberOfYields = function(o: number)
+    	if i then
+    		error("Already flushing work.")
+    	end
+    
+    	if c ~= nil then
+    		local p = c
+    		g = o
+    		i = true
+    
+    		local q, r = pcall(function()
+    			local q = true
+    			repeat
+    				q = p(true, b)
+    			until not q or h
+    
+    			if not q then
+    				c = nil
+    			end
+    		end)
+    
+    		g = -1
+    h = false
+    		i = false
+    
+    		if not q then
+    			error(r)
+    		end
+    	end
+    end
+    
+    a.unstable_flushUntilNextPaint = function()
+    	if i then
+    		error("Already flushing work.")
+    	end
+    
+    	if c ~= nil then
+    		local o = c
+    		k = true
+    		j = false
+    		i = true
+    		
+    		local p, q = pcall(function()
+    			local p = true
+    			repeat
+    				p = o(true, b)
+    			until not p or h
+    
+    			if not p then
+    				c = nil
+    			end
+    		end)
+    
+    		
+    		k = false
+    		h = false
+    		i = false
+    
+    		if not p then
+    			error(q)
+    		end
+    	end
+    end
+    
+    a.unstable_flushExpired = function()
+    	if i then
+    		error("Already flushing work.")
+    	end
+    	if c ~= nil then
+    		i = true
+    		local o, p = pcall(function()
+    			
+    			
+    			local o: any = c
+    			local p = o(false, b)
+    			if not p then
+    				c = nil
+    			end
+    		end)
+    
+    		i = false
+    
+    		if not o then
+    			error(p)
+    		end
+    	end
+    end
+    
+    a.unstable_flushAllWithoutAsserting = function(): boolean
+    	
+    	if i then
+    		error("Already flushing work.")
+    	end
+    	if c ~= nil then
+    		local o = c
+    		i = true
+    		local p, q = pcall(function()
+    			local p = true
+    			repeat
+    				p = o(true, b)
+    			until not p
+    
+    			if not p then
+    				c = nil
+    			end
+    		end)
+    
+    		i = false
+    
+    		if not p then
+    			error(q)
+    		end
+    
+    		return true
+    	else
+    		return false
+    	end
+    end
+    
+    a.unstable_clearYields = function(): { [number]: any }
+    	if f == nil then
+    		return {}
+    	end
+    	local o = f
+    	f = nil
+    	return o
+    end
+    
+    a.unstable_flushAll = function()
+    	if f ~= nil then
+    		error(
+    [[Log is not empty. Assert on the log of yielded values before flushing additional work.]]		
+    
+    )
+    	end
+    	a.unstable_flushAllWithoutAsserting()
+    	if f ~= nil then
+    		error(
+    [[While flushing work, something yielded a value. Use an assertion helper to assert on the log of yielded values, e.g. expect(Scheduler).toFlushAndYield([...])]]		
+    
+    
+    )
+    	end
+    end
+    
+    a.unstable_yieldValue = function(o: any)
+    	
+    	if l.log == n then
+    		
+    		
+    		return
+    	end
+    	if f == nil then
+    		f = { o }
+    	else
+    		
+    		
+    		local p: any = f
+    		table.insert(p, o)
+    	end
+    end
+    
+    a.unstable_advanceTime = function(o: number)
+    	
+    	if l.log == n then
+    		
+    		
+    		return
+    	end
+    	b += o
+    
+    	if d ~= nil and e <= b then
+    		
+    		
+    		local p: any = d
+    		p(b)
+    		e = -1
+    d = nil
+    	end
+    end
+    
+    a.requestPaint = function()
+    	j = true
+    end
+    
+    return a
+end
+
+_modules["Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/unstable_mock"] = function()
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/Tracing")
+    local b = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/TracingSubscriptions")
+    
+    export type Interaction = a.Interaction
+    
+    local c = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/Scheduler")
+    local d = _require("Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler/forks/SchedulerHostConfig.mock")
+    
+    local e = c(d)
+    
+    local f = {}
+    f.tracing = {}
+    
+    for g, h in e :: any do
+    	f[g] = h
+    end
+    for g, h in a :: any do
+    	f.tracing[g] = h
+    end
+    for g, h in b :: any do
+    	f.tracing[g] = h
+    end
+    
+    f.unstable_flushAllWithoutAsserting = d.unstable_flushAllWithoutAsserting
+    f.unstable_flushNumberOfYields = d.unstable_flushNumberOfYields
+    f.unstable_flushExpired = d.unstable_flushExpired
+    f.unstable_clearYields = d.unstable_clearYields
+    f.unstable_flushUntilNextPaint = d.unstable_flushUntilNextPaint
+    f.unstable_flushAll = d.unstable_flushAll
+    f.unstable_yieldValue = d.unstable_yieldValue
+    f.unstable_advanceTime = d.unstable_advanceTime
+    f.unstable_Profiling = e.unstable_Profiling
+    
+    return f
 end
 
 _modules["Packages/_Index/jsdotlua_scheduler@17.2.1/shared"] = function()
@@ -7565,6 +45537,3582 @@ _modules["Packages/_Index/jsdotlua_shared@17.2.1/luau-polyfill"] = function()
     return _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill")
 end
 
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/luau-polyfill")
+    type Object = a.Object
+    
+    local b = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactTypes")
+    local c = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/flowtypes.roblox")
+    local d = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactElementType")
+    local e = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactFiberHostConfig")
+    local f = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactSharedInternals")
+    local g = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ErrorHandling.roblox")
+    
+    
+    export type ReactEmpty = b.ReactEmpty
+    export type ReactFragment = b.ReactFragment
+    export type ReactNodeList = b.ReactNodeList
+    export type ReactProviderType<T> = b.ReactProviderType<T>
+    export type ReactConsumer<T> = b.ReactConsumer<T>
+    export type ReactProvider<T> = b.ReactProvider<T>
+    export type ReactContext<T> = b.ReactContext<T>
+    export type ReactPortal = b.ReactPortal
+    export type RefObject = b.RefObject
+    export type EventPriority = b.EventPriority
+    export type ReactFundamentalComponentInstance<C, H> =
+    	b.ReactFundamentalComponentInstance<C, H>
+    export type ReactFundamentalImpl<C, H> = b.ReactFundamentalImpl<C, H>
+    export type ReactFundamentalComponent<C, H> = b.ReactFundamentalComponent<C, H>
+    export type ReactScope = b.ReactScope
+    export type ReactScopeQuery = b.ReactScopeQuery
+    export type ReactScopeInstance = b.ReactScopeInstance
+    
+    export type ReactBinding<T> = b.ReactBinding<T>
+    export type ReactBindingUpdater<T> = b.ReactBindingUpdater<T>
+    
+    export type MutableSourceVersion = b.MutableSourceVersion
+    export type MutableSourceGetSnapshotFn<Source, Snapshot> =
+    	b.MutableSourceGetSnapshotFn<Source, Snapshot>
+    export type MutableSourceSubscribeFn<Source, Snapshot> = b.MutableSourceSubscribeFn<
+    	Source,
+    	Snapshot
+    >
+    export type MutableSourceGetVersionFn = b.MutableSourceGetVersionFn
+    export type MutableSource<Source> = b.MutableSource<Source>
+    export type Wakeable = b.Wakeable
+    export type Thenable<R> = b.Thenable<R>
+    export type Source = d.Source
+    export type ReactElement<P = Object, T = any> = d.ReactElement<P, T>
+    export type OpaqueIDType = e.OpaqueIDType
+    export type Dispatcher = f.Dispatcher
+    
+    
+    export type React_Ref<ElementType> = c.React_Ref<ElementType>
+    export type React_Context<T> = c.React_Context<T>
+    export type React_AbstractComponent<Config, Instance> = c.React_AbstractComponent<
+    	Config,
+    	Instance
+    >
+    export type React_ForwardRefComponent<Config, Instance> =
+    	c.React_ForwardRefComponent<Config, Instance>
+    export type React_MemoComponent<Config, T> = c.React_MemoComponent<Config, T>
+    export type React_ComponentType<Config> = c.React_ComponentType<Config>
+    export type React_PureComponent<Props, State = nil> = c.React_PureComponent<
+    	Props,
+    	State
+    >
+    export type React_Component<Props, State> = c.React_Component<Props, State>
+    export type React_ElementProps<ElementType> = c.React_ElementProps<ElementType>
+    export type React_StatelessFunctionalComponent<Props> =
+    	c.React_StatelessFunctionalComponent<Props>
+    export type React_Node = c.React_Node
+    export type React_Element<ElementType> = c.React_Element<ElementType>
+    export type React_ElementType = c.React_ElementType
+    export type React_ElementConfig<C> = c.React_ElementConfig<C>
+    export type React_ElementRef<C> = c.React_ElementRef<C>
+    export type React_Portal = c.React_Portal
+    export type React_Key = c.React_Key
+    
+    return {
+    	checkPropTypes = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/checkPropTypes"),
+    	console = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/console"),
+    	ConsolePatchingDev = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ConsolePatchingDev.roblox"),
+    	consoleWithStackDev = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/consoleWithStackDev"),
+    	enqueueTask = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/enqueueTask.roblox"),
+    	ExecutionEnvironment = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ExecutionEnvironment"),
+    	formatProdErrorMessage = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/formatProdErrorMessage"),
+    	getComponentName = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/getComponentName"),
+    	invariant = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/invariant"),
+    	invokeGuardedCallbackImpl = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/invokeGuardedCallbackImpl"),
+    	isValidElementType = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/isValidElementType"),
+    	objectIs = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/objectIs"),
+    	ReactComponentStackFrame = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactComponentStackFrame"),
+    	ReactElementType = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactElementType"),
+    	ReactErrorUtils = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactErrorUtils"),
+    	ReactFeatureFlags = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactFeatureFlags"),
+    	ReactInstanceMap = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactInstanceMap"),
+    	
+    	
+    	ReactSharedInternals = f,
+    	
+    	
+    	
+    	ReactFiberHostConfig = e,
+    
+    	ReactSymbols = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactSymbols"),
+    	ReactVersion = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactVersion"),
+    	shallowEqual = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/shallowEqual"),
+    	UninitializedState = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/UninitializedState.roblox"),
+    	ReactTypes = b,
+    
+    	
+    	
+    	describeError = g.describeError,
+    	errorToString = g.errorToString,
+    	parseReactError = g.parseReactError,
+    
+    	
+    	Symbol = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/Symbol.roblox"),
+    	Type = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/Type.roblox"),
+    
+    	
+    	Change = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/PropMarkers/Change"),
+    	Event = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/PropMarkers/Event"),
+    	Tag = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/PropMarkers/Tag"),
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/ConsolePatchingDev.roblox"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/console")
+    
+    
+    
+    
+    
+    local b = 0
+    local c
+    local d
+    local e
+    local f
+    local g
+    local h
+    local i
+    
+    local j = function() end
+    
+    local k = {}
+    
+    
+    
+    
+    k.disabledLog = j
+    
+    k.disableLogs = function()
+    	if _G.__DEV__ then
+    		if b == 0 then
+    			c = a.log
+    			d = a.info
+    			e = a.warn
+    			f = a.error
+    			g = a.group
+    			h = a.groupCollapsed
+    			i = a.groupEnd
+    
+    			a.info = j
+    			a.log = j
+    			a.warn = j
+    			a.error = j
+    			a.group = j
+    			a.groupCollapsed = j
+    			a.groupEnd = j
+    		end
+    
+    		b = b + 1
+    	end
+    end
+    
+    k.reenableLogs = function()
+    	if _G.__DEV__ then
+    		b = b - 1
+    
+    		if b == 0 then
+    			a.log = c
+    			a.info = d
+    			a.warn = e
+    			a.error = f
+    			a.group = g
+    			a.groupCollapsed = h
+    			a.groupEnd = i
+    		end
+    
+    		if b < 0 then
+    			a.error(
+    [[disabledDepth fell below zero. This is a bug in React. Please file an issue.]]			
+    
+    )
+    		end
+    	end
+    end
+    
+    return k
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/ErrorHandling.roblox"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/luau-polyfill")
+    type Error = a.Error
+    type Object = a.Object
+    type Array<T> = a.Array<T>
+    local b = a.Error
+    local c = a.util.inspect
+    
+    local d = "\n------ Error caught by React ------\n"
+    
+    
+    
+    
+    
+    
+    
+    
+    local function describeError(e: string | Error): Error
+    	if typeof(e) == "string" then
+    		local f, g = string.find(e, ":[%d]+: ")
+    		local h = if g then string.sub(e, g + 1) else e
+    
+    		local i = a.Error.new(h)
+    		i.stack = debug.traceback(nil, 2)
+    		return i
+    	end
+    	return e :: Error
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function errorToString(e: Error | Object | string | Array<any>): string
+    	local f
+    	if typeof(e) == "table" then
+    		if (e :: Error).message and (e :: Error).stack then
+    			
+    			
+    			
+    			f = d
+    				.. (e :: Error).message
+    				.. d
+    				.. tostring((e :: Error).stack)
+    		else
+    			f = c(e)
+    		end
+    	else
+    		f = c(e)
+    	end
+    
+    	return f
+    end
+    
+    
+    
+    
+    
+    
+    local function parseReactError(e: string): (Error, string)
+    	local f = string.split(e, d)
+    
+    	if #f == 3 then
+    		local g, h, i = table.unpack(f)
+    
+    		local j = b.new(h)
+    		j.stack = i
+    
+    		return j, g
+    	else
+    		
+    		
+    		
+    		local g = b.new(e)
+    		g.stack = nil
+    
+    		return g, ""
+    	end
+    end
+    
+    return {
+    	describeError = describeError,
+    	errorToString = errorToString,
+    	parseReactError = parseReactError,
+    	
+    	__ERROR_DIVIDER = d,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/ExecutionEnvironment"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = {}
+    
+    a.canUseDOM = function()
+    	
+    	return false
+    	
+    end
+    
+    return a
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/PropMarkers/Change"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/Type.roblox")
+    
+    local b = {}
+    
+    local c = {
+    	__tostring = function(c)
+    		return string.format("RoactHostChangeEvent(%s)", c.name)
+    	end,
+    }
+    
+    setmetatable(b, {
+    	__index = function(d, e)
+    		local f = {
+    			[a] = a.HostChangeEvent,
+    			name = e,
+    		}
+    
+    		setmetatable(f, c)
+    		b[e] = f
+    
+    		return f
+    	end,
+    })
+    
+    return b
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/PropMarkers/Event"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/Type.roblox")
+    
+    local b = {}
+    
+    local c = {
+    	__tostring = function(c)
+    		return string.format("RoactHostEvent(%s)", c.name)
+    	end,
+    }
+    
+    setmetatable(b, {
+    	__index = function(d, e)
+    		local f = {
+    			[a] = a.HostEvent,
+    			name = e,
+    		}
+    
+    		setmetatable(f, c)
+    
+    		b[e] = f
+    
+    		return f
+    	end,
+    })
+    
+    return b
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/PropMarkers/Tag"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/Symbol.roblox")
+    
+    local b = a.named("RobloxTag")
+    
+    return b
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactComponentStackFrame"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    type Object = { [string]: any }
+    type Function = (...any) -> ...any
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactElementType")
+    type Source = a.Source
+    
+    
+    local b = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/flowtypes.roblox")
+    type React_StatelessFunctionalComponent<P> = b.React_StatelessFunctionalComponent<
+    	P
+    >
+    type React_ComponentType<P> = b.React_ComponentType<P>
+    type ReactComponent<P> = React_StatelessFunctionalComponent<P> | React_ComponentType<P>
+    
+    
+    
+    
+    
+    local c = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactSymbols")
+    local d = c.REACT_SUSPENSE_TYPE
+    local e = c.REACT_SUSPENSE_LIST_TYPE
+    local f = c.REACT_FORWARD_REF_TYPE
+    local g = c.REACT_MEMO_TYPE
+    local h = c.REACT_BLOCK_TYPE
+    local i = c.REACT_LAZY_TYPE
+    
+    local j = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ConsolePatchingDev.roblox")
+    local k = j.disableLogs
+    local l = j.reenableLogs
+    
+    local m = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactSharedInternals")
+    local n = m.ReactCurrentDispatcher
+    
+    
+    
+    local o = "    in "
+    
+    
+    
+    local p
+    local q
+    
+    
+    
+    
+    local function describeOwner(r: nil | ReactComponent<any>): string?
+    	if type(r) == "function" then
+    		return debug.info(r :: (any) -> any, "n")
+    	elseif type(r) == "table" then
+    		return tostring(r)
+    	end
+    	return nil
+    end
+    
+    local function describeBuiltInComponentFrame(
+    	r: string,
+    	s: Source | nil,
+    	
+    	t: nil | ReactComponent<any>
+    ): string
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    	
+    	local u 	
+    if _G.__DEV__ and t then
+    		u = describeOwner(t)
+    	end
+    
+    	return p(r, s, u)
+    	
+    end
+    
+    local r = false
+    local s 
+    if _G.__DEV__ then
+    	s = setmetatable({}, { __mode = "k" })
+    end
+    
+    local function describeNativeComponentFrame(
+    	t: nil | ReactComponent<any>, 
+    	u: boolean
+    ): string
+    	
+    	if not t or r then
+    		return ""
+    	end
+    
+    	if _G.__DEV__ then
+    		local v = s[t]
+    
+    		if v ~= nil then
+    			return v
+    		end
+    	end
+    
+    	local v
+    	r = true
+    
+    	
+    	
+    	
+    	local w
+    
+    	if _G.__DEV__ then
+    		w = n.current
+    		
+    		
+    		n.current = nil
+    		k()
+    	end
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	local x
+    	local y, z = xpcall(function()
+    		if u then
+    			
+    			
+    			
+    		else
+    			local y, z = pcall(function()
+    				x = debug.traceback()
+    				error({
+    					stack = x,
+    				})
+    			end)
+    			v = z;
+    			
+    			(t :: (...any) -> ...any)()
+    		end
+    	end, function(y)
+    		return {
+    			message = y,
+    			stack = x,
+    		}
+    	end)
+    
+    	
+    	
+    	
+    	
+    	local A 
+    	
+    if z and v and type(z.stack) == "string" then
+    		
+    		
+    		local B = string.split(z.stack, "\n")
+    		local C = string.split(v.stack, "\n")
+    		
+    		
+    		local D = #B - 1
+    		local E = #C - 1
+    
+    		while
+    			D >= 2
+    			and E >= 0
+    			and B[D] ~= C[E]
+    		do
+    			
+    			
+    			
+    			
+    			
+    			
+    			E = E - 1
+    		end
+    
+    		while D >= 3 and E >= 1 do
+    			D = D - 1
+    			E = E - 1
+    			
+    			
+    			if B[D] ~= C[E] then
+    				
+    				
+    				
+    				
+    				
+    				if D ~= 1 or E ~= 1 then
+    					repeat
+    						D = D - 1
+    						E = E - 1
+    						
+    						
+    						if
+    							E < 0
+    							or B[D] ~= C[E]
+    						then
+    							
+    							
+    							local F = "\n" .. o .. B[D]
+    
+    							if _G.__DEV__ then
+    								s[t] = F
+    							end
+    							
+    							
+    							
+    							A = F
+    						end
+    					until not (D >= 3 and E >= 1)
+    				end
+    
+    				break
+    			end
+    		end
+    	end
+    
+    	r = false
+    	if _G.__DEV__ then
+    		n.current = w
+    		l()
+    	end
+    
+    	
+    	
+    
+    	
+    	if A ~= nil then
+    		return A
+    	end
+    
+    	
+    	
+    	local B = if type(t) == "function"
+    		then debug.info(t :: Function, "n")
+    		
+    		else if type(t) == "table" then tostring(t) else ""
+    
+    	local C = ""
+    	if B ~= nil and B ~= "" then
+    		C = describeBuiltInComponentFrame(B)
+    	end
+    
+    	if _G.__DEV__ then
+    		s[t] = C
+    	end
+    
+    	return C
+    end
+    
+    
+    local t = "^(.*)[\\/]"
+    
+    function p(
+    	u: string | nil,
+    	v: Source | nil,
+    	w: string | nil
+    ): string
+    	local x = ""
+    
+    	if _G.__DEV__ and v then
+    		local y = v.fileName
+    		local z = string.gsub(y, t, "")
+    
+    		
+    		
+    		
+    		
+    		if string.match(z, "^init%.") then
+    			
+    			local A = string.match(y, t)
+    
+    			if A and #A ~= 0 then
+    				local B = string.gsub(A, t, "")
+    				z = B .. "/" .. z
+    			end
+    		end
+    
+    		x = " (at " .. z .. ":" .. v.lineNumber .. ")"
+    	elseif w then
+    		x = " (created by " .. w .. ")"
+    	end
+    
+    	return "\n    in " .. (u or "Unknown") .. x
+    end
+    
+    local function describeClassComponentFrame(
+    	
+    	u: any,
+    	v: nil | Source,
+    	
+    	w: nil | ReactComponent<any>
+    ): string
+    	
+    	
+    
+    	
+    	
+    	
+    	
+    	
+    	local x = tostring(u)
+    	local y 	
+    if _G.__DEV__ and w then
+    		y = describeOwner(w)
+    	end
+    	return p(x, v, y)
+    	
+    end
+    
+    function q(
+    	
+    	u: nil | Function,
+    	v: nil | Source,
+    	
+    	w: nil | ReactComponent<any>
+    ): string
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	if not u then
+    		return ""
+    	end
+    	
+    	
+    	local x = if type(u) == "function"
+    		then debug.info(u :: Function, "n")
+    		else tostring(u)
+    	local y 	
+    if _G.__DEV__ and w then
+    		
+    		y = describeOwner(w)
+    	end
+    	return p(x, v, y)
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function describeUnknownElementTypeFrameInDEV(
+    	u: any,
+    	v: nil | Source,
+    	
+    	w: nil | ReactComponent<any>
+    ): string
+    	if not _G.__DEV__ then
+    		return ""
+    	end
+    	if u == nil then
+    		return ""
+    	end
+    
+    	
+    	
+    	if type(u) == "table" and type(u.__ctor) == "function" then
+    		
+    		
+    		
+    		return describeClassComponentFrame(u, v, w)
+    	end
+    
+    	if type(u) == "function" then
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		return q(u, v, w)
+    	end
+    
+    	if type(u) == "string" then
+    		return describeBuiltInComponentFrame(u, v, w)
+    	end
+    
+    	if u == d then
+    		return describeBuiltInComponentFrame("Suspense", v, w)
+    	elseif u == e then
+    		return describeBuiltInComponentFrame("SuspenseList", v, w)
+    	end
+    
+    	if type(u) == "table" then
+    		local x = u["$$typeof"]
+    		if x == f then
+    			return q(u.render, v, w)
+    		elseif x == g then
+    			
+    			return describeUnknownElementTypeFrameInDEV(u.type, v, w)
+    		elseif x == h then
+    			return q(u._render, v, w)
+    		elseif x == i then
+    			local y = u
+    			local z = y._payload
+    			local A = y._init
+    
+    			local B, C = pcall(function()
+    				describeUnknownElementTypeFrameInDEV(
+    					
+    					A(z),
+    					v,
+    					w
+    				)
+    			end)
+    
+    			if B then
+    				return C
+    			end
+    		end
+    	end
+    
+    	return ""
+    end
+    
+    return {
+    	
+    	
+    	
+    	
+    	describeComponentFrame = p,
+    
+    	describeBuiltInComponentFrame = describeBuiltInComponentFrame,
+    	describeNativeComponentFrame = describeNativeComponentFrame,
+    	describeClassComponentFrame = describeClassComponentFrame,
+    	describeFunctionComponentFrame = q,
+    	describeUnknownElementTypeFrameInDEV = describeUnknownElementTypeFrameInDEV,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactElementType"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/luau-polyfill")
+    type Object = a.Object
+    
+    local b = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/flowtypes.roblox")
+    type React_Element<ElementType> = b.React_Element<ElementType>
+    type React_StatelessFunctionalComponent<P> = b.React_StatelessFunctionalComponent<
+    	P
+    >
+    type React_ComponentType<P> = b.React_ComponentType<P>
+    
+    export type Source = {
+    	fileName: string,
+    	lineNumber: number
+    }
+    type Key = string | number
+    
+    export type ReactElement<P = Object, T = any> = {
+    	["$$typeof"]: number,
+    
+    	
+    	type: React_StatelessFunctionalComponent<P> | React_ComponentType<P> | string,
+    	
+    	key: Key | nil,
+    	ref: any,
+    	props: P,
+    
+    	
+    	
+    	_owner: any,
+    
+    	
+    	_store: any?,
+    	_self: React_Element<any>?,
+    	_shadowChildren: any?,
+    	_source: Source?
+    }
+    
+    
+    return {}
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactErrorUtils"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/invariant")
+    local b = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/invokeGuardedCallbackImpl")
+    
+    
+    local c
+    
+    
+    local d = false
+    local e 
+    
+    
+    local f = false
+    local g 
+    local h = {
+    	onError = function(h)
+    		d = true
+    		e = h
+    	end,
+    }
+    local i = {}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    i.invokeGuardedCallback = function(...)
+    	d = false
+    	e = nil
+    	
+    	b(h, ...)
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    i.invokeGuardedCallbackAndCatchFirstError = function(...)
+    	
+    	i.invokeGuardedCallback(...)
+    
+    	if d then
+    		local j = c()
+    
+    		if not f then
+    			f = true
+    			g = j
+    		end
+    	end
+    end
+    
+    
+    
+    
+    
+    i.rethrowCaughtError = function()
+    	if f then
+    		local j = g
+    		f = false
+    		g = nil
+    		error(j)
+    	end
+    end
+    
+    i.hasCaughtError = function()
+    	return d
+    end
+    
+    c = function()
+    	if d then
+    		local j = e
+    		d = false
+    		e = nil
+    		return j
+    	else
+    		a(
+    			false,
+    [[clearCaughtError was called but no error was captured. This error is likely caused by a bug in React. Please file an issue.]]		
+    
+    )
+    		
+    		return nil
+    	end
+    end
+    i.clearCaughtError = c
+    
+    return i
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactFeatureFlags"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = {}
+    
+    
+    
+    a.enableFilterEmptyStringAttributesDOM = true
+    
+    
+    
+    a.enableDebugTracing = false
+    
+    
+    
+    a.enableSchedulingProfiler = _G.__PROFILE__ and _G.__EXPERIMENTAL__
+    
+    
+    
+    
+    a.debugRenderPhaseSideEffectsForStrictMode = _G.__DEV__
+    
+    
+    
+    a.replayFailedUnitOfWorkWithInvokeGuardedCallback = _G.__DEV__
+    
+    
+    a.warnAboutDeprecatedLifecycles = true
+    
+    
+    a.enableProfilerTimer = _G.__PROFILE__
+    
+    
+    a.enableProfilerCommitHooks = false
+    
+    
+    a.enableSchedulerTracing = _G.__PROFILE__
+    
+    
+    a.enableSuspenseServerRenderer = _G.__EXPERIMENTAL__
+    a.enableSelectiveHydration = _G.__EXPERIMENTAL__
+    
+    
+    a.enableBlocksAPI = _G.__EXPERIMENTAL__
+    a.enableLazyElements = _G.__EXPERIMENTAL__
+    
+    
+    a.enableSchedulerDebugging = false
+    
+    
+    a.disableJavaScriptURLs = false
+    
+    
+    a.enableFundamentalAPI = false
+    
+    
+    a.enableScopeAPI = false
+    
+    
+    a.enableCreateEventHandleAPI = false
+    
+    
+    
+    
+    
+    a.warnAboutUnmockedScheduler = false
+    
+    
+    
+    
+    
+    
+    a.enableSuspenseCallback = false
+    
+    
+    
+    
+    a.warnAboutDefaultPropsOnFunctionComponents = false
+    
+    a.disableSchedulerTimeoutBasedOnReactExpirationTime = false
+    
+    a.enableTrustedTypesIntegration = false
+    
+    
+    
+    a.warnAboutSpreadingKeyToJSX = true
+    
+    a.enableComponentStackLocations = true
+    
+    a.enableNewReconciler = true
+    
+    
+    
+    
+    
+    a.skipUnmountedBoundaries = true
+    
+    
+    
+    
+    
+    
+    
+    a.disableInputAttributeSyncing = true
+    
+    a.warnAboutStringRefs = false
+    
+    a.disableLegacyContext = false
+    
+    
+    a.disableTextareaChildren = false
+    
+    a.disableModulePatternComponents = false
+    
+    
+    a.warnUnstableRenderSubtreeIntoContainer = false
+    
+    
+    a.enableLegacyFBSupport = true
+    
+    
+    
+    
+    
+    
+    a.deferRenderPhaseUpdateToNextBatch = false
+    
+    
+    a.decoupleUpdatePriorityFromScheduler = true
+    
+    a.enableDiscreteEventFlushingChange = false
+    
+    a.enableEagerRootListeners = false
+    
+    a.enableDoubleInvokingEffects = false
+    return a
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactFiberHostConfig"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    type Object = { [string]: any }
+    export type OpaqueIDType = string | Object
+    
+    return {
+    	WithNoHydration = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactFiberHostConfig/WithNoHydration"),
+    	WithNoPersistence = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactFiberHostConfig/WithNoPersistence"),
+    	WithNoTestSelectors = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactFiberHostConfig/WithNoTestSelectors"),
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactFiberHostConfig/WithNoHydration"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/invariant")
+    
+    
+    
+    
+    function shim(...)
+    	a(
+    		false,
+    [[The current renderer does not support hydration. This error is likely caused by a bug in React. Please file an issue.]]	
+    
+    
+    )
+    end
+    
+    
+    export type SuspenseInstance = any
+    return {
+    	supportsHydration = false,
+    	canHydrateInstance = shim,
+    	canHydrateTextInstance = shim,
+    	canHydrateSuspenseInstance = shim,
+    	isSuspenseInstancePending = shim,
+    	isSuspenseInstanceFallback = shim,
+    	registerSuspenseInstanceRetry = shim,
+    	getNextHydratableSibling = shim,
+    	getFirstHydratableChild = shim,
+    	hydrateInstance = shim,
+    	hydrateTextInstance = shim,
+    	hydrateSuspenseInstance = shim,
+    	getNextHydratableInstanceAfterSuspenseInstance = shim,
+    	commitHydratedContainer = shim,
+    	commitHydratedSuspenseInstance = shim,
+    	clearSuspenseBoundary = shim,
+    	clearSuspenseBoundaryFromContainer = shim,
+    	didNotMatchHydratedContainerTextInstance = shim,
+    	didNotMatchHydratedTextInstance = shim,
+    	didNotHydrateContainerInstance = shim,
+    	didNotHydrateInstance = shim,
+    	didNotFindHydratableContainerInstance = shim,
+    	didNotFindHydratableContainerTextInstance = shim,
+    	didNotFindHydratableContainerSuspenseInstance = shim,
+    	didNotFindHydratableInstance = shim,
+    	didNotFindHydratableTextInstance = shim,
+    	didNotFindHydratableSuspenseInstance = shim,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactFiberHostConfig/WithNoPersistence"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/invariant")
+    
+    
+    
+    
+    local function shim(...)
+    	a(
+    		false,
+    [[The current renderer does not support persistence. This error is likely caused by a bug in React. Please file an issue.]]	
+    
+    
+    )
+    end
+    
+    
+    return {
+    	supportsPersistence = false,
+    	cloneInstance = shim,
+    	cloneFundamentalInstance = shim,
+    	createContainerChildSet = shim,
+    	appendChildToContainerChildSet = shim,
+    	finalizeContainerChildren = shim,
+    	replaceContainerChildren = shim,
+    	cloneHiddenInstance = shim,
+    	cloneHiddenTextInstance = shim,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactFiberHostConfig/WithNoTestSelectors"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/invariant")
+    
+    
+    
+    
+    local function shim(...)
+    	a(
+    		false,
+    [[The current renderer does not support test selectors. This error is likely caused by a bug in React. Please file an issue.]]	
+    
+    
+    )
+    end
+    
+    
+    return {
+    	supportsTestSelectors = false,
+    	findFiberRoot = shim,
+    	getBoundingRect = shim,
+    	getTextContent = shim,
+    	isHiddenSubtree = shim,
+    	matchAccessibilityRole = shim,
+    	setFocusIfFocusable = shim,
+    	setupIntersectionObserver = shim,
+    }
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactInstanceMap"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/luau-polyfill")
+    local b = a.Error
+    local c = a.util.inspect
+    local d = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/getComponentName")
+    
+    local e = {}
+    
+    local function isValidFiber(f): boolean
+    	return f.tag ~= nil
+    		and f.subtreeFlags ~= nil
+    		and f.lanes ~= nil
+    		and f.childLanes ~= nil
+    end
+    
+    e.remove = function(f)
+    	f._reactInternals = nil
+    end
+    
+    e.get = function(f)
+    	local g = f._reactInternals
+    
+    	
+    	
+    	if not isValidFiber(g) then
+    		error(
+    			b.new(
+    				"invalid fiber in "
+    					.. (d(f) or "UNNAMED Component")
+    					.. " during get from ReactInstanceMap! "
+    					.. c(g)
+    			)
+    		)
+    	elseif g.alternate ~= nil and not isValidFiber(g.alternate) then
+    		error(
+    			b.new(
+    				"invalid alternate fiber ("
+    					.. (d(f) or "UNNAMED alternate")
+    					.. ") in "
+    					.. (d(f) or "UNNAMED Component")
+    					.. " during get from ReactInstanceMap! "
+    					.. c(g.alternate)
+    			)
+    		)
+    	end
+    
+    	return g
+    end
+    
+    e.has = function(f)
+    	return f._reactInternals ~= nil
+    end
+    
+    e.set = function(f, g)
+    	
+    	
+    	local h = g
+    	local i
+    	while h ~= nil do
+    		if not isValidFiber(h) then
+    			i = "invalid fiber in "
+    				.. (d(f) or "UNNAMED Component")
+    				.. " being set in ReactInstanceMap! "
+    				.. c(h)
+    				.. "\n"
+    
+    			if g ~= h then
+    				i ..= " (from original fiber " .. (d(f) or "UNNAMED Component") .. ")"
+    			end
+    			error(b.new(i))
+    		elseif
+    			(h :: any).alternate ~= nil
+    			and not isValidFiber((h :: any).alternate)
+    		then
+    			i = "invalid alternate fiber ("
+    				.. (d(f) or "UNNAMED alternate")
+    				.. ") in "
+    				.. (d(f) or "UNNAMED Component")
+    				.. " being set in ReactInstanceMap! "
+    				.. c((h :: any).alternate)
+    				.. "\n"
+    
+    			if g ~= h then
+    				i ..= " (from original fiber " .. (d(f) or "UNNAMED Component") .. ")"
+    			end
+    			error(b.new(i))
+    		end
+    		h = (h :: any).return_
+    	end
+    
+    	(f :: any)._reactInternals = g
+    end
+    
+    return e
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactSharedInternals"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/luau-polyfill").console
+    local function onlyInTestError(b: string)
+    	return function()
+    		a.error(b .. " is only available in tests, not in production")
+    	end
+    end
+    
+    
+    local b = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactSharedInternals/ReactCurrentDispatcher")
+    export type Dispatcher = b.Dispatcher
+    local c = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactSharedInternals/ReactCurrentBatchConfig")
+    local d = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactSharedInternals/ReactCurrentOwner")
+    local e = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactSharedInternals/ReactDebugCurrentFrame")
+    local f = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactSharedInternals/IsSomeRendererActing")
+    
+    local g = {
+    	ReactCurrentDispatcher = b,
+    	ReactCurrentBatchConfig = c,
+    	ReactCurrentOwner = d,
+    	IsSomeRendererActing = f,
+    	
+    	
+    	ReactDebugCurrentFrame = if _G.__DEV__
+    		then e
+    		else {
+    			setExtraStackFrame = function(g: string?): ()
+    				onlyInTestError("setExtraStackFrame")
+    			end,
+    		},
+    	
+    	
+    	
+    }
+    
+    return g
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactSharedInternals/IsSomeRendererActing"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = {
+    	current = false,
+    }
+    return a
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactSharedInternals/ReactCurrentBatchConfig"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = {
+    	transition = 0,
+    }
+    
+    return a
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactSharedInternals/ReactCurrentDispatcher"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/luau-polyfill")
+    type Array<T> = a.Array<T>
+    
+    
+    local b = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactElementType")
+    type Source = b.Source
+    local c = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactTypes")
+    type RefObject = c.RefObject
+    type ReactContext<T> = c.ReactContext<T>
+    
+    type ReactBinding<T> = c.ReactBinding<T>
+    type ReactBindingUpdater<T> = c.ReactBindingUpdater<T>
+    
+    type MutableSourceVersion = c.MutableSourceVersion
+    type MutableSource<Source> = c.MutableSource<Source>
+    type MutableSourceSubscribeFn<Source, Snapshot> = c.MutableSourceSubscribeFn<
+    	Source,
+    	Snapshot
+    >
+    type MutableSourceGetSnapshotFn<Source, Snapshot> = c.MutableSourceGetSnapshotFn<
+    	Source,
+    	Snapshot
+    >
+    
+    type BasicStateAction<S> = ((S) -> S) | S
+    type Dispatch<A> = (A) -> ()
+    
+    export type Dispatcher = {
+    	readContext: <T>(
+    		context: ReactContext<T>,
+    		observedBits: nil | number | boolean
+    	) -> T,
+    	useState: <S>(initialState: (() -> S) | S) -> (S, Dispatch<BasicStateAction<S>>),
+    	useReducer: <S, I, A>(
+    		reducer: (S, A) -> S,
+    		initialArg: I,
+    		init: ((I) -> S)?
+    	) -> (S, Dispatch<A>),
+    	useContext: <T>(
+    		context: ReactContext<T>,
+    		observedBits: nil | number | boolean
+    	) -> T,
+    	useRef: <T>(initialValue: T) -> { current: T },
+    	
+    	useBinding: <T>(initialValue: T) -> (ReactBinding<T>, ReactBindingUpdater<T>),
+    	
+    	useEffect: (
+    		
+    		create: (() -> ()) | (() -> (() -> ())),
+    		deps: Array<any> | nil
+    	) -> (),
+    	useLayoutEffect: (
+    		
+    		create: (() -> ()) | (() -> (() -> ())),
+    		deps: Array<any> | nil
+    	) -> (),
+    	useCallback: <T>(callback: T, deps: Array<any> | nil) -> T,
+    	useMemo: <T...>(nextCreate: () -> T..., deps: Array<any> | nil) -> T...,
+    	useImperativeHandle: <T>(
+    		ref: { current: T | nil } | ((inst: T | nil) -> any) | nil,
+    		create: () -> T,
+    		deps: Array<any> | nil
+    	) -> (),
+    	useDebugValue: <T>(value: T, formatterFn: ((value: T) -> any)?) -> (),
+    	
+    	useDeferredValue: (<T>(value: T) -> T)?,
+    	useTransition: (() -> ((() -> ()) -> (), boolean))?, 
+    	useMutableSource: <Source, Snapshot>(
+    		source: MutableSource<Source>,
+    		getSnapshot: MutableSourceGetSnapshotFn<Source, Snapshot>,
+    		subscribe: MutableSourceSubscribeFn<Source, Snapshot>
+    	) -> Snapshot,
+    	useOpaqueIdentifier: () -> any,
+    
+    	unstable_isNewReconciler: boolean?	
+    
+    }
+    
+    local d: { current: nil | Dispatcher } = {
+    	
+    	
+    
+    
+    
+    current = nil,
+    }
+    
+    return d
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactSharedInternals/ReactCurrentOwner"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = {
+    	
+    	
+    	
+    
+    
+    current = nil :: any,
+    	
+    }
+    
+    return a
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactSharedInternals/ReactDebugCurrentFrame"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = {}
+    
+    local b = nil :: nil | string
+    
+    function a.setExtraStackFrame(c: string?): ()
+    	if _G.__DEV__ then
+    		b = c
+    	end
+    end
+    
+    if _G.__DEV__ then
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    	a.getCurrentStack = nil :: nil | (() -> string)
+    
+    	function a.getStackAddendum(): string
+    		local c = ""
+    
+    		
+    		if b then
+    			c = c .. b
+    		end
+    
+    		
+    		local d = a.getCurrentStack
+    		if d then
+    			c = c .. (d() or "")
+    		end
+    
+    		return c
+    	end
+    end
+    
+    return a
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactSymbols"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a: { [string]: any } = {}
+    
+    
+    
+    a.REACT_ELEMENT_TYPE = 0xeac7
+    a.REACT_PORTAL_TYPE = 0xeaca
+    a.REACT_FRAGMENT_TYPE = 0xeacb
+    a.REACT_STRICT_MODE_TYPE = 0xeacc
+    a.REACT_PROFILER_TYPE = 0xead2
+    a.REACT_PROVIDER_TYPE = 0xeacd
+    a.REACT_CONTEXT_TYPE = 0xeace
+    a.REACT_FORWARD_REF_TYPE = 0xead0
+    a.REACT_SUSPENSE_TYPE = 0xead1
+    a.REACT_SUSPENSE_LIST_TYPE = 0xead8
+    a.REACT_MEMO_TYPE = 0xead3
+    a.REACT_LAZY_TYPE = 0xead4
+    a.REACT_BLOCK_TYPE = 0xead9
+    a.REACT_SERVER_BLOCK_TYPE = 0xeada
+    a.REACT_FUNDAMENTAL_TYPE = 0xead5
+    a.REACT_SCOPE_TYPE = 0xead7
+    a.REACT_OPAQUE_ID_TYPE = 0xeae0
+    a.REACT_DEBUG_TRACING_MODE_TYPE = 0xeae1
+    a.REACT_OFFSCREEN_TYPE = 0xeae2
+    a.REACT_LEGACY_HIDDEN_TYPE = 0xeae3
+    a.REACT_BINDING_TYPE = 0xeae4
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    type Iterator<T> = {
+    	next: () -> {
+    		value: T,
+    		key: any,
+    		done: boolean	
+    }
+    }
+    
+    a.getIteratorFn = function(b): nil | ((...any) -> Iterator<any>
+    )	if typeof(b) == "table" then
+    		
+    		
+    		if b["$$typeof"] == a.REACT_PORTAL_TYPE then
+    			return nil
+    		end
+    		return function()
+    			local c: any, d: any
+    			return {
+    				next = function()
+    					c, d = next(b, c)
+    					return {
+    						done = d == nil,
+    						
+    						
+    						key = c,
+    						value = d,
+    					}
+    				end,
+    			}
+    		end
+    	end
+    
+    	return nil
+    end
+    
+    return a
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactTypes"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/luau-polyfill")
+    type Array<T> = a.Array<T>
+    type Object = a.Object
+    type void = nil
+    type NonMaybeType<T> = T
+    
+    local b = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/flowtypes.roblox")
+    type React_Element<T> = b.React_Element<T>
+    type React_Node = b.React_Node
+    type SimpleMap<K, V> = { [K]: V }
+    type Iterable<T> = SimpleMap<string | number, T> | Array<T>
+    
+    export type ReactNode<T = any> =
+    	React_Element<T>
+    	| ReactPortal
+    	
+    	| ReactFragment
+    	| ReactProvider<T>
+    	| ReactConsumer<T>
+    
+    export type ReactEmpty = nil | void | boolean
+    
+    export type ReactFragment = ReactEmpty | Iterable<React_Node>
+    
+    export type ReactNodeList = ReactEmpty | React_Node
+    
+    
+    
+    
+    export type ReactProvider<T> = {
+    	["$$typeof"]: number,
+    	type: ReactProviderType<T>,
+    	key: nil | string,
+    	ref: nil,
+    	props: {
+    		value: T,
+    		children: ReactNodeList?		
+    		
+    		
+    	
+    }	
+    	
+    	
+    
+    }
+    
+    export type ReactProviderType<T> = {
+    	["$$typeof"]: number,
+    	_context: ReactContext<T>	
+    	
+    	
+    
+    }
+    
+    export type ReactConsumer<T> = {
+    	["$$typeof"]: number,
+    	type: ReactContext<T>, 
+    	key: nil | string,
+    	ref: nil,
+    	props: {
+    		children: (value: T) -> ReactNodeList,
+    		unstable_observedBits: number?		
+    		
+    		
+    	
+    }	
+    	
+    	
+    
+    }
+    
+    export type ReactContext<T> = {
+    	["$$typeof"]: number,
+    	Consumer: ReactContext<T>,
+    	Provider: ReactProviderType<T>,
+    	_calculateChangedBits: ((T, T) -> number)?,
+    	_currentValue: T,
+    	_currentValue2: T,
+    	_threadCount: number,
+    	
+    	_currentRenderer: Object | nil,
+    	_currentRenderer2: Object | nil,
+    	
+    	
+    	displayName: string?	
+    	
+    	
+    
+    }
+    
+    export type ReactPortal = {
+    	["$$typeof"]: number,
+    	key: nil | string,
+    	containerInfo: any,
+    	children: ReactNodeList,
+    	
+    	implementation: any	
+    	
+    	
+    
+    }
+    
+    export type RefObject = { current: any }
+    
+    
+    
+    export type EventPriority = number
+    
+    
+    local c = {}
+    c.DiscreteEvent = 0
+    c.UserBlockingEvent = 1
+    c.ContinuousEvent = 2
+    
+    export type ReactFundamentalComponentInstance<C, H> = {
+    	currentFiber: Object,
+    	instance: any,
+    	prevProps: Object?,
+    	props: Object,
+    	impl: ReactFundamentalImpl<C, H>,
+    	state: Object
+    }
+    
+    export type ReactFundamentalImpl<C, H> = {
+    	displayName: string,
+    	reconcileChildren: boolean,
+    	getInitialState: nil | ((Object) -> (Object)),
+    	getInstance: (C, Object, Object) -> (H),
+    	getServerSideString: nil | ((C, Object) -> (string)),
+    	getServerSideStringClose: nil | ((C, Object) -> (string)),
+    	onMount: (C, any, Object, Object) -> (),
+    	shouldUpdate: nil | ((C, Object?, Object, Object) -> (boolean)),
+    	onUpdate: nil | ((C, any, Object?, Object, Object) -> ()),
+    	onUnmount: nil | ((C, any, Object, Object) -> ()),
+    	onHydrate: nil | ((C, Object, Object) -> boolean),
+    	onFocus: nil | ((C, Object, Object) -> boolean
+    )}
+    export type ReactFundamentalComponent<C, H> = {
+    	["$$typeof"]: number,
+    	impl: ReactFundamentalImpl<C, H>
+    }
+    
+    export type ReactScope = {
+    	["$$typeof"]: number
+    }
+    
+    export type ReactScopeQuery = (
+    	type: string,
+    	
+    	props: { [string]: any? },
+    	
+    	instance: any
+    ) -> boolean
+    
+    export type ReactScopeInstance = {
+    	DO_NOT_USE_queryAllNodes: (ReactScopeQuery) -> nil | Array<Object>,
+    	DO_NOT_USE_queryFirstNode: (ReactScopeQuery) -> nil | Object,
+    	containsNode: (Object) -> boolean,
+    	getChildContextValues: <T>(context: ReactContext<T>) -> Array<T>
+    }
+    
+    
+    
+    
+    
+    type CoreReactBinding<T> = {
+    	getValue: (self: CoreReactBinding<T>) -> T,
+    	_source: string?
+    }
+    type ReactBindingMap = {
+    	map: <T, U>(
+    		self: CoreReactBinding<T> & ReactBindingMap,
+    		(T) -> U
+    	) -> ReactBindingMap & CoreReactBinding<U>
+    }
+    
+    export type ReactBinding<T> = CoreReactBinding<T> & ReactBindingMap
+    export type ReactBindingUpdater<T> = (T) -> ()
+    
+    
+    
+    
+    export type MutableSourceVersion = NonMaybeType<any>
+    
+    export type MutableSourceGetSnapshotFn<Source, Snapshot> = (source: Source) -> Snapshot
+    
+    export type MutableSourceSubscribeFn<Source, Snapshot> = (
+    	source: Source,
+    	callback: (snapshot: Snapshot) -> ()
+    ) -> (() -> ())
+    
+    export type MutableSourceGetVersionFn = (
+    	_source: NonMaybeType<any>
+    ) -> MutableSourceVersion
+    
+    export type MutableSource<Source> = {
+    	_source: Source,
+    
+    	_getVersion: MutableSourceGetVersionFn,
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	_workInProgressVersionPrimary: nil | MutableSourceVersion,
+    	_workInProgressVersionSecondary: nil | MutableSourceVersion,
+    
+    	
+    	
+    	_currentPrimaryRenderer: Object | nil,
+    	_currentSecondaryRenderer: Object | nil
+    }
+    
+    
+    
+    export type Wakeable = {
+    	andThen: (
+    		self: Wakeable,
+    		onFulfill: () -> ...any,
+    		onReject: () -> ...any
+    		
+    	) -> nil | Wakeable,
+    	
+    	__reactDoNotTraceInteractions: boolean?
+    }
+    
+    
+    
+    
+    
+    export type _Thenable<R> = {
+    	andThen: <U>(
+    		self: _Thenable<R>,
+    		onFulfill: (R) -> ...U,
+    		onReject: (error: any) -> ...U
+    	) -> ()
+    }
+    
+    export type Thenable<R> = {
+    	andThen: <U>(
+    		self: Thenable<R>,
+    		onFulfill: (R) -> ...(_Thenable<U> | U),
+    		onReject: (error: any) -> ...(_Thenable<U> | U)
+    		
+    	) -> nil | _Thenable<U>
+    }
+    
+    return c
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactVersion"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    return "17.2.1"
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/Symbol.roblox"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = {}
+    
+    
+    
+    
+    
+    
+    
+    function a.named(b)
+    	assert(type(b) == "string", "Symbols must be created using a string name!")
+    
+    	local c = newproxy(true)
+    
+    	local d = string.format("Symbol(%s)", b)
+    
+    	getmetatable(c).__tostring = function()
+    		return d
+    	end
+    
+    	return c
+    end
+    
+    return a
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/Type.roblox"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/Symbol.roblox")
+    
+    local b = newproxy(true)
+    
+    local c = {}
+    
+    local function addType(d)
+    	c[d] = a.named("Roact" .. d)
+    end
+    
+    addType("HostChangeEvent")
+    addType("HostEvent")
+    
+    function c.of(d)
+    	if typeof(d) ~= "table" then
+    		return nil
+    	end
+    
+    	return d[b]
+    end
+    
+    getmetatable(b).__index = c
+    
+    getmetatable(b).__tostring = function()
+    	return "RoactType"
+    end
+    
+    return b
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/UninitializedState.roblox"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/console")
+    
+    
+    
+    local b = {}
+    
+    setmetatable(b, {
+    	__index = function(c, d)
+    		if _G.__DEV__ then
+    			a.warn(
+    				"Attempted to access uninitialized state. Use setState to initialize state"
+    			)
+    		end
+    		return nil
+    	end,
+    	__newindex = function(c, d)
+    		if _G.__DEV__ then
+    			a.error(
+    				"Attempted to directly mutate state. Use setState to assign new values to state."
+    			)
+    		end
+    		return nil
+    	end,
+    	__tostring = function(c)
+    		return "<uninitialized component state>"
+    	end,
+    	__metatable = "UninitializedState",
+    })
+    
+    return b
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/checkPropTypes"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/luau-polyfill")
+    local b = a.Error
+    type Object = a.Object
+    type Function = (...any) -> ...any
+    
+    
+    local c = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/console")
+    
+    local d = {}
+    
+    local e = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactComponentStackFrame")
+    local f =
+    	e.describeUnknownElementTypeFrameInDEV
+    
+    local g = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactSharedInternals")
+    
+    local h = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ErrorHandling.roblox").describeError
+    
+    local i = g.ReactDebugCurrentFrame
+    
+    
+    local function setCurrentlyValidatingElement(j: any?)
+    	if _G.__DEV__ then
+    		if j then
+    			local k = j._owner
+    			local l = f(
+    				j.type,
+    				j._source,
+    				if k ~= nil then k.type else nil
+    			);
+    			
+    			(i.setExtraStackFrame :: any)(l)
+    		else
+    			(i.setExtraStackFrame :: any)(nil)
+    		end
+    	end
+    end
+    
+    local function checkPropTypes<P>(
+    	
+    	j: Object?,
+    	k: ((P) -> (boolean, string?))?,
+    	l: P,
+    	
+    	m: string,
+    	n: string?,
+    	o: any?
+    ): ()
+    	if _G.__DEV__ or _G.__DISABLE_ALL_WARNINGS_EXCEPT_PROP_VALIDATION__ then
+    		
+    		
+    		
+    
+    		
+    		if j and k then
+    			c.warn(
+    				"You've defined both propTypes and validateProps on "
+    					.. (n or "a component")
+    			)
+    		end
+    
+    		
+    		if k then
+    			if typeof(k) ~= "function" then
+    				c.error(
+    					("validateProps must be a function, but it is a %s.\nCheck the definition of the component %q."):format(
+    						typeof(k),
+    						n or ""
+    					)
+    				)
+    			else
+    				local p, q = k(l)
+    
+    				if not p then
+    					q = q
+    						or "<Validator function did not supply a message>"
+    					local r = string.format(
+    						"validateProps failed on a %s type in %s: %s",
+    						m,
+    						n or "<UNKNOWN Component>",
+    						tostring(q)
+    					)
+    					
+    					
+    					
+    					
+    					error(r)
+    				end
+    			end
+    		end
+    
+    		if j then
+    			
+    			assert(typeof(j) == "table", "propTypes needs to be a table")
+    			for p, q in j do
+    				
+    				
+    				
+    
+    				
+    				
+    				
+    				local r, s = xpcall(function()
+    					
+    					
+    					if typeof(j[p]) ~= "function" then
+    						local r = b.new(
+    							(n or "React class")
+    								.. ": "
+    								.. m
+    								.. " type `"
+    								.. p
+    								.. "` is invalid; "
+    								.. "it must be a function, usually from the `prop-types` package, but received `"
+    								.. typeof(j[p])
+    								.. [[`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.]]						
+    
+    )
+    						r.name = "Invariant Violation"
+    						error(r)
+    					end
+    
+    					return (j[p] :: Function)(
+    						l,
+    						p,
+    						n,
+    						m,
+    						nil,
+    						"SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED"
+    					)
+    				end, h)
+    
+    				
+    				
+    				
+    				local t = typeof(s) == "table"
+    				if s ~= nil and not t then
+    					setCurrentlyValidatingElement(o)
+    					c.error(string.format(
+    [[%s: type specification of %s `%s` is invalid; the type checker function must return `nil` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).]]
+    
+    
+    
+    
+    
+    ,
+    						n or "React class",
+    						m,
+    						p,
+    						typeof(s)
+    					))
+    					setCurrentlyValidatingElement(nil)
+    				end
+    
+    				
+    				if
+    					t
+    					and d[(s :: any).message] == nil
+    				then
+    					
+    					
+    					d[tostring((s :: any).message)] = true
+    					setCurrentlyValidatingElement(o)
+    					c.warn(
+    						string.format(
+    							"Failed %s type: %s",
+    							m,
+    							tostring((s :: any).message)
+    						)
+    					)
+    					setCurrentlyValidatingElement(nil)
+    				end
+    			end
+    		end
+    	end
+    end
+    
+    return checkPropTypes
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/console"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/luau-polyfill")
+    local b = a.console
+    local c = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/consoleWithStackDev")
+    
+    if _G.__DEV__ then
+    	local d = setmetatable({
+    		warn = c.warn,
+    		error = c.error,
+    	}, {
+    		__index = b,
+    	})
+    	return d
+    end
+    
+    return b
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/consoleWithStackDev"] = function()
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/luau-polyfill")
+    local b = a.console
+    local c = a.Array
+    
+    local d = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactSharedInternals")
+    
+    
+    
+    
+    
+    
+    
+    
+    local e
+    
+    local f = {}
+    f.warn = function(g, ...)
+    	if _G.__DEV__ then
+    		e("warn", g, { ... })
+    	end
+    end
+    f.error = function(g, ...)
+    	if _G.__DEV__ then
+    		e("error", g, { ... })
+    	end
+    end
+    
+    function e(g, h, i)
+    	
+    	
+    	if _G.__DEV__ then
+    		local j = d.ReactDebugCurrentFrame
+    		local k = j.getStackAddendum()
+    
+    		if k ~= "" then
+    			h ..= "%s"
+    			
+    			i = c.slice(i, 1)
+    			table.insert(i, k)
+    		end
+    
+    		local l = c.map(i, tostring)
+    		
+    		table.insert(l, 1, "Warning: " .. h)
+    		
+    		
+    		
+    		b[g](unpack(l))
+    	end
+    end
+    
+    return f
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/enqueueTask.roblox"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/luau-polyfill")
+    local b = a.setTimeout
+    
+    return function(c)
+    	
+    	return b(c, 0)
+    end
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/flowtypes.roblox"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/luau-polyfill")
+    type Error = a.Error
+    type Array<T> = a.Array<T>
+    type Object = { [string]: any }
+    
+    type Source = {
+    	fileName: string,
+    	lineNumber: number
+    }
+    
+    
+    export type React_Node =
+    	nil
+    	| boolean
+    	| number
+    	| string
+    	| React_Element<any>
+    	
+    	
+    	| Array<React_Node?>
+    	
+    	| { [string]: React_Node?, UNIQUE_TAG: any? }
+    
+    export type React_Element<ElementType> = {
+    	type: ElementType,
+    	props: React_ElementProps<ElementType>?,
+    	key: React_Key | nil,
+    	ref: any
+    }
+    
+    export type React_PureComponent<Props, State = nil> = React_Component<Props, State>
+    
+    export type React_AbstractComponent<Config, T> =
+    	React_ForwardRefComponent<Config, T>
+    	| React_MemoComponent<Config, T>
+    
+    type React_BaseAbstractComponent<Config, T> = {
+    	["$$typeof"]: number,
+    	displayName: string?,
+    	defaultProps: Config?,
+    	
+    	name: string?
+    }
+    
+    
+    export type React_ForwardRefComponent<Config, Instance> = React_BaseAbstractComponent<
+    	Config,
+    	Instance
+    > & {
+    	render: (props: Config, ref: React_Ref<Instance>) -> React_Node,
+    	
+    	[string]: any
+    }
+    
+    export type React_MemoComponent<Config, T> = React_BaseAbstractComponent<Config, T> & {
+    	type: React_StatelessFunctionalComponent<Config>,
+    	compare: ((oldProps: Config, newProps: Config) -> boolean)?
+    }
+    
+    
+    export type React_ElementConfig<C> = Object
+    
+    
+    export type React_Component<Props, State = nil> = {
+    	
+    	props: Props,
+    	state: State,
+    
+    	
+    
+    	setState: (
+    		self: React_Component<Props, State>,
+    		partialState: State | ((State, Props) -> State?),
+    		callback: (() -> ())?
+    	) -> (),
+    
+    	forceUpdate: (self: React_Component<Props, State>, callback: (() -> ())?) -> (),
+    
+    	
+    
+    	init: ((
+    		self: React_Component<Props, State>,
+    		props: Props,
+    		context: any?
+    	) -> ())?,
+    	render: (self: React_Component<Props, State>) -> React_Node,
+    	componentWillMount: ((self: React_Component<Props, State>) -> ())?,
+    	UNSAFE_componentWillMount: ((self: React_Component<Props, State>) -> ())?,
+    	componentDidMount: ((self: React_Component<Props, State>) -> ())?,
+    	componentWillReceiveProps: ((
+    		self: React_Component<Props, State>,
+    		nextProps: Props,
+    		nextContext: any
+    	) -> ())?,
+    	UNSAFE_componentWillReceiveProps: ((
+    		self: React_Component<Props, State>,
+    		nextProps: Props,
+    		nextContext: any
+    	) -> ())?,
+    	shouldComponentUpdate: ((
+    		self: React_Component<Props, State>,
+    		nextProps: Props,
+    		nextState: State,
+    		nextContext: any
+    	) -> boolean)?,
+    	componentWillUpdate: ((
+    		self: React_Component<Props, State>,
+    		nextProps: Props,
+    		nextState: State,
+    		nextContext: any
+    	) -> ())?,
+    	UNSAFE_componentWillUpdate: ((
+    		self: React_Component<Props, State>,
+    		nextProps: Props,
+    		nextState: State,
+    		nextContext: any
+    	) -> ())?,
+    	componentDidUpdate: ((
+    		self: React_Component<Props, State>,
+    		prevProps: Props,
+    		prevState: State,
+    		prevContext: any
+    	) -> ())?,
+    	componentWillUnmount: ((self: React_Component<Props, State>) -> ())?,
+    	componentDidCatch: ((
+    		self: React_Component<Props, State>,
+    		error: Error,
+    		info: {
+    			componentStack: string		
+    }
+    	) -> ())?,
+    	getDerivedStateFromProps: ((props: Props, state: State) -> State?)?,
+    	getDerivedStateFromError: ((error: Error) -> State?)?,
+    	getSnapshotBeforeUpdate: ((props: Props, state: State) -> any)?,
+    
+    	
+    
+    	
+    	__refs: Object,
+    	__updater: any,
+    	
+    
+    	
+    	
+    	context: any,
+    	getChildContext: (self: React_Component<Props, State>) -> any,
+    	
+    	__componentName: string,
+    	displayName: string?,
+    	
+    	name: string?,
+    	childContextTypes: any?,
+    	contextTypes: any?,
+    	propTypes: any?,
+    
+    	
+    	validateProps: ((Props) -> (boolean, string?))?,
+    
+    	
+    	
+    	
+    	
+    	
+    	defaultProps: Props?,
+    	
+    	[string]: any
+    }
+    
+    
+    export type React_StatelessFunctionalComponent<Props> = (
+    	props: Props,
+    	context: any
+    ) -> React_Node
+    export type React_ComponentType<Config> = React_Component<Config, any>
+    
+    export type React_ElementType = string | React_Component<any, any>
+    
+    
+    export type React_ElementProps<ElementType> = {
+    	ref: React_Ref<ElementType>?,
+    	key: React_Key?,
+    	__source: Source?,
+    	children: any?
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    export type React_ElementRef<C> = C
+    
+    export type React_Ref<ElementType> =
+    	{ current: React_ElementRef<ElementType> | nil }
+    	| ((React_ElementRef<ElementType> | nil) -> ())
+    
+    
+    
+    export type React_Context<T> = {
+    	Provider: React_ComponentType<{ value: T, children: React_Node? }>,
+    	Consumer: React_ComponentType<{ children: (value: T) -> React_Node? }>
+    }
+    
+    
+    export type React_Portal = any
+    export type React_Key = string | number
+    
+    return {}
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/formatProdErrorMessage"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = game:GetService("HttpService")
+    
+    local function formatProdErrorMessage(b, ...)
+    	local c = "https://reactjs.org/docs/error-decoder.html?invariant=" .. tostring(b)
+    	local d = select("#", ...)
+    	for e = 1, d, 1 do
+    		
+    		c = c .. "&args[]=" .. a:UrlEncode(select(e, ...))
+    	end
+    	return string.format(
+    [[Minified React error #%d; visit %s for the full message or use the non-minified dev environment for full errors and additional helpful warnings.]]
+    
+    ,
+    		b,
+    		c
+    	)
+    end
+    
+    return formatProdErrorMessage
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/getComponentName"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    type Function = (...any) -> ...any
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/console")
+    
+    
+    type LazyComponent<T, P> = {
+    	["$$typeof"]: number,
+    	_payload: P,
+    	_init: (payload: P) -> T
+    }
+    
+    local b = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactSymbols")
+    local c = b.REACT_CONTEXT_TYPE
+    local d = b.REACT_FORWARD_REF_TYPE
+    local e = b.REACT_FRAGMENT_TYPE
+    local f = b.REACT_PORTAL_TYPE
+    local g = b.REACT_MEMO_TYPE
+    local h = b.REACT_PROFILER_TYPE
+    local i = b.REACT_PROVIDER_TYPE
+    local j = b.REACT_STRICT_MODE_TYPE
+    local k = b.REACT_SUSPENSE_TYPE
+    local l = b.REACT_SUSPENSE_LIST_TYPE
+    local m = b.REACT_LAZY_TYPE
+    local n = b.REACT_BLOCK_TYPE
+    local o = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactTypes")
+    type ReactContext<T> = o.ReactContext<T>
+    type ReactProviderType<T> = o.ReactProviderType<T>
+    
+    local p = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ErrorHandling.roblox").describeError
+    
+    local function getWrappedName(q: any, r: any, s: string): string
+    	
+    	local t = "<function>"
+    	if typeof(r) == "table" then
+    		t = r.displayName or r.name or ""
+    	end
+    	return q.displayName
+    		or (
+    			t ~= "" and string.format("%s(%s)", s, t)
+    			or s
+    		)
+    end
+    
+    local function getContextName(q: ReactContext<any>): string
+    	return q.displayName or "Context"
+    end
+    
+    local function getComponentName(q: any): string | nil
+    	if q == nil then
+    		
+    		return nil
+    	end
+    	local r = typeof(q)
+    
+    	if _G.__DEV__ then
+    		if r == "table" and typeof(q.tag) == "number" then
+    			a.warn(
+    [[Received an unexpected object in getComponentName(). This is likely a bug in React. Please file an issue.]]			
+    
+    )
+    		end
+    	end
+    
+    	if r == "function" then
+    		
+    		
+    		local s = debug.info((q :: any) :: Function, "n")
+    		
+    		if s and string.len(s) > 0 then
+    			return s
+    		else
+    			return nil
+    		end
+    	end
+    
+    	if r == "string" then
+    		return (q :: any) :: string
+    	end
+    
+    	if q == e then
+    		return "Fragment"
+    	elseif q == f then
+    		return "Portal"
+    	elseif q == h then
+    		return "Profiler"
+    	elseif q == j then
+    		return "StrictMode"
+    	elseif q == k then
+    		return "Suspense"
+    	elseif q == l then
+    		return "SuspenseList"
+    	end
+    
+    	if r == "table" then
+    		local s = q["$$typeof"]
+    		if s == c then
+    			local t: ReactContext<any> = q :: any
+    			return getContextName(t) .. ".Consumer"
+    		elseif s == i then
+    			local t: ReactProviderType<any> = q :: any
+    			return getContextName(t._context) .. ".Provider"
+    		elseif s == d then
+    			return getWrappedName(q, q.render, "ForwardRef")
+    		elseif s == g then
+    			return getComponentName(q.type)
+    		elseif s == n then
+    			return getComponentName(q._render)
+    		elseif s == m then
+    			local t: LazyComponent<any, any> = q :: any
+    			local u = t._payload
+    			local v = t._init
+    
+    			
+    			local w, x = xpcall(v, p, u)
+    			if w then
+    				return getComponentName(x)
+    			else
+    				return nil
+    			end
+    		else
+    			
+    			
+    			
+    			
+    			if q.displayName then
+    				return q.displayName
+    			end
+    			if q.name then
+    				return q.name
+    			end
+    			
+    			local t = getmetatable(q)
+    			if t and rawget(t, "__tostring") then
+    				return tostring(q)
+    			end
+    		end
+    	end
+    
+    	return nil
+    end
+    
+    return getComponentName
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/invariant"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/luau-polyfill")
+    local b = a.Error
+    
+    local function invariant(c, d, ...)
+    	
+    	
+    	
+    	if not c then
+    		error(b(string.format(d, ...)))
+    	end
+    end
+    
+    return invariant
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/invokeGuardedCallbackImpl"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ErrorHandling.roblox").describeError
+    
+    
+    local function invokeGuardedCallbackProd(b, c, d, e, ...)
+    	
+    
+    	
+    	local f, g
+    	if not _G.__YOLO__ then
+    		
+    		
+    		
+    		
+    		if e == nil then
+    			f, g = xpcall(d, a, ...)
+    		else
+    			f, g = xpcall(d, a, e, ...)
+    		end
+    	else
+    		f = true
+    		if e == nil then
+    			d(...)
+    		else
+    			d(e, ...)
+    		end
+    	end
+    
+    	if not f then
+    		
+    		
+    		
+    		b.onError(g)
+    	end
+    end
+    
+    local b = invokeGuardedCallbackProd
+    
+    if _G.__DEV__ then
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    	
+    	
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    end
+    
+    return b
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/isValidElementType"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/ReactSymbols")
+    local b = a.REACT_CONTEXT_TYPE
+    local c = a.REACT_FORWARD_REF_TYPE
+    local d = a.REACT_FRAGMENT_TYPE
+    local e = a.REACT_PROFILER_TYPE
+    local f = a.REACT_PROVIDER_TYPE
+    local g = a.REACT_DEBUG_TRACING_MODE_TYPE
+    local h = a.REACT_STRICT_MODE_TYPE
+    local i = a.REACT_SUSPENSE_TYPE
+    
+    local j = a.REACT_MEMO_TYPE
+    local k = a.REACT_LAZY_TYPE
+    local l = a.REACT_FUNDAMENTAL_TYPE
+    
+    local m = a.REACT_BLOCK_TYPE
+    local n = a.REACT_SERVER_BLOCK_TYPE
+    local o = a.REACT_LEGACY_HIDDEN_TYPE
+    
+    
+    
+    
+    return function(p)
+    	local q = typeof(p)
+    	if q == "string" or q == "function" then
+    		return true
+    	end
+    
+    	
+    	if
+    		p == d
+    		or p == e
+    		or p == g
+    		or p == h
+    		or p == i
+    		or p == o
+    		
+    		
+    		
+    	then
+    		return true
+    	end
+    
+    	if q == "table" then
+    		
+    		
+    		if p.isReactComponent then
+    			return true
+    		end
+    
+    		if
+    			p["$$typeof"] == k
+    			or p["$$typeof"] == j
+    			or p["$$typeof"] == f
+    			or p["$$typeof"] == b
+    			or p["$$typeof"] == c
+    			or p["$$typeof"] == l
+    			or p["$$typeof"] == m
+    			or p[1] == n
+    		then
+    			return true
+    		end
+    	end
+    
+    	return false
+    end
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/objectIs"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function is(a: any, b: any): boolean
+    	return a == b and (a ~= 0 or 1 / a == 1 / b) or a ~= a and b ~= b 
+    end
+    
+    
+    local a = is
+    
+    return a
+end
+
+_modules["Packages/_Index/jsdotlua_shared@17.2.1/shared/shallowEqual"] = function()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local a = _require("Packages/_Index/jsdotlua_shared@17.2.1/shared/objectIs")
+    
+    
+    
+    
+    
+    
+    local function shallowEqual(b, c)
+    	if a(b, c) then
+    		return true
+    	end
+    
+    	if
+    		typeof(b) ~= "table"
+    		or b == nil
+    		or typeof(c) ~= "table"
+    		or c == nil
+    	then
+    		return false
+    	end
+    
+    	
+    	
+    	for d, e in b do
+    		if not a(c[d], e) then
+    			return false
+    		end
+    	end
+    
+    	for d, e in c do
+    		if not a(b[d], e) then
+    			return false
+    		end
+    	end
+    
+    	return true
+    end
+    
+    return shallowEqual
+end
+
 _modules["Packages/_Index/jsdotlua_string@1.2.7/es7-types"] = function()
     return _require("Packages/_Index/jsdotlua_es7-types@1.2.7/es7-types")
 end
@@ -7573,29 +49121,29 @@ _modules["Packages/_Index/jsdotlua_string@1.2.7/number"] = function()
     return _require("Packages/_Index/jsdotlua_number@1.2.7/number")
 end
 
-_modules["Packages/_Index/jsdotlua_string@1.2.7/string/src"] = function()
+_modules["Packages/_Index/jsdotlua_string@1.2.7/string"] = function()
     return {
-    	charCodeAt = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/charCodeAt"),
-    	endsWith = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/endsWith"),
-    	findOr = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/findOr"),
-    	includes = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/includes"),
-    	indexOf = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/indexOf"),
-    	lastIndexOf = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/lastIndexOf"),
-    	slice = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/slice"),
-    	split = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/split"),
-    	startsWith = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/startsWith"),
-    	substr = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/substr"),
-    	trim = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/trim"),
-    	trimEnd = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/trimEnd"),
-    	trimStart = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/trimStart"),
+    	charCodeAt = _require("Packages/_Index/jsdotlua_string@1.2.7/string/charCodeAt"),
+    	endsWith = _require("Packages/_Index/jsdotlua_string@1.2.7/string/endsWith"),
+    	findOr = _require("Packages/_Index/jsdotlua_string@1.2.7/string/findOr"),
+    	includes = _require("Packages/_Index/jsdotlua_string@1.2.7/string/includes"),
+    	indexOf = _require("Packages/_Index/jsdotlua_string@1.2.7/string/indexOf"),
+    	lastIndexOf = _require("Packages/_Index/jsdotlua_string@1.2.7/string/lastIndexOf"),
+    	slice = _require("Packages/_Index/jsdotlua_string@1.2.7/string/slice"),
+    	split = _require("Packages/_Index/jsdotlua_string@1.2.7/string/split"),
+    	startsWith = _require("Packages/_Index/jsdotlua_string@1.2.7/string/startsWith"),
+    	substr = _require("Packages/_Index/jsdotlua_string@1.2.7/string/substr"),
+    	trim = _require("Packages/_Index/jsdotlua_string@1.2.7/string/trim"),
+    	trimEnd = _require("Packages/_Index/jsdotlua_string@1.2.7/string/trimEnd"),
+    	trimStart = _require("Packages/_Index/jsdotlua_string@1.2.7/string/trimStart"),
     	
-    	trimRight = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/trimEnd"),
-    	trimLeft = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/trimStart"),
+    	trimRight = _require("Packages/_Index/jsdotlua_string@1.2.7/string/trimEnd"),
+    	trimLeft = _require("Packages/_Index/jsdotlua_string@1.2.7/string/trimStart"),
     }
 end
 
-_modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/charCodeAt"] = function()
-    local a = _require("Packages/_Index/jsdotlua_string@1.2.7/string/number")
+_modules["Packages/_Index/jsdotlua_string@1.2.7/string/charCodeAt"] = function()
+    local a = _require("Packages/_Index/jsdotlua_string@1.2.7/number")
     
     local b = a.NaN
     
@@ -7633,7 +49181,7 @@ _modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/charCodeAt"] = functi
     end
 end
 
-_modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/endsWith"] = function()
+_modules["Packages/_Index/jsdotlua_string@1.2.7/string/endsWith"] = function()
     local function endsWith(a: string, b: string, c: number?): boolean
     	local d = b:len()
     	if d == 0 then
@@ -7654,7 +49202,7 @@ _modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/endsWith"] = function
     return endsWith
 end
 
-_modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/findOr"] = function()
+_modules["Packages/_Index/jsdotlua_string@1.2.7/string/findOr"] = function()
     type Match = {
     	index: number,
     	match: string
@@ -7713,7 +49261,7 @@ _modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/findOr"] = function()
     return findOr
 end
 
-_modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/includes"] = function()
+_modules["Packages/_Index/jsdotlua_string@1.2.7/string/includes"] = function()
     
     local a = "([" .. ("$%^()-[].?"):gsub("(.)", "%%%1") .. "])"
     
@@ -7749,7 +49297,7 @@ _modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/includes"] = function
     return includes
 end
 
-_modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/indexOf"] = function()
+_modules["Packages/_Index/jsdotlua_string@1.2.7/string/indexOf"] = function()
     
     local a = "([" .. ("$%^()-[].?"):gsub("(.)", "%%%1") .. "])"
     
@@ -7781,7 +49329,7 @@ _modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/indexOf"] = function(
     end
 end
 
-_modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/lastIndexOf"] = function()
+_modules["Packages/_Index/jsdotlua_string@1.2.7/string/lastIndexOf"] = function()
     local function lastIndexOf(a: string, b: string, c: number?): number
     	local d = string.len(a)
     	local e
@@ -7820,7 +49368,7 @@ _modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/lastIndexOf"] = funct
     return lastIndexOf
 end
 
-_modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/slice"] = function()
+_modules["Packages/_Index/jsdotlua_string@1.2.7/string/slice"] = function()
     local function slice(a: string, b: string | number, c: (string | number)?): string
     	local d, e = utf8.len(a)
     	assert(d ~= nil, ("string `%s` has an invalid byte at position %s"):format(a, tostring(e)))
@@ -7859,13 +49407,13 @@ _modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/slice"] = function()
     return slice
 end
 
-_modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/split"] = function()
-    local a = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/findOr")
-    local b = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/slice")
+_modules["Packages/_Index/jsdotlua_string@1.2.7/string/split"] = function()
+    local a = _require("Packages/_Index/jsdotlua_string@1.2.7/string/findOr")
+    local b = _require("Packages/_Index/jsdotlua_string@1.2.7/string/slice")
     
-    local c = _require("Packages/_Index/jsdotlua_string@1.2.7/string/es7-types")
+    local c = _require("Packages/_Index/jsdotlua_string@1.2.7/es7-types")
     type Array<T> = c.Array<T>
-    local d = _require("Packages/_Index/jsdotlua_string@1.2.7/string/number").MAX_SAFE_INTEGER
+    local d = _require("Packages/_Index/jsdotlua_string@1.2.7/number").MAX_SAFE_INTEGER
     
     type Pattern = string | Array<string>
     
@@ -7927,7 +49475,7 @@ _modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/split"] = function()
     return split
 end
 
-_modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/startsWith"] = function()
+_modules["Packages/_Index/jsdotlua_string@1.2.7/string/startsWith"] = function()
     local function startsWith(a: string, b: string, c: number?): boolean
     	if string.len(b) == 0 then
     		return true
@@ -7949,7 +49497,7 @@ _modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/startsWith"] = functi
     return startsWith
 end
 
-_modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/substr"] = function()
+_modules["Packages/_Index/jsdotlua_string@1.2.7/string/substr"] = function()
     return function(a: string, b: number, c: number?): string
     	if c and c <= 0 then
     		return ""
@@ -7958,36 +49506,36 @@ _modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/substr"] = function()
     end
 end
 
-_modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/trim"] = function()
-    local a = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/trimStart")
-    local b = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/trimEnd")
+_modules["Packages/_Index/jsdotlua_string@1.2.7/string/trim"] = function()
+    local a = _require("Packages/_Index/jsdotlua_string@1.2.7/string/trimStart")
+    local b = _require("Packages/_Index/jsdotlua_string@1.2.7/string/trimEnd")
     
     return function(c: string): string
     	return a(b(c))
     end
 end
 
-_modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/trimEnd"] = function()
+_modules["Packages/_Index/jsdotlua_string@1.2.7/string/trimEnd"] = function()
     return function(a: string): string
     	return (a:gsub("[%s]+$", ""))
     end
 end
 
-_modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/trimStart"] = function()
+_modules["Packages/_Index/jsdotlua_string@1.2.7/string/trimStart"] = function()
     return function(a: string): string
     	return (a:gsub("^[%s]+", ""))
     end
 end
 
-_modules["Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/src"] = function()
+_modules["Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau"] = function()
     
     
     
     
     
-    local a = _require("Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/src/Symbol")
+    local a = _require("Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/Symbol")
     export type Symbol = a.Symbol
-    local b = _require("Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/src/Registry.global")
+    local b = _require("Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/Registry.global")
     
     local c = setmetatable({}, {
     	
@@ -8004,8 +49552,8 @@ _modules["Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/src"] = functio
     return c
 end
 
-_modules["Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/src/Registry.global"] = function()
-    local a = _require("Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/src/Symbol")
+_modules["Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/Registry.global"] = function()
+    local a = _require("Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/Symbol")
     
     local b: { [string]: a.Symbol } = {}
     
@@ -8024,7 +49572,7 @@ _modules["Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/src/Registry.gl
     }
 end
 
-_modules["Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/src/Symbol"] = function()
+_modules["Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/Symbol"] = function()
     
     
     
@@ -8060,11 +49608,11 @@ _modules["Packages/_Index/jsdotlua_timers@1.2.7/collections"] = function()
     return _require("Packages/_Index/jsdotlua_collections@1.2.7/collections")
 end
 
-_modules["Packages/_Index/jsdotlua_timers@1.2.7/timers/src"] = function()
-    local a = _require("Packages/_Index/jsdotlua_timers@1.2.7/timers/collections").Object
+_modules["Packages/_Index/jsdotlua_timers@1.2.7/timers"] = function()
+    local a = _require("Packages/_Index/jsdotlua_timers@1.2.7/collections").Object
     
-    local b = _require("Packages/_Index/jsdotlua_timers@1.2.7/timers/src/makeTimerImpl")
-    local c = _require("Packages/_Index/jsdotlua_timers@1.2.7/timers/src/makeIntervalImpl")
+    local b = _require("Packages/_Index/jsdotlua_timers@1.2.7/timers/makeTimerImpl")
+    local c = _require("Packages/_Index/jsdotlua_timers@1.2.7/timers/makeIntervalImpl")
     
     export type Timeout = b.Timeout
     export type Interval = c.Interval
@@ -8072,7 +49620,7 @@ _modules["Packages/_Index/jsdotlua_timers@1.2.7/timers/src"] = function()
     return a.assign({}, b(task.delay), c(task.delay))
 end
 
-_modules["Packages/_Index/jsdotlua_timers@1.2.7/timers/src/makeIntervalImpl"] = function()
+_modules["Packages/_Index/jsdotlua_timers@1.2.7/timers/makeIntervalImpl"] = function()
     local a = newproxy(false)
     
     type TaskStatus = number
@@ -8127,7 +49675,7 @@ _modules["Packages/_Index/jsdotlua_timers@1.2.7/timers/src/makeIntervalImpl"] = 
     end
 end
 
-_modules["Packages/_Index/jsdotlua_timers@1.2.7/timers/src/makeTimerImpl"] = function()
+_modules["Packages/_Index/jsdotlua_timers@1.2.7/timers/makeTimerImpl"] = function()
     local a = newproxy(false)
     
     type TaskStatus = number

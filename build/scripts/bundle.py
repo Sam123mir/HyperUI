@@ -64,19 +64,35 @@ def bundle():
     # 1. Collect all modules from temp directory
     for root, dirs, files in os.walk(TEMP_DIR):
         for file in files:
-            if file.endswith(".lua"):
+            if file.endswith(".lua") or file.endswith(".luau"):
                 original_path = os.path.relpath(os.path.join(root, file), TEMP_DIR).replace("\\", "/")
-                module_name = original_path.replace(".lua", "")
+                
+                # Strip extension
+                module_name = original_path
+                if module_name.endswith(".lua"):
+                    module_name = module_name[:-len(".lua")]
+                elif module_name.endswith(".luau"):
+                    module_name = module_name[:-len(".luau")]
+                
+                # Handle /init files
                 if module_name.endswith("/init"):
                     module_name = module_name[:-len("/init")]
-                if module_name == "init":
+                elif module_name == "init":
                     module_name = "main"
+                
+                # SPECIAL HACK for Wally packages:
+                # Packages/_Index/author_name@version/pkg_name/src/module -> Packages/_Index/author_name@version/pkg_name/module
+                # This matches Rojo's $path: "src" behavior.
+                if "Packages/_Index/" in module_name and "/src/" in module_name:
+                    module_name = module_name.replace("/src/", "/")
+                elif "Packages/_Index/" in module_name and module_name.endswith("/src"):
+                     module_name = module_name[:-len("/src")]
                 
                 with open(os.path.join(root, file), "r", encoding="utf-8") as f:
                     content = f.read()
                     if module_name in modules:
                         print(f"WARNING: Collision detected for module '{module_name}'! Overwriting previous.")
-                    modules[module_name] = {"content": content, "original_path": original_path.replace(".lua", "")}
+                    modules[module_name] = {"content": content, "original_path": original_path}
 
     # 2. Rewrite requires
     processed_modules = {}
