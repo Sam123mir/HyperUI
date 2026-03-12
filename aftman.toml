@@ -1,3 +1,4 @@
 [tools]
 darklua = "seaofvoices/darklua@0.17.0"
 rojo = "rojo-rbx/rojo@7.4.4"
+wally = "upliftgames/wally@0.3.1"

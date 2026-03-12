@@ -6,7 +6,7 @@ return [[
     "version": "1.6.70",
     "main": "./dist/main.lua",
     "repository": "https://github.com/Sam123mir/HyperUI",
-    "discord": "https://discord.gg/ftgs-development-hub-1300692552005189632",
+    "discord": "https://discord.gg/[Link Discord]",
     "author": "Sam123mir",
     "description": "Roblox UI Library for scripts",
     "license": "MIT",
