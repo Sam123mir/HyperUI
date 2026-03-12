@@ -15,19 +15,6 @@
         "pcall", "xpcall", "setmetatable", "getmetatable", "typeof", "type", "tostring", "tonumber",
         "print", "warn", "error", "spawn", "delay", "tick", "time"
       ]
-    },
-    {
-      "rule": "convert_require",
-      "current": {
-        "name": "path",
-        "sources": {
-          "@src": "src/v2"
-        }
-      },
-      "target": {
-        "name": "roblox",
-        "rojo_sourcemap": "sourcemap.json"
-      }
     }
   ]
 }

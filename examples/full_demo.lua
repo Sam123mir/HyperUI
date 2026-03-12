@@ -6,260 +6,280 @@
 -- Load HyperUI via GitHub Raw URL
 local HyperUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Sam123mir/HyperUI/main/dist/HyperUI.lua"))()
 
+-- Initializing an instance
 local UI = HyperUI.new()
 
+-- Create the main window
 local Window = UI:CreateWindow({
-    Title = "HyperUI v2 Demo",
-    Icon = "rbxassetid://123456789", -- Placeholder icon
+    Title = "HyperUI v2 Showcase",
+    SubTitle = "Official Component Library",
+    Icon = "rbxassetid://10723343321",
+    Resizable = true,
+    Draggable = true,
 })
 
 --------------------------------------------------------------------------------
--- 1. CONTROLS TAB
+-- 1. ACTION TAB (Buttons, Toggles, etc.)
 --------------------------------------------------------------------------------
-local ControlsTab = Window:CreateTab({
-    Title = "Controls",
+local ActionTab = Window:CreateTab({
+    Title = "Actions",
     Icon = "rbxassetid://10723343321"
 })
 
-local ActionSection = ControlsTab:CreateSection({ Title = "Action Triggers" })
+local ActionSection = ActionTab:CreateSection({ Title = "Standard Actions" })
 
 ActionSection:CreateButton({
-    Text = "Standard Button",
-    Description = "A simple animated button with a callback.",
+    Text = "Primary Button",
+    Description = "Typical action trigger with callback.",
     Callback = function()
-        print("Standard Button Clicked!")
-        UI:Notify({ Title = "Success", Content = "Button interaction verified.", Priority = "Success" })
+        UI:Notify({ 
+            Title = "Action Triggered", 
+            Content = "You clicked the Primary Button!", 
+            Priority = "Success" 
+        })
     end
 })
 
 ActionSection:CreateIconButton({
     Icon = "rbxassetid://10723346371",
-    Callback = function() print("Icon Button Clicked!") end
+    Description = "Icon-only button for compact layouts.",
+    Callback = function()
+        UI:Notify({ Title = "Icon Clicked", Content = "Heart clicked!" })
+    end
 })
 
-local StateSection = ControlsTab:CreateSection({ Title = "State Selectors" })
+ActionSection:CreateCopyButton({
+    Text = "Copy Script ID",
+    Value = "local UI = loadstring(game:HttpGet(...))()",
+    Description = "Click to copy text to clipboard."
+})
+
+local StateSection = ActionTab:CreateSection({ Title = "State Selection" })
 
 StateSection:CreateToggle({
-    Text = "Feature Toggle",
-    Description = "Enable or disable a specific feature.",
+    Text = "Automatic Updates",
+    Description = "Enable background polling for new data.",
     Default = true,
-    Callback = function(state) print("Toggle State:", state) end
+    Callback = function(state) print("Auto Updates:", state) end
 })
 
 StateSection:CreateCheckbox({
-    Text = "Accept Terms",
+    Text = "I agree to the terms of service",
     Default = false,
-    Callback = function(state) print("Checkbox State:", state) end
-})
-
-local SelectionSection = ControlsTab:CreateSection({ Title = "Selection" })
-
-SelectionSection:CreateSlider({
-    Text = "Volume Control",
-    Min = 0,
-    Max = 100,
-    Default = 50,
-    Callback = function(val) print("Slider Value:", val) end
-})
-
-SelectionSection:CreateDropdown({
-    Text = "Select Server",
-    Options = {"US-East", "US-West", "EU-Central", "Asia-East"},
-    Default = "US-East",
-    Callback = function(val) print("Dropdown Selection:", val) end
-})
-
-SelectionSection:CreateMultiDropdown({
-    Text = "Filter Tags",
-    Options = {"Combat", "Economy", "Social", "Stealth"},
-    Default = {"Combat", "Social"},
-    Callback = function(tags) print("MultiDropdown Selection:", table.concat(tags, ", ")) end
-})
-
-SelectionSection:CreateColorPicker({
-    Text = "Accent Color",
-    Default = Color3.fromRGB(0, 120, 255),
-    Callback = function(color) print("Color Selected:", color) end
-})
-
-SelectionSection:CreateKeybind({
-    Text = "Open Menu",
-    Default = Enum.KeyCode.F4,
-    Callback = function() print("Keybind Triggered!") end
+    Callback = function(state) print("ToS Agreed:", state) end
 })
 
 --------------------------------------------------------------------------------
--- 2. INPUTS TAB
+-- 2. INPUTS TAB (Text, Numbers, Sliders)
 --------------------------------------------------------------------------------
 local InputsTab = Window:CreateTab({
     Title = "Inputs",
     Icon = "rbxassetid://10723345799"
 })
 
-local TextSection = InputsTab:CreateSection({ Title = "Text Input" })
+local SelectionSection = InputsTab:CreateSection({ Title = "Selection & Adjustments" })
+
+SelectionSection:CreateSlider({
+    Text = "Master Volume",
+    Min = 0,
+    Max = 100,
+    Default = 75,
+    Suffix = "%",
+    Callback = function(val) print("Volume:", val) end
+})
+
+SelectionSection:CreateDropdown({
+    Text = "Graphics Quality",
+    Options = {"Low", "Medium", "High", "Ultra", "RTX On"},
+    Default = "High",
+    Callback = function(val) print("Graphics:", val) end
+})
+
+SelectionSection:CreateMultiDropdown({
+    Text = "Preferred Servers",
+    Options = {"North America", "Europe", "Asia", "South America", "Australia"},
+    Default = {"North America", "Europe"},
+    Callback = function(vals) print("Servers selected:", #vals) end
+})
+
+SelectionSection:CreateColorPicker({
+    Text = "UI Theme Highlight",
+    Description = "Choose the main accent color.",
+    Default = Color3.fromRGB(0, 162, 255),
+    Callback = function(color) print("Color updated") end
+})
+
+SelectionSection:CreateKeybind({
+    Text = "Toggle Menu Visibility",
+    Default = Enum.KeyCode.F4,
+    Callback = function() print("Keybind triggered!") end
+})
+
+local TextSection = InputsTab:CreateSection({ Title = "Text & Forms" })
 
 TextSection:CreateInput({
-    Text = "Username",
-    Placeholder = "Enter username...",
-    Callback = function(val) print("Input:", val) end
+    Text = "User Handle",
+    Placeholder = "@username",
+    Callback = function(val) print("Username:", val) end
+})
+
+TextSection:CreateNumberInput({
+    Text = "Player WalkSpeed",
+    Default = 16,
+    Min = 0,
+    Max = 100,
+    Callback = function(val) print("Speed set to", val) end
 })
 
 TextSection:CreateSearchInput({
-    Placeholder = "Search items...",
-    Callback = function(query) print("Search Query:", query) end
+    Placeholder = "Search components...",
+    Callback = function(query) print("Searching for:", query) end
 })
 
 TextSection:CreateTextArea({
-    Text = "User Biography",
-    Placeholder = "Tell us about yourself...",
-    Callback = function(val) print("TextArea content updated") end
-})
-
-local NumericSection = InputsTab:CreateSection({ Title = "Numeric Input" })
-
-NumericSection:CreateNumberInput({
-    Text = "WalkSpeed",
-    Default = 16,
-    Min = 0,
-    Max = 500,
-    Callback = function(val) print("Number Input:", val) end
+    Text = "Bug Report / Feedback",
+    Placeholder = "Describe your issue here...",
+    Callback = function(val) print("Feedback received") end
 })
 
 --------------------------------------------------------------------------------
--- 3. DISPLAY TAB
+-- 3. DISPLAY TAB (Information, Progress, Stats)
 --------------------------------------------------------------------------------
 local DisplayTab = Window:CreateTab({
     Title = "Display",
     Icon = "rbxassetid://10723346514"
 })
 
-local InfoSection = DisplayTab:CreateSection({ Title = "Information" })
+local InfoSection = DisplayTab:CreateSection({ Title = "Information Elements" })
 
 InfoSection:CreateLabel({
-    Text = "System Status: Online",
-    Description = "Last checked 2 minutes ago."
+    Text = "Framework Status: Active",
+    Description = "HyperUI Engine v2.0.0 is running optimally."
 })
 
 InfoSection:CreateBadge({
-    Text = "BETA",
-    Color = Color3.fromRGB(255, 170, 0)
+    Text = "STABLE RELEASE",
+    Color = Color3.fromRGB(34, 197, 94)
 })
 
-local VisualSection = DisplayTab:CreateSection({ Title = "Visuals" })
-
-VisualSection:CreateIcon({
-    Icon = "rbxassetid://10723346959",
-    Size = 32
+InfoSection:CreateTag({
+    Text = "Open Source",
+    Color = Color3.fromRGB(59, 130, 246)
 })
 
-VisualSection:CreateProgressBar({
-    Text = "Level Progress",
-    Value = 75, -- 75%
+InfoSection:CreateStatusIndicator({
+    Text = "Database Connection",
+    Status = "Online", -- Online, Offline, Away, Busy
 })
 
-VisualSection:CreateStatDisplay({
-    Title = "Total Earnings",
-    Value = "$1,250,000",
-    SubValue = "+12% today"
+local StatSection = DisplayTab:CreateSection({ Title = "Data Visualization" })
+
+StatSection:CreateProgressBar({
+    Text = "Resource Loading",
+    Value = 68,
+    ShowPercentage = true
+})
+
+StatSection:CreateStatDisplay({
+    Title = "Daily Active Users",
+    Value = "14,502",
+    SubValue = "^ 5.2% from yesterday",
+    Icon = "rbxassetid://10723343321"
 })
 
 --------------------------------------------------------------------------------
--- 4. LAYOUT TAB
+-- 4. LAYOUT TAB (Accordions, Groups, Grids)
 --------------------------------------------------------------------------------
 local LayoutTab = Window:CreateTab({
     Title = "Layout",
     Icon = "rbxassetid://10723345102"
 })
 
-local StructuralSection = LayoutTab:CreateSection({ Title = "Structure" })
+local StructureSection = LayoutTab:CreateSection({ Title = "Advanced Structure" })
 
-StructuralSection:CreateLabel({ Text = "Element above divider" })
-StructuralSection:CreateDivider()
-StructuralSection:CreateLabel({ Text = "Element below divider" })
-
-StructuralSection:CreateSpacer(20)
-
-StructuralSection:CreateGroup({
-    Title = "Property Settings",
-    Content = function(group)
-        group:CreateToggle({ Text = "Sub-option A" })
-        group:CreateToggle({ Text = "Sub-option B" })
+StructureSection:CreateAccordion({
+    Title = "Developer Options",
+    Description = "Click to expand technical settings.",
+    Content = function(acc)
+        acc:CreateToggle({ Text = "Debug Mode" })
+        acc:CreateButton({ Text = "Clear Cache" })
+        acc:CreateLabel({ Text = "Build: #1042-STABLE" })
     end
 })
 
---------------------------------------------------------------------------------
--- 5. FEEDBACK TAB
---------------------------------------------------------------------------------
-local FeedbackTab = Window:CreateTab({
-    Title = "Feedback",
-    Icon = "rbxassetid://10723345525"
+StructureSection:CreateCollapsible({
+    Title = "Legacy Features",
+    Default = false,
+    Content = function(col)
+        col:CreateLabel({ Text = "These features will be removed in v3." })
+    end
 })
 
-local NotificationSection = FeedbackTab:CreateSection({ Title = "System Feedback" })
+StructureSection:CreateGroup({
+    Title = "Environment Settings",
+    Content = function(grp)
+        grp:CreateSlider({ Text = "Fog Density", Min = 0, Max = 1, Default = 0.1 })
+        grp:CreateColorPicker({ Text = "Ambient Lighting" })
+    end
+})
 
-NotificationSection:CreateButton({
-    Text = "Send Toast",
+StructureSection:CreateDivider()
+
+StructureSection:CreateLabel({ Text = "The divider and spacer above help organize sections." })
+StructureSection:CreateSpacer(10)
+
+--------------------------------------------------------------------------------
+-- 5. SETTINGS TAB (Theme, Config)
+--------------------------------------------------------------------------------
+local SettingsTab = Window:CreateTab({
+    Title = "Settings",
+    Icon = "rbxassetid://10723344693"
+})
+
+local ThemeSection = SettingsTab:CreateSection({ Title = "Visual Preference" })
+
+ThemeSection:CreateDropdown({
+    Text = "Select Theme",
+    Options = {"Dark", "Light", "Glass", "Midnight", "Ocean"},
+    Default = "Dark",
+    Callback = function(theme)
+        UI:SetTheme(theme)
+        UI:Notify({ Title = "Theme Updated", Content = "Applied " .. theme .. " theme." })
+    end
+})
+
+local ConfigSection = SettingsTab:CreateSection({ Title = "Configuration" })
+
+ConfigSection:CreateButton({
+    Text = "Save Configuration",
+    Description = "Manually persist current settings.",
     Callback = function()
-        UI:Notify({ Title = "Update", Content = "Operation completed successfully.", Priority = "Info" })
+        UI:SaveConfig()
+        UI:Notify({ Title = "Success", Content = "Configuration saved successfully." })
     end
 })
 
-NotificationSection:CreateButton({
-    Text = "Show Confirmation",
+ConfigSection:CreateButton({
+    Text = "Reset to Default",
     Callback = function()
         UI:Prompt({
-            Title = "Are you sure?",
-            Content = "This action will permanently delete the selected item.",
-            OnConfirm = function() print("Confirmed!") end,
-            OnCancel = function() print("Cancelled") end
+            Title = "Confirm Reset",
+            Content = "Are you sure you want to revert all settings to their default values?",
+            OnConfirm = function()
+                print("Config Reset")
+                UI:Notify({ Title = "Reset", Content = "Settings restored." })
+            end
         })
     end
 })
 
---------------------------------------------------------------------------------
--- 6. NAVIGATION TAB
---------------------------------------------------------------------------------
-local NavTab = Window:CreateTab({
-    Title = "Navigation",
-    Icon = "rbxassetid://10723344693"
-})
-
-local ContentSection = NavTab:CreateSection({ Title = "Hierarchy" })
-
-ContentSection:CreateAccordion({
-    Title = "Advanced Settings",
-    Content = function(acc)
-        acc:CreateButton({ Text = "Inner Action" })
-    end
-})
-
---------------------------------------------------------------------------------
--- 7. PERFORMANCE TAB (STRESS TEST)
---------------------------------------------------------------------------------
-local PerfTab = Window:CreateTab({
-    Title = "Performance",
-    Icon = "rbxassetid://10723344435"
-})
-
-local StressSection = PerfTab:CreateSection({ Title = "Stress Testing" })
-
-StressSection:CreateButton({
-    Text = "Render 100 Buttons",
+NotificationSection = SettingsTab:CreateSection({ Title = "Manual Destruct" })
+NotificationSection:CreateButton({
+    Text = "Destroy UI",
+    Description = "Completely remove the UI instance.",
     Callback = function()
-        for i = 1, 100 do
-            StressSection:CreateButton({ Text = "Button " .. i })
-        end
+        UI:Destroy()
     end
 })
 
-StressSection:CreateButton({
-    Text = "Render 300 List Items",
-    Callback = function()
-        -- Virtualization test
-        local items = {}
-        for i = 1, 300 do table.insert(items, { Text = "Item " .. i }) end
-        StressSection:CreateVirtualList({ Items = items })
-    end
-})
-
-print("HyperUI v2 Demo Loaded Successfully.")
+print("HyperUI v2 Demo Showcase Loaded Successfully.")

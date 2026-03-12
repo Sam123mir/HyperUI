@@ -25,46 +25,47 @@ function Mount.new(store)
     return self
 end
 
-function Mount:CreateContainer()
-    -- Protection Hierarchy
-    -- 1. gethui()
-    -- 2. protect_gui()
-    -- 3. CoreGui
-    -- 4. PlayerGui (Fallback)
-    
-    local guiParent
+local function getSafeGui()
+    local CoreGui = game:GetService("CoreGui")
     local gethui = getgenv and getgenv().gethui
-    local protect_gui = getgenv and (getgenv().protect_gui or (getgenv().syn and getgenv().syn.protect_gui))
+    local syn = getgenv and getgenv().syn
     
-    if gethui then
-        guiParent = gethui()
-    elseif CoreGui then
-        -- Attempt to use CoreGui if possible (usually works in executors)
+    if syn and syn.protect_gui then
+        local sg = Instance.new("ScreenGui")
+        syn.protect_gui(sg)
+        sg.Parent = CoreGui
+        return sg
+    elseif gethui then
+        local target = gethui()
+        local sg = Instance.new("ScreenGui")
+        sg.Parent = target
+        return sg
+    else
+        local sg = Instance.new("ScreenGui")
+        -- Fallback to PlayerGui if CoreGui is restricted
         local success = pcall(function()
-            local test = Instance.new("Frame")
-            test.Parent = CoreGui
-            test:Destroy()
+            sg.Parent = CoreGui
         end)
-        if success then
-            guiParent = CoreGui
+        if not success then
+            local LocalPlayer = game:GetService("Players").LocalPlayer
+            if LocalPlayer then
+                local PlayerGui = LocalPlayer:FindFirstChild("PlayerGui") or LocalPlayer:WaitForChild("PlayerGui", 5)
+                if PlayerGui then
+                    sg.Parent = PlayerGui
+                end
+            end
         end
+        return sg
     end
-    
-    if not guiParent then
-        guiParent = LocalPlayer:WaitForChild("PlayerGui")
-    end
-    
-    local screenGui = Instance.new("ScreenGui")
+end
+
+function Mount:CreateContainer()
+    local screenGui = getSafeGui()
     screenGui.Name = "HyperUI_" .. game:GetService("HttpService"):GenerateGUID(false):sub(1, 8)
     screenGui.ResetOnSpawn = false
     screenGui.IgnoreGuiInset = true
     screenGui.DisplayOrder = 100
     
-    if protect_gui then
-        pcall(protect_gui, screenGui)
-    end
-    
-    screenGui.Parent = guiParent
     self.Container = screenGui
     
     -- Initialize React Root (Conceptual - placeholder for actual React call)

@@ -1,101 +1,23 @@
 -- HyperUI Framework
 -- Version: 2.0.0
--- Build Date: 2026-03-11 15:39:41
+-- Build Date: 2026-03-11 21:06:10
 -- Distribution: Single File
 
 local _modules = {}
 local _cache = {}
 local _require
-local _modules = {}
-_modules["main"] = function()
+_modules["api"] = function()
     
     
     
     
     
-    local a = {}
-    a.__index = a
-    
-    
-    
-    local function CheckExistingInstance()
-        local b = getgenv and getgenv() or _G
-        if b.__HyperUI_Instance then
-            local c = b.__HyperUI_Instance
-            pcall(function()
-                c:Destroy()
-            end)
-            b.__HyperUI_Instance = nil
-        end
-    end
-    
-    function a.new()
-        CheckExistingInstance()
-        
-        local b = setmetatable({}, a)
-        
-        
-        b.Store = _require("core/store").new()
-        
-        b.WindowManager = _require("managers/WindowManager").new(b.Store)
-        b.NotificationManager = _require("managers/NotificationManager").new(b.Store)
-        b.ThemeManager = _require("managers/ThemeManager").new(b.Store)
-        b.FocusManager = _require("managers/FocusManager").new(b.Store)
-        b.Config = _require("core/config").new(b.Store, {
-            FileName = "HyperUI_V2_Config.json",
-            AutoSave = true
-        })
-        
-        
-        b.Runtime = _require("runtime/mount").new(b.Store)
-        
-        
-        local c = getgenv and getgenv() or _G
-        c.__HyperUI_Instance = b
-        
-        return b
-    end
-    
-    function a:CreateWindow(b)
-        local c = _require("api")
-        local d = game:GetService("HttpService"):GenerateGUID(false)
-        
-        self.Store:Dispatch({
-            type = "ADD_WINDOW",
-            window = {
-                id = d,
-                title = b.Title or "HyperUI",
-                icon = b.Icon,
-                active = true,
-            }
-        })
-        
-        return c.Window.new(d, self.Store)
-    end
-    
-    function a:Notify(b)
-        return self.NotificationManager:Notify(b)
-    end
-    
-    function a:SetTheme(b)
-        return self.ThemeManager:SetTheme(b)
-    end
-    
-    function a:Destroy()
-        if self.Runtime then
-            self.Runtime:Unmount()
-        end
-        
-        local b = getgenv and getgenv() or _G
-        if b.__HyperUI_Instance == self then
-            b.__HyperUI_Instance = nil
-        end
-        
-        
-        self.Store:Destroy()
-    end
-    
-    return a
+    return {
+        Window = _require("api/Window"),
+        Tab = _require("api/Tab"),
+        Section = _require("api/Section"),
+        Element = _require("api/Element"),
+    }
 end
 
 _modules["api/Element"] = function()
@@ -138,20 +60,6 @@ _modules["api/Element"] = function()
     end
     
     return a
-end
-
-_modules["api"] = function()
-    
-    
-    
-    
-    
-    return {
-        Window = _require("Window"),
-        Tab = _require("Tab"),
-        Section = _require("Section"),
-        Element = _require("Element"),
-    }
 end
 
 _modules["api/Section"] = function()
@@ -391,45 +299,6 @@ _modules["api/Window"] = function()
     end
     
     return b
-end
-
-_modules["components/Root"] = function()
-    
-    
-    
-    
-    
-    local a = _require("dependencies/React")
-    local b = _require("Window")
-    
-    local function Root(c)
-        local d, e = a.useState(c.store:GetState())
-        
-        a.useEffect(function()
-            local f = c.store:OnUpdate(function(f)
-                e(f)
-            end)
-            return f
-        end, {c.store})
-        
-        local f = {}
-        for g, h in pairs(d.windows) do
-            f[g] = a.createElement(b, {
-                id = g,
-                store = c.store,
-                config = h,
-            })
-        end
-        
-        
-        
-        return a.createElement("Frame", {
-            Size = UDim2.fromScale(1, 1),
-            BackgroundTransparency = 1,
-        }, f)
-    end
-    
-    return Root
 end
 
 _modules["components/Containers/ElementList"] = function()
@@ -1088,6 +957,238 @@ _modules["components/Elements/HyperCollapsible"] = function()
     return HyperCollapsible
 end
 
+_modules["components/Elements/HyperColorPicker"] = function()
+    
+    
+    
+    
+    local a = _require("dependencies/React")
+    local b = _require("theme/tokens")
+    local c = _require("components/Elements/BaseElement")
+    
+    local d = _require("components/Elements/HyperColorPicker/HueSlider")
+    local e = _require("components/Elements/HyperColorPicker/SaturationSquare")
+    local f = _require("components/Elements/HyperColorPicker/ColorPreview")
+    
+    local function HyperColorPicker(g)
+        local h, i = a.useState(false)
+        local j, k, l = Color3.toHSV(g.Value or Color3.new(1, 1, 1))
+        
+        local function updateColor(m, n, o)
+            if g.Callback then
+                g.Callback(Color3.fromHSV(m or j, n or k, o or l))
+            end
+        end
+        
+        return a.createElement("Frame", {
+            Size = UDim2.new(1, 0, 0, 0),
+            AutomaticSize = Enum.AutomaticSize.Y,
+            BackgroundTransparency = 1,
+            LayoutOrder = g.LayoutOrder,
+            ZIndex = h and 100 or 1,
+        }, {
+            Layout = a.createElement("UIListLayout", { SortOrder = Enum.SortOrder.LayoutOrder, Padding = UDim.new(0, 4) }),
+            Trigger = a.createElement(c, {
+                OnActivated = function() i(not h) end,
+            }, {
+                Container = a.createElement("Frame", {
+                    Size = UDim2.fromScale(1, 1),
+                    BackgroundTransparency = 1,
+                }, {
+                    Padding = a.createElement("UIPadding", {
+                        PaddingLeft = UDim.new(0, b.Spacing[3]),
+                        PaddingRight = UDim.new(0, b.Spacing[3]),
+                    }),
+                    Label = a.createElement("TextLabel", {
+                        Size = UDim2.new(1, -60, 1, 0),
+                        BackgroundTransparency = 1,
+                        Text = g.Text or "Color Picker",
+                        TextColor3 = b.Color.Text,
+                        Font = b.Font.Main,
+                        TextSize = b.FontSize.Medium,
+                        TextXAlignment = Enum.TextXAlignment.Left,
+                    }),
+                    Preview = a.createElement(f, {
+                        Color = g.Value or Color3.new(1, 1, 1)
+                    })
+                })
+            }),
+            Dropdown = h and a.createElement("Frame", {
+                Size = UDim2.new(1, 0, 0, 200),
+                BackgroundColor3 = b.Color.Surface,
+                BorderSizePixel = 0,
+            }, {
+                UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(0, b.Radius.Small) }),
+                Padding = a.createElement("UIPadding", {
+                    PaddingTop = UDim.new(0, 8),
+                    PaddingBottom = UDim.new(0, 8),
+                    PaddingLeft = UDim.new(0, 8),
+                    PaddingRight = UDim.new(0, 8),
+                }),
+                Layout = a.createElement("UIListLayout", { SortOrder = Enum.SortOrder.LayoutOrder, Padding = UDim.new(0, 8) }),
+                SatVal = a.createElement(e, {
+                    Hue = j,
+                    Sat = k,
+                    Val = l,
+                    OnChanged = function(m, n) updateColor(nil, m, n) end
+                }),
+                Hue = a.createElement(d, {
+                    Hue = j,
+                    OnChanged = function(m) updateColor(m, nil, nil) end
+                })
+            })
+        })
+    end
+    
+    return HyperColorPicker
+end
+
+_modules["components/Elements/HyperColorPicker/ColorPreview"] = function()
+    
+    
+    
+    
+    local a = _require("dependencies/React")
+    local b = _require("theme/tokens")
+    
+    local function ColorPreview(c)
+        return a.createElement("Frame", {
+            Size = UDim2.fromOffset(24, 24),
+            Position = UDim2.new(1, -24, 0.5, -12),
+            BackgroundColor3 = c.Color or Color3.new(1, 1, 1),
+            BorderSizePixel = 0,
+            ZIndex = 5,
+        }, {
+            UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(0.5, 0) }),
+            UIStroke = a.createElement("UIStroke", { Color = b.Color.Border, Thickness = 2 })
+        })
+    end
+    
+    return ColorPreview
+end
+
+_modules["components/Elements/HyperColorPicker/HueSlider"] = function()
+    
+    
+    
+    
+    local a = _require("dependencies/React")
+    local b = _require("theme/tokens")
+    
+    local function HueSlider(c)
+        return a.createElement("Frame", {
+            Size = UDim2.new(1, 0, 0, 12),
+            BorderSizePixel = 0,
+            LayoutOrder = 2,
+        }, {
+            UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(1, 0) }),
+            Gradient = a.createElement("UIGradient", {
+                Color = ColorSequence.new({
+                    ColorSequenceKeypoint.new(0, Color3.fromHSV(0, 1, 1)),
+                    ColorSequenceKeypoint.new(0.16, Color3.fromHSV(0.16, 1, 1)),
+                    ColorSequenceKeypoint.new(0.33, Color3.fromHSV(0.33, 1, 1)),
+                    ColorSequenceKeypoint.new(0.5, Color3.fromHSV(0.5, 1, 1)),
+                    ColorSequenceKeypoint.new(0.66, Color3.fromHSV(0.66, 1, 1)),
+                    ColorSequenceKeypoint.new(0.83, Color3.fromHSV(0.83, 1, 1)),
+                    ColorSequenceKeypoint.new(1, Color3.fromHSV(1, 1, 1)),
+                })
+            }),
+            Handle = a.createElement("Frame", {
+                Size = UDim2.fromOffset(16, 16),
+                Position = UDim2.new(c.Hue, 0, 0.5, 0),
+                AnchorPoint = Vector2.new(0.5, 0.5),
+                BackgroundColor3 = b.Color.Text,
+                BorderSizePixel = 0,
+            }, {
+                UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(1, 0) }),
+                UIStroke = a.createElement("UIStroke", { Thickness = 2, Color = b.Color.Background })
+            }),
+            Trigger = a.createElement("TextButton", {
+                Size = UDim2.fromScale(1, 1),
+                BackgroundTransparency = 1,
+                Text = "",
+                [a.Event.MouseButton1Down] = function(d)
+                    local function update()
+                        local e = (game:GetService("UserInputService"):GetMouseLocation().X - d.AbsolutePosition.X) / d.AbsoluteSize.X
+                        c.OnChanged(math.clamp(e, 0, 1))
+                    end
+                    update()
+                end
+            })
+        })
+    end
+    
+    return HueSlider
+end
+
+_modules["components/Elements/HyperColorPicker/SaturationSquare"] = function()
+    
+    
+    
+    
+    local a = _require("dependencies/React")
+    local b = _require("theme/tokens")
+    
+    local function SaturationSquare(c)
+        return a.createElement("Frame", {
+            Size = UDim2.new(1, 0, 1, -20),
+            BackgroundColor3 = Color3.fromHSV(c.Hue, 1, 1),
+            BorderSizePixel = 0,
+            LayoutOrder = 1,
+        }, {
+            UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(0, b.Radius.Small) }),
+            SatGradient = a.createElement("Frame", {
+                Size = UDim2.fromScale(1, 1),
+                BorderSizePixel = 0,
+                BackgroundTransparency = 0,
+            }, {
+                Gradient = a.createElement("UIGradient", {
+                    Transparency = NumberSequence.new(0, 1),
+                    Color = ColorSequence.new(Color3.new(1, 1, 1)),
+                    Rotation = 0,
+                })
+            }),
+            ValGradient = a.createElement("Frame", {
+                Size = UDim2.fromScale(1, 1),
+                BorderSizePixel = 0,
+                BackgroundTransparency = 0,
+            }, {
+                Gradient = a.createElement("UIGradient", {
+                    Transparency = NumberSequence.new(0, 1),
+                    Color = ColorSequence.new(Color3.new(0, 0, 0)),
+                    Rotation = 90,
+                })
+            }),
+            Handle = a.createElement("Frame", {
+                Size = UDim2.fromOffset(12, 12),
+                Position = UDim2.fromScale(c.Sat, 1 - c.Val),
+                AnchorPoint = Vector2.new(0.5, 0.5),
+                BackgroundColor3 = b.Color.Text,
+                BorderSizePixel = 0,
+            }, {
+                UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(1, 0) }),
+                UIStroke = a.createElement("UIStroke", { Thickness = 2, Color = b.Color.Background })
+            }),
+            Trigger = a.createElement("TextButton", {
+                Size = UDim2.fromScale(1, 1),
+                BackgroundTransparency = 1,
+                Text = "",
+                [a.Event.MouseButton1Down] = function(d)
+                    local function update()
+                        local e = game:GetService("UserInputService"):GetMouseLocation()
+                        local f = (e.X - d.AbsolutePosition.X) / d.AbsoluteSize.X
+                        local g = (e.Y - d.AbsolutePosition.Y) / d.AbsoluteSize.Y
+                        c.OnChanged(math.clamp(f, 0, 1), 1 - math.clamp(g, 0, 1))
+                    end
+                    update()
+                end
+            })
+        })
+    end
+    
+    return SaturationSquare
+end
+
 _modules["components/Elements/HyperComboBox"] = function()
     
     
@@ -1233,6 +1334,245 @@ _modules["components/Elements/HyperDivider"] = function()
     end
     
     return HyperDivider
+end
+
+_modules["components/Elements/HyperDropdown"] = function()
+    
+    
+    
+    
+    local a = _require("dependencies/React")
+    local b = _require("theme/tokens")
+    
+    local c = _require("components/Elements/HyperDropdown/DropdownTrigger")
+    local d = _require("components/Elements/HyperDropdown/DropdownList")
+    
+    local function HyperDropdown(e)
+        local f, g = a.useState(false)
+        
+        return a.createElement("Frame", {
+            Size = e.Size or UDim2.new(1, 0, 0, 0),
+            AutomaticSize = Enum.AutomaticSize.Y,
+            BackgroundTransparency = 1,
+            LayoutOrder = e.LayoutOrder,
+            ZIndex = f and 100 or 1,
+        }, {
+            Layout = a.createElement("UIListLayout", {
+                SortOrder = Enum.SortOrder.LayoutOrder,
+                Padding = UDim.new(0, 4),
+            }),
+            Trigger = a.createElement(c, {
+                Text = e.Text,
+                Value = e.Value,
+                Open = f,
+                OnToggle = function() g(not f) end,
+            }),
+            List = f and a.createElement(d, {
+                Options = e.Options,
+                Selected = e.Value,
+                Multi = e.Multi,
+                OnSelect = function(h)
+                    if not e.Multi then g(false) end
+                    if e.Callback then e.Callback(h) end
+                end,
+            })
+        })
+    end
+    
+    return HyperDropdown
+end
+
+_modules["components/Elements/HyperDropdown/DropdownList"] = function()
+    
+    
+    
+    
+    local a = _require("dependencies/React")
+    local b = _require("theme/tokens")
+    local c = _require("Containers/VirtualList")
+    local d = _require("components/Elements/HyperDropdown/DropdownOption")
+    local e = _require("components/Elements/HyperDropdown/DropdownSearch")
+    
+    local function DropdownList(f)
+        local g, h = a.useState("")
+        
+        local i = {}
+        for j, k in ipairs(f.Options or {}) do
+            if string.find(string.lower(tostring(k)), string.lower(g)) then
+                table.insert(i, k)
+            end
+        end
+        
+        return a.createElement("Frame", {
+            Size = UDim2.new(1, 0, 0, 200),
+            BackgroundColor3 = b.Color.Surface,
+            BorderSizePixel = 0,
+        }, {
+            UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(0, b.Radius.Small) }),
+            Layout = a.createElement("UIListLayout", { SortOrder = Enum.SortOrder.LayoutOrder }),
+            Search = a.createElement(e, {
+                OnChanged = h
+            }),
+            List = a.createElement(c, {
+                Size = UDim2.new(1, 0, 1, -32),
+                Items = i,
+                ItemHeight = 32,
+                RenderItem = function(j)
+                    local k = false
+                    if type(f.Selected) == "table" then
+                        k = table.find(f.Selected, j) ~= nil
+                    else
+                        k = f.Selected == j
+                    end
+                    
+                    return a.createElement(d, {
+                        Text = tostring(j),
+                        Selected = k,
+                        OnSelect = function() f.OnSelect(j) end
+                    })
+                end
+            })
+        })
+    end
+    
+    return DropdownList
+end
+
+_modules["components/Elements/HyperDropdown/DropdownOption"] = function()
+    
+    
+    
+    
+    local a = _require("dependencies/React")
+    local b = _require("theme/tokens")
+    local c = _require("components/BaseElement")
+    
+    local function DropdownOption(d)
+        return a.createElement(c, {
+            BackgroundTransparency = 1,
+            OnActivated = d.OnSelect,
+        }, {
+            Container = a.createElement("Frame", {
+                Size = UDim2.fromScale(1, 1),
+                BackgroundTransparency = 1,
+            }, {
+                Padding = a.createElement("UIPadding", {
+                    PaddingLeft = UDim.new(0, b.Spacing[3]),
+                }),
+                Label = a.createElement("TextLabel", {
+                    Size = UDim2.fromScale(1, 1),
+                    BackgroundTransparency = 1,
+                    Text = d.Text,
+                    TextColor3 = d.Selected and b.Color.Accent or b.Color.Text,
+                    Font = d.Selected and b.Font.Bold or b.Font.Main,
+                    TextSize = b.FontSize.Small,
+                    TextXAlignment = Enum.TextXAlignment.Left,
+                })
+            })
+        })
+    end
+    
+    return DropdownOption
+end
+
+_modules["components/Elements/HyperDropdown/DropdownSearch"] = function()
+    
+    
+    
+    
+    local a = _require("dependencies/React")
+    local b = _require("theme/tokens")
+    
+    local function DropdownSearch(c)
+        return a.createElement("TextBox", {
+            Size = UDim2.new(1, 0, 0, 32),
+            BackgroundColor3 = b.Color.Background,
+            BackgroundTransparency = 0.5,
+            BorderSizePixel = 0,
+            PlaceholderText = "Search...",
+            PlaceholderColor3 = b.Color.TextMuted,
+            Text = "",
+            TextColor3 = b.Color.Text,
+            Font = b.Font.Main,
+            TextSize = b.FontSize.Small,
+            ClearTextOnFocus = false,
+            [a.Change.Text] = function(d)
+                c.OnChanged(d.Text)
+            end,
+        }, {
+            UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(0, b.Radius.Small) }),
+            Padding = a.createElement("UIPadding", { PaddingLeft = UDim.new(0, 8) }),
+        })
+    end
+    
+    return DropdownSearch
+end
+
+_modules["components/Elements/HyperDropdown/DropdownTrigger"] = function()
+    
+    
+    
+    
+    local a = _require("dependencies/React")
+    local b = _require("theme/tokens")
+    local c = _require("components/BaseElement")
+    local d = _require("hooks/useSpring")
+    
+    local function DropdownTrigger(e)
+        local f = d(e.Open and 180 or 0, { damping = 0.8, stiffness = 0.2 })
+        
+        local g = "Select Option..."
+        if e.Value then
+            if type(e.Value) == "table" then
+                g = #e.Value .. " selected"
+            else
+                g = tostring(e.Value)
+            end
+        end
+        
+        return a.createElement(c, {
+            OnActivated = e.OnToggle,
+        }, {
+            Container = a.createElement("Frame", {
+                Size = UDim2.fromScale(1, 1),
+                BackgroundTransparency = 1,
+            }, {
+                Padding = a.createElement("UIPadding", {
+                    PaddingLeft = UDim.new(0, b.Spacing[3]),
+                    PaddingRight = UDim.new(0, b.Spacing[3]),
+                }),
+                Label = a.createElement("TextLabel", {
+                    Size = UDim2.new(1, -60, 1, 0),
+                    BackgroundTransparency = 1,
+                    Text = e.Text or "Dropdown",
+                    TextColor3 = b.Color.Text,
+                    Font = b.Font.Main,
+                    TextSize = b.FontSize.Medium,
+                    TextXAlignment = Enum.TextXAlignment.Left,
+                }),
+                Value = a.createElement("TextLabel", {
+                    Size = UDim2.new(1, -60, 1, 0),
+                    BackgroundTransparency = 1,
+                    Text = g,
+                    TextColor3 = b.Color.TextMuted,
+                    Font = b.Font.Main,
+                    TextSize = b.FontSize.Small,
+                    TextXAlignment = Enum.TextXAlignment.Right,
+                    ZIndex = 4,
+                }),
+                Arrow = a.createElement("ImageLabel", {
+                    Size = UDim2.fromOffset(16, 16),
+                    Position = UDim2.new(1, -16, 0.5, -8),
+                    BackgroundTransparency = 1,
+                    Image = "rbxassetid://10723346959", 
+                    ImageColor3 = b.Color.TextMuted,
+                    Rotation = f,
+                })
+            })
+        })
+    end
+    
+    return DropdownTrigger
 end
 
 _modules["components/Elements/HyperGroup"] = function()
@@ -2257,475 +2597,43 @@ _modules["components/Elements/HyperTooltip"] = function()
     return HyperTooltip
 end
 
-_modules["components/Elements/HyperColorPicker/ColorPreview"] = function()
+_modules["components/Root"] = function()
     
-    
-    
-    
-    local a = _require("dependencies/React")
-    local b = _require("theme/tokens")
-    
-    local function ColorPreview(c)
-        return a.createElement("Frame", {
-            Size = UDim2.fromOffset(24, 24),
-            Position = UDim2.new(1, -24, 0.5, -12),
-            BackgroundColor3 = c.Color or Color3.new(1, 1, 1),
-            BorderSizePixel = 0,
-            ZIndex = 5,
-        }, {
-            UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(0.5, 0) }),
-            UIStroke = a.createElement("UIStroke", { Color = b.Color.Border, Thickness = 2 })
-        })
-    end
-    
-    return ColorPreview
-end
-
-_modules["components/Elements/HyperColorPicker/HueSlider"] = function()
     
     
     
     
     local a = _require("dependencies/React")
-    local b = _require("theme/tokens")
+    local b = _require("Window")
     
-    local function HueSlider(c)
-        return a.createElement("Frame", {
-            Size = UDim2.new(1, 0, 0, 12),
-            BorderSizePixel = 0,
-            LayoutOrder = 2,
-        }, {
-            UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(1, 0) }),
-            Gradient = a.createElement("UIGradient", {
-                Color = ColorSequence.new({
-                    ColorSequenceKeypoint.new(0, Color3.fromHSV(0, 1, 1)),
-                    ColorSequenceKeypoint.new(0.16, Color3.fromHSV(0.16, 1, 1)),
-                    ColorSequenceKeypoint.new(0.33, Color3.fromHSV(0.33, 1, 1)),
-                    ColorSequenceKeypoint.new(0.5, Color3.fromHSV(0.5, 1, 1)),
-                    ColorSequenceKeypoint.new(0.66, Color3.fromHSV(0.66, 1, 1)),
-                    ColorSequenceKeypoint.new(0.83, Color3.fromHSV(0.83, 1, 1)),
-                    ColorSequenceKeypoint.new(1, Color3.fromHSV(1, 1, 1)),
-                })
-            }),
-            Handle = a.createElement("Frame", {
-                Size = UDim2.fromOffset(16, 16),
-                Position = UDim2.new(c.Hue, 0, 0.5, 0),
-                AnchorPoint = Vector2.new(0.5, 0.5),
-                BackgroundColor3 = b.Color.Text,
-                BorderSizePixel = 0,
-            }, {
-                UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(1, 0) }),
-                UIStroke = a.createElement("UIStroke", { Thickness = 2, Color = b.Color.Background })
-            }),
-            Trigger = a.createElement("TextButton", {
-                Size = UDim2.fromScale(1, 1),
-                BackgroundTransparency = 1,
-                Text = "",
-                [a.Event.MouseButton1Down] = function(d)
-                    local function update()
-                        local e = (game:GetService("UserInputService"):GetMouseLocation().X - d.AbsolutePosition.X) / d.AbsoluteSize.X
-                        c.OnChanged(math.clamp(e, 0, 1))
-                    end
-                    update()
-                end
-            })
-        })
-    end
-    
-    return HueSlider
-end
-
-_modules["components/Elements/HyperColorPicker"] = function()
-    
-    
-    
-    
-    local a = _require("dependencies/React")
-    local b = _require("theme/tokens")
-    local c = _require("components/BaseElement")
-    
-    local d = _require("components/Elements/HueSlider")
-    local e = _require("components/Elements/SaturationSquare")
-    local f = _require("components/Elements/ColorPreview")
-    
-    local function HyperColorPicker(g)
-        local h, i = a.useState(false)
-        local j, k, l = Color3.toHSV(g.Value or Color3.new(1, 1, 1))
+    local function Root(c)
+        local d, e = a.useState(c.store:GetState())
         
-        local function updateColor(m, n, o)
-            if g.Callback then
-                g.Callback(Color3.fromHSV(m or j, n or k, o or l))
-            end
+        a.useEffect(function()
+            local f = c.store:OnUpdate(function(f)
+                e(f)
+            end)
+            return f
+        end, {c.store})
+        
+        local f = {}
+        for g, h in pairs(d.windows) do
+            f[g] = a.createElement(b, {
+                id = g,
+                store = c.store,
+                config = h,
+            })
         end
         
+        
+        
         return a.createElement("Frame", {
-            Size = UDim2.new(1, 0, 0, 0),
-            AutomaticSize = Enum.AutomaticSize.Y,
+            Size = UDim2.fromScale(1, 1),
             BackgroundTransparency = 1,
-            LayoutOrder = g.LayoutOrder,
-            ZIndex = h and 100 or 1,
-        }, {
-            Layout = a.createElement("UIListLayout", { SortOrder = Enum.SortOrder.LayoutOrder, Padding = UDim.new(0, 4) }),
-            Trigger = a.createElement(c, {
-                OnActivated = function() i(not h) end,
-            }, {
-                Container = a.createElement("Frame", {
-                    Size = UDim2.fromScale(1, 1),
-                    BackgroundTransparency = 1,
-                }, {
-                    Padding = a.createElement("UIPadding", {
-                        PaddingLeft = UDim.new(0, b.Spacing[3]),
-                        PaddingRight = UDim.new(0, b.Spacing[3]),
-                    }),
-                    Label = a.createElement("TextLabel", {
-                        Size = UDim2.new(1, -60, 1, 0),
-                        BackgroundTransparency = 1,
-                        Text = g.Text or "Color Picker",
-                        TextColor3 = b.Color.Text,
-                        Font = b.Font.Main,
-                        TextSize = b.FontSize.Medium,
-                        TextXAlignment = Enum.TextXAlignment.Left,
-                    }),
-                    Preview = a.createElement(f, {
-                        Color = g.Value or Color3.new(1, 1, 1)
-                    })
-                })
-            }),
-            Dropdown = h and a.createElement("Frame", {
-                Size = UDim2.new(1, 0, 0, 200),
-                BackgroundColor3 = b.Color.Surface,
-                BorderSizePixel = 0,
-            }, {
-                UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(0, b.Radius.Small) }),
-                Padding = a.createElement("UIPadding", {
-                    PaddingTop = UDim.new(0, 8),
-                    PaddingBottom = UDim.new(0, 8),
-                    PaddingLeft = UDim.new(0, 8),
-                    PaddingRight = UDim.new(0, 8),
-                }),
-                Layout = a.createElement("UIListLayout", { SortOrder = Enum.SortOrder.LayoutOrder, Padding = UDim.new(0, 8) }),
-                SatVal = a.createElement(e, {
-                    Hue = j,
-                    Sat = k,
-                    Val = l,
-                    OnChanged = function(m, n) updateColor(nil, m, n) end
-                }),
-                Hue = a.createElement(d, {
-                    Hue = j,
-                    OnChanged = function(m) updateColor(m, nil, nil) end
-                })
-            })
-        })
+        }, f)
     end
     
-    return HyperColorPicker
-end
-
-_modules["components/Elements/HyperColorPicker/SaturationSquare"] = function()
-    
-    
-    
-    
-    local a = _require("dependencies/React")
-    local b = _require("theme/tokens")
-    
-    local function SaturationSquare(c)
-        return a.createElement("Frame", {
-            Size = UDim2.new(1, 0, 1, -20),
-            BackgroundColor3 = Color3.fromHSV(c.Hue, 1, 1),
-            BorderSizePixel = 0,
-            LayoutOrder = 1,
-        }, {
-            UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(0, b.Radius.Small) }),
-            SatGradient = a.createElement("Frame", {
-                Size = UDim2.fromScale(1, 1),
-                BorderSizePixel = 0,
-                BackgroundTransparency = 0,
-            }, {
-                Gradient = a.createElement("UIGradient", {
-                    Transparency = NumberSequence.new(0, 1),
-                    Color = ColorSequence.new(Color3.new(1, 1, 1)),
-                    Rotation = 0,
-                })
-            }),
-            ValGradient = a.createElement("Frame", {
-                Size = UDim2.fromScale(1, 1),
-                BorderSizePixel = 0,
-                BackgroundTransparency = 0,
-            }, {
-                Gradient = a.createElement("UIGradient", {
-                    Transparency = NumberSequence.new(0, 1),
-                    Color = ColorSequence.new(Color3.new(0, 0, 0)),
-                    Rotation = 90,
-                })
-            }),
-            Handle = a.createElement("Frame", {
-                Size = UDim2.fromOffset(12, 12),
-                Position = UDim2.fromScale(c.Sat, 1 - c.Val),
-                AnchorPoint = Vector2.new(0.5, 0.5),
-                BackgroundColor3 = b.Color.Text,
-                BorderSizePixel = 0,
-            }, {
-                UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(1, 0) }),
-                UIStroke = a.createElement("UIStroke", { Thickness = 2, Color = b.Color.Background })
-            }),
-            Trigger = a.createElement("TextButton", {
-                Size = UDim2.fromScale(1, 1),
-                BackgroundTransparency = 1,
-                Text = "",
-                [a.Event.MouseButton1Down] = function(d)
-                    local function update()
-                        local e = game:GetService("UserInputService"):GetMouseLocation()
-                        local f = (e.X - d.AbsolutePosition.X) / d.AbsoluteSize.X
-                        local g = (e.Y - d.AbsolutePosition.Y) / d.AbsoluteSize.Y
-                        c.OnChanged(math.clamp(f, 0, 1), 1 - math.clamp(g, 0, 1))
-                    end
-                    update()
-                end
-            })
-        })
-    end
-    
-    return SaturationSquare
-end
-
-_modules["components/Elements/HyperDropdown/DropdownList"] = function()
-    
-    
-    
-    
-    local a = _require("dependencies/React")
-    local b = _require("theme/tokens")
-    local c = _require("Containers/VirtualList")
-    local d = _require("components/Elements/HyperDropdown/DropdownOption")
-    local e = _require("components/Elements/HyperDropdown/DropdownSearch")
-    
-    local function DropdownList(f)
-        local g, h = a.useState("")
-        
-        local i = {}
-        for j, k in ipairs(f.Options or {}) do
-            if string.find(string.lower(tostring(k)), string.lower(g)) then
-                table.insert(i, k)
-            end
-        end
-        
-        return a.createElement("Frame", {
-            Size = UDim2.new(1, 0, 0, 200),
-            BackgroundColor3 = b.Color.Surface,
-            BorderSizePixel = 0,
-        }, {
-            UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(0, b.Radius.Small) }),
-            Layout = a.createElement("UIListLayout", { SortOrder = Enum.SortOrder.LayoutOrder }),
-            Search = a.createElement(e, {
-                OnChanged = h
-            }),
-            List = a.createElement(c, {
-                Size = UDim2.new(1, 0, 1, -32),
-                Items = i,
-                ItemHeight = 32,
-                RenderItem = function(j)
-                    local k = false
-                    if type(f.Selected) == "table" then
-                        k = table.find(f.Selected, j) ~= nil
-                    else
-                        k = f.Selected == j
-                    end
-                    
-                    return a.createElement(d, {
-                        Text = tostring(j),
-                        Selected = k,
-                        OnSelect = function() f.OnSelect(j) end
-                    })
-                end
-            })
-        })
-    end
-    
-    return DropdownList
-end
-
-_modules["components/Elements/HyperDropdown/DropdownOption"] = function()
-    
-    
-    
-    
-    local a = _require("dependencies/React")
-    local b = _require("theme/tokens")
-    local c = _require("components/BaseElement")
-    
-    local function DropdownOption(d)
-        return a.createElement(c, {
-            BackgroundTransparency = 1,
-            OnActivated = d.OnSelect,
-        }, {
-            Container = a.createElement("Frame", {
-                Size = UDim2.fromScale(1, 1),
-                BackgroundTransparency = 1,
-            }, {
-                Padding = a.createElement("UIPadding", {
-                    PaddingLeft = UDim.new(0, b.Spacing[3]),
-                }),
-                Label = a.createElement("TextLabel", {
-                    Size = UDim2.fromScale(1, 1),
-                    BackgroundTransparency = 1,
-                    Text = d.Text,
-                    TextColor3 = d.Selected and b.Color.Accent or b.Color.Text,
-                    Font = d.Selected and b.Font.Bold or b.Font.Main,
-                    TextSize = b.FontSize.Small,
-                    TextXAlignment = Enum.TextXAlignment.Left,
-                })
-            })
-        })
-    end
-    
-    return DropdownOption
-end
-
-_modules["components/Elements/HyperDropdown/DropdownSearch"] = function()
-    
-    
-    
-    
-    local a = _require("dependencies/React")
-    local b = _require("theme/tokens")
-    
-    local function DropdownSearch(c)
-        return a.createElement("TextBox", {
-            Size = UDim2.new(1, 0, 0, 32),
-            BackgroundColor3 = b.Color.Background,
-            BackgroundTransparency = 0.5,
-            BorderSizePixel = 0,
-            PlaceholderText = "Search...",
-            PlaceholderColor3 = b.Color.TextMuted,
-            Text = "",
-            TextColor3 = b.Color.Text,
-            Font = b.Font.Main,
-            TextSize = b.FontSize.Small,
-            ClearTextOnFocus = false,
-            [a.Change.Text] = function(d)
-                c.OnChanged(d.Text)
-            end,
-        }, {
-            UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(0, b.Radius.Small) }),
-            Padding = a.createElement("UIPadding", { PaddingLeft = UDim.new(0, 8) }),
-        })
-    end
-    
-    return DropdownSearch
-end
-
-_modules["components/Elements/HyperDropdown/DropdownTrigger"] = function()
-    
-    
-    
-    
-    local a = _require("dependencies/React")
-    local b = _require("theme/tokens")
-    local c = _require("components/BaseElement")
-    local d = _require("hooks/useSpring")
-    
-    local function DropdownTrigger(e)
-        local f = d(e.Open and 180 or 0, { damping = 0.8, stiffness = 0.2 })
-        
-        local g = "Select Option..."
-        if e.Value then
-            if type(e.Value) == "table" then
-                g = #e.Value .. " selected"
-            else
-                g = tostring(e.Value)
-            end
-        end
-        
-        return a.createElement(c, {
-            OnActivated = e.OnToggle,
-        }, {
-            Container = a.createElement("Frame", {
-                Size = UDim2.fromScale(1, 1),
-                BackgroundTransparency = 1,
-            }, {
-                Padding = a.createElement("UIPadding", {
-                    PaddingLeft = UDim.new(0, b.Spacing[3]),
-                    PaddingRight = UDim.new(0, b.Spacing[3]),
-                }),
-                Label = a.createElement("TextLabel", {
-                    Size = UDim2.new(1, -60, 1, 0),
-                    BackgroundTransparency = 1,
-                    Text = e.Text or "Dropdown",
-                    TextColor3 = b.Color.Text,
-                    Font = b.Font.Main,
-                    TextSize = b.FontSize.Medium,
-                    TextXAlignment = Enum.TextXAlignment.Left,
-                }),
-                Value = a.createElement("TextLabel", {
-                    Size = UDim2.new(1, -60, 1, 0),
-                    BackgroundTransparency = 1,
-                    Text = g,
-                    TextColor3 = b.Color.TextMuted,
-                    Font = b.Font.Main,
-                    TextSize = b.FontSize.Small,
-                    TextXAlignment = Enum.TextXAlignment.Right,
-                    ZIndex = 4,
-                }),
-                Arrow = a.createElement("ImageLabel", {
-                    Size = UDim2.fromOffset(16, 16),
-                    Position = UDim2.new(1, -16, 0.5, -8),
-                    BackgroundTransparency = 1,
-                    Image = "rbxassetid://10723346959", 
-                    ImageColor3 = b.Color.TextMuted,
-                    Rotation = f,
-                })
-            })
-        })
-    end
-    
-    return DropdownTrigger
-end
-
-_modules["components/Elements/HyperDropdown"] = function()
-    
-    
-    
-    
-    local a = _require("dependencies/React")
-    local b = _require("theme/tokens")
-    
-    local c = _require("components/Elements/DropdownTrigger")
-    local d = _require("components/Elements/DropdownList")
-    
-    local function HyperDropdown(e)
-        local f, g = a.useState(false)
-        
-        return a.createElement("Frame", {
-            Size = e.Size or UDim2.new(1, 0, 0, 0),
-            AutomaticSize = Enum.AutomaticSize.Y,
-            BackgroundTransparency = 1,
-            LayoutOrder = e.LayoutOrder,
-            ZIndex = f and 100 or 1,
-        }, {
-            Layout = a.createElement("UIListLayout", {
-                SortOrder = Enum.SortOrder.LayoutOrder,
-                Padding = UDim.new(0, 4),
-            }),
-            Trigger = a.createElement(c, {
-                Text = e.Text,
-                Value = e.Value,
-                Open = f,
-                OnToggle = function() g(not f) end,
-            }),
-            List = f and a.createElement(d, {
-                Options = e.Options,
-                Selected = e.Value,
-                Multi = e.Multi,
-                OnSelect = function(h)
-                    if not e.Multi then g(false) end
-                    if e.Callback then e.Callback(h) end
-                end,
-            })
-        })
-    end
-    
-    return HyperDropdown
+    return Root
 end
 
 _modules["components/Window"] = function()
@@ -2739,7 +2647,7 @@ _modules["components/Window"] = function()
     local c = _require("hooks/useSpring")
     local d = _require("theme/tokens")
     
-    local e = _require("TabContainer") 
+    local e = _require("components/TabContainer") 
     
     local function Window(f)
         local g = b(f.store, f.id)
@@ -3340,6 +3248,97 @@ _modules["hooks/useTree"] = function()
     return useTree
 end
 
+_modules["main"] = function()
+    
+    
+    
+    
+    
+    local a = {}
+    a.__index = a
+    
+    
+    
+    local function CheckExistingInstance()
+        local b = getgenv and getgenv() or _G
+        if b.__HyperUI_Instance then
+            local c = b.__HyperUI_Instance
+            pcall(function()
+                c:Destroy()
+            end)
+            b.__HyperUI_Instance = nil
+        end
+    end
+    
+    function a.new()
+        CheckExistingInstance()
+        
+        local b = setmetatable({}, a)
+        
+        
+        b.Store = _require("core/store").new()
+        
+        b.WindowManager = _require("managers/WindowManager").new(b.Store)
+        b.NotificationManager = _require("managers/NotificationManager").new(b.Store)
+        b.ThemeManager = _require("managers/ThemeManager").new(b.Store)
+        b.FocusManager = _require("managers/FocusManager").new(b.Store)
+        b.Config = _require("core/config").new(b.Store, {
+            FileName = "HyperUI_V2_Config.json",
+            AutoSave = true
+        })
+        
+        
+        b.Runtime = _require("runtime/mount").new(b.Store)
+        
+        
+        local c = getgenv and getgenv() or _G
+        c.__HyperUI_Instance = b
+        
+        return b
+    end
+    
+    function a:CreateWindow(b)
+        local c = _require("api")
+        local d = game:GetService("HttpService"):GenerateGUID(false)
+        
+        self.Store:Dispatch({
+            type = "ADD_WINDOW",
+            window = {
+                id = d,
+                title = b.Title or "HyperUI",
+                icon = b.Icon,
+                active = true,
+            }
+        })
+        
+        return c.Window.new(d, self.Store)
+    end
+    
+    function a:Notify(b)
+        return self.NotificationManager:Notify(b)
+    end
+    
+    function a:SetTheme(b)
+        return self.ThemeManager:SetTheme(b)
+    end
+    
+    function a:Destroy()
+        if self.Runtime then
+            self.Runtime:Unmount()
+        end
+        
+        local b = getgenv and getgenv() or _G
+        if b.__HyperUI_Instance == self then
+            b.__HyperUI_Instance = nil
+        end
+        
+        
+        self.Store:Destroy()
+    end
+    
+    return a
+end
+
 _modules["managers/FocusManager"] = function()
     
     
@@ -3643,47 +3642,48 @@ _modules["runtime/mount"] = function()
         return f
     end
     
-    function a:CreateContainer()
-        
-        
-        
-        
-        
-        
-        local e
+    local function getSafeGui()
+        local e = game:GetService("CoreGui")
         local f = getgenv and getgenv().gethui
-        local g = getgenv and (getgenv().protect_gui or (getgenv().syn and getgenv().syn.protect_gui))
+        local g = getgenv and getgenv().syn
         
-        if f then
-            e = f()
-        elseif c then
+        if g and g.protect_gui then
+            local h = Instance.new("ScreenGui")
+            g.protect_gui(h)
+            h.Parent = e
+            return h
+        elseif f then
+            local h = f()
+            local i = Instance.new("ScreenGui")
+            i.Parent = h
+            return i
+        else
+            local h = Instance.new("ScreenGui")
             
-            local h = pcall(function()
-                local h = Instance.new("Frame")
-                h.Parent = c
-                h:Destroy()
+            local i = pcall(function()
+                h.Parent = e
             end)
-            if h then
-                e = c
+            if not i then
+                local j = game:GetService("Players").LocalPlayer
+                if j then
+                    local k = j:FindFirstChild("PlayerGui") or j:WaitForChild("PlayerGui", 5)
+                    if k then
+                        h.Parent = k
+                    end
+                end
             end
+            return h
         end
+    end
+    
+    function a:CreateContainer()
+        local e = getSafeGui()
+        e.Name = "HyperUI_" .. game:GetService("HttpService"):GenerateGUID(false):sub(1, 8)
+        e.ResetOnSpawn = false
+        e.IgnoreGuiInset = true
+        e.DisplayOrder = 100
         
-        if not e then
-            e = d:WaitForChild("PlayerGui")
-        end
-        
-        local h = Instance.new("ScreenGui")
-        h.Name = "HyperUI_" .. game:GetService("HttpService"):GenerateGUID(false):sub(1, 8)
-        h.ResetOnSpawn = false
-        h.IgnoreGuiInset = true
-        h.DisplayOrder = 100
-        
-        if g then
-            pcall(g, h)
-        end
-        
-        h.Parent = e
-        self.Container = h
+        self.Container = e
         
         
         
@@ -3773,42 +3773,509 @@ _modules["theme/tokens"] = function()
     
     
     
+    
     local a = _require("palette")
     local b = _require("typography")
     local c = _require("shadows")
     
-    local d = {
-        Color = {
-            Background = a.Slate[950],
-            Surface = a.Slate[900],
-            Border = a.Slate[800],
-            Text = a.Slate[100],
-            TextMuted = a.Slate[400],
-            Accent = a.Blue[500],
-            Success = a.Emerald[500],
-            Error = a.Rose[500],
-        },
-        Spacing = {
-            [1] = 4,
-            [2] = 8,
-            [3] = 12,
-            [4] = 16,
-            [6] = 24,
-            [8] = 32,
-        },
-        Radius = {
-            Small = 4,
-            Medium = 8,
-            Large = 12,
-            Full = 999,
-        },
-        Typography = b,
-        Shadows = c,
-        
-        
-        Font = b.Font,
-        FontSize = b.Size,
+    
+    
+    
+    
+    local function buildTheme(d, e, f, g, h)
+        return {
+            Color      = d,
+            Spacing    = e or {
+                [1] = 4, [2] = 8, [3] = 12,
+                [4] = 16, [6] = 24, [8] = 32,
+            },
+            Radius     = f or {
+                Small = 4, Medium = 8, Large = 12, Full = 999,
+            },
+            Typography = g or b,
+            Shadows    = h    or c,
+            
+            Font     = (g or b).Font,
+            FontSize = (g or b).Size,
+        }
+    end
+    
+    
+    
+    
+    
+    local d = {}
+    
+    
+    d.Default = buildTheme({
+        Background  = a.Slate[950],
+        Surface     = a.Slate[900],
+        SurfaceAlt  = a.Slate[800],
+        Border      = a.Slate[700],
+        Text        = a.Slate[100],
+        TextMuted   = a.Slate[400],
+        TextOnAccent= a.White,
+        Accent      = a.Blue[500],
+        AccentHover = a.Blue[400],
+        AccentMuted = a.Blue[900],
+        Success     = a.Emerald[500],
+        Warning     = a.Amber[400],
+        Error       = a.Rose[500],
+        Info        = a.Sky[400],
+    })
+    
+    
+    d.Light = buildTheme({
+        Background  = a.White,
+        Surface     = a.Slate[50],
+        SurfaceAlt  = a.Slate[100],
+        Border      = a.Slate[200],
+        Text        = a.Slate[900],
+        TextMuted   = a.Slate[500],
+        TextOnAccent= a.White,
+        Accent      = a.Blue[600],
+        AccentHover = a.Blue[700],
+        AccentMuted = a.Blue[100],
+        Success     = a.Emerald[600],
+        Warning     = a.Amber[500],
+        Error       = a.Rose[600],
+        Info        = a.Sky[500],
+    })
+    
+    
+    d.Midnight = buildTheme({
+        Background  = a.Neutral[950],
+        Surface     = a.Neutral[900],
+        SurfaceAlt  = a.Neutral[800],
+        Border      = a.Neutral[700],
+        Text        = a.Neutral[50],
+        TextMuted   = a.Neutral[400],
+        TextOnAccent= a.Black,
+        Accent      = a.Violet[400],
+        AccentHover = a.Violet[300],
+        AccentMuted = a.Violet[900],
+        Success     = a.Teal[400],
+        Warning     = a.Yellow[400],
+        Error       = a.Red[400],
+        Info        = a.Cyan[400],
+    },
+    {   
+        [1] = 3, [2] = 6, [3] = 10,
+        [4] = 14, [6] = 20, [8] = 28,
+    },
+    {   
+        Small = 2, Medium = 4, Large = 8, Full = 999,
+    })
+    
+    
+    d.Ocean = buildTheme({
+        Background  = a.Blue[950],
+        Surface     = a.Blue[900],
+        SurfaceAlt  = a.Blue[800],
+        Border      = a.Blue[700],
+        Text        = a.Sky[50],
+        TextMuted   = a.Sky[300],
+        TextOnAccent= a.Blue[950],
+        Accent      = a.Cyan[400],
+        AccentHover = a.Cyan[300],
+        AccentMuted = a.Cyan[900],
+        Success     = a.Emerald[400],
+        Warning     = a.Amber[300],
+        Error       = a.Rose[400],
+        Info        = a.Blue[300],
+    })
+    
+    
+    d.Forest = buildTheme({
+        Background  = a.Green[950],
+        Surface     = a.Green[900],
+        SurfaceAlt  = a.Green[800],
+        Border      = a.Green[700],
+        Text        = a.Green[50],
+        TextMuted   = a.Green[300],
+        TextOnAccent= a.Green[950],
+        Accent      = a.Lime[400],
+        AccentHover = a.Lime[300],
+        AccentMuted = a.Green[800],
+        Success     = a.Emerald[400],
+        Warning     = a.Yellow[400],
+        Error       = a.Red[400],
+        Info        = a.Teal[400],
+    },
+    nil,
+    {   
+        Small = 6, Medium = 12, Large = 20, Full = 999,
+    })
+    
+    
+    d.Sunset = buildTheme({
+        Background  = a.Orange[950],
+        Surface     = a.Orange[900],
+        SurfaceAlt  = a.Orange[800],
+        Border      = a.Orange[700],
+        Text        = a.Orange[50],
+        TextMuted   = a.Orange[300],
+        TextOnAccent= a.White,
+        Accent      = a.Yellow[400],
+        AccentHover = a.Yellow[300],
+        AccentMuted = a.Orange[800],
+        Success     = a.Lime[400],
+        Warning     = a.Amber[300],
+        Error       = a.Rose[400],
+        Info        = a.Sky[400],
+    })
+    
+    
+    d.Rose = buildTheme({
+        Background  = a.Pink[950],
+        Surface     = a.Pink[900],
+        SurfaceAlt  = a.Pink[800],
+        Border      = a.Pink[700],
+        Text        = a.Pink[50],
+        TextMuted   = a.Pink[300],
+        TextOnAccent= a.White,
+        Accent      = a.Rose[400],
+        AccentHover = a.Rose[300],
+        AccentMuted = a.Pink[800],
+        Success     = a.Emerald[400],
+        Warning     = a.Amber[300],
+        Error       = a.Red[400],
+        Info        = a.Purple[400],
+    },
+    nil,
+    {   
+        Small = 8, Medium = 16, Large = 24, Full = 999,
+    })
+    
+    
+    d.Aurora = buildTheme({
+        Background  = a.Purple[950],
+        Surface     = a.Purple[900],
+        SurfaceAlt  = a.Purple[800],
+        Border      = a.Purple[700],
+        Text        = a.Violet[50],
+        TextMuted   = a.Violet[300],
+        TextOnAccent= a.Purple[950],
+        Accent      = a.Teal[400],
+        AccentHover = a.Teal[300],
+        AccentMuted = a.Purple[800],
+        Success     = a.Emerald[400],
+        Warning     = a.Amber[300],
+        Error       = a.Rose[400],
+        Info        = a.Sky[400],
+    })
+    
+    
+    d.Neon = buildTheme({
+        Background  = a.Neutral[950],
+        Surface     = a.Neutral[900],
+        SurfaceAlt  = a.Neutral[800],
+        Border      = a.Fuchsia[600],
+        Text        = a.White,
+        TextMuted   = a.Neutral[400],
+        TextOnAccent= a.Black,
+        Accent      = a.Fuchsia[400],
+        AccentHover = a.Fuchsia[300],
+        AccentMuted = a.Fuchsia[950],
+        Success     = a.Green[400],
+        Warning     = a.Yellow[300],
+        Error       = a.Red[400],
+        Info        = a.Cyan[400],
+    },
+    {   
+        [1] = 4, [2] = 8, [3] = 14,
+        [4] = 20, [6] = 32, [8] = 48,
+    },
+    {   
+        Small = 0, Medium = 2, Large = 4, Full = 999,
+    })
+    
+    
+    d.Sand = buildTheme({
+        Background  = a.Stone[50],
+        Surface     = a.Stone[100],
+        SurfaceAlt  = a.Stone[200],
+        Border      = a.Stone[300],
+        Text        = a.Stone[900],
+        TextMuted   = a.Stone[500],
+        TextOnAccent= a.White,
+        Accent      = a.Orange[600],
+        AccentHover = a.Orange[700],
+        AccentMuted = a.Orange[100],
+        Success     = a.Green[600],
+        Warning     = a.Amber[500],
+        Error       = a.Red[600],
+        Info        = a.Blue[500],
+    })
+    
+    
+    d.Terminal = buildTheme({
+        Background  = Color3.fromRGB(10, 14, 10),
+        Surface     = Color3.fromRGB(16, 24, 16),
+        SurfaceAlt  = Color3.fromRGB(24, 36, 24),
+        Border      = Color3.fromRGB(0, 100, 0),
+        Text        = Color3.fromRGB(0, 230, 0),
+        TextMuted   = Color3.fromRGB(0, 140, 0),
+        TextOnAccent= Color3.fromRGB(10, 14, 10),
+        Accent      = Color3.fromRGB(0, 255, 80),
+        AccentHover = Color3.fromRGB(80, 255, 120),
+        AccentMuted = Color3.fromRGB(0, 60, 0),
+        Success     = Color3.fromRGB(0, 200, 60),
+        Warning     = Color3.fromRGB(200, 200, 0),
+        Error       = Color3.fromRGB(255, 60, 60),
+        Info        = Color3.fromRGB(0, 180, 200),
+    },
+    nil,
+    {   
+        Small = 0, Medium = 0, Large = 0, Full = 999,
+    })
+    
+    
+    d.Sepia = buildTheme({
+        Background  = Color3.fromRGB(245, 235, 215),
+        Surface     = Color3.fromRGB(235, 222, 195),
+        SurfaceAlt  = Color3.fromRGB(220, 205, 175),
+        Border      = Color3.fromRGB(180, 158, 120),
+        Text        = Color3.fromRGB(60, 40, 20),
+        TextMuted   = Color3.fromRGB(120, 95, 65),
+        TextOnAccent= Color3.fromRGB(245, 235, 215),
+        Accent      = Color3.fromRGB(140, 80, 20),
+        AccentHover = Color3.fromRGB(110, 60, 10),
+        AccentMuted = Color3.fromRGB(220, 195, 160),
+        Success     = Color3.fromRGB(60, 120, 60),
+        Warning     = Color3.fromRGB(180, 130, 20),
+        Error       = Color3.fromRGB(160, 40, 30),
+        Info        = Color3.fromRGB(50, 90, 150),
+    },
+    nil,
+    {   
+        Small = 3, Medium = 6, Large = 10, Full = 999,
+    })
+    
+    
+    d.Ice = buildTheme({
+        Background  = Color3.fromRGB(235, 245, 255),
+        Surface     = Color3.fromRGB(220, 235, 250),
+        SurfaceAlt  = Color3.fromRGB(200, 220, 245),
+        Border      = Color3.fromRGB(160, 195, 235),
+        Text        = Color3.fromRGB(20, 40, 80),
+        TextMuted   = Color3.fromRGB(80, 110, 160),
+        TextOnAccent= Color3.fromRGB(235, 245, 255),
+        Accent      = Color3.fromRGB(30, 100, 220),
+        AccentHover = Color3.fromRGB(20, 80, 190),
+        AccentMuted = Color3.fromRGB(190, 215, 250),
+        Success     = Color3.fromRGB(20, 150, 110),
+        Warning     = Color3.fromRGB(180, 130, 20),
+        Error       = Color3.fromRGB(200, 50, 50),
+        Info        = Color3.fromRGB(30, 130, 210),
+    },
+    nil,
+    {   
+        Small = 10, Medium = 18, Large = 28, Full = 999,
+    })
+    
+    
+    d.Lava = buildTheme({
+        Background  = Color3.fromRGB(14, 8, 6),
+        Surface     = Color3.fromRGB(28, 14, 10),
+        SurfaceAlt  = Color3.fromRGB(46, 20, 14),
+        Border      = Color3.fromRGB(120, 40, 20),
+        Text        = Color3.fromRGB(255, 220, 200),
+        TextMuted   = Color3.fromRGB(180, 120, 100),
+        TextOnAccent= Color3.fromRGB(14, 8, 6),
+        Accent      = Color3.fromRGB(255, 80, 20),
+        AccentHover = Color3.fromRGB(255, 120, 60),
+        AccentMuted = Color3.fromRGB(80, 20, 10),
+        Success     = Color3.fromRGB(100, 200, 80),
+        Warning     = Color3.fromRGB(255, 180, 0),
+        Error       = Color3.fromRGB(255, 40, 40),
+        Info        = Color3.fromRGB(80, 160, 240),
+    })
+    
+    
+    d.Galaxy = buildTheme({
+        Background  = Color3.fromRGB(8, 6, 18),
+        Surface     = Color3.fromRGB(16, 12, 36),
+        SurfaceAlt  = Color3.fromRGB(26, 20, 54),
+        Border      = Color3.fromRGB(60, 40, 120),
+        Text        = Color3.fromRGB(220, 210, 255),
+        TextMuted   = Color3.fromRGB(130, 110, 200),
+        TextOnAccent= Color3.fromRGB(8, 6, 18),
+        Accent      = Color3.fromRGB(160, 100, 255),
+        AccentHover = Color3.fromRGB(180, 130, 255),
+        AccentMuted = Color3.fromRGB(40, 20, 80),
+        Success     = Color3.fromRGB(80, 220, 160),
+        Warning     = Color3.fromRGB(255, 200, 80),
+        Error       = Color3.fromRGB(255, 80, 120),
+        Info        = Color3.fromRGB(80, 180, 255),
+    })
+    
+    
+    d.Copper = buildTheme({
+        Background  = Color3.fromRGB(22, 14, 8),
+        Surface     = Color3.fromRGB(38, 24, 12),
+        SurfaceAlt  = Color3.fromRGB(56, 36, 16),
+        Border      = Color3.fromRGB(140, 80, 30),
+        Text        = Color3.fromRGB(255, 230, 180),
+        TextMuted   = Color3.fromRGB(180, 130, 80),
+        TextOnAccent= Color3.fromRGB(22, 14, 8),
+        Accent      = Color3.fromRGB(200, 110, 40),
+        AccentHover = Color3.fromRGB(220, 140, 70),
+        AccentMuted = Color3.fromRGB(80, 40, 10),
+        Success     = Color3.fromRGB(80, 180, 80),
+        Warning     = Color3.fromRGB(230, 180, 20),
+        Error       = Color3.fromRGB(220, 60, 40),
+        Info        = Color3.fromRGB(60, 140, 200),
+    },
+    nil,
+    {   
+        Small = 2, Medium = 4, Large = 6, Full = 999,
+    })
+    
+    
+    d.Pastel = buildTheme({
+        Background  = Color3.fromRGB(255, 250, 252),
+        Surface     = Color3.fromRGB(250, 240, 255),
+        SurfaceAlt  = Color3.fromRGB(240, 245, 255),
+        Border      = Color3.fromRGB(210, 195, 230),
+        Text        = Color3.fromRGB(60, 50, 80),
+        TextMuted   = Color3.fromRGB(130, 115, 155),
+        TextOnAccent= Color3.fromRGB(255, 250, 252),
+        Accent      = Color3.fromRGB(180, 130, 220),
+        AccentHover = Color3.fromRGB(160, 105, 205),
+        AccentMuted = Color3.fromRGB(235, 220, 250),
+        Success     = Color3.fromRGB(100, 200, 150),
+        Warning     = Color3.fromRGB(240, 190, 100),
+        Error       = Color3.fromRGB(240, 130, 140),
+        Info        = Color3.fromRGB(110, 170, 240),
+    },
+    nil,
+    {   
+        Small = 12, Medium = 20, Large = 32, Full = 999,
+    })
+    
+    
+    d.Monochrome = buildTheme({
+        Background  = Color3.fromRGB(10, 10, 10),
+        Surface     = Color3.fromRGB(22, 22, 22),
+        SurfaceAlt  = Color3.fromRGB(36, 36, 36),
+        Border      = Color3.fromRGB(60, 60, 60),
+        Text        = Color3.fromRGB(240, 240, 240),
+        TextMuted   = Color3.fromRGB(140, 140, 140),
+        TextOnAccent= Color3.fromRGB(10, 10, 10),
+        Accent      = Color3.fromRGB(220, 220, 220),
+        AccentHover = Color3.fromRGB(255, 255, 255),
+        AccentMuted = Color3.fromRGB(50, 50, 50),
+        Success     = Color3.fromRGB(190, 190, 190),
+        Warning     = Color3.fromRGB(170, 170, 170),
+        Error       = Color3.fromRGB(200, 200, 200),
+        Info        = Color3.fromRGB(160, 160, 160),
+    },
+    nil,
+    {   
+        Small = 0, Medium = 0, Large = 0, Full = 0,
+    })
+    
+    
+    d.Nordic = buildTheme({
+        Background  = Color3.fromRGB(36, 40, 50),
+        Surface     = Color3.fromRGB(48, 54, 66),
+        SurfaceAlt  = Color3.fromRGB(62, 70, 84),
+        Border      = Color3.fromRGB(88, 98, 116),
+        Text        = Color3.fromRGB(220, 228, 240),
+        TextMuted   = Color3.fromRGB(140, 155, 180),
+        TextOnAccent= Color3.fromRGB(36, 40, 50),
+        Accent      = Color3.fromRGB(130, 180, 240),
+        AccentHover = Color3.fromRGB(155, 200, 255),
+        AccentMuted = Color3.fromRGB(50, 70, 100),
+        Success     = Color3.fromRGB(100, 190, 130),
+        Warning     = Color3.fromRGB(240, 190, 80),
+        Error       = Color3.fromRGB(220, 90, 90),
+        Info        = Color3.fromRGB(100, 170, 230),
+    })
+    
+    
+    d.Sakura = buildTheme({
+        Background  = Color3.fromRGB(255, 248, 250),
+        Surface     = Color3.fromRGB(255, 238, 244),
+        SurfaceAlt  = Color3.fromRGB(252, 222, 234),
+        Border      = Color3.fromRGB(240, 180, 200),
+        Text        = Color3.fromRGB(60, 30, 45),
+        TextMuted   = Color3.fromRGB(150, 100, 120),
+        TextOnAccent= Color3.fromRGB(255, 248, 250),
+        Accent      = Color3.fromRGB(220, 80, 120),
+        AccentHover = Color3.fromRGB(200, 60, 100),
+        AccentMuted = Color3.fromRGB(255, 215, 230),
+        Success     = Color3.fromRGB(60, 170, 100),
+        Warning     = Color3.fromRGB(220, 160, 30),
+        Error       = Color3.fromRGB(210, 50, 70),
+        Info        = Color3.fromRGB(70, 140, 210),
+    },
+    nil,
+    {   
+        Small = 8, Medium = 16, Large = 24, Full = 999,
+    })
+    
+    
+    
+    
+    
+    
+    d._Names = {
+        "Default",
+        "Light",
+        "Midnight",
+        "Ocean",
+        "Forest",
+        "Sunset",
+        "Rose",
+        "Aurora",
+        "Neon",
+        "Sand",
+        "Terminal",
+        "Sepia",
+        "Ice",
+        "Lava",
+        "Galaxy",
+        "Copper",
+        "Pastel",
+        "Monochrome",
+        "Nordic",
+        "Sakura",
     }
+    
+    
+    d._Active = "Default"
+    
+    
+    
+    
+    function d:Get(e)
+        local f = e or self._Active
+        return self[f] or self.Default
+    end
+    
+    
+    
+    
+    function d:Set(e)
+        if self[e] and type(self[e]) == "table" then
+            self._Active = e
+            return true
+        end
+        warn(("[HyperUI] Tema '%s' no encontrado. Se mantiene '%s'."):format(tostring(e), self._Active))
+        return false
+    end
+    
+    
+    
+    
+    function d:Register(e, f)
+        assert(type(e)   == "string", "[HyperUI] El nombre del tema debe ser una cadena.")
+        assert(type(f) == "table",  "[HyperUI] Los tokens del tema deben ser una tabla.")
+        self[e] = f
+        table.insert(self._Names, e)
+    end
     
     return d
 end
