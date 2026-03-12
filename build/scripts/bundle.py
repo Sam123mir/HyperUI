@@ -29,7 +29,8 @@ def resolve_path(current_module, require_path):
         return require_path.replace('.', '/')
     
     current_parts = current_module.split('/')
-    target_parts = current_parts[:-1]
+    # target_parts should include the script itself so each .Parent pops it
+    target_parts = list(current_parts)
     
     if parts and parts[0] == "script":
         i = 1
@@ -81,17 +82,14 @@ def bundle():
     processed_modules = {}
     for name, data in modules.items():
         content = data["content"]
-        original_path_no_ext = data["original_path"]
         
         # Regex to match require(script...) handling one level of nested parens
-        # script followed by:
-        # ( [^()] | \([^()]*\) )*
-        # matches any char except () OR a balanced pair of ()
         require_regex = r'require\s*\(\s*(script(?:[^()]|\([^()]*\))*)\)'
         
         def replace_require(match):
             req_content = match.group(1).strip()
-            resolved = resolve_path(original_path_no_ext, req_content)
+            # Use 'name' (the module key) as the base for resolution
+            resolved = resolve_path(name, req_content)
             return f'_require("{resolved}")'
         
         new_content = re.sub(require_regex, replace_require, content)
