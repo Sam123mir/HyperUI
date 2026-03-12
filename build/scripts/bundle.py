@@ -13,36 +13,33 @@ def resolve_path(current_module, require_path):
     parts = []
     if require_path.startswith("script"):
         parts.append("script")
-        # Handle .Name or ["Name"] or ['Name']
-        matches = re.finditer(r'\.(?P<dot>[A-Za-z0-9_]+)|\[(?P<quote>[\'"])(?P<bracket>.*?)(?P=quote)\]', require_path)
+        # Handle .Name or ["Name"] or ['Name'] or :WaitForChild("Name") or :FindFirstChild("Name")
+        # Regex to match .Name, ["Name"], :WaitForChild("Name"), etc.
+        pattern = r'\.(?P<dot>[A-Za-z0-9_]+)|\[(?P<quote1>[\'"])(?P<bracket>.*?)(?P=quote1)\]|:(?:WaitForChild|FindFirstChild)\s*\(\s*(?P<quote2>[\'"])(?P<child>.*?)(?P=quote2)\s*\)'
+        matches = re.finditer(pattern, require_path)
         for m in matches:
             if m.group('dot'):
                 parts.append(m.group('dot'))
             elif m.group('bracket'):
                 parts.append(m.group('bracket'))
+            elif m.group('child'):
+                parts.append(m.group('child'))
     else:
         # Absolute or string-based require
         return require_path.replace('.', '/')
     
     current_parts = current_module.split('/')
-    # target_parts is the directory containing the script
     target_parts = current_parts[:-1]
     
     if parts and parts[0] == "script":
         i = 1
-        # The first "Parent" refers to the current directory (target_parts)
-        if i < len(parts) and parts[i] == "Parent":
+        while i < len(parts) and parts[i] == "Parent":
+            if target_parts:
+                target_parts.pop()
             i += 1
-            # Subsequent "Parent" calls move up the directory tree
-            while i < len(parts) and parts[i] == "Parent":
-                if target_parts:
-                    target_parts.pop()
-                i += 1
         
-        # Add remaining parts
         target_parts.extend(parts[i:])
     else:
-        # Fallback for unexpected formats
         return require_path.replace('.', '/')
     
     return "/".join(target_parts)
@@ -86,13 +83,18 @@ def bundle():
         content = data["content"]
         original_path_no_ext = data["original_path"]
         
-        # Match require(...) calls
+        # Regex to match require(script...) handling one level of nested parens
+        # script followed by:
+        # ( [^()] | \([^()]*\) )*
+        # matches any char except () OR a balanced pair of ()
+        require_regex = r'require\s*\(\s*(script(?:[^()]|\([^()]*\))*)\)'
+        
         def replace_require(match):
             req_content = match.group(1).strip()
             resolved = resolve_path(original_path_no_ext, req_content)
             return f'_require("{resolved}")'
         
-        new_content = re.sub(r'require\s*\(\s*(script[^)]*)\s*\)', replace_require, content)
+        new_content = re.sub(require_regex, replace_require, content)
         processed_modules[name] = new_content
 
     header = f"""-- HyperUI Framework

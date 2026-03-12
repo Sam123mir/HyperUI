@@ -1,27 +1,27 @@
 -- HyperUI Framework
 -- Version: 2.0.0
--- Build Date: 2026-03-12 17:10:20
+-- Build Date: 2026-03-12 17:37:45
 -- Distribution: Single File
 
 local _modules = {}
 local _cache = {}
 local _require
 _modules["Packages/React"] = function()
-    return _require("Packages/_Index/jsdotlua_react@17.2.1/react")
+    return _require("_Index/jsdotlua_react@17.2.1/react")
 end
 
 _modules["Packages/ReactRoblox"] = function()
-    return _require("Packages/_Index/jsdotlua_react-roblox@17.2.1/react-roblox")
+    return _require("_Index/jsdotlua_react-roblox@17.2.1/react-roblox")
 end
 
 _modules["Packages/_Index/jsdotlua_boolean@1.2.7/boolean/src"] = function()
     return {
-    	toJSBoolean = _require("Packages/_Index/jsdotlua_boolean@1.2.7/boolean/src")),
+    	toJSBoolean = _require("Packages/_Index/jsdotlua_boolean@1.2.7/boolean/src/toJSBoolean"),
     }
 end
 
 _modules["Packages/_Index/jsdotlua_boolean@1.2.7/boolean/src/toJSBoolean"] = function()
-    local a = _require("Packages/_Index/jsdotlua_boolean@1.2.7/boolean"))
+    local a = _require("Packages/_Index/jsdotlua_boolean@1.2.7/number")
     
     
     return function(b: any): boolean
@@ -30,18 +30,18 @@ _modules["Packages/_Index/jsdotlua_boolean@1.2.7/boolean/src/toJSBoolean"] = fun
 end
 
 _modules["Packages/_Index/jsdotlua_boolean@1.2.7/number"] = function()
-    return _require("Packages/_Index/jsdotlua_number@1.2.7/number")
+    return _require("Packages/jsdotlua_number@1.2.7/number")
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src"))
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src"))
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src"))
-    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src"))
-    local e = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src"))
-    local f = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object")
+    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Set")
+    local e = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/WeakMap")
+    local f = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/inspect")
     
-    local g = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src"))
+    local g = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
     
     export type Array<T> = g.Array<T>
     export type Map<T, V> = g.Map<T, V>
@@ -62,40 +62,40 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src"] = functio
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
     
     export type Array<T> = a.Array<T>
     
     return {
-    	concat = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")),
-    	every = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")),
-    	filter = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")),
-    	find = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")),
-    	findIndex = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")),
-    	flat = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")),
-    	flatMap = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")),
-    	forEach = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")),
-    	from = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")),
-    	includes = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")),
-    	indexOf = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")),
-    	isArray = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")),
-    	join = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")),
-    	map = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")),
-    	reduce = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")),
-    	reverse = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")),
-    	shift = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")),
-    	slice = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")),
-    	some = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")),
-    	sort = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")),
-    	splice = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")),
-    	unshift = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array")),
+    	concat = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/concat"),
+    	every = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/every"),
+    	filter = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/filter"),
+    	find = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/find"),
+    	findIndex = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/findIndex"),
+    	flat = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/flat"),
+    	flatMap = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/flatMap"),
+    	forEach = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/forEach"),
+    	from = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from"),
+    	includes = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/includes"),
+    	indexOf = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/indexOf"),
+    	isArray = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/isArray"),
+    	join = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/join"),
+    	map = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/map"),
+    	reduce = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/reduce"),
+    	reverse = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/reverse"),
+    	shift = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/shift"),
+    	slice = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/slice"),
+    	some = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/some"),
+    	sort = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/sort"),
+    	splice = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/splice"),
+    	unshift = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/unshift"),
     }
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/concat"] = function()
     local a = _G.__DEV__
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array"))
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/isArray")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = c.Array<T>
     
     local d = [[Array.concat(...) only works with array-like tables but it received an object-like table.
@@ -149,7 +149,7 @@ end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/every"] = function()
     local a = _G.__DEV__
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = b.Array<T>
     type Object = b.Object
     type callbackFn<T> = (element: T, index: number, array: Array<T>) -> boolean
@@ -193,7 +193,7 @@ end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/filter"] = function()
     local a = _G.__DEV__
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = b.Array<T>
     type Object = b.Object
     type callbackFn<T> = (element: T, index: number, array: Array<T>) -> boolean
@@ -242,7 +242,7 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/filte
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/find"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     type PredicateFunction<T> = (value: T, index: number, array: Array<T>) -> boolean
     
@@ -258,7 +258,7 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/find"
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/findIndex"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     type PredicateFunction<T> = (T, number, Array<T>) -> boolean
     
@@ -275,8 +275,8 @@ end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/flat"] = function()
     local a = _G.__DEV__
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array"))
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/isArray")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = c.Array<T>
     local function flat<T>(d: Array<T>, e: number?): Array<T>
     	if a then
@@ -310,9 +310,9 @@ end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/flatMap"] = function()
     local a = _G.__DEV__
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array"))
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array"))
-    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/flat")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/map")
+    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = d.Array<T>
     type callbackFn<T, U> = (element: T, index: number, array: Array<T>) -> U
     type callbackFnWithThisArg<T, U, V> = (thisArg: V, element: T, index: number, array: Array<T>) -> U
@@ -338,7 +338,7 @@ end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/forEach"] = function()
     local a = _G.__DEV__
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = b.Array<T>
     type Object = b.Object
     type callbackFn<T> = (element: T, index: number, array: Array<T>) -> ()
@@ -378,16 +378,16 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/forEa
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array"))
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array"):WaitForChild('Map'))
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from"))
-    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src"))
-    local e = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Set")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map/Map")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/isArray")
+    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/instance-of")
+    local e = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
     
-    local f = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from"))
-    local g = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from"))
-    local h = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from"))
-    local i = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from"))
+    local f = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/fromString")
+    local g = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/fromSet")
+    local h = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/fromMap")
+    local i = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/fromArray")
     
     type Array<T> = e.Array<T>
     type Object = e.Object
@@ -426,7 +426,7 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from"
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/fromArray"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Object = a.Object
     
     type Array<T> = a.Array<T>
@@ -460,7 +460,7 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/fromMap"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Object = a.Object
     type Array<T> = a.Array<T>
     type Map<K, V> = a.Map<K, V>
@@ -496,7 +496,7 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/fromSet"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Object = a.Object
     type Array<T> = a.Array<T>
     type Set<T> = a.Set<T>
@@ -529,7 +529,7 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/fromString"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Object = a.Object
     type Array<T> = a.Array<T>
     
@@ -565,9 +565,9 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/includes"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array"))
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/indexOf")
     
     return function<T>(c: Array<T>, d: T, e: number?): boolean
     	return b(c, d, e) ~= -1
@@ -575,7 +575,7 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/inclu
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/indexOf"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     
     
@@ -639,9 +639,9 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/isArr
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/join"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array"))
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/map")
     
     return function<T>(c: Array<T>, d: string?): string
     	if #c == 0 then
@@ -658,7 +658,7 @@ end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/map"] = function()
     local a = _G.__DEV__
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = b.Array<T>
     type Object = b.Object
     type callbackFn<T, U> = (element: T, index: number, array: Array<T>) -> U
@@ -703,7 +703,7 @@ end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/reduce"] = function()
     local a = _G.__DEV__
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = b.Array<T>
     type reduceFn<T, U> = (previousValue: U, currentValue: T, currentIndex: number, array: Array<T>) -> U
     
@@ -745,7 +745,7 @@ end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/reverse"] = function()
     
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     
     return function<T>(b: Array<T>): Array<T>
@@ -762,8 +762,8 @@ end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/shift"] = function()
     local a = _G.__DEV__
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array"))
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/isArray")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = c.Array<T>
     
     return function<T>(d: Array<T>): T?
@@ -782,7 +782,7 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/shift
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/slice"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     
     
@@ -827,7 +827,7 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/slice
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/some"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     type Object = a.Object
     
@@ -861,8 +861,8 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/some"
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/sort"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src"):WaitForChild('None'))
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Object/None")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = b.Array<T>
     type Comparable = (any, any) -> number
     local c = function<T>(c: T, d: T): boolean
@@ -894,7 +894,7 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/sort"
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/splice"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     
     
@@ -945,8 +945,8 @@ end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/unshift"] = function()
     local a = _G.__DEV__
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array"))
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/isArray")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = c.Array<T>
     
     return function<T>(d: Array<T>, ...: T): number
@@ -969,11 +969,11 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/unshi
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
     
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map"))
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map"))
-    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map"))
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map/Map")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map/coerceToMap")
+    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map/coerceToTable")
     
     export type Map<K, V> = a.Map<K, V>
     
@@ -987,11 +987,11 @@ end
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map/Map"] = function()
     local a = _G.__DEV__
     
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src"):WaitForChild('forEach'))
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src"):WaitForChild('map'))
-    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src"):WaitForChild('isArray'))
-    local e = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
-    local f = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/forEach")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/map")
+    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/isArray")
+    local e = _require("Packages/_Index/jsdotlua_collections@1.2.7/instance-of")
+    local f = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Object = f.Object
     type Array<T> = f.Array<T>
     type Table<T, V> = f.Table<T, V>
@@ -1172,10 +1172,10 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map/Map"] =
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map/coerceToMap"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map"))
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src"))
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
-    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Object")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/instance-of")
+    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     
     type Map<K, V> = d.Map<K, V>
     type Table<K, V> = d.Table<K, V>
@@ -1189,10 +1189,10 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map/coerceT
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map/coerceToTable"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map"))
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src"):WaitForChild('reduce'))
-    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Map")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/instance-of")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/reduce")
+    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     
     type Map<K, V> = d.Map<K, V>
     type Table<K, V> = d.Table<K, V>
@@ -1214,18 +1214,18 @@ end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object"] = function()
     return {
-    	assign = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object")),
-    	entries = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object")),
-    	freeze = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object")),
-    	is = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object")),
-    	isFrozen = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object")),
-    	keys = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object")),
-    	preventExtensions = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object")),
-    	seal = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object")),
-    	values = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object")),
+    	assign = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/assign"),
+    	entries = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/entries"),
+    	freeze = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/freeze"),
+    	is = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/is"),
+    	isFrozen = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/isFrozen"),
+    	keys = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/keys"),
+    	preventExtensions = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/preventExtensions"),
+    	seal = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/seal"),
+    	values = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/values"),
     	
     	
-    	None = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object")),
+    	None = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/None"),
     }
 end
 
@@ -1243,8 +1243,8 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/None
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/assign"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object"))
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/None")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Object = b.Object
     
     
@@ -1305,7 +1305,7 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/assi
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/entries"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     type Map<K, V> = a.Map<K, V>
     type Tuple<T, V> = a.Tuple<T, V>
@@ -1332,7 +1332,7 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/entr
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/freeze"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     type Object = a.Object
     
@@ -1357,7 +1357,7 @@ end
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/isFrozen"] = function()
     local a = _G.__DEV__
     
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = b.Array<T>
     type Object = b.Object
     
@@ -1370,9 +1370,9 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/isFr
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/keys"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src"))
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Set")
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/instance-of")
     type Array<T> = b.Array<T>
     type Set<T> = b.Set<T>
     type Table = { [any]: any }
@@ -1407,7 +1407,7 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/keys
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/preventExtensions"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     type Object = a.Object
     
@@ -1433,7 +1433,7 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/prev
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/seal"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     type Object = a.Object
     
@@ -1444,7 +1444,7 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/seal
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Object/values"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     type Array<T> = a.Array<T>
     
     
@@ -1477,12 +1477,12 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Set"] = fun
     
     local a = _G.__DEV__
     
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Set"))
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Set"):WaitForChild('isArray'))
-    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Set"):WaitForChild('forEach'))
-    local e = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Set"):WaitForChild('from'):WaitForChild('fromString'))
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/inspect")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/isArray")
+    local d = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/forEach")
+    local e = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Array/from/fromString")
     
-    local f = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src"))
+    local f = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/es7-types")
     
     type Array<T> = f.Array<T>
     type Object = f.Object
@@ -1624,7 +1624,7 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/Set"] = fun
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/WeakMap"] = function()
-    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local a = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     
     type WeakMap<K, V> = a.WeakMap<K, V>
     
@@ -1668,8 +1668,8 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/inspect"] =
     
     local a = game:GetService("HttpService")
     
-    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/src"):WaitForChild('isArray'))
-    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections"))
+    local b = _require("Packages/_Index/jsdotlua_collections@1.2.7/collections/Array/isArray")
+    local c = _require("Packages/_Index/jsdotlua_collections@1.2.7/es7-types")
     
     type Array<T> = c.Array<T>
     
@@ -1894,25 +1894,25 @@ _modules["Packages/_Index/jsdotlua_collections@1.2.7/collections/src/inspect"] =
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/es7-types"] = function()
-    return _require("Packages/_Index/jsdotlua_es7-types@1.2.7/es7-types")
+    return _require("Packages/jsdotlua_es7-types@1.2.7/es7-types")
 end
 
 _modules["Packages/_Index/jsdotlua_collections@1.2.7/instance-of"] = function()
-    return _require("Packages/_Index/jsdotlua_instance-of@1.2.7/instance-of")
+    return _require("Packages/jsdotlua_instance-of@1.2.7/instance-of")
 end
 
 _modules["Packages/_Index/jsdotlua_console@1.2.7/collections"] = function()
-    return _require("Packages/_Index/jsdotlua_collections@1.2.7/collections")
+    return _require("Packages/jsdotlua_collections@1.2.7/collections")
 end
 
 _modules["Packages/_Index/jsdotlua_console@1.2.7/console/src"] = function()
-    local a = _require("Packages/_Index/jsdotlua_console@1.2.7/console/src"))
+    local a = _require("Packages/_Index/jsdotlua_console@1.2.7/console/src/makeConsoleImpl")
     
     return a()
 end
 
 _modules["Packages/_Index/jsdotlua_console@1.2.7/console/src/makeConsoleImpl"] = function()
-    local a = _require("Packages/_Index/jsdotlua_console@1.2.7/console")).inspect
+    local a = _require("Packages/_Index/jsdotlua_console@1.2.7/collections").inspect
     
     local b = "  "
     
@@ -2080,7 +2080,7 @@ _modules["Packages/_Index/jsdotlua_es7-types@1.2.7/es7-types/src"] = function()
 end
 
 _modules["Packages/_Index/jsdotlua_instance-of@1.2.7/instance-of/src"] = function()
-    local a = _require("Packages/_Index/jsdotlua_instance-of@1.2.7/instance-of/src"))
+    local a = _require("Packages/_Index/jsdotlua_instance-of@1.2.7/instance-of/src/instanceof")
     
     return a
 end
@@ -2134,41 +2134,41 @@ _modules["Packages/_Index/jsdotlua_instance-of@1.2.7/instance-of/src/instanceof"
 end
 
 _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/boolean"] = function()
-    return _require("Packages/_Index/jsdotlua_boolean@1.2.7/boolean")
+    return _require("Packages/jsdotlua_boolean@1.2.7/boolean")
 end
 
 _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/collections"] = function()
-    return _require("Packages/_Index/jsdotlua_collections@1.2.7/collections")
+    return _require("Packages/jsdotlua_collections@1.2.7/collections")
 end
 
 _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/console"] = function()
-    return _require("Packages/_Index/jsdotlua_console@1.2.7/console")
+    return _require("Packages/jsdotlua_console@1.2.7/console")
 end
 
 _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/es7-types"] = function()
-    return _require("Packages/_Index/jsdotlua_es7-types@1.2.7/es7-types")
+    return _require("Packages/jsdotlua_es7-types@1.2.7/es7-types")
 end
 
 _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/instance-of"] = function()
-    return _require("Packages/_Index/jsdotlua_instance-of@1.2.7/instance-of")
+    return _require("Packages/jsdotlua_instance-of@1.2.7/instance-of")
 end
 
 _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src"] = function()
-    local a = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src"))
-    local b = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src"))
-    local c = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src"))
-    local d = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src"))
-    local e = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src"))
-    local f = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src"))
-    local g = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src"))
-    local h = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src"))
-    local i = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src"))
+    local a = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/boolean")
+    local b = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/collections")
+    local c = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/console")
+    local d = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/math")
+    local e = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/number")
+    local f = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/string")
+    local g = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/symbol-luau")
+    local h = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/timers")
+    local i = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/es7-types")
     
-    local j = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src"))
-    local k = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src"))
-    local l = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src"))
-    local m = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src"))
-    local n = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src"))
+    local j = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/AssertionError")
+    local k = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/Error")
+    local l = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/Promise")
+    local m = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/extends")
+    local n = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/instance-of")
     
     export type Array<T> = i.Array<T>
     export type AssertionError = j.AssertionError
@@ -2214,7 +2214,7 @@ _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src"] = fun
 end
 
 _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/AssertionError"] = function()
-    local a = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/AssertionError/global"))
+    local a = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/AssertionError/AssertionError.global")
     
     export type AssertionError = a.AssertionError
     
@@ -2245,16 +2245,16 @@ _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/Asserti
     
     
     
-    local a = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill"))
+    local a = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/collections")
     local b = a.Array
     local c = a.Object
-    local d = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill"))
-    local e = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill"))
-    local f = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill"))
+    local d = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/boolean")
+    local e = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/string")
+    local f = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/es7-types")
     local g = a.inspect
     
-    local h = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src"))
-    local i = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill"))
+    local h = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/Error")
+    local i = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/instance-of")
     
     type Error = h.Error
     type Array<T> = f.Array<T>
@@ -2804,13 +2804,13 @@ _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/Asserti
 end
 
 _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/Error"] = function()
-    local a = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/Error/global"))
+    local a = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/Error/Error.global")
     export type Error = a.Error
     return a
 end
 
 _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/Error/Error.global"] = function()
-    local a = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill"))
+    local a = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/es7-types")
     
     type Function = a.Function
     
@@ -2935,9 +2935,9 @@ _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/encodeU
     
     local a = game:GetService("HttpService")
     
-    local b = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill"))
+    local b = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/string")
     local c = b.charCodeAt
-    local d = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src"))
+    local d = _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/Error")
     
     local function encodeURIComponent(e: string): string
     	local f = utf8.len(e)
@@ -3028,28 +3028,28 @@ _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill/src/extends
 end
 
 _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/math"] = function()
-    return _require("Packages/_Index/jsdotlua_math@1.2.7/math")
+    return _require("Packages/jsdotlua_math@1.2.7/math")
 end
 
 _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/number"] = function()
-    return _require("Packages/_Index/jsdotlua_number@1.2.7/number")
+    return _require("Packages/jsdotlua_number@1.2.7/number")
 end
 
 _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/string"] = function()
-    return _require("Packages/_Index/jsdotlua_string@1.2.7/string")
+    return _require("Packages/jsdotlua_string@1.2.7/string")
 end
 
 _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/symbol-luau"] = function()
-    return _require("Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau")
+    return _require("Packages/jsdotlua_symbol-luau@1.0.1/symbol-luau")
 end
 
 _modules["Packages/_Index/jsdotlua_luau-polyfill@1.2.7/timers"] = function()
-    return _require("Packages/_Index/jsdotlua_timers@1.2.7/timers")
+    return _require("Packages/jsdotlua_timers@1.2.7/timers")
 end
 
 _modules["Packages/_Index/jsdotlua_math@1.2.7/math/src"] = function()
     return {
-    	clz32 = _require("Packages/_Index/jsdotlua_math@1.2.7/math/src")),
+    	clz32 = _require("Packages/_Index/jsdotlua_math@1.2.7/math/src/clz32"),
     }
 end
 
@@ -3059,14 +3059,14 @@ end
 
 _modules["Packages/_Index/jsdotlua_number@1.2.7/number/src"] = function()
     return {
-    	isFinite = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src")),
-    	isInteger = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src")),
-    	isNaN = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src")),
-    	isSafeInteger = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src")),
-    	MAX_SAFE_INTEGER = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src")),
-    	MIN_SAFE_INTEGER = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src")),
+    	isFinite = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src/isFinite"),
+    	isInteger = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src/isInteger"),
+    	isNaN = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src/isNaN"),
+    	isSafeInteger = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src/isSafeInteger"),
+    	MAX_SAFE_INTEGER = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src/MAX_SAFE_INTEGER"),
+    	MIN_SAFE_INTEGER = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src/MIN_SAFE_INTEGER"),
     	NaN = 0/0,
-    	toExponential = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src")),
+    	toExponential = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src/toExponential"),
     }
 end
 
@@ -3102,8 +3102,8 @@ end
 
 _modules["Packages/_Index/jsdotlua_number@1.2.7/number/src/isSafeInteger"] = function()
     
-    local a = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src"))
-    local b = _require("Packages/_Index/jsdotlua_number@1.2.7/number/src"))
+    local a = _require("Packages/_Index/jsdotlua_number@1.2.7/number/isInteger")
+    local b = _require("Packages/_Index/jsdotlua_number@1.2.7/number/MAX_SAFE_INTEGER")
     
     return function(c)
     	return a(c) and math.abs(c) <= b
@@ -5268,7 +5268,7 @@ end
 
 _modules["Packages/_Index/jsdotlua_promise@3.5.2/promise/lib/init.spec"] = function()
     return function()
-    	local a = _require("Packages/_Index/jsdotlua_promise@3.5.2/promise/lib")
+    	local a = _require("Packages/_Index/jsdotlua_promise@3.5.2/promise")
     	a.TEST = true
     
     	local b = Instance.new("BindableEvent")
@@ -7506,96 +7506,96 @@ _modules["Packages/_Index/jsdotlua_promise@3.5.2/promise/lib/init.spec"] = funct
 end
 
 _modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/luau-polyfill"] = function()
-    return _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill")
+    return _require("Packages/jsdotlua_luau-polyfill@1.2.7/luau-polyfill")
 end
 
 _modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/promise"] = function()
-    return _require("Packages/_Index/jsdotlua_promise@3.5.2/promise")
+    return _require("Packages/jsdotlua_promise@3.5.2/promise")
 end
 
 _modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react"] = function()
-    return _require("Packages/_Index/jsdotlua_react@17.2.1/react")
+    return _require("Packages/jsdotlua_react@17.2.1/react")
 end
 
 _modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/scheduler"] = function()
-    return _require("Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler")
+    return _require("Packages/jsdotlua_scheduler@17.2.1/scheduler")
 end
 
 _modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/shared"] = function()
-    return _require("Packages/_Index/jsdotlua_shared@17.2.1/shared")
+    return _require("Packages/jsdotlua_shared@17.2.1/shared")
 end
 
 _modules["Packages/_Index/jsdotlua_react-roblox@17.2.1/luau-polyfill"] = function()
-    return _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill")
+    return _require("Packages/jsdotlua_luau-polyfill@1.2.7/luau-polyfill")
 end
 
 _modules["Packages/_Index/jsdotlua_react-roblox@17.2.1/react"] = function()
-    return _require("Packages/_Index/jsdotlua_react@17.2.1/react")
+    return _require("Packages/jsdotlua_react@17.2.1/react")
 end
 
 _modules["Packages/_Index/jsdotlua_react-roblox@17.2.1/react-reconciler"] = function()
-    return _require("Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler")
+    return _require("Packages/jsdotlua_react-reconciler@17.2.1/react-reconciler")
 end
 
 _modules["Packages/_Index/jsdotlua_react-roblox@17.2.1/scheduler"] = function()
-    return _require("Packages/_Index/jsdotlua_scheduler@17.2.1/scheduler")
+    return _require("Packages/jsdotlua_scheduler@17.2.1/scheduler")
 end
 
 _modules["Packages/_Index/jsdotlua_react-roblox@17.2.1/shared"] = function()
-    return _require("Packages/_Index/jsdotlua_shared@17.2.1/shared")
+    return _require("Packages/jsdotlua_shared@17.2.1/shared")
 end
 
 _modules["Packages/_Index/jsdotlua_react@17.2.1/luau-polyfill"] = function()
-    return _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill")
+    return _require("Packages/jsdotlua_luau-polyfill@1.2.7/luau-polyfill")
 end
 
 _modules["Packages/_Index/jsdotlua_react@17.2.1/shared"] = function()
-    return _require("Packages/_Index/jsdotlua_shared@17.2.1/shared")
+    return _require("Packages/jsdotlua_shared@17.2.1/shared")
 end
 
 _modules["Packages/_Index/jsdotlua_scheduler@17.2.1/luau-polyfill"] = function()
-    return _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill")
+    return _require("Packages/jsdotlua_luau-polyfill@1.2.7/luau-polyfill")
 end
 
 _modules["Packages/_Index/jsdotlua_scheduler@17.2.1/shared"] = function()
-    return _require("Packages/_Index/jsdotlua_shared@17.2.1/shared")
+    return _require("Packages/jsdotlua_shared@17.2.1/shared")
 end
 
 _modules["Packages/_Index/jsdotlua_shared@17.2.1/luau-polyfill"] = function()
-    return _require("Packages/_Index/jsdotlua_luau-polyfill@1.2.7/luau-polyfill")
+    return _require("Packages/jsdotlua_luau-polyfill@1.2.7/luau-polyfill")
 end
 
 _modules["Packages/_Index/jsdotlua_string@1.2.7/es7-types"] = function()
-    return _require("Packages/_Index/jsdotlua_es7-types@1.2.7/es7-types")
+    return _require("Packages/jsdotlua_es7-types@1.2.7/es7-types")
 end
 
 _modules["Packages/_Index/jsdotlua_string@1.2.7/number"] = function()
-    return _require("Packages/_Index/jsdotlua_number@1.2.7/number")
+    return _require("Packages/jsdotlua_number@1.2.7/number")
 end
 
 _modules["Packages/_Index/jsdotlua_string@1.2.7/string/src"] = function()
     return {
-    	charCodeAt = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src")),
-    	endsWith = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src")),
-    	findOr = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src")),
-    	includes = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src")),
-    	indexOf = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src")),
-    	lastIndexOf = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src")),
-    	slice = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src")),
-    	split = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src")),
-    	startsWith = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src")),
-    	substr = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src")),
-    	trim = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src")),
-    	trimEnd = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src")),
-    	trimStart = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src")),
+    	charCodeAt = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/charCodeAt"),
+    	endsWith = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/endsWith"),
+    	findOr = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/findOr"),
+    	includes = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/includes"),
+    	indexOf = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/indexOf"),
+    	lastIndexOf = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/lastIndexOf"),
+    	slice = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/slice"),
+    	split = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/split"),
+    	startsWith = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/startsWith"),
+    	substr = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/substr"),
+    	trim = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/trim"),
+    	trimEnd = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/trimEnd"),
+    	trimStart = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/trimStart"),
     	
-    	trimRight = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src")),
-    	trimLeft = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src")),
+    	trimRight = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/trimEnd"),
+    	trimLeft = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src/trimStart"),
     }
 end
 
 _modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/charCodeAt"] = function()
-    local a = _require("Packages/_Index/jsdotlua_string@1.2.7/string"))
+    local a = _require("Packages/_Index/jsdotlua_string@1.2.7/number")
     
     local b = a.NaN
     
@@ -7860,12 +7860,12 @@ _modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/slice"] = function()
 end
 
 _modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/split"] = function()
-    local a = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src"))
-    local b = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src"))
+    local a = _require("Packages/_Index/jsdotlua_string@1.2.7/string/findOr")
+    local b = _require("Packages/_Index/jsdotlua_string@1.2.7/string/slice")
     
-    local c = _require("Packages/_Index/jsdotlua_string@1.2.7/string"))
+    local c = _require("Packages/_Index/jsdotlua_string@1.2.7/es7-types")
     type Array<T> = c.Array<T>
-    local d = _require("Packages/_Index/jsdotlua_string@1.2.7/string")).MAX_SAFE_INTEGER
+    local d = _require("Packages/_Index/jsdotlua_string@1.2.7/number").MAX_SAFE_INTEGER
     
     type Pattern = string | Array<string>
     
@@ -7959,8 +7959,8 @@ _modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/substr"] = function()
 end
 
 _modules["Packages/_Index/jsdotlua_string@1.2.7/string/src/trim"] = function()
-    local a = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src"))
-    local b = _require("Packages/_Index/jsdotlua_string@1.2.7/string/src"))
+    local a = _require("Packages/_Index/jsdotlua_string@1.2.7/string/trimStart")
+    local b = _require("Packages/_Index/jsdotlua_string@1.2.7/string/trimEnd")
     
     return function(c: string): string
     	return a(b(c))
@@ -7985,9 +7985,9 @@ _modules["Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/src"] = functio
     
     
     
-    local a = _require("Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/src"))
+    local a = _require("Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/src/Symbol")
     export type Symbol = a.Symbol
-    local b = _require("Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/src/global"))
+    local b = _require("Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/src/Registry.global")
     
     local c = setmetatable({}, {
     	
@@ -8005,7 +8005,7 @@ _modules["Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/src"] = functio
 end
 
 _modules["Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/src/Registry.global"] = function()
-    local a = _require("Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/src"))
+    local a = _require("Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/Symbol")
     
     local b: { [string]: a.Symbol } = {}
     
@@ -8057,14 +8057,14 @@ _modules["Packages/_Index/jsdotlua_symbol-luau@1.0.1/symbol-luau/src/Symbol"] = 
 end
 
 _modules["Packages/_Index/jsdotlua_timers@1.2.7/collections"] = function()
-    return _require("Packages/_Index/jsdotlua_collections@1.2.7/collections")
+    return _require("Packages/jsdotlua_collections@1.2.7/collections")
 end
 
 _modules["Packages/_Index/jsdotlua_timers@1.2.7/timers/src"] = function()
-    local a = _require("Packages/_Index/jsdotlua_timers@1.2.7/timers/src")).Object
+    local a = _require("Packages/_Index/jsdotlua_timers@1.2.7/timers/collections").Object
     
-    local b = _require("Packages/_Index/jsdotlua_timers@1.2.7/timers/src"))
-    local c = _require("Packages/_Index/jsdotlua_timers@1.2.7/timers/src"))
+    local b = _require("Packages/_Index/jsdotlua_timers@1.2.7/timers/src/makeTimerImpl")
+    local c = _require("Packages/_Index/jsdotlua_timers@1.2.7/timers/src/makeIntervalImpl")
     
     export type Timeout = b.Timeout
     export type Interval = c.Interval
@@ -8241,7 +8241,7 @@ _modules["api/Section"] = function()
     local a = {}
     a.__index = a
     
-    local b = _require("api/Element")
+    local b = _require("Element")
     
     function a.new(c, d, e, f)
         local g = setmetatable({
@@ -8391,7 +8391,7 @@ _modules["api/Tab"] = function()
     
     
     
-    local a = _require("api/Section")
+    local a = _require("Section")
     local b = {}
     b.__index = b
     
@@ -8426,7 +8426,7 @@ _modules["api/Window"] = function()
     
     
     
-    local a = _require("api/Tab")
+    local a = _require("Tab")
     local b = {}
     b.__index = b
     
@@ -8538,39 +8538,39 @@ _modules["components/Containers/Section"] = function()
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
     local c = _require("hooks/useTree")
-    local d = _require("components/Containers/ElementList")
+    local d = _require("components/ElementList")
     
     
     local e = {
-        Button = _require("components/Elements/HyperButton"),
-        IconButton = _require("components/Elements/HyperIconButton"),
-        Toggle = _require("components/Elements/HyperToggle"),
-        Checkbox = _require("components/Elements/HyperCheckbox"),
-        Slider = _require("components/Elements/HyperSlider"),
-        Dropdown = _require("components/Elements/HyperDropdown"),
-        Keybind = _require("components/Elements/HyperKeybind"),
-        ColorPicker = _require("components/Elements/HyperColorPicker"),
-        Input = _require("components/Elements/HyperInput"),
-        NumberInput = _require("components/Elements/HyperNumberInput"),
-        SearchInput = _require("components/Elements/HyperSearchInput"),
-        TextArea = _require("components/Elements/HyperTextArea"),
-        Label = _require("components/Elements/HyperLabel"),
-        Badge = _require("components/Elements/HyperBadge"),
-        Icon = _require("components/Elements/HyperIcon"),
-        ProgressBar = _require("components/Elements/HyperProgressBar"),
-        StatDisplay = _require("components/Elements/HyperStatDisplay"),
-        ComboBox = _require("components/Elements/HyperComboBox"),
-        Avatar = _require("components/Elements/HyperAvatar"),
-        Divider = _require("components/Elements/HyperDivider"),
-        Spacer = _require("components/Elements/HyperSpacer"),
-        Accordion = _require("components/Elements/HyperAccordion"),
-        Collapsible = _require("components/Elements/HyperCollapsible"),
-        CopyButton = _require("components/Elements/HyperCopyButton"),
-        Tag = _require("components/Elements/HyperTag"),
-        StatusIndicator = _require("components/Elements/HyperStatusIndicator"),
-        Grid = _require("components/Containers/Grid"),
-        Stack = _require("components/Containers/Stack"),
-        VirtualList = _require("components/Containers/VirtualList"),
+        Button = _require("Elements/HyperButton"),
+        IconButton = _require("Elements/HyperIconButton"),
+        Toggle = _require("Elements/HyperToggle"),
+        Checkbox = _require("Elements/HyperCheckbox"),
+        Slider = _require("Elements/HyperSlider"),
+        Dropdown = _require("Elements/HyperDropdown"),
+        Keybind = _require("Elements/HyperKeybind"),
+        ColorPicker = _require("Elements/HyperColorPicker"),
+        Input = _require("Elements/HyperInput"),
+        NumberInput = _require("Elements/HyperNumberInput"),
+        SearchInput = _require("Elements/HyperSearchInput"),
+        TextArea = _require("Elements/HyperTextArea"),
+        Label = _require("Elements/HyperLabel"),
+        Badge = _require("Elements/HyperBadge"),
+        Icon = _require("Elements/HyperIcon"),
+        ProgressBar = _require("Elements/HyperProgressBar"),
+        StatDisplay = _require("Elements/HyperStatDisplay"),
+        ComboBox = _require("Elements/HyperComboBox"),
+        Avatar = _require("Elements/HyperAvatar"),
+        Divider = _require("Elements/HyperDivider"),
+        Spacer = _require("Elements/HyperSpacer"),
+        Accordion = _require("Elements/HyperAccordion"),
+        Collapsible = _require("Elements/HyperCollapsible"),
+        CopyButton = _require("Elements/HyperCopyButton"),
+        Tag = _require("Elements/HyperTag"),
+        StatusIndicator = _require("Elements/HyperStatusIndicator"),
+        Grid = _require("components/Grid"),
+        Stack = _require("components/Stack"),
+        VirtualList = _require("components/VirtualList"),
     }
     
     local f = _require("hooks/useTheme")
@@ -8890,7 +8890,7 @@ _modules["components/Elements/HyperAccordion"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/Elements/BaseElement")
+    local c = _require("components/BaseElement")
     local d = _require("hooks/useSpring")
     
     local function HyperAccordion(e)
@@ -9026,7 +9026,7 @@ _modules["components/Elements/HyperButton"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/Elements/BaseElement")
+    local c = _require("components/BaseElement")
     
     local function HyperButton(d)
         return a.createElement(c, {
@@ -9057,7 +9057,7 @@ _modules["components/Elements/HyperCheckbox"] = function()
     
     
     local a = _require("dependencies/React")
-    local b = _require("components/Elements/BaseElement")
+    local b = _require("components/BaseElement")
     local c = _require("hooks/useSpring")
     local d = _require("hooks/useTheme")
     
@@ -9133,7 +9133,7 @@ _modules["components/Elements/HyperCollapsible"] = function()
     
     
     local a = _require("dependencies/React")
-    local b = _require("components/Elements/HyperAccordion")
+    local b = _require("components/HyperAccordion")
     
     local function HyperCollapsible(c)
         
@@ -9149,7 +9149,7 @@ _modules["components/Elements/HyperColorPicker"] = function()
     
     
     local a = _require("dependencies/React")
-    local b = _require("components/Elements/BaseElement")
+    local b = _require("components/BaseElement")
     local c = _require("components/Elements/HyperColorPicker/HueSlider")
     local d = _require("components/Elements/HyperColorPicker/SaturationSquare")
     local e = _require("components/Elements/HyperColorPicker/ColorPreview")
@@ -9433,8 +9433,8 @@ _modules["components/Elements/HyperConfirmationDialog"] = function()
     
     
     local a = _require("dependencies/React")
-    local b = _require("components/Elements/HyperModal")
-    local c = _require("components/Elements/HyperButton")
+    local b = _require("components/HyperModal")
+    local c = _require("components/HyperButton")
     
     local function HyperConfirmationDialog(d)
         return a.createElement(b, {
@@ -9466,7 +9466,7 @@ _modules["components/Elements/HyperCopyButton"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/Elements/BaseElement")
+    local c = _require("components/BaseElement")
     
     local function CopyButton(d)
         local e, f = a.useState(false)
@@ -9600,7 +9600,7 @@ _modules["components/Elements/HyperDropdown/DropdownList"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/Containers/VirtualList")
+    local c = _require("Containers/VirtualList")
     local d = _require("components/Elements/HyperDropdown/DropdownOption")
     local e = _require("components/Elements/HyperDropdown/DropdownSearch")
     
@@ -9656,7 +9656,7 @@ _modules["components/Elements/HyperDropdown/DropdownOption"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/Elements/BaseElement")
+    local c = _require("components/BaseElement")
     
     local function DropdownOption(d)
         return a.createElement(c, {
@@ -9726,7 +9726,7 @@ _modules["components/Elements/HyperDropdown/DropdownTrigger"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/Elements/BaseElement")
+    local c = _require("components/BaseElement")
     local d = _require("hooks/useSpring")
     
     local function DropdownTrigger(e)
@@ -9793,7 +9793,7 @@ _modules["components/Elements/HyperGroup"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/Containers/ElementList")
+    local c = _require("Containers/ElementList")
     
     local function HyperGroup(d)
         return a.createElement("Frame", {
@@ -9846,7 +9846,7 @@ _modules["components/Elements/HyperIconButton"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/Elements/BaseElement")
+    local c = _require("components/BaseElement")
     
     local function HyperIconButton(d)
         return a.createElement(c, {
@@ -9876,7 +9876,7 @@ _modules["components/Elements/HyperInput"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/Elements/BaseElement")
+    local c = _require("components/BaseElement")
     
     local function HyperInput(d)
         return a.createElement(c, {
@@ -9935,7 +9935,7 @@ _modules["components/Elements/HyperKeybind"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/Elements/BaseElement")
+    local c = _require("components/BaseElement")
     local d = game:GetService("UserInputService")
     
     local function HyperKeybind(e)
@@ -10163,7 +10163,7 @@ _modules["components/Elements/HyperNumberInput"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/Elements/BaseElement")
+    local c = _require("components/BaseElement")
     
     local function HyperNumberInput(d)
         return a.createElement(c, {
@@ -10274,7 +10274,7 @@ _modules["components/Elements/HyperSearchInput"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/Elements/BaseElement")
+    local c = _require("components/BaseElement")
     
     local function HyperSearchInput(d)
         return a.createElement(c, {
@@ -10325,7 +10325,7 @@ _modules["components/Elements/HyperSlider"] = function()
     
     
     local a = _require("dependencies/React")
-    local b = _require("components/Elements/BaseElement")
+    local b = _require("components/BaseElement")
     local c = _require("hooks/useSpring")
     local d = _require("hooks/useTheme")
     
@@ -10461,7 +10461,7 @@ _modules["components/Elements/HyperStatDisplay"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/Elements/BaseElement")
+    local c = _require("components/BaseElement")
     
     local function HyperStatDisplay(d)
         return a.createElement(c, {
@@ -10614,7 +10614,7 @@ _modules["components/Elements/HyperTextArea"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("theme/tokens")
-    local c = _require("components/Elements/BaseElement")
+    local c = _require("components/BaseElement")
     
     local function HyperTextArea(d)
         return a.createElement(c, {
@@ -10663,7 +10663,7 @@ _modules["components/Elements/HyperToast"] = function()
     
     
     local a = _require("dependencies/React")
-    local b = _require("components/Elements/BaseElement")
+    local b = _require("components/BaseElement")
     local c = _require("hooks/useTheme")
     
     local function HyperToast(d)
@@ -10745,7 +10745,7 @@ _modules["components/Elements/HyperToggle"] = function()
     
     
     local a = _require("dependencies/React")
-    local b = _require("components/Elements/BaseElement")
+    local b = _require("components/BaseElement")
     local c = _require("hooks/useSpring")
     local d = _require("hooks/useTheme")
     
@@ -10867,7 +10867,7 @@ _modules["components/Root"] = function()
     
     
     local a = _require("dependencies/React")
-    local b = _require("components/Window")
+    local b = _require("Window")
     
     local function Root(c)
         local d, e = a.useState(c.store:GetState())
@@ -10912,7 +10912,7 @@ _modules["components/Window"] = function()
     local c = _require("hooks/useSpring")
     local d = _require("theme/tokens")
     
-    local e = _require("components/Window/TabContainer") 
+    local e = _require("components/TabContainer") 
     
     local f = _require("hooks/useTheme")
     
@@ -10988,10 +10988,10 @@ _modules["components/Window/TabContainer"] = function()
     
     local a = _require("dependencies/React")
     local b = _require("hooks/useTheme")
-    local c = _require("components/Elements/HyperButton")
+    local c = _require("Elements/HyperButton")
     local d = _require("hooks/useTree")
     
-    local e = _require("components/Containers/Section")
+    local e = _require("Containers/Section")
     
     local function TabContainer(f)
         local g = b(f.store)
@@ -12361,9 +12361,9 @@ _modules["theme/tokens"] = function()
     
     
     
-    local a = _require("theme/palette")
-    local b = _require("theme/typography")
-    local c = _require("theme/shadows")
+    local a = _require("palette")
+    local b = _require("typography")
+    local c = _require("shadows")
     
     
     
