@@ -1,6 +1,6 @@
 -- HyperUI Framework
 -- Version: 2.0.0
--- Build Date: 2026-03-12 18:03:12
+-- Build Date: 2026-03-12 18:19:01
 -- Distribution: Single File
 
 local _modules = {}
@@ -3146,7 +3146,7 @@ _modules["Packages/_Index/jsdotlua_number@1.2.7/number/toExponential"] = functio
     end
 end
 
-_modules["Packages/_Index/jsdotlua_promise@3.5.2/promise/lib"] = function()
+_modules["Packages/_Index/jsdotlua_promise@3.5.2/promise"] = function()
     
     
     
@@ -5266,9 +5266,9 @@ _modules["Packages/_Index/jsdotlua_promise@3.5.2/promise/lib"] = function()
     return f
 end
 
-_modules["Packages/_Index/jsdotlua_promise@3.5.2/promise/lib/init.spec"] = function()
+_modules["Packages/_Index/jsdotlua_promise@3.5.2/promise/init.spec"] = function()
     return function()
-    	local a = _require("Packages/_Index/jsdotlua_promise@3.5.2/promise/lib")
+    	local a = _require("Packages/_Index/jsdotlua_promise@3.5.2/promise")
     	a.TEST = true
     
     	local b = Instance.new("BindableEvent")

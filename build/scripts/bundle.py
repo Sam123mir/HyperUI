@@ -82,11 +82,18 @@ def bundle():
                 
                 # SPECIAL HACK for Wally packages:
                 # Packages/_Index/author_name@version/pkg_name/src/module -> Packages/_Index/author_name@version/pkg_name/module
-                # This matches Rojo's $path: "src" behavior.
-                if "Packages/_Index/" in module_name and "/src/" in module_name:
-                    module_name = module_name.replace("/src/", "/")
-                elif "Packages/_Index/" in module_name and module_name.endswith("/src"):
-                     module_name = module_name[:-len("/src")]
+                # This matches Rojo's $path: "src" or $path: "lib" behavior.
+                for src_dir in ["/src/", "/lib/"]:
+                    if "Packages/_Index/" in module_name and src_dir in module_name:
+                        module_name = module_name.replace(src_dir, "/")
+                        break
+                
+                # Handle end of path cases
+                if "Packages/_Index/" in module_name:
+                    if module_name.endswith("/src"):
+                        module_name = module_name[:-len("/src")]
+                    elif module_name.endswith("/lib"):
+                        module_name = module_name[:-len("/lib")]
                 
                 with open(os.path.join(root, file), "r", encoding="utf-8") as f:
                     content = f.read()
