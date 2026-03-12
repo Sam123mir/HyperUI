@@ -6,19 +6,15 @@
 local Mount = {}
 Mount.__index = Mount
 
-local Players = game:GetService("Players")
-local CoreGui = game:GetService("CoreGui")
-
-local LocalPlayer = Players.LocalPlayer
-while not LocalPlayer do
-    Players:GetPropertyChangedSignal("LocalPlayer"):Wait()
-    LocalPlayer = Players.LocalPlayer
-end
+local React = require(script.Parent.Parent.dependencies.React)
+local ReactRoblox = require(script.Parent.Parent.dependencies.ReactRoblox)
+local Root = require(script.Parent.Parent.components.Root)
 
 function Mount.new(store)
     local self = setmetatable({
         Store = store,
         Container = nil,
+        Root = nil,
     }, Mount)
     
     self:CreateContainer()
@@ -43,7 +39,7 @@ local function getSafeGui()
     else
         local sg = Instance.new("ScreenGui")
         -- Fallback to PlayerGui if CoreGui is restricted
-        local success = pcall(function()
+        local success, err = pcall(function()
             sg.Parent = CoreGui
         end)
         if not success then
@@ -61,6 +57,8 @@ end
 
 function Mount:CreateContainer()
     local screenGui = getSafeGui()
+    if not screenGui then return end
+    
     screenGui.Name = "HyperUI_" .. game:GetService("HttpService"):GenerateGUID(false):sub(1, 8)
     screenGui.ResetOnSpawn = false
     screenGui.IgnoreGuiInset = true
@@ -68,16 +66,20 @@ function Mount:CreateContainer()
     
     self.Container = screenGui
     
-    -- Initialize React Root (Conceptual - placeholder for actual React call)
-    -- This will be linked to components/Root.lua in the final bundle
-    -- local root = ReactRoblox.createRoot(screenGui)
-    -- root:render(React.createElement(App, { store = self.Store }))
-    -- self.Root = root
+    -- Initialize React Root
+    local root = ReactRoblox.createRoot(screenGui)
+    root:render(React.createElement(Root, { store = self.Store }))
+    self.Root = root
 end
 
 function Mount:Unmount()
     if self.Root then
-        -- pcall(function() self.Root:unmount() end)
+        local success, err = pcall(function() 
+            self.Root:unmount() 
+        end)
+        if not success then
+            warn("[HyperUI] Unmount error:", err)
+        end
     end
     if self.Container then
         self.Container:Destroy()

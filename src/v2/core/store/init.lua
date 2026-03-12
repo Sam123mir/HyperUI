@@ -99,6 +99,10 @@ function Store:Dispatch(action)
         end
     elseif action.type == "SET_THEME" then
         newState.theme = action.theme
+    elseif action.type == "ADD_NOTIFICATION" then
+        newState.notifications[action.notification.id] = action.notification
+    elseif action.type == "REMOVE_NOTIFICATION" then
+        newState.notifications[action.id] = nil
     end
     
     self._state = newState

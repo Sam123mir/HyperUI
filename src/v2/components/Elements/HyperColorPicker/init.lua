@@ -4,7 +4,7 @@
 
 local React = require(script.Parent.Parent.Parent.Parent.dependencies.React)
 local Tokens = require(script.Parent.Parent.Parent.Parent.theme.tokens)
-local BaseElement = require(script.Parent.BaseElement)
+local BaseElement = require(script.Parent.Parent.BaseElement)
 
 local HueSlider = require(script.HueSlider)
 local SaturationSquare = require(script.SaturationSquare)

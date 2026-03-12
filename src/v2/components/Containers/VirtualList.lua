@@ -36,7 +36,7 @@ local function VirtualList(props)
         BackgroundTransparency = 1,
         CanvasSize = UDim2.new(0, 0, 0, #items * itemHeight),
         ScrollBarThickness = 2,
-        [React.Event.Scroll] = function(rbx)
+        [React.Change.CanvasPosition] = function(rbx)
             setScrollTop(rbx.CanvasPosition.Y)
         end,
     }, visibleItems)

@@ -13,27 +13,27 @@ end
 local function useSpring(targetValue, springConfig)
     local springConfig = springConfig or { stiffness = 170, damping = 26 }
     local currentValue, setCurrentValue = React.useState(targetValue)
-    local velocity = React.useRef(0)
+    local valueRef = React.useRef(targetValue)
+    local velocityRef = React.useRef(0)
     
     React.useEffect(function()
         local connection
-        local current = currentValue
-        local vel = velocity.current
         
         connection = RunService.RenderStepped:Connect(function(dt)
-            local displacement = current - targetValue
+            local displacement = valueRef.current - targetValue
             local force = -springConfig.stiffness * displacement
-            local dampingForce = -springConfig.damping * vel
+            local dampingForce = -springConfig.damping * velocityRef.current
             local acceleration = force + dampingForce
             
-            vel = vel + acceleration * dt
-            current = current + vel * dt
+            velocityRef.current = velocityRef.current + acceleration * dt
+            valueRef.current = valueRef.current + velocityRef.current * dt
             
-            setCurrentValue(current)
-            velocity.current = vel
+            setCurrentValue(valueRef.current)
             
             -- Sleep check
-            if math.abs(vel) < 0.001 and math.abs(current - targetValue) < 0.001 then
+            if math.abs(velocityRef.current) < 0.001 and math.abs(valueRef.current - targetValue) < 0.001 then
+                valueRef.current = targetValue
+                velocityRef.current = 0
                 setCurrentValue(targetValue)
                 connection:Disconnect()
             end
