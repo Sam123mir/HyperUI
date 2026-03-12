@@ -6,10 +6,6 @@
 local React = require(script.Parent.Parent.dependencies.React)
 local RunService = game:GetService("RunService")
 
-local function lerp(a, b, t)
-    return a + (b - a) * t
-end
-
 local function useSpring(targetValue, springConfig)
     local springConfig = springConfig or { stiffness = 170, damping = 26 }
     

@@ -1,6 +1,6 @@
 -- HyperUI Framework
 -- Version: 2.0.0
--- Build Date: 2026-03-11 21:56:07
+-- Build Date: 2026-03-11 22:02:15
 -- Distribution: Single File
 
 local _modules = {}
@@ -668,7 +668,7 @@ _modules["components/Elements/BaseElement"] = function()
         
         local i = e.Size or UDim2.new(1, 0, 0, 32)
         local j = e.BackgroundTransparency or 0
-        local k = e.BackgroundColor or b.Color.Surface
+        local k = e.BackgroundColor3 or e.BackgroundColor or b.Color.Surface
         
         return a.createElement("Frame", {
             Size = i,
@@ -862,14 +862,16 @@ _modules["components/Elements/HyperButton"] = function()
             Disabled = d.Disabled,
             OnActivated = d.Callback,
             LayoutOrder = d.LayoutOrder,
+            Size = d.Size,
+            BackgroundColor3 = d.BackgroundColor3,
         }, {
             Label = a.createElement("TextLabel", {
                 Size = UDim2.fromScale(1, 1),
                 BackgroundTransparency = 1,
                 Text = d.Text or "Button",
-                TextColor3 = b.Color.Text,
-                Font = b.Font.Main,
-                TextSize = b.FontSize.Medium,
+                TextColor3 = d.TextColor3 or b.Color.Text,
+                Font = d.Font or b.Font.Main,
+                TextSize = d.TextSize or b.FontSize.Medium,
                 ZIndex = 5,
             })
         })
@@ -2179,7 +2181,7 @@ _modules["components/Elements/HyperSlider"] = function()
         
         
         a.useEffect(function()
-            if e.Value ~= nil and e.Value ~= i then
+            if e.Value ~= nil and math.abs(e.Value - i) > 0.001 then
                 j(e.Value)
             end
         end, {e.Value})
@@ -2506,7 +2508,7 @@ _modules["components/Elements/HyperToast"] = function()
         
         return a.createElement(b, {
             Size = UDim2.new(0, 300, 0, 60),
-            BackgroundColor = e.Color.Surface,
+            BackgroundColor3 = e.Color.Surface,
             BackgroundTransparency = 0.1,
         }, {
             UIStroke = a.createElement("UIStroke", {
@@ -2832,21 +2834,22 @@ _modules["components/Window/TabContainer"] = function()
                 if n then
                     local o = i == m
                     
-                    k[m] = a.createElement(c, {
+                    table.insert(k, a.createElement(c, {
                         Text = n.props.title or "Tab",
                         Selected = o,
                         BackgroundColor3 = o and g.Color.Accent or g.Color.Surface,
                         Font = o and g.Font.Bold or g.Font.Main,
+                        LayoutOrder = l,
                         Callback = function()
                             j(m)
                         end
-                    })
+                    }))
                 end
             end
         end
         
         
-        local l = d(f.store, i)
+        local l = i and d(f.store, i) or nil
         local m = {}
         if l then
             for n, o in ipairs(l.children) do
@@ -3307,10 +3310,6 @@ _modules["hooks/useSpring"] = function()
     local a = _require("dependencies/React")
     local b = game:GetService("RunService")
     
-    local function lerp(c, d, e)
-        return c + (d - c) * e
-    end
-    
     local function useSpring(c, d)
         local e = d or { stiffness = 170, damping = 26 }
         
@@ -3758,17 +3757,25 @@ _modules["runtime/input"] = function()
         local f = a:GetMouseLocation()
         
         
-        local g = {} 
-        for h, i in pairs(e.registry or {}) do
-            if i.type == "Window" then
-                table.insert(g, h)
+        for g, h in pairs(e.registry or {}) do
+            if h.type == "Window" and h.props.Visible ~= false then
+                local i = h.props.Position or UDim2.new(0, 0, 0, 0)
+                local j = h.props.Size or UDim2.new(0, 400, 0, 300)
+                
+                
+                
+                local k = i.X.Offset
+                local l = i.Y.Offset
+                local m = j.X.Offset
+                local n = 30 
+                
+                if f.X >= k and f.X <= k + m and
+                   f.Y >= l and f.Y <= l + n then
+                    self.DraggingInstance = g
+                    self.DragOffset = Vector2.new(f.X - k, f.Y - l)
+                    break
+                end
             end
-        end
-        
-        
-        for h, i in ipairs(g) do
-            local j = e.registry[i]
-            
         end
     end
     

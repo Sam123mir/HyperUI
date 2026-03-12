@@ -22,21 +22,22 @@ local function TabContainer(props)
             if tabNode then
                 local isSelected = activeTab == tabId
                 
-                sidebarItems[tabId] = React.createElement(Button, {
+                table.insert(sidebarItems, React.createElement(Button, {
                     Text = tabNode.props.title or "Tab",
                     Selected = isSelected,
                     BackgroundColor3 = isSelected and theme.Color.Accent or theme.Color.Surface,
                     Font = isSelected and theme.Font.Bold or theme.Font.Main,
+                    LayoutOrder = i,
                     Callback = function()
                         setActiveTab(tabId)
                     end
-                })
+                }))
             end
         end
     end
     
     -- Active Content
-    local activeTabNode = useTree(props.store, activeTab)
+    local activeTabNode = activeTab and useTree(props.store, activeTab) or nil
     local sections = {}
     if activeTabNode then
         for _, sectionId in ipairs(activeTabNode.children) do

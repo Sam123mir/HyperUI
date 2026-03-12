@@ -6,10 +6,6 @@
 local a = require(script.Parent.Parent.dependencies.React)
 local b = game:GetService("RunService")
 
-local function lerp(c, d, e)
-    return c + (d - c) * e
-end
-
 local function useSpring(c, d)
     local e = d or { stiffness = 170, damping = 26 }
     

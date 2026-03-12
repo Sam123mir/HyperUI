@@ -44,17 +44,25 @@ function c:HandleDragBegan(d)
     local f = a:GetMouseLocation()
     
     
-    local g = {} 
-    for h, i in pairs(e.registry or {}) do
-        if i.type == "Window" then
-            table.insert(g, h)
+    for g, h in pairs(e.registry or {}) do
+        if h.type == "Window" and h.props.Visible ~= false then
+            local i = h.props.Position or UDim2.new(0, 0, 0, 0)
+            local j = h.props.Size or UDim2.new(0, 400, 0, 300)
+            
+            
+            
+            local k = i.X.Offset
+            local l = i.Y.Offset
+            local m = j.X.Offset
+            local n = 30 
+            
+            if f.X >= k and f.X <= k + m and
+               f.Y >= l and f.Y <= l + n then
+                self.DraggingInstance = g
+                self.DragOffset = Vector2.new(f.X - k, f.Y - l)
+                break
+            end
         end
-    end
-    
-    
-    for h, i in ipairs(g) do
-        local j = e.registry[i]
-        
     end
 end
 

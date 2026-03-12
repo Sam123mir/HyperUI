@@ -43,18 +43,26 @@ function InputManager:HandleDragBegan(input)
     local state = self.Store:GetState()
     local mousePos = UserInputService:GetMouseLocation()
     
-    -- Iterate windows in Z-order (top to bottom) to find which one we're clicking
-    local windowIds = {} 
+    -- Iterate windows in Z-order (top to bottom)
     for id, element in pairs(state.registry or {}) do
-        if element.type == "Window" then
-            table.insert(windowIds, id)
+        if element.type == "Window" and element.props.Visible ~= false then
+            local pos = element.props.Position or UDim2.new(0, 0, 0, 0)
+            local size = element.props.Size or UDim2.new(0, 400, 0, 300)
+            
+            -- Approximate AbsolutePosition/Size for simple window dragging
+            -- In a real React app, we'd get this from the engine, but here we estimate
+            local absX = pos.X.Offset
+            local absY = pos.Y.Offset
+            local absW = size.X.Offset
+            local absH = 30 -- Title bar height
+            
+            if mousePos.X >= absX and mousePos.X <= absX + absW and
+               mousePos.Y >= absY and mousePos.Y <= absY + absH then
+                self.DraggingInstance = id
+                self.DragOffset = Vector2.new(mousePos.X - absX, mousePos.Y - absY)
+                break
+            end
         end
-    end
-    
-    -- For now, just check all windows. 
-    for _, id in ipairs(windowIds) do
-        local window = state.registry[id]
-        -- Logic for checking absolute position and setting DraggingInstance
     end
 end
 

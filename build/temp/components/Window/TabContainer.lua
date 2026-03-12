@@ -22,21 +22,22 @@ local function TabContainer(f)
             if n then
                 local o = i == m
                 
-                k[m] = a.createElement(c, {
+                table.insert(k, a.createElement(c, {
                     Text = n.props.title or "Tab",
                     Selected = o,
                     BackgroundColor3 = o and g.Color.Accent or g.Color.Surface,
                     Font = o and g.Font.Bold or g.Font.Main,
+                    LayoutOrder = l,
                     Callback = function()
                         j(m)
                     end
-                })
+                }))
             end
         end
     end
     
     
-    local l = d(f.store, i)
+    local l = i and d(f.store, i) or nil
     local m = {}
     if l then
         for n, o in ipairs(l.children) do

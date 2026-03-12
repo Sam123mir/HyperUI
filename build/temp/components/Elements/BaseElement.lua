@@ -27,7 +27,7 @@ local function BaseElement(e)
     
     local i = e.Size or UDim2.new(1, 0, 0, 32)
     local j = e.BackgroundTransparency or 0
-    local k = e.BackgroundColor or b.Color.Surface
+    local k = e.BackgroundColor3 or e.BackgroundColor or b.Color.Surface
     
     return a.createElement("Frame", {
         Size = i,

@@ -30,7 +30,7 @@ local function HyperSlider(props)
     
     -- Update value state when props.Value changes (controlled component behavior)
     React.useEffect(function()
-        if props.Value ~= nil and props.Value ~= value then
+        if props.Value ~= nil and math.abs(props.Value - value) > 0.001 then
             setValue(props.Value)
         end
     end, {props.Value})

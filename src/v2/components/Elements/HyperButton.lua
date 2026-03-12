@@ -11,14 +11,16 @@ local function HyperButton(props)
         Disabled = props.Disabled,
         OnActivated = props.Callback,
         LayoutOrder = props.LayoutOrder,
+        Size = props.Size,
+        BackgroundColor3 = props.BackgroundColor3,
     }, {
         Label = React.createElement("TextLabel", {
             Size = UDim2.fromScale(1, 1),
             BackgroundTransparency = 1,
             Text = props.Text or "Button",
-            TextColor3 = Tokens.Color.Text,
-            Font = Tokens.Font.Main,
-            TextSize = Tokens.FontSize.Medium,
+            TextColor3 = props.TextColor3 or Tokens.Color.Text,
+            Font = props.Font or Tokens.Font.Main,
+            TextSize = props.TextSize or Tokens.FontSize.Medium,
             ZIndex = 5,
         })
     })

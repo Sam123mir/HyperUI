@@ -30,7 +30,7 @@ local function HyperSlider(e)
     
     
     a.useEffect(function()
-        if e.Value ~= nil and e.Value ~= i then
+        if e.Value ~= nil and math.abs(e.Value - i) > 0.001 then
             j(e.Value)
         end
     end, {e.Value})

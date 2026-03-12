@@ -19,7 +19,7 @@ local function HyperToast(props)
     
     return React.createElement(BaseElement, {
         Size = UDim2.new(0, 300, 0, 60),
-        BackgroundColor = theme.Color.Surface,
+        BackgroundColor3 = theme.Color.Surface,
         BackgroundTransparency = 0.1,
     }, {
         UIStroke = React.createElement("UIStroke", {

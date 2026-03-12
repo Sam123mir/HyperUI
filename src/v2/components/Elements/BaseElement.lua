@@ -27,7 +27,7 @@ local function BaseElement(props)
     -- Combined styles
     local size = props.Size or UDim2.new(1, 0, 0, 32)
     local backgroundTransparency = props.BackgroundTransparency or 0
-    local backgroundColor = props.BackgroundColor or Tokens.Color.Surface
+    local backgroundColor = props.BackgroundColor3 or props.BackgroundColor or Tokens.Color.Surface
     
     return React.createElement("Frame", {
         Size = size,

@@ -19,7 +19,7 @@ local function HyperToast(d)
     
     return a.createElement(b, {
         Size = UDim2.new(0, 300, 0, 60),
-        BackgroundColor = e.Color.Surface,
+        BackgroundColor3 = e.Color.Surface,
         BackgroundTransparency = 0.1,
     }, {
         UIStroke = a.createElement("UIStroke", {
