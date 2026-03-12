@@ -40,7 +40,22 @@ function c:Initialize()
 end
 
 function c:HandleDragBegan(d)
+    local e = self.Store:GetState()
+    local f = a:GetMouseLocation()
     
+    
+    local g = {} 
+    for h, i in pairs(e.registry or {}) do
+        if i.type == "Window" then
+            table.insert(g, h)
+        end
+    end
+    
+    
+    for h, i in ipairs(g) do
+        local j = e.registry[i]
+        
+    end
 end
 
 function c:HandleDragEnded()
@@ -51,7 +66,13 @@ end
 function c:UpdateDragging()
     if self.DraggingInstance and self.DragOffset then
         local d = a:GetMouseLocation()
+        local e = UDim2.fromOffset(d.X - self.DragOffset.X, d.Y - self.DragOffset.Y)
         
+        self.Store:Dispatch({
+            type = "UPDATE_ELEMENT",
+            id = self.DraggingInstance,
+            props = { Position = e }
+        })
     end
 end
 

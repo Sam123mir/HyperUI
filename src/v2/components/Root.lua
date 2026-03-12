@@ -17,12 +17,14 @@ local function Root(props)
     end, {props.store})
     
     local windows = {}
-    for id, config in pairs(state.windows) do
-        windows[id] = React.createElement(Window, {
-            id = id,
-            store = props.store,
-            config = config,
-        })
+    for id, node in pairs(state.registry or {}) do
+        if node.type == "Window" then
+            table.insert(windows, React.createElement(Window, {
+                key = id,
+                id = id,
+                store = props.store,
+            }))
+        end
     end
     
     -- Notification stack will be rendered here as well

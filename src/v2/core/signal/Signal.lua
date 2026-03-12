@@ -46,7 +46,7 @@ function Signal:Wait()
     local connection
     connection = self:Connect(function(...)
         connection:Disconnect()
-        coroutine.resume(thread, ...)
+        task.spawn(thread, ...)
     end)
     return coroutine.yield()
 end

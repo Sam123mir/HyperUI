@@ -60,6 +60,8 @@ function a:CreateWindow(b)
         }
     })
     
+    self.WindowManager:RegisterWindow(d)
+    
     return c.Window.new(d, self.Store)
 end
 

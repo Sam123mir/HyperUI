@@ -16,6 +16,25 @@ function b.new(c, d)
         Data = {},
     }, b)
     
+    
+    e.Store:OnUpdate(function(f)
+        if not e.AutoSave then return end
+        
+        local g = false
+        for h, i in pairs(f.registry or {}) do
+            if i.props and i.props.value ~= nil then
+                if not e.Data[h] or e.Data[h].value ~= i.props.value then
+                    e.Data[h] = { value = i.props.value }
+                    g = true
+                end
+            end
+        end
+        
+        if g then
+            e:Save()
+        end
+    end)
+    
     return e
 end
 

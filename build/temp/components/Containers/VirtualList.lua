@@ -11,23 +11,24 @@ local function VirtualList(b)
     local e = b.Buffer or 5
     
     local f = a.useRef(nil)
-    local g, h = a.useState(0)
+    local g, h = a.useState(Vector2.new(0, 400))
+    local i, j = a.useState(0)
     
     
-    local i = math.ceil(400 / d) 
-    local j = math.max(1, math.floor(g / d) - e)
-    local k = math.min(#c, j + i + e * 2)
+    local k = math.ceil(g.Y / d)
+    local l = math.max(1, math.floor(i / d) - e)
+    local m = math.min(#c, l + k + e * 2)
     
-    local l = {}
-    for m = j, k do
-        local n = c[m]
-        table.insert(l, a.createElement("Frame", {
-            Key = m,
+    local n = {}
+    for o = l, m do
+        local p = c[o]
+        table.insert(n, a.createElement("Frame", {
+            Key = o,
             Size = UDim2.new(1, 0, 0, d),
-            Position = UDim2.fromOffset(0, (m - 1) * d),
+            Position = UDim2.fromOffset(0, (o - 1) * d),
             BackgroundTransparency = 1,
         }, {
-            Content = b.RenderItem(n, m)
+            Content = b.RenderItem(p, o)
         }))
     end
     
@@ -36,10 +37,13 @@ local function VirtualList(b)
         BackgroundTransparency = 1,
         CanvasSize = UDim2.new(0, 0, 0, #c * d),
         ScrollBarThickness = 2,
-        [a.Event.Scroll] = function(m)
-            h(m.CanvasPosition.Y)
+        [a.Change.CanvasPosition] = function(o)
+            j(o.CanvasPosition.Y)
         end,
-    }, l)
+        [a.Change.AbsoluteSize] = function(o)
+            h(o.AbsoluteSize)
+        end,
+    }, n)
 end
 
 return VirtualList

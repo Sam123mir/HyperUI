@@ -3,35 +3,40 @@
 
 
 local a = require(script.Parent.Parent.Parent.dependencies.React)
-local b = require(script.Parent.Parent.Parent.theme.tokens)
-local c = require(script.Parent.Parent.Parent.hooks.useSpring)
+local b = require(script.Parent.Parent.Parent.hooks.useSpring)
+local c = require(script.Parent.Parent.Parent.hooks.useTheme)
 
 local function HyperModal(d)
-    local e = d.Open or false
-    local f = c(e and 1 or 0, { damping = 0.7, stiffness = 0.2 })
+    local e = c(d.store)
+    local f = d.Open or false
+    
+    
+    local g = b(f and 1 or 0, { stiffness = 200, damping = 25 })
     
     return a.createElement("Frame", {
         Size = UDim2.fromScale(1, 1),
         BackgroundColor3 = Color3.new(0, 0, 0),
-        BackgroundTransparency = f:map(function(g) return 1 - (g * 0.5) end),
-        Visible = f:map(function(g) return g > 0.01 end),
+        BackgroundTransparency = g:map(function(h) return 1 - (h * 0.5) end),
+        Visible = g:map(function(h) return h > 0.01 end),
         ZIndex = 2000,
     }, {
         Content = a.createElement("Frame", {
             Size = UDim2.fromOffset(400, 250),
-            Position = f:map(function(g) return UDim2.fromScale(0.5, 0.5 + (0.1 * (1-g))) end),
+            Position = g:map(function(h) 
+                return UDim2.new(0.5, 0, 0.5, math.floor(30 * (1 - h))) 
+            end),
             AnchorPoint = Vector2.new(0.5, 0.5),
-            BackgroundColor3 = b.Color.Background,
+            BackgroundColor3 = e.Color.Background,
             BorderSizePixel = 0,
-            GroupTransparency = f:map(function(g) return 1 - g end),
+            GroupTransparency = g:map(function(h) return 1 - h end),
         }, {
-            UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(0, b.Radius.Medium) }),
-            UIStroke = a.createElement("UIStroke", { Color = b.Color.Border, Thickness = 2 }),
+            UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(0, e.Radius.Medium) }),
+            UIStroke = a.createElement("UIStroke", { Color = e.Color.Border, Thickness = 2 }),
             Shadow = a.createElement("ImageLabel", {
                 Size = UDim2.new(1, 40, 1, 40),
                 Position = UDim2.fromOffset(-20, -20),
                 BackgroundTransparency = 1,
-                Image = "rbxassetid://1316045217", 
+                Image = "rbxassetid://1316045217",
                 ImageColor3 = Color3.new(0, 0, 0),
                 ImageTransparency = 0.5,
                 ZIndex = 0,
@@ -44,14 +49,14 @@ local function HyperModal(d)
                     Size = UDim2.fromScale(1, 1),
                     BackgroundTransparency = 1,
                     Text = d.Title or "Modal",
-                    TextColor3 = b.Color.Text,
-                    Font = b.Font.Bold,
-                    TextSize = b.FontSize.Large,
+                    TextColor3 = e.Color.Text,
+                    Font = e.Font, 
+                    TextSize = e.FontSize.Large,
                 }),
                 Divider = a.createElement("Frame", {
                     Size = UDim2.new(1, 0, 0, 1),
                     Position = UDim2.fromScale(0, 1),
-                    BackgroundColor3 = b.Color.Border,
+                    BackgroundColor3 = e.Color.Border,
                     BorderSizePixel = 0,
                 })
             }),
@@ -70,9 +75,9 @@ local function HyperModal(d)
                     Size = UDim2.fromScale(1, 1),
                     BackgroundTransparency = 1,
                     Text = d.Content or "",
-                    TextColor3 = b.Color.Text,
-                    Font = b.Font.Main,
-                    TextSize = b.FontSize.Medium,
+                    TextColor3 = e.Color.Text,
+                    Font = e.Font,
+                    TextSize = e.FontSize.Medium,
                     TextWrapped = true,
                     TextYAlignment = Enum.TextYAlignment.Top,
                 })

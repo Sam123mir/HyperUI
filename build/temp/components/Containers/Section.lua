@@ -40,39 +40,43 @@ local e = {
     VirtualList = require(script.Parent.VirtualList),
 }
 
-local function Section(f)
-    local g = c(f.store, f.id)
-    if not g then return nil end
+local f = require(script.Parent.Parent.Parent.hooks.useTheme)
+
+local function Section(g)
+    local h = f(g.store)
+    local i = c(g.store, g.id)
+    if not i then return nil end
     
-    local h = {}
-    for i, j in ipairs(g.children) do
-        local k = c(f.store, j)
-        if k then
-            local l = e[k.type]
-            if l then
-                table.insert(h, a.createElement(l, {
-                    key = j,
-                    LayoutOrder = i,
+    local j = {}
+    for k, l in ipairs(i.children) do
+        local m = c(g.store, l)
+        if m then
+            local n = e[m.type]
+            if n then
+                table.insert(j, a.createElement(n, {
+                    key = l,
+                    LayoutOrder = k,
+                    store = g.store, 
                     
-                    Text = k.props.text,
-                    Value = k.props.value,
-                    Options = k.props.options,
-                    Min = k.props.min,
-                    Max = k.props.max,
-                    Icon = k.props.icon,
-                    Disabled = k.props.disabled,
-                    Callback = function(m)
+                    Text = m.props.text,
+                    Value = m.props.value,
+                    Options = m.props.options,
+                    Min = m.props.min,
+                    Max = m.props.max,
+                    Icon = m.props.icon,
+                    Disabled = m.props.disabled,
+                    Callback = function(o)
                         
-                        if k.type ~= "Button" and k.type ~= "IconButton" then
-                            f.store:Dispatch({
+                        if m.type ~= "Button" and m.type ~= "IconButton" then
+                            g.store:Dispatch({
                                 type = "UPDATE_ELEMENT",
-                                id = j,
-                                props = { value = m }
+                                id = l,
+                                props = { value = o }
                             })
                         end
                         
-                        if k.props.callback then
-                            k.props.callback(m)
+                        if m.props.callback then
+                            m.props.callback(o)
                         end
                     end
                 }))
@@ -80,28 +84,30 @@ local function Section(f)
         end
     end
     
+    local k = i.props.title or ""
+    
     return a.createElement("Frame", {
         Size = UDim2.new(1, 0, 0, 0),
         AutomaticSize = Enum.AutomaticSize.Y,
         BackgroundTransparency = 1,
-        LayoutOrder = f.LayoutOrder,
+        LayoutOrder = g.LayoutOrder,
     }, {
         Layout = a.createElement("UIListLayout", {
-            Padding = UDim.new(0, b.Spacing[2]),
+            Padding = UDim.new(0, h.Spacing[2]),
             SortOrder = Enum.SortOrder.LayoutOrder,
         }),
-        Title = a.createElement("TextLabel", {
+        Title = #k > 0 and a.createElement("TextLabel", {
             Size = UDim2.new(1, 0, 0, 20),
             BackgroundTransparency = 1,
-            Text = g.props.title:upper(),
-            TextColor3 = b.Color.TextMuted,
-            Font = b.Font.Bold,
-            TextSize = b.FontSize.Small,
+            Text = k:upper(),
+            TextColor3 = h.Color.TextMuted,
+            Font = h.Font,
+            TextSize = h.FontSize.Small,
             TextXAlignment = Enum.TextXAlignment.Left,
         }, {
-            Padding = a.createElement("UIPadding", { PaddingLeft = UDim.new(0, b.Spacing[2]) })
-        }),
-        Container = a.createElement(d, {}, h)
+            Padding = a.createElement("UIPadding", { PaddingLeft = UDim.new(0, h.Spacing[2]) })
+        }) or nil,
+        Container = a.createElement(d, {}, j)
     })
 end
 

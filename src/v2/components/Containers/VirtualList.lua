@@ -11,10 +11,11 @@ local function VirtualList(props)
     local buffer = props.Buffer or 5
     
     local containerRef = React.useRef(nil)
+    local containerSize, setContainerSize = React.useState(Vector2.new(0, 400))
     local scrollTop, setScrollTop = React.useState(0)
     
-    -- Calculate visible range
-    local visibleCount = math.ceil(400 / itemHeight) -- Assuming 400px height for now
+    -- Calculate visible range based on actual absolute height
+    local visibleCount = math.ceil(containerSize.Y / itemHeight)
     local startIndex = math.max(1, math.floor(scrollTop / itemHeight) - buffer)
     local endIndex = math.min(#items, startIndex + visibleCount + buffer * 2)
     
@@ -38,6 +39,9 @@ local function VirtualList(props)
         ScrollBarThickness = 2,
         [React.Change.CanvasPosition] = function(rbx)
             setScrollTop(rbx.CanvasPosition.Y)
+        end,
+        [React.Change.AbsoluteSize] = function(rbx)
+            setContainerSize(rbx.AbsoluteSize)
         end,
     }, visibleItems)
 end

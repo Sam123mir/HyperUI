@@ -16,6 +16,25 @@ function ConfigSystem.new(store, options)
         Data = {},
     }, ConfigSystem)
     
+    -- Subscribe to store to handle auto-saving on changes
+    self.Store:OnUpdate(function(state)
+        if not self.AutoSave then return end
+        
+        local changed = false
+        for id, node in pairs(state.registry or {}) do
+            if node.props and node.props.value ~= nil then
+                if not self.Data[id] or self.Data[id].value ~= node.props.value then
+                    self.Data[id] = { value = node.props.value }
+                    changed = true
+                end
+            end
+        end
+        
+        if changed then
+            self:Save()
+        end
+    end)
+    
     return self
 end
 

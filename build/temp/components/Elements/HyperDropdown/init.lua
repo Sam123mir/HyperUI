@@ -3,39 +3,43 @@
 
 
 local a = require(script.Parent.Parent.Parent.Parent.dependencies.React)
-local b = require(script.Parent.Parent.Parent.Parent.theme.tokens)
-
-local c = require(script.DropdownTrigger)
-local d = require(script.DropdownList)
+local b = require(script.DropdownTrigger)
+local c = require(script.DropdownList)
+local d = require(script.Parent.Parent.Parent.Parent.hooks.useTheme)
 
 local function HyperDropdown(e)
-    local f, g = a.useState(false)
+    local f = d(e.store)
+    local g, h = a.useState(false)
     
     return a.createElement("Frame", {
-        Size = e.Size or UDim2.new(1, 0, 0, 0),
-        AutomaticSize = Enum.AutomaticSize.Y,
+        Size = e.Size or UDim2.new(1, 0, 0, 40),
         BackgroundTransparency = 1,
         LayoutOrder = e.LayoutOrder,
-        ZIndex = f and 100 or 1,
+        ZIndex = g and 1000 or 1, 
     }, {
-        Layout = a.createElement("UIListLayout", {
-            SortOrder = Enum.SortOrder.LayoutOrder,
-            Padding = UDim.new(0, 4),
-        }),
-        Trigger = a.createElement(c, {
+        Trigger = a.createElement(b, {
             Text = e.Text,
             Value = e.Value,
-            Open = f,
-            OnToggle = function() g(not f) end,
+            Open = g,
+            OnToggle = function() h(not g) end,
+            store = e.store, 
         }),
-        List = f and a.createElement(d, {
-            Options = e.Options,
-            Selected = e.Value,
-            Multi = e.Multi,
-            OnSelect = function(h)
-                if not e.Multi then g(false) end
-                if e.Callback then e.Callback(h) end
-            end,
+        List = g and a.createElement("Frame", {
+            Size = UDim2.fromScale(1, 0),
+            Position = UDim2.new(0, 0, 0, 44),
+            BackgroundTransparency = 1,
+            ZIndex = 1100,
+        }, {
+            Content = a.createElement(c, {
+                Options = e.Options,
+                Selected = e.Value,
+                Multi = e.Multi,
+                store = e.store,
+                OnSelect = function(i)
+                    if not e.Multi then h(false) end
+                    if e.Callback then e.Callback(i) end
+                end,
+            })
         })
     })
 end

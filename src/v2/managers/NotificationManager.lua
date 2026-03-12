@@ -43,15 +43,15 @@ function NotificationManager:Notify(config)
 end
 
 function NotificationManager:Dismiss(id)
-    local index = -1
-    for i, notif in ipairs(self.Queue) do
-        if notif.id == id then
+    local index = nil
+    for i, toast in ipairs(self.Queue) do
+        if toast.id == id then
             index = i
             break
         end
     end
     
-    if index ~= -1 then
+    if index then
         table.remove(self.Queue, index)
         self.Store:Dispatch({
             type = "REMOVE_NOTIFICATION",

@@ -40,7 +40,10 @@ local COMPONENTS = {
     VirtualList = require(script.Parent.VirtualList),
 }
 
+local useTheme = require(script.Parent.Parent.Parent.hooks.useTheme)
+
 local function Section(props)
+    local theme = useTheme(props.store)
     local node = useTree(props.store, props.id)
     if not node then return nil end
     
@@ -53,6 +56,7 @@ local function Section(props)
                 table.insert(elements, React.createElement(Component, {
                     key = elementId,
                     LayoutOrder = i,
+                    store = props.store, -- CRITICAL: Pass store for reactivity
                     -- Pass all props to the component
                     Text = elementNode.props.text,
                     Value = elementNode.props.value,
@@ -80,6 +84,8 @@ local function Section(props)
         end
     end
     
+    local titleText = node.props.title or ""
+    
     return React.createElement("Frame", {
         Size = UDim2.new(1, 0, 0, 0),
         AutomaticSize = Enum.AutomaticSize.Y,
@@ -87,20 +93,20 @@ local function Section(props)
         LayoutOrder = props.LayoutOrder,
     }, {
         Layout = React.createElement("UIListLayout", {
-            Padding = UDim.new(0, Tokens.Spacing[2]),
+            Padding = UDim.new(0, theme.Spacing[2]),
             SortOrder = Enum.SortOrder.LayoutOrder,
         }),
-        Title = React.createElement("TextLabel", {
+        Title = #titleText > 0 and React.createElement("TextLabel", {
             Size = UDim2.new(1, 0, 0, 20),
             BackgroundTransparency = 1,
-            Text = node.props.title:upper(),
-            TextColor3 = Tokens.Color.TextMuted,
-            Font = Tokens.Font.Bold,
-            TextSize = Tokens.FontSize.Small,
+            Text = titleText:upper(),
+            TextColor3 = theme.Color.TextMuted,
+            Font = theme.Font,
+            TextSize = theme.FontSize.Small,
             TextXAlignment = Enum.TextXAlignment.Left,
         }, {
-            Padding = React.createElement("UIPadding", { PaddingLeft = UDim.new(0, Tokens.Spacing[2]) })
-        }),
+            Padding = React.createElement("UIPadding", { PaddingLeft = UDim.new(0, theme.Spacing[2]) })
+        }) or nil,
         Container = React.createElement(ElementList, {}, elements)
     })
 end

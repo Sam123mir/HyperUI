@@ -43,7 +43,7 @@ function a:Notify(b)
 end
 
 function a:Dismiss(b)
-    local c = -1    
+    local c     
 for d, e in ipairs(self.Queue) do
         if e.id == b then
             c = d
@@ -51,7 +51,7 @@ for d, e in ipairs(self.Queue) do
         end
     end
     
-    if c ~= -1 then
+    if c then
         table.remove(self.Queue, c)
         self.Store:Dispatch({
             type = "REMOVE_NOTIFICATION",

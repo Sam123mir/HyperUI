@@ -3,23 +3,23 @@
 ]]
 
 local React = require(script.Parent.Parent.Parent.dependencies.React)
-local Tokens = require(script.Parent.Parent.Parent.theme.tokens)
 local BaseElement = require(script.Parent.BaseElement)
-local useSpring = require(script.Parent.Parent.Parent.hooks.useSpring)
+local useTheme = require(script.Parent.Parent.Parent.hooks.useTheme)
 
 local function HyperToast(props)
+    local theme = useTheme(props.store)
     local priorityColors = {
-        Info = Tokens.Color.Accent,
-        Success = Tokens.Color.Success,
-        Warning = Tokens.Color.Warning,
-        Error = Tokens.Color.Error,
+        Info = theme.Color.Accent,
+        Success = theme.Color.Success,
+        Warning = theme.Color.Warning,
+        Error = theme.Color.Error,
     }
     
-    local color = priorityColors[props.Priority] or Tokens.Color.Accent
+    local color = priorityColors[props.Priority] or theme.Color.Accent
     
     return React.createElement(BaseElement, {
         Size = UDim2.new(0, 300, 0, 60),
-        BackgroundColor = Tokens.Color.Surface,
+        BackgroundColor = theme.Color.Surface,
         BackgroundTransparency = 0.1,
     }, {
         UIStroke = React.createElement("UIStroke", {
@@ -32,8 +32,8 @@ local function HyperToast(props)
             BackgroundTransparency = 1,
         }, {
             Padding = React.createElement("UIPadding", {
-                PaddingLeft = UDim.new(0, Tokens.Spacing[3]),
-                PaddingRight = UDim.new(0, Tokens.Spacing[3]),
+                PaddingLeft = UDim.new(0, theme.Spacing[3]),
+                PaddingRight = UDim.new(0, theme.Spacing[3]),
             }),
             Icon = props.Icon and React.createElement("ImageLabel", {
                 Size = UDim2.fromOffset(24, 24),
@@ -57,17 +57,17 @@ local function HyperToast(props)
                     BackgroundTransparency = 1,
                     Text = props.Title or "Notification",
                     TextColor3 = color,
-                    Font = Tokens.Font.Bold,
-                    TextSize = Tokens.FontSize.Medium,
+                    Font = theme.Font.Bold,
+                    TextSize = theme.FontSize.Medium,
                     TextXAlignment = Enum.TextXAlignment.Left,
                 }),
                 Text = React.createElement("TextLabel", {
                     Size = UDim2.new(1, 0, 0, 14),
                     BackgroundTransparency = 1,
                     Text = props.Content or "",
-                    TextColor3 = Tokens.Color.Text,
-                    Font = Tokens.Font.Main,
-                    TextSize = Tokens.FontSize.Small,
+                    TextColor3 = theme.Color.Text,
+                    Font = theme.Font.Main,
+                    TextSize = theme.FontSize.Small,
                     TextXAlignment = Enum.TextXAlignment.Left,
                     TextWrapped = true,
                 })

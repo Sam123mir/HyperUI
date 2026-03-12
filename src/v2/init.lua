@@ -60,6 +60,8 @@ function HyperUI:CreateWindow(config)
         }
     })
     
+    self.WindowManager:RegisterWindow(windowId)
+    
     return API.Window.new(windowId, self.Store)
 end
 

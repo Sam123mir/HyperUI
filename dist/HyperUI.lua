@@ -1,6 +1,6 @@
 -- HyperUI Framework
 -- Version: 2.0.0
--- Build Date: 2026-03-11 21:33:45
+-- Build Date: 2026-03-11 21:56:07
 -- Distribution: Single File
 
 local _modules = {}
@@ -402,39 +402,43 @@ _modules["components/Containers/Section"] = function()
         VirtualList = _require("components/Containers/VirtualList"),
     }
     
-    local function Section(f)
-        local g = c(f.store, f.id)
-        if not g then return nil end
+    local f = _require("hooks/useTheme")
+    
+    local function Section(g)
+        local h = f(g.store)
+        local i = c(g.store, g.id)
+        if not i then return nil end
         
-        local h = {}
-        for i, j in ipairs(g.children) do
-            local k = c(f.store, j)
-            if k then
-                local l = e[k.type]
-                if l then
-                    table.insert(h, a.createElement(l, {
-                        key = j,
-                        LayoutOrder = i,
+        local j = {}
+        for k, l in ipairs(i.children) do
+            local m = c(g.store, l)
+            if m then
+                local n = e[m.type]
+                if n then
+                    table.insert(j, a.createElement(n, {
+                        key = l,
+                        LayoutOrder = k,
+                        store = g.store, 
                         
-                        Text = k.props.text,
-                        Value = k.props.value,
-                        Options = k.props.options,
-                        Min = k.props.min,
-                        Max = k.props.max,
-                        Icon = k.props.icon,
-                        Disabled = k.props.disabled,
-                        Callback = function(m)
+                        Text = m.props.text,
+                        Value = m.props.value,
+                        Options = m.props.options,
+                        Min = m.props.min,
+                        Max = m.props.max,
+                        Icon = m.props.icon,
+                        Disabled = m.props.disabled,
+                        Callback = function(o)
                             
-                            if k.type ~= "Button" and k.type ~= "IconButton" then
-                                f.store:Dispatch({
+                            if m.type ~= "Button" and m.type ~= "IconButton" then
+                                g.store:Dispatch({
                                     type = "UPDATE_ELEMENT",
-                                    id = j,
-                                    props = { value = m }
+                                    id = l,
+                                    props = { value = o }
                                 })
                             end
                             
-                            if k.props.callback then
-                                k.props.callback(m)
+                            if m.props.callback then
+                                m.props.callback(o)
                             end
                         end
                     }))
@@ -442,28 +446,30 @@ _modules["components/Containers/Section"] = function()
             end
         end
         
+        local k = i.props.title or ""
+        
         return a.createElement("Frame", {
             Size = UDim2.new(1, 0, 0, 0),
             AutomaticSize = Enum.AutomaticSize.Y,
             BackgroundTransparency = 1,
-            LayoutOrder = f.LayoutOrder,
+            LayoutOrder = g.LayoutOrder,
         }, {
             Layout = a.createElement("UIListLayout", {
-                Padding = UDim.new(0, b.Spacing[2]),
+                Padding = UDim.new(0, h.Spacing[2]),
                 SortOrder = Enum.SortOrder.LayoutOrder,
             }),
-            Title = a.createElement("TextLabel", {
+            Title = #k > 0 and a.createElement("TextLabel", {
                 Size = UDim2.new(1, 0, 0, 20),
                 BackgroundTransparency = 1,
-                Text = g.props.title:upper(),
-                TextColor3 = b.Color.TextMuted,
-                Font = b.Font.Bold,
-                TextSize = b.FontSize.Small,
+                Text = k:upper(),
+                TextColor3 = h.Color.TextMuted,
+                Font = h.Font,
+                TextSize = h.FontSize.Small,
                 TextXAlignment = Enum.TextXAlignment.Left,
             }, {
-                Padding = a.createElement("UIPadding", { PaddingLeft = UDim.new(0, b.Spacing[2]) })
-            }),
-            Container = a.createElement(d, {}, h)
+                Padding = a.createElement("UIPadding", { PaddingLeft = UDim.new(0, h.Spacing[2]) })
+            }) or nil,
+            Container = a.createElement(d, {}, j)
         })
     end
     
@@ -594,23 +600,24 @@ _modules["components/Containers/VirtualList"] = function()
         local e = b.Buffer or 5
         
         local f = a.useRef(nil)
-        local g, h = a.useState(0)
+        local g, h = a.useState(Vector2.new(0, 400))
+        local i, j = a.useState(0)
         
         
-        local i = math.ceil(400 / d) 
-        local j = math.max(1, math.floor(g / d) - e)
-        local k = math.min(#c, j + i + e * 2)
+        local k = math.ceil(g.Y / d)
+        local l = math.max(1, math.floor(i / d) - e)
+        local m = math.min(#c, l + k + e * 2)
         
-        local l = {}
-        for m = j, k do
-            local n = c[m]
-            table.insert(l, a.createElement("Frame", {
-                Key = m,
+        local n = {}
+        for o = l, m do
+            local p = c[o]
+            table.insert(n, a.createElement("Frame", {
+                Key = o,
                 Size = UDim2.new(1, 0, 0, d),
-                Position = UDim2.fromOffset(0, (m - 1) * d),
+                Position = UDim2.fromOffset(0, (o - 1) * d),
                 BackgroundTransparency = 1,
             }, {
-                Content = b.RenderItem(n, m)
+                Content = b.RenderItem(p, o)
             }))
         end
         
@@ -619,10 +626,13 @@ _modules["components/Containers/VirtualList"] = function()
             BackgroundTransparency = 1,
             CanvasSize = UDim2.new(0, 0, 0, #c * d),
             ScrollBarThickness = 2,
-            [a.Change.CanvasPosition] = function(m)
-                h(m.CanvasPosition.Y)
+            [a.Change.CanvasPosition] = function(o)
+                j(o.CanvasPosition.Y)
             end,
-        }, l)
+            [a.Change.AbsoluteSize] = function(o)
+                h(o.AbsoluteSize)
+            end,
+        }, n)
     end
     
     return VirtualList
@@ -874,18 +884,21 @@ _modules["components/Elements/HyperCheckbox"] = function()
     
     
     local a = _require("dependencies/React")
-    local b = _require("theme/tokens")
-    local c = _require("components/Elements/BaseElement")
-    local d = _require("hooks/useSpring")
+    local b = _require("components/Elements/BaseElement")
+    local c = _require("hooks/useSpring")
+    local d = _require("hooks/useTheme")
     
     local function HyperCheckbox(e)
-        local f = e.Value or false
-        local g = d(f and 1 or 0, { damping = 0.5, stiffness = 0.3 })
+        local f = d(e.store)
+        local g = e.Value or false
         
-        return a.createElement(c, {
+        
+        local h = c(g and 1 or 0, { stiffness = 300, damping = 30 })
+        
+        return a.createElement(b, {
             Disabled = e.Disabled,
             OnActivated = function()
-                if e.Callback then e.Callback(not f) end
+                if e.Callback then e.Callback(not g) end
             end,
             LayoutOrder = e.LayoutOrder,
         }, {
@@ -894,43 +907,43 @@ _modules["components/Elements/HyperCheckbox"] = function()
                 BackgroundTransparency = 1,
             }, {
                 Padding = a.createElement("UIPadding", {
-                    PaddingLeft = UDim.new(0, b.Spacing[3]),
-                    PaddingRight = UDim.new(0, b.Spacing[3]),
+                    PaddingLeft = UDim.new(0, f.Spacing[3]),
+                    PaddingRight = UDim.new(0, f.Spacing[3]),
                 }),
                 Label = a.createElement("TextLabel", {
                     Size = UDim2.new(1, -30, 1, 0),
                     BackgroundTransparency = 1,
                     Text = e.Text or "Checkbox",
-                    TextColor3 = b.Color.Text,
-                    Font = b.Font.Main,
-                    TextSize = b.FontSize.Medium,
+                    TextColor3 = f.Color.Text,
+                    Font = f.Font,
+                    TextSize = f.FontSize.Medium,
                     TextXAlignment = Enum.TextXAlignment.Left,
                 }),
                 Box = a.createElement("Frame", {
                     Size = UDim2.fromOffset(20, 20),
                     Position = UDim2.new(1, -20, 0.5, -10),
-                    BackgroundColor3 = b.Color.Surface,
+                    BackgroundColor3 = f.Color.Surface,
                     BorderSizePixel = 0,
                 }, {
                     UICorner = a.createElement("UICorner", {
                         CornerRadius = UDim.new(0, 4)
                     }),
                     UIStroke = a.createElement("UIStroke", {
-                        Color = f and b.Color.Accent or b.Color.Border,
+                        Color = g and f.Color.Accent or f.Color.Border,
                         Thickness = 1,
                     }),
                     CheckMark = a.createElement("Frame", {
                         Size = UDim2.fromScale(0.6, 0.6),
                         Position = UDim2.fromScale(0.5, 0.5),
                         AnchorPoint = Vector2.new(0.5, 0.5),
-                        BackgroundColor3 = b.Color.Accent,
-                        BackgroundTransparency = g:map(function(h) return 1 - h end),
+                        BackgroundColor3 = f.Color.Accent,
+                        BackgroundTransparency = h:map(function(i) return 1 - i end),
                     }, {
                         UICorner = a.createElement("UICorner", {
                             CornerRadius = UDim.new(0, 2)
                         }),
                         UIScale = a.createElement("UIScale", {
-                            Scale = g
+                            Scale = h
                         })
                     })
                 })
@@ -963,20 +976,41 @@ _modules["components/Elements/HyperColorPicker"] = function()
     
     
     local a = _require("dependencies/React")
-    local b = _require("theme/tokens")
-    local c = _require("components/Elements/BaseElement")
-    
-    local d = _require("components/Elements/HyperColorPicker/HueSlider")
-    local e = _require("components/Elements/HyperColorPicker/SaturationSquare")
-    local f = _require("components/Elements/HyperColorPicker/ColorPreview")
+    local b = _require("components/Elements/BaseElement")
+    local c = _require("components/Elements/HyperColorPicker/HueSlider")
+    local d = _require("components/Elements/HyperColorPicker/SaturationSquare")
+    local e = _require("components/Elements/HyperColorPicker/ColorPreview")
+    local f = _require("hooks/useTheme")
     
     local function HyperColorPicker(g)
-        local h, i = a.useState(false)
-        local j, k, l = Color3.toHSV(g.Value or Color3.new(1, 1, 1))
+        local h = f(g.store)
+        local i, j = a.useState(false)
         
-        local function updateColor(m, n, o)
+        
+        local k, l, m = Color3.toHSV(g.Value or Color3.new(1, 1, 1))
+        local n, o = a.useState(k)
+        local p, q = a.useState(l)
+        local r, s = a.useState(m)
+        
+        
+        a.useEffect(function()
+            local t, u, v = Color3.toHSV(g.Value or Color3.new(1, 1, 1))
+            o(t)
+            q(u)
+            s(v)
+        end, {g.Value})
+    
+        local function updateColor(t, u, v)
+            local w = t or n
+            local x = u or p
+            local y = v or r
+            
+            o(w)
+            q(x)
+            s(y)
+            
             if g.Callback then
-                g.Callback(Color3.fromHSV(m or j, n or k, o or l))
+                g.Callback(Color3.fromHSV(w, x, y))
             end
         end
         
@@ -985,40 +1019,40 @@ _modules["components/Elements/HyperColorPicker"] = function()
             AutomaticSize = Enum.AutomaticSize.Y,
             BackgroundTransparency = 1,
             LayoutOrder = g.LayoutOrder,
-            ZIndex = h and 100 or 1,
+            ZIndex = i and 100 or 1,
         }, {
             Layout = a.createElement("UIListLayout", { SortOrder = Enum.SortOrder.LayoutOrder, Padding = UDim.new(0, 4) }),
-            Trigger = a.createElement(c, {
-                OnActivated = function() i(not h) end,
+            Trigger = a.createElement(b, {
+                OnActivated = function() j(not i) end,
             }, {
                 Container = a.createElement("Frame", {
                     Size = UDim2.fromScale(1, 1),
                     BackgroundTransparency = 1,
                 }, {
                     Padding = a.createElement("UIPadding", {
-                        PaddingLeft = UDim.new(0, b.Spacing[3]),
-                        PaddingRight = UDim.new(0, b.Spacing[3]),
+                        PaddingLeft = UDim.new(0, h.Spacing[3]),
+                        PaddingRight = UDim.new(0, h.Spacing[3]),
                     }),
                     Label = a.createElement("TextLabel", {
                         Size = UDim2.new(1, -60, 1, 0),
                         BackgroundTransparency = 1,
                         Text = g.Text or "Color Picker",
-                        TextColor3 = b.Color.Text,
-                        Font = b.Font.Main,
-                        TextSize = b.FontSize.Medium,
+                        TextColor3 = h.Color.Text,
+                        Font = h.Font,
+                        TextSize = h.FontSize.Medium,
                         TextXAlignment = Enum.TextXAlignment.Left,
                     }),
-                    Preview = a.createElement(f, {
+                    Preview = a.createElement(e, {
                         Color = g.Value or Color3.new(1, 1, 1)
                     })
                 })
             }),
-            Dropdown = h and a.createElement("Frame", {
+            Dropdown = i and a.createElement("Frame", {
                 Size = UDim2.new(1, 0, 0, 200),
-                BackgroundColor3 = b.Color.Surface,
+                BackgroundColor3 = h.Color.Surface,
                 BorderSizePixel = 0,
             }, {
-                UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(0, b.Radius.Small) }),
+                UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(0, h.Radius.Small) }),
                 Padding = a.createElement("UIPadding", {
                     PaddingTop = UDim.new(0, 8),
                     PaddingBottom = UDim.new(0, 8),
@@ -1026,15 +1060,15 @@ _modules["components/Elements/HyperColorPicker"] = function()
                     PaddingRight = UDim.new(0, 8),
                 }),
                 Layout = a.createElement("UIListLayout", { SortOrder = Enum.SortOrder.LayoutOrder, Padding = UDim.new(0, 8) }),
-                SatVal = a.createElement(e, {
-                    Hue = j,
-                    Sat = k,
-                    Val = l,
-                    OnChanged = function(m, n) updateColor(nil, m, n) end
+                SatVal = a.createElement(d, {
+                    Hue = n,
+                    Sat = p,
+                    Val = r,
+                    OnChanged = function(t, u) updateColor(nil, t, u) end
                 }),
-                Hue = a.createElement(d, {
-                    Hue = j,
-                    OnChanged = function(m) updateColor(m, nil, nil) end
+                Hue = a.createElement(c, {
+                    Hue = n,
+                    OnChanged = function(t) updateColor(t, nil, nil) end
                 })
             })
         })
@@ -1342,39 +1376,43 @@ _modules["components/Elements/HyperDropdown"] = function()
     
     
     local a = _require("dependencies/React")
-    local b = _require("theme/tokens")
-    
-    local c = _require("components/Elements/HyperDropdown/DropdownTrigger")
-    local d = _require("components/Elements/HyperDropdown/DropdownList")
+    local b = _require("components/Elements/HyperDropdown/DropdownTrigger")
+    local c = _require("components/Elements/HyperDropdown/DropdownList")
+    local d = _require("hooks/useTheme")
     
     local function HyperDropdown(e)
-        local f, g = a.useState(false)
+        local f = d(e.store)
+        local g, h = a.useState(false)
         
         return a.createElement("Frame", {
-            Size = e.Size or UDim2.new(1, 0, 0, 0),
-            AutomaticSize = Enum.AutomaticSize.Y,
+            Size = e.Size or UDim2.new(1, 0, 0, 40),
             BackgroundTransparency = 1,
             LayoutOrder = e.LayoutOrder,
-            ZIndex = f and 100 or 1,
+            ZIndex = g and 1000 or 1, 
         }, {
-            Layout = a.createElement("UIListLayout", {
-                SortOrder = Enum.SortOrder.LayoutOrder,
-                Padding = UDim.new(0, 4),
-            }),
-            Trigger = a.createElement(c, {
+            Trigger = a.createElement(b, {
                 Text = e.Text,
                 Value = e.Value,
-                Open = f,
-                OnToggle = function() g(not f) end,
+                Open = g,
+                OnToggle = function() h(not g) end,
+                store = e.store, 
             }),
-            List = f and a.createElement(d, {
-                Options = e.Options,
-                Selected = e.Value,
-                Multi = e.Multi,
-                OnSelect = function(h)
-                    if not e.Multi then g(false) end
-                    if e.Callback then e.Callback(h) end
-                end,
+            List = g and a.createElement("Frame", {
+                Size = UDim2.fromScale(1, 0),
+                Position = UDim2.new(0, 0, 0, 44),
+                BackgroundTransparency = 1,
+                ZIndex = 1100,
+            }, {
+                Content = a.createElement(c, {
+                    Options = e.Options,
+                    Selected = e.Value,
+                    Multi = e.Multi,
+                    store = e.store,
+                    OnSelect = function(i)
+                        if not e.Multi then h(false) end
+                        if e.Callback then e.Callback(i) end
+                    end,
+                })
             })
         })
     end
@@ -1845,35 +1883,40 @@ _modules["components/Elements/HyperModal"] = function()
     
     
     local a = _require("dependencies/React")
-    local b = _require("theme/tokens")
-    local c = _require("hooks/useSpring")
+    local b = _require("hooks/useSpring")
+    local c = _require("hooks/useTheme")
     
     local function HyperModal(d)
-        local e = d.Open or false
-        local f = c(e and 1 or 0, { damping = 0.7, stiffness = 0.2 })
+        local e = c(d.store)
+        local f = d.Open or false
+        
+        
+        local g = b(f and 1 or 0, { stiffness = 200, damping = 25 })
         
         return a.createElement("Frame", {
             Size = UDim2.fromScale(1, 1),
             BackgroundColor3 = Color3.new(0, 0, 0),
-            BackgroundTransparency = f:map(function(g) return 1 - (g * 0.5) end),
-            Visible = f:map(function(g) return g > 0.01 end),
+            BackgroundTransparency = g:map(function(h) return 1 - (h * 0.5) end),
+            Visible = g:map(function(h) return h > 0.01 end),
             ZIndex = 2000,
         }, {
             Content = a.createElement("Frame", {
                 Size = UDim2.fromOffset(400, 250),
-                Position = f:map(function(g) return UDim2.fromScale(0.5, 0.5 + (0.1 * (1-g))) end),
+                Position = g:map(function(h) 
+                    return UDim2.new(0.5, 0, 0.5, math.floor(30 * (1 - h))) 
+                end),
                 AnchorPoint = Vector2.new(0.5, 0.5),
-                BackgroundColor3 = b.Color.Background,
+                BackgroundColor3 = e.Color.Background,
                 BorderSizePixel = 0,
-                GroupTransparency = f:map(function(g) return 1 - g end),
+                GroupTransparency = g:map(function(h) return 1 - h end),
             }, {
-                UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(0, b.Radius.Medium) }),
-                UIStroke = a.createElement("UIStroke", { Color = b.Color.Border, Thickness = 2 }),
+                UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(0, e.Radius.Medium) }),
+                UIStroke = a.createElement("UIStroke", { Color = e.Color.Border, Thickness = 2 }),
                 Shadow = a.createElement("ImageLabel", {
                     Size = UDim2.new(1, 40, 1, 40),
                     Position = UDim2.fromOffset(-20, -20),
                     BackgroundTransparency = 1,
-                    Image = "rbxassetid://1316045217", 
+                    Image = "rbxassetid://1316045217",
                     ImageColor3 = Color3.new(0, 0, 0),
                     ImageTransparency = 0.5,
                     ZIndex = 0,
@@ -1886,14 +1929,14 @@ _modules["components/Elements/HyperModal"] = function()
                         Size = UDim2.fromScale(1, 1),
                         BackgroundTransparency = 1,
                         Text = d.Title or "Modal",
-                        TextColor3 = b.Color.Text,
-                        Font = b.Font.Bold,
-                        TextSize = b.FontSize.Large,
+                        TextColor3 = e.Color.Text,
+                        Font = e.Font, 
+                        TextSize = e.FontSize.Large,
                     }),
                     Divider = a.createElement("Frame", {
                         Size = UDim2.new(1, 0, 0, 1),
                         Position = UDim2.fromScale(0, 1),
-                        BackgroundColor3 = b.Color.Border,
+                        BackgroundColor3 = e.Color.Border,
                         BorderSizePixel = 0,
                     })
                 }),
@@ -1912,9 +1955,9 @@ _modules["components/Elements/HyperModal"] = function()
                         Size = UDim2.fromScale(1, 1),
                         BackgroundTransparency = 1,
                         Text = d.Content or "",
-                        TextColor3 = b.Color.Text,
-                        Font = b.Font.Main,
-                        TextSize = b.FontSize.Medium,
+                        TextColor3 = e.Color.Text,
+                        Font = e.Font,
+                        TextSize = e.FontSize.Medium,
                         TextWrapped = true,
                         TextYAlignment = Enum.TextYAlignment.Top,
                     })
@@ -2109,19 +2152,39 @@ _modules["components/Elements/HyperSlider"] = function()
     
     
     local a = _require("dependencies/React")
-    local b = _require("theme/tokens")
-    local c = _require("components/Elements/BaseElement")
-    local d = _require("hooks/useSpring")
+    local b = _require("components/Elements/BaseElement")
+    local c = _require("hooks/useSpring")
+    local d = _require("hooks/useTheme")
     
     local function HyperSlider(e)
-        local f = e.Min or 0
-        local g = e.Max or 100
-        local h = e.Value or f
+        local f = d(e.store)
+        local g = e.Min or 0
+        local h = e.Max or 100
         
-        local i = (h - f) / (g - f)
-        local j = d(i, { damping = 0.9, stiffness = 0.1 })
+        local i, j = a.useState(e.Value or g)
+        local k = a.useRef(false)
         
-        return a.createElement(c, {
+        local l = (i - g) / (h - g)
+        local m = c(l, { stiffness = 300, damping = 30 })
+        
+        local function updateValue(n, o, p)
+            local q = math.clamp((n - o) / p, 0, 1)
+            local r = g + (q * (h - g))
+            
+            j(r) 
+            if e.Callback then
+                e.Callback(r)
+            end
+        end
+        
+        
+        a.useEffect(function()
+            if e.Value ~= nil and e.Value ~= i then
+                j(e.Value)
+            end
+        end, {e.Value})
+    
+        return a.createElement(b, {
             Disabled = e.Disabled,
             LayoutOrder = e.LayoutOrder,
         }, {
@@ -2130,41 +2193,65 @@ _modules["components/Elements/HyperSlider"] = function()
                 BackgroundTransparency = 1,
             }, {
                 Padding = a.createElement("UIPadding", {
-                    PaddingLeft = UDim.new(0, b.Spacing[3]),
-                    PaddingRight = UDim.new(0, b.Spacing[3]),
+                    PaddingLeft = UDim.new(0, f.Spacing[3]),
+                    PaddingRight = UDim.new(0, f.Spacing[3]),
                 }),
                 Label = a.createElement("TextLabel", {
                     Size = UDim2.new(1, -120, 0.5, 0),
                     BackgroundTransparency = 1,
                     Text = e.Text or "Slider",
-                    TextColor3 = b.Color.Text,
-                    Font = b.Font.Main,
-                    TextSize = b.FontSize.Medium,
+                    TextColor3 = f.Color.Text,
+                    Font = f.Font,
+                    TextSize = f.FontSize.Medium,
                     TextXAlignment = Enum.TextXAlignment.Left,
                 }),
                 ValueLabel = a.createElement("TextLabel", {
                     Size = UDim2.new(0, 50, 0.5, 0),
                     Position = UDim2.new(1, -50, 0, 0),
                     BackgroundTransparency = 1,
-                    Text = tostring(math.floor(h)),
-                    TextColor3 = b.Color.Accent,
-                    Font = b.Font.Bold,
-                    TextSize = b.FontSize.Medium,
+                    Text = tostring(math.floor(i)),
+                    TextColor3 = f.Color.Accent,
+                    Font = f.Font,
+                    TextSize = f.FontSize.Medium,
                     TextXAlignment = Enum.TextXAlignment.Right,
                 }),
                 Track = a.createElement("Frame", {
                     Size = UDim2.new(1, 0, 0, 4),
                     Position = UDim2.new(0, 0, 0.8, -2),
-                    BackgroundColor3 = b.Color.Surface,
+                    BackgroundColor3 = f.Color.Surface,
                     BorderSizePixel = 0,
                 }, {
                     UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(1, 0) }),
                     Fill = a.createElement("Frame", {
-                        Size = j:map(function(k) return UDim2.fromScale(k, 1) end),
-                        BackgroundColor3 = b.Color.Accent,
+                        Size = m:map(function(n) return UDim2.fromScale(n, 1) end),
+                        BackgroundColor3 = f.Color.Accent,
                         BorderSizePixel = 0,
                     }, {
                         UICorner = a.createElement("UICorner", { CornerRadius = UDim.new(1, 0) }),
+                    }),
+                    
+                    Trigger = a.createElement("TextButton", {
+                        Size = UDim2.new(1, 0, 0, 20),
+                        Position = UDim2.fromScale(0, 0.5),
+                        AnchorPoint = Vector2.new(0, 0.5),
+                        BackgroundTransparency = 1,
+                        Text = "",
+                        [a.Event.InputBegan] = function(n, o)
+                            if o.UserInputType == Enum.UserInputType.MouseButton1 then
+                                k.current = true
+                                updateValue(o.Position.X, n.AbsolutePosition.X, n.AbsoluteSize.X)
+                            end
+                        end,
+                        [a.Event.InputEnded] = function(n, o)
+                            if o.UserInputType == Enum.UserInputType.MouseButton1 then
+                                k.current = false
+                            end
+                        end,
+                        [a.Event.InputChanged] = function(n, o)
+                            if k.current and (o.UserInputType == Enum.UserInputType.MouseMovement or o.UserInputType == Enum.UserInputType.Touch) then
+                                updateValue(o.Position.X, n.AbsolutePosition.X, n.AbsoluteSize.X)
+                            end
+                        end,
                     })
                 })
             })
@@ -2403,23 +2490,23 @@ _modules["components/Elements/HyperToast"] = function()
     
     
     local a = _require("dependencies/React")
-    local b = _require("theme/tokens")
-    local c = _require("components/Elements/BaseElement")
-    local d = _require("hooks/useSpring")
+    local b = _require("components/Elements/BaseElement")
+    local c = _require("hooks/useTheme")
     
-    local function HyperToast(e)
+    local function HyperToast(d)
+        local e = c(d.store)
         local f = {
-            Info = b.Color.Accent,
-            Success = b.Color.Success,
-            Warning = b.Color.Warning,
-            Error = b.Color.Error,
+            Info = e.Color.Accent,
+            Success = e.Color.Success,
+            Warning = e.Color.Warning,
+            Error = e.Color.Error,
         }
         
-        local g = f[e.Priority] or b.Color.Accent
+        local g = f[d.Priority] or e.Color.Accent
         
-        return a.createElement(c, {
+        return a.createElement(b, {
             Size = UDim2.new(0, 300, 0, 60),
-            BackgroundColor = b.Color.Surface,
+            BackgroundColor = e.Color.Surface,
             BackgroundTransparency = 0.1,
         }, {
             UIStroke = a.createElement("UIStroke", {
@@ -2432,19 +2519,19 @@ _modules["components/Elements/HyperToast"] = function()
                 BackgroundTransparency = 1,
             }, {
                 Padding = a.createElement("UIPadding", {
-                    PaddingLeft = UDim.new(0, b.Spacing[3]),
-                    PaddingRight = UDim.new(0, b.Spacing[3]),
+                    PaddingLeft = UDim.new(0, e.Spacing[3]),
+                    PaddingRight = UDim.new(0, e.Spacing[3]),
                 }),
-                Icon = e.Icon and a.createElement("ImageLabel", {
+                Icon = d.Icon and a.createElement("ImageLabel", {
                     Size = UDim2.fromOffset(24, 24),
                     Position = UDim2.new(0, 0, 0.5, -12),
                     BackgroundTransparency = 1,
-                    Image = e.Icon,
+                    Image = d.Icon,
                     ImageColor3 = g,
                 }),
                 Content = a.createElement("Frame", {
-                    Size = UDim2.new(1, e.Icon and -32 or 0, 1, 0),
-                    Position = UDim2.new(0, e.Icon and 32 or 0, 0, 0),
+                    Size = UDim2.new(1, d.Icon and -32 or 0, 1, 0),
+                    Position = UDim2.new(0, d.Icon and 32 or 0, 0, 0),
                     BackgroundTransparency = 1,
                 }, {
                     Layout = a.createElement("UIListLayout", {
@@ -2455,19 +2542,19 @@ _modules["components/Elements/HyperToast"] = function()
                     Title = a.createElement("TextLabel", {
                         Size = UDim2.new(1, 0, 0, 16),
                         BackgroundTransparency = 1,
-                        Text = e.Title or "Notification",
+                        Text = d.Title or "Notification",
                         TextColor3 = g,
-                        Font = b.Font.Bold,
-                        TextSize = b.FontSize.Medium,
+                        Font = e.Font.Bold,
+                        TextSize = e.FontSize.Medium,
                         TextXAlignment = Enum.TextXAlignment.Left,
                     }),
                     Text = a.createElement("TextLabel", {
                         Size = UDim2.new(1, 0, 0, 14),
                         BackgroundTransparency = 1,
-                        Text = e.Content or "",
-                        TextColor3 = b.Color.Text,
-                        Font = b.Font.Main,
-                        TextSize = b.FontSize.Small,
+                        Text = d.Content or "",
+                        TextColor3 = e.Color.Text,
+                        Font = e.Font.Main,
+                        TextSize = e.FontSize.Small,
                         TextXAlignment = Enum.TextXAlignment.Left,
                         TextWrapped = true,
                     })
@@ -2485,18 +2572,21 @@ _modules["components/Elements/HyperToggle"] = function()
     
     
     local a = _require("dependencies/React")
-    local b = _require("theme/tokens")
-    local c = _require("components/Elements/BaseElement")
-    local d = _require("hooks/useSpring")
+    local b = _require("components/Elements/BaseElement")
+    local c = _require("hooks/useSpring")
+    local d = _require("hooks/useTheme")
     
     local function HyperToggle(e)
-        local f = e.Value or false
-        local g = d(f and 1 or 0, { damping = 0.8, stiffness = 0.2 })
+        local f = d(e.store)
+        local g = e.Value or false
         
-        return a.createElement(c, {
+        
+        local h = c(g and 1 or 0, { stiffness = 300, damping = 30 })
+        
+        return a.createElement(b, {
             Disabled = e.Disabled,
             OnActivated = function()
-                if e.Callback then e.Callback(not f) end
+                if e.Callback then e.Callback(not g) end
             end,
             LayoutOrder = e.LayoutOrder,
         }, {
@@ -2505,23 +2595,23 @@ _modules["components/Elements/HyperToggle"] = function()
                 BackgroundTransparency = 1,
             }, {
                 Padding = a.createElement("UIPadding", {
-                    PaddingLeft = UDim.new(0, b.Spacing[3]),
-                    PaddingRight = UDim.new(0, b.Spacing[3]),
+                    PaddingLeft = UDim.new(0, f.Spacing[3]),
+                    PaddingRight = UDim.new(0, f.Spacing[3]),
                 }),
                 Label = a.createElement("TextLabel", {
                     Size = UDim2.new(1, -50, 1, 0),
                     BackgroundTransparency = 1,
                     Text = e.Text or "Toggle",
-                    TextColor3 = b.Color.Text,
-                    Font = b.Font.Main,
-                    TextSize = b.FontSize.Medium,
+                    TextColor3 = f.Color.Text,
+                    Font = f.Font,
+                    TextSize = f.FontSize.Medium,
                     TextXAlignment = Enum.TextXAlignment.Left,
                 }),
                 SwitchTrack = a.createElement("Frame", {
                     Size = UDim2.fromOffset(40, 20),
                     Position = UDim2.new(1, -40, 0.5, -10),
-                    BackgroundColor3 = g:map(function(h)
-                        return b.Color.Surface:Lerp(b.Color.Accent, h)
+                    BackgroundColor3 = h:map(function(i)
+                        return f.Color.Surface:Lerp(f.Color.Accent, i)
                     end),
                     BorderSizePixel = 0,
                 }, {
@@ -2530,10 +2620,10 @@ _modules["components/Elements/HyperToggle"] = function()
                     }),
                     Handle = a.createElement("Frame", {
                         Size = UDim2.fromOffset(16, 16),
-                        Position = g:map(function(h)
-                            return UDim2.new(0, 2 + (20 * h), 0.5, -8)
+                        Position = h:map(function(i)
+                            return UDim2.new(0, 2 + (20 * i), 0.5, -8)
                         end),
-                        BackgroundColor3 = b.Color.Text,
+                        BackgroundColor3 = f.Color.Text,
                         BorderSizePixel = 0,
                     }, {
                         UICorner = a.createElement("UICorner", {
@@ -2617,12 +2707,14 @@ _modules["components/Root"] = function()
         end, {c.store})
         
         local f = {}
-        for g, h in pairs(d.windows) do
-            f[g] = a.createElement(b, {
-                id = g,
-                store = c.store,
-                config = h,
-            })
+        for g, h in pairs(d.registry or {}) do
+            if h.type == "Window" then
+                table.insert(f, a.createElement(b, {
+                    key = g,
+                    id = g,
+                    store = c.store,
+                }))
+            end
         end
         
         
@@ -2649,50 +2741,65 @@ _modules["components/Window"] = function()
     
     local e = _require("components/Window/TabContainer") 
     
-    local function Window(f)
-        local g = b(f.store, f.id)
-        if not g or not g.props.active then return nil end
+    local f = _require("hooks/useTheme")
+    
+    local function Window(g)
+        local h = f(g.store)
+        local i = b(g.store, g.id)
+        if not i or not i.props.active then return nil end
         
         
-        local h = g.props.active and 1 or 0
-        local i = c(h)
+        local j = i.props.active and 1 or 0
+        local k = c(j, { stiffness = 300, damping = 30 })
+        
+        local l = i.props.Position or UDim2.new(0.5, -300, 0.5, -200)
         
         return a.createElement("Frame", {
             Size = UDim2.fromOffset(600, 400),
-            Position = UDim2.new(0.5, -300, 0.5, -200),
-            BackgroundColor3 = d.Color.Background,
+            Position = l,
+            BackgroundColor3 = h.Color.Background,
             BorderSizePixel = 0,
-            ZIndex = g.props.zIndex or 1,
-            Visible = i > 0.01,
+            ZIndex = i.props.zIndex or 1,
+            Visible = k:map(function(m) return m > 0.01 end),
         }, {
             UICorner = a.createElement("UICorner", {
-                CornerRadius = UDim.new(0, d.Radius.Large)
+                CornerRadius = UDim.new(0, h.Radius.Large)
             }),
             UIStroke = a.createElement("UIStroke", {
-                Color = d.Color.Border,
+                Color = h.Color.Border,
                 Thickness = 1,
             }),
             TitleBar = a.createElement("Frame", {
                 Size = UDim2.new(1, 0, 0, 40),
                 BackgroundTransparency = 1,
                 BorderSizePixel = 0,
+                [a.Event.InputBegan] = function(m, n)
+                    if n.UserInputType == Enum.UserInputType.MouseButton1 then
+                        
+                        local o = (getgenv and getgenv() or _G).__HyperUI_Instance
+                        if o and o.Runtime.Input then
+                            o.Runtime.Input.DraggingInstance = g.id
+                            o.Runtime.Input.DragOffset = n.Position - m.Parent.AbsolutePosition
+                        end
+                    end
+                end,
             }, {
                 TitleLabel = a.createElement("TextLabel", {
                     Size = UDim2.new(1, -80, 1, 0),
-                    Position = UDim2.fromOffset(d.Spacing[4], 0),
+                    Position = UDim2.fromOffset(h.Spacing[4], 0),
                     BackgroundTransparency = 1,
-                    Text = g.props.title or "HyperUI",
-                    TextColor3 = d.Color.Text,
-                    Font = d.Font.Bold,
-                    TextSize = d.FontSize.Large,
+                    Text = i.props.title or "HyperUI",
+                    TextColor3 = h.Color.Text,
+                    Font = h.Font,
+                    TextSize = h.FontSize.Large,
                     TextXAlignment = Enum.TextXAlignment.Left,
                 })
             }),
             
             Content = a.createElement(e, {
-                windowId = f.id,
-                store = f.store,
-                tabs = g.children,
+                windowId = g.id,
+                store = g.store,
+                tabs = i.children,
             })
         })
     end
@@ -2707,45 +2814,45 @@ _modules["components/Window/TabContainer"] = function()
     
     
     local a = _require("dependencies/React")
-    local b = _require("theme/tokens")
-    local c = _require("hooks/useTree")
+    local b = _require("hooks/useTheme")
+    local c = _require("components/Elements/HyperButton")
+    local d = _require("hooks/useTree")
     
-    local d = _require("components/Containers/Section") 
+    local e = _require("components/Containers/Section")
     
-    local function TabContainer(e)
-        local f, g = a.useState(e.tabs[1])
+    local function TabContainer(f)
+        local g = b(f.store)
+        local h = f.tabs and f.tabs[1] or nil
+        local i, j = a.useState(h)
         
-        local h = {}
-        for i, j in ipairs(e.tabs) do
-            local k = c(e.store, j)
-            if k then
-                table.insert(h, a.createElement("TextButton", {
-                    Size = UDim2.new(1, -b.Spacing[2]*2, 0, 32),
-                    Position = UDim2.fromOffset(b.Spacing[2], 0),
-                    BackgroundColor3 = f == j and b.Color.Accent or b.Color.Surface,
-                    BackgroundTransparency = f == j and 0 or 1,
-                    Text = k.props.title or "Tab",
-                    TextColor3 = b.Color.Text,
-                    Font = f == j and b.Font.Bold or b.Font.Main,
-                    TextSize = b.FontSize.Medium,
-                    BorderSizePixel = 0,
-                    [a.Event.Activated] = function() g(j) end,
-                }, {
-                    UICorner = a.createElement("UICorner", {
-                        CornerRadius = UDim.new(0, b.Radius.Small)
+        local k = {}
+        if f.tabs then
+            for l, m in ipairs(f.tabs) do
+                local n = d(f.store, m)
+                if n then
+                    local o = i == m
+                    
+                    k[m] = a.createElement(c, {
+                        Text = n.props.title or "Tab",
+                        Selected = o,
+                        BackgroundColor3 = o and g.Color.Accent or g.Color.Surface,
+                        Font = o and g.Font.Bold or g.Font.Main,
+                        Callback = function()
+                            j(m)
+                        end
                     })
-                }))
+                end
             end
         end
         
         
-        local i = c(e.store, f)
-        local j = {}
-        if i then
-            for k, l in ipairs(i.children) do
-                table.insert(j, a.createElement(d, {
-                    id = l,
-                    store = e.store,
+        local l = d(f.store, i)
+        local m = {}
+        if l then
+            for n, o in ipairs(l.children) do
+                table.insert(m, a.createElement(e, {
+                    id = o,
+                    store = f.store,
                 }))
             end
         end
@@ -2757,15 +2864,15 @@ _modules["components/Window/TabContainer"] = function()
         }, {
             Sidebar = a.createElement("Frame", {
                 Size = UDim2.new(0, 150, 1, 0),
-                BackgroundColor3 = b.Color.Surface,
+                BackgroundColor3 = g.Color.Surface,
                 BackgroundTransparency = 0.5,
                 BorderSizePixel = 0,
             }, {
                 Layout = a.createElement("UIListLayout", {
-                    Padding = UDim.new(0, b.Spacing[1]),
+                    Padding = UDim.new(0, g.Spacing[1]),
                     SortOrder = Enum.SortOrder.LayoutOrder,
                 }),
-                Items = a.createElement(a.Fragment, {}, h),
+                Items = a.createElement(a.Fragment, {}, k),
             }),
             MainContent = a.createElement("ScrollingFrame", {
                 Size = UDim2.new(1, -150, 1, 0),
@@ -2775,19 +2882,19 @@ _modules["components/Window/TabContainer"] = function()
                 CanvasSize = UDim2.new(0, 0, 0, 0),
                 AutomaticCanvasSize = Enum.AutomaticSize.Y,
                 ScrollBarThickness = 2,
-                ScrollBarImageColor3 = b.Color.Accent,
+                ScrollBarImageColor3 = g.Color.Accent,
             }, {
                 Padding = a.createElement("UIPadding", {
-                    PaddingTop = UDim.new(0, b.Spacing[4]),
-                    PaddingLeft = UDim.new(0, b.Spacing[4]),
-                    PaddingRight = UDim.new(0, b.Spacing[4]),
-                    PaddingBottom = UDim.new(0, b.Spacing[4]),
+                    PaddingTop = UDim.new(0, g.Spacing[4]),
+                    PaddingLeft = UDim.new(0, g.Spacing[4]),
+                    PaddingRight = UDim.new(0, g.Spacing[4]),
+                    PaddingBottom = UDim.new(0, g.Spacing[4]),
                 }),
                 Layout = a.createElement("UIListLayout", {
-                    Padding = UDim.new(0, b.Spacing[4]),
+                    Padding = UDim.new(0, g.Spacing[4]),
                     SortOrder = Enum.SortOrder.LayoutOrder,
                 }),
-                Sections = a.createElement(a.Fragment, {}, j),
+                Sections = a.createElement(a.Fragment, {}, m),
             })
         })
     end
@@ -2813,6 +2920,25 @@ _modules["core/config"] = function()
             AutoSave = d.AutoSave ~= false,
             Data = {},
         }, b)
+        
+        
+        e.Store:OnUpdate(function(f)
+            if not e.AutoSave then return end
+            
+            local g = false
+            for h, i in pairs(f.registry or {}) do
+                if i.props and i.props.value ~= nil then
+                    if not e.Data[h] or e.Data[h].value ~= i.props.value then
+                        e.Data[h] = { value = i.props.value }
+                        g = true
+                    end
+                end
+            end
+            
+            if g then
+                e:Save()
+            end
+        end)
         
         return e
     end
@@ -2916,7 +3042,7 @@ _modules["core/signal/Signal"] = function()
         local c
         c = self:Connect(function(...)
             c:Disconnect()
-            coroutine.resume(b, ...)
+            task.spawn(b, ...)
         end)
         return coroutine.yield()
     end
@@ -2942,18 +3068,20 @@ _modules["core/store"] = function()
     a.__index = a
     
     function a.new()
-        local b = setmetatable({
-            _state = {
-                windows = {},
-                notifications = {},
-                theme = "Dark",
-                registry = {}, 
-            },
+        local b = {
+            windows = {},
+            notifications = {},
+            theme = "Default",
+            registry = {}, 
+        }
+    
+        local c = setmetatable({
+            _state = b,
             _listeners = {},
             _subscribers = {}, 
         }, a)
         
-        return b
+        return c
     end
     
     function a:GetState()
@@ -3185,7 +3313,11 @@ _modules["hooks/useSpring"] = function()
     
     local function useSpring(c, d)
         local e = d or { stiffness = 170, damping = 26 }
-        local f, g = a.useState(c)
+        
+        
+        local f, g = a.useBinding(c)
+        
+        
         local h = a.useRef(c)
         local i = a.useRef(0)
         
@@ -3215,12 +3347,39 @@ _modules["hooks/useSpring"] = function()
             return function()
                 if j then j:Disconnect() end
             end
-        end, {c})
+        end, {c, e.stiffness, e.damping})
         
         return f
     end
     
     return useSpring
+end
+
+_modules["hooks/useTheme"] = function()
+    
+    
+    
+    
+    
+    local a = _require("dependencies/React")
+    local b = _require("theme/tokens")
+    
+    local function useTheme(c)
+        
+        local d, e = a.useState(c:GetState())
+        
+        a.useEffect(function()
+            local f = c:OnUpdate(function(f)
+                e(f)
+            end)
+            return f
+        end, {c})
+        
+        local f = d.theme or "Default"
+        return b:Get(f)
+    end
+    
+    return useTheme
 end
 
 _modules["hooks/useTree"] = function()
@@ -3314,6 +3473,8 @@ _modules["main"] = function()
                 active = true,
             }
         })
+        
+        self.WindowManager:RegisterWindow(d)
         
         return c.Window.new(d, self.Store)
     end
@@ -3451,7 +3612,7 @@ _modules["managers/NotificationManager"] = function()
     end
     
     function a:Dismiss(b)
-        local c = -1    
+        local c     
     for d, e in ipairs(self.Queue) do
             if e.id == b then
                 c = d
@@ -3459,7 +3620,7 @@ _modules["managers/NotificationManager"] = function()
             end
         end
         
-        if c ~= -1 then
+        if c then
             table.remove(self.Queue, c)
             self.Store:Dispatch({
                 type = "REMOVE_NOTIFICATION",
@@ -3593,7 +3754,22 @@ _modules["runtime/input"] = function()
     end
     
     function c:HandleDragBegan(d)
+        local e = self.Store:GetState()
+        local f = a:GetMouseLocation()
         
+        
+        local g = {} 
+        for h, i in pairs(e.registry or {}) do
+            if i.type == "Window" then
+                table.insert(g, h)
+            end
+        end
+        
+        
+        for h, i in ipairs(g) do
+            local j = e.registry[i]
+            
+        end
     end
     
     function c:HandleDragEnded()
@@ -3604,7 +3780,13 @@ _modules["runtime/input"] = function()
     function c:UpdateDragging()
         if self.DraggingInstance and self.DragOffset then
             local d = a:GetMouseLocation()
+            local e = UDim2.fromOffset(d.X - self.DragOffset.X, d.Y - self.DragOffset.Y)
             
+            self.Store:Dispatch({
+                type = "UPDATE_ELEMENT",
+                id = self.DraggingInstance,
+                props = { Position = e }
+            })
         end
     end
     

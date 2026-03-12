@@ -46,7 +46,7 @@ function a:Wait()
     local c
     c = self:Connect(function(...)
         c:Disconnect()
-        coroutine.resume(b, ...)
+        task.spawn(b, ...)
     end)
     return coroutine.yield()
 end

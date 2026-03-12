@@ -6,77 +6,80 @@
 local a = {}
 a.__index = a
 
-local b = game:GetService("Players")
-local c = game:GetService("CoreGui")
-
-local d = b.LocalPlayer
-while not d do
-    b:GetPropertyChangedSignal("LocalPlayer"):Wait()
-    d = b.LocalPlayer
-end
+local b = require(script.Parent.Parent.dependencies.React)
+local c = require(script.Parent.Parent.dependencies.ReactRoblox)
+local d = require(script.Parent.Parent.components.Root)
 
 function a.new(e)
     local f = setmetatable({
         Store = e,
         Container = nil,
+        Root = nil,
     }, a)
     
     f:CreateContainer()
     return f
 end
 
-function a:CreateContainer()
-    
-    
-    
-    
-    
-    
-    local e
+local function getSafeGui()
+    local e = game:GetService("CoreGui")
     local f = getgenv and getgenv().gethui
-    local g = getgenv and (getgenv().protect_gui or (getgenv().syn and getgenv().syn.protect_gui))
+    local g = getgenv and getgenv().syn
     
-    if f then
-        e = f()
-    elseif c then
+    if g and g.protect_gui then
+        local h = Instance.new("ScreenGui")
+        g.protect_gui(h)
+        h.Parent = e
+        return h
+    elseif f then
+        local h = f()
+        local i = Instance.new("ScreenGui")
+        i.Parent = h
+        return i
+    else
+        local h = Instance.new("ScreenGui")
         
-        local h = pcall(function()
-            local h = Instance.new("Frame")
-            h.Parent = c
-            h:Destroy()
+        local i, j = pcall(function()
+            h.Parent = e
         end)
-        if h then
-            e = c
+        if not i then
+            local k = game:GetService("Players").LocalPlayer
+            if k then
+                local l = k:FindFirstChild("PlayerGui") or k:WaitForChild("PlayerGui", 5)
+                if l then
+                    h.Parent = l
+                end
+            end
         end
+        return h
     end
+end
+
+function a:CreateContainer()
+    local e = getSafeGui()
+    if not e then return end
     
-    if not e then
-        e = d:WaitForChild("PlayerGui")
-    end
+    e.Name = "HyperUI_" .. game:GetService("HttpService"):GenerateGUID(false):sub(1, 8)
+    e.ResetOnSpawn = false
+    e.IgnoreGuiInset = true
+    e.DisplayOrder = 100
     
-    local h = Instance.new("ScreenGui")
-    h.Name = "HyperUI_" .. game:GetService("HttpService"):GenerateGUID(false):sub(1, 8)
-    h.ResetOnSpawn = false
-    h.IgnoreGuiInset = true
-    h.DisplayOrder = 100
-    
-    if g then
-        pcall(g, h)
-    end
-    
-    h.Parent = e
-    self.Container = h
+    self.Container = e
     
     
-    
-    
-    
-    
+    local f = c.createRoot(e)
+    f:render(b.createElement(d, { store = self.Store }))
+    self.Root = f
 end
 
 function a:Unmount()
     if self.Root then
-        
+        local e, f = pcall(function() 
+            self.Root:unmount() 
+        end)
+        if not e then
+            warn("[HyperUI] Unmount error:", f)
+        end
     end
     if self.Container then
         self.Container:Destroy()

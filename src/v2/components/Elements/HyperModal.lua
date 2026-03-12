@@ -3,12 +3,15 @@
 ]]
 
 local React = require(script.Parent.Parent.Parent.dependencies.React)
-local Tokens = require(script.Parent.Parent.Parent.theme.tokens)
 local useSpring = require(script.Parent.Parent.Parent.hooks.useSpring)
+local useTheme = require(script.Parent.Parent.Parent.hooks.useTheme)
 
 local function HyperModal(props)
+    local theme = useTheme(props.store)
     local isOpen = props.Open or false
-    local anim = useSpring(isOpen and 1 or 0, { damping = 0.7, stiffness = 0.2 })
+    
+    -- Spring for modal transitions
+    local anim = useSpring(isOpen and 1 or 0, { stiffness = 200, damping = 25 })
     
     return React.createElement("Frame", {
         Size = UDim2.fromScale(1, 1),
@@ -19,19 +22,21 @@ local function HyperModal(props)
     }, {
         Content = React.createElement("Frame", {
             Size = UDim2.fromOffset(400, 250),
-            Position = anim:map(function(v) return UDim2.fromScale(0.5, 0.5 + (0.1 * (1-v))) end),
+            Position = anim:map(function(v) 
+                return UDim2.new(0.5, 0, 0.5, math.floor(30 * (1 - v))) 
+            end),
             AnchorPoint = Vector2.new(0.5, 0.5),
-            BackgroundColor3 = Tokens.Color.Background,
+            BackgroundColor3 = theme.Color.Background,
             BorderSizePixel = 0,
             GroupTransparency = anim:map(function(v) return 1 - v end),
         }, {
-            UICorner = React.createElement("UICorner", { CornerRadius = UDim.new(0, Tokens.Radius.Medium) }),
-            UIStroke = React.createElement("UIStroke", { Color = Tokens.Color.Border, Thickness = 2 }),
+            UICorner = React.createElement("UICorner", { CornerRadius = UDim.new(0, theme.Radius.Medium) }),
+            UIStroke = React.createElement("UIStroke", { Color = theme.Color.Border, Thickness = 2 }),
             Shadow = React.createElement("ImageLabel", {
                 Size = UDim2.new(1, 40, 1, 40),
                 Position = UDim2.fromOffset(-20, -20),
                 BackgroundTransparency = 1,
-                Image = "rbxassetid://1316045217", -- Shadow texture
+                Image = "rbxassetid://1316045217",
                 ImageColor3 = Color3.new(0, 0, 0),
                 ImageTransparency = 0.5,
                 ZIndex = 0,
@@ -44,14 +49,14 @@ local function HyperModal(props)
                     Size = UDim2.fromScale(1, 1),
                     BackgroundTransparency = 1,
                     Text = props.Title or "Modal",
-                    TextColor3 = Tokens.Color.Text,
-                    Font = Tokens.Font.Bold,
-                    TextSize = Tokens.FontSize.Large,
+                    TextColor3 = theme.Color.Text,
+                    Font = theme.Font, -- Assuming Theme.Font is the main font
+                    TextSize = theme.FontSize.Large,
                 }),
                 Divider = React.createElement("Frame", {
                     Size = UDim2.new(1, 0, 0, 1),
                     Position = UDim2.fromScale(0, 1),
-                    BackgroundColor3 = Tokens.Color.Border,
+                    BackgroundColor3 = theme.Color.Border,
                     BorderSizePixel = 0,
                 })
             }),
@@ -70,9 +75,9 @@ local function HyperModal(props)
                     Size = UDim2.fromScale(1, 1),
                     BackgroundTransparency = 1,
                     Text = props.Content or "",
-                    TextColor3 = Tokens.Color.Text,
-                    Font = Tokens.Font.Main,
-                    TextSize = Tokens.FontSize.Medium,
+                    TextColor3 = theme.Color.Text,
+                    Font = theme.Font,
+                    TextSize = theme.FontSize.Medium,
                     TextWrapped = true,
                     TextYAlignment = Enum.TextYAlignment.Top,
                 })

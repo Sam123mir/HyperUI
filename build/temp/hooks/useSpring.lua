@@ -12,37 +12,41 @@ end
 
 local function useSpring(c, d)
     local e = d or { stiffness = 170, damping = 26 }
-    local f, g = a.useState(c)
-    local h = a.useRef(0)
+    
+    
+    local f, g = a.useBinding(c)
+    
+    
+    local h = a.useRef(c)
+    local i = a.useRef(0)
     
     a.useEffect(function()
-        local i
-        local j = f
-        local k = h.current
+        local j
         
-        i = b.RenderStepped:Connect(function(l)
-            local m = j - c
-            local n = -e.stiffness * m
-            local o = -e.damping * k
-            local p = n + o
+        j = b.RenderStepped:Connect(function(k)
+            local l = h.current - c
+            local m = -e.stiffness * l
+            local n = -e.damping * i.current
+            local o = m + n
             
-            k = k + p * l
-            j = j + k * l
+            i.current = i.current + o * k
+            h.current = h.current + i.current * k
             
-            g(j)
-            h.current = k
+            g(h.current)
             
             
-            if math.abs(k) < 0.001 and math.abs(j - c) < 0.001 then
+            if math.abs(i.current) < 0.001 and math.abs(h.current - c) < 0.001 then
+                h.current = c
+                i.current = 0
                 g(c)
-                i:Disconnect()
+                j:Disconnect()
             end
         end)
         
         return function()
-            if i then i:Disconnect() end
+            if j then j:Disconnect() end
         end
-    end, {c})
+    end, {c, e.stiffness, e.damping})
     
     return f
 end

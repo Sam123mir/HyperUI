@@ -10,50 +10,65 @@ local d = require(script.Parent.Parent.Parent.theme.tokens)
 
 local e = require(script.Parent.TabContainer) 
 
-local function Window(f)
-    local g = b(f.store, f.id)
-    if not g or not g.props.active then return nil end
+local f = require(script.Parent.Parent.Parent.hooks.useTheme)
+
+local function Window(g)
+    local h = f(g.store)
+    local i = b(g.store, g.id)
+    if not i or not i.props.active then return nil end
     
     
-    local h = g.props.active and 1 or 0
-    local i = c(h)
+    local j = i.props.active and 1 or 0
+    local k = c(j, { stiffness = 300, damping = 30 })
+    
+    local l = i.props.Position or UDim2.new(0.5, -300, 0.5, -200)
     
     return a.createElement("Frame", {
         Size = UDim2.fromOffset(600, 400),
-        Position = UDim2.new(0.5, -300, 0.5, -200),
-        BackgroundColor3 = d.Color.Background,
+        Position = l,
+        BackgroundColor3 = h.Color.Background,
         BorderSizePixel = 0,
-        ZIndex = g.props.zIndex or 1,
-        Visible = i > 0.01,
+        ZIndex = i.props.zIndex or 1,
+        Visible = k:map(function(m) return m > 0.01 end),
     }, {
         UICorner = a.createElement("UICorner", {
-            CornerRadius = UDim.new(0, d.Radius.Large)
+            CornerRadius = UDim.new(0, h.Radius.Large)
         }),
         UIStroke = a.createElement("UIStroke", {
-            Color = d.Color.Border,
+            Color = h.Color.Border,
             Thickness = 1,
         }),
         TitleBar = a.createElement("Frame", {
             Size = UDim2.new(1, 0, 0, 40),
             BackgroundTransparency = 1,
             BorderSizePixel = 0,
+            [a.Event.InputBegan] = function(m, n)
+                if n.UserInputType == Enum.UserInputType.MouseButton1 then
+                    
+                    local o = (getgenv and getgenv() or _G).__HyperUI_Instance
+                    if o and o.Runtime.Input then
+                        o.Runtime.Input.DraggingInstance = g.id
+                        o.Runtime.Input.DragOffset = n.Position - m.Parent.AbsolutePosition
+                    end
+                end
+            end,
         }, {
             TitleLabel = a.createElement("TextLabel", {
                 Size = UDim2.new(1, -80, 1, 0),
-                Position = UDim2.fromOffset(d.Spacing[4], 0),
+                Position = UDim2.fromOffset(h.Spacing[4], 0),
                 BackgroundTransparency = 1,
-                Text = g.props.title or "HyperUI",
-                TextColor3 = d.Color.Text,
-                Font = d.Font.Bold,
-                TextSize = d.FontSize.Large,
+                Text = i.props.title or "HyperUI",
+                TextColor3 = h.Color.Text,
+                Font = h.Font,
+                TextSize = h.FontSize.Large,
                 TextXAlignment = Enum.TextXAlignment.Left,
             })
         }),
         
         Content = a.createElement(e, {
-            windowId = f.id,
-            store = f.store,
-            tabs = g.children,
+            windowId = g.id,
+            store = g.store,
+            tabs = i.children,
         })
     })
 end

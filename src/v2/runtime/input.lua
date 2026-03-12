@@ -40,7 +40,22 @@ function InputManager:Initialize()
 end
 
 function InputManager:HandleDragBegan(input)
-    -- This logic will coordinate with WindowManager to find the relevant window under cursor
+    local state = self.Store:GetState()
+    local mousePos = UserInputService:GetMouseLocation()
+    
+    -- Iterate windows in Z-order (top to bottom) to find which one we're clicking
+    local windowIds = {} 
+    for id, element in pairs(state.registry or {}) do
+        if element.type == "Window" then
+            table.insert(windowIds, id)
+        end
+    end
+    
+    -- For now, just check all windows. 
+    for _, id in ipairs(windowIds) do
+        local window = state.registry[id]
+        -- Logic for checking absolute position and setting DraggingInstance
+    end
 end
 
 function InputManager:HandleDragEnded()
@@ -51,7 +66,13 @@ end
 function InputManager:UpdateDragging()
     if self.DraggingInstance and self.DragOffset then
         local mousePos = UserInputService:GetMouseLocation()
-        -- Update position in store or directly (for performance)
+        local newPos = UDim2.fromOffset(mousePos.X - self.DragOffset.X, mousePos.Y - self.DragOffset.Y)
+        
+        self.Store:Dispatch({
+            type = "UPDATE_ELEMENT",
+            id = self.DraggingInstance,
+            props = { Position = newPos }
+        })
     end
 end
 

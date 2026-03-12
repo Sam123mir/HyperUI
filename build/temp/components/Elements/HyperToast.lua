@@ -3,23 +3,23 @@
 
 
 local a = require(script.Parent.Parent.Parent.dependencies.React)
-local b = require(script.Parent.Parent.Parent.theme.tokens)
-local c = require(script.Parent.BaseElement)
-local d = require(script.Parent.Parent.Parent.hooks.useSpring)
+local b = require(script.Parent.BaseElement)
+local c = require(script.Parent.Parent.Parent.hooks.useTheme)
 
-local function HyperToast(e)
+local function HyperToast(d)
+    local e = c(d.store)
     local f = {
-        Info = b.Color.Accent,
-        Success = b.Color.Success,
-        Warning = b.Color.Warning,
-        Error = b.Color.Error,
+        Info = e.Color.Accent,
+        Success = e.Color.Success,
+        Warning = e.Color.Warning,
+        Error = e.Color.Error,
     }
     
-    local g = f[e.Priority] or b.Color.Accent
+    local g = f[d.Priority] or e.Color.Accent
     
-    return a.createElement(c, {
+    return a.createElement(b, {
         Size = UDim2.new(0, 300, 0, 60),
-        BackgroundColor = b.Color.Surface,
+        BackgroundColor = e.Color.Surface,
         BackgroundTransparency = 0.1,
     }, {
         UIStroke = a.createElement("UIStroke", {
@@ -32,19 +32,19 @@ local function HyperToast(e)
             BackgroundTransparency = 1,
         }, {
             Padding = a.createElement("UIPadding", {
-                PaddingLeft = UDim.new(0, b.Spacing[3]),
-                PaddingRight = UDim.new(0, b.Spacing[3]),
+                PaddingLeft = UDim.new(0, e.Spacing[3]),
+                PaddingRight = UDim.new(0, e.Spacing[3]),
             }),
-            Icon = e.Icon and a.createElement("ImageLabel", {
+            Icon = d.Icon and a.createElement("ImageLabel", {
                 Size = UDim2.fromOffset(24, 24),
                 Position = UDim2.new(0, 0, 0.5, -12),
                 BackgroundTransparency = 1,
-                Image = e.Icon,
+                Image = d.Icon,
                 ImageColor3 = g,
             }),
             Content = a.createElement("Frame", {
-                Size = UDim2.new(1, e.Icon and -32 or 0, 1, 0),
-                Position = UDim2.new(0, e.Icon and 32 or 0, 0, 0),
+                Size = UDim2.new(1, d.Icon and -32 or 0, 1, 0),
+                Position = UDim2.new(0, d.Icon and 32 or 0, 0, 0),
                 BackgroundTransparency = 1,
             }, {
                 Layout = a.createElement("UIListLayout", {
@@ -55,19 +55,19 @@ local function HyperToast(e)
                 Title = a.createElement("TextLabel", {
                     Size = UDim2.new(1, 0, 0, 16),
                     BackgroundTransparency = 1,
-                    Text = e.Title or "Notification",
+                    Text = d.Title or "Notification",
                     TextColor3 = g,
-                    Font = b.Font.Bold,
-                    TextSize = b.FontSize.Medium,
+                    Font = e.Font.Bold,
+                    TextSize = e.FontSize.Medium,
                     TextXAlignment = Enum.TextXAlignment.Left,
                 }),
                 Text = a.createElement("TextLabel", {
                     Size = UDim2.new(1, 0, 0, 14),
                     BackgroundTransparency = 1,
-                    Text = e.Content or "",
-                    TextColor3 = b.Color.Text,
-                    Font = b.Font.Main,
-                    TextSize = b.FontSize.Small,
+                    Text = d.Content or "",
+                    TextColor3 = e.Color.Text,
+                    Font = e.Font.Main,
+                    TextSize = e.FontSize.Small,
                     TextXAlignment = Enum.TextXAlignment.Left,
                     TextWrapped = true,
                 })

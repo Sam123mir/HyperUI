@@ -8,18 +8,20 @@ local a = {}
 a.__index = a
 
 function a.new()
-    local b = setmetatable({
-        _state = {
-            windows = {},
-            notifications = {},
-            theme = "Dark",
-            registry = {}, 
-        },
+    local b = {
+        windows = {},
+        notifications = {},
+        theme = "Default",
+        registry = {}, 
+    }
+
+    local c = setmetatable({
+        _state = b,
         _listeners = {},
         _subscribers = {}, 
     }, a)
     
-    return b
+    return c
 end
 
 function a:GetState()
@@ -99,6 +101,10 @@ function a:Dispatch(b)
         end
     elseif b.type == "SET_THEME" then
         d.theme = b.theme
+    elseif b.type == "ADD_NOTIFICATION" then
+        d.notifications[b.notification.id] = b.notification
+    elseif b.type == "REMOVE_NOTIFICATION" then
+        d.notifications[b.id] = nil
     end
     
     self._state = d

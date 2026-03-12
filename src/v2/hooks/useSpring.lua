@@ -12,7 +12,11 @@ end
 
 local function useSpring(targetValue, springConfig)
     local springConfig = springConfig or { stiffness = 170, damping = 26 }
-    local currentValue, setCurrentValue = React.useState(targetValue)
+    
+    -- Use a binding so components can use :map()
+    local value, setValue = React.useBinding(targetValue)
+    
+    -- Refs for internal physics state
     local valueRef = React.useRef(targetValue)
     local velocityRef = React.useRef(0)
     
@@ -28,13 +32,13 @@ local function useSpring(targetValue, springConfig)
             velocityRef.current = velocityRef.current + acceleration * dt
             valueRef.current = valueRef.current + velocityRef.current * dt
             
-            setCurrentValue(valueRef.current)
+            setValue(valueRef.current)
             
             -- Sleep check
             if math.abs(velocityRef.current) < 0.001 and math.abs(valueRef.current - targetValue) < 0.001 then
                 valueRef.current = targetValue
                 velocityRef.current = 0
-                setCurrentValue(targetValue)
+                setValue(targetValue)
                 connection:Disconnect()
             end
         end)
@@ -42,9 +46,9 @@ local function useSpring(targetValue, springConfig)
         return function()
             if connection then connection:Disconnect() end
         end
-    end, {targetValue})
+    end, {targetValue, springConfig.stiffness, springConfig.damping})
     
-    return currentValue
+    return value
 end
 
 return useSpring

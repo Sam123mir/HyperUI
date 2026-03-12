@@ -8,13 +8,15 @@ local Store = {}
 Store.__index = Store
 
 function Store.new()
+    local initialState = {
+        windows = {},
+        notifications = {},
+        theme = "Default",
+        registry = {}, -- nodeId -> { type, props, children, parentId }
+    }
+
     local self = setmetatable({
-        _state = {
-            windows = {},
-            notifications = {},
-            theme = "Dark",
-            registry = {}, -- nodeId -> { type, props, children, parentId }
-        },
+        _state = initialState,
         _listeners = {},
         _subscribers = {}, -- nodeId -> { list of callbacks }
     }, Store)

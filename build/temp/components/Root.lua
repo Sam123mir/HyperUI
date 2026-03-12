@@ -17,12 +17,14 @@ local function Root(c)
     end, {c.store})
     
     local f = {}
-    for g, h in pairs(d.windows) do
-        f[g] = a.createElement(b, {
-            id = g,
-            store = c.store,
-            config = h,
-        })
+    for g, h in pairs(d.registry or {}) do
+        if h.type == "Window" then
+            table.insert(f, a.createElement(b, {
+                key = g,
+                id = g,
+                store = c.store,
+            }))
+        end
     end
     
     
