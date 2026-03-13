@@ -107,10 +107,16 @@ def bundle():
         content = data["content"]
         
         # Regex to match require(script...) handling one level of nested parens
-        require_regex = r'require\s*\(\s*(script(?:[^()]|\([^()]*\))*)\)'
+        # Also handle require('path') and require("path")
+        require_regex = r'require\s*\(\s*(script(?:[^()]|\([^()]*\))*|(?P<quote>[\'"])(.*?)(?P=quote))\s*\)'
         
         def replace_require(match):
             req_content = match.group(1).strip()
+            
+            # If it's a quoted string, remove quotes for resolution
+            if req_content.startswith("'") or req_content.startswith('"'):
+                req_content = req_content[1:-1]
+                
             # Use 'name' (the module key) as the base for resolution
             resolved = resolve_path(name, req_content)
             return f'_require("{resolved}")'

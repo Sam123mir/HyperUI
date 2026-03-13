@@ -1,6 +1,6 @@
 -- HyperUI Framework
 -- Version: 2.0.0
--- Build Date: 2026-03-12 18:19:01
+-- Build Date: 2026-03-12 20:26:29
 -- Distribution: Single File
 
 local _modules = {}
@@ -36464,7 +36464,7 @@ _modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/react-reconciler/fork
     
     
     
-    return require("@pkg/@jsdotlua/react-test-renderer")
+    return _require("@pkg/@jsdotlua/react-test-renderer")
 end
 
 _modules["Packages/_Index/jsdotlua_react-reconciler@17.2.1/scheduler"] = function()
